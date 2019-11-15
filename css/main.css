@@ -81,10 +81,10 @@ body a:hover {
   color: white;
 }
 .top-nav-collapse {
-  background-color: transparent;
+  background-color: rgba(0,0,0,0.5);
 }
 .navbar-col-show {
-  background-color: transparent;
+  background-color: rgba(0,0,0,0.5);
 }
 @media (max-width: 768px) {
   .navbar {
