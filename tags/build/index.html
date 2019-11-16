@@ -15,7 +15,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <meta name="keywords" content="">
-  <title>使用CDN来加速网页的访问 ~ Tohrux!</title>
+  <title>标签 - build ~ Tohrux!</title>
 
   <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css"  >
 <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css"  >
@@ -34,7 +34,7 @@
 
 
 <body>
-  <header style="height: 70vh;">
+  <header style="height: 80vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -82,7 +82,7 @@
 </nav>
 
     <div class="view intro-2" id="background"
-         style="background: url('/img/jsDelivr_index.png')no-repeat center center;
+         style="background: url('https://cdn.jsdelivr.net/gh/tohrux/tohrux.github.io@1.0//img/fullVersionxx.jpg')no-repeat center center;
            background-size: cover;
            background-attachment: scroll;">
       <div class="full-bg-img">
@@ -92,41 +92,6 @@
               
             </span>
 
-            
-              <br>
-              
-                <p class="mt-3">
-                  <i class="fas fa-calendar-alt" aria-hidden="true"></i>&nbsp;
-                  星期日, 十一月 17日 2019, 3:21 凌晨
-                </p>
-              
-
-              <p>
-                
-                  
-                  &nbsp;<i class="far fa-chart-bar"></i>
-                  <span class="post-count">
-                    532 字
-                  </span>&nbsp;
-                
-
-                
-                  
-                  &nbsp;<i class="far fa-clock"></i>
-                  <span class="post-count">
-                      1 分钟
-                  </span>&nbsp;
-                
-
-                
-                  <!-- 不蒜子统计文章PV -->
-                  
-                  &nbsp;<i class="far fa-eye" aria-hidden="true"></i>&nbsp;
-                  <span id="busuanzi_container_page_pv">
-                    <span id="busuanzi_value_page_pv"></span> 次
-                  </span>&nbsp;
-                
-              </p>
             
           </div>
 
@@ -138,101 +103,35 @@
 
   <main>
     
+      <div class="container nopadding-md">
+        <div class="py-5 z-depth-3" id="board">
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+<div class="list-group">
+  <p class="h4">共计 1 篇文章</p>
+  <hr>
+  
+    
       
+      <p class="h5">2019</p>
+    
+    <a href="/2019/11/17/cdn/" class="list-group-item list-group-item-action">
+      <span class="archive-post-title">使用CDN来加速网页的访问</span>
+      <span style="float: right;">11-17</span>
+    </a>
+  
+</div>
 
-<div class="container-fluid">
-  <div class="row">
-    <div class="d-none d-lg-block col-lg-2"></div>
-    <div class="col-lg-8 nopadding-md">
-      <div class="py-5 z-depth-3" id="board">
-        <div class="post-content mx-auto" id="post">
-          <div class="markdown-body">
-            <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>今天是搭建github.io的第二天,很多功能都还在完善,比如说在一些地方(没错,说的就是你,天朝!)访问GitHub.Page很慢的问题,通过上网一番查找发现似乎可以用CDN来解决.</p>
-<h1 id="什么是CDN"><a href="#什么是CDN" class="headerlink" title="什么是CDN?"></a>什么是CDN?</h1><p>这里粘贴一段阿里云官网上面对CDN的描述:</p>
-<blockquote>
-<p>将源站内容分发至最接近用户的节点，使用户可就近取得所需内容，提高用户访问的响应速度和成功率。<br>解决因分布、带宽、服务器性能带来的访问延迟问题，适用于站点加速、点播、直播等场景。</p>
-</blockquote>
-<p>总之它可以让别人访问自己的GitHub.Page的速度更快就对了!</p>
-<h1 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h1><p>这里就拿我们网页中需要加载很久的图片来举例8,</p>
-<p>首先我们要找到放置自己github.io 页面的那个repo,如下图所示:</p>
-<p><img src="/img/cdn2.png" srcset="undefined" alt=""></p>
-<p>我们需要的图片他们现在都静静的躺在img那个文件夹里</p>
-<p>如果想用CDN获取他们的话</p>
-<p>可以点击图片最顶端的release来发布版本</p>
-<p>例如我这里发布的版本为1.0  发布完成后我们就可通过jsDelivr来引用我们的资源了</p>
-<p><img src="/img/cdn1.png" srcset="undefined" alt=""></p>
-<p>如上面的地址所示:</p>
-<p>​    gh 代表 github</p>
-<p>​    tohrux是我的GitHub用户名</p>
-<p>​    tohrux.github.io是我仓库的名字</p>
-<p>​    1.0 是版本号</p>
-<p>​    img/fullVersionxx.jpg 是想要获取的文件</p>
-<blockquote>
-<p><a href="https://cdn.jsdelivr.net/gh/tohrux/tohrux.github.io@1.0//img/fullVersionxx.jpg" target="_blank" rel="noopener">https://cdn.jsdelivr.net/gh/tohrux/tohrux.github.io@1.0//img/fullVersionxx.jpg</a></p>
-</blockquote>
-<p>然后用这个外链来替换掉你想要替换的文件就大功告成了~</p>
-<p>同理,用CDN来引入网页中jQuery,bootstrap等文件也是很常用的做法哦</p>
-<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>这算是第一次写博文8,其实就是把今晚的问题解决了,然后再总结一下,站在巨人的肩膀上真的很爽啊😊(憨憨笑)</p>
-<p>说实话我也不知道CDN到底有没有带来显著的效果,不过欢迎在下方的评论区留言告诉我网页的加载速度有没有变化,感谢阅读!</p>
-<p>​            </p>
 
-            <hr>
-          </div>
-          <br>
-          <div>
-            <p>
-            
-            
-              <span>
-                <i class="iconfont icon-tag"></i>
-                
-                  <a class="hover-with-bg" href="/tags/build">build</a>
-                
-              </span>
-            
-            </p>
-            
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="d-none d-lg-block col-lg-2 toc-container">
-      
-  <div id="toc">
-    <p class="h4"><i class="far fa-list-alt"></i>&nbsp;目录</p>
-    <div id="tocbot"></div>
-  </div>
-
-    </div>
-  </div>
-</div>
-
-<!-- custom -->
-
-
-<!-- Comments -->
-<div class="col-lg-7 mx-auto nopadding-md">
-  <div class="container comments mx-auto" id="comments">
-    
-      <br><br>
-      
-      
-  <script defer src="https://utteranc.es/client.js"
-          repo="tohrux/tohrux.github.io"
-          issue-term="pathname"
-  
-          label="utterances"
-    
-          theme="github-light"
-          crossorigin="anonymous"
-          async>
-  </script>
-
-
-    
-  </div>
-</div>
-
     
   </main>
 
@@ -307,11 +206,6 @@
 
 
 
-  
-    <script src="/lib/tocbot/tocbot.min.js" ></script>
-  
-  <script src="/js/post.js" ></script>
-
 
 
   <script src="/lib/smooth-scroll/smooth-scroll.min.js" ></script>
@@ -344,7 +238,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "使用CDN来加速网页的访问&nbsp;",
+        "标签 - build&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
