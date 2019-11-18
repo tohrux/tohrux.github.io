@@ -106,7 +106,7 @@
                   
                   &nbsp;<i class="far fa-chart-bar"></i>
                   <span class="post-count">
-                    235 字
+                    635 字
                   </span>&nbsp;
                 
 
@@ -114,7 +114,7 @@
                   
                   &nbsp;<i class="far fa-clock"></i>
                   <span class="post-count">
-                      1 分钟
+                      2 分钟
                   </span>&nbsp;
                 
 
@@ -153,7 +153,7 @@
 <p>👇</p>
 <p>然后在命令行中 输入 </p>
 <pre><code class="命令行">gem install sass </code></pre>
-<p>就可以安装了</p>
+<p>就ok了</p>
 <h1 id="开始基础语法"><a href="#开始基础语法" class="headerlink" title="开始基础语法"></a>开始基础语法</h1><h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><pre><code class="scss">$变量名字:变量属性值</code></pre>
 <p>使用! default 会让之前的样式覆盖掉当前的样式</p>
 <pre><code class="SCSS">//你好 我是sass
@@ -163,7 +163,7 @@ $defaultColor: red;
 $defaultColor: #0000ff !default;
 
 h1{color:$defaultColor;}</code></pre>
-<p>输出的css:</p>
+<p>编译后的css:</p>
 <pre><code class="css">h1 {
   color: red;
 }</code></pre>
@@ -179,7 +179,7 @@ $defaultColor: red;
         color: aqua; 
     }
 }</code></pre>
-<p>输出的css:</p>
+<p>编译后的css:</p>
 <pre><code class="css">#content article h1 {
   color: red;
 }
@@ -191,7 +191,116 @@ $defaultColor: red;
 #content aside {
   color: aqua;
 }</code></pre>
+<h2 id="“-”同时也可以代表css的嵌套规则外层的父元素选择器"><a href="#“-”同时也可以代表css的嵌套规则外层的父元素选择器" class="headerlink" title="“$”同时也可以代表css的嵌套规则外层的父元素选择器"></a>“$”同时也可以代表css的嵌套规则外层的父元素选择器</h2><pre><code class="scss">/*sass*/
+a{
+    font-weight: bold;
+    text-decoration: none;
+    $:hover{ color:yellow; }
+    p.login $ {font:weight:normal}
 
+}</code></pre>
+<pre><code class="css">/*编译后的CSS*/
+a{
+    font-weight: bold;
+    text-decoration: none;
+}
+a:hover{
+        color:yellow;
+        }
+p.login a {font:weight:normal}</code></pre>
+<h2 id="定义混合指令"><a href="#定义混合指令" class="headerlink" title="定义混合指令"></a>定义混合指令</h2><p>如果网站中有很多地方需要部署相似的样式,可以使用@mixin来进行封装</p>
+<pre><code class="scss">/*Sass*/
+    @mixin large-text {
+        font:{
+            family: Arial;
+            size: 20px;
+            weight: bold;
+        }
+        color: #ff0000;
+    }
+    p {@include large-text()}
+    a {@include large-text()}</code></pre>
+<pre><code class="css">/*编译后的CSS*/
+p {
+  font-family: Arial;
+  font-size: 20px;
+  font-weight: bold;
+  color: #ff0000;
+}
+
+a {
+  font-family: Arial;
+  font-size: 20px;
+  font-weight: bold;
+  color: #ff0000;
+}</code></pre>
+<h3 id="使用-指向父类选择器"><a href="#使用-指向父类选择器" class="headerlink" title="使用$指向父类选择器"></a>使用$指向父类选择器</h3><pre><code class="scss">/*Sass*/
+//@mixin 混合指令  
+$xu:#010203;
+$w:10px;
+@mixin text{
+    font:{
+       family: 华文宋体;
+       weight: bold;
+       size: $w*2.5;
+    }
+    &amp;:hover{
+      cursor: pointer;
+      text-decoration:underline #a94442 ;
+    }
+  }
+  p{
+    //通过@include调用  导入
+    @include text;
+  }</code></pre>
+<pre><code class="css">/*编译成CSS*/
+p {
+  font-family: 华文宋体;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+p:hover {
+  cursor: pointer;
+  text-decoration: underline #a94442;
+}</code></pre>
+<h3 id="通过传参-gt-有参函数"><a href="#通过传参-gt-有参函数" class="headerlink" title="通过传参   =&gt; 有参函数"></a>通过传参   =&gt; 有参函数</h3><p>(可以给定默认值 例如$width = 1 ,这样在不给参数的时候就会默认显示1)</p>
+<pre><code class="scss">/*sass*/  
+@mixin myborder($color,$width,$style){
+    border:{
+      width: $width;
+      color: $color;
+      style: $style;
+    }
+ }
+ .b{
+   //  传参需要一一对应
+   @include myborder(red,5px,solid);
+ }</code></pre>
+<pre><code class="css">/*编译成CSS*/
+.b {
+  border-width: 5px;
+  border-color: red;
+  border-style: solid;
+}</code></pre>
+<h3 id="不确定参数的数量时…"><a href="#不确定参数的数量时…" class="headerlink" title="不确定参数的数量时…"></a>不确定参数的数量时…</h3><pre><code class="scss">//  不确定参数的写法
+@mixin box-s($shadow...){
+    -moz-box-shadow:$shadow;
+    box-shadow:$shadow;
+    -o-box-shadow: $shadow;
+}
+.b3{
+ //    属性可以省略   参数3不能负数
+//           水平阴影 垂直 阴影半径 阴影程度 颜色   Insert内扩
+@include box-s(5px 5px 5px 5px #123654);
+}</code></pre>
+<pre><code class="css">/*编译后*/
+.b3 {
+  -moz-box-shadow: 5px 5px 5px 5px #123654;
+  box-shadow: 5px 5px 5px 5px #123654;
+  -o-box-shadow: 5px 5px 5px 5px #123654;
+}</code></pre>
+<h2 id="运算"><a href="#运算" class="headerlink" title="运算"></a>运算</h2>
             <hr>
           </div>
           <br>

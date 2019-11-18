@@ -139,7 +139,7 @@
 👇
 然后在命令行中 输入 
 gem install sass 
-就可以安装了
+就ok了
 开始基础语法变量$变量名字:变量属性值
 使用! default 会让之前的样式覆盖掉当前的样式
 //你好 我是sass
@@ -149,7 +149,7 @@ $defaultColor: red;
 $defaultColor: #0000ff !default;
 
 h1{color:$defaultColor;}
-输出的css:
+编译后的css:
 h1 {
   color: red;
 }
@@ -160,7 +160,7 @@ $defaultColor: red;
     article{
         h1{color: $defaultColor;}
         p{color: $defaultColor;}
-  </div>
+   </div>
         </div>
       </a>
 
