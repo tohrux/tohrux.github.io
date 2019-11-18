@@ -120,6 +120,71 @@
     
     
       <div class="col-12 col-md-4 m-auto">
+        <a href="/2019/11/18/sass/" target="_self">
+          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos/img/20191118182238.png" srcset="undefined" alt="sass基础语法" class="img-fluid rounded z-depth-3 index-thumbnails">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/2019/11/18/sass/">
+        <p class="h4 index-header">sass基础语法</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">搭建环境Sass是基于ruby开发的,但是用的人却不用懂得写Ruby.
+所以编写Sass前要先下载安装Ruby
+(在网上搜索Ruby的时候 看到的评价都在说这门语言很优雅,以后有空的话会去接触下的!)
+👇
+然后在命令行中 输入 
+gem install sass 
+就可以安装了
+开始基础语法变量$变量名字:变量属性值
+使用! default 会让之前的样式覆盖掉当前的样式
+//你好 我是sass
+
+$defaultColor: red;
+
+$defaultColor: #0000ff !default;
+
+h1{color:$defaultColor;}
+输出的css:
+h1 {
+  color: red;
+}
+关于变量的作用域💡需要注意的是如果上述变量的作用域在所有类的外面,那它就是全局变量,否则他的作用域只在当前的类
+嵌套CSS规则/* SASS嵌套 */
+$defaultColor: red;
+#content{
+    article{
+        h1{color: $defaultColor;}
+        p{color: $defaultColor;}
+  </div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-11-18&nbsp;&nbsp;
+        
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/sass">sass</a>&nbsp;
+          
+            <a href="/tags/css">css</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+      <div class="col-12 col-md-4 m-auto">
         <a href="/2019/11/17/henrietta/" target="_self">
           <img src="https://cdn.jsdelivr.net/gh/tohrux/photos/img/apex2.jfif" srcset="undefined" alt="hey,Are you henrietta? CLICK HERE PLS" class="img-fluid rounded z-depth-3 index-thumbnails">
         </a>

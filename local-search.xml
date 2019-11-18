@@ -4,6 +4,27 @@
   
   
   <entry>
+    <title>sass基础语法</title>
+    <link href="undefined2019/11/18/sass/"/>
+    <url>2019/11/18/sass/</url>
+    
+    <content type="html"><![CDATA[<h1 id="搭建环境"><a href="#搭建环境" class="headerlink" title="搭建环境"></a>搭建环境</h1><p>Sass是基于ruby开发的,但是用的人却不用懂得写Ruby.</p><p>所以编写Sass前要先下载安装Ruby</p><p>(在网上搜索Ruby的时候 看到的评价都在说这门语言很优雅,以后有空的话会去接触下的!)</p><p>👇</p><p>然后在命令行中 输入 </p><pre><code class="命令行">gem install sass </code></pre><p>就可以安装了</p><h1 id="开始基础语法"><a href="#开始基础语法" class="headerlink" title="开始基础语法"></a>开始基础语法</h1><h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><pre><code class="scss">$变量名字:变量属性值</code></pre><p>使用! default 会让之前的样式覆盖掉当前的样式</p><pre><code class="SCSS">//你好 我是sass$defaultColor: red;$defaultColor: #0000ff !default;h1{color:$defaultColor;}</code></pre><p>输出的css:</p><pre><code class="css">h1 {  color: red;}</code></pre><h2 id="关于变量的作用域"><a href="#关于变量的作用域" class="headerlink" title="关于变量的作用域"></a>关于变量的作用域</h2><p>💡需要注意的是如果上述变量的作用域在所有类的外面,那它就是全局变量,否则他的作用域只在当前的类</p><h2 id="嵌套CSS规则"><a href="#嵌套CSS规则" class="headerlink" title="嵌套CSS规则"></a>嵌套CSS规则</h2><pre><code class="scss">/* SASS嵌套 */$defaultColor: red;#content{    article{        h1{color: $defaultColor;}        p{color: $defaultColor;}    }    aside{        color: aqua;     }}</code></pre><p>输出的css:</p><pre><code class="css">#content article h1 {  color: red;}#content article p {  color: red;}#content aside {  color: aqua;}</code></pre>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>sass</tag>
+      
+      <tag>css</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>hey,Are you henrietta? CLICK HERE PLS</title>
     <link href="undefined2019/11/17/henrietta/"/>
     <url>2019/11/17/henrietta/</url>
