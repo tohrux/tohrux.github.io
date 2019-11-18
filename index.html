@@ -134,12 +134,14 @@
         
         <div class="index-excerpt" >
           <div class="index-text mb-1">搭建环境Sass是基于ruby开发的,但是用的人却不用懂得写Ruby.
-所以编写Sass前要先下载安装Ruby
+首先,在编写Sass前要先下载安装Ruby
 (在网上搜索Ruby的时候 看到的评价都在说这门语言很优雅,以后有空的话会去接触下的!)
 👇
 然后在命令行中 输入 
 gem install sass 
-就ok了
+等待执行完毕后 然后输入在命令行输入
+sass -v
+如果出现了相应的版本号 就意味着安装成功了👏
 开始基础语法变量$变量名字:变量属性值
 使用! default 会让之前的样式覆盖掉当前的样式
 //你好 我是sass
@@ -158,9 +160,7 @@ h1 {
 $defaultColor: red;
 #content{
     article{
-        h1{color: $defaultColor;}
-        p{color: $defaultColor;}
-   </div>
+        h1{color: $def</div>
         </div>
       </a>
 
