@@ -106,7 +106,7 @@
                   
                   &nbsp;<i class="far fa-chart-bar"></i>
                   <span class="post-count">
-                    912 字
+                    1.1k 字
                   </span>&nbsp;
                 
 
@@ -114,7 +114,7 @@
                   
                   &nbsp;<i class="far fa-clock"></i>
                   <span class="post-count">
-                      4 分钟
+                      5 分钟
                   </span>&nbsp;
                 
 
@@ -328,9 +328,8 @@ p:hover {
     font-family:&quot;宋体微软雅黑&quot;;
     font-family:&quot;sans-self&quot;
 }</code></pre>
-<p>使用@if 和 @else</p>
-<pre><code class="scss">
-.bol{
+<h2 id="条件判断和循环"><a href="#条件判断和循环" class="headerlink" title="条件判断和循环"></a>条件判断和循环</h2><h3 id="使用-if-和-else"><a href="#使用-if-和-else" class="headerlink" title="使用@if 和 @else"></a>使用@if 和 @else</h3><p>(支持and/or/on/not)</p>
+<pre><code class="scss">.bol{
     $age:25;
     @if ($age &gt; 18 and $age &lt; 27){
         color: yellow;
@@ -342,10 +341,7 @@ p:hover {
 <pre><code class="css">/*编译后的CSS*/
 .bol{color:yellow}</code></pre>
 <p>eg2</p>
-<pre><code class="scss">.col{
-    @include bol(20);
-}
-@mixin block($bol){
+<pre><code class="scss">@mixin block($bol){
     @if($bol){
         dispaly:block;
     }@else{
@@ -366,7 +362,67 @@ p:hover {
 .hidden {
   display: none;
 }</code></pre>
-<p>刚刚和问老师一句实际开发中会用到sass吗 ?</p>
+<h3 id="for-循环"><a href="#for-循环" class="headerlink" title="@for 循环"></a>@for 循环</h3><p>@for $i from <start> through <end> {}(会through最后一个数字)</p>
+<p>@for $i from <start> to <end>{} (忽略最后一个数字)</p>
+<pre><code class="scss">@for $var from 1 through(或者to) 3 {
+    .item-#{$var} {width: 2em * $var;}
+}</code></pre>
+<pre><code class="css">/*编译后的css*/
+.item-1 {
+  width: 2em;
+}
+
+.item-2 {
+  width: 4em;
+}
+
+.item-3 {
+  width: 6em;
+}</code></pre>
+<h3 id="each"><a href="#each" class="headerlink" title="@each"></a>@each</h3><p>@each $example in example1,example2,example3{}</p>
+<pre><code class="scss">@each $animal in puma, sea-slug, egret,salamander{
+    .#{$animal}-icon{
+        background-image: url(&#39;image/#{$animal}.png&#39;);
+    }
+
+}
+@each $header, $size in (h1:2em, h2:1.5em, h3:1em){
+    #{$header}{
+        font-size: $size;
+    }
+}
+</code></pre>
+<pre><code class="css">/*编译后CSS*/
+.puma-icon {
+  background-image: url(&quot;image/puma.png&quot;);
+}
+
+.sea-slug-icon {
+  background-image: url(&quot;image/sea-slug.png&quot;);
+}
+
+.egret-icon {
+  background-image: url(&quot;image/egret.png&quot;);
+}
+
+.salamander-icon {
+  background-image: url(&quot;image/salamander.png&quot;);
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+h3 {
+  font-size: 1em;
+}
+</code></pre>
+<h1 id="while"><a href="#while" class="headerlink" title="@while"></a>@while</h1><p>待续<del>~</del></p>
+<p>刚刚问了老师一句,”实际开发中会用到sass吗 ?”</p>
 <p>然后他回了我一句”你应该反过来问” 😂</p>
 
             <hr>
