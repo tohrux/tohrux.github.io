@@ -106,7 +106,7 @@
                   
                   &nbsp;<i class="far fa-chart-bar"></i>
                   <span class="post-count">
-                    1.1k 字
+                    1.3k 字
                   </span>&nbsp;
                 
 
@@ -114,7 +114,7 @@
                   
                   &nbsp;<i class="far fa-clock"></i>
                   <span class="post-count">
-                      5 分钟
+                      6 分钟
                   </span>&nbsp;
                 
 
@@ -156,7 +156,9 @@
 <p>等待执行完毕后 然后输入在命令行输入</p>
 <pre><code class="c">sass -v</code></pre>
 <p>如果出现了相应的版本号 就意味着安装成功了👏</p>
-<h1 id="开始基础语法"><a href="#开始基础语法" class="headerlink" title="开始基础语法"></a>开始基础语法</h1><h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><pre><code class="scss">$变量名字:变量属性值</code></pre>
+<h1 id="开始基础语法"><a href="#开始基础语法" class="headerlink" title="开始基础语法"></a>开始基础语法</h1><h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><pre><code class="scss">/*注释*/ 👈这种注释会在编译后的CSS中显示
+//注释   👈这种则不会</code></pre>
+<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><pre><code class="scss">$变量名字:变量属性值</code></pre>
 <p>使用! default 会让之前的样式覆盖掉当前的样式</p>
 <pre><code class="SCSS">//你好 我是sass
 
@@ -266,7 +268,7 @@ p:hover {
   cursor: pointer;
   text-decoration: underline #a94442;
 }</code></pre>
-<h3 id="通过传参-gt-有参函数"><a href="#通过传参-gt-有参函数" class="headerlink" title="通过传参   =&gt; 有参函数"></a>通过传参   =&gt; 有参函数</h3><p>(可以给定默认值 例如$width = 1 ,这样在不给参数的时候就会默认显示1)</p>
+<h3 id="通过传参-gt-有参函数"><a href="#通过传参-gt-有参函数" class="headerlink" title="通过传参  =&gt; 有参函数"></a>通过传参  =&gt; 有参函数</h3><p>(可以给定默认值 例如$width = 1 ,这样在不给参数的时候就会默认显示1)</p>
 <pre><code class="scss">/*sass*/  
 @mixin myborder($color,$width,$style){
     border:{
@@ -340,7 +342,7 @@ p:hover {
 }</code></pre>
 <pre><code class="css">/*编译后的CSS*/
 .bol{color:yellow}</code></pre>
-<p>eg2</p>
+<p>eg2:</p>
 <pre><code class="scss">@mixin block($bol){
     @if($bol){
         dispaly:block;
@@ -421,7 +423,63 @@ h3 {
   font-size: 1em;
 }
 </code></pre>
-<h1 id="while"><a href="#while" class="headerlink" title="@while"></a>@while</h1><p>待续<del>~</del></p>
+<h3 id="while"><a href="#while" class="headerlink" title="@while"></a>@while</h3><p>while循环使用指令重复输出格式知道表达式返回结果为false.可以实现比@for循环更为复杂的指令</p>
+<pre><code class="scss">$i: 5;
+@while $i&gt;0{
+    .h#{$i} {
+        width: 2em * $i;
+        $i : $i - 2;
+    }
+}</code></pre>
+<pre><code class="css">.h5 {
+  width: 10em;
+}
+
+.h3 {
+  width: 6em;
+}
+
+.h1 {
+  width: 2em;
+}</code></pre>
+<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><p>Sass的数组常常被称为”map”,它总是以键值对的形式出现–”key:value”</p>
+<p>语法格式:</p>
+<pre><code class="scss">$map: (
+    key1:value1,
+    key2: (
+        key2-1: value2-1,
+        key2-2: value2-2,
+    ),
+    key3: value3
+);</code></pre>
+<p>例子:</p>
+<pre><code class="scss">$some-color:(
+    a: #ea4c89,
+    b: #3b5998,
+     c: #171515
+);
+.btn-a{
+    color:map-get($some-color, a ) //👈这里使用了map-get方法 这是map自带的方法
+}</code></pre>
+<pre><code class="css">/*编译后*/
+.btn-a {
+  color: #ea4c89;
+}</code></pre>
+<h3 id="选择器继承-extend"><a href="#选择器继承-extend" class="headerlink" title="选择器继承@extend"></a>选择器继承@extend</h3><pre><code class="scss">.father{
+    border: 1px solid black;
+}
+.son{
+    @extend .father;
+}</code></pre>
+<pre><code class="css">.father, .son {
+  border: 1px solid black;
+}</code></pre>
+<h1 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h1><p>终于完成了,😭,虽然有些疲惫.</p>
+<p>以上都是基于我的老师@帅帅徐 笔记内容&amp;上课所讲,以及 书(@web前端开发中级 下册) 和自己微不足道的总结,</p>
+<p>感谢阅读🙌</p>
+<p>2019/11/19</p>
+<p>下午 6:47</p>
+<hr>
 <p>刚刚问了老师一句,”实际开发中会用到sass吗 ?”</p>
 <p>然后他回了我一句”你应该反过来问” 😂</p>
 
