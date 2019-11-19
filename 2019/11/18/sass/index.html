@@ -106,7 +106,7 @@
                   
                   &nbsp;<i class="far fa-chart-bar"></i>
                   <span class="post-count">
-                    878 字
+                    912 字
                   </span>&nbsp;
                 
 
@@ -114,7 +114,7 @@
                   
                   &nbsp;<i class="far fa-clock"></i>
                   <span class="post-count">
-                      3 分钟
+                      4 分钟
                   </span>&nbsp;
                 
 
@@ -341,6 +341,31 @@ p:hover {
 }</code></pre>
 <pre><code class="css">/*编译后的CSS*/
 .bol{color:yellow}</code></pre>
+<p>eg2</p>
+<pre><code class="scss">.col{
+    @include bol(20);
+}
+@mixin block($bol){
+    @if($bol){
+        dispaly:block;
+    }@else{
+        display: none;
+    }
+}
+.block{
+    @include block(true);
+}
+.hidden{
+    @include block(false);
+}</code></pre>
+<pre><code class="css">/*编译后的css*/
+.block {
+  dispaly: block;
+}
+
+.hidden {
+  display: none;
+}</code></pre>
 <p>刚刚和问老师一句实际开发中会用到sass吗 ?</p>
 <p>然后他回了我一句”你应该反过来问” 😂</p>
 
