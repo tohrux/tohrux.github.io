@@ -4,6 +4,27 @@
   
   
   <entry>
+    <title>学习Bootstrap的一些个人笔记</title>
+    <link href="undefined2019/11/19/bootstrapv4-3/"/>
+    <url>2019/11/19/bootstrapv4-3/</url>
+    
+    <content type="html"><![CDATA[<h1 id="媒体查询"><a href="#媒体查询" class="headerlink" title="媒体查询"></a>媒体查询</h1><p>直接在CSS中使用</p><pre><code class="css">@media and (min-width: 600px) and (max-width: 800px){    css属性:css属性值}//👆限定了浏览器窗口宽度在600px~800px样式的变化</code></pre><h2 id="栅格水平布局"><a href="#栅格水平布局" class="headerlink" title="栅格水平布局"></a>栅格水平布局</h2><pre><code class="html">&lt;div class=&quot;container&quot;&gt;        &lt;div class=&quot;row justify-content-start text-center&quot;&gt;            &lt;div class=&quot;col-auto&quot;&gt;1&lt;/div&gt;            &lt;div class=&quot;col-auto&quot;&gt;1&lt;/div&gt;            &lt;div class=&quot;col-auto&quot;&gt;1&lt;/div&gt;        &lt;/div&gt;s&lt;/div&gt;    👆&quot;start&quot;的值可以替换为end/around/between/center</code></pre><h2 id="栅格垂直布局"><a href="#栅格垂直布局" class="headerlink" title="栅格垂直布局"></a>栅格垂直布局</h2><pre><code class="html">&lt;div class=&quot;container&quot;&gt;        &lt;div class=&quot;row align-items-start text-center&quot;&gt;            &lt;div class=&quot;col-auto&quot;&gt;1&lt;/div&gt;            &lt;div class=&quot;col-auto&quot;&gt;1&lt;/div&gt;            &lt;div class=&quot;col-auto&quot;&gt;1&lt;/div&gt;        &lt;/div&gt;&lt;/div&gt;    👆&quot;start&quot;的值可以替换为center/end</code></pre><h2 id="水平垂直混合布局"><a href="#水平垂直混合布局" class="headerlink" title="水平垂直混合布局"></a>水平垂直混合布局</h2><p>💡这种布局是把类添加到单独的栅格里</p><pre><code class="html">    &lt;div class=&quot;container&quot;&gt;        &lt;div class=&quot;row border&quot;&gt;            &lt;div class=&quot;col-3 align-self-start&quot;&gt;1&lt;/div&gt;            &lt;div class=&quot;col-3 align-self-center&quot;&gt;1&lt;/div&gt;            &lt;div class=&quot;col-3 align-self-endZ&quot;&gt;1&lt;/div&gt;        &lt;/div&gt;    &lt;/div&gt;</code></pre><h2 id="栅格的排序和偏移"><a href="#栅格的排序和偏移" class="headerlink" title="栅格的排序和偏移"></a>栅格的排序和偏移</h2><h3 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h3><p>我们可以使用”order-数值(从0开始)”这个类进行栅格排序</p><p>数值越小的会排在越前面</p><p>💡记得 如果想要使用这个属性的话 一定要给所有的row下面的<strong>至少两个</strong>栅格都添加这个属性</p><h3 id="偏移"><a href="#偏移" class="headerlink" title="偏移"></a>偏移</h3><p>在栅格中添加”offset-数值”类的方式让栅格进行偏移</p><p>👆它的实现方式是为元素添加<strong>margin-left属性</strong>,这个栅格后面的格子也会跟着这个栅格进行偏移</p><p>今天就到这吧 晚安教室!</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>bootstrap</tag>
+      
+      <tag>前端</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>sass基础语法</title>
     <link href="undefined2019/11/18/sass/"/>
     <url>2019/11/18/sass/</url>
@@ -17,6 +38,8 @@
       <tag>sass</tag>
       
       <tag>css</tag>
+      
+      <tag>前端</tag>
       
     </tags>
     
