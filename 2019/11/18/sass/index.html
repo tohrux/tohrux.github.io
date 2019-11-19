@@ -106,7 +106,7 @@
                   
                   &nbsp;<i class="far fa-chart-bar"></i>
                   <span class="post-count">
-                    732 字
+                    878 字
                   </span>&nbsp;
                 
 
@@ -304,7 +304,43 @@ p:hover {
 }</code></pre>
 <h2 id="运算"><a href="#运算" class="headerlink" title="运算"></a>运算</h2><h3 id="数字运算"><a href="#数字运算" class="headerlink" title="数字运算"></a>数字运算</h3><p>Sass支持 +,-,*,/,%等运算</p>
 <p>如果在运算时不给单位的话,则会自动补充单位</p>
-<p>暂时写到这吧</p>
+<pre><code class="scss">.fon{
+    $a:10px;
+    $b:10;
+    $c:#123456;
+
+    min-width: $a/2;
+    max-width: $a*2; 
+    margin: (10px/2);//两个数字之间要加括号才可以进行除法运算
+    padding: #{$a}/#{$b};//使用#{$a}可以不进行除法运算
+}</code></pre>
+<pre><code class="css">/*编译后的css*/
+.fon{min-width:5px;max-width:20px;margin:5px;padding:10px/10}</code></pre>
+<h2 id="字符串运算"><a href="#字符串运算" class="headerlink" title="字符串运算"></a>字符串运算</h2><pre><code class="scss">.str {
+    $s:&quot;宋体&quot;;
+    $t:&quot;微软雅黑&quot;;
+    $r:&quot;sans&quot;;
+    font-family: $s + $t;
+    font-family: $r + &quot;-self&quot;;
+}</code></pre>
+<pre><code class="css">/*编译后的CSS*/
+.str{
+    font-family:&quot;宋体微软雅黑&quot;;
+    font-family:&quot;sans-self&quot;
+}</code></pre>
+<p>使用@if 和 @else</p>
+<pre><code class="scss">
+.bol{
+    $age:25;
+    @if ($age &gt; 18 and $age &lt; 27){
+        color: yellow;
+
+    }@else{
+        color: green;
+    }
+}</code></pre>
+<pre><code class="css">/*编译后的CSS*/
+.bol{color:yellow}</code></pre>
 <p>刚刚和问老师一句实际开发中会用到sass吗 ?</p>
 <p>然后他回了我一句”你应该反过来问” 😂</p>
 
