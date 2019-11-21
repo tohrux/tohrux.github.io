@@ -4,6 +4,27 @@
   
   
   <entry>
+    <title>初学laravel</title>
+    <link href="undefined2019/11/21/lavaral/"/>
+    <url>2019/11/21/lavaral/</url>
+    
+    <content type="html"><![CDATA[<h1 id="4种常用的路由方法"><a href="#4种常用的路由方法" class="headerlink" title="4种常用的路由方法"></a>4种常用的路由方法</h1><p>post/get/any/match</p><pre><code class="php">//get 语法//例如访问/hey的时候可以这样写Route::get (&#39;/hey&#39;, function() {    return &quot;hello&quot;;});//post//post方法可以用postman来获取值Route::post (&#39;/post&#39;, function() {    return &quot;hello from post&quot;;});//any//任意类型Route::any(&#39;/test2&#39;, function () {    echo &#39;当前是用any访问&#39;;});//matchRoute::match([&#39;get&#39;, &#39;post&#39;], &#39;/test3&#39;, function () {    echo &#39;当前是用match访问&#39;;});</code></pre><h1 id="路由参数"><a href="#路由参数" class="headerlink" title="路由参数"></a>路由参数</h1><p>路由参数其实就是给路由传递参数</p><p>参数分为<strong>必选参数</strong>和<strong>可选参数</strong></p><pre><code class="php">//必选参数Route::any(&#39;users/{id}&#39;, function ($id=&#39;&#39;) {    echo &#39;当前用户的id是&#39;.$id;});👆这样写会报错,不能预先给定值,必须要用户输入数字才可以    eg:example.com/users/123  //输出 当前用户的id是123//可选参数Route::any(&#39;users2/{id?}&#39;, function ($id=&#39;&#39;) {    echo &#39;当前用户的id是&#39;.$id;});👆可预先给定值</code></pre><p>今天很多时间都用在配置环境上了 就先更新到这里</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>php</tag>
+      
+      <tag>laravel</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>明日方舟:大家,快回来吧!</title>
     <link href="undefined2019/11/20/arknight/"/>
     <url>2019/11/20/arknight/</url>

@@ -119,6 +119,60 @@
   <div class="row mb-4 mx-auto">
     
     
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/2019/11/21/lavaral/">
+        <p class="h4 index-header">初学laravel</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">4种常用的路由方法post/get/any/match
+//get 语法
+//例如访问/hey的时候可以这样写
+Route::get (&#39;/hey&#39;, function() {
+    return &quot;hello&quot;;
+});
+//post
+//post方法可以用postman来获取值
+Route::post (&#39;/post&#39;, function() {
+    return &quot;hello from post&quot;;
+});
+//any
+//任意类型
+Route::any(&#39;/test2&#39;, function () {
+    echo &#39;当前是用any访问&#39;;
+});
+//match
+Route::match([&#39;get&#39;, &#39;post&#39;], &#39;/test3&#39;, function () {
+    echo &#39;当前是用match访问&#39;;
+});
+路由参数路由参数其实就是给路由传递参数
+参数分为必选参数和可选参数
+//必选参数</div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-11-21&nbsp;&nbsp;
+        
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/php">php</a>&nbsp;
+          
+            <a href="/tags/laravel">laravel</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
       <div class="col-12 col-md-4 m-auto">
         <a href="/2019/11/20/arknight/" target="_self">
           <img src="https://cdn.jsdelivr.net/gh/tohrux/photos/img/mostima4.png" srcset="undefined" alt="明日方舟:大家,快回来吧!" class="img-fluid rounded z-depth-3 index-thumbnails">
