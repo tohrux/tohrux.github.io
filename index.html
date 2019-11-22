@@ -121,7 +121,7 @@
     
     <div class="col-12 col-md-8 m-auto">
       <a href="/2019/11/21/lavaral/">
-        <p class="h4 index-header">初学laravel</p>
+        <p class="h4 index-header">laravel路由规则的使用</p>
         
         
           
@@ -135,7 +135,12 @@ Route::get (&#39;/hey&#39;, function() {
 });
 //post
 //post方法可以用postman来获取值
-Route::post (&#39;/post&#39;, function() {
+//👩post请求需要在VerifycsrfToken中修改把不想要csrf请求的路由写在这里:
+    protected $except = [
+        //把不想csrf验证得路由写在这里
+        &#39;/hello&#39;
+    ];
+Route::post (&#39;/hello&#39;, function() {
     return &quot;hello from post&quot;;
 });
 //any
@@ -144,12 +149,7 @@ Route::any(&#39;/test2&#39;, function () {
     echo &#39;当前是用any访问&#39;;
 });
 //match
-Route::match([&#39;get&#39;, &#39;post&#39;], &#39;/test3&#39;, function () {
-    echo &#39;当前是用match访问&#39;;
-});
-路由参数路由参数其实就是给路由传递参数
-参数分为必选参数和可选参数
-//必选参数</div>
+Route::match([&#39</div>
         </div>
       </a>
 

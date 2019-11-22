@@ -15,7 +15,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <meta name="keywords" content="">
-  <title>初学laravel ~ Tohrux!</title>
+  <title>laravel路由规则的使用 ~ Tohrux!</title>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/font-awesome/css/all.min.css"  >
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/bootstrap/css/bootstrap.min.css"  >
@@ -106,7 +106,7 @@
                   
                   &nbsp;<i class="far fa-chart-bar"></i>
                   <span class="post-count">
-                    254 字
+                    554 字
                   </span>&nbsp;
                 
 
@@ -114,7 +114,7 @@
                   
                   &nbsp;<i class="far fa-clock"></i>
                   <span class="post-count">
-                      1 分钟
+                      2 分钟
                   </span>&nbsp;
                 
 
@@ -155,7 +155,12 @@ Route::get (&#39;/hey&#39;, function() {
 });
 //post
 //post方法可以用postman来获取值
-Route::post (&#39;/post&#39;, function() {
+//👩post请求需要在VerifycsrfToken中修改把不想要csrf请求的路由写在这里:
+    protected $except = [
+        //把不想csrf验证得路由写在这里
+        &#39;/hello&#39;
+    ];
+Route::post (&#39;/hello&#39;, function() {
     return &quot;hello from post&quot;;
 });
 //any
@@ -169,18 +174,45 @@ Route::match([&#39;get&#39;, &#39;post&#39;], &#39;/test3&#39;, function () {
 });</code></pre>
 <h1 id="路由参数"><a href="#路由参数" class="headerlink" title="路由参数"></a>路由参数</h1><p>路由参数其实就是给路由传递参数</p>
 <p>参数分为<strong>必选参数</strong>和<strong>可选参数</strong></p>
-<pre><code class="php">//必选参数
+<pre><code class="php">//必选参数 给定默认值
 Route::any(&#39;users/{id}&#39;, function ($id=&#39;&#39;) {
     echo &#39;当前用户的id是&#39;.$id;
 });
 👆这样写会报错,不能预先给定值,必须要用户输入数字才可以
     eg:example.com/users/123  //输出 当前用户的id是123
-//可选参数
+//可选参数 给定默认值
 Route::any(&#39;users2/{id?}&#39;, function ($id=&#39;&#39;) {
     echo &#39;当前用户的id是&#39;.$id;
 });
-👆可预先给定值</code></pre>
-<p>今天很多时间都用在配置环境上了 就先更新到这里</p>
+👆可预先给定值
+//通过?形式传递get参数
+Route::any(&#39;/user3&#39;, function () {
+    echo &#39;当前用户的id是&#39;.$_GET[&#39;id&#39;];
+});
+//限制路由参数 例如:必须是数字 必须有参数
+Route::get(&#39;hello2/{id}&#39;, function ($id) {
+    echo &quot;now is&quot;.$id;
+}) -&gt; where(&#39;id&#39;,&#39;[0-9]+&#39;);</code></pre>
+<h1 id="MVC"><a href="#MVC" class="headerlink" title="MVC"></a>MVC</h1><p>使代码不累赘</p>
+<p>c –处理用户交互逻辑,如果需要交互就会跳到mdel处理数据</p>
+<p>else -&gt; 直接跳转到view</p>
+<p>model –用于处理数据的增删改查</p>
+<h1 id="路由别名"><a href="#路由别名" class="headerlink" title="路由别名"></a>路由别名</h1><pre><code class="php">//路由别名
+Route::any(&#39;/user4/afadfaf/asdfasfasdf/asdfasd&#39;, function () {
+    echo &#39;当前的用户id是&#39;.$_GET[&#39;id&#39;];
+}) -&gt; name(&#39;user4&#39;);</code></pre>
+<h1 id="查看系统当前路由别名"><a href="#查看系统当前路由别名" class="headerlink" title="查看系统当前路由别名"></a>查看系统当前路由别名</h1><p>在laravel根目录下cmd -&gt; php artisan可以查看所有命令, 找到route:list(这代表了路由列表,然后再cmd -&gt; php artisan route:list  🆗</p>
+<h1 id="路由群组"><a href="#路由群组" class="headerlink" title="路由群组:"></a>路由群组:</h1><p>我们可以将前缀一样的路由放在路由群组里</p>
+<pre><code class="php">Route::group([&#39;prefix&#39; =&gt; &#39;admin&#39;], function () {
+    Route::get(&#39;/test1&#39;, function () {
+        return &#39;IamTest1&#39;;
+        //匹配 &quot;/admin/test1&quot; URl
+    });
+    Route::get(&#39;/test2&#39;, function () {
+        echo &quot;IamTest2&quot;;
+        //匹配 &quot;/admin/test2&quot; URl
+    });
+});</code></pre>
 
             <hr>
           </div>
@@ -352,7 +384,7 @@ Route::any(&#39;users2/{id?}&#39;, function ($id=&#39;&#39;) {
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "初学laravel&nbsp;",
+        "laravel路由规则的使用&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
