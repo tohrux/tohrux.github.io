@@ -119,6 +119,176 @@
   <div class="row mb-4 mx-auto">
     
     
+      <div class="col-12 col-md-4 m-auto">
+        <a href="/2019/11/22/laravel4/" target="_self">
+          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos/img/laravel.png" srcset="undefined" alt="laravel中关于数据库的操作p" class="img-fluid rounded z-depth-3 index-thumbnails">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/2019/11/22/laravel4/">
+        <p class="h4 index-header">laravel中关于数据库的操作p</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">所有项目都由这六个部分组成
+增删改查
+循环
+判断
+
+DB类操作数据库按照MVC架构,对数据的操作都应该放在Model中完成.但如果不使用Model,也可以在laravel框架提供的DB类数据库操作数据.laravel中DB类的基本用法:DB::table(‘tableName’)
+待续
+</div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-11-22&nbsp;&nbsp;
+        
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/php">php</a>&nbsp;
+          
+            <a href="/tags/laravel">laravel</a>&nbsp;
+          
+            <a href="/tags/database">database</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+      <div class="col-12 col-md-4 m-auto">
+        <a href="/2019/11/22/laravel3/" target="_self">
+          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos/img/laravel.png" srcset="undefined" alt="laravel Request方法" class="img-fluid rounded z-depth-3 index-thumbnails">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/2019/11/22/laravel3/">
+        <p class="h4 index-header">laravel Request方法</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">&lt;?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request; //声明 这是自动生成的
+
+class TextController extends Controller
+{
+    public function home(Request $request)//实例化对象
+
+    {    
+        //获取全部请求的数据
+        dump($request-&gt;all());
+        //只获取a,b字段的值
+        dump($request-&gt;only([&#39;a&#39;, &#39;b&#39;]));
+        //获取除了a,b以外的值
+        dump($request-&gt;except([&#39;a&#39;, &#39;b&#39;]));
+        //判断是否存在id的这个字段,exists完全等同于has
+        dump($request-&gt;has(&#39;id&#39;));
+
+    </div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-11-22&nbsp;&nbsp;
+        
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/php">php</a>&nbsp;
+          
+            <a href="/tags/laravel">laravel</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+      <div class="col-12 col-md-4 m-auto">
+        <a href="/2019/11/22/laravel2/" target="_self">
+          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos/img/laravel.png" srcset="undefined" alt="laravel控制器基础" class="img-fluid rounded z-depth-3 index-thumbnails">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/2019/11/22/laravel2/">
+        <p class="h4 index-header">laravel控制器基础</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">控制器文件的位置控制器属于项目代码
+位于app/http/Controllers
+命名控制器文件驼峰命名+Controller.php
+控制器的结构代码🚫不需要我们自己去写,可以通过artisan来生成
+相应命令:
+php artisan make:controller TestController
+创建资源控制器:(自动生成很多方法
+php artisan make:controller TestController --resource //简写 --r
+分目录控制器(没有这个文件夹的话就会创建)
+php artisan make:controller Admin/TestController
+创建成功的提示:
+Controller created successfully.
+生成的结构代码:
+&lt;?php
+
+namespace App\Http\Controllers;//命名空间
+
+use Illuminate\Http\Request;//命名空间三元素: 常量,方法,类
+
+class TestController extends Controller
+{
+    //</div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-11-22&nbsp;&nbsp;
+        
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/php">php</a>&nbsp;
+          
+            <a href="/tags/laravel">laravel</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+      <div class="col-12 col-md-4 m-auto">
+        <a href="/2019/11/21/lavaral/" target="_self">
+          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos/img/laravel.png" srcset="undefined" alt="laravel路由规则的使用" class="img-fluid rounded z-depth-3 index-thumbnails">
+        </a>
+      </div>
+    
     <div class="col-12 col-md-8 m-auto">
       <a href="/2019/11/21/lavaral/">
         <p class="h4 index-header">laravel路由规则的使用</p>
@@ -133,6 +303,8 @@
 Route::get (&#39;/hey&#39;, function() {
     return &quot;hello&quot;;
 });
+
+
 //post
 //post方法可以用postman来获取值
 //👩post请求需要在VerifycsrfToken中修改把不想要csrf请求的路由写在这里:
@@ -143,13 +315,16 @@ Route::get (&#39;/hey&#39;, function() {
 Route::post (&#39;/hello&#39;, function() {
     return &quot;hello from post&quot;;
 });
+
+
+
 //any
 //任意类型
 Route::any(&#39;/test2&#39;, function () {
     echo &#39;当前是用any访问&#39;;
 });
 //match
-Route::match([&#39</div>
+Route::match(</div>
         </div>
       </a>
 
@@ -460,121 +635,19 @@ have a nice day~ henrietta,or should I called you ‘胡琼琼’? 😄😄😄<
     </div>
   </div>
 
-  <div class="row mb-4 mx-auto">
-    
-    
-      <div class="col-12 col-md-4 m-auto">
-        <a href="/2019/11/17/test1/" target="_self">
-          <img src="https://cdn.jsdelivr.net/gh/tohrux/tohrux.github.io@1.0//img/rikka.jpg" srcset="undefined" alt="现在开始我拥有了自己的博客!" class="img-fluid rounded z-depth-3 index-thumbnails">
-        </a>
-      </div>
-    
-    <div class="col-12 col-md-8 m-auto">
-      <a href="/2019/11/17/test1/">
-        <p class="h4 index-header">现在开始我拥有了自己的博客!</p>
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">现在开始我拥有了自己的博客!终于完成了,现在都快5点了,希望明天可以不上课8,(但估计打完这篇md要做的第一件事就是设闹钟了),
-晚安世界~
-上课的笔记什么的明天再更吧
-总之还是开心的!
-ps.这原本是11-16日凌晨4点写下的,因为一些原因现在重新上传了一遍
-</div>
-        </div>
-      </a>
-
-      <div>
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2019-11-17&nbsp;&nbsp;
-        
-        
-        
-          <i class="iconfont icon-tag"></i>
-          
-            <a href="/tags/happy">happy</a>&nbsp;
-          
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mb-4 mx-auto">
-    
-    
-      <div class="col-12 col-md-4 m-auto">
-        <a href="/2019/11/16/ceshi/" target="_self">
-          <img src="https://cdn.jsdelivr.net/gh/tohrux/tohrux.github.io@1.0//img/akane.jpg" srcset="undefined" alt="图片加载测试" class="img-fluid rounded z-depth-3 index-thumbnails">
-        </a>
-      </div>
-    
-    <div class="col-12 col-md-8 m-auto">
-      <a href="/2019/11/16/ceshi/">
-        <p class="h4 index-header">图片加载测试</p>
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">
-
-</div>
-        </div>
-      </a>
-
-      <div>
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2019-11-16&nbsp;&nbsp;
-        
-        
-        
-          <i class="iconfont icon-tag"></i>
-          
-            <a href="/tags/ssss">ssss</a>&nbsp;
-          
-            <a href="/tags/test">test</a>&nbsp;
-          
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mb-4 mx-auto">
-    
-    
-    <div class="col-12 col-md-8 m-auto">
-      <a href="/2019/11/15/hello-world/">
-        <p class="h4 index-header">Hello World</p>
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">Quick StartCreate a new post$ hexo new &quot;My New Post&quot;
-More info: Writing
-Run server$ hexo server
-More info: Server
-Generate static files$ hexo generate
-More info: Generating
-Deploy to remote sites$ hexo deploy
-More info: Deployment
-</div>
-        </div>
-      </a>
-
-      <div>
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2019-11-15&nbsp;&nbsp;
-        
-        
-        
-      </div>
-    </div>
-  </div>
 
 
+  <nav aria-label="index posts navigation">
+    <span class="pagination pg-blue justify-content-center mt-5" id="pagination">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fas fa-angle-double-right"></i></a>
+    </span>
+  </nav>
+  
+  <script>
+    for (ele of document.getElementById("pagination").getElementsByClassName("page-number")) {
+      ele.href += '#board';
+    }
+  </script>
 
 
 

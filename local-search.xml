@@ -4,11 +4,76 @@
   
   
   <entry>
+    <title>laravel中关于数据库的操作p</title>
+    <link href="undefined2019/11/22/laravel4/"/>
+    <url>2019/11/22/laravel4/</url>
+    
+    <content type="html"><![CDATA[<h1 id="所有项目都由这六个部分组成"><a href="#所有项目都由这六个部分组成" class="headerlink" title="所有项目都由这六个部分组成"></a>所有项目都由这六个部分组成</h1><ol><li>增删改查</li><li>循环</li><li>判断</li></ol><h1 id="DB类操作数据库"><a href="#DB类操作数据库" class="headerlink" title="DB类操作数据库"></a>DB类操作数据库</h1><p>按照MVC架构,对数据的操作都应该放在Model中完成.但如果不使用Model,也可以在laravel框架提供的DB类数据库操作数据.laravel中DB类的基本用法:<strong>DB::table(‘tableName’)</strong></p><p>待续</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>php</tag>
+      
+      <tag>laravel</tag>
+      
+      <tag>database</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>laravel Request方法</title>
+    <link href="undefined2019/11/22/laravel3/"/>
+    <url>2019/11/22/laravel3/</url>
+    
+    <content type="html"><![CDATA[<pre><code class="php">&lt;?phpnamespace App\Http\Controllers;use Illuminate\Http\Request; //声明 这是自动生成的class TextController extends Controller{    public function home(Request $request)//实例化对象    {            //获取全部请求的数据        dump($request-&gt;all());        //只获取a,b字段的值        dump($request-&gt;only([&#39;a&#39;, &#39;b&#39;]));        //获取除了a,b以外的值        dump($request-&gt;except([&#39;a&#39;, &#39;b&#39;]));        //判断是否存在id的这个字段,exists完全等同于has        dump($request-&gt;has(&#39;id&#39;));        dump($request-&gt;exists(&#39;id&#39;));        //获取id的值,如果请求字段为空的话就用 &#39;xxx&#39; 代替        dump($request-&gt;input(&#39;id&#39;, &#39;xxx&#39;));        //&quot;.&quot;可以用来分别获取每个数组元素        dump($request-&gt;input(&#39;books.0&#39;));    }}</code></pre>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>php</tag>
+      
+      <tag>laravel</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>laravel控制器基础</title>
+    <link href="undefined2019/11/22/laravel2/"/>
+    <url>2019/11/22/laravel2/</url>
+    
+    <content type="html"><![CDATA[<h1 id="控制器文件的位置"><a href="#控制器文件的位置" class="headerlink" title="控制器文件的位置"></a>控制器文件的位置</h1><p>控制器属于项目代码</p><p>位于<strong>app/http/Controllers</strong></p><h1 id="命名控制器文件"><a href="#命名控制器文件" class="headerlink" title="命名控制器文件"></a>命名控制器文件</h1><p>驼峰命名+Controller.php</p><h1 id="控制器的结构代码"><a href="#控制器的结构代码" class="headerlink" title="控制器的结构代码"></a>控制器的结构代码</h1><p>🚫不需要我们自己去写,可以通过artisan来生成</p><p>相应命令:</p><pre><code class="cmd">php artisan make:controller TestController</code></pre><p>创建资源控制器:(自动生成很多方法</p><pre><code class="php">php artisan make:controller TestController --resource //简写 --r</code></pre><p>分目录控制器(没有这个文件夹的话就会创建)</p><pre><code class="cmd">php artisan make:controller Admin/TestController</code></pre><p>创建成功的提示:</p><pre><code class="cmd">Controller created successfully.</code></pre><p>生成的结构代码:</p><pre><code class="php">&lt;?phpnamespace App\Http\Controllers;//命名空间use Illuminate\Http\Request;//命名空间三元素: 常量,方法,类class TestController extends Controller{    //}</code></pre><h1 id="控制器路由"><a href="#控制器路由" class="headerlink" title="控制器路由"></a>控制器路由</h1><p>#使用路由规则调用控制器下的方法,而不再走回调函数.</p><p>格式</p><pre><code class="php">控制器类名@方法名</code></pre><h1 id="控制下的命名空间分组"><a href="#控制下的命名空间分组" class="headerlink" title="控制下的命名空间分组"></a>控制下的命名空间分组</h1><pre><code class="php">Route::group([&#39;namespace&#39;=&gt;&#39;Admin&#39;],function(){    Route:get(&#39;/shit/test1&#39;,&#39;TestController@test1&#39;)})</code></pre><h1 id="接受用户输入"><a href="#接受用户输入" class="headerlink" title="接受用户输入"></a>接受用户输入</h1><p>接受用户输入的类:illuminate\support\facades\input</p><p><strong>facades:介于一个类实例化与没有实例化之间的一个状态,是类的一个接口的实现,说白了就是静态方法.</strong></p><blockquote><p>在laravel中如果需要使用facades,但是又不想写那么长:Use Illuminate\Support\Facades\Input 则可以在config/app.php中定义别名</p></blockquote><pre><code class="php">//自己添加的别名        &#39;Input&#39; =&gt; Illuminate\Support\Facades\Input::class</code></pre><p>👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆</p><p>😤😤😤😤😤😤😤😤😤😤😤😤</p><p>上面真的是血的教训,我用的laravel是最新的6.5的,但是在5.2版本之后就开始用Request替代Input了</p><p>一开始疯狂检测自己的拼写,甚至重装laravel,花了大概一个半小时才解决了问题.</p><p>不过这个过程还是挺有意义的;</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>php</tag>
+      
+      <tag>laravel</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>laravel路由规则的使用</title>
     <link href="undefined2019/11/21/lavaral/"/>
     <url>2019/11/21/lavaral/</url>
     
-    <content type="html"><![CDATA[<h1 id="4种常用的路由方法"><a href="#4种常用的路由方法" class="headerlink" title="4种常用的路由方法"></a>4种常用的路由方法</h1><p>post/get/any/match</p><pre><code class="php">//get 语法//例如访问/hey的时候可以这样写Route::get (&#39;/hey&#39;, function() {    return &quot;hello&quot;;});//post//post方法可以用postman来获取值//👩post请求需要在VerifycsrfToken中修改把不想要csrf请求的路由写在这里:    protected $except = [        //把不想csrf验证得路由写在这里        &#39;/hello&#39;    ];Route::post (&#39;/hello&#39;, function() {    return &quot;hello from post&quot;;});//any//任意类型Route::any(&#39;/test2&#39;, function () {    echo &#39;当前是用any访问&#39;;});//matchRoute::match([&#39;get&#39;, &#39;post&#39;], &#39;/test3&#39;, function () {    echo &#39;当前是用match访问&#39;;});</code></pre><h1 id="路由参数"><a href="#路由参数" class="headerlink" title="路由参数"></a>路由参数</h1><p>路由参数其实就是给路由传递参数</p><p>参数分为<strong>必选参数</strong>和<strong>可选参数</strong></p><pre><code class="php">//必选参数 给定默认值Route::any(&#39;users/{id}&#39;, function ($id=&#39;&#39;) {    echo &#39;当前用户的id是&#39;.$id;});👆这样写会报错,不能预先给定值,必须要用户输入数字才可以    eg:example.com/users/123  //输出 当前用户的id是123//可选参数 给定默认值Route::any(&#39;users2/{id?}&#39;, function ($id=&#39;&#39;) {    echo &#39;当前用户的id是&#39;.$id;});👆可预先给定值//通过?形式传递get参数Route::any(&#39;/user3&#39;, function () {    echo &#39;当前用户的id是&#39;.$_GET[&#39;id&#39;];});//限制路由参数 例如:必须是数字 必须有参数Route::get(&#39;hello2/{id}&#39;, function ($id) {    echo &quot;now is&quot;.$id;}) -&gt; where(&#39;id&#39;,&#39;[0-9]+&#39;);</code></pre><h1 id="MVC"><a href="#MVC" class="headerlink" title="MVC"></a>MVC</h1><p>使代码不累赘</p><p>c –处理用户交互逻辑,如果需要交互就会跳到mdel处理数据</p><p>else -&gt; 直接跳转到view</p><p>model –用于处理数据的增删改查</p><h1 id="路由别名"><a href="#路由别名" class="headerlink" title="路由别名"></a>路由别名</h1><pre><code class="php">//路由别名Route::any(&#39;/user4/afadfaf/asdfasfasdf/asdfasd&#39;, function () {    echo &#39;当前的用户id是&#39;.$_GET[&#39;id&#39;];}) -&gt; name(&#39;user4&#39;);</code></pre><h1 id="查看系统当前路由别名"><a href="#查看系统当前路由别名" class="headerlink" title="查看系统当前路由别名"></a>查看系统当前路由别名</h1><p>在laravel根目录下cmd -&gt; php artisan可以查看所有命令, 找到route:list(这代表了路由列表,然后再cmd -&gt; php artisan route:list  🆗</p><h1 id="路由群组"><a href="#路由群组" class="headerlink" title="路由群组:"></a>路由群组:</h1><p>我们可以将前缀一样的路由放在路由群组里</p><pre><code class="php">Route::group([&#39;prefix&#39; =&gt; &#39;admin&#39;], function () {    Route::get(&#39;/test1&#39;, function () {        return &#39;IamTest1&#39;;        //匹配 &quot;/admin/test1&quot; URl    });    Route::get(&#39;/test2&#39;, function () {        echo &quot;IamTest2&quot;;        //匹配 &quot;/admin/test2&quot; URl    });});</code></pre>]]></content>
+    <content type="html"><![CDATA[<h1 id="4种常用的路由方法"><a href="#4种常用的路由方法" class="headerlink" title="4种常用的路由方法"></a>4种常用的路由方法</h1><p>post/get/any/match</p><pre><code class="php">//get 语法//例如访问/hey的时候可以这样写Route::get (&#39;/hey&#39;, function() {    return &quot;hello&quot;;});//post//post方法可以用postman来获取值//👩post请求需要在VerifycsrfToken中修改把不想要csrf请求的路由写在这里:    protected $except = [        //把不想csrf验证得路由写在这里        &#39;/hello&#39;    ];Route::post (&#39;/hello&#39;, function() {    return &quot;hello from post&quot;;});//any//任意类型Route::any(&#39;/test2&#39;, function () {    echo &#39;当前是用any访问&#39;;});//matchRoute::match([&#39;get&#39;, &#39;post&#39;], &#39;/test3&#39;, function () {    echo &#39;当前是用match访问&#39;;});</code></pre><h1 id="路由参数"><a href="#路由参数" class="headerlink" title="路由参数"></a>路由参数</h1><p>路由参数其实就是给路由传递参数</p><p>参数分为<strong>必选参数</strong>和<strong>可选参数</strong></p><pre><code class="php">//必选参数 给定默认值Route::any(&#39;users/{id}&#39;, function ($id=&#39;&#39;) {    echo &#39;当前用户的id是&#39;.$id;});👆这样写会报错,不能预先给定值,必须要用户输入数字才可以    eg:example.com/users/123  //输出 当前用户的id是123//可选参数 给定默认值Route::any(&#39;users2/{id?}&#39;, function ($id=&#39;&#39;) {    echo &#39;当前用户的id是&#39;.$id;});👆可预先给定值//通过?形式传递get参数Route::any(&#39;/user3&#39;, function () {    echo &#39;当前用户的id是&#39;.$_GET[&#39;id&#39;];});//限制路由参数 例如:必须是数字 必须有参数Route::get(&#39;hello2/{id}&#39;, function ($id) {    echo &quot;now is&quot;.$id;}) -&gt; where(&#39;id&#39;,&#39;[0-9]+&#39;);</code></pre><h1 id="MVC"><a href="#MVC" class="headerlink" title="MVC"></a>MVC</h1><p>使代码不累赘</p><p>c –处理用户交互逻辑,如果需要交互就会跳到mdel处理数据</p><p>else -&gt; 直接跳转到view</p><p>model –用于处理数据的增删改查</p><h1 id="路由别名"><a href="#路由别名" class="headerlink" title="路由别名"></a>路由别名</h1><pre><code class="php">//路由别名//🙅不可以直接输入到地址栏,但是可以作为简写被别的方法调用Route::any(&#39;/user4/afadfaf/asdfasfasdf/asdfasd&#39;, function () {    echo &#39;IamUser4&#39;;}) -&gt; name(&#39;user4&#39;);Route::get(&#39;/na&#39;, function () {    return redirect()-&gt;route(&#39;user4&#39;);});Route::group([&#39;prefix&#39; =&gt; &#39;admin&#39;], function () {    Route::get(&#39;/test1&#39;, function () {        return &#39;IamTest1&#39;;    });    Route::get(&#39;/test2&#39;, function () {        echo &quot;IamTest2&quot;;    });});</code></pre><h1 id="查看系统当前路由别名"><a href="#查看系统当前路由别名" class="headerlink" title="查看系统当前路由别名"></a>查看系统当前路由别名</h1><p>在laravel根目录下cmd -&gt; php artisan可以查看所有命令, 找到route:list(这代表了路由列表,然后再cmd -&gt; php artisan route:list  🆗</p><h1 id="路由群组"><a href="#路由群组" class="headerlink" title="路由群组:"></a>路由群组:</h1><p>如果路由层级过多,每次要重新定义路由会很麻烦,我们可以将前缀一样的路由放在路由群组里</p><pre><code class="php">Route::group([&#39;prefix&#39; =&gt; &#39;admin&#39;], function () {    Route::get(&#39;/test1&#39;, function () {        return &#39;IamTest1&#39;;        //匹配 &quot;/admin/test1&quot; URl    });    Route::get(&#39;/test2&#39;, function () {        echo &quot;IamTest2&quot;;        //匹配 &quot;/admin/test2&quot; URl    });    Route::group([&#39;prefix&#39; =&gt; &#39;/test1&#39;], function () {        Route::get(&#39;/login&#39;, function () {            return &#39;我是二级路由test1下面的三级路由login&#39;;        });    });});👆以上代码中admin被称为一级路由,test1/test2被称为2级路由,以此类推</code></pre><h1 id="限制路由参数"><a href="#限制路由参数" class="headerlink" title="限制路由参数"></a>限制路由参数</h1><pre><code class="php">//限制路由参数 例如:必须是数字 必须有参数Route::get(&#39;hello2/{id}&#39;, function ($id) {    echo &quot;now is&quot;.$id;}) -&gt; where(&#39;id&#39;,&#39;[0-9]+&#39;);</code></pre>]]></content>
     
     
     

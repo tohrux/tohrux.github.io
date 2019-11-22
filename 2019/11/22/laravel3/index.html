@@ -15,7 +15,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <meta name="keywords" content="">
-  <title>归档 ~ Tohrux!</title>
+  <title>laravel Request方法 ~ Tohrux!</title>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/font-awesome/css/all.min.css"  >
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/bootstrap/css/bootstrap.min.css"  >
@@ -34,7 +34,7 @@
 
 
 <body>
-  <header style="height: 80vh;">
+  <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -93,6 +93,41 @@
             </span>
 
             
+              <br>
+              
+                <p class="mt-3">
+                  <i class="fas fa-calendar-alt" aria-hidden="true"></i>&nbsp;
+                  星期五, 十一月 22日 2019, 8:04 晚上
+                </p>
+              
+
+              <p>
+                
+                  
+                  &nbsp;<i class="far fa-chart-bar"></i>
+                  <span class="post-count">
+                    173 字
+                  </span>&nbsp;
+                
+
+                
+                  
+                  &nbsp;<i class="far fa-clock"></i>
+                  <span class="post-count">
+                      1 分钟
+                  </span>&nbsp;
+                
+
+                
+                  <!-- 不蒜子统计文章PV -->
+                  
+                  &nbsp;<i class="far fa-eye" aria-hidden="true"></i>&nbsp;
+                  <span id="busuanzi_container_page_pv">
+                    <span id="busuanzi_value_page_pv"></span> 次
+                  </span>&nbsp;
+                
+              </p>
+            
           </div>
 
           
@@ -103,101 +138,103 @@
 
   <main>
     
-      <div class="container nopadding-md">
-        <div class="py-5 z-depth-3" id="board">
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<div class="list-group">
-  <p class="h4">共计 13 篇文章</p>
-  <hr>
-  
-    
       
-      <p class="h5">2019</p>
-    
-    <a href="/2019/11/22/laravel4/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">laravel中关于数据库的操作p</span>
-      <span style="float: right;">11-22</span>
-    </a>
-  
-    
-    <a href="/2019/11/22/laravel3/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">laravel Request方法</span>
-      <span style="float: right;">11-22</span>
-    </a>
-  
-    
-    <a href="/2019/11/22/laravel2/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">laravel控制器基础</span>
-      <span style="float: right;">11-22</span>
-    </a>
-  
-    
-    <a href="/2019/11/21/lavaral/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">laravel路由规则的使用</span>
-      <span style="float: right;">11-21</span>
-    </a>
-  
-    
-    <a href="/2019/11/20/arknight/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">明日方舟:大家,快回来吧!</span>
-      <span style="float: right;">11-20</span>
-    </a>
-  
-    
-    <a href="/2019/11/19/11-19/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">今日份的美好</span>
-      <span style="float: right;">11-19</span>
-    </a>
-  
-    
-    <a href="/2019/11/19/bootstrapv4-3/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">bootstrapv4-3</span>
-      <span style="float: right;">11-19</span>
-    </a>
-  
-    
-    <a href="/2019/11/18/sass/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">sass基础语法</span>
-      <span style="float: right;">11-18</span>
-    </a>
-  
-    
-    <a href="/2019/11/17/henrietta/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">hey,Are you henrietta? CLICK HERE PLS</span>
-      <span style="float: right;">11-17</span>
-    </a>
-  
-    
-    <a href="/2019/11/17/cdn/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">使用CDN来加速网页的访问</span>
-      <span style="float: right;">11-17</span>
-    </a>
-  
-</div>
 
-  <nav aria-label="index posts navigation">
-    <span class="pagination pg-blue justify-content-center mt-5" id="pagination">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2019/11/page/2/">2</a><a class="extend next" rel="next" href="/archives/2019/11/page/2/"><i class="fas fa-angle-double-right"></i></a>
-    </span>
-  </nav>
-  
-  <script>
-    for (ele of document.getElementById("pagination").getElementsByClassName("page-number")) {
-      ele.href += '#board';
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="py-5 z-depth-3" id="board">
+        <div class="post-content mx-auto" id="post">
+          <div class="markdown-body">
+            <pre><code class="php">&lt;?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request; //声明 这是自动生成的
+
+class TextController extends Controller
+{
+    public function home(Request $request)//实例化对象
+
+    {    
+        //获取全部请求的数据
+        dump($request-&gt;all());
+        //只获取a,b字段的值
+        dump($request-&gt;only([&#39;a&#39;, &#39;b&#39;]));
+        //获取除了a,b以外的值
+        dump($request-&gt;except([&#39;a&#39;, &#39;b&#39;]));
+        //判断是否存在id的这个字段,exists完全等同于has
+        dump($request-&gt;has(&#39;id&#39;));
+
+        dump($request-&gt;exists(&#39;id&#39;));
+        //获取id的值,如果请求字段为空的话就用 &#39;xxx&#39; 代替
+        dump($request-&gt;input(&#39;id&#39;, &#39;xxx&#39;));
+        //&quot;.&quot;可以用来分别获取每个数组元素
+        dump($request-&gt;input(&#39;books.0&#39;));
     }
-  </script>
+}
+</code></pre>
 
-
-              </div>
-            </div>
+            <hr>
+          </div>
+          <br>
+          <div>
+            <p>
+            
+            
+              <span>
+                <i class="iconfont icon-tag"></i>
+                
+                  <a class="hover-with-bg" href="/tags/php">php</a>
+                
+                  <a class="hover-with-bg" href="/tags/laravel">laravel</a>
+                
+              </span>
+            
+            </p>
+            
           </div>
         </div>
       </div>
+    </div>
+    <div class="d-none d-lg-block col-lg-2 toc-container">
+      
+  <div id="toc">
+    <p class="h4"><i class="far fa-list-alt"></i>&nbsp;目录</p>
+    <div id="tocbot"></div>
+  </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- custom -->
+
+
+<!-- Comments -->
+<div class="col-lg-7 mx-auto nopadding-md">
+  <div class="container comments mx-auto" id="comments">
+    
+      <br><br>
+      
+      
+  <script defer src="https://utteranc.es/client.js"
+          repo="tohrux/tohrux.github.io"
+          issue-term="pathname"
+  
+          label="utterances"
+    
+          theme="github-light"
+          crossorigin="anonymous"
+          async>
+  </script>
+
+
+    
+  </div>
+</div>
+
     
   </main>
 
@@ -272,6 +309,11 @@
 
 
 
+  
+    <script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/tocbot/tocbot.min.js" ></script>
+  
+  <script src="/js/post.js" ></script>
+
 
 
   <script src="/lib/smooth-scroll/smooth-scroll.min.js" ></script>
@@ -304,7 +346,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "归档&nbsp;",
+        "laravel Request方法&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,

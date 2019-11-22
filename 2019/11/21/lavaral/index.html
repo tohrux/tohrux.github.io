@@ -106,7 +106,7 @@
                   
                   &nbsp;<i class="far fa-chart-bar"></i>
                   <span class="post-count">
-                    554 字
+                    739 字
                   </span>&nbsp;
                 
 
@@ -114,7 +114,7 @@
                   
                   &nbsp;<i class="far fa-clock"></i>
                   <span class="post-count">
-                      2 分钟
+                      3 分钟
                   </span>&nbsp;
                 
 
@@ -153,6 +153,8 @@
 Route::get (&#39;/hey&#39;, function() {
     return &quot;hello&quot;;
 });
+
+
 //post
 //post方法可以用postman来获取值
 //👩post请求需要在VerifycsrfToken中修改把不想要csrf请求的路由写在这里:
@@ -163,6 +165,9 @@ Route::get (&#39;/hey&#39;, function() {
 Route::post (&#39;/hello&#39;, function() {
     return &quot;hello from post&quot;;
 });
+
+
+
 //any
 //任意类型
 Route::any(&#39;/test2&#39;, function () {
@@ -198,11 +203,24 @@ Route::get(&#39;hello2/{id}&#39;, function ($id) {
 <p>else -&gt; 直接跳转到view</p>
 <p>model –用于处理数据的增删改查</p>
 <h1 id="路由别名"><a href="#路由别名" class="headerlink" title="路由别名"></a>路由别名</h1><pre><code class="php">//路由别名
+//🙅不可以直接输入到地址栏,但是可以作为简写被别的方法调用
 Route::any(&#39;/user4/afadfaf/asdfasfasdf/asdfasd&#39;, function () {
-    echo &#39;当前的用户id是&#39;.$_GET[&#39;id&#39;];
-}) -&gt; name(&#39;user4&#39;);</code></pre>
+    echo &#39;IamUser4&#39;;
+}) -&gt; name(&#39;user4&#39;);
+Route::get(&#39;/na&#39;, function () {
+    return redirect()-&gt;route(&#39;user4&#39;);
+});
+
+Route::group([&#39;prefix&#39; =&gt; &#39;admin&#39;], function () {
+    Route::get(&#39;/test1&#39;, function () {
+        return &#39;IamTest1&#39;;
+    });
+    Route::get(&#39;/test2&#39;, function () {
+        echo &quot;IamTest2&quot;;
+    });
+});</code></pre>
 <h1 id="查看系统当前路由别名"><a href="#查看系统当前路由别名" class="headerlink" title="查看系统当前路由别名"></a>查看系统当前路由别名</h1><p>在laravel根目录下cmd -&gt; php artisan可以查看所有命令, 找到route:list(这代表了路由列表,然后再cmd -&gt; php artisan route:list  🆗</p>
-<h1 id="路由群组"><a href="#路由群组" class="headerlink" title="路由群组:"></a>路由群组:</h1><p>我们可以将前缀一样的路由放在路由群组里</p>
+<h1 id="路由群组"><a href="#路由群组" class="headerlink" title="路由群组:"></a>路由群组:</h1><p>如果路由层级过多,每次要重新定义路由会很麻烦,我们可以将前缀一样的路由放在路由群组里</p>
 <pre><code class="php">Route::group([&#39;prefix&#39; =&gt; &#39;admin&#39;], function () {
     Route::get(&#39;/test1&#39;, function () {
         return &#39;IamTest1&#39;;
@@ -212,7 +230,17 @@ Route::any(&#39;/user4/afadfaf/asdfasfasdf/asdfasd&#39;, function () {
         echo &quot;IamTest2&quot;;
         //匹配 &quot;/admin/test2&quot; URl
     });
-});</code></pre>
+    Route::group([&#39;prefix&#39; =&gt; &#39;/test1&#39;], function () {
+        Route::get(&#39;/login&#39;, function () {
+            return &#39;我是二级路由test1下面的三级路由login&#39;;
+        });
+    });
+});
+👆以上代码中admin被称为一级路由,test1/test2被称为2级路由,以此类推</code></pre>
+<h1 id="限制路由参数"><a href="#限制路由参数" class="headerlink" title="限制路由参数"></a>限制路由参数</h1><pre><code class="php">//限制路由参数 例如:必须是数字 必须有参数
+Route::get(&#39;hello2/{id}&#39;, function ($id) {
+    echo &quot;now is&quot;.$id;
+}) -&gt; where(&#39;id&#39;,&#39;[0-9]+&#39;);</code></pre>
 
             <hr>
           </div>

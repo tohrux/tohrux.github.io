@@ -15,7 +15,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <meta name="keywords" content="">
-  <title>归档 ~ Tohrux!</title>
+  <title>laravel控制器基础 ~ Tohrux!</title>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/font-awesome/css/all.min.css"  >
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/bootstrap/css/bootstrap.min.css"  >
@@ -34,7 +34,7 @@
 
 
 <body>
-  <header style="height: 80vh;">
+  <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -93,6 +93,41 @@
             </span>
 
             
+              <br>
+              
+                <p class="mt-3">
+                  <i class="fas fa-calendar-alt" aria-hidden="true"></i>&nbsp;
+                  星期五, 十一月 22日 2019, 10:05 上午
+                </p>
+              
+
+              <p>
+                
+                  
+                  &nbsp;<i class="far fa-chart-bar"></i>
+                  <span class="post-count">
+                    423 字
+                  </span>&nbsp;
+                
+
+                
+                  
+                  &nbsp;<i class="far fa-clock"></i>
+                  <span class="post-count">
+                      1 分钟
+                  </span>&nbsp;
+                
+
+                
+                  <!-- 不蒜子统计文章PV -->
+                  
+                  &nbsp;<i class="far fa-eye" aria-hidden="true"></i>&nbsp;
+                  <span id="busuanzi_container_page_pv">
+                    <span id="busuanzi_value_page_pv"></span> 次
+                  </span>&nbsp;
+                
+              </p>
+            
           </div>
 
           
@@ -103,101 +138,117 @@
 
   <main>
     
-      <div class="container nopadding-md">
-        <div class="py-5 z-depth-3" id="board">
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<div class="list-group">
-  <p class="h4">共计 13 篇文章</p>
-  <hr>
-  
-    
       
-      <p class="h5">2019</p>
-    
-    <a href="/2019/11/22/laravel4/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">laravel中关于数据库的操作p</span>
-      <span style="float: right;">11-22</span>
-    </a>
-  
-    
-    <a href="/2019/11/22/laravel3/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">laravel Request方法</span>
-      <span style="float: right;">11-22</span>
-    </a>
-  
-    
-    <a href="/2019/11/22/laravel2/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">laravel控制器基础</span>
-      <span style="float: right;">11-22</span>
-    </a>
-  
-    
-    <a href="/2019/11/21/lavaral/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">laravel路由规则的使用</span>
-      <span style="float: right;">11-21</span>
-    </a>
-  
-    
-    <a href="/2019/11/20/arknight/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">明日方舟:大家,快回来吧!</span>
-      <span style="float: right;">11-20</span>
-    </a>
-  
-    
-    <a href="/2019/11/19/11-19/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">今日份的美好</span>
-      <span style="float: right;">11-19</span>
-    </a>
-  
-    
-    <a href="/2019/11/19/bootstrapv4-3/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">bootstrapv4-3</span>
-      <span style="float: right;">11-19</span>
-    </a>
-  
-    
-    <a href="/2019/11/18/sass/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">sass基础语法</span>
-      <span style="float: right;">11-18</span>
-    </a>
-  
-    
-    <a href="/2019/11/17/henrietta/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">hey,Are you henrietta? CLICK HERE PLS</span>
-      <span style="float: right;">11-17</span>
-    </a>
-  
-    
-    <a href="/2019/11/17/cdn/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">使用CDN来加速网页的访问</span>
-      <span style="float: right;">11-17</span>
-    </a>
-  
-</div>
 
-  <nav aria-label="index posts navigation">
-    <span class="pagination pg-blue justify-content-center mt-5" id="pagination">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2019/11/page/2/">2</a><a class="extend next" rel="next" href="/archives/2019/11/page/2/"><i class="fas fa-angle-double-right"></i></a>
-    </span>
-  </nav>
-  
-  <script>
-    for (ele of document.getElementById("pagination").getElementsByClassName("page-number")) {
-      ele.href += '#board';
-    }
-  </script>
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="py-5 z-depth-3" id="board">
+        <div class="post-content mx-auto" id="post">
+          <div class="markdown-body">
+            <h1 id="控制器文件的位置"><a href="#控制器文件的位置" class="headerlink" title="控制器文件的位置"></a>控制器文件的位置</h1><p>控制器属于项目代码</p>
+<p>位于<strong>app/http/Controllers</strong></p>
+<h1 id="命名控制器文件"><a href="#命名控制器文件" class="headerlink" title="命名控制器文件"></a>命名控制器文件</h1><p>驼峰命名+Controller.php</p>
+<h1 id="控制器的结构代码"><a href="#控制器的结构代码" class="headerlink" title="控制器的结构代码"></a>控制器的结构代码</h1><p>🚫不需要我们自己去写,可以通过artisan来生成</p>
+<p>相应命令:</p>
+<pre><code class="cmd">php artisan make:controller TestController</code></pre>
+<p>创建资源控制器:(自动生成很多方法</p>
+<pre><code class="php">php artisan make:controller TestController --resource //简写 --r</code></pre>
+<p>分目录控制器(没有这个文件夹的话就会创建)</p>
+<pre><code class="cmd">php artisan make:controller Admin/TestController</code></pre>
+<p>创建成功的提示:</p>
+<pre><code class="cmd">Controller created successfully.</code></pre>
+<p>生成的结构代码:</p>
+<pre><code class="php">&lt;?php
 
+namespace App\Http\Controllers;//命名空间
 
-              </div>
-            </div>
+use Illuminate\Http\Request;//命名空间三元素: 常量,方法,类
+
+class TestController extends Controller
+{
+    //
+}
+</code></pre>
+<h1 id="控制器路由"><a href="#控制器路由" class="headerlink" title="控制器路由"></a>控制器路由</h1><p>#使用路由规则调用控制器下的方法,而不再走回调函数.</p>
+<p>格式</p>
+<pre><code class="php">控制器类名@方法名</code></pre>
+<h1 id="控制下的命名空间分组"><a href="#控制下的命名空间分组" class="headerlink" title="控制下的命名空间分组"></a>控制下的命名空间分组</h1><pre><code class="php">Route::group([&#39;namespace&#39;=&gt;&#39;Admin&#39;],function(){
+    Route:get(&#39;/shit/test1&#39;,&#39;TestController@test1&#39;)
+})</code></pre>
+<h1 id="接受用户输入"><a href="#接受用户输入" class="headerlink" title="接受用户输入"></a>接受用户输入</h1><p>接受用户输入的类:illuminate\support\facades\input</p>
+<p><strong>facades:介于一个类实例化与没有实例化之间的一个状态,是类的一个接口的实现,说白了就是静态方法.</strong></p>
+<blockquote>
+<p>在laravel中如果需要使用facades,但是又不想写那么长:Use Illuminate\Support\Facades\Input 则可以在config/app.php中定义别名</p>
+</blockquote>
+<pre><code class="php">//自己添加的别名
+        &#39;Input&#39; =&gt; Illuminate\Support\Facades\Input::class</code></pre>
+<p>👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆</p>
+<p>😤😤😤😤😤😤😤😤😤😤😤😤</p>
+<p>上面真的是血的教训,我用的laravel是最新的6.5的,但是在5.2版本之后就开始用Request替代Input了</p>
+<p>一开始疯狂检测自己的拼写,甚至重装laravel,花了大概一个半小时才解决了问题.</p>
+<p>不过这个过程还是挺有意义的;</p>
+
+            <hr>
+          </div>
+          <br>
+          <div>
+            <p>
+            
+            
+              <span>
+                <i class="iconfont icon-tag"></i>
+                
+                  <a class="hover-with-bg" href="/tags/php">php</a>
+                
+                  <a class="hover-with-bg" href="/tags/laravel">laravel</a>
+                
+              </span>
+            
+            </p>
+            
           </div>
         </div>
       </div>
+    </div>
+    <div class="d-none d-lg-block col-lg-2 toc-container">
+      
+  <div id="toc">
+    <p class="h4"><i class="far fa-list-alt"></i>&nbsp;目录</p>
+    <div id="tocbot"></div>
+  </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- custom -->
+
+
+<!-- Comments -->
+<div class="col-lg-7 mx-auto nopadding-md">
+  <div class="container comments mx-auto" id="comments">
+    
+      <br><br>
+      
+      
+  <script defer src="https://utteranc.es/client.js"
+          repo="tohrux/tohrux.github.io"
+          issue-term="pathname"
+  
+          label="utterances"
+    
+          theme="github-light"
+          crossorigin="anonymous"
+          async>
+  </script>
+
+
+    
+  </div>
+</div>
+
     
   </main>
 
@@ -272,6 +323,11 @@
 
 
 
+  
+    <script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/tocbot/tocbot.min.js" ></script>
+  
+  <script src="/js/post.js" ></script>
+
 
 
   <script src="/lib/smooth-scroll/smooth-scroll.min.js" ></script>
@@ -304,7 +360,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "归档&nbsp;",
+        "laravel控制器基础&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
