@@ -4,6 +4,27 @@
   
   
   <entry>
+    <title>jkjk</title>
+    <link href="undefined2019/11/24/jkjk/"/>
+    <url>2019/11/24/jkjk/</url>
+    
+    <content type="html"><![CDATA[<h1 id="视图文件的命名和渲染"><a href="#视图文件的命名和渲染" class="headerlink" title="视图文件的命名和渲染"></a>视图文件的命名和渲染</h1><ol><li>文件名习惯小写</li><li>后缀为 <strong>blade.php</strong> </li><li>不使用 <strong>balde.php</strong>结尾的话就不能使用laravel提供的标签语法显示数据,只能使用原生语法显示数据</li></ol><h1 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h1><p>在开发中可以使用compact(php内置函数)来进行数组的打包</p><h3 id="TextController"><a href="#TextController" class="headerlink" title="TextController:"></a>TextController:</h3><pre><code class="php">    public function test3()    {        //现在时间        $date = date(&#39;Y-m-d H:i:s&#39;, time());        //获取今天的星期        $day = &#39;sunday&#39;;        //show 视图        //return view(&#39;home/index/test3&#39;, [&#39;date&#39; =&gt; $date, &#39;day&#39; =&gt; $day]);        👆      效果一样            👇        return view(&#39;home/index/test3&#39;, compact(&#39;date&#39;, &#39;day&#39;));    }</code></pre><h3 id="web-php"><a href="#web-php" class="headerlink" title="web.php:"></a>web.php:</h3><pre><code class="php">Route::get(&#39;/home/index/test3&#39;, &quot;TextController@test3&quot;);</code></pre><h3 id="text3-blade-php"><a href="#text3-blade-php" class="headerlink" title="text3.blade.php:"></a>text3.blade.php:</h3><pre><code class="php">当前访问的是home/index/test3.blade.php文件&lt;br/&gt;现在是: {{$date}},今天是星期{{$day}}</code></pre><h3 id="输出"><a href="#输出" class="headerlink" title="输出:"></a>输出:</h3><pre><code class="html">当前访问的是home/index/test3.blade.php文件现在是: 2019-11-23 01:47:37,今天是星期sunday</code></pre><pre><code class="php">时间戳 {{date('Y-m-d H:i:s',$time)}}</code></pre><pre><code class="PHP">{{date('Y-m-d H:i:s',strtotime('+1 year'))}};</code></pre><h1 id="循环分支语法标签"><a href="#循环分支语法标签" class="headerlink" title="循环分支语法标签"></a>循环分支语法标签</h1><p>//在视图里面遍历数据</p><pre><code class="php">@foreach ($variable as $key =&gt; $value)@endforeach</code></pre>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>php</tag>
+      
+      <tag>laravel</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>laravel中关于数据库的操作</title>
     <link href="undefined2019/11/22/laravel4/"/>
     <url>2019/11/22/laravel4/</url>
