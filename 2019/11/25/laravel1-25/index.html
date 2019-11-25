@@ -24,6 +24,8 @@
 <link rel="stylesheet" href="//at.alicdn.com/t/font_1067060_qzomjdt8bmp.css">
 
 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/prettify/tomorrow-night.min.css"  >
+
 <link rel="stylesheet" href="/css/main.css"  >
 
 
@@ -106,7 +108,7 @@
                   
                   &nbsp;<i class="far fa-chart-bar"></i>
                   <span class="post-count">
-                    565 字
+                    651 字
                   </span>&nbsp;
                 
 
@@ -114,7 +116,7 @@
                   
                   &nbsp;<i class="far fa-clock"></i>
                   <span class="post-count">
-                      2 分钟
+                      3 分钟
                   </span>&nbsp;
                 
 
@@ -265,6 +267,24 @@ if ($validate-&gt;fails()) {
 }</code></pre>
 <h2 id="通过验证器文件来实现"><a href="#通过验证器文件来实现" class="headerlink" title="通过验证器文件来实现"></a>通过验证器文件来实现</h2><p>通过命令行创建一个验证器文件</p>
 <pre><code class="cmd">php artisan make:request UserRequest</code></pre>
+<p>然后在该文件进行配置</p>
+<pre><code class="php">    public function rules()
+    {
+        return [
+            //编写自定义规则
+            &#39;name&#39; =&gt; &#39;required|min:2|max:20&#39;,
+            &#39;password&#39; =&gt; &#39;required|min:6&#39;
+        ];
+    }
+    //如果需要中文的错误提示,则需要手动写方法
+    public function message()
+    {
+        return [
+            &#39;name.requiired&#39; =&gt; &#39;不能为空&#39;,
+            &#39;password.requiired&#39; =&gt; &#39;不能为空&#39;
+
+        ];
+    }</code></pre>
 <h2 id="关于验证语言包"><a href="#关于验证语言包" class="headerlink" title="关于验证语言包"></a>关于验证语言包</h2><p>可以通过这个网站去下载<a href="https://packagist.org/packages/caouecs/laravel-lang" target="_blank" rel="noopener" title="packagist">packagist</a></p>
 <p>使用composer安装完后 再到</p>
 
@@ -430,6 +450,14 @@ if ($validate-&gt;fails()) {
 
 
 
+
+  <script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/prettify/prettify.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      $('pre').addClass('prettyprint  linenums');
+      prettyPrint();
+    })
+  </script>
 
 
 
