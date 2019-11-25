@@ -15,7 +15,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <meta name="keywords" content="">
-  <title>归档 ~ Tohrux!</title>
+  <title>larave表单验证 ~ Tohrux!</title>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/font-awesome/css/all.min.css"  >
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/bootstrap/css/bootstrap.min.css"  >
@@ -34,7 +34,7 @@
 
 
 <body>
-  <header style="height: 80vh;">
+  <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -93,6 +93,41 @@
             </span>
 
             
+              <br>
+              
+                <p class="mt-3">
+                  <i class="fas fa-calendar-alt" aria-hidden="true"></i>&nbsp;
+                  星期一, 十一月 25日 2019, 8:26 早上
+                </p>
+              
+
+              <p>
+                
+                  
+                  &nbsp;<i class="far fa-chart-bar"></i>
+                  <span class="post-count">
+                    565 字
+                  </span>&nbsp;
+                
+
+                
+                  
+                  &nbsp;<i class="far fa-clock"></i>
+                  <span class="post-count">
+                      2 分钟
+                  </span>&nbsp;
+                
+
+                
+                  <!-- 不蒜子统计文章PV -->
+                  
+                  &nbsp;<i class="far fa-eye" aria-hidden="true"></i>&nbsp;
+                  <span id="busuanzi_container_page_pv">
+                    <span id="busuanzi_value_page_pv"></span> 次
+                  </span>&nbsp;
+                
+              </p>
+            
           </div>
 
           
@@ -103,59 +138,195 @@
 
   <main>
     
-      <div class="container nopadding-md">
-        <div class="py-5 z-depth-3" id="board">
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<div class="list-group">
-  <p class="h4">共计 13 篇文章</p>
-  <hr>
-  
-    
       
-      <p class="h5">2019</p>
-    
-    <a href="/2019/11/17/test1/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">现在开始我拥有了自己的博客!</span>
-      <span style="float: right;">11-17</span>
-    </a>
-  
-    
-    <a href="/2019/11/16/ceshi/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">图片加载测试</span>
-      <span style="float: right;">11-16</span>
-    </a>
-  
-    
-    <a href="/2019/11/15/hello-world/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">Hello World</span>
-      <span style="float: right;">11-15</span>
-    </a>
-  
-</div>
 
-  <nav aria-label="index posts navigation">
-    <span class="pagination pg-blue justify-content-center mt-5" id="pagination">
-      <a class="extend prev" rel="prev" href="/archives/2019/11/"><i class="fas fa-angle-double-left"></i></a><a class="page-number" href="/archives/2019/11/">1</a><span class="page-number current">2</span>
-    </span>
-  </nav>
-  
-  <script>
-    for (ele of document.getElementById("pagination").getElementsByClassName("page-number")) {
-      ele.href += '#board';
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="py-5 z-depth-3" id="board">
+        <div class="post-content mx-auto" id="post">
+          <div class="markdown-body">
+            <h1 id="表单验证"><a href="#表单验证" class="headerlink" title="表单验证:"></a>表单验证:</h1><p>多个验证规则可以通过”|”隔开:</p>
+<p>语法:</p>
+<pre><code class="php">$this-&gt;validate(数据对象,[数组形式的验证规则])</code></pre>
+<table>
+<thead>
+<tr>
+<th align="center">规则名</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">require</td>
+<td align="center">不能为空</td>
+</tr>
+<tr>
+<td align="center">max:value</td>
+<td align="center">字段值必须小于或等于value,如果是字符串 value则为字符串的个数</td>
+</tr>
+<tr>
+<td align="center">email</td>
+<td align="center">验证邮箱是否合法</td>
+</tr>
+<tr>
+<td align="center">confirmed</td>
+<td align="center">验证两个字段是否相同,如果是password则必须输入与之匹配的paasword_confirmation字段</td>
+</tr>
+<tr>
+<td align="center">url</td>
+<td align="center">字段必须为有效URL</td>
+</tr>
+<tr>
+<td align="center">integer</td>
+<td align="center">必须为整数</td>
+</tr>
+<tr>
+<td align="center">numeric</td>
+<td align="center">必须为数值</td>
+</tr>
+<tr>
+<td align="center">max</td>
+<td align="center">最多255字符</td>
+</tr>
+<tr>
+<td align="center">min</td>
+<td align="center">最少1字符</td>
+</tr>
+</tbody></table>
+<h1 id="实现用户验证功能"><a href="#实现用户验证功能" class="headerlink" title="实现用户验证功能"></a>实现用户验证功能</h1><ol>
+<li><p>创建一个用户控制器</p>
+</li>
+<li><p>新建一个index.blade.php页面</p>
+</li>
+<li><p>引入静态资源 CSS,Js等 </p>
+</li>
+<li><p>配置路由</p>
+</li>
+<li><p>csrf验证:</p>
+<pre><code class="php">{{csrf_token()}}//会在页面显示 纯文本显示 用在异步提交 ajax
+
+{{csrf_field()}}//一般已html元素的形式生成 自动hidden
+👇也可以直接写成这个
+    @csrf</code></pre>
+<p>csrf_field自动生成的html元素:</p>
+<pre><code class="html">&lt;input type=&quot;hidden&quot; name=&quot;_token&quot; value=&quot;i4Q2RwjAN5NpYyUwJogKSjsza9VBi4hYtwQ7gvvu&quot;&gt;</code></pre>
+</li>
+</ol>
+<h1 id="如何得知一个请求类型"><a href="#如何得知一个请求类型" class="headerlink" title="如何得知一个请求类型"></a>如何得知一个请求类型</h1><pre><code class="php"> public function index(Request $request)
+    {
+        echo $request-&gt;method();
+    }</code></pre>
+<h1 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h1><pre><code class="php">//CONTROLLER.PHP:
+    public function index(Request $request)
+    {
+        if ($request-&gt;method() == &#39;POST&#39;) {
+            echo $request-&gt;method();
+            $this-&gt;validate($request, [
+                &#39;name&#39; =&gt; &#39;required|min:2|max:20&#39;,
+                &#39;password&#39; =&gt; &#39;required|min:6&#39;
+            ]);
+            echo &quot;success!&quot;;
+        } else {
+            echo $request-&gt;method();
+            return view(&#39;users.index.index&#39;);
+        }
     }
-  </script>
 
 
-              </div>
-            </div>
+//INDEX.BLADE.PHP:
+    @if(count($errors) &gt; 0)
+    &lt;div class=&quot;alert alert-danger&quot;&gt;
+        &lt;ul&gt;
+            @foreach ($errors-&gt;all() as $error)
+                &lt;li&gt;{{ $error }}&lt;/li&gt;
+            @endforeach
+        &lt;/ul&gt;
+    &lt;/div&gt;
+    @endif
+
+    &lt;form action=&quot;&quot; method=&quot;post&quot; &gt;
+            &lt;p&gt;usrname&lt;input type=&quot;text&quot; name=&quot;name&quot;&gt;&lt;/p&gt;
+            &lt;p&gt;password&lt;input type=&quot;password&quot; name=&quot;password&quot;&gt;&lt;/p&gt;
+            @csrf
+            &lt;p&gt;&lt;input type=&quot;submit&quot;&gt;&lt;/p&gt;
+       &lt;/form&gt;
+//WEB.PHP
+        Route::any(&#39;/users/index/adduser&#39;, &#39;UserController@index&#39;);</code></pre>
+<h2 id="独立验证"><a href="#独立验证" class="headerlink" title="独立验证"></a>独立验证</h2><pre><code class="php">$validate = Validator::make($request-&gt;all(), [
+&#39;name&#39; =&gt; &#39;required|min:2|max:20&#39;,
+&#39;password&#39; =&gt; &#39;required|min:6&#39;
+]);
+//打印对象所有的方法 04:fails
+dump(get_class_methods($validate));
+if ($validate-&gt;fails()) {
+//通过重定向回退
+// return redirect()-&gt;back()-&gt;withErros($validate);
+}</code></pre>
+<h2 id="通过验证器文件来实现"><a href="#通过验证器文件来实现" class="headerlink" title="通过验证器文件来实现"></a>通过验证器文件来实现</h2><p>通过命令行创建一个验证器文件</p>
+<pre><code class="cmd">php artisan make:request UserRequest</code></pre>
+<h2 id="关于验证语言包"><a href="#关于验证语言包" class="headerlink" title="关于验证语言包"></a>关于验证语言包</h2><p>可以通过这个网站去下载<a href="https://packagist.org/packages/caouecs/laravel-lang" target="_blank" rel="noopener" title="packagist">packagist</a></p>
+<p>使用composer安装完后 再到</p>
+
+            <hr>
+          </div>
+          <br>
+          <div>
+            <p>
+            
+            
+              <span>
+                <i class="iconfont icon-tag"></i>
+                
+                  <a class="hover-with-bg" href="/tags/laravel">laravel</a>
+                
+                  <a class="hover-with-bg" href="/tags/php">php</a>
+                
+              </span>
+            
+            </p>
+            
           </div>
         </div>
       </div>
+    </div>
+    <div class="d-none d-lg-block col-lg-2 toc-container">
+      
+  <div id="toc">
+    <p class="h4"><i class="far fa-list-alt"></i>&nbsp;目录</p>
+    <div id="tocbot"></div>
+  </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- custom -->
+
+
+<!-- Comments -->
+<div class="col-lg-7 mx-auto nopadding-md">
+  <div class="container comments mx-auto" id="comments">
+    
+      <br><br>
+      
+      
+  <script defer src="https://utteranc.es/client.js"
+          repo="tohrux/tohrux.github.io"
+          issue-term="pathname"
+  
+          label="utterances"
+    
+          theme="github-light"
+          crossorigin="anonymous"
+          async>
+  </script>
+
+
+    
+  </div>
+</div>
+
     
   </main>
 
@@ -230,6 +401,11 @@
 
 
 
+  
+    <script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/tocbot/tocbot.min.js" ></script>
+  
+  <script src="/js/post.js" ></script>
+
 
 
   <script src="/lib/smooth-scroll/smooth-scroll.min.js" ></script>
@@ -262,7 +438,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "归档&nbsp;",
+        "larave表单验证&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
