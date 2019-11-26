@@ -15,7 +15,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <meta name="keywords" content="">
-  <title>归档 ~ Tohrux!</title>
+  <title>Flex布局 ~ Tohrux!</title>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/font-awesome/css/all.min.css"  >
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/bootstrap/css/bootstrap.min.css"  >
@@ -36,7 +36,7 @@
 
 
 <body>
-  <header style="height: 80vh;">
+  <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -95,6 +95,41 @@
             </span>
 
             
+              <br>
+              
+                <p class="mt-3">
+                  <i class="fas fa-calendar-alt" aria-hidden="true"></i>&nbsp;
+                  星期二, 十一月 26日 2019, 8:20 晚上
+                </p>
+              
+
+              <p>
+                
+                  
+                  &nbsp;<i class="far fa-chart-bar"></i>
+                  <span class="post-count">
+                    418 字
+                  </span>&nbsp;
+                
+
+                
+                  
+                  &nbsp;<i class="far fa-clock"></i>
+                  <span class="post-count">
+                      1 分钟
+                  </span>&nbsp;
+                
+
+                
+                  <!-- 不蒜子统计文章PV -->
+                  
+                  &nbsp;<i class="far fa-eye" aria-hidden="true"></i>&nbsp;
+                  <span id="busuanzi_container_page_pv">
+                    <span id="busuanzi_value_page_pv"></span> 次
+                  </span>&nbsp;
+                
+              </p>
+            
           </div>
 
           
@@ -105,101 +140,145 @@
 
   <main>
     
-      <div class="container nopadding-md">
-        <div class="py-5 z-depth-3" id="board">
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<div class="list-group">
-  <p class="h4">共计 15 篇文章</p>
-  <hr>
-  
-    
       
-      <p class="h5">2019</p>
-    
-    <a href="/2019/11/26/flex/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">Flex布局</span>
-      <span style="float: right;">11-26</span>
-    </a>
-  
-    
-    <a href="/2019/11/25/laravel-extends/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">laravel的继承与包含(extend&amp;include</span>
-      <span style="float: right;">11-25</span>
-    </a>
-  
-    
-    <a href="/2019/11/25/laravel1-25/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">larave表单验证</span>
-      <span style="float: right;">11-25</span>
-    </a>
-  
-    
-    <a href="/2019/11/24/jkjk/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">lavavel视图</span>
-      <span style="float: right;">11-24</span>
-    </a>
-  
-    
-    <a href="/2019/11/22/laravel4/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">laravel中关于数据库的操作</span>
-      <span style="float: right;">11-22</span>
-    </a>
-  
-    
-    <a href="/2019/11/22/laravel2/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">laravel控制器基础</span>
-      <span style="float: right;">11-22</span>
-    </a>
-  
-    
-    <a href="/2019/11/21/lavaral/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">laravel路由规则的使用</span>
-      <span style="float: right;">11-21</span>
-    </a>
-  
-    
-    <a href="/2019/11/20/arknight/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">明日方舟:大家,快回来吧!</span>
-      <span style="float: right;">11-20</span>
-    </a>
-  
-    
-    <a href="/2019/11/19/11-19/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">今日份的美好</span>
-      <span style="float: right;">11-19</span>
-    </a>
-  
-    
-    <a href="/2019/11/18/sass/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">sass基础语法</span>
-      <span style="float: right;">11-18</span>
-    </a>
-  
-</div>
 
-  <nav aria-label="index posts navigation">
-    <span class="pagination pg-blue justify-content-center mt-5" id="pagination">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/"><i class="fas fa-angle-double-right"></i></a>
-    </span>
-  </nav>
-  
-  <script>
-    for (ele of document.getElementById("pagination").getElementsByClassName("page-number")) {
-      ele.href += '#board';
-    }
-  </script>
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="py-5 z-depth-3" id="board">
+        <div class="post-content mx-auto" id="post">
+          <div class="markdown-body">
+            <p>发现很多地方都会用上Flex布局,所以就决定今晚把Flex给整活了,冲冲冲🐛</p>
+<p>在看了一些博客后决定结合自己的理解写下一些笔记</p>
+<p>参照：<a href="https://juejin.im/post/5ddc78f851882573520fb199" target="_blank" rel="noopener">https://juejin.im/post/5ddc78f851882573520fb199</a> -作者：锐玩道</p>
+<p>​            <a href="https://www.jianshu.com/p/4b14a7a1c6cc" target="_blank" rel="noopener">https://www.jianshu.com/p/4b14a7a1c6cc</a> 作者：sxfshdf</p>
+<h1 id="一些概念"><a href="#一些概念" class="headerlink" title="一些概念"></a>一些概念</h1><p>首先使用Flex布局一定要知道的一点是,这种布局总是以父子元素的形式存在,父亲被称为 <strong>容器</strong>(container),而所有的子级元素会自动地成为这个<strong>容器</strong>的成员,被成为 Flex项目(item)</p>
+<pre><code class="html">display:flex
+//当一个元素的display被设置为flex后，它就会成为一个 *container</code></pre>
+<blockquote>
+<p>:hand:这里需要注意的是一旦一个元素被设置为display：flex，子元素的 float,clear,vertical-align将会失效</p>
+</blockquote>
+<h1 id="主轴（main-axis-amp-副轴-cross-axis"><a href="#主轴（main-axis-amp-副轴-cross-axis" class="headerlink" title="主轴（main axis )&amp; 副轴(cross axis)"></a><strong>主轴</strong>（main axis )&amp; <strong>副轴</strong>(cross axis)</h1><p><strong>container</strong>中默认会存在这两条轴，</p>
+<p>一般来说，主轴是指水平方向的轴，而副轴是指垂直方向的轴</p>
+<h1 id="flex-direction"><a href="#flex-direction" class="headerlink" title="flex-direction"></a>flex-direction</h1><p>这个属性决定的是 item 们在水平方向上的排布</p>
+<p>一共有 4个值 分别为 <strong>row</strong> | <strong>row-reverse</strong> | <strong>column</strong> | <strong>column-reverse</strong>; </p>
+<pre><code class="html">.container{
+    display: flex;
+    flex-direction:  row | row-reverse | column | column-reverse;
+}</code></pre>
+<p>在demo中，我的代码如下：</p>
+<pre><code class="html">//style部分
+&lt;style&gt;
+        * {
+            padding: 0;
+            margin: 0;
+        }
 
+        .container {
+            display: flex;
+            flex-direction: row;
+        }
 
-              </div>
-            </div>
+        .container&gt;div {
+            width: 100px;
+            height: 100px;
+        }
+
+        .item1 {
+            background-color: red;
+        }
+
+        .item2 {
+            background-color: yellow;
+        }
+
+        .item3 {
+            background-color: blue;
+        }
+    &lt;/style&gt;
+----------------------------------------------------------------------------------
+
+//body部分
+    &lt;body&gt;
+    &lt;div class=&quot;container&quot;&gt;
+        &lt;div class=&quot;item1&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;item2&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;item3&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;</code></pre>
+<p>现在分别展示4种 flex-direction的效果 :</p>
+<p>:arrow_forward:要注意的是，我的代码z</p>
+<p>row：</p>
+<p><img src="flex_a1.png" srcset="undefined" alt=""></p>
+<p>row-reverse:</p>
+<p><img src="flex_a2.png" srcset="undefined" alt=""></p>
+<p>column:</p>
+<p><img src="flex_a3.png" srcset="undefined" alt=""></p>
+<p>column-reverse:</p>
+<p><img src="flex_a4.png" srcset="undefined" alt=""></p>
+
+            <hr>
+          </div>
+          <br>
+          <div>
+            <p>
+            
+            
+              <span>
+                <i class="iconfont icon-tag"></i>
+                
+                  <a class="hover-with-bg" href="/tags/%E5%B8%83%E5%B1%80">布局</a>
+                
+                  <a class="hover-with-bg" href="/tags/%E5%89%8D%E7%AB%AF">前端</a>
+                
+                  <a class="hover-with-bg" href="/tags/Flex">Flex</a>
+                
+              </span>
+            
+            </p>
+            
           </div>
         </div>
       </div>
+    </div>
+    <div class="d-none d-lg-block col-lg-2 toc-container">
+      
+  <div id="toc">
+    <p class="h4"><i class="far fa-list-alt"></i>&nbsp;目录</p>
+    <div id="tocbot"></div>
+  </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- custom -->
+
+
+<!-- Comments -->
+<div class="col-lg-7 mx-auto nopadding-md">
+  <div class="container comments mx-auto" id="comments">
+    
+      <br><br>
+      
+      
+  <script defer src="https://utteranc.es/client.js"
+          repo="tohrux/tohrux.github.io"
+          issue-term="pathname"
+  
+          label="utterances"
+    
+          theme="github-light"
+          crossorigin="anonymous"
+          async>
+  </script>
+
+
+    
+  </div>
+</div>
+
     
   </main>
 
@@ -274,6 +353,11 @@
 
 
 
+  
+    <script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/tocbot/tocbot.min.js" ></script>
+  
+  <script src="/js/post.js" ></script>
+
 
 
   <script src="/lib/smooth-scroll/smooth-scroll.min.js" ></script>
@@ -314,7 +398,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "归档&nbsp;",
+        "Flex布局&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
