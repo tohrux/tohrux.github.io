@@ -108,7 +108,7 @@
                   
                   &nbsp;<i class="far fa-chart-bar"></i>
                   <span class="post-count">
-                    171 字
+                    179 字
                   </span>&nbsp;
                 
 
@@ -156,12 +156,14 @@
 @section(&#39;名字&#39;)
 内容
 @endsection</code></pre>
-<p>实例:</p>
+<p><strong>实例</strong>:</p>
+<p>父级页面:</p>
 <pre><code class="php">&lt;h1&gt;我是头部&lt;/h1&gt;
 {{-- 可变区 --}}
 @yield(&#39;myBody&#39;)
 {{-- 可变区 --}}
 &lt;h1&gt;我是尾部&lt;/h1&gt;</code></pre>
+<p>自己页面:</p>
 <pre><code class="php">@extends(&#39;test/test2&#39;)
 @section(&#39;myBody&#39;)
 &lt;h1&gt;
