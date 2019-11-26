@@ -4,19 +4,40 @@
   
   
   <entry>
-    <title>larave表单验证</title>
-    <link href="undefined2019/11/25/laravel1-25/"/>
-    <url>2019/11/25/laravel1-25/</url>
+    <title>laravel的继承与包含(extend&amp;include</title>
+    <link href="undefined2019/11/25/laravel-extends/"/>
+    <url>2019/11/25/laravel-extends/</url>
     
-    <content type="html"><![CDATA[<h1 id="表单验证"><a href="#表单验证" class="headerlink" title="表单验证:"></a>表单验证:</h1><p>多个验证规则可以通过”|”隔开:</p><p>语法:</p><pre><code class="php">$this-&gt;validate(数据对象,[数组形式的验证规则])</code></pre><table><thead><tr><th align="center">规则名</th><th align="center">说明</th></tr></thead><tbody><tr><td align="center">require</td><td align="center">不能为空</td></tr><tr><td align="center">max:value</td><td align="center">字段值必须小于或等于value,如果是字符串 value则为字符串的个数</td></tr><tr><td align="center">email</td><td align="center">验证邮箱是否合法</td></tr><tr><td align="center">confirmed</td><td align="center">验证两个字段是否相同,如果是password则必须输入与之匹配的paasword_confirmation字段</td></tr><tr><td align="center">url</td><td align="center">字段必须为有效URL</td></tr><tr><td align="center">integer</td><td align="center">必须为整数</td></tr><tr><td align="center">numeric</td><td align="center">必须为数值</td></tr><tr><td align="center">max</td><td align="center">最多255字符</td></tr><tr><td align="center">min</td><td align="center">最少1字符</td></tr></tbody></table><h1 id="实现用户验证功能"><a href="#实现用户验证功能" class="headerlink" title="实现用户验证功能"></a>实现用户验证功能</h1><ol><li><p>创建一个用户控制器</p></li><li><p>新建一个index.blade.php页面</p></li><li><p>引入静态资源 CSS,Js等 </p></li><li><p>配置路由</p></li><li><p>csrf验证:</p><pre><code class="php">{{csrf_token()}}//会在页面显示 纯文本显示 用在异步提交 ajax{{csrf_field()}}//一般已html元素的形式生成 自动hidden👇也可以直接写成这个    @csrf</code></pre><p>csrf_field自动生成的html元素:</p><pre><code class="html">&lt;input type=&quot;hidden&quot; name=&quot;_token&quot; value=&quot;i4Q2RwjAN5NpYyUwJogKSjsza9VBi4hYtwQ7gvvu&quot;&gt;</code></pre></li></ol><h1 id="如何得知一个请求类型"><a href="#如何得知一个请求类型" class="headerlink" title="如何得知一个请求类型"></a>如何得知一个请求类型</h1><pre><code class="php"> public function index(Request $request)    {        echo $request-&gt;method();    }</code></pre><h1 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h1><pre><code class="php">//CONTROLLER.PHP:    public function index(Request $request)    {        if ($request-&gt;method() == &#39;POST&#39;) {            echo $request-&gt;method();            $this-&gt;validate($request, [                &#39;name&#39; =&gt; &#39;required|min:2|max:20&#39;,                &#39;password&#39; =&gt; &#39;required|min:6&#39;            ]);            echo &quot;success!&quot;;        } else {            echo $request-&gt;method();            return view(&#39;users.index.index&#39;);        }    }//INDEX.BLADE.PHP:    @if(count($errors) &gt; 0)    &lt;div class=&quot;alert alert-danger&quot;&gt;        &lt;ul&gt;            @foreach ($errors-&gt;all() as $error)                &lt;li&gt;{{ $error }}&lt;/li&gt;            @endforeach        &lt;/ul&gt;    &lt;/div&gt;    @endif    &lt;form action=&quot;&quot; method=&quot;post&quot; &gt;            &lt;p&gt;usrname&lt;input type=&quot;text&quot; name=&quot;name&quot;&gt;&lt;/p&gt;            &lt;p&gt;password&lt;input type=&quot;password&quot; name=&quot;password&quot;&gt;&lt;/p&gt;            @csrf            &lt;p&gt;&lt;input type=&quot;submit&quot;&gt;&lt;/p&gt;       &lt;/form&gt;//WEB.PHP        Route::any(&#39;/users/index/adduser&#39;, &#39;UserController@index&#39;);</code></pre><h2 id="独立验证"><a href="#独立验证" class="headerlink" title="独立验证"></a>独立验证</h2><pre><code class="php">$validate = Validator::make($request-&gt;all(), [&#39;name&#39; =&gt; &#39;required|min:2|max:20&#39;,&#39;password&#39; =&gt; &#39;required|min:6&#39;]);//打印对象所有的方法 04:failsdump(get_class_methods($validate));if ($validate-&gt;fails()) {//通过重定向回退// return redirect()-&gt;back()-&gt;withErros($validate);}</code></pre><h2 id="通过验证器文件来实现"><a href="#通过验证器文件来实现" class="headerlink" title="通过验证器文件来实现"></a>通过验证器文件来实现</h2><p>通过命令行创建一个验证器文件</p><pre><code class="cmd">php artisan make:request UserRequest</code></pre><p>然后在该文件进行配置</p><pre><code class="php">    public function rules()    {        return [            //编写自定义规则            &#39;name&#39; =&gt; &#39;required|min:2|max:20&#39;,            &#39;password&#39; =&gt; &#39;required|min:6&#39;        ];    }    //如果需要中文的错误提示,则需要手动写方法    public function message()    {        return [            &#39;name.requiired&#39; =&gt; &#39;不能为空&#39;,            &#39;password.requiired&#39; =&gt; &#39;不能为空&#39;        ];    }</code></pre><h2 id="关于验证语言包"><a href="#关于验证语言包" class="headerlink" title="关于验证语言包"></a>关于验证语言包</h2><p>可以通过这个网站去下载<a href="https://packagist.org/packages/caouecs/laravel-lang" target="_blank" rel="noopener" title="packagist">packagist</a></p><p>使用composer安装完后 再到vendor下拿到这个文件复制到\resources\lang下</p><p>再在validation把locale修改为想要的语言就🆗</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="include"><a href="#include" class="headerlink" title="@include"></a>@include</h1><p>可以用来引进别的页面</p><pre><code class="php">@include(&#39;文件名&#39;)</code></pre><h1 id="extends"><a href="#extends" class="headerlink" title="@extends"></a>@extends</h1><pre><code class="php">父级页面 语法:@yield(&#39;名字&#39;) </code></pre><pre><code class="php">子级页面:@extends(&#39;view下的路径&#39;)@section(&#39;名字&#39;)内容@endsection</code></pre><p>实例:</p><pre><code class="php">&lt;h1&gt;我是头部&lt;/h1&gt;{{-- 可变区 --}}@yield(&#39;myBody&#39;){{-- 可变区 --}}&lt;h1&gt;我是尾部&lt;/h1&gt;</code></pre><pre><code class="php">@extends(&#39;test/test2&#39;)@section(&#39;myBody&#39;)&lt;h1&gt;    Lorem ipsum dolor sit amet consectetur a    dipisicing elit. Ea quibusdam quas nobis minima, aspernatur laborum nihil, natus omnis quia solu    ta beatae recusandae deleniti neque    ? Voluptatibus, nulla mollitia. Possimus, laborum adipisci?&lt;/h1&gt;@endsection</code></pre><p>结果:</p><pre><code class="php">我是头部Lorem ipsum dolor sit amet consectetur a dipisicing elit. Ea quibusdam quas nobis minima, aspernatur laborum nihil, natus omnis quia solu ta beatae recusandae deleniti neque ? Voluptatibus, nulla mollitia. Possimus, laborum adipisci?我是尾部</code></pre>]]></content>
     
     
     
     <tags>
       
+      <tag>laravel</tag>
+      
       <tag>php</tag>
       
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>larave表单验证</title>
+    <link href="undefined2019/11/25/laravel1-25/"/>
+    <url>2019/11/25/laravel1-25/</url>
+    
+    <content type="html"><![CDATA[<h1 id="表单验证"><a href="#表单验证" class="headerlink" title="表单验证:"></a>表单验证:</h1><p>多个验证规则可以通过”|”隔开:</p><p>语法:</p><pre><code class="php">$this-&gt;validate(数据对象,[数组形式的验证规则])</code></pre><table><thead><tr><th align="center">规则名</th><th align="center">说明</th></tr></thead><tbody><tr><td align="center">require</td><td align="center">不能为空</td></tr><tr><td align="center">max:value</td><td align="center">字段值必须小于或等于value,如果是字符串 value则为字符串的个数</td></tr><tr><td align="center">email</td><td align="center">验证邮箱是否合法</td></tr><tr><td align="center">confirmed</td><td align="center">验证两个字段是否相同,如果是password则必须输入与之匹配的paasword_confirmation字段</td></tr><tr><td align="center">url</td><td align="center">字段必须为有效URL</td></tr><tr><td align="center">integer</td><td align="center">必须为整数</td></tr><tr><td align="center">numeric</td><td align="center">必须为数值</td></tr><tr><td align="center">max</td><td align="center">最多255字符</td></tr><tr><td align="center">min</td><td align="center">最少1字符</td></tr></tbody></table><h1 id="实现用户验证功能"><a href="#实现用户验证功能" class="headerlink" title="实现用户验证功能"></a>实现用户验证功能</h1><ol><li><p>创建一个用户控制器</p></li><li><p>新建一个index.blade.php页面</p></li><li><p>引入静态资源 CSS,Js等 </p></li><li><p>配置路由</p></li><li><p>csrf验证:</p><pre><code class="php">{{csrf_token()}}//会在页面显示 纯文本显示 用在异步提交 ajax{{csrf_field()}}//一般已html元素的形式生成 自动hidden👇也可以直接写成这个    @csrf</code></pre><p>csrf_field自动生成的html元素:</p><pre><code class="html">&lt;input type=&quot;hidden&quot; name=&quot;_token&quot; value=&quot;i4Q2RwjAN5NpYyUwJogKSjsza9VBi4hYtwQ7gvvu&quot;&gt;</code></pre></li></ol><h1 id="如何得知一个请求类型"><a href="#如何得知一个请求类型" class="headerlink" title="如何得知一个请求类型"></a>如何得知一个请求类型</h1><pre><code class="php"> public function index(Request $request)    {        echo $request-&gt;method();    }</code></pre><h1 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h1><pre><code class="php">//CONTROLLER.PHP:    public function index(Request $request)    {        if ($request-&gt;method() == &#39;POST&#39;) {            echo $request-&gt;method();            $this-&gt;validate($request, [                &#39;name&#39; =&gt; &#39;required|min:2|max:20&#39;,                &#39;password&#39; =&gt; &#39;required|min:6&#39;            ]);            echo &quot;success!&quot;;        } else {            echo $request-&gt;method();            return view(&#39;users.index.index&#39;);        }    }//INDEX.BLADE.PHP:    @if(count($errors) &gt; 0)    &lt;div class=&quot;alert alert-danger&quot;&gt;        &lt;ul&gt;            @foreach ($errors-&gt;all() as $error)                &lt;li&gt;{{ $error }}&lt;/li&gt;            @endforeach        &lt;/ul&gt;    &lt;/div&gt;    @endif    &lt;form action=&quot;&quot; method=&quot;post&quot; &gt;            &lt;p&gt;usrname&lt;input type=&quot;text&quot; name=&quot;name&quot;&gt;&lt;/p&gt;            &lt;p&gt;password&lt;input type=&quot;password&quot; name=&quot;password&quot;&gt;&lt;/p&gt;            @csrf            &lt;p&gt;&lt;input type=&quot;submit&quot;&gt;&lt;/p&gt;       &lt;/form&gt;//WEB.PHP        Route::any(&#39;/users/index/adduser&#39;, &#39;UserController@index&#39;);</code></pre><h2 id="独立验证实现"><a href="#独立验证实现" class="headerlink" title="独立验证实现"></a>独立验证实现</h2><pre><code class="php">$validate = Validator::make($request-&gt;all(), [&#39;name&#39; =&gt; &#39;required|min:2|max:20&#39;,&#39;password&#39; =&gt; &#39;required|min:6&#39;]);//打印对象所有的方法 04:failsdump(get_class_methods($validate));if ($validate-&gt;fails()) {//通过重定向回退// return redirect()-&gt;back()-&gt;withErros($validate);}</code></pre><h2 id="通过验证器文件来实现"><a href="#通过验证器文件来实现" class="headerlink" title="通过验证器文件来实现"></a>通过验证器文件来实现</h2><p>通过命令行创建一个验证器文件</p><pre><code class="cmd">php artisan make:request UserRequest</code></pre><p>然后在该文件进行配置</p><pre><code class="php">    public function rules()    {        return [            //编写自定义规则            &#39;name&#39; =&gt; &#39;required|min:2|max:20&#39;,            &#39;password&#39; =&gt; &#39;required|min:6&#39;        ];    }    //如果需要中文的错误提示,则需要手动写方法    public function message()    {        return [            &#39;name.requiired&#39; =&gt; &#39;不能为空&#39;,            &#39;password.requiired&#39; =&gt; &#39;不能为空&#39;        ];    }</code></pre><h2 id="关于验证语言包"><a href="#关于验证语言包" class="headerlink" title="关于验证语言包"></a>关于验证语言包</h2><p>可以通过这个网站去下载<a href="https://packagist.org/packages/caouecs/laravel-lang" target="_blank" rel="noopener" title="packagist">packagist</a></p><p>使用composer安装完后 再到vendor下拿到这个文件复制到\resources\lang下</p><p>再在validation把locale修改为想要的语言就🆗</p>]]></content>
+    
+    
+    
+    <tags>
+      
       <tag>laravel</tag>
+      
+      <tag>php</tag>
       
     </tags>
     
@@ -29,15 +50,15 @@
     <link href="undefined2019/11/24/jkjk/"/>
     <url>2019/11/24/jkjk/</url>
     
-    <content type="html"><![CDATA[<h1 id="视图文件的命名和渲染"><a href="#视图文件的命名和渲染" class="headerlink" title="视图文件的命名和渲染"></a>视图文件的命名和渲染</h1><ol><li>文件名习惯小写</li><li>后缀为 <strong>blade.php</strong> </li><li>不使用 <strong>balde.php</strong>结尾的话就不能使用laravel提供的标签语法显示数据,只能使用原生语法显示数据</li></ol><h1 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h1><p>在开发中可以使用compact(php内置函数)来进行数组的打包</p><h3 id="TextController"><a href="#TextController" class="headerlink" title="TextController:"></a>TextController:</h3><pre><code class="php">    public function test3()    {        //现在时间        $date = date(&#39;Y-m-d H:i:s&#39;, time());        //获取今天的星期        $day = &#39;sunday&#39;;        //show 视图        //return view(&#39;home/index/test3&#39;, [&#39;date&#39; =&gt; $date, &#39;day&#39; =&gt; $day]);        👆      效果一样            👇        return view(&#39;home/index/test3&#39;, compact(&#39;date&#39;, &#39;day&#39;));    }</code></pre><h3 id="web-php"><a href="#web-php" class="headerlink" title="web.php:"></a>web.php:</h3><pre><code class="php">Route::get(&#39;/home/index/test3&#39;, &quot;TextController@test3&quot;);</code></pre><h3 id="text3-blade-php"><a href="#text3-blade-php" class="headerlink" title="text3.blade.php:"></a>text3.blade.php:</h3><pre><code class="php">当前访问的是home/index/test3.blade.php文件&lt;br/&gt;现在是: {{$date}},今天是星期{{$day}}</code></pre><h3 id="输出"><a href="#输出" class="headerlink" title="输出:"></a>输出:</h3><pre><code class="html">当前访问的是home/index/test3.blade.php文件现在是: 2019-11-23 01:47:37,今天是星期sunday</code></pre><pre><code class="php">时间戳 {{date('Y-m-d H:i:s',$time)}}</code></pre><pre><code class="PHP">{{date('Y-m-d H:i:s',strtotime('+1 year'))}};</code></pre><h1 id="循环分支语法标签"><a href="#循环分支语法标签" class="headerlink" title="循环分支语法标签"></a>循环分支语法标签</h1><p>//在视图里面遍历数据</p><pre><code class="php">@foreach ($variable as $key =&gt; $value)@endforeach</code></pre><p>待续</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="视图文件的命名和渲染"><a href="#视图文件的命名和渲染" class="headerlink" title="视图文件的命名和渲染"></a>视图文件的命名和渲染</h1><ol><li>文件名习惯小写</li><li>后缀为 <strong>blade.php</strong> </li><li>不使用 <strong>balde.php</strong>结尾的话就不能使用laravel提供的标签语法显示数据,只能使用原生语法显示数据</li></ol><h1 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h1><p>在开发中可以使用compact(php内置函数)来进行数组的打包</p><h3 id="TextController"><a href="#TextController" class="headerlink" title="TextController:"></a>TextController:</h3><pre><code class="php">    public function test3()    {        //现在时间        $date = date(&#39;Y-m-d H:i:s&#39;, time());        //获取今天的星期        $day = &#39;sunday&#39;;        //show 视图        //return view(&#39;home/index/test3&#39;, [&#39;date&#39; =&gt; $date, &#39;day&#39; =&gt; $day]);        👆      效果一样            👇        return view(&#39;home/index/test3&#39;, compact(&#39;date&#39;, &#39;day&#39;));    }</code></pre><h3 id="web-php"><a href="#web-php" class="headerlink" title="web.php:"></a>web.php:</h3><pre><code class="php">Route::get(&#39;/home/index/test3&#39;, &quot;TextController@test3&quot;);</code></pre><h3 id="text3-blade-php"><a href="#text3-blade-php" class="headerlink" title="text3.blade.php:"></a>text3.blade.php:</h3><pre><code class="php">当前访问的是home/index/test3.blade.php文件&lt;br/&gt;现在是: {{$date}},今天是星期{{$day}}</code></pre><h3 id="输出"><a href="#输出" class="headerlink" title="输出:"></a>输出:</h3><pre><code class="html">当前访问的是home/index/test3.blade.php文件现在是: 2019-11-23 01:47:37,今天是星期sunday</code></pre><h3 id="之前输出当前时间"><a href="#之前输出当前时间" class="headerlink" title="之前输出当前时间:"></a>之前输出当前时间:</h3><pre><code class="php">时间戳 {{date('Y-m-d H:i:s',$time)}}</code></pre><h3 id="一年后的时间"><a href="#一年后的时间" class="headerlink" title="一年后的时间:"></a>一年后的时间:</h3><pre><code class="PHP">{{date('Y-m-d H:i:s',strtotime('+1 year'))}};</code></pre><h1 id="循环分支语法标签"><a href="#循环分支语法标签" class="headerlink" title="循环分支语法标签"></a>循环分支语法标签</h1><p>下面是一个案例</p><p><strong>Controller</strong>中:</p><pre><code class="php">use DB;class TestController extends Controller{    //start    public function test1()    {        $db = DB::table(&#39;member&#39;)-&gt;get();        // dd($db);        return view(&#39;test.test1&#39;, compact(&#39;db&#39;));    }}</code></pre><p><strong>blade</strong>中:</p><pre><code class="php">id&amp;emsp;&amp;emsp;name&amp;emsp;&amp;emsp;email&amp;emsp;&lt;br&gt;@foreach ($db as $key =&gt; $value){{-- 如果不要key的话可以直接省略 ($db as $value) --}}    {{$value -> id}}&amp;emsp;&amp;emsp;    {{$value -> name}}&amp;emsp;&amp;emsp;    {{$value -> email}}    &lt;br&gt;@endforeach</code></pre><p><strong>输出结果:</strong></p><pre><code class="html">id  name  email 1   阿龙   al@gmail2   阿B   ab@gmail</code></pre><p>🙋‍特别注意</p><p>get查询道德结果集中的每一条都是一个对象,因此在循环具体字段的时候需要注意使用对象调用属性的方式才可以获取其数据</p><h1 id="判断语句"><a href="#判断语句" class="headerlink" title="判断语句"></a>判断语句</h1><pre><code class="php">if在模板引擎的写法@if (Expression1)statement1@elseif(Expression2)statement2...@elsestatement3@endif</code></pre>]]></content>
     
     
     
     <tags>
       
-      <tag>php</tag>
-      
       <tag>laravel</tag>
+      
+      <tag>php</tag>
       
     </tags>
     
@@ -56,9 +77,9 @@
     
     <tags>
       
-      <tag>php</tag>
-      
       <tag>laravel</tag>
+      
+      <tag>php</tag>
       
     </tags>
     
@@ -77,9 +98,9 @@
     
     <tags>
       
-      <tag>php</tag>
-      
       <tag>laravel</tag>
+      
+      <tag>php</tag>
       
     </tags>
     
@@ -98,9 +119,9 @@
     
     <tags>
       
-      <tag>php</tag>
-      
       <tag>laravel</tag>
+      
+      <tag>php</tag>
       
     </tags>
     
