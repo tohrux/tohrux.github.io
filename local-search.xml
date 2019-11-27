@@ -8,7 +8,7 @@
     <link href="undefined2019/11/27/flex2/"/>
     <url>2019/11/27/flex2/</url>
     
-    <content type="html"><![CDATA[<h3 id="首先先给出我当前的CSS和HTML"><a href="#首先先给出我当前的CSS和HTML" class="headerlink" title="首先先给出我当前的CSS和HTML"></a>首先先给出我当前的CSS和HTML</h3><pre><code class="html">    &lt;style&gt;        * {            padding: 0;            margin: 0;        }        .container {            display: flex;            flex-wrap: wrap;            flex-direction: row;            justify-content: space-between;            align-items: flex-start;            align-content: space-between;            background-color: #0080ff;            height: 700px;        }        .container&gt;div {            width: 100px;            height: 100px;            /* border: 1px solid black; */        }        .item1 {            background-color: #a3daff;            line-height: 100px;            /* font-size: 120px; */        }        .item2 {            background-color: #1ec0ff;            width: 200px !important;            height: 130px !important;            font-size: 100px;            line-height: 130px;        }        .item3 {            background-color: #FBFFB9;        }    &lt;/style&gt;&lt;/head&gt;&lt;body&gt;    &lt;div&gt;&lt;/div&gt;    &lt;div class=&quot;container&quot;&gt;        &lt;div class=&quot;item1&quot;&gt;1&lt;/div&gt;        &lt;div class=&quot;item2&quot;&gt;2&lt;/div&gt;        &lt;div class=&quot;item1&quot;&gt;3&lt;/div&gt;        &lt;div class=&quot;item1&quot;&gt;4&lt;/div&gt;        &lt;div class=&quot;item1&quot;&gt;5&lt;/div&gt;        &lt;div class=&quot;item2&quot;&gt;6&lt;/div&gt;        &lt;div class=&quot;item1&quot;&gt;7&lt;/div&gt;        &lt;div class=&quot;item1&quot;&gt;8&lt;/div&gt;        &lt;div class=&quot;item1&quot;&gt;9&lt;/div&gt;        &lt;div class=&quot;item2&quot;&gt;10&lt;/div&gt;        &lt;div class=&quot;item1&quot;&gt;11&lt;/div&gt;        &lt;div class=&quot;item1&quot;&gt;12&lt;/div&gt;        &lt;div class=&quot;item1&quot;&gt;13&lt;/div&gt;        &lt;div class=&quot;item2&quot;&gt;14&lt;/div&gt;        &lt;div class=&quot;item1&quot;&gt;15&lt;/div&gt;        &lt;div class=&quot;item1&quot;&gt;16&lt;/div&gt;    &lt;/div&gt;&lt;/body&gt;</code></pre><h3 id="呈现如下"><a href="#呈现如下" class="headerlink" title="呈现如下:"></a>呈现如下:</h3><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127150714.png" srcset="undefined" alt=""></p><h3 id="👩这里我同时给了align-item和align-content的值"><a href="#👩这里我同时给了align-item和align-content的值" class="headerlink" title="👩这里我同时给了align-item和align-content的值"></a>👩这里我同时给了<code>align-item</code>和<code>align-content</code>的值</h3><p>分别为:</p><pre><code class="css">align-items: flex-start;align-content: space-between;</code></pre><p>可以看到,<code>align-item</code>只在每一行中起效果,即在每行中所有的<code>item</code>都会顶到当前行的最上方</p><h3 id="👩再给他们换值"><a href="#👩再给他们换值" class="headerlink" title="👩再给他们换值"></a>👩再给他们换值</h3><p>现在我把他们修改为:</p><pre><code class="css">align-items: flex-end;align-content: flex-start;</code></pre><p>呈现如下:</p><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127151648.png" srcset="undefined" alt=""></p><p>由👆可知 <code>align-item</code>只作用于每一行的行本身,而<code>align-content</code>则作用于全<code>container</code></p><h3 id="that’s-all"><a href="#that’s-all" class="headerlink" title="that’s all!"></a>that’s all!</h3>]]></content>
+    <content type="html"><![CDATA[<h3 id="首先先给出我当前的CSS和HTML"><a href="#首先先给出我当前的CSS和HTML" class="headerlink" title="首先先给出我当前的CSS和HTML"></a>首先先给出我当前的CSS和HTML</h3><pre><code class="html">    &lt;style&gt;        * {            padding: 0;            margin: 0;        }        .container {            display: flex;            flex-wrap: wrap;            flex-direction: row;            justify-content: space-between;            align-items: flex-start;            align-content: space-between;            background-color: #0080ff;            height: 700px;        }        .container&gt;div {            width: 100px;            height: 100px;            /* border: 1px solid black; */        }        .item1 {            background-color: #a3daff;            line-height: 100px;            /* font-size: 120px; */        }        .item2 {            background-color: #1ec0ff;            width: 200px !important;            height: 130px !important;            font-size: 100px;            line-height: 130px;        }        .item3 {            background-color: #FBFFB9;        }    &lt;/style&gt;&lt;/head&gt;&lt;body&gt;    &lt;div&gt;&lt;/div&gt;    &lt;div class=&quot;container&quot;&gt;        &lt;div class=&quot;item1&quot;&gt;1&lt;/div&gt;        &lt;div class=&quot;item2&quot;&gt;2&lt;/div&gt;        &lt;div class=&quot;item1&quot;&gt;3&lt;/div&gt;        &lt;div class=&quot;item1&quot;&gt;4&lt;/div&gt;        &lt;div class=&quot;item1&quot;&gt;5&lt;/div&gt;        &lt;div class=&quot;item2&quot;&gt;6&lt;/div&gt;        &lt;div class=&quot;item1&quot;&gt;7&lt;/div&gt;        &lt;div class=&quot;item1&quot;&gt;8&lt;/div&gt;        &lt;div class=&quot;item1&quot;&gt;9&lt;/div&gt;        &lt;div class=&quot;item2&quot;&gt;10&lt;/div&gt;        &lt;div class=&quot;item1&quot;&gt;11&lt;/div&gt;        &lt;div class=&quot;item1&quot;&gt;12&lt;/div&gt;        &lt;div class=&quot;item1&quot;&gt;13&lt;/div&gt;        &lt;div class=&quot;item2&quot;&gt;14&lt;/div&gt;        &lt;div class=&quot;item1&quot;&gt;15&lt;/div&gt;        &lt;div class=&quot;item1&quot;&gt;16&lt;/div&gt;    &lt;/div&gt;&lt;/body&gt;</code></pre><h3 id="呈现如下"><a href="#呈现如下" class="headerlink" title="呈现如下:"></a>呈现如下:</h3><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127150714.png" srcset="undefined" alt=""></p><h3 id="👩这里我同时给了align-item和align-content的值"><a href="#👩这里我同时给了align-item和align-content的值" class="headerlink" title="👩这里我同时给了align-item和align-content的值"></a>👩这里我同时给了<code>align-item</code>和<code>align-content</code>的值</h3><p>分别为:</p><pre><code class="css">align-items: flex-start;align-content: space-between;</code></pre><p>可以看到,<code>align-item</code>只在每一行中起效果,即在每行中所有的<code>item</code>都会顶到当前行的最上方</p><h3 id="👩再给他们换值"><a href="#👩再给他们换值" class="headerlink" title="👩再给他们换值"></a>👩再给他们换值</h3><p>现在我把他们修改为:</p><pre><code class="css">align-items: flex-end;align-content: flex-start;</code></pre><p>呈现如下:</p><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127151648.png" srcset="undefined" alt=""></p><h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p>如果整个<code>container</code>中只有一行<code>item</code>是没有效果的.<code>align-item</code>只作用于每一行的行本身,而<code>align-content</code>则作用于全<code>container</code></p><h3 id="that’s-all"><a href="#that’s-all" class="headerlink" title="that’s all!"></a>that’s all!</h3>]]></content>
     
     
     
@@ -16,9 +16,9 @@
       
       <tag>css</tag>
       
-      <tag>前端</tag>
-      
       <tag>flex</tag>
+      
+      <tag>前端</tag>
       
     </tags>
     
@@ -39,9 +39,9 @@
       
       <tag>css</tag>
       
-      <tag>前端</tag>
-      
       <tag>flex</tag>
+      
+      <tag>前端</tag>
       
     </tags>
     
@@ -60,9 +60,9 @@
     
     <tags>
       
-      <tag>php</tag>
-      
       <tag>css</tag>
+      
+      <tag>php</tag>
       
     </tags>
     
@@ -230,11 +230,11 @@
     
     <tags>
       
-      <tag>sass</tag>
-      
       <tag>css</tag>
       
       <tag>前端</tag>
+      
+      <tag>sass</tag>
       
     </tags>
     
