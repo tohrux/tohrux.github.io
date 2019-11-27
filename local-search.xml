@@ -8,7 +8,7 @@
     <link href="undefined2019/11/26/flex/"/>
     <url>2019/11/26/flex/</url>
     
-    <content type="html"><![CDATA[<p>发现很多地方都会用上Flex布局,所以就决定今晚把Flex给整活了,冲冲冲🐛</p><p>在看了一些博客后决定结合自己的理解写下一些笔记</p><p>参照：<a href="https://juejin.im/post/5ddc78f851882573520fb199" target="_blank" rel="noopener">https://juejin.im/post/5ddc78f851882573520fb199</a> -作者：锐玩道</p><p>​            <a href="https://www.jianshu.com/p/4b14a7a1c6cc" target="_blank" rel="noopener">https://www.jianshu.com/p/4b14a7a1c6cc</a> 作者：sxfshdf</p><h1 id="一些概念"><a href="#一些概念" class="headerlink" title="一些概念"></a>一些概念</h1><p>首先使用Flex布局一定要知道的一点是,这种布局总是以父子元素的形式存在,父亲被称为 <strong>容器</strong>(container),而所有的子级元素会自动地成为这个<strong>容器</strong>的成员,被成为 Flex项目(item)</p><pre><code class="html">display:flex//当一个元素的display被设置为flex后，它就会成为一个 *container</code></pre><blockquote><p>:hand:这里需要注意的是一旦一个元素被设置为display：flex，子元素的 float,clear,vertical-align将会失效</p></blockquote><h1 id="主轴（main-axis-amp-副轴-cross-axis"><a href="#主轴（main-axis-amp-副轴-cross-axis" class="headerlink" title="主轴（main axis )&amp; 副轴(cross axis)"></a><strong>主轴</strong>（main axis )&amp; <strong>副轴</strong>(cross axis)</h1><p><strong>container</strong>中默认会存在这两条轴，</p><p>一般来说，主轴是指水平方向的轴，而副轴是指垂直方向的轴</p><h1 id="flex-direction"><a href="#flex-direction" class="headerlink" title="flex-direction"></a>flex-direction</h1><p>这个属性决定的是 item 们在水平方向上的排布</p><p>一共有 4个值 分别为 <strong>row</strong> | <strong>row-reverse</strong> | <strong>column</strong> | <strong>column-reverse</strong>; </p><pre><code class="html">.container{    display: flex;    flex-direction:  row | row-reverse | column | column-reverse;}</code></pre><p>在demo中，我的代码如下：</p><pre><code class="html">//style部分&lt;style&gt;        * {            padding: 0;            margin: 0;        }        .container {            display: flex;            flex-direction: row;        }        .container&gt;div {            width: 100px;            height: 100px;        }        .item1 {            background-color: red;        }        .item2 {            background-color: yellow;        }        .item3 {            background-color: blue;        }    &lt;/style&gt;----------------------------------------------------------------------------------//body部分    &lt;body&gt;    &lt;div class=&quot;container&quot;&gt;        &lt;div class=&quot;item1&quot;&gt;&lt;/div&gt;        &lt;div class=&quot;item2&quot;&gt;&lt;/div&gt;        &lt;div class=&quot;item3&quot;&gt;&lt;/div&gt;    &lt;/div&gt;&lt;/body&gt;</code></pre><p>现在分别展示4种 flex-direction的效果 :</p><p>:arrow_forward:要注意的是，我的代码: to be continued</p><p>row :</p><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/flex_a1.png" srcset="undefined" alt=""></p><p>row-reverse:</p><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/flex_a2.png" srcset="undefined" alt=""></p><p>column:</p><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/flex_a3.png" srcset="undefined" alt=""></p><p>column-reverse:</p><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/flex_a4.png" srcset="undefined" alt=""></p>]]></content>
+    <content type="html"><![CDATA[<p>发现很多地方都会用上Flex布局,所以就决定今晚把Flex给整活了,冲冲冲🐛</p><p>在看了一些博客后决定结合自己的理解写下一些笔记</p><p>参照：<a href="https://juejin.im/post/5ddc78f851882573520fb199" target="_blank" rel="noopener">https://juejin.im/post/5ddc78f851882573520fb199</a> -作者：锐玩道</p><p>​            <a href="https://www.jianshu.com/p/4b14a7a1c6cc" target="_blank" rel="noopener">https://www.jianshu.com/p/4b14a7a1c6cc</a> 作者：sxfshdf</p><h1 id="一些概念"><a href="#一些概念" class="headerlink" title="一些概念"></a>一些概念</h1><p>首先使用Flex布局一定要知道的一点是,这种布局总是以父子元素的形式存在,父级元素被称为 <strong>容器</strong>(container),而所有的子级元素会自动地成为这个<strong>容器</strong>的成员,被成为 Flex项目(item)</p><p><em>在下文会用 *</em>container** 表示容器, <strong>item</strong>表示Flex项目</p><pre><code class="html">display:flex//当一个元素的display被设置为flex后，它就会成为一个 *container</code></pre><blockquote><p>:hand:这里需要注意的是一旦一个元素被设置为display：flex，子元素的 float,clear,vertical-align将会失效</p></blockquote><h1 id="主轴（main-axis-amp-副轴-cross-axis"><a href="#主轴（main-axis-amp-副轴-cross-axis" class="headerlink" title="主轴（main axis )&amp; 副轴(cross axis)"></a><strong>主轴</strong>（main axis )&amp; <strong>副轴</strong>(cross axis)</h1><p><strong>container</strong>中默认会存在这两条轴，</p><p>一般来说，主轴是指水平方向的轴，而副轴是指垂直方向的轴,但是却不是绝对的,比如说下面的这个flex-direction就可以决定主轴的方向👇</p><h1 id="flex-direction"><a href="#flex-direction" class="headerlink" title="flex-direction"></a>flex-direction</h1><p>这个属性决定的是主轴的方向 ,即item们的排列方式</p><p>一共有 4个值 分别为 <strong>row</strong> | <strong>row-reverse</strong> | <strong>column</strong> | <strong>column-reverse</strong>; </p><pre><code class="html">.container{    display: flex;    flex-direction:  row | row-reverse | column | column-reverse;}</code></pre><p>在demo中，我的初始代码如下：</p><pre><code class="html">//style部分&lt;style&gt;        * {            padding: 0;            margin: 0;        }        .container {            display: flex;            flex-direction: row;        }        .container&gt;div {            width: 100px;            height: 100px;        }        .item1 {            background-color: red;        }        .item2 {            background-color: yellow;        }        .item3 {            background-color: blue;        }    &lt;/style&gt;----------------------------------------------------------------------------------//body部分    &lt;body&gt;    &lt;div class=&quot;container&quot;&gt;        &lt;div class=&quot;item1&quot;&gt;&lt;/div&gt;        &lt;div class=&quot;item2&quot;&gt;&lt;/div&gt;        &lt;div class=&quot;item3&quot;&gt;&lt;/div&gt;    &lt;/div&gt;&lt;/body&gt;</code></pre><p>现在分别展示4种 <strong>flex-direction</strong>的效果 :</p><p>👩要注意的是，在我的代码中<strong>container</strong>默认宽度是整个<strong>body</strong>的宽度,而高度则内容物(分别是红,黄,蓝三个盒子)而确定.</p><h3 id="row-从左向右排列"><a href="#row-从左向右排列" class="headerlink" title="row :从左向右排列"></a>row :从左向右排列</h3><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/flex_a1.png" srcset="undefined" alt=""></p><h3 id="row-reverse-从右向左排列"><a href="#row-reverse-从右向左排列" class="headerlink" title="row-reverse:从右向左排列"></a>row-reverse:从右向左排列</h3><p>👩这种布局中,并不是单纯地将三个盒子调转了顺序,而是还加了一步:把<strong>item</strong>全都在<strong>container</strong>中从右向左排列.</p><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/flex_a2.png" srcset="undefined" alt=""></p><h3 id="column-从上到下排列"><a href="#column-从上到下排列" class="headerlink" title="column:从上到下排列"></a>column:从上到下排列</h3><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/flex_a3.png" srcset="undefined" alt=""></p><h3 id="column-reverse-从下到上排列"><a href="#column-reverse-从下到上排列" class="headerlink" title="column-reverse:从下到上排列"></a>column-reverse:从下到上排列</h3><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/flex_a4.png" srcset="undefined" alt=""></p><h1 id="flex-wrap"><a href="#flex-wrap" class="headerlink" title="flex-wrap"></a>flex-wrap</h1><p>这个属性定义的是,如果在一条水平线上已经存在了过多的<strong>item</strong>(意思就是挤不下了),这些<strong>item</strong>将如何换行.</p><p>这个属性有四个值:</p><pre><code class="html">.container{    display: flex;    flex-wrap: nowrap | wrap | wrap-reverse;}</code></pre><p>在demo中我的初始代码如下:</p><pre><code class="html">style部分-----------------------------------------------------------------------------------------&lt;style&gt;        * {            padding: 0;            margin: 0;        }        .container {            display: flex;            flex-direction: row;            flex-wrap: nowrap;        }        .container&gt;div {            width: 100px;            height: 100px;            border: 1px solid black;        }body部分-----------------------------------------------------------------------------------------    &lt;body&gt;    &lt;div class=&quot;container&quot;&gt;        &lt;div&gt;1&lt;/div&gt;        &lt;div&gt;2&lt;/div&gt;        &lt;div&gt;3&lt;/div&gt;        &lt;div&gt;4&lt;/div&gt;        &lt;div&gt;5&lt;/div&gt;        &lt;div&gt;6&lt;/div&gt;        &lt;div&gt;7&lt;/div&gt;        &lt;div&gt;8&lt;/div&gt;    &lt;/div&gt;&lt;/body&gt;</code></pre><p>下面来看看效果吧:</p><h3 id="默认效果"><a href="#默认效果" class="headerlink" title="默认效果:"></a>默认效果:</h3><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/flex_b1.png" srcset="undefined" alt=""></p><h3 id="nowrap-不换行"><a href="#nowrap-不换行" class="headerlink" title="nowrap:不换行"></a><strong>nowrap</strong>:不换行</h3><p>现在我减小了浏览器窗口的宽度👇</p><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/flex_b2.png" srcset="undefined" alt=""></p><p>再缩小:</p><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/flex_b3.png" srcset="undefined" alt=""></p><p>👨hey!!我似乎发现了华点!这就是 <strong>弹性布局</strong>这个名字的由来吗?👆</p><h3 id="wrap-换行"><a href="#wrap-换行" class="headerlink" title="wrap:换行"></a>wrap:换行</h3><p>减小浏览器的宽度:</p><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/flex_b4.png" srcset="undefined" alt=""></p><p>再减小:</p><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/flex_b5.png" srcset="undefined" alt=""></p><h3 id="wrap-reverse-颠倒顺序的换行方式"><a href="#wrap-reverse-颠倒顺序的换行方式" class="headerlink" title="wrap-reverse:颠倒顺序的换行方式"></a>wrap-reverse:颠倒顺序的换行方式</h3><p>减小浏览器的宽度:</p><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/flex_b6.png" srcset="undefined" alt=""></p><p>再减小:</p><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/flex_b7.png" srcset="undefined" alt=""></p><p>👩可以看到wrap-reverse和wrap中的item顺序是完全反过来的</p><h1 id="flex-flow"><a href="#flex-flow" class="headerlink" title="flex-flow"></a>flex-flow</h1><p>这个属性就不多说辣,他的作用是将上面两个属性 <strong>flex-direction</strong> ,<strong>flex-wrap</strong> 写在一行,属于一种简写形式</p><pre><code class="html">.container{    flex-flow:&lt;flex-direction&gt; &lt;flex-wrap&gt; ;}</code></pre><p>比如说:</p><pre><code class="html">.container {            display: flex;            flex-direction: row;            flex-wrap: wrap-reverse;        }</code></pre><p>👇👆效果完全一样</p><pre><code class="html">.container {            display: flex;            flex-flow: nowrap row;        }</code></pre><p>👩tips:这里 <strong>flex-direction</strong> <strong>flex-wrap</strong> 这两个值的顺序是可以调换的</p><h1 id="justify-content"><a href="#justify-content" class="headerlink" title="justify-content"></a>justify-content</h1><p>这个属性的效果是</p>]]></content>
     
     
     
@@ -37,9 +37,9 @@
     
     <tags>
       
-      <tag>php</tag>
-      
       <tag>laravel</tag>
+      
+      <tag>php</tag>
       
     </tags>
     
@@ -58,9 +58,9 @@
     
     <tags>
       
-      <tag>php</tag>
-      
       <tag>laravel</tag>
+      
+      <tag>php</tag>
       
     </tags>
     
@@ -79,9 +79,9 @@
     
     <tags>
       
-      <tag>php</tag>
-      
       <tag>laravel</tag>
+      
+      <tag>php</tag>
       
     </tags>
     
@@ -100,9 +100,9 @@
     
     <tags>
       
-      <tag>php</tag>
-      
       <tag>laravel</tag>
+      
+      <tag>php</tag>
       
     </tags>
     
@@ -121,9 +121,9 @@
     
     <tags>
       
-      <tag>php</tag>
-      
       <tag>laravel</tag>
+      
+      <tag>php</tag>
       
     </tags>
     
@@ -142,9 +142,9 @@
     
     <tags>
       
-      <tag>php</tag>
-      
       <tag>laravel</tag>
+      
+      <tag>php</tag>
       
     </tags>
     
