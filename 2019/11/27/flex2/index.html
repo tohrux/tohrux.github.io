@@ -15,7 +15,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <meta name="keywords" content="">
-  <title>归档 ~ Tohrux!</title>
+  <title>flex布局中 align-items和align-content的区别 ~ Tohrux!</title>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/font-awesome/css/all.min.css"  >
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/bootstrap/css/bootstrap.min.css"  >
@@ -36,7 +36,7 @@
 
 
 <body>
-  <header style="height: 80vh;">
+  <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -84,7 +84,7 @@
 </nav>
 
     <div class="view intro-2" id="background"
-         style="background: url('https://cdn.jsdelivr.net/gh/tohrux/tohrux.github.io@1.0//img/fullVersionxx.jpg')no-repeat center center;
+         style="background: url('https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127143440.png')no-repeat center center;
            background-size: cover;
            background-attachment: scroll;">
       <div class="full-bg-img">
@@ -94,6 +94,41 @@
               
             </span>
 
+            
+              <br>
+              
+                <p class="mt-3">
+                  <i class="fas fa-calendar-alt" aria-hidden="true"></i>&nbsp;
+                  星期三, 十一月 27日 2019, 2:36 下午
+                </p>
+              
+
+              <p>
+                
+                  
+                  &nbsp;<i class="far fa-chart-bar"></i>
+                  <span class="post-count">
+                    406 字
+                  </span>&nbsp;
+                
+
+                
+                  
+                  &nbsp;<i class="far fa-clock"></i>
+                  <span class="post-count">
+                      2 分钟
+                  </span>&nbsp;
+                
+
+                
+                  <!-- 不蒜子统计文章PV -->
+                  
+                  &nbsp;<i class="far fa-eye" aria-hidden="true"></i>&nbsp;
+                  <span id="busuanzi_container_page_pv">
+                    <span id="busuanzi_value_page_pv"></span> 次
+                  </span>&nbsp;
+                
+              </p>
             
           </div>
 
@@ -105,101 +140,154 @@
 
   <main>
     
-      <div class="container nopadding-md">
-        <div class="py-5 z-depth-3" id="board">
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<div class="list-group">
-  <p class="h4">共计 16 篇文章</p>
-  <hr>
-  
-    
       
-      <p class="h5">2019</p>
-    
-    <a href="/2019/11/27/flex2/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">flex布局中 align-items和align-content的区别</span>
-      <span style="float: right;">11-27</span>
-    </a>
-  
-    
-    <a href="/2019/11/26/flex/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">Flex布局</span>
-      <span style="float: right;">11-26</span>
-    </a>
-  
-    
-    <a href="/2019/11/25/laravel-extends/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">laravel的继承与包含(extend&amp;include</span>
-      <span style="float: right;">11-25</span>
-    </a>
-  
-    
-    <a href="/2019/11/25/laravel1-25/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">larave表单验证</span>
-      <span style="float: right;">11-25</span>
-    </a>
-  
-    
-    <a href="/2019/11/24/jkjk/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">lavavel视图</span>
-      <span style="float: right;">11-24</span>
-    </a>
-  
-    
-    <a href="/2019/11/22/laravel4/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">laravel中关于数据库的操作</span>
-      <span style="float: right;">11-22</span>
-    </a>
-  
-    
-    <a href="/2019/11/22/laravel2/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">laravel控制器基础</span>
-      <span style="float: right;">11-22</span>
-    </a>
-  
-    
-    <a href="/2019/11/21/lavaral/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">laravel路由规则的使用</span>
-      <span style="float: right;">11-21</span>
-    </a>
-  
-    
-    <a href="/2019/11/20/arknight/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">明日方舟:大家,快回来吧!</span>
-      <span style="float: right;">11-20</span>
-    </a>
-  
-    
-    <a href="/2019/11/19/11-19/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">今日份的美好</span>
-      <span style="float: right;">11-19</span>
-    </a>
-  
-</div>
 
-  <nav aria-label="index posts navigation">
-    <span class="pagination pg-blue justify-content-center mt-5" id="pagination">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2019/11/page/2/">2</a><a class="extend next" rel="next" href="/archives/2019/11/page/2/"><i class="fas fa-angle-double-right"></i></a>
-    </span>
-  </nav>
-  
-  <script>
-    for (ele of document.getElementById("pagination").getElementsByClassName("page-number")) {
-      ele.href += '#board';
-    }
-  </script>
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="py-5 z-depth-3" id="board">
+        <div class="post-content mx-auto" id="post">
+          <div class="markdown-body">
+            <h3 id="首先先给出我当前的CSS和HTML"><a href="#首先先给出我当前的CSS和HTML" class="headerlink" title="首先先给出我当前的CSS和HTML"></a>首先先给出我当前的CSS和HTML</h3><pre><code class="html">    &lt;style&gt;
+        * {
+            padding: 0;
+            margin: 0;
+        }
 
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+            align-content: space-between;
+            background-color: #0080ff;
+            height: 700px;
 
-              </div>
-            </div>
+        }
+
+        .container&gt;div {
+            width: 100px;
+            height: 100px;
+            /* border: 1px solid black; */
+        }
+
+        .item1 {
+            background-color: #a3daff;
+            line-height: 100px;
+            /* font-size: 120px; */
+        }
+
+        .item2 {
+            background-color: #1ec0ff;
+            width: 200px !important;
+            height: 130px !important;
+            font-size: 100px;
+            line-height: 130px;
+        }
+
+        .item3 {
+            background-color: #FBFFB9;
+
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div&gt;&lt;/div&gt;
+    &lt;div class=&quot;container&quot;&gt;
+        &lt;div class=&quot;item1&quot;&gt;1&lt;/div&gt;
+        &lt;div class=&quot;item2&quot;&gt;2&lt;/div&gt;
+        &lt;div class=&quot;item1&quot;&gt;3&lt;/div&gt;
+        &lt;div class=&quot;item1&quot;&gt;4&lt;/div&gt;
+        &lt;div class=&quot;item1&quot;&gt;5&lt;/div&gt;
+        &lt;div class=&quot;item2&quot;&gt;6&lt;/div&gt;
+        &lt;div class=&quot;item1&quot;&gt;7&lt;/div&gt;
+        &lt;div class=&quot;item1&quot;&gt;8&lt;/div&gt;
+        &lt;div class=&quot;item1&quot;&gt;9&lt;/div&gt;
+        &lt;div class=&quot;item2&quot;&gt;10&lt;/div&gt;
+        &lt;div class=&quot;item1&quot;&gt;11&lt;/div&gt;
+        &lt;div class=&quot;item1&quot;&gt;12&lt;/div&gt;
+        &lt;div class=&quot;item1&quot;&gt;13&lt;/div&gt;
+        &lt;div class=&quot;item2&quot;&gt;14&lt;/div&gt;
+        &lt;div class=&quot;item1&quot;&gt;15&lt;/div&gt;
+        &lt;div class=&quot;item1&quot;&gt;16&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;</code></pre>
+<h3 id="呈现如下"><a href="#呈现如下" class="headerlink" title="呈现如下:"></a>呈现如下:</h3><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127150714.png" srcset="undefined" alt=""></p>
+<h3 id="👩这里我同时给了align-item和align-content的值"><a href="#👩这里我同时给了align-item和align-content的值" class="headerlink" title="👩这里我同时给了align-item和align-content的值"></a>👩这里我同时给了<code>align-item</code>和<code>align-content</code>的值</h3><p>分别为:</p>
+<pre><code class="css">align-items: flex-start;
+align-content: space-between;</code></pre>
+<p>可以看到,<code>align-item</code>只在每一行中起效果,即在每行中所有的<code>item</code>都会顶到当前行的最上方</p>
+<h3 id="👩再给他们换值"><a href="#👩再给他们换值" class="headerlink" title="👩再给他们换值"></a>👩再给他们换值</h3><p>现在我把他们修改为:</p>
+<pre><code class="css">align-items: flex-end;
+align-content: flex-start;</code></pre>
+<p>呈现如下:</p>
+<p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127151648.png" srcset="undefined" alt=""></p>
+<p>由👆可知 <code>align-item</code>只作用于每一行的行本身,而<code>align-content</code>则作用于全<code>container</code></p>
+<h3 id="that’s-all"><a href="#that’s-all" class="headerlink" title="that’s all!"></a>that’s all!</h3>
+            <hr>
+          </div>
+          <br>
+          <div>
+            <p>
+            
+            
+              <span>
+                <i class="iconfont icon-tag"></i>
+                
+                  <a class="hover-with-bg" href="/tags/css">css</a>
+                
+                  <a class="hover-with-bg" href="/tags/%E5%89%8D%E7%AB%AF">前端</a>
+                
+                  <a class="hover-with-bg" href="/tags/flex">flex</a>
+                
+              </span>
+            
+            </p>
+            
           </div>
         </div>
       </div>
+    </div>
+    <div class="d-none d-lg-block col-lg-2 toc-container">
+      
+  <div id="toc">
+    <p class="h4"><i class="far fa-list-alt"></i>&nbsp;目录</p>
+    <div id="tocbot"></div>
+  </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- custom -->
+
+
+<!-- Comments -->
+<div class="col-lg-7 mx-auto nopadding-md">
+  <div class="container comments mx-auto" id="comments">
+    
+      <br><br>
+      
+      
+  <script defer src="https://utteranc.es/client.js"
+          repo="tohrux/tohrux.github.io"
+          issue-term="pathname"
+  
+          label="utterances"
+    
+          theme="github-light"
+          crossorigin="anonymous"
+          async>
+  </script>
+
+
+    
+  </div>
+</div>
+
     
   </main>
 
@@ -274,6 +362,11 @@
 
 
 
+  
+    <script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/tocbot/tocbot.min.js" ></script>
+  
+  <script src="/js/post.js" ></script>
+
 
 
   <script src="/lib/smooth-scroll/smooth-scroll.min.js" ></script>
@@ -314,7 +407,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "归档&nbsp;",
+        "flex布局中 align-items和align-content的区别&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
