@@ -8,7 +8,7 @@
     <link href="undefined2019/11/27/flex2/"/>
     <url>2019/11/27/flex2/</url>
     
-    <content type="html"><![CDATA[<h3 id="首先先给出我当前的CSS和HTML"><a href="#首先先给出我当前的CSS和HTML" class="headerlink" title="首先先给出我当前的CSS和HTML"></a>首先先给出我当前的CSS和HTML</h3><pre><code class="html">    &lt;style&gt;        * {            padding: 0;            margin: 0;        }        .container {            display: flex;            flex-wrap: wrap;            flex-direction: row;            justify-content: space-between;            align-items: flex-start;            align-content: space-between;            background-color: #0080ff;            height: 700px;        }        .container&gt;div {            width: 100px;            height: 100px;            /* border: 1px solid black; */        }        .item1 {            background-color: #a3daff;            line-height: 100px;            /* font-size: 120px; */        }        .item2 {            background-color: #1ec0ff;            width: 200px !important;            height: 130px !important;            font-size: 100px;            line-height: 130px;        }        .item3 {            background-color: #FBFFB9;        }    &lt;/style&gt;&lt;/head&gt;&lt;body&gt;    &lt;div&gt;&lt;/div&gt;    &lt;div class=&quot;container&quot;&gt;        &lt;div class=&quot;item1&quot;&gt;1&lt;/div&gt;        &lt;div class=&quot;item2&quot;&gt;2&lt;/div&gt;        &lt;div class=&quot;item1&quot;&gt;3&lt;/div&gt;        &lt;div class=&quot;item1&quot;&gt;4&lt;/div&gt;        &lt;div class=&quot;item1&quot;&gt;5&lt;/div&gt;        &lt;div class=&quot;item2&quot;&gt;6&lt;/div&gt;        &lt;div class=&quot;item1&quot;&gt;7&lt;/div&gt;        &lt;div class=&quot;item1&quot;&gt;8&lt;/div&gt;        &lt;div class=&quot;item1&quot;&gt;9&lt;/div&gt;        &lt;div class=&quot;item2&quot;&gt;10&lt;/div&gt;        &lt;div class=&quot;item1&quot;&gt;11&lt;/div&gt;        &lt;div class=&quot;item1&quot;&gt;12&lt;/div&gt;        &lt;div class=&quot;item1&quot;&gt;13&lt;/div&gt;        &lt;div class=&quot;item2&quot;&gt;14&lt;/div&gt;        &lt;div class=&quot;item1&quot;&gt;15&lt;/div&gt;        &lt;div class=&quot;item1&quot;&gt;16&lt;/div&gt;    &lt;/div&gt;&lt;/body&gt;</code></pre><h3 id="👩这里我同时给了align-item和align-content的值"><a href="#👩这里我同时给了align-item和align-content的值" class="headerlink" title="👩这里我同时给了align-item和align-content的值"></a>👩这里我同时给了<code>align-item</code>和<code>align-content</code>的值</h3><pre><code class="css">align-items: flex-start;align-content: space-between;</code></pre><p>呈现如下:</p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127150714.png" srcset="undefined" style="zoom:67%;" /><p>可以看到,<code>align-item</code>只在每一行中起效果,即在每行中所有的<code>item</code>都会顶到当前行的最上方</p><h3 id="👩再给他们换值"><a href="#👩再给他们换值" class="headerlink" title="👩再给他们换值"></a>👩再给他们换值</h3><p>现在我把他们修改为,并调整了窗口的大小:</p><pre><code class="css">align-items: flex-end;align-content: flex-start;</code></pre><p>呈现如下:</p><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127151648.png" srcset="undefined" alt=""></p><p>可以看到<code>align-content</code>作用于整个<code>container</code>,而<code>align-item</code>则作用于他自己那行,和之前的结论一样,<s>好像这段没有必要的样子</s></p><h3 id="👨注释掉align-content"><a href="#👨注释掉align-content" class="headerlink" title="👨注释掉align-content"></a>👨注释掉align-content</h3><pre><code class="css">align-items: flex-end;/* align-content: flex-start; */</code></pre><p>这次我把<code>align-content</code>给注释掉了,并且修改了窗口大小,呈现如下:</p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127161505.png" srcset="undefined" style="zoom:67%;" /><h3 id="👴给align-content-flex-end"><a href="#👴给align-content-flex-end" class="headerlink" title="👴给align-content: flex-end;"></a>👴给align-content: flex-end;</h3><pre><code class="css">align-items: flex-end;align-content: flex-end;</code></pre><p>这次给了<code>align-content</code>值,同样为<code>flex-end</code></p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127162559.png" srcset="undefined" style="zoom:67%;" /><p>我们可以看到在全局下(指<code>container</code>) ,每一行的间距已经变成了0.</p><h3 id="👵将align-item注释掉"><a href="#👵将align-item注释掉" class="headerlink" title="👵将align-item注释掉"></a>👵将align-item注释掉</h3><pre><code class="css">/* align-items: flex-end; */align-content: flex-end;</code></pre><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127163124.png" srcset="undefined" style="zoom: 67%;" /><p>这里的<code>align-item</code>的value已经成为了默认值<code>flex-start</code>了</p><h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p><code>align-item</code>只作用于每一行的行本身,而<code>align-content</code>则作用于全<code>container</code>;如果只给<code>align-item</code>值,则在全局的每一行间都会有一段默认的不为0的距离,👈这是他的兼职工作,同时<code>align-item</code>也会完成她的本分工作:在每一行设置<code>item</code>水平排列方式;如果在这时加入个专门做调整全局(<code>container</code>)布局的<code>align-content</code>的话,<code>align-item</code>的兼职工作就会被接过.此时,<code>align-content</code>仿佛在对<code>align-item</code>说,”你就是<code>align-item</code>吗?感谢你之前做的一切,从现在开始请不要担♥任何事,因为我来了!”.然后留下<code>align-item</code>在原地露出迷妹般的星星眼.</p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127165804.gif" srcset="undefined" style="zoom: 150%;" /><h3 id="that’s-all"><a href="#that’s-all" class="headerlink" title="that’s all!"></a>that’s all!</h3>]]></content>
+    <content type="html"><![CDATA[<h3 id="首先先给出我当前的CSS和HTML"><a href="#首先先给出我当前的CSS和HTML" class="headerlink" title="首先先给出我当前的CSS和HTML"></a>首先先给出我当前的CSS和HTML</h3><pre><code class="html">    &lt;style&gt;        * {            padding: 0;            margin: 0;        }        .container {            display: flex;            flex-wrap: wrap;            flex-direction: row;            justify-content: space-between;            align-items: flex-start;            align-content: space-between;            background-color: #0080ff;            height: 700px;        }        .container&gt;div {            width: 100px;            height: 100px;            /* border: 1px solid black; */        }        .item1 {            background-color: #a3daff;            line-height: 100px;            /* font-size: 120px; */        }        .item2 {            background-color: #1ec0ff;            width: 200px !important;            height: 130px !important;            font-size: 100px;            line-height: 130px;        }        .item3 {            background-color: #FBFFB9;        }    &lt;/style&gt;&lt;/head&gt;&lt;body&gt;    &lt;div&gt;&lt;/div&gt;    &lt;div class=&quot;container&quot;&gt;        &lt;div class=&quot;item1&quot;&gt;1&lt;/div&gt;        &lt;div class=&quot;item2&quot;&gt;2&lt;/div&gt;        &lt;div class=&quot;item1&quot;&gt;3&lt;/div&gt;        &lt;div class=&quot;item1&quot;&gt;4&lt;/div&gt;        &lt;div class=&quot;item1&quot;&gt;5&lt;/div&gt;        &lt;div class=&quot;item2&quot;&gt;6&lt;/div&gt;        &lt;div class=&quot;item1&quot;&gt;7&lt;/div&gt;        &lt;div class=&quot;item1&quot;&gt;8&lt;/div&gt;        &lt;div class=&quot;item1&quot;&gt;9&lt;/div&gt;        &lt;div class=&quot;item2&quot;&gt;10&lt;/div&gt;        &lt;div class=&quot;item1&quot;&gt;11&lt;/div&gt;        &lt;div class=&quot;item1&quot;&gt;12&lt;/div&gt;        &lt;div class=&quot;item1&quot;&gt;13&lt;/div&gt;        &lt;div class=&quot;item2&quot;&gt;14&lt;/div&gt;        &lt;div class=&quot;item1&quot;&gt;15&lt;/div&gt;        &lt;div class=&quot;item1&quot;&gt;16&lt;/div&gt;    &lt;/div&gt;&lt;/body&gt;</code></pre><h3 id="👩这里我同时给了align-item和align-content的值"><a href="#👩这里我同时给了align-item和align-content的值" class="headerlink" title="👩这里我同时给了align-item和align-content的值"></a>👩这里我同时给了<code>align-item</code>和<code>align-content</code>的值</h3><pre><code class="css">align-items: flex-start;align-content: space-between;</code></pre><p>呈现如下:</p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127150714.png" srcset="undefined" style="zoom:67%;" /><p>可以看到,<code>align-item</code>只在每一行中起效果,即在每行中所有的<code>item</code>都会顶到当前行的最上方</p><h3 id="👩再给他们换值"><a href="#👩再给他们换值" class="headerlink" title="👩再给他们换值"></a>👩再给他们换值</h3><p>现在我把他们修改为,并调整了窗口的大小:</p><pre><code class="css">align-items: flex-end;align-content: flex-start;</code></pre><p>呈现如下:</p><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127151648.png" srcset="undefined" alt=""></p><p>可以看到<code>align-content</code>作用于整个<code>container</code>,而<code>align-item</code>则作用于他自己那行,和之前的结论一样,<s>好像这段没有必要的样子</s></p><h3 id="👨注释掉align-content"><a href="#👨注释掉align-content" class="headerlink" title="👨注释掉align-content"></a>👨注释掉align-content</h3><pre><code class="css">align-items: flex-end;/* align-content: flex-start; */</code></pre><p>这次我把<code>align-content</code>给注释掉了,并且修改了窗口大小,呈现如下:</p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127161505.png" srcset="undefined" style="zoom:67%;" /><h3 id="👴给align-content-flex-end"><a href="#👴给align-content-flex-end" class="headerlink" title="👴给align-content: flex-end;"></a>👴给align-content: flex-end;</h3><pre><code class="css">align-items: flex-end;align-content: flex-end;</code></pre><p>这次给了<code>align-content</code>值,同样为<code>flex-end</code></p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127162559.png" srcset="undefined" style="zoom:67%;" /><p>我们可以看到在全局下(指<code>container</code>) ,每一行的间距已经变成了0.</p><h3 id="👵将align-item注释掉"><a href="#👵将align-item注释掉" class="headerlink" title="👵将align-item注释掉"></a>👵将align-item注释掉</h3><pre><code class="css">/* align-items: flex-end; */align-content: flex-end;</code></pre><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127163124.png" srcset="undefined" style="zoom: 67%;" /><p>这里的<code>align-item</code>的value已经成为了默认值<code>flex-start</code>了</p><h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p><code>align-item</code>只作用于每一行的行本身,而<code>align-content</code>则作用于全<code>container</code>;如果只给<code>align-item</code>值,则在全局的每一行间都会有一段默认的不为0的距离,👈这是她的兼职工作,同时<code>align-item</code>也会完成她的本分工作:在每一行设置<code>item</code>水平排列方式;如果在这时加入个专门做调整全局(<code>container</code>)布局的<code>align-content</code>的话,<code>align-item</code>的兼职工作就会被接过.此时,<code>align-content</code>仿佛在对<code>align-item</code>说,”你就是<code>align-item</code>吗?感谢你之前做的一切,从现在开始请不要担♥任何事,因为我来了!”.然后留下<code>align-item</code>在原地露出迷妹般的星星眼.</p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127165804.gif" srcset="undefined" style="zoom: 150%;" /><h3 id="that’s-all"><a href="#that’s-all" class="headerlink" title="that’s all!"></a>that’s all!</h3>]]></content>
     
     
     
@@ -81,9 +81,9 @@
     
     <tags>
       
-      <tag>php</tag>
-      
       <tag>laravel</tag>
+      
+      <tag>php</tag>
       
     </tags>
     
@@ -102,9 +102,9 @@
     
     <tags>
       
-      <tag>php</tag>
-      
       <tag>laravel</tag>
+      
+      <tag>php</tag>
       
     </tags>
     
@@ -123,9 +123,9 @@
     
     <tags>
       
-      <tag>php</tag>
-      
       <tag>laravel</tag>
+      
+      <tag>php</tag>
       
     </tags>
     
@@ -144,9 +144,9 @@
     
     <tags>
       
-      <tag>php</tag>
-      
       <tag>laravel</tag>
+      
+      <tag>php</tag>
       
     </tags>
     
@@ -165,9 +165,9 @@
     
     <tags>
       
-      <tag>php</tag>
-      
       <tag>laravel</tag>
+      
+      <tag>php</tag>
       
     </tags>
     
