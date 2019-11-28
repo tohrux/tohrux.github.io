@@ -15,7 +15,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <meta name="keywords" content="">
-  <title>Flex布局 ~ Tohrux!</title>
+  <title>flex布局 ~ Tohrux!</title>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/font-awesome/css/all.min.css"  >
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/bootstrap/css/bootstrap.min.css"  >
@@ -108,7 +108,7 @@
                   
                   &nbsp;<i class="far fa-chart-bar"></i>
                   <span class="post-count">
-                    1.5k 字
+                    2k 字
                   </span>&nbsp;
                 
 
@@ -116,7 +116,7 @@
                   
                   &nbsp;<i class="far fa-clock"></i>
                   <span class="post-count">
-                      6 分钟
+                      8 分钟
                   </span>&nbsp;
                 
 
@@ -158,8 +158,8 @@
 <blockquote>
 <p><a href="https://www.jianshu.com/p/4b14a7a1c6cc" target="_blank" rel="noopener">https://www.jianshu.com/p/4b14a7a1c6cc</a>                  作者：sxfshdf</p>
 </blockquote>
-<h1 id="一些概念"><a href="#一些概念" class="headerlink" title="一些概念"></a>一些概念</h1><p>首先使用Flex布局一定要知道的一点是,这种布局总是以父子元素的形式存在,父级元素被称为 <strong>容器</strong>(container),而所有的子级元素会自动地成为这个<strong>容器</strong>的成员,被成为 Flex项目(item)</p>
-<p><em>在下文会用 *</em>container** 表示容器, <strong>item</strong>表示Flex项目</p>
+<h1 id="一些概念"><a href="#一些概念" class="headerlink" title="一些概念"></a>一些概念</h1><p>首先使用Flex布局一定要知道的一点是,这种布局总是以父子元素的形式存在,父级元素被称为 <strong>容器</strong>(container),有些,地方也会称为<strong>弹性盒</strong>而所有的子级元素会自动地成为这个<strong>容器</strong>的成员,被成为 Flex项目(item)</p>
+<p>在下文会用 <strong>container</strong> 表示容器, <strong>item</strong>表示Flex项目</p>
 <pre><code class="html">display:flex
 //当一个元素的display被设置为flex后，它就会成为一个 *container</code></pre>
 <blockquote>
@@ -361,15 +361,37 @@ body部分
 <h3 id="flex-start-2"><a href="#flex-start-2" class="headerlink" title="flex-start"></a>flex-start</h3><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127140505.png" srcset="undefined" alt=""></p>
 <h3 id="flex-end-2"><a href="#flex-end-2" class="headerlink" title="flex-end"></a>flex-end</h3><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127140728.png" srcset="undefined" alt=""></p>
 <h3 id="stretch-1"><a href="#stretch-1" class="headerlink" title="stretch"></a>stretch</h3><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127140909.png" srcset="undefined" alt=""></p>
-<p>👩这里的话<code>stretch</code>的效果是把整个<code>container</code>的高度平均分配成行间距,有一点需要说明一下:第一行是会顶到顶部的,而最后一行下面会留下行间距. 大家可以和 <code>align-content: flex-start</code>进行对比哦</p>
+<p>👩这里的话<code>stretch</code>的效果是把整个<code>container</code>除去内容后剩余的高度平均分配成行间距,有一点需要说明一下:第一行是会顶到顶部的,而最后一行下面会留下行间距. 大家可以和 <code>align-content: flex-start</code>进行对比哦</p>
 <h3 id="space-between-1"><a href="#space-between-1" class="headerlink" title="space-between"></a>space-between</h3><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127142848.png" srcset="undefined" alt=""></p>
 <h3 id="space-around-1"><a href="#space-around-1" class="headerlink" title="space-around"></a>space-around</h3><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127142802.png" srcset="undefined" alt=""></p>
 <p>👩看到这里大家在心里会有个疑惑吧,<code>align-item</code>和<code>align-content</code>的区别是什么呢,其实这是我现在内心中的问号,于是我写下了这篇👇</p>
 <blockquote>
 <p><a href="https://tohrux.github.io/2019/11/27/flex2/" target="_blank" rel="noopener">https://tohrux.github.io/2019/11/27/flex2/</a></p>
 </blockquote>
-<h1 id="item上的属性"><a href="#item上的属性" class="headerlink" title="item上的属性"></a><code>item</code>上的属性</h1><p>在开头说了</p>
-<h2 id="order"><a href="#order" class="headerlink" title="order"></a>order</h2><p> 待续/////////</p>
+<h1 id="item上的属性"><a href="#item上的属性" class="headerlink" title="item上的属性"></a><code>item</code>上的属性</h1><h3 id="order"><a href="#order" class="headerlink" title="order"></a>order</h3><p>可以为<code>item</code>加上order属性,来改变<code>item</code>们的顺序,order值越大的会排在越前面.</p>
+<pre><code class="css">//语法
+.item1{order = 2};
+.item2{order = 1};</code></pre>
+<p>原本默认的顺序(未加上order属性时):</p>
+<p><img src="../../../../AppData/Roaming/Typora/typora-user-images/1574908489659.png" srcset="undefined" alt="1574908489659"></p>
+<p>加上上面代码块的默认属性后:</p>
+<p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191128103407.png" srcset="undefined" alt=""></p>
+<h3 id="flex-grow"><a href="#flex-grow" class="headerlink" title="flex-grow"></a>flex-grow</h3><p>可以设置<code>item</code>的扩展比率,根据所给予的数字大小来分配剩余空间(<code>width</code>).</p>
+<p><strong>分配空间的计算方式</strong>:</p>
+<blockquote>
+<p>例如整个container的宽度为1000px,现在有三个item在其中,item1的宽度为100px,item2的宽度为200px,item3的宽度为300px,现在container内剩余的宽度为1000px-600px = 400px,现在给三个item分别给与flex-grow属性,item1:0; item2:3; item3:1;现在container将不会有剩余空间,item1的宽度依旧为100,item2则为3/(3+1)*400+200=500px,item3的宽度为1/(3+1)*400+300=400px;</p>
+</blockquote>
+<p>👩小tips:如果在container存在一堆item,只要为其中一个赋予flex-grow的值(可以是任何数字)它就会把剩余的空间都占用;</p>
+<p>👨tips2:flex-grow的值可以为小数;</p>
+<h3 id="flex-basis"><a href="#flex-basis" class="headerlink" title="flex-basis"></a>flex-basis</h3><p>这个元素可以定义<code>item</code>的宽度,同时我们知道<code>width</code>也可以定义元素的宽度,但<code>flex-basis</code>会覆盖<code>width</code>的值.</p>
+<h3 id="flex-shrink-amp-flex-basis-amp-flex-grow"><a href="#flex-shrink-amp-flex-basis-amp-flex-grow" class="headerlink" title="flex-shrink&amp;flex-basis&amp;flex-grow"></a>flex-shrink&amp;flex-basis&amp;flex-grow</h3><p>关于这三剑客,我推荐大家到这个blog看一下,讲得真的很通俗易懂,很棒,原本是抱着学习的心态去看,看完后发现自己写完全没有意义了</p>
+<p><a href="https://blog.csdn.net/m0_37058714/article/details/80765562" target="_blank" rel="noopener">https://blog.csdn.net/m0_37058714/article/details/80765562</a></p>
+<p>作者 <strong>wxk_前端开发</strong></p>
+<h3 id="align-self"><a href="#align-self" class="headerlink" title="align-self"></a>align-self</h3><p>这个属性可以单独定义<code>item</code>在 <strong>cross axis</strong> 上的属性,并且可以覆盖<code>align-item</code>的属性,前五个值和之前的<code>align-item</code>用法一样,如果不给值,则默认给<code>auto</code>,表示继承 <code>align-item</code>,如果<code>align-item</code>也没有给值,则默认值为<code>flex-start</code>.</p>
+<pre><code class="css">.item {
+  align-self: flex-start | flex-end | center | baseline | stretch | auto ;
+}</code></pre>
+<p>未来可能会回来更新,因为到目前为止都只是把案例打了一遍,实际运用中遇到的问题,会记录下来,感谢在互联网上分享知识的人们,i了i了.</p>
 
             <hr>
           </div>
@@ -551,7 +573,7 @@ body部分
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "Flex布局&nbsp;",
+        "flex布局&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
