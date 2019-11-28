@@ -153,19 +153,21 @@
 <p>在看了一些博客后决定结合自己的理解写下一些笔记</p>
 <p>参照：</p>
 <blockquote>
-<p><a href="https://juejin.im/post/5ddc78f851882573520fb199" target="_blank" rel="noopener">https://juejin.im/post/5ddc78f851882573520fb199</a>  作者：锐玩道</p>
+<p><a href="https://juejin.im/post/5ddc78f851882573520fb199" target="_blank" rel="noopener">https://juejin.im/post/5ddc78f851882573520fb199</a>  作者：<strong>锐玩道</strong></p>
 </blockquote>
 <blockquote>
-<p><a href="https://www.jianshu.com/p/4b14a7a1c6cc" target="_blank" rel="noopener">https://www.jianshu.com/p/4b14a7a1c6cc</a>                  作者：sxfshdf</p>
+<p><a href="https://www.jianshu.com/p/4b14a7a1c6cc" target="_blank" rel="noopener">https://www.jianshu.com/p/4b14a7a1c6cc</a>                  作者：<strong>sxfshdf</strong></p>
+<p><a href="https://blog.csdn.net/m0_37058714/article/details/80765562" target="_blank" rel="noopener">https://blog.csdn.net/m0_37058714/article/details/80765562</a>     作者 <strong>wxk_前端开发</strong></p>
+<p><a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html</a>  作者: <strong>阮一峰</strong></p>
 </blockquote>
-<h1 id="一些概念"><a href="#一些概念" class="headerlink" title="一些概念"></a>一些概念</h1><p>首先使用Flex布局一定要知道的一点是,这种布局总是以父子元素的形式存在,父级元素被称为 <strong>容器</strong>(container),有些,地方也会称为<strong>弹性盒</strong>而所有的子级元素会自动地成为这个<strong>容器</strong>的成员,被成为 Flex项目(item)</p>
+<h1 id="一些概念"><a href="#一些概念" class="headerlink" title="一些概念"></a>一些概念</h1><p>首先使用Flex布局一定要知道的一点是,这种布局总是以父子的形式存在,父级元素被称为 <strong>容器</strong>(container),有些地方也会称为<strong>弹性盒</strong>,而所有的子级元素会自动地成为这个<strong>容器</strong>的成员,成为 Flex项目(item)</p>
 <p>在下文会用 <strong>container</strong> 表示容器, <strong>item</strong>表示Flex项目</p>
 <pre><code class="html">display:flex
 //当一个元素的display被设置为flex后，它就会成为一个 *container</code></pre>
 <blockquote>
 <p>:hand:这里需要注意的是一旦一个元素被设置为display：flex，子元素的 float,clear,vertical-align将会失效</p>
 </blockquote>
-<h1 id="主轴（main-axis-amp-副轴-cross-axis"><a href="#主轴（main-axis-amp-副轴-cross-axis" class="headerlink" title="主轴（main axis )&amp; 副轴(cross axis)"></a><strong>主轴</strong>（main axis )&amp; <strong>副轴</strong>(cross axis)</h1><p><strong>container</strong>中默认会存在这两条轴，</p>
+<h1 id="主轴（main-axis-amp-副轴-侧轴-cross-axis"><a href="#主轴（main-axis-amp-副轴-侧轴-cross-axis" class="headerlink" title="主轴（main axis )&amp; 副轴/侧轴(cross axis)"></a><strong>主轴</strong>（main axis )&amp; <strong>副轴</strong>/侧轴(cross axis)</h1><p><strong>container</strong>中默认会存在这两条轴，</p>
 <p>一般来说，主轴是指水平方向的轴，而副轴是指垂直方向的轴,但是却不是绝对的,比如说下面的这个<code>flex-direction</code>属性就可以决定主轴的方向👇</p>
 <h1 id="flex-direction"><a href="#flex-direction" class="headerlink" title="flex-direction"></a>flex-direction</h1><p>这个属性决定的是主轴的方向 ,即item们的排列方式</p>
 <p>一共有 4个值 分别为 <strong>row</strong> | <strong>row-reverse</strong> | <strong>column</strong> | <strong>column-reverse</strong>; </p>
@@ -392,6 +394,8 @@ body部分
   align-self: flex-start | flex-end | center | baseline | stretch | auto ;
 }</code></pre>
 <p>未来可能会回来更新,因为到目前为止都只是把案例打了一遍,实际运用中遇到的问题,会记录下来,感谢在互联网上分享知识的人们,i了i了.</p>
+<p>关于一些实际运用可以参考阮一峰老师的这篇博文:</p>
+<p><a href="http://www.ruanyifeng.com/blog/2015/07/flex-examples.html" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2015/07/flex-examples.html</a></p>
 
             <hr>
           </div>
