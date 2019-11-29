@@ -15,7 +15,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <meta name="keywords" content="">
-  <title>flex布局中 align-items和align-content ~ Tohrux!</title>
+  <title>html5 -private ~ Tohrux!</title>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/font-awesome/css/all.min.css"  >
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/bootstrap/css/bootstrap.min.css"  >
@@ -84,7 +84,7 @@
 </nav>
 
     <div class="view intro-2" id="background"
-         style="background: url('https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191128191207.png')no-repeat center center;
+         style="background: url('https://cdn.jsdelivr.net/gh/tohrux/tohrux.github.io@1.0//img/fullVersionxx.jpg')no-repeat center center;
            background-size: cover;
            background-attachment: scroll;">
       <div class="full-bg-img">
@@ -99,7 +99,7 @@
               
                 <p class="mt-3">
                   <i class="fas fa-calendar-alt" aria-hidden="true"></i>&nbsp;
-                  星期三, 十一月 27日 2019, 2:36 下午
+                  星期五, 十一月 29日 2019, 6:16 晚上
                 </p>
               
 
@@ -108,7 +108,7 @@
                   
                   &nbsp;<i class="far fa-chart-bar"></i>
                   <span class="post-count">
-                    729 字
+                    1.2k 字
                   </span>&nbsp;
                 
 
@@ -116,7 +116,7 @@
                   
                   &nbsp;<i class="far fa-clock"></i>
                   <span class="post-count">
-                      3 分钟
+                      5 分钟
                   </span>&nbsp;
                 
 
@@ -149,106 +149,130 @@
       <div class="py-5 z-depth-3" id="board">
         <div class="post-content mx-auto" id="post">
           <div class="markdown-body">
-            <h3 id="首先先给出我当前的CSS和HTML"><a href="#首先先给出我当前的CSS和HTML" class="headerlink" title="首先先给出我当前的CSS和HTML"></a>首先先给出我当前的CSS和HTML</h3><pre><code class="html">    &lt;style&gt;
-        * {
-            padding: 0;
-            margin: 0;
-        }
+            <p><em>本文算是一个个人向的笔记,涉及到的都是书上出现过,但是我不怎么熟悉的内容,<s>相当于把书过一下**</s></em></p>
+<p>插入个音乐播放器测试一下!</p>
+<iframe src="https://open.spotify.com/embed/track/7dJLRobSnGBar7G1YhsId9" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
 
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: flex-start;
-            align-content: space-between;
-            background-color: #0080ff;
-            height: 700px;
-
-        }
-
-        .container&gt;div {
-            width: 100px;
-            height: 100px;
-            /* border: 1px solid black; */
-        }
-
-        .item1 {
-            background-color: #a3daff;
-            line-height: 100px;
-            /* font-size: 120px; */
-        }
-
-        .item2 {
-            background-color: #1ec0ff;
-            width: 200px !important;
-            height: 130px !important;
-            font-size: 100px;
-            line-height: 130px;
-        }
-
-        .item3 {
-            background-color: #FBFFB9;
-
-        }
-    &lt;/style&gt;
-&lt;/head&gt;
-
-&lt;body&gt;
-    &lt;div&gt;&lt;/div&gt;
-    &lt;div class=&quot;container&quot;&gt;
-        &lt;div class=&quot;item1&quot;&gt;1&lt;/div&gt;
-        &lt;div class=&quot;item2&quot;&gt;2&lt;/div&gt;
-        &lt;div class=&quot;item1&quot;&gt;3&lt;/div&gt;
-        &lt;div class=&quot;item1&quot;&gt;4&lt;/div&gt;
-        &lt;div class=&quot;item1&quot;&gt;5&lt;/div&gt;
-        &lt;div class=&quot;item2&quot;&gt;6&lt;/div&gt;
-        &lt;div class=&quot;item1&quot;&gt;7&lt;/div&gt;
-        &lt;div class=&quot;item1&quot;&gt;8&lt;/div&gt;
-        &lt;div class=&quot;item1&quot;&gt;9&lt;/div&gt;
-        &lt;div class=&quot;item2&quot;&gt;10&lt;/div&gt;
-        &lt;div class=&quot;item1&quot;&gt;11&lt;/div&gt;
-        &lt;div class=&quot;item1&quot;&gt;12&lt;/div&gt;
-        &lt;div class=&quot;item1&quot;&gt;13&lt;/div&gt;
-        &lt;div class=&quot;item2&quot;&gt;14&lt;/div&gt;
-        &lt;div class=&quot;item1&quot;&gt;15&lt;/div&gt;
-        &lt;div class=&quot;item1&quot;&gt;16&lt;/div&gt;
-    &lt;/div&gt;
-&lt;/body&gt;</code></pre>
-<h3 id="👩这里我同时给了align-item和align-content的值"><a href="#👩这里我同时给了align-item和align-content的值" class="headerlink" title="👩这里我同时给了align-item和align-content的值"></a>👩这里我同时给了<code>align-item</code>和<code>align-content</code>的值</h3><pre><code class="css">align-items: flex-start;
-align-content: space-between;</code></pre>
-<p>呈现如下:</p>
-<img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127150714.png" srcset="undefined" style="zoom:67%;" />
-
-<p>可以看到,<code>align-item</code>只在每一行中起效果,即在每行中所有的<code>item</code>都会顶到当前行的最上方</p>
-<h3 id="👩再给他们换别的值"><a href="#👩再给他们换别的值" class="headerlink" title="👩再给他们换别的值"></a>👩再给他们换别的值</h3><p>现在我把他们修改为,并调整了窗口的大小:</p>
-<pre><code class="css">align-items: flex-end;
-align-content: flex-start;</code></pre>
-<p>呈现如下:</p>
-<p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127151648.png" srcset="undefined" alt=""></p>
-<p>可以看到<code>align-content</code>作用于整个<code>container</code>,而<code>align-item</code>则作用于他自己那行,和之前的结论一样,<s>好像这段没有必要的样子</s></p>
-<h3 id="👨注释掉align-content"><a href="#👨注释掉align-content" class="headerlink" title="👨注释掉align-content"></a>👨注释掉align-content</h3><pre><code class="css">align-items: flex-end;
-/* align-content: flex-start; */</code></pre>
-<p>这次我把<code>align-content</code>给注释掉了,并且修改了窗口大小,呈现如下:</p>
-<img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127161505.png" srcset="undefined" style="zoom:67%;" />
-
-<h3 id="👴给align-content-flex-end"><a href="#👴给align-content-flex-end" class="headerlink" title="👴给align-content: flex-end;"></a>👴给align-content: flex-end;</h3><pre><code class="css">align-items: flex-end;
-align-content: flex-end;</code></pre>
-<p>这次给了<code>align-content</code>值,同样为<code>flex-end</code></p>
-<img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127162559.png" srcset="undefined" style="zoom:67%;" />
-
-<p>我们可以看到在全局下(指<code>container</code>) ,每一行的间距已经变成了0.</p>
-<h3 id="👵将align-item注释掉"><a href="#👵将align-item注释掉" class="headerlink" title="👵将align-item注释掉"></a>👵将align-item注释掉</h3><pre><code class="css">/* align-items: flex-end; */
-align-content: flex-end;</code></pre>
-<img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127163124.png" srcset="undefined" style="zoom: 67%;" />
-
-<p>这里的<code>align-item</code>的value已经成为了默认值<code>flex-start</code>了</p>
-<h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p><code>align-item</code>只作用于每一行的行本身,而<code>align-content</code>则作用于全<code>container</code>;如果只给<code>align-item</code>值,则在全局的每一行间都会有一段默认的不为0的距离,👈这是她的兼职工作,同时<code>align-item</code>也会完成她的本分工作:在每一行设置<code>item</code>水平排列方式;如果在这时加入个专门做调整全局(<code>container</code>)布局的<code>align-content</code>的话,<code>align-item</code>的兼职工作就会被接过.此时,<code>align-content</code>仿佛在对<code>align-item</code>说,”你就是<code>align-item</code>吗?感谢你之前做的一切,从现在开始请不要担♥任何事,因为我来了!”.然后留下<code>align-item</code>在原地露出迷妹般的星星眼.</p>
-<img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127165804.gif" srcset="undefined" style="zoom: 150%;" />
-
-
-
-<h3 id="that’s-all"><a href="#that’s-all" class="headerlink" title="that’s all!"></a>that’s all!</h3>
+<h2 id="一些常用H5标签"><a href="#一些常用H5标签" class="headerlink" title="一些常用H5标签"></a>一些常用H5标签</h2><pre><code>    &lt;b&gt; bold
+    &lt;sub&gt; 下标
+    &lt;sup&gt; 上标
+    &lt;bdo dir=&quot;rtl&quot;&gt;123&lt;/bdo&gt; 
+    &lt;strong&gt; 强调(加粗,会优先使用)
+    &lt;em&gt; emphasized
+    &lt;i&gt; italic</code></pre><h3 id="lt-a-gt"><a href="#lt-a-gt" class="headerlink" title="&lt;a&gt;"></a>&lt;a&gt;</h3><pre><code class="html">&lt;a href=&quot;rikka.png&quot; donwnload=&quot;&quot;&gt;click here to download&lt;/a&gt;</code></pre>
+<p><strong>download</strong>标签:加入后点击链接不会跳转,而是直接开始下载</p>
+<h3 id="lt-dl-gt"><a href="#lt-dl-gt" class="headerlink" title="&lt;dl&gt;"></a>&lt;dl&gt;</h3><p>定义列表dl: 英文全称definition list</p>
+<pre><code>    &lt;dl&gt;
+        &lt;dt&gt;地区&lt;/dt&gt;//denifition title
+        &lt;dd&gt;上海&lt;/dd&gt;//definition description
+        &lt;dd&gt;上海&lt;/dd&gt;
+        &lt;dd&gt;上海&lt;/dd&gt;
+    &lt;/dl&gt;</code></pre><p>输出:</p>
+<pre><code class="html">地区
+    上海
+    上海
+    上海</code></pre>
+<p>👩如果margin和padding设置为0,则不会有缩进的效果</p>
+<h1 id="表格元素-lt-table-gt"><a href="#表格元素-lt-table-gt" class="headerlink" title="表格元素&lt;table&gt;"></a>表格元素&lt;table&gt;</h1><h3 id="lt-caption-gt"><a href="#lt-caption-gt" class="headerlink" title="&lt;caption&gt;"></a>&lt;caption&gt;</h3><p>用于定义表格的标题</p>
+<h3 id="lt-th-gt"><a href="#lt-th-gt" class="headerlink" title="&lt;th&gt;"></a>&lt;th&gt;</h3><pre><code class="html">    &lt;table&gt;
+        &lt;tr&gt;
+            &lt;th&gt;1&lt;/th&gt;
+            &lt;th&gt;2&lt;/th&gt;
+            &lt;th&gt;3&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/table&gt;</code></pre>
+<h3 id="rowspan-amp-colspan"><a href="#rowspan-amp-colspan" class="headerlink" title="rowspan&amp;colspan"></a>rowspan&amp;colspan</h3><p>用于合并单元格,直接在<code>td</code>中使用</p>
+<pre><code class="html">eg:&lt;td rowspan=&quot;2&quot;&gt;</code></pre>
+<h3 id="lt-colgroup-gt"><a href="#lt-colgroup-gt" class="headerlink" title="&lt;colgroup&gt;"></a>&lt;colgroup&gt;</h3><p>//这标签完全可以用在css中写样式的方式代替</p>
+<p>通常在&lt;table&gt;的下方直接加,与<code>col</code>一起使用</p>
+<pre><code class="html">        &lt;colgroup&gt;
+            &lt;col span=&quot;2&quot; width=&quot;200&quot;&gt;
+            &lt;col width=&quot;100&quot;&gt;
+        &lt;/colgroup&gt;</code></pre>
+<p>👆,<code>span</code>:&lt;number&gt;,表示样式被改变的列数,不给值得话默认为1</p>
+<p>​    <code>width</code>:表示被当前&lt;col&gt;影响的列的宽度.</p>
+<p>​    &lt;col&gt;:如果第一个&lt;col&gt;标签的 span=2,那么第二个&lt;col&gt;标签就会从第三列开始执行.</p>
+<h3 id="html5新增的语义化标签"><a href="#html5新增的语义化标签" class="headerlink" title="html5新增的语义化标签"></a>html5新增的语义化标签</h3><p>&lt;header&gt; &lt;main&gt; &lt;footer&gt;</p>
+<p>&lt;article&gt;:只要是单独的文档内容就可以使用</p>
+<p>&lt;session&gt;:用于定义文档中的一个区域,强调分段,分区</p>
+<p>👩区别:如果是一段主题性的内容,则用session,如果一段脱离下文仍是完整且独立的存在的一段内容,则用article.两者可以互相嵌套.</p>
+<p><code>&lt;aside&gt;</code>:用于定义与文章内容无关的附属信息,通常用于嵌入内容和侧边栏.</p>
+<p><code>&lt;nav&gt;</code>:导航栏</p>
+<h3 id="lt-meter-gt-amp-lt-progress-gt"><a href="#lt-meter-gt-amp-lt-progress-gt" class="headerlink" title="&lt;meter&gt;&amp;&lt;progress&gt;"></a>&lt;meter&gt;&amp;&lt;progress&gt;</h3><p>进度条.</p>
+<p>可选值 <code>max</code>  <code>min</code>  <code>value</code>  //没有作进一步的了解</p>
+<h3 id="lt-frameset-gt"><a href="#lt-frameset-gt" class="headerlink" title="&lt;frameset&gt;"></a>&lt;frameset&gt;</h3><p>框架的集合</p>
+<h3 id="lt-video-gt-amp-lt-audio-gt"><a href="#lt-video-gt-amp-lt-audio-gt" class="headerlink" title="&lt;video&gt;&amp;&lt;audio&gt;"></a>&lt;video&gt;&amp;&lt;audio&gt;</h3><p>可以添加<code>controls</code>来添加控件,</p>
+<h2 id="contenteditable"><a href="#contenteditable" class="headerlink" title="contenteditable"></a>contenteditable</h2><p>如果该属性的值设置为true,则允许用户直接修改页面上的元素</p>
+<p>例如可以在&lt;table&gt;,&lt;div&gt;中添加此元素</p>
+<p>但是刷新后修改的内容就会丢失</p>
+<p>👩<code>designMode</code> ,这个属性可以在在js修改.相当于全局的 contentedittable</p>
+<pre><code class="js">document.designMode = &quot;on&quot;;</code></pre>
+<h2 id="hidden"><a href="#hidden" class="headerlink" title="hidden"></a>hidden</h2><p>html5所有的元素都有hidden属性,hidden=”true” 相当于 dispaly=”none”</p>
+<p>//onclick里可以直接添加js内容👇</p>
+<pre><code class="html">    &lt;button id=&quot;button&quot; onclick=&quot;
+        var target = document.getElementById(&#39;target&#39;);
+        target.hidden = !target.hidden;
+        var button = document.getElementById(&#39;button&#39;);
+        if(target.hidden){button.innerHTML=&#39;show&#39;}else{button.innerHTML=&#39;hidden&#39;}
+    &quot;&gt;show&lt;/button&gt;
+    &lt;div id=&quot;target&quot; hidden=&quot;true&quot;&gt;
+        say what?
+    &lt;/div&gt;</code></pre>
+<h1 id="表单元素-lt-form-gt"><a href="#表单元素-lt-form-gt" class="headerlink" title="表单元素&lt;form&gt;"></a>表单元素&lt;form&gt;</h1><p>在需要上传时,<code>enctype</code>的值需要改为 <code>multipart/form-data</code></p>
+<p><code>name</code>的值的设置一般要与<code>id</code>的相同</p>
+<h1 id="表单控件"><a href="#表单控件" class="headerlink" title="表单控件"></a>表单控件</h1><h2 id="lt-input-gt"><a href="#lt-input-gt" class="headerlink" title="&lt;input&gt;"></a>&lt;input&gt;</h2><p>可选值</p>
+<ul>
+<li>week</li>
+<li>month</li>
+<li>color</li>
+<li>date</li>
+<li>month</li>
+<li>date</li>
+<li>time</li>
+<li>url 移动端</li>
+<li>tel 移动端</li>
+<li>search 移动端</li>
+<li>range -拖动条</li>
+</ul>
+<p>属性:<code>maxlength</code> <code>readonly</code> <code>disable</code></p>
+<h2 id="lt-label-gt"><a href="#lt-label-gt" class="headerlink" title="&lt;label&gt;"></a>&lt;label&gt;</h2><p>有两种用法:</p>
+<pre><code class="html">    &lt;label&gt;
+        nihao
+        &lt;input type=&quot;text&quot; id=&quot;hello&quot;&gt;
+    &lt;/label&gt;
+2&gt; 
+    &lt;label for=&quot;hello&quot;&gt;
+        nihao
+        &lt;input type=&quot;text&quot; id=&quot;hello&quot;&gt;
+    &lt;/label&gt;</code></pre>
+<h2 id="lt-select-gt"><a href="#lt-select-gt" class="headerlink" title="&lt;select&gt;"></a>&lt;select&gt;</h2><p><code>selected</code></p>
+<h2 id="lt-button-gt"><a href="#lt-button-gt" class="headerlink" title="&lt;button&gt;"></a>&lt;button&gt;</h2><p>type =<code>button</code> / <code>submit</code>/ <code>reset</code></p>
+<h2 id="formaction"><a href="#formaction" class="headerlink" title="formaction"></a>formaction</h2><p>当你不需要一次提交整个form中的数据时,可以在<code>submit</code>中使用这个属性</p>
+<p>formaction = “你需要提交的id值”</p>
+<pre><code class="html">    &lt;form action=&quot;&quot; method=&quot;get&quot;&gt;
+        &lt;input type=&quot;text&quot; id=&quot;username&quot; name=&quot;username&quot;&gt;
+        &lt;input type=&quot;password&quot; id=&quot;password&quot; name=&quot;password&quot;&gt;
+        &lt;input type=&quot;submit&quot; formaction=&quot;username&quot;&gt;
+        &lt;input type=&quot;submit&quot; formaction=&quot;password&quot;&gt;
+    &lt;/form&gt;</code></pre>
+<p>👩 <code>formmethod</code>/ <code>formenctype</code> / <code>formtarget</code> 同理</p>
+<h2 id="autocomplete-autofocus"><a href="#autocomplete-autofocus" class="headerlink" title="autocomplete/autofocus"></a>autocomplete/autofocus</h2><p>autocomplete为自动填充,</p>
+<p>autofocus,当你为某个<code>input</code>添加这个元素时,打开页面的同时这个<code>input</code>会获取焦点.</p>
+<h2 id="list"><a href="#list" class="headerlink" title="list"></a>list</h2><p>建议和<code>datalist</code>一起使用 eg:</p>
+<pre><code class="html">    &lt;form action=&quot;&quot; method=&quot;get&quot;&gt;
+        &lt;label&gt;
+            &lt;input type=&quot;text&quot; list=&quot;location&quot; placeholder=&quot;waifu&quot;&gt;
+        &lt;/label&gt;
+    &lt;/form&gt;
+    &lt;datalist id=&quot;location&quot;&gt;
+        &lt;option value=&quot;angelina&quot;&gt;安洁莉娜&lt;/option&gt;
+        &lt;option value=&quot;Eyjafjalla&quot;&gt;艾雅法拉&lt;/option&gt;
+        &lt;option value=&quot;chen&quot;&gt;陈&lt;/option&gt;
+    &lt;/datalist&gt;</code></pre>
+<p>效果还挺炫:</p>
+<p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191129194042.png" srcset="undefined" alt="">输入为空时</p>
+<p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191129194106.png" srcset="undefined" alt="">输入一个’a’</p>
+<h3 id="patter"><a href="#patter" class="headerlink" title="patter"></a>patter</h3>
             <hr>
           </div>
           <br>
@@ -259,11 +283,11 @@ align-content: flex-end;</code></pre>
               <span>
                 <i class="iconfont icon-tag"></i>
                 
-                  <a class="hover-with-bg" href="/tags/css">css</a>
-                
-                  <a class="hover-with-bg" href="/tags/flex">flex</a>
-                
                   <a class="hover-with-bg" href="/tags/%E5%89%8D%E7%AB%AF">前端</a>
+                
+                  <a class="hover-with-bg" href="/tags/html">html</a>
+                
+                  <a class="hover-with-bg" href="/tags/private">private</a>
                 
               </span>
             
@@ -429,7 +453,7 @@ align-content: flex-end;</code></pre>
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "flex布局中 align-items和align-content&nbsp;",
+        "html5 -private&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
