@@ -84,7 +84,7 @@
 </nav>
 
     <div class="view intro-2" id="background"
-         style="background: url('https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191129202913.png')no-repeat center center;
+         style="background: url('https://cdn.jsdelivr.net/gh/tohrux/tohrux.github.io@1.0//img/fullVersionxx.jpg')no-repeat center center;
            background-size: cover;
            background-attachment: scroll;">
       <div class="full-bg-img">
@@ -108,7 +108,7 @@
                   
                   &nbsp;<i class="far fa-chart-bar"></i>
                   <span class="post-count">
-                    1.2k 字
+                    1.3k 字
                   </span>&nbsp;
                 
 
@@ -116,7 +116,7 @@
                   
                   &nbsp;<i class="far fa-clock"></i>
                   <span class="post-count">
-                      5 分钟
+                      6 分钟
                   </span>&nbsp;
                 
 
@@ -152,8 +152,9 @@
             <p><em>本文算是一个个人向的笔记,涉及到的都是书上出现过,但是我不怎么熟悉的内容,<s>相当于把书过一下**</s></em></p>
 <p>插入个音乐播放器测试一下!</p>
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=454224982&auto=1&height=66"></iframe>
+## 一些常用H5标签
 
-<h2 id="一些常用H5标签"><a href="#一些常用H5标签" class="headerlink" title="一些常用H5标签"></a>一些常用H5标签</h2><pre><code>    &lt;b&gt; bold
+<pre><code>    &lt;b&gt; bold
     &lt;sub&gt; 下标
     &lt;sup&gt; 上标
     &lt;bdo dir=&quot;rtl&quot;&gt;123&lt;/bdo&gt; 
@@ -245,7 +246,7 @@
         nihao
         &lt;input type=&quot;text&quot; id=&quot;hello&quot;&gt;
     &lt;/label&gt;</code></pre>
-<h2 id="lt-select-gt"><a href="#lt-select-gt" class="headerlink" title="&lt;select&gt;"></a>&lt;select&gt;</h2><p><code>selected</code></p>
+<h2 id="lt-select-gt"><a href="#lt-select-gt" class="headerlink" title="&lt;select&gt;"></a>&lt;select&gt;</h2><pre><code class="html">select</code></pre>
 <h2 id="lt-button-gt"><a href="#lt-button-gt" class="headerlink" title="&lt;button&gt;"></a>&lt;button&gt;</h2><p>type =<code>button</code> / <code>submit</code>/ <code>reset</code></p>
 <h2 id="formaction"><a href="#formaction" class="headerlink" title="formaction"></a>formaction</h2><p>当你不需要一次提交整个form中的数据时,可以在<code>submit</code>中使用这个属性</p>
 <p>formaction = “你需要提交的id值”</p>
@@ -272,7 +273,21 @@
 <p>效果还挺炫:</p>
 <p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191129194042.png" srcset="undefined" alt="">输入为空时</p>
 <p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191129194106.png" srcset="undefined" alt="">输入一个’a’</p>
-<h3 id="patter"><a href="#patter" class="headerlink" title="patter"></a>patter</h3>
+<h3 id="patter"><a href="#patter" class="headerlink" title="patter"></a>patter</h3><p>用于给当前的<code>input</code>加入验证,(正则表达式)</p>
+<p>eg:</p>
+<pre><code class="html">    &lt;form action=&quot;&quot;&gt;
+        &lt;input type=&quot;text&quot; name=&quot;&quot; id=&quot;&quot; pattern=&quot;[0-9]*&quot;&gt;
+        &lt;input type=&quot;submit&quot;&gt;
+    &lt;/form&gt;</code></pre>
+<h2 id="novalidate"><a href="#novalidate" class="headerlink" title="novalidate"></a>novalidate</h2><p>在表单内加入这个属性,就可以避免验证直接提交</p>
+<p>👩<code>form</code>标签,<code>input</code>标签都可以使用</p>
+<pre><code class="html">&lt;form action=&quot;&quot; novalidate=&quot;novalidate&quot;&gt;
+        &lt;input type=&quot;email&quot; name=&quot;user_email&quot; /&gt;
+          &lt;input type=&quot;submit&quot; /&gt;
+&lt;/form&gt;</code></pre>
+<h3 id="required"><a href="#required" class="headerlink" title="required"></a>required</h3><p>规定必须要填入内容,否则无法提交</p>
+<pre><code class="html">&lt;input type=&quot;text&quot; name=&quot;usr_name&quot; required=&quot;required&quot; /&gt;</code></pre>
+
             <hr>
           </div>
           <br>
