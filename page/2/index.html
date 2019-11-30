@@ -122,6 +122,71 @@
     
     
       <div class="col-12 col-md-4 m-auto">
+        <a href="/2019/11/21/lavaral/" target="_self">
+          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos/img/laravel1.png" srcset="undefined" alt="laravel路由规则的使用" class="img-fluid rounded z-depth-3 index-thumbnails">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/2019/11/21/lavaral/">
+        <p class="h4 index-header">laravel路由规则的使用</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">4种常用的路由方法post/get/any/match
+//get 语法
+//例如访问/hey的时候可以这样写
+Route::get (&#39;/hey&#39;, function() {
+    return &quot;hello&quot;;
+});
+
+
+//post
+//post方法可以用postman来获取值
+//👩post请求需要在VerifycsrfToken中修改把不想要csrf请求的路由写在这里:
+    protected $except = [
+        //把不想csrf验证得路由写在这里
+        &#39;/hello&#39;
+    ];
+Route::post (&#39;/hello&#39;, function() {
+    return &quot;hello from post&quot;;
+});
+
+
+
+//any
+//任意类型
+Route::any(&#39;/test2&#39;, function () {
+    echo &#39;当前是用any访问&#39;;
+});
+//match
+Route::match(</div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-11-21&nbsp;&nbsp;
+        
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/php">php</a>&nbsp;
+          
+            <a href="/tags/laravel">laravel</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+      <div class="col-12 col-md-4 m-auto">
         <a href="/2019/11/20/arknight/" target="_self">
           <img src="https://cdn.jsdelivr.net/gh/tohrux/photos/img/mostima4.png" srcset="undefined" alt="明日方舟:大家,快回来吧!" class="img-fluid rounded z-depth-3 index-thumbnails">
         </a>

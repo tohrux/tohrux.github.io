@@ -15,7 +15,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <meta name="keywords" content="">
-  <title>lavavel视图 ~ Tohrux!</title>
+  <title>标签 - javascript ~ Tohrux!</title>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/font-awesome/css/all.min.css"  >
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/bootstrap/css/bootstrap.min.css"  >
@@ -36,7 +36,7 @@
 
 
 <body>
-  <header style="height: 70vh;">
+  <header style="height: 80vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -95,41 +95,6 @@
             </span>
 
             
-              <br>
-              
-                <p class="mt-3">
-                  <i class="fas fa-calendar-alt" aria-hidden="true"></i>&nbsp;
-                  星期日, 十一月 24日 2019, 1:32 下午
-                </p>
-              
-
-              <p>
-                
-                  
-                  &nbsp;<i class="far fa-chart-bar"></i>
-                  <span class="post-count">
-                    460 字
-                  </span>&nbsp;
-                
-
-                
-                  
-                  &nbsp;<i class="far fa-clock"></i>
-                  <span class="post-count">
-                      2 分钟
-                  </span>&nbsp;
-                
-
-                
-                  <!-- 不蒜子统计文章PV -->
-                  
-                  &nbsp;<i class="far fa-eye" aria-hidden="true"></i>&nbsp;
-                  <span id="busuanzi_container_page_pv">
-                    <span id="busuanzi_value_page_pv"></span> 次
-                  </span>&nbsp;
-                
-              </p>
-            
           </div>
 
           
@@ -140,141 +105,35 @@
 
   <main>
     
+      <div class="container nopadding-md">
+        <div class="py-5 z-depth-3" id="board">
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+<div class="list-group">
+  <p class="h4">共计 1 篇文章</p>
+  <hr>
+  
+    
       
+      <p class="h5">2019</p>
+    
+    <a href="/2019/11/30/js11-30/" class="list-group-item list-group-item-action">
+      <span class="archive-post-title">js基础 复习 private</span>
+      <span style="float: right;">11-30</span>
+    </a>
+  
+</div>
 
-<div class="container-fluid">
-  <div class="row">
-    <div class="d-none d-lg-block col-lg-2"></div>
-    <div class="col-lg-8 nopadding-md">
-      <div class="py-5 z-depth-3" id="board">
-        <div class="post-content mx-auto" id="post">
-          <div class="markdown-body">
-            <h1 id="视图文件的命名和渲染"><a href="#视图文件的命名和渲染" class="headerlink" title="视图文件的命名和渲染"></a>视图文件的命名和渲染</h1><ol>
-<li>文件名习惯小写</li>
-<li>后缀为 <strong>blade.php</strong> </li>
-<li>不使用 <strong>balde.php</strong>结尾的话就不能使用laravel提供的标签语法显示数据,只能使用原生语法显示数据</li>
-</ol>
-<h1 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h1><p>在开发中可以使用compact(php内置函数)来进行数组的打包</p>
-<h3 id="TextController"><a href="#TextController" class="headerlink" title="TextController:"></a>TextController:</h3><pre><code class="php">    public function test3()
-    {
-        //现在时间
-        $date = date(&#39;Y-m-d H:i:s&#39;, time());
-        //获取今天的星期
-        $day = &#39;sunday&#39;;
-        //show 视图
-        //return view(&#39;home/index/test3&#39;, [&#39;date&#39; =&gt; $date, &#39;day&#39; =&gt; $day]);
-        👆
-      效果一样   
-         👇
-        return view(&#39;home/index/test3&#39;, compact(&#39;date&#39;, &#39;day&#39;));
-    }</code></pre>
-<h3 id="web-php"><a href="#web-php" class="headerlink" title="web.php:"></a>web.php:</h3><pre><code class="php">Route::get(&#39;/home/index/test3&#39;, &quot;TextController@test3&quot;);</code></pre>
-<h3 id="text3-blade-php"><a href="#text3-blade-php" class="headerlink" title="text3.blade.php:"></a>text3.blade.php:</h3><pre><code class="php">当前访问的是home/index/test3.blade.php文件&lt;br/&gt;
-现在是: {{$date}},今天是星期{{$day}}</code></pre>
-<h3 id="输出"><a href="#输出" class="headerlink" title="输出:"></a>输出:</h3><pre><code class="html">当前访问的是home/index/test3.blade.php文件
-现在是: 2019-11-23 01:47:37,今天是星期sunday</code></pre>
-<h3 id="之前输出当前时间"><a href="#之前输出当前时间" class="headerlink" title="之前输出当前时间:"></a>之前输出当前时间:</h3><pre><code class="php">时间戳 {{date('Y-m-d H:i:s',$time)}}</code></pre>
-<h3 id="一年后的时间"><a href="#一年后的时间" class="headerlink" title="一年后的时间:"></a>一年后的时间:</h3><pre><code class="PHP">{{date('Y-m-d H:i:s',strtotime('+1 year'))}};</code></pre>
-<h1 id="循环分支语法标签"><a href="#循环分支语法标签" class="headerlink" title="循环分支语法标签"></a>循环分支语法标签</h1><p>下面是一个案例</p>
-<p><strong>Controller</strong>中:</p>
-<pre><code class="php">use DB;
 
-class TestController extends Controller
-{
-    //start
-    public function test1()
-    {
-        $db = DB::table(&#39;member&#39;)-&gt;get();
-        // dd($db);
-        return view(&#39;test.test1&#39;, compact(&#39;db&#39;));
-    }
-}
-</code></pre>
-<p><strong>blade</strong>中:</p>
-<pre><code class="php">id&amp;emsp;&amp;emsp;name&amp;emsp;&amp;emsp;email&amp;emsp;&lt;br&gt;
-@foreach ($db as $key =&gt; $value)
-{{-- 如果不要key的话可以直接省略 ($db as $value) --}}
-    {{$value -> id}}&amp;emsp;&amp;emsp;
-    {{$value -> name}}&amp;emsp;&amp;emsp;
-    {{$value -> email}}
-    &lt;br&gt;
-@endforeach
-</code></pre>
-<p><strong>输出结果:</strong></p>
-<pre><code class="html">id  name  email 
-1   阿龙   al@gmail
-2   阿B   ab@gmail</code></pre>
-<p>🙋‍特别注意</p>
-<p>get查询道德结果集中的每一条都是一个对象,因此在循环具体字段的时候需要注意使用对象调用属性的方式才可以获取其数据</p>
-<h1 id="判断语句"><a href="#判断语句" class="headerlink" title="判断语句"></a>判断语句</h1><pre><code class="php">if在模板引擎的写法
-@if (Expression1)
-statement1
-@elseif(Expression2)
-statement2
-...
-@else
-statement3
-@endif</code></pre>
-
-            <hr>
-          </div>
-          <br>
-          <div>
-            <p>
-            
-            
-              <span>
-                <i class="iconfont icon-tag"></i>
-                
-                  <a class="hover-with-bg" href="/tags/php">php</a>
-                
-                  <a class="hover-with-bg" href="/tags/laravel">laravel</a>
-                
-              </span>
-            
-            </p>
-            
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="d-none d-lg-block col-lg-2 toc-container">
-      
-  <div id="toc">
-    <p class="h4"><i class="far fa-list-alt"></i>&nbsp;目录</p>
-    <div id="tocbot"></div>
-  </div>
-
-    </div>
-  </div>
-</div>
-
-<!-- custom -->
-
-
-<!-- Comments -->
-<div class="col-lg-7 mx-auto nopadding-md">
-  <div class="container comments mx-auto" id="comments">
-    
-      <br><br>
-      
-      
-  <script defer src="https://utteranc.es/client.js"
-          repo="tohrux/tohrux.github.io"
-          issue-term="pathname"
-  
-          label="utterances"
-    
-          theme="github-light"
-          crossorigin="anonymous"
-          async>
-  </script>
-
-
-    
-  </div>
-</div>
-
     
   </main>
 
@@ -349,11 +208,6 @@ statement3
 
 
 
-  
-    <script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/tocbot/tocbot.min.js" ></script>
-  
-  <script src="/js/post.js" ></script>
-
 
 
   <script src="/lib/smooth-scroll/smooth-scroll.min.js" ></script>
@@ -394,7 +248,7 @@ statement3
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "lavavel视图&nbsp;",
+        "标签 - javascript&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
