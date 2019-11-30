@@ -8,7 +8,7 @@
     <link href="undefined2019/11/30/js11-30/"/>
     <url>2019/11/30/js11-30/</url>
     
-    <content type="html"><![CDATA[<p><em>本文为private个人向</em></p><h2 id="字面量"><a href="#字面量" class="headerlink" title="字面量"></a>字面量</h2><p>字面量就是 <code>常量</code>,以前一直都不知道2333</p><h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><p>var是variant的缩写</p><h3 id="命名规范"><a href="#命名规范" class="headerlink" title="命名规范"></a>命名规范</h3><ul><li>只能由<code>$</code>, <code>_</code> ,英文字母,数字组成,但是不能用数字开头</li><li>尽量使用驼峰命名</li><li>不允许使用空格</li><li>最多255个字符</li></ul><p>👩:在javascript中变量名是区分大小写的</p><h3 id="变量的数据类型"><a href="#变量的数据类型" class="headerlink" title="变量的数据类型"></a>变量的数据类型</h3><p>值类型:number,boolean,string,undefined,null</p><p>引用型: object</p><p>判断数据类型</p><p><code>console.log(typeof a);</code></p><p>👩:返回值为小写字母</p><h3 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符"></a>转义字符</h3><p><code>\t</code></p><p><code>\n</code></p><p><code>\\</code></p><p><code>\&quot;</code></p><p><code>\&#39;</code></p><p><code>\r</code></p><p><code>\b</code></p><p>👩:<code>\n</code>与<code>\r</code>的区别:</p><blockquote><p><strong>回车 \r</strong>  本义是光标重新回到本行开头。r 的英文return，控制字符可以写成CR，即Carriage Return</p><p><strong>换行 \n</strong>  本义是光标往下一行（不一定到下一行行首）。n 的英文newline，控制字符可以写成LF，即Line Feed</p></blockquote><h2 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h2><ul><li><p>String()</p></li><li><p>toString()</p><p>👩:区别<code>toString()</code>无法转换null和undefined,所以一般我们用<code>String()</code>就完事了</p></li><li><p>Number()</p></li><li><p>Boolean()</p></li><li><p>parseFloat()</p></li><li><p>parseInt()</p></li></ul><h2 id="Number"><a href="#Number" class="headerlink" title="Number"></a>Number</h2><h3 id="infinity"><a href="#infinity" class="headerlink" title="infinity"></a>infinity</h3><p>当使用的Number超过了ES能表示的最大值,则会返回 infinity,</p><p>当使用的Number小于了ES能表示的最大小值,则会返回 -infinity,</p><p>👩: infinity也是Number类型</p><h3 id="NaN"><a href="#NaN" class="headerlink" title="NaN"></a>NaN</h3><p>👩NaN也是Number类型,NaN与任何数值都不相等</p><p><code>NaN≠NaN</code></p><h3 id="isNaN"><a href="#isNaN" class="headerlink" title="isNaN()"></a>isNaN()</h3><p>可以用来判断一个数是否是NaN</p><h3 id="浮点数运算"><a href="#浮点数运算" class="headerlink" title="浮点数运算"></a>浮点数运算</h3><p>尽量不要再js中使用浮点数运算,因为结果不准确</p><h3 id="隐式转换"><a href="#隐式转换" class="headerlink" title="隐式转换"></a>隐式转换</h3><p><code>+</code>比较特别</p><h2 id="null"><a href="#null" class="headerlink" title="null"></a>null</h2><p>用来表示一个空的对象</p><pre><code class="js">    var a = null;    console.log(typeof a);//object</code></pre><h3 id="undefined"><a href="#undefined" class="headerlink" title="undefined"></a>undefined</h3><pre><code class="js">    var a = undefined;    console.log(typeof a);//undefined</code></pre><h2 id="👇-underfined-与-null-的区别和相似之处"><a href="#👇-underfined-与-null-的区别和相似之处" class="headerlink" title="👇 underfined 与 null 的区别和相似之处"></a>👇 underfined 与 null 的区别和相似之处</h2><pre><code class="js">    var a = undefined;    var b = null;    console.log(a == b);//true</code></pre><pre><code class="js">    var a = undefined;    var b = null;    console.log(a + 10);//NaN    console.log(b + 10);//10</code></pre>]]></content>
+    <content type="html"><![CDATA[<p><em>本文为private个人向</em></p><h2 id="字面量"><a href="#字面量" class="headerlink" title="字面量"></a>字面量</h2><p>字面量就是 <code>常量</code>,以前一直都不知道2333</p><h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><p>var是variant的缩写</p><h3 id="命名规范"><a href="#命名规范" class="headerlink" title="命名规范"></a>命名规范</h3><ul><li>只能由<code>$</code>, <code>_</code> ,英文字母,数字组成,但是不能用数字开头</li><li>尽量使用驼峰命名</li><li>不允许使用空格</li><li>最多255个字符</li></ul><p>👩:在javascript中变量名是区分大小写的</p><h3 id="变量的数据类型"><a href="#变量的数据类型" class="headerlink" title="变量的数据类型"></a>变量的数据类型</h3><p>值类型:number,boolean,string,undefined,null</p><p>引用型: object</p><p>判断数据类型</p><p><code>console.log(typeof a);</code></p><p>👩:返回值为小写字母</p><h3 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符"></a>转义字符</h3><p><code>\t</code></p><p><code>\n</code></p><p><code>\\</code></p><p><code>\&quot;</code></p><p><code>\&#39;</code></p><p><code>\r</code></p><p><code>\b</code></p><p>👩:<code>\n</code>与<code>\r</code>的区别:</p><blockquote><p><strong>回车 \r</strong>  本义是光标重新回到本行开头。r 的英文return，控制字符可以写成CR，即Carriage Return</p><p><strong>换行 \n</strong>  本义是光标往下一行（不一定到下一行行首）。n 的英文newline，控制字符可以写成LF，即Line Feed</p></blockquote><h2 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h2><ul><li><p>String()</p></li><li><p>toString()</p><p>👩:区别<code>toString()</code>无法转换null和undefined,所以一般我们用<code>String()</code>就完事了</p></li><li><p>Number()</p></li><li><p>Boolean()</p></li><li><p>parseFloat()</p></li><li><p>parseInt()</p></li></ul><h2 id="Number"><a href="#Number" class="headerlink" title="Number"></a>Number</h2><h3 id="infinity"><a href="#infinity" class="headerlink" title="infinity"></a>infinity</h3><p>当使用的Number超过了ES能表示的最大值,则会返回 infinity,</p><p>当使用的Number小于了ES能表示的最大小值,则会返回 -infinity,</p><p>👩: infinity也是Number类型</p><h3 id="NaN"><a href="#NaN" class="headerlink" title="NaN"></a>NaN</h3><p>👩NaN也是Number类型,NaN与任何数值都不相等</p><p><code>NaN≠NaN</code></p><h3 id="isNaN"><a href="#isNaN" class="headerlink" title="isNaN()"></a>isNaN()</h3><p>可以用来判断一个数是否是NaN</p><h3 id="浮点数运算"><a href="#浮点数运算" class="headerlink" title="浮点数运算"></a>浮点数运算</h3><p>尽量不要再js中使用浮点数运算,因为结果不准确</p><h3 id="隐式转换"><a href="#隐式转换" class="headerlink" title="隐式转换"></a>隐式转换</h3><p><code>+</code>比较特别</p><h2 id="null"><a href="#null" class="headerlink" title="null"></a>null</h2><p>用来表示一个空的对象</p><pre><code class="js">    var a = null;    console.log(typeof a);//object</code></pre><h2 id="undefined"><a href="#undefined" class="headerlink" title="undefined"></a>undefined</h2><pre><code class="js">    var a = undefined;    console.log(typeof a);//undefined</code></pre><h2 id="👇-underfined-与-null-的区别和相似之处"><a href="#👇-underfined-与-null-的区别和相似之处" class="headerlink" title="👇 underfined 与 null 的区别和相似之处"></a>👇 underfined 与 null 的区别和相似之处</h2><pre><code class="js">    var a = undefined;    var b = null;    console.log(a == b);//true</code></pre><pre><code class="js">    var a = undefined;    var b = null;    console.log(a + 10);//NaN    console.log(b + 10);//10</code></pre>]]></content>
     
     
     
@@ -77,9 +77,9 @@
     
     <tags>
       
-      <tag>css</tag>
-      
       <tag>flex</tag>
+      
+      <tag>css</tag>
       
       <tag>前端</tag>
       
@@ -100,9 +100,9 @@
     
     <tags>
       
-      <tag>css</tag>
-      
       <tag>flex</tag>
+      
+      <tag>css</tag>
       
       <tag>前端</tag>
       
@@ -144,9 +144,9 @@
     
     <tags>
       
-      <tag>php</tag>
-      
       <tag>laravel</tag>
+      
+      <tag>php</tag>
       
     </tags>
     
@@ -165,9 +165,9 @@
     
     <tags>
       
-      <tag>php</tag>
-      
       <tag>laravel</tag>
+      
+      <tag>php</tag>
       
     </tags>
     
@@ -186,9 +186,9 @@
     
     <tags>
       
-      <tag>php</tag>
-      
       <tag>laravel</tag>
+      
+      <tag>php</tag>
       
     </tags>
     
@@ -207,9 +207,9 @@
     
     <tags>
       
-      <tag>php</tag>
-      
       <tag>laravel</tag>
+      
+      <tag>php</tag>
       
     </tags>
     
@@ -228,9 +228,9 @@
     
     <tags>
       
-      <tag>php</tag>
-      
       <tag>laravel</tag>
+      
+      <tag>php</tag>
       
     </tags>
     
