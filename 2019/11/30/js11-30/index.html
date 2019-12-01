@@ -108,7 +108,7 @@
                   
                   &nbsp;<i class="far fa-chart-bar"></i>
                   <span class="post-count">
-                    725 字
+                    763 字
                   </span>&nbsp;
                 
 
@@ -116,7 +116,7 @@
                   
                   &nbsp;<i class="far fa-clock"></i>
                   <span class="post-count">
-                      2 分钟
+                      3 分钟
                   </span>&nbsp;
                 
 
@@ -177,46 +177,47 @@
 <p><strong>换行 \n</strong>  本义是光标往下一行（不一定到下一行行首）。n 的英文newline，控制字符可以写成LF，即Line Feed</p>
 </blockquote>
 <h2 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h2><ul>
-<li><p>String()</p>
-<p>👩对于Number和Boolean，实际上就是调用toString()方法。</p>
-<p>而在转换为undefined和null类型时,直接输出”undefined”,”null”</p>
+<li><p><strong>String()</strong></p>
 <pre><code class="js">var a =10;
 console.log(String(a));</code></pre>
-</li>
-<li><p>toString()</p>
+<pre><code>
+👩对于Number和Boolean，实际上就是调用toString()方法。
+
+而在转换为undefined和null类型时,直接输出&quot;undefined&quot;,&quot;null&quot;</code></pre></li>
+<li><p><strong>toString()</strong></p>
 <pre><code class="js">var a = 10;
 console.log(a.toString(x));//在转换时,x的值是需要转换的进制数,不给值默认为10进制转换;并且toString()不会改变原来a的值</code></pre>
 <p>👩:区别<code>toString()</code>无法转换null和undefined,所以一般我们用<code>String()</code>就完事了</p>
 </li>
-<li><p>Number()</p>
-<p>String转为Number类型:</p>
+<li><p><strong>Number()</strong></p>
+<p><strong>String转为Number类型:</strong></p>
 <p>​    只能转换纯数字,否则结果为NaN.如果String为空则返回0.</p>
-<p>Boolean转换为Number:</p>
+<p><strong>Boolean转换为Number:</strong></p>
 <p>​    true-&gt;1</p>
 <p>​    false-&gt;2</p>
-<p>Null转换为Number:</p>
+<p><strong>Null转换为Number:</strong></p>
 <p>​    <code>0</code></p>
-<p>Undefined转换为Number:</p>
+<p><strong>Undefined转换为Number:</strong></p>
 <p>​    <code>NaN</code></p>
 </li>
-<li><p>parseInt()</p>
+<li><p><strong>parseInt()</strong></p>
 <p>专门用来转换字符串.</p>
 <p>只保留字符串最开头的数字</p>
 <p>如果开头就不是数字,直接返回<code>NaN</code></p>
-<p>对小数的处理:</p>
+<p><strong>对小数的处理:</strong></p>
 <pre><code class="js">console.log(parseInt(&quot;5.9&quot;));//5</code></pre>
 <p>对非String的处理:先转换为String类型,再转换为Number返回<code>NaN</code></p>
-<p>转换为别的进制:</p>
+<p><strong>转换为别的进制:</strong></p>
 <pre><code class="js">var a = 0b11;
 console.log(parseInt(a,10));//3</code></pre>
 </li>
 </ul>
 <ul>
-<li><p>parseFloat()</p>
+<li><p><strong>parseFloat()</strong></p>
 <p>同上,专门用来转换String类型</p>
 <p>可以获得有效的小数部分</p>
 </li>
-<li><p>Boolean()</p>
+<li><p><strong>Boolean()</strong></p>
 <p>​    数字类型:除了0和NaN其他都是true;</p>
 <p>​    字符串:除了空的字符串都是true;</p>
 <p>​    Object类型都是true;</p>
@@ -246,6 +247,11 @@ console.log(parseInt(a,10));//3</code></pre>
     var b = null;
     console.log(a + 10);//NaN
     console.log(b + 10);//10</code></pre>
+<h2 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h2><p>与<code>&amp;&amp;</code> </p>
+<p>或<code>||</code></p>
+<h2 id="i-i"><a href="#i-i" class="headerlink" title="++i,i++"></a>++i,i++</h2><blockquote>
+<p>++ i 是先加后赋值;i ++ 是先赋值后加;++i和i++都是分两步完成</p>
+</blockquote>
 
             <hr>
           </div>

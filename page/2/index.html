@@ -122,6 +122,65 @@
     
     
       <div class="col-12 col-md-4 m-auto">
+        <a href="/2019/11/22/laravel2/" target="_self">
+          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos/img/laravel1.png" srcset="undefined" alt="laravel控制器基础" class="img-fluid rounded z-depth-3 index-thumbnails">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/2019/11/22/laravel2/">
+        <p class="h4 index-header">laravel控制器基础</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">控制器文件的位置控制器属于项目代码
+位于app/http/Controllers
+命名控制器文件驼峰命名+Controller.php
+控制器的结构代码🚫不需要我们自己去写,可以通过artisan来生成
+相应命令:
+php artisan make:controller TestController
+创建资源控制器:(自动生成很多方法
+php artisan make:controller TestController --resource //简写 --r
+分目录控制器(没有这个文件夹的话就会创建)
+php artisan make:controller Admin/TestController
+创建成功的提示:
+Controller created successfully.
+生成的结构代码:
+&lt;?php
+
+namespace App\Http\Controllers;//命名空间
+
+use Illuminate\Http\Request;//命名空间三元素: 常量,方法,类
+
+class TestController extends Controller
+{
+    //</div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-11-22&nbsp;&nbsp;
+        
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/laravel">laravel</a>&nbsp;
+          
+            <a href="/tags/php">php</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+      <div class="col-12 col-md-4 m-auto">
         <a href="/2019/11/21/lavaral/" target="_self">
           <img src="https://cdn.jsdelivr.net/gh/tohrux/photos/img/laravel1.png" srcset="undefined" alt="laravel路由规则的使用" class="img-fluid rounded z-depth-3 index-thumbnails">
         </a>
