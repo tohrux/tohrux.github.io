@@ -154,13 +154,15 @@ var obj = new Object();
     var obj = new Object();
     //字面量创建
     var obj2 = {};
+    //先声明一个类
+    var User = function (name, age) {
+        this.name = name;
+        this.age = age;
+    }
+    var user1 = new User(&#39;angelina&#39;, 23);
+    console.log(user1);
 两个变量被同一个对象引用时    var obj = new Object();
-    obj.name = &#39;angelina&#39;;
-    var obj2 = obj;
-    obj2.name = &#39;eyjafjalla&#39;;
-    console.log(obj.name);//eyjafjalla
-👩:这里输出eyjafjalla是因为 obj2 和 obj 都指向了同一个堆内存地址
-打印对象    var obj = n</div>
+    obj.name = </div>
         </div>
       </a>
 

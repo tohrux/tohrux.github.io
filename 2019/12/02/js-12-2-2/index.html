@@ -108,7 +108,7 @@
                   
                   &nbsp;<i class="far fa-chart-bar"></i>
                   <span class="post-count">
-                    252 字
+                    280 字
                   </span>&nbsp;
                 
 
@@ -167,7 +167,14 @@
 <h3 id="对象的创建"><a href="#对象的创建" class="headerlink" title="对象的创建"></a>对象的创建</h3><pre><code class="js">    //通过new关键字创建,调用了construct
     var obj = new Object();
     //字面量创建
-    var obj2 = {};</code></pre>
+    var obj2 = {};
+    //先声明一个类
+    var User = function (name, age) {
+        this.name = name;
+        this.age = age;
+    }
+    var user1 = new User(&#39;angelina&#39;, 23);
+    console.log(user1);</code></pre>
 <h3 id="两个变量被同一个对象引用时"><a href="#两个变量被同一个对象引用时" class="headerlink" title="两个变量被同一个对象引用时"></a>两个变量被同一个对象引用时</h3><pre><code class="js">    var obj = new Object();
     obj.name = &#39;angelina&#39;;
     var obj2 = obj;
