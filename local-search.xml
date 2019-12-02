@@ -8,7 +8,7 @@
     <link href="undefined2019/12/02/12-2-3/"/>
     <url>2019/12/02/12-2-3/</url>
     
-    <content type="html"><![CDATA[<p><em>方法的解释来源于w3c MDN</em></p><h2 id="数组方法"><a href="#数组方法" class="headerlink" title="数组方法"></a>数组方法</h2><h3 id="concat"><a href="#concat" class="headerlink" title="concat()"></a>concat()</h3><blockquote><p>concat() 方法用于连接两个或多个数组。</p><p><strong>该方法不会改变现有的数组</strong>，而仅仅会返回被连接数组的一个副本。</p></blockquote><p>语法</p><pre><code class="js">arrayObject.concat(arrayX,arrayX,......,arrayX)</code></pre><p>👩:括号中可以给具体值,或者是数组名</p><h3 id="join"><a href="#join" class="headerlink" title="join()"></a>join()</h3><blockquote><p><code>join()</code> 方法将一个数组（或一个<a href="https://developer.mozilla.org/zh-CN//docs/Web/JavaScript/Guide/Indexed_collections#Working_with_array-like_objects" target="_blank" rel="noopener">类数组对象</a>）的所有元素连接成一个字符串并返回这个字符串。如果数组只有一个项目，那么将返回该项目而不使用分隔符。</p></blockquote><pre><code class="js">    const elements = [&#39;Fire&#39;, &#39;Air&#39;, &#39;Water&#39;];    console.log(elements.join());    // expected output: &quot;Fire,Air,Water&quot;    console.log(elements.join(&#39;&#39;));    // expected output: &quot;FireAirWater&quot;    console.log(elements.join(&#39;-&#39;));    // expected output: &quot;Fire-Air-Water&quot;</code></pre><p>👩:其中,<code>elements.join()</code>等效于<code>element.toString()</code></p><h3 id="slice"><a href="#slice" class="headerlink" title="slice()"></a>slice()</h3><blockquote><p><code>slice()</code> 方法返回一个新的数组对象，这一对象是一个由 <code>begin</code> 和 <code>end</code> 决定的原数组的<strong>浅拷贝</strong>（包括 <code>begin</code>，不包括<code>end</code>）。原始数组不会被改变。</p></blockquote><pre><code class="js">const animals = [&#39;ant&#39;, &#39;bison&#39;, &#39;camel&#39;, &#39;duck&#39;, &#39;elephant&#39;];console.log(animals.slice(2));// expected output: Array [&quot;camel&quot;, &quot;duck&quot;, &quot;elephant&quot;]console.log(animals.slice(2, 4));// expected output: Array [&quot;camel&quot;, &quot;duck&quot;]console.log(animals.slice(1, 5));// expected output: Array [&quot;bison&quot;, &quot;camel&quot;, &quot;duck&quot;, &quot;elephant&quot;]</code></pre><blockquote><ul><li><p>如果该元素是个对象引用 （不是实际的对象），<code>slice</code> 会拷贝这个对象引用到新的数组里。两个对象引用都引用了同一个对象。如果被引用的对象发生改变，则新的和原来的数组中的这个元素也会发生改变。</p></li><li><p>对于字符串、数字及布尔值来说（不是 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank" rel="noopener"><code>String</code></a>、<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Number" target="_blank" rel="noopener"><code>Number</code></a> 或者 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Boolean" target="_blank" rel="noopener"><code>Boolean</code></a> 对象），<code>slice</code> 会拷贝这些值到新的数组里。在别的数组里修改这些字符串或数字或是布尔值，将不会影响另一个数组。</p></li></ul></blockquote><p>👩:上面这两条很关键!</p><h3 id="splice"><a href="#splice" class="headerlink" title="splice()"></a>splice()</h3><blockquote><p><strong><code>splice()</code></strong> 方法通过删除或替换现有元素或者原地添加新的元素来修改数组,并以数组形式返回被修改的内容。<strong>此方法会改变原数组</strong>。</p></blockquote><pre><code class="js">const months = [&#39;Jan&#39;, &#39;March&#39;, &#39;April&#39;, &#39;June&#39;];months.splice(1, 0, &#39;Feb&#39;);// inserts at index 1console.log(months);// expected output: Array [&quot;Jan&quot;, &quot;Feb&quot;, &quot;March&quot;, &quot;April&quot;, &quot;June&quot;]months.splice(4, 1, &#39;May&#39;);// replaces 1 element at index 4console.log(months);// expected output: Array [&quot;Jan&quot;, &quot;Feb&quot;, &quot;March&quot;, &quot;April&quot;, &quot;May&quot;]</code></pre><blockquote><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/slice" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/slice</a> 👈例子</p></blockquote><h3 id="shift-amp-pop"><a href="#shift-amp-pop" class="headerlink" title="shift()&amp;pop()"></a>shift()&amp;pop()</h3><p>返回的值是删除的值</p><h3 id="unshift-amp-push"><a href="#unshift-amp-push" class="headerlink" title="unshift() &amp; push()"></a>unshift() &amp; push()</h3><p>返回的值是新的数组的长度</p><p>​    var a = [1, 2, 3];</p><p>​    //通过new关键字创建一个Array对象,Array中的数字控制的是数组的容量,可以不加</p><p>​    var a = new Array(3);</p><h3 id="toString-NaN"><a href="#toString-NaN" class="headerlink" title="toString()"></a>toString()</h3><p>将数组转换为字符串;</p><h3 id="reverse"><a href="#reverse" class="headerlink" title="reverse()"></a>reverse()</h3><p>翻转数组</p><h3 id="sort"><a href="#sort" class="headerlink" title="sort()"></a>sort()</h3><p>默认按照数组成员的首字母的ASCII码值排序</p><h3 id="indexOf"><a href="#indexOf" class="headerlink" title="indexOf()"></a>indexOf()</h3><p>有两个可选值</p><pre><code class="js">String.indexOf(&#39;a&#39;,b);//第一个数值是指要检索的值,第二个值是index//返回的值是被检索的字符串的首位字符的index值//若找不到要检索的值则返回 -1</code></pre><h3 id="lastIndexOf"><a href="#lastIndexOf" class="headerlink" title="lastIndexOf()"></a>lastIndexOf()</h3><p>和<code>indexOf()</code>的区别是direction是反的;</p><h3 id="search"><a href="#search" class="headerlink" title="search()"></a>search()</h3><pre><code class="js">String.search(&#39;a&#39;);//和indexOf()的使用场景几乎一样,但是不能給index,即不能规定从哪开始找.//比indexOf()多了一个功能,可以在括号中使用正则表达式eg:var str = &#39;abcDEF&#39;;console.log(str.search(/d/i));</code></pre><h3 id="match"><a href="#match" class="headerlink" title="match()"></a>match()</h3><p>语法:</p><pre><code class="js">String.match(搜索值) 或 String.match(z&#39;z&#39;biao&#39;da</code></pre>]]></content>
+    <content type="html"><![CDATA[<p><em>方法的解释来源于w3c MDN</em></p><h2 id="数组方法"><a href="#数组方法" class="headerlink" title="数组方法"></a>数组方法</h2><h3 id="concat"><a href="#concat" class="headerlink" title="concat()"></a>concat()</h3><blockquote><p>concat() 方法用于连接两个或多个数组。</p><p><strong>该方法不会改变现有的数组</strong>，而仅仅会返回被连接数组的一个副本。</p></blockquote><p>语法</p><pre><code class="js">arrayObject.concat(arrayX,arrayX,......,arrayX)</code></pre><p>👩:括号中可以给具体值,或者是数组名</p><h3 id="join"><a href="#join" class="headerlink" title="join()"></a>join()</h3><blockquote><p><code>join()</code> 方法将一个数组（或一个<a href="https://developer.mozilla.org/zh-CN//docs/Web/JavaScript/Guide/Indexed_collections#Working_with_array-like_objects" target="_blank" rel="noopener">类数组对象</a>）的所有元素连接成一个字符串并返回这个字符串。如果数组只有一个项目，那么将返回该项目而不使用分隔符。</p></blockquote><pre><code class="js">    const elements = [&#39;Fire&#39;, &#39;Air&#39;, &#39;Water&#39;];    console.log(elements.join());    // expected output: &quot;Fire,Air,Water&quot;    console.log(elements.join(&#39;&#39;));    // expected output: &quot;FireAirWater&quot;    console.log(elements.join(&#39;-&#39;));    // expected output: &quot;Fire-Air-Water&quot;</code></pre><p>👩:其中,<code>elements.join()</code>等效于<code>element.toString()</code></p><h3 id="slice"><a href="#slice" class="headerlink" title="slice()"></a>slice()</h3><blockquote><p><code>slice()</code> 方法返回一个新的数组对象，这一对象是一个由 <code>begin</code> 和 <code>end</code> 决定的原数组的<strong>浅拷贝</strong>（包括 <code>begin</code>，不包括<code>end</code>）。原始数组不会被改变。</p></blockquote><pre><code class="js">const animals = [&#39;ant&#39;, &#39;bison&#39;, &#39;camel&#39;, &#39;duck&#39;, &#39;elephant&#39;];console.log(animals.slice(2));// expected output: Array [&quot;camel&quot;, &quot;duck&quot;, &quot;elephant&quot;]console.log(animals.slice(2, 4));// expected output: Array [&quot;camel&quot;, &quot;duck&quot;]console.log(animals.slice(1, 5));// expected output: Array [&quot;bison&quot;, &quot;camel&quot;, &quot;duck&quot;, &quot;elephant&quot;]</code></pre><blockquote><ul><li><p>如果该元素是个对象引用 （不是实际的对象），<code>slice</code> 会拷贝这个对象引用到新的数组里。两个对象引用都引用了同一个对象。如果被引用的对象发生改变，则新的和原来的数组中的这个元素也会发生改变。</p></li><li><p>对于字符串、数字及布尔值来说（不是 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank" rel="noopener"><code>String</code></a>、<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Number" target="_blank" rel="noopener"><code>Number</code></a> 或者 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Boolean" target="_blank" rel="noopener"><code>Boolean</code></a> 对象），<code>slice</code> 会拷贝这些值到新的数组里。在别的数组里修改这些字符串或数字或是布尔值，将不会影响另一个数组。</p></li></ul></blockquote><p>👩:上面这两条很关键!</p><h3 id="splice"><a href="#splice" class="headerlink" title="splice()"></a>splice()</h3><blockquote><p><strong><code>splice()</code></strong> 方法通过删除或替换现有元素或者原地添加新的元素来修改数组,并以数组形式返回被修改的内容。<strong>此方法会改变原数组</strong>。</p></blockquote><pre><code class="js">const months = [&#39;Jan&#39;, &#39;March&#39;, &#39;April&#39;, &#39;June&#39;];months.splice(1, 0, &#39;Feb&#39;);// inserts at index 1console.log(months);// expected output: Array [&quot;Jan&quot;, &quot;Feb&quot;, &quot;March&quot;, &quot;April&quot;, &quot;June&quot;]months.splice(4, 1, &#39;May&#39;);// replaces 1 element at index 4console.log(months);// expected output: Array [&quot;Jan&quot;, &quot;Feb&quot;, &quot;March&quot;, &quot;April&quot;, &quot;May&quot;]</code></pre><blockquote><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/slice" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/slice</a> 👈例子</p></blockquote><h3 id="shift-amp-pop"><a href="#shift-amp-pop" class="headerlink" title="shift()&amp;pop()"></a>shift()&amp;pop()</h3><p>返回的值是删除的值</p><h3 id="unshift-amp-push"><a href="#unshift-amp-push" class="headerlink" title="unshift() &amp; push()"></a>unshift() &amp; push()</h3><p>返回的值是新的数组的长度</p><p>​    var a = [1, 2, 3];</p><p>​    //通过new关键字创建一个Array对象,Array中的数字控制的是数组的容量,可以不加</p><p>​    var a = new Array(3);</p><h3 id="toString-NaN"><a href="#toString-NaN" class="headerlink" title="toString()"></a>toString()</h3><p>将数组转换为字符串;</p><h3 id="reverse"><a href="#reverse" class="headerlink" title="reverse()"></a>reverse()</h3><p>翻转数组</p><h3 id="sort"><a href="#sort" class="headerlink" title="sort()"></a>sort()</h3><p>默认按照数组成员的首字母的ASCII码值排序</p><h3 id="indexOf"><a href="#indexOf" class="headerlink" title="indexOf()"></a>indexOf()</h3><p>有两个可选值</p><pre><code class="js">String.indexOf(&#39;a&#39;,b);//第一个数值是指要检索的值,第二个值是index//返回的值是被检索的字符串的首位字符的index值//若找不到要检索的值则返回 -1</code></pre><h3 id="lastIndexOf"><a href="#lastIndexOf" class="headerlink" title="lastIndexOf()"></a>lastIndexOf()</h3><p>和<code>indexOf()</code>的区别是direction是反的;</p><h3 id="search"><a href="#search" class="headerlink" title="search()"></a>search()</h3><pre><code class="js">String.search(&#39;a&#39;);//和indexOf()的使用场景几乎一样,但是不能給index,即不能规定从哪开始找.//比indexOf()多了一个功能,可以在括号中使用正则表达式eg:var str = &#39;abcDEF&#39;;console.log(str.search(/d/i));</code></pre><h3 id="match"><a href="#match" class="headerlink" title="match()"></a>match()</h3><p>语法:</p><pre><code class="js">String.match(搜索值) 或 String.match(正则表达式)</code></pre>]]></content>
     
     
     
@@ -35,9 +35,9 @@
     
     <tags>
       
-      <tag>前端</tag>
-      
       <tag>js</tag>
+      
+      <tag>前端</tag>
       
       <tag>面向对象</tag>
       
@@ -228,9 +228,9 @@
     
     <tags>
       
-      <tag>php</tag>
-      
       <tag>laravel</tag>
+      
+      <tag>php</tag>
       
     </tags>
     
@@ -249,9 +249,9 @@
     
     <tags>
       
-      <tag>php</tag>
-      
       <tag>laravel</tag>
+      
+      <tag>php</tag>
       
     </tags>
     
@@ -270,9 +270,9 @@
     
     <tags>
       
-      <tag>php</tag>
-      
       <tag>laravel</tag>
+      
+      <tag>php</tag>
       
     </tags>
     
@@ -291,9 +291,9 @@
     
     <tags>
       
-      <tag>php</tag>
-      
       <tag>laravel</tag>
+      
+      <tag>php</tag>
       
     </tags>
     
@@ -312,9 +312,9 @@
     
     <tags>
       
-      <tag>php</tag>
-      
       <tag>laravel</tag>
+      
+      <tag>php</tag>
       
     </tags>
     
