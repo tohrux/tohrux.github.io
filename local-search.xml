@@ -4,11 +4,32 @@
   
   
   <entry>
+    <title>js 数组 -private</title>
+    <link href="undefined2019/12/02/12-2-3/"/>
+    <url>2019/12/02/12-2-3/</url>
+    
+    <content type="html"><![CDATA[<p><em>方法的解释来源于w3c MDN</em></p><h2 id="数组方法"><a href="#数组方法" class="headerlink" title="数组方法"></a>数组方法</h2><h3 id="concat"><a href="#concat" class="headerlink" title="concat()"></a>concat()</h3><blockquote><p>concat() 方法用于连接两个或多个数组。</p><p><strong>该方法不会改变现有的数组</strong>，而仅仅会返回被连接数组的一个副本。</p></blockquote><p>语法</p><pre><code class="js">arrayObject.concat(arrayX,arrayX,......,arrayX)</code></pre><p>👩:括号中可以给具体值,或者是数组名</p><h3 id="join"><a href="#join" class="headerlink" title="join()"></a>join()</h3><blockquote><p><code>join()</code> 方法将一个数组（或一个<a href="https://developer.mozilla.org/zh-CN//docs/Web/JavaScript/Guide/Indexed_collections#Working_with_array-like_objects" target="_blank" rel="noopener">类数组对象</a>）的所有元素连接成一个字符串并返回这个字符串。如果数组只有一个项目，那么将返回该项目而不使用分隔符。</p></blockquote><pre><code class="js">    const elements = [&#39;Fire&#39;, &#39;Air&#39;, &#39;Water&#39;];    console.log(elements.join());    // expected output: &quot;Fire,Air,Water&quot;    console.log(elements.join(&#39;&#39;));    // expected output: &quot;FireAirWater&quot;    console.log(elements.join(&#39;-&#39;));    // expected output: &quot;Fire-Air-Water&quot;</code></pre><p>👩:其中,<code>elements.join()</code>等效于<code>element.toString()</code></p><h3 id="slice"><a href="#slice" class="headerlink" title="slice()"></a>slice()</h3><blockquote><p><code>slice()</code> 方法返回一个新的数组对象，这一对象是一个由 <code>begin</code> 和 <code>end</code> 决定的原数组的<strong>浅拷贝</strong>（包括 <code>begin</code>，不包括<code>end</code>）。原始数组不会被改变。</p></blockquote><pre><code class="js">const animals = [&#39;ant&#39;, &#39;bison&#39;, &#39;camel&#39;, &#39;duck&#39;, &#39;elephant&#39;];console.log(animals.slice(2));// expected output: Array [&quot;camel&quot;, &quot;duck&quot;, &quot;elephant&quot;]console.log(animals.slice(2, 4));// expected output: Array [&quot;camel&quot;, &quot;duck&quot;]console.log(animals.slice(1, 5));// expected output: Array [&quot;bison&quot;, &quot;camel&quot;, &quot;duck&quot;, &quot;elephant&quot;]</code></pre><blockquote><ul><li><p>如果该元素是个对象引用 （不是实际的对象），<code>slice</code> 会拷贝这个对象引用到新的数组里。两个对象引用都引用了同一个对象。如果被引用的对象发生改变，则新的和原来的数组中的这个元素也会发生改变。</p></li><li><p>对于字符串、数字及布尔值来说（不是 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank" rel="noopener"><code>String</code></a>、<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Number" target="_blank" rel="noopener"><code>Number</code></a> 或者 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Boolean" target="_blank" rel="noopener"><code>Boolean</code></a> 对象），<code>slice</code> 会拷贝这些值到新的数组里。在别的数组里修改这些字符串或数字或是布尔值，将不会影响另一个数组。</p></li></ul></blockquote><p>👩:上面这两条很关键!</p><h3 id="splice"><a href="#splice" class="headerlink" title="splice()"></a>splice()</h3><blockquote><p><strong><code>splice()</code></strong> 方法通过删除或替换现有元素或者原地添加新的元素来修改数组,并以数组形式返回被修改的内容。<strong>此方法会改变原数组</strong>。</p></blockquote><pre><code class="js">const months = [&#39;Jan&#39;, &#39;March&#39;, &#39;April&#39;, &#39;June&#39;];months.splice(1, 0, &#39;Feb&#39;);// inserts at index 1console.log(months);// expected output: Array [&quot;Jan&quot;, &quot;Feb&quot;, &quot;March&quot;, &quot;April&quot;, &quot;June&quot;]months.splice(4, 1, &#39;May&#39;);// replaces 1 element at index 4console.log(months);// expected output: Array [&quot;Jan&quot;, &quot;Feb&quot;, &quot;March&quot;, &quot;April&quot;, &quot;May&quot;]</code></pre><blockquote><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/slice" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/slice</a> 👈例子</p></blockquote><h3 id="shift-amp-pop"><a href="#shift-amp-pop" class="headerlink" title="shift()&amp;pop()"></a>shift()&amp;pop()</h3><p>返回的值是删除的值</p><h3 id="unshift-amp-push"><a href="#unshift-amp-push" class="headerlink" title="unshift() &amp; push()"></a>unshift() &amp; push()</h3><p>返回的值是新的数组的长度</p><p>​    var a = [1, 2, 3];</p><p>​    //通过new关键字创建一个Array对象,Array中的数字控制的是数组的容量,可以不加</p><p>​    var a = new Array(3);</p><h3 id="toString-NaN"><a href="#toString-NaN" class="headerlink" title="toString()"></a>toString()</h3><p>将数组转换为字符串;</p><h3 id="reverse"><a href="#reverse" class="headerlink" title="reverse()"></a>reverse()</h3><p>翻转数组</p><h3 id="sort"><a href="#sort" class="headerlink" title="sort()"></a>sort()</h3><p>默认按照数组成员的首字母的ASCII码值排序</p><h3 id="indexOf"><a href="#indexOf" class="headerlink" title="indexOf()"></a>indexOf()</h3>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>js</tag>
+      
+      <tag>数组</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>js 面向对象 -private</title>
     <link href="undefined2019/12/02/js-12-2-2/"/>
     <url>2019/12/02/js-12-2-2/</url>
     
-    <content type="html"><![CDATA[<h3 id="栈内存和堆内存"><a href="#栈内存和堆内存" class="headerlink" title="栈内存和堆内存"></a>栈内存和堆内存</h3><blockquote><p><a href="https://blog.csdn.net/xdd19910505/article/details/41900693" target="_blank" rel="noopener">https://blog.csdn.net/xdd19910505/article/details/41900693</a></p></blockquote><h3 id="对象的分类"><a href="#对象的分类" class="headerlink" title="对象的分类"></a>对象的分类</h3><ul><li>内置对象</li></ul><p>例如javascript中的Math方法.</p><ul><li>宿主对象</li></ul><p>DOM,BOM,比如<code>console</code>,<code>document</code> </p><ul><li>自定义对象</li></ul><pre><code class="js">var obj = new Object();</code></pre><h3 id="对象的创建"><a href="#对象的创建" class="headerlink" title="对象的创建"></a>对象的创建</h3><pre><code class="js">    //通过new关键字创建,调用了construct    var obj = new Object();    //字面量创建    var obj2 = {};    //先声明一个类    var User = function (name, age) {        this.name = name;        this.age = age;    }    var user1 = new User(&#39;angelina&#39;, 23);    console.log(user1);</code></pre><h3 id="两个变量被同一个对象引用时"><a href="#两个变量被同一个对象引用时" class="headerlink" title="两个变量被同一个对象引用时"></a>两个变量被同一个对象引用时</h3><pre><code class="js">    var obj = new Object();    obj.name = &#39;angelina&#39;;    var obj2 = obj;    obj2.name = &#39;eyjafjalla&#39;;    console.log(obj.name);//eyjafjalla</code></pre><p>👩:这里输出<code>eyjafjalla</code>是因为 obj2 和 obj 都指向了同一个堆内存地址</p><h3 id="打印对象"><a href="#打印对象" class="headerlink" title="打印对象"></a>打印对象</h3><pre><code class="js">    var obj = new Object();    obj.name = &#39;angelina&#39;;    obj.age = 12;    console.log(obj);    console.log(JSON.stringify(obj));//转换为字符串</code></pre><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191202131731.png" srcset="undefined" alt=""></p><p>👩:属性值可以是对象也可以是方法</p><h3 id="删除对象的属性"><a href="#删除对象的属性" class="headerlink" title="删除对象的属性"></a>删除对象的属性</h3><pre><code class="js">delete obj.name;</code></pre><h3 id="in-属性"><a href="#in-属性" class="headerlink" title="in 属性"></a>in 属性</h3><p>可以用来检测一个对象是否有某个属性</p><pre><code class="js">console.log(&quot;name&quot; in obj);//有的话为true,否则为false</code></pre><p>👩:这里要注意,属性要用双引号括住</p><h3 id="for-in"><a href="#for-in" class="headerlink" title="for in"></a>for in</h3><p>用来遍历对象中的属性</p>]]></content>
+    <content type="html"><![CDATA[<h3 id="栈内存和堆内存"><a href="#栈内存和堆内存" class="headerlink" title="栈内存和堆内存"></a>栈内存和堆内存</h3><blockquote><p><a href="https://blog.csdn.net/xdd19910505/article/details/41900693" target="_blank" rel="noopener">https://blog.csdn.net/xdd19910505/article/details/41900693</a></p></blockquote><h3 id="js中对象的分类"><a href="#js中对象的分类" class="headerlink" title="js中对象的分类"></a>js中对象的分类</h3><ul><li>内置对象</li></ul><p>例如javascript中的Math方法.</p><ul><li>宿主对象</li></ul><p>DOM,BOM,比如<code>console</code>,<code>document</code> </p><ul><li>自定义对象</li></ul><pre><code class="js">var obj = new Object();</code></pre><h3 id="对象的创建"><a href="#对象的创建" class="headerlink" title="对象的创建"></a>对象的创建</h3><pre><code class="js">    //通过new关键字创建,调用了construct    var obj = new Object();    //字面量创建    var obj2 = {};    //先声明一个类    var User = function (name, age) {        this.name = name;        this.age = age;    }    var user1 = new User(&#39;angelina&#39;, 23);    console.log(user1);</code></pre><h3 id="两个变量被同一个对象引用时"><a href="#两个变量被同一个对象引用时" class="headerlink" title="两个变量被同一个对象引用时"></a>两个变量被同一个对象引用时</h3><pre><code class="js">    var obj = new Object();    obj.name = &#39;angelina&#39;;    var obj2 = obj;    obj2.name = &#39;eyjafjalla&#39;;    console.log(obj.name);//eyjafjalla</code></pre><p>👩:这里输出<code>eyjafjalla</code>是因为 obj2 和 obj 都指向了同一个堆内存地址</p><h3 id="打印对象"><a href="#打印对象" class="headerlink" title="打印对象"></a>打印对象</h3><pre><code class="js">    var obj = new Object();    obj.name = &#39;angelina&#39;;    obj.age = 12;    console.log(obj);    console.log(JSON.stringify(obj));//转换为字符串</code></pre><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191202131731.png" srcset="undefined" alt=""></p><p>👩:属性值可以是数组,对象也可以是方法</p><h3 id="删除对象的属性"><a href="#删除对象的属性" class="headerlink" title="删除对象的属性"></a>删除对象的属性</h3><pre><code class="js">delete obj.name;</code></pre><h3 id="in-属性"><a href="#in-属性" class="headerlink" title="in 属性"></a>in 属性</h3><p>可以用来检测一个对象是否有某个属性</p><pre><code class="js">console.log(&quot;name&quot; in obj);//有的话为true,否则为false</code></pre><p>👩:这里要注意,属性要用双引号括住</p><h3 id="for-in-不需要获取数组或对象的长度"><a href="#for-in-不需要获取数组或对象的长度" class="headerlink" title="for in(不需要获取数组或对象的长度)"></a>for in(不需要获取数组或对象的长度)</h3><p>用来遍历对象,数组</p><p>eg:</p><pre><code class="js">    var jill = {        id: 1,        name: &#39;angelina&#39;    };    for (var key in jill) {        console.log(key + jill[key]);    }</code></pre><p>*<code>key</code> 为键 <code>jill[key]</code>为值</p>]]></content>
     
     
     
@@ -207,9 +228,9 @@
     
     <tags>
       
-      <tag>laravel</tag>
-      
       <tag>php</tag>
+      
+      <tag>laravel</tag>
       
     </tags>
     
@@ -228,9 +249,9 @@
     
     <tags>
       
-      <tag>laravel</tag>
-      
       <tag>php</tag>
+      
+      <tag>laravel</tag>
       
     </tags>
     
@@ -249,9 +270,9 @@
     
     <tags>
       
-      <tag>laravel</tag>
-      
       <tag>php</tag>
+      
+      <tag>laravel</tag>
       
     </tags>
     
@@ -270,9 +291,9 @@
     
     <tags>
       
-      <tag>laravel</tag>
-      
       <tag>php</tag>
+      
+      <tag>laravel</tag>
       
     </tags>
     
@@ -291,9 +312,9 @@
     
     <tags>
       
-      <tag>laravel</tag>
-      
       <tag>php</tag>
+      
+      <tag>laravel</tag>
       
     </tags>
     

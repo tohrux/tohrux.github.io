@@ -108,7 +108,7 @@
                   
                   &nbsp;<i class="far fa-chart-bar"></i>
                   <span class="post-count">
-                    280 字
+                    321 字
                   </span>&nbsp;
                 
 
@@ -152,7 +152,7 @@
             <h3 id="栈内存和堆内存"><a href="#栈内存和堆内存" class="headerlink" title="栈内存和堆内存"></a>栈内存和堆内存</h3><blockquote>
 <p><a href="https://blog.csdn.net/xdd19910505/article/details/41900693" target="_blank" rel="noopener">https://blog.csdn.net/xdd19910505/article/details/41900693</a></p>
 </blockquote>
-<h3 id="对象的分类"><a href="#对象的分类" class="headerlink" title="对象的分类"></a>对象的分类</h3><ul>
+<h3 id="js中对象的分类"><a href="#js中对象的分类" class="headerlink" title="js中对象的分类"></a>js中对象的分类</h3><ul>
 <li>内置对象</li>
 </ul>
 <p>例如javascript中的Math方法.</p>
@@ -187,12 +187,21 @@
     console.log(obj);
     console.log(JSON.stringify(obj));//转换为字符串</code></pre>
 <p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191202131731.png" srcset="undefined" alt=""></p>
-<p>👩:属性值可以是对象也可以是方法</p>
+<p>👩:属性值可以是数组,对象也可以是方法</p>
 <h3 id="删除对象的属性"><a href="#删除对象的属性" class="headerlink" title="删除对象的属性"></a>删除对象的属性</h3><pre><code class="js">delete obj.name;</code></pre>
 <h3 id="in-属性"><a href="#in-属性" class="headerlink" title="in 属性"></a>in 属性</h3><p>可以用来检测一个对象是否有某个属性</p>
 <pre><code class="js">console.log(&quot;name&quot; in obj);//有的话为true,否则为false</code></pre>
 <p>👩:这里要注意,属性要用双引号括住</p>
-<h3 id="for-in"><a href="#for-in" class="headerlink" title="for in"></a>for in</h3><p>用来遍历对象中的属性</p>
+<h3 id="for-in-不需要获取数组或对象的长度"><a href="#for-in-不需要获取数组或对象的长度" class="headerlink" title="for in(不需要获取数组或对象的长度)"></a>for in(不需要获取数组或对象的长度)</h3><p>用来遍历对象,数组</p>
+<p>eg:</p>
+<pre><code class="js">    var jill = {
+        id: 1,
+        name: &#39;angelina&#39;
+    };
+    for (var key in jill) {
+        console.log(key + jill[key]);
+    }</code></pre>
+<p>*<code>key</code> 为键 <code>jill[key]</code>为值</p>
 
             <hr>
           </div>

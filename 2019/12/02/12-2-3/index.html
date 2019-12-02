@@ -15,7 +15,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <meta name="keywords" content="">
-  <title>lavavel视图 ~ Tohrux!</title>
+  <title>js 数组 -private ~ Tohrux!</title>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/font-awesome/css/all.min.css"  >
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/bootstrap/css/bootstrap.min.css"  >
@@ -99,7 +99,7 @@
               
                 <p class="mt-3">
                   <i class="fas fa-calendar-alt" aria-hidden="true"></i>&nbsp;
-                  星期日, 十一月 24日 2019, 1:32 下午
+                  星期一, 十二月 2日 2019, 2:35 下午
                 </p>
               
 
@@ -108,7 +108,7 @@
                   
                   &nbsp;<i class="far fa-chart-bar"></i>
                   <span class="post-count">
-                    460 字
+                    724 字
                   </span>&nbsp;
                 
 
@@ -116,7 +116,7 @@
                   
                   &nbsp;<i class="far fa-clock"></i>
                   <span class="post-count">
-                      2 分钟
+                      3 分钟
                   </span>&nbsp;
                 
 
@@ -149,73 +149,76 @@
       <div class="py-5 z-depth-3" id="board">
         <div class="post-content mx-auto" id="post">
           <div class="markdown-body">
-            <h1 id="视图文件的命名和渲染"><a href="#视图文件的命名和渲染" class="headerlink" title="视图文件的命名和渲染"></a>视图文件的命名和渲染</h1><ol>
-<li>文件名习惯小写</li>
-<li>后缀为 <strong>blade.php</strong> </li>
-<li>不使用 <strong>balde.php</strong>结尾的话就不能使用laravel提供的标签语法显示数据,只能使用原生语法显示数据</li>
-</ol>
-<h1 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h1><p>在开发中可以使用compact(php内置函数)来进行数组的打包</p>
-<h3 id="TextController"><a href="#TextController" class="headerlink" title="TextController:"></a>TextController:</h3><pre><code class="php">    public function test3()
-    {
-        //现在时间
-        $date = date(&#39;Y-m-d H:i:s&#39;, time());
-        //获取今天的星期
-        $day = &#39;sunday&#39;;
-        //show 视图
-        //return view(&#39;home/index/test3&#39;, [&#39;date&#39; =&gt; $date, &#39;day&#39; =&gt; $day]);
-        👆
-      效果一样   
-         👇
-        return view(&#39;home/index/test3&#39;, compact(&#39;date&#39;, &#39;day&#39;));
-    }</code></pre>
-<h3 id="web-php"><a href="#web-php" class="headerlink" title="web.php:"></a>web.php:</h3><pre><code class="php">Route::get(&#39;/home/index/test3&#39;, &quot;TextController@test3&quot;);</code></pre>
-<h3 id="text3-blade-php"><a href="#text3-blade-php" class="headerlink" title="text3.blade.php:"></a>text3.blade.php:</h3><pre><code class="php">当前访问的是home/index/test3.blade.php文件&lt;br/&gt;
-现在是: {{$date}},今天是星期{{$day}}</code></pre>
-<h3 id="输出"><a href="#输出" class="headerlink" title="输出:"></a>输出:</h3><pre><code class="html">当前访问的是home/index/test3.blade.php文件
-现在是: 2019-11-23 01:47:37,今天是星期sunday</code></pre>
-<h3 id="之前输出当前时间"><a href="#之前输出当前时间" class="headerlink" title="之前输出当前时间:"></a>之前输出当前时间:</h3><pre><code class="php">时间戳 {{date('Y-m-d H:i:s',$time)}}</code></pre>
-<h3 id="一年后的时间"><a href="#一年后的时间" class="headerlink" title="一年后的时间:"></a>一年后的时间:</h3><pre><code class="PHP">{{date('Y-m-d H:i:s',strtotime('+1 year'))}};</code></pre>
-<h1 id="循环分支语法标签"><a href="#循环分支语法标签" class="headerlink" title="循环分支语法标签"></a>循环分支语法标签</h1><p>下面是一个案例</p>
-<p><strong>Controller</strong>中:</p>
-<pre><code class="php">use DB;
+            <p><em>方法的解释来源于w3c MDN</em></p>
+<h2 id="数组方法"><a href="#数组方法" class="headerlink" title="数组方法"></a>数组方法</h2><h3 id="concat"><a href="#concat" class="headerlink" title="concat()"></a>concat()</h3><blockquote>
+<p>concat() 方法用于连接两个或多个数组。</p>
+<p><strong>该方法不会改变现有的数组</strong>，而仅仅会返回被连接数组的一个副本。</p>
+</blockquote>
+<p>语法</p>
+<pre><code class="js">arrayObject.concat(arrayX,arrayX,......,arrayX)</code></pre>
+<p>👩:括号中可以给具体值,或者是数组名</p>
+<h3 id="join"><a href="#join" class="headerlink" title="join()"></a>join()</h3><blockquote>
+<p><code>join()</code> 方法将一个数组（或一个<a href="https://developer.mozilla.org/zh-CN//docs/Web/JavaScript/Guide/Indexed_collections#Working_with_array-like_objects" target="_blank" rel="noopener">类数组对象</a>）的所有元素连接成一个字符串并返回这个字符串。如果数组只有一个项目，那么将返回该项目而不使用分隔符。</p>
+</blockquote>
+<pre><code class="js">    const elements = [&#39;Fire&#39;, &#39;Air&#39;, &#39;Water&#39;];
 
-class TestController extends Controller
-{
-    //start
-    public function test1()
-    {
-        $db = DB::table(&#39;member&#39;)-&gt;get();
-        // dd($db);
-        return view(&#39;test.test1&#39;, compact(&#39;db&#39;));
-    }
-}
-</code></pre>
-<p><strong>blade</strong>中:</p>
-<pre><code class="php">id&amp;emsp;&amp;emsp;name&amp;emsp;&amp;emsp;email&amp;emsp;&lt;br&gt;
-@foreach ($db as $key =&gt; $value)
-{{-- 如果不要key的话可以直接省略 ($db as $value) --}}
-    {{$value -> id}}&amp;emsp;&amp;emsp;
-    {{$value -> name}}&amp;emsp;&amp;emsp;
-    {{$value -> email}}
-    &lt;br&gt;
-@endforeach
-</code></pre>
-<p><strong>输出结果:</strong></p>
-<pre><code class="html">id  name  email 
-1   阿龙   al@gmail
-2   阿B   ab@gmail</code></pre>
-<p>🙋‍特别注意</p>
-<p>get查询道德结果集中的每一条都是一个对象,因此在循环具体字段的时候需要注意使用对象调用属性的方式才可以获取其数据</p>
-<h1 id="判断语句"><a href="#判断语句" class="headerlink" title="判断语句"></a>判断语句</h1><pre><code class="php">if在模板引擎的写法
-@if (Expression1)
-statement1
-@elseif(Expression2)
-statement2
-...
-@else
-statement3
-@endif</code></pre>
+    console.log(elements.join());
+    // expected output: &quot;Fire,Air,Water&quot;
 
+    console.log(elements.join(&#39;&#39;));
+    // expected output: &quot;FireAirWater&quot;
+
+    console.log(elements.join(&#39;-&#39;));
+    // expected output: &quot;Fire-Air-Water&quot;</code></pre>
+<p>👩:其中,<code>elements.join()</code>等效于<code>element.toString()</code></p>
+<h3 id="slice"><a href="#slice" class="headerlink" title="slice()"></a>slice()</h3><blockquote>
+<p><code>slice()</code> 方法返回一个新的数组对象，这一对象是一个由 <code>begin</code> 和 <code>end</code> 决定的原数组的<strong>浅拷贝</strong>（包括 <code>begin</code>，不包括<code>end</code>）。原始数组不会被改变。</p>
+</blockquote>
+<pre><code class="js">const animals = [&#39;ant&#39;, &#39;bison&#39;, &#39;camel&#39;, &#39;duck&#39;, &#39;elephant&#39;];
+
+console.log(animals.slice(2));
+// expected output: Array [&quot;camel&quot;, &quot;duck&quot;, &quot;elephant&quot;]
+
+console.log(animals.slice(2, 4));
+// expected output: Array [&quot;camel&quot;, &quot;duck&quot;]
+
+console.log(animals.slice(1, 5));
+// expected output: Array [&quot;bison&quot;, &quot;camel&quot;, &quot;duck&quot;, &quot;elephant&quot;]</code></pre>
+<blockquote>
+<ul>
+<li><p>如果该元素是个对象引用 （不是实际的对象），<code>slice</code> 会拷贝这个对象引用到新的数组里。两个对象引用都引用了同一个对象。如果被引用的对象发生改变，则新的和原来的数组中的这个元素也会发生改变。</p>
+</li>
+<li><p>对于字符串、数字及布尔值来说（不是 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank" rel="noopener"><code>String</code></a>、<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Number" target="_blank" rel="noopener"><code>Number</code></a> 或者 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Boolean" target="_blank" rel="noopener"><code>Boolean</code></a> 对象），<code>slice</code> 会拷贝这些值到新的数组里。在别的数组里修改这些字符串或数字或是布尔值，将不会影响另一个数组。</p>
+</li>
+</ul>
+</blockquote>
+<p>👩:上面这两条很关键!</p>
+<h3 id="splice"><a href="#splice" class="headerlink" title="splice()"></a>splice()</h3><blockquote>
+<p><strong><code>splice()</code></strong> 方法通过删除或替换现有元素或者原地添加新的元素来修改数组,并以数组形式返回被修改的内容。<strong>此方法会改变原数组</strong>。</p>
+</blockquote>
+<pre><code class="js">const months = [&#39;Jan&#39;, &#39;March&#39;, &#39;April&#39;, &#39;June&#39;];
+months.splice(1, 0, &#39;Feb&#39;);
+// inserts at index 1
+console.log(months);
+// expected output: Array [&quot;Jan&quot;, &quot;Feb&quot;, &quot;March&quot;, &quot;April&quot;, &quot;June&quot;]
+
+months.splice(4, 1, &#39;May&#39;);
+// replaces 1 element at index 4
+console.log(months);
+// expected output: Array [&quot;Jan&quot;, &quot;Feb&quot;, &quot;March&quot;, &quot;April&quot;, &quot;May&quot;]
+</code></pre>
+<blockquote>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/slice" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/slice</a> 👈例子</p>
+</blockquote>
+<h3 id="shift-amp-pop"><a href="#shift-amp-pop" class="headerlink" title="shift()&amp;pop()"></a>shift()&amp;pop()</h3><p>返回的值是删除的值</p>
+<h3 id="unshift-amp-push"><a href="#unshift-amp-push" class="headerlink" title="unshift() &amp; push()"></a>unshift() &amp; push()</h3><p>返回的值是新的数组的长度</p>
+<p>​    var a = [1, 2, 3];</p>
+<p>​    //通过new关键字创建一个Array对象,Array中的数字控制的是数组的容量,可以不加</p>
+<p>​    var a = new Array(3);</p>
+<h3 id="toString-NaN"><a href="#toString-NaN" class="headerlink" title="toString()"></a>toString()</h3><p>将数组转换为字符串;</p>
+<h3 id="reverse"><a href="#reverse" class="headerlink" title="reverse()"></a>reverse()</h3><p>翻转数组</p>
+<h3 id="sort"><a href="#sort" class="headerlink" title="sort()"></a>sort()</h3><p>默认按照数组成员的首字母的ASCII码值排序</p>
+<h3 id="indexOf"><a href="#indexOf" class="headerlink" title="indexOf()"></a>indexOf()</h3>
             <hr>
           </div>
           <br>
@@ -226,9 +229,9 @@ statement3
               <span>
                 <i class="iconfont icon-tag"></i>
                 
-                  <a class="hover-with-bg" href="/tags/php">php</a>
+                  <a class="hover-with-bg" href="/tags/js">js</a>
                 
-                  <a class="hover-with-bg" href="/tags/laravel">laravel</a>
+                  <a class="hover-with-bg" href="/tags/%E6%95%B0%E7%BB%84">数组</a>
                 
               </span>
             
@@ -394,7 +397,7 @@ statement3
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "lavavel视图&nbsp;",
+        "js 数组 -private&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
