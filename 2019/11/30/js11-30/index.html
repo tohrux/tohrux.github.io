@@ -15,7 +15,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <meta name="keywords" content="">
-  <title>js基础 -private ~ Tohrux!</title>
+  <title>js变量 -private ~ Tohrux!</title>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/font-awesome/css/all.min.css"  >
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/bootstrap/css/bootstrap.min.css"  >
@@ -108,7 +108,7 @@
                   
                   &nbsp;<i class="far fa-chart-bar"></i>
                   <span class="post-count">
-                    763 字
+                    768 字
                   </span>&nbsp;
                 
 
@@ -194,7 +194,7 @@ console.log(a.toString(x));//在转换时,x的值是需要转换的进制数,不
 <p>​    只能转换纯数字,否则结果为NaN.如果String为空则返回0.</p>
 <p><strong>Boolean转换为Number:</strong></p>
 <p>​    true-&gt;1</p>
-<p>​    false-&gt;2</p>
+<p>​    false-&gt;0</p>
 <p><strong>Null转换为Number:</strong></p>
 <p>​    <code>0</code></p>
 <p><strong>Undefined转换为Number:</strong></p>
@@ -242,7 +242,8 @@ console.log(parseInt(a,10));//3</code></pre>
     console.log(typeof a);//undefined</code></pre>
 <h2 id="👇-underfined-与-null-的区别和相似之处"><a href="#👇-underfined-与-null-的区别和相似之处" class="headerlink" title="👇 underfined 与 null 的区别和相似之处"></a>👇 underfined 与 null 的区别和相似之处</h2><pre><code class="js">    var a = undefined;
     var b = null;
-    console.log(a == b);//true</code></pre>
+    console.log(a == b);//true
+    console.log(a === b);//false</code></pre>
 <pre><code class="js">    var a = undefined;
     var b = null;
     console.log(a + 10);//NaN
@@ -431,7 +432,7 @@ console.log(parseInt(a,10));//3</code></pre>
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "js基础 -private&nbsp;",
+        "js变量 -private&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,

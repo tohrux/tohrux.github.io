@@ -15,7 +15,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <meta name="keywords" content="">
-  <title>归档 ~ Tohrux!</title>
+  <title>js运算符 -private ~ Tohrux!</title>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/font-awesome/css/all.min.css"  >
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/bootstrap/css/bootstrap.min.css"  >
@@ -36,7 +36,7 @@
 
 
 <body>
-  <header style="height: 80vh;">
+  <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -95,6 +95,41 @@
             </span>
 
             
+              <br>
+              
+                <p class="mt-3">
+                  <i class="fas fa-calendar-alt" aria-hidden="true"></i>&nbsp;
+                  星期一, 十二月 2日 2019, 9:30 上午
+                </p>
+              
+
+              <p>
+                
+                  
+                  &nbsp;<i class="far fa-chart-bar"></i>
+                  <span class="post-count">
+                    160 字
+                  </span>&nbsp;
+                
+
+                
+                  
+                  &nbsp;<i class="far fa-clock"></i>
+                  <span class="post-count">
+                      1 分钟
+                  </span>&nbsp;
+                
+
+                
+                  <!-- 不蒜子统计文章PV -->
+                  
+                  &nbsp;<i class="far fa-eye" aria-hidden="true"></i>&nbsp;
+                  <span id="busuanzi_container_page_pv">
+                    <span id="busuanzi_value_page_pv"></span> 次
+                  </span>&nbsp;
+                
+              </p>
+            
           </div>
 
           
@@ -105,95 +140,94 @@
 
   <main>
     
-      <div class="container nopadding-md">
-        <div class="py-5 z-depth-3" id="board">
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<div class="list-group">
-  <p class="h4">共计 22 篇文章</p>
-  <hr>
-  
-    
       
-      <p class="h5">2019</p>
-    
-    <a href="/2019/11/21/lavaral/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">laravel路由规则的使用</span>
-      <span style="float: right;">11-21</span>
-    </a>
-  
-    
-    <a href="/2019/11/20/arknight/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">明日方舟:大家,快回来吧!</span>
-      <span style="float: right;">11-20</span>
-    </a>
-  
-    
-    <a href="/2019/11/19/11-19/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">今日份的美好</span>
-      <span style="float: right;">11-19</span>
-    </a>
-  
-    
-    <a href="/2019/11/18/sass/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">sass基础语法</span>
-      <span style="float: right;">11-18</span>
-    </a>
-  
-    
-    <a href="/2019/11/17/henrietta/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">hey,Are you henrietta? CLICK HERE PLS</span>
-      <span style="float: right;">11-17</span>
-    </a>
-  
-    
-    <a href="/2019/11/17/cdn/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">使用CDN来加速网页的访问</span>
-      <span style="float: right;">11-17</span>
-    </a>
-  
-    
-    <a href="/2019/11/17/test1/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">现在开始我拥有了自己的博客!</span>
-      <span style="float: right;">11-17</span>
-    </a>
-  
-    
-    <a href="/2019/11/16/ceshi/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">图片加载测试</span>
-      <span style="float: right;">11-16</span>
-    </a>
-  
-    
-    <a href="/2019/11/15/hello-world/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">Hello World</span>
-      <span style="float: right;">11-15</span>
-    </a>
-  
-</div>
 
-  <nav aria-label="index posts navigation">
-    <span class="pagination pg-blue justify-content-center mt-5" id="pagination">
-      <a class="extend prev" rel="prev" href="/archives/2019/11/"><i class="fas fa-angle-double-left"></i></a><a class="page-number" href="/archives/2019/11/">1</a><span class="page-number current">2</span>
-    </span>
-  </nav>
-  
-  <script>
-    for (ele of document.getElementById("pagination").getElementsByClassName("page-number")) {
-      ele.href += '#board';
-    }
-  </script>
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="py-5 z-depth-3" id="board">
+        <div class="post-content mx-auto" id="post">
+          <div class="markdown-body">
+            <iframe src="https://open.spotify.com/embed/track/2AmRjWxvLxJK3DjCYNruLI" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
 
+<h3 id="amp-的短路问题"><a href="#amp-的短路问题" class="headerlink" title="&amp;,||的短路问题"></a><code>&amp;</code>,<code>||</code>的短路问题</h3><pre><code class="javascript">console.log(1&amp;&amp;0);//0
+console.log(0&amp;&amp;1);//0</code></pre>
+<pre><code class="JavaScript">console.log(0 || 1);//1
+console.log(1 || 0);//1</code></pre>
+<h3 id="对非布尔值进行布尔运算"><a href="#对非布尔值进行布尔运算" class="headerlink" title="对非布尔值进行布尔运算"></a>对非布尔值进行布尔运算</h3><pre><code class="js">    var a = 1;
+    a = !a;
+    console.log(a); //false</code></pre>
+<h3 id="关系运算符"><a href="#关系运算符" class="headerlink" title="关系运算符"></a>关系运算符</h3><pre><code class="js">//返回的一定是false or true eg:
+var result = 1 &lt; 3;
+console.log(result);//false</code></pre>
+<h3 id="非数值的比较"><a href="#非数值的比较" class="headerlink" title="非数值的比较"></a>非数值的比较</h3><p>*数值类型和非数值类型比较的话,非数值类型会被转换为数值类型</p>
+<p>*如果两边都是字符串型的数字话,则会被转换为unicode编码</p>
+<h3 id="运算优先级"><a href="#运算优先级" class="headerlink" title="运算优先级"></a>运算优先级</h3><p>&amp;&amp; &gt; ||</p>
+<h2 id="unicode编码"><a href="#unicode编码" class="headerlink" title="unicode编码"></a>unicode编码</h2><p>在js中</p>
+<pre><code class="js">console.log(&quot;\u1234&quot;)</code></pre>
+<p>在htm中</p>
+<pre><code class="html">&lt;h1&gt;&amp;#1234;&lt;/h1&gt;</code></pre>
 
-              </div>
-            </div>
+            <hr>
+          </div>
+          <br>
+          <div>
+            <p>
+            
+            
+              <span>
+                <i class="iconfont icon-tag"></i>
+                
+                  <a class="hover-with-bg" href="/tags/%E5%89%8D%E7%AB%AF">前端</a>
+                
+                  <a class="hover-with-bg" href="/tags/javascript">javascript</a>
+                
+              </span>
+            
+            </p>
+            
           </div>
         </div>
       </div>
+    </div>
+    <div class="d-none d-lg-block col-lg-2 toc-container">
+      
+  <div id="toc">
+    <p class="h4"><i class="far fa-list-alt"></i>&nbsp;目录</p>
+    <div id="tocbot"></div>
+  </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- custom -->
+
+
+<!-- Comments -->
+<div class="col-lg-7 mx-auto nopadding-md">
+  <div class="container comments mx-auto" id="comments">
+    
+      <br><br>
+      
+      
+  <script defer src="https://utteranc.es/client.js"
+          repo="tohrux/tohrux.github.io"
+          issue-term="pathname"
+  
+          label="utterances"
+    
+          theme="github-light"
+          crossorigin="anonymous"
+          async>
+  </script>
+
+
+    
+  </div>
+</div>
+
     
   </main>
 
@@ -268,6 +302,11 @@
 
 
 
+  
+    <script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/tocbot/tocbot.min.js" ></script>
+  
+  <script src="/js/post.js" ></script>
+
 
 
   <script src="/lib/smooth-scroll/smooth-scroll.min.js" ></script>
@@ -308,7 +347,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "归档&nbsp;",
+        "js运算符 -private&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
