@@ -122,6 +122,165 @@
     
     
       <div class="col-12 col-md-4 m-auto">
+        <a href="/2019/11/18/sass/" target="_self">
+          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos/img/sass_logo.png" srcset="undefined" alt="sass基础语法" class="img-fluid rounded z-depth-3 index-thumbnails">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/2019/11/18/sass/">
+        <p class="h4 index-header">sass基础语法</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">搭建环境Sass是基于ruby开发的,但是用的人却不用懂得写Ruby.
+首先,在编写Sass前要先下载安装Ruby
+(在网上搜索Ruby的时候 看到的评价都在说这门语言很优雅,以后有空的话会去接触下的!)
+👇
+然后在命令行中 输入 
+gem install sass 
+等待执行完毕后 然后输入在命令行输入
+sass -v
+如果出现了相应的版本号 就意味着安装成功了👏
+开始基础语法注释/*注释*/ 👈这种注释会在编译后的CSS中显示
+//注释   👈这种则不会
+变量$变量名字:变量属性值
+使用! default 会让之前的样式覆盖掉当前的样式
+//你好 我是sass
+
+$defaultColor: red;
+
+$defaultColor: #0000ff !default;
+
+h1{color:$defaultColor;}
+编译后的css:
+h1 {
+  color: red;
+}
+关于变量的作用域💡需要注意的是如果上述变量的作用域在所有类的外面,那它就是全局变量,否则他的作用域只在当前的类
+嵌套CSS规则/* SASS嵌套 */
+$defaultColor: red;
+#c</div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-11-18&nbsp;&nbsp;
+        
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/%E5%89%8D%E7%AB%AF">前端</a>&nbsp;
+          
+            <a href="/tags/css">css</a>&nbsp;
+          
+            <a href="/tags/sass">sass</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+      <div class="col-12 col-md-4 m-auto">
+        <a href="/2019/11/17/henrietta/" target="_self">
+          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos/img/apex2.jfif" srcset="undefined" alt="hey,Are you henrietta? CLICK HERE PLS" class="img-fluid rounded z-depth-3 index-thumbnails">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/2019/11/17/henrietta/">
+        <p class="h4 index-header">hey,Are you henrietta? CLICK HERE PLS</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">hey henriettaV01!I’m tohru ,this article is written for you.welcome to my blog, it was created two days ago…I’ll never forget the happy time when we played Apex on pc &amp; ps4,and I’ll never forget your birthday XD
+9/10 
+
+have a nice day~ henrietta,or should I called you ‘胡琼琼’? 😄😄😄</div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-11-17&nbsp;&nbsp;
+        
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/friend">friend</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+      <div class="col-12 col-md-4 m-auto">
+        <a href="/2019/11/17/cdn/" target="_self">
+          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos/img/cdn.png" srcset="undefined" alt="使用CDN来加速网页的访问" class="img-fluid rounded z-depth-3 index-thumbnails">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/2019/11/17/cdn/">
+        <p class="h4 index-header">使用CDN来加速网页的访问</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">前言今天是搭建github.io的第二天,很多功能都还在完善,比如说在一些地方(没错,说的就是你,天朝!)访问GitHub.Page很慢的问题,通过上网一番查找发现似乎可以用CDN来解决.
+什么是CDN?这里粘贴一段阿里云官网上面对CDN的描述:
+
+将源站内容分发至最接近用户的节点，使用户可就近取得所需内容，提高用户访问的响应速度和成功率。解决因分布、带宽、服务器性能带来的访问延迟问题，适用于站点加速、点播、直播等场景。
+
+总之它可以让别人访问自己的GitHub.Page的速度更快就对了!
+开始这里就拿我们网页中需要加载很久的图片来举例8,
+首先我们要找到放置自己github.io 页面的那个repo,如下图所示:
+
+我们需要的图片他们现在都静静的躺在img那个文件夹里
+如果想用CDN获取他们的话
+可以点击图片最顶端的release来发布版本
+例如我这里发布的版本为1.0  发布完成后我们就可通过jsDelivr来引用我们的资源了
+
+如上面的地址所示:
+​    gh 代表 github
+​    tohrux是我的GitHub用户名
+​    tohrux.github.io是我仓库</div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-11-17&nbsp;&nbsp;
+        
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/build">build</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+      <div class="col-12 col-md-4 m-auto">
         <a href="/2019/11/17/test1/" target="_self">
           <img src="https://cdn.jsdelivr.net/gh/tohrux/tohrux.github.io@1.0//img/rikka.jpg" srcset="undefined" alt="现在开始我拥有了自己的博客!" class="img-fluid rounded z-depth-3 index-thumbnails">
         </a>

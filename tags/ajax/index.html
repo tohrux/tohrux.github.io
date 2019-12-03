@@ -15,7 +15,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <meta name="keywords" content="">
-  <title>js 对象 -private ~ Tohrux!</title>
+  <title>标签 - ajax ~ Tohrux!</title>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/font-awesome/css/all.min.css"  >
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/bootstrap/css/bootstrap.min.css"  >
@@ -36,7 +36,7 @@
 
 
 <body>
-  <header style="height: 70vh;">
+  <header style="height: 80vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -95,41 +95,6 @@
             </span>
 
             
-              <br>
-              
-                <p class="mt-3">
-                  <i class="fas fa-calendar-alt" aria-hidden="true"></i>&nbsp;
-                  星期一, 十二月 2日 2019, 10:52 上午
-                </p>
-              
-
-              <p>
-                
-                  
-                  &nbsp;<i class="far fa-chart-bar"></i>
-                  <span class="post-count">
-                    321 字
-                  </span>&nbsp;
-                
-
-                
-                  
-                  &nbsp;<i class="far fa-clock"></i>
-                  <span class="post-count">
-                      1 分钟
-                  </span>&nbsp;
-                
-
-                
-                  <!-- 不蒜子统计文章PV -->
-                  
-                  &nbsp;<i class="far fa-eye" aria-hidden="true"></i>&nbsp;
-                  <span id="busuanzi_container_page_pv">
-                    <span id="busuanzi_value_page_pv"></span> 次
-                  </span>&nbsp;
-                
-              </p>
-            
           </div>
 
           
@@ -140,130 +105,35 @@
 
   <main>
     
+      <div class="container nopadding-md">
+        <div class="py-5 z-depth-3" id="board">
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+<div class="list-group">
+  <p class="h4">共计 1 篇文章</p>
+  <hr>
+  
+    
       
+      <p class="h5">2019</p>
+    
+    <a href="/2019/12/03/ajax/" class="list-group-item list-group-item-action">
+      <span class="archive-post-title">AJAX JSON对象 XML -private</span>
+      <span style="float: right;">12-03</span>
+    </a>
+  
+</div>
 
-<div class="container-fluid">
-  <div class="row">
-    <div class="d-none d-lg-block col-lg-2"></div>
-    <div class="col-lg-8 nopadding-md">
-      <div class="py-5 z-depth-3" id="board">
-        <div class="post-content mx-auto" id="post">
-          <div class="markdown-body">
-            <h3 id="栈内存和堆内存"><a href="#栈内存和堆内存" class="headerlink" title="栈内存和堆内存"></a>栈内存和堆内存</h3><blockquote>
-<p><a href="https://blog.csdn.net/xdd19910505/article/details/41900693" target="_blank" rel="noopener">https://blog.csdn.net/xdd19910505/article/details/41900693</a></p>
-</blockquote>
-<h3 id="js中对象的分类"><a href="#js中对象的分类" class="headerlink" title="js中对象的分类"></a>js中对象的分类</h3><ul>
-<li>内置对象</li>
-</ul>
-<p>例如javascript中的Math方法.</p>
-<ul>
-<li>宿主对象</li>
-</ul>
-<p>DOM,BOM,比如<code>console</code>,<code>document</code> </p>
-<ul>
-<li>自定义对象</li>
-</ul>
-<pre><code class="js">var obj = new Object();</code></pre>
-<h3 id="对象的创建"><a href="#对象的创建" class="headerlink" title="对象的创建"></a>对象的创建</h3><pre><code class="js">    //通过new关键字创建,调用了construct
-    var obj = new Object();
-    //字面量创建
-    var obj2 = {};
-    //先声明一个类
-    var User = function (name, age) {
-        this.name = name;
-        this.age = age;
-    }
-    var user1 = new User(&#39;angelina&#39;, 23);
-    console.log(user1);</code></pre>
-<h3 id="两个变量被同一个对象引用时"><a href="#两个变量被同一个对象引用时" class="headerlink" title="两个变量被同一个对象引用时"></a>两个变量被同一个对象引用时</h3><pre><code class="js">    var obj = new Object();
-    obj.name = &#39;angelina&#39;;
-    var obj2 = obj;
-    obj2.name = &#39;eyjafjalla&#39;;
-    console.log(obj.name);//eyjafjalla</code></pre>
-<p>👩:这里输出<code>eyjafjalla</code>是因为 obj2 和 obj 都指向了同一个堆内存地址</p>
-<h3 id="打印对象"><a href="#打印对象" class="headerlink" title="打印对象"></a>打印对象</h3><pre><code class="js">    var obj = new Object();
-    obj.name = &#39;angelina&#39;;
-    obj.age = 12;
-    console.log(obj);
-    console.log(JSON.stringify(obj));//转换为字符串</code></pre>
-<p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191202131731.png" srcset="undefined" alt=""></p>
-<p>👩:属性值可以是数组,对象也可以是方法</p>
-<h3 id="删除对象的属性"><a href="#删除对象的属性" class="headerlink" title="删除对象的属性"></a>删除对象的属性</h3><pre><code class="js">delete obj.name;</code></pre>
-<h3 id="in-属性"><a href="#in-属性" class="headerlink" title="in 属性"></a>in 属性</h3><p>可以用来检测一个对象是否有某个属性</p>
-<pre><code class="js">console.log(&quot;name&quot; in obj);//有的话为true,否则为false</code></pre>
-<p>👩:这里要注意,属性要用双引号括住</p>
-<h3 id="for-in-不需要获取数组或对象的长度"><a href="#for-in-不需要获取数组或对象的长度" class="headerlink" title="for in(不需要获取数组或对象的长度)"></a>for in(不需要获取数组或对象的长度)</h3><p>用来遍历对象,数组</p>
-<p>eg:</p>
-<pre><code class="js">    var jill = {
-        id: 1,
-        name: &#39;angelina&#39;
-    };
-    for (var key in jill) {
-        console.log(key + jill[key]);
-    }</code></pre>
-<p>*<code>key</code> 为键 <code>jill[key]</code>为值</p>
 
-            <hr>
-          </div>
-          <br>
-          <div>
-            <p>
-            
-            
-              <span>
-                <i class="iconfont icon-tag"></i>
-                
-                  <a class="hover-with-bg" href="/tags/%E5%89%8D%E7%AB%AF">前端</a>
-                
-                  <a class="hover-with-bg" href="/tags/js">js</a>
-                
-                  <a class="hover-with-bg" href="/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1">面向对象</a>
-                
-              </span>
-            
-            </p>
-            
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="d-none d-lg-block col-lg-2 toc-container">
-      
-  <div id="toc">
-    <p class="h4"><i class="far fa-list-alt"></i>&nbsp;目录</p>
-    <div id="tocbot"></div>
-  </div>
-
-    </div>
-  </div>
-</div>
-
-<!-- custom -->
-
-
-<!-- Comments -->
-<div class="col-lg-7 mx-auto nopadding-md">
-  <div class="container comments mx-auto" id="comments">
-    
-      <br><br>
-      
-      
-  <script defer src="https://utteranc.es/client.js"
-          repo="tohrux/tohrux.github.io"
-          issue-term="pathname"
-  
-          label="utterances"
-    
-          theme="github-light"
-          crossorigin="anonymous"
-          async>
-  </script>
-
-
-    
-  </div>
-</div>
-
     
   </main>
 
@@ -338,11 +208,6 @@
 
 
 
-  
-    <script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/tocbot/tocbot.min.js" ></script>
-  
-  <script src="/js/post.js" ></script>
-
 
 
   <script src="/lib/smooth-scroll/smooth-scroll.min.js" ></script>
@@ -383,7 +248,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "js 对象 -private&nbsp;",
+        "标签 - ajax&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
