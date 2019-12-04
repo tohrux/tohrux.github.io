@@ -108,7 +108,7 @@
                   
                   &nbsp;<i class="far fa-chart-bar"></i>
                   <span class="post-count">
-                    682 字
+                    913 字
                   </span>&nbsp;
                 
 
@@ -116,7 +116,7 @@
                   
                   &nbsp;<i class="far fa-clock"></i>
                   <span class="post-count">
-                      3 分钟
+                      4 分钟
                   </span>&nbsp;
                 
 
@@ -246,7 +246,47 @@
         &lt;city id=&quot;12&quot; name=&quot;承德&quot;&gt;&lt;/city&gt;
     &lt;/province&gt;
 &lt;/list&gt;</code></pre>
-<h3 id="jQeury实现两级联动"><a href="#jQeury实现两级联动" class="headerlink" title="jQeury实现两级联动"></a>jQeury实现两级联动</h3>
+<h3 id="load"><a href="#load" class="headerlink" title="load()"></a>load()</h3><p>语法:</p>
+<pre><code class="js">$(selector).load(url,data,callback)</code></pre>
+<p>url:文件地址</p>
+<p>data: 规定与请求共同发送的查询字符串键值对的集合,是可选的</p>
+<p>fallback: 回调函数,可选的</p>
+<p>👇</p>
+<p>fallback里面可以有三个值:</p>
+<pre><code class="js">$(&#39;#who&#39;).load(&quot;book.html&quot;, function (responseText, statusText,xhr){}</code></pre>
+<p>responseText为返回的调用成功后的结果内容</p>
+<p>statusText为调用的状态,成功的话会 返回 “success”</p>
+<p>xhr 为整个XMLHtmlRequest对象</p>
+<p>👩:可以通过console log 来check it out</p>
+<pre><code class="js">$(function () {
+            $(&#39;.button2&#39;).click(function () {
+                $(&#39;#who&#39;).load(&quot;book.html&quot;, function (responseText, statusText, xhr) {
+                    console.log(xhr.status);
+                    console.log(xhr.responseText);
+                    console.log(xhr.statusText);
+                    console.log(responseText);
+                    console.log(statusText);
+                });
+            })
+        })</code></pre>
+<pre><code class="html">result:
+
+xdd.html:14 200
+xdd.html:15     &lt;ul&gt;
+        &lt;li&gt;nihao&lt;/li&gt;
+        &lt;li&gt;nihao&lt;/li&gt;
+        &lt;li&gt;nihao&lt;/li&gt;
+        &lt;li&gt;nihao&lt;/li&gt;
+    &lt;/ul&gt;
+xdd.html:16 OK
+xdd.html:17     &lt;ul&gt;
+        &lt;li&gt;nihao&lt;/li&gt;
+        &lt;li&gt;nihao&lt;/li&gt;
+        &lt;li&gt;nihao&lt;/li&gt;
+        &lt;li&gt;nihao&lt;/li&gt;
+    &lt;/ul&gt;
+xdd.html:18 success</code></pre>
+
             <hr>
           </div>
           <br>
