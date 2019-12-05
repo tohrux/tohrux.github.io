@@ -108,7 +108,7 @@
                   
                   &nbsp;<i class="far fa-chart-bar"></i>
                   <span class="post-count">
-                    160 字
+                    179 字
                   </span>&nbsp;
                 
 
@@ -150,8 +150,9 @@
         <div class="post-content mx-auto" id="post">
           <div class="markdown-body">
             <iframe src="https://open.spotify.com/embed/track/2AmRjWxvLxJK3DjCYNruLI" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+### `&`,`||`的短路问题
 
-<h3 id="amp-的短路问题"><a href="#amp-的短路问题" class="headerlink" title="&amp;,||的短路问题"></a><code>&amp;</code>,<code>||</code>的短路问题</h3><pre><code class="javascript">console.log(1&amp;&amp;0);//0
+<pre><code class="javascript">console.log(1&amp;&amp;0);//0
 console.log(0&amp;&amp;1);//0</code></pre>
 <pre><code class="JavaScript">console.log(0 || 1);//1
 console.log(1 || 0);//1</code></pre>
@@ -166,8 +167,12 @@ console.log(result);//false</code></pre>
 <h3 id="运算优先级"><a href="#运算优先级" class="headerlink" title="运算优先级"></a>运算优先级</h3><p>&amp;&amp; &gt; ||</p>
 <h2 id="unicode编码"><a href="#unicode编码" class="headerlink" title="unicode编码"></a>unicode编码</h2><p>在js中</p>
 <pre><code class="js">console.log(&quot;\u1234&quot;)</code></pre>
-<p>在htm中</p>
+<p>在htlm中</p>
 <pre><code class="html">&lt;h1&gt;&amp;#1234;&lt;/h1&gt;</code></pre>
+<p>unicode编码转换</p>
+<p><code>&quot;中&quot;.charCodeAt(0);</code></p>
+<p><code>String.fromCharCode(20013);</code></p>
+<p><code>&quot;中&quot;.charCodeAt(0).toString(16);</code></p>
 
             <hr>
           </div>
@@ -179,9 +184,9 @@ console.log(result);//false</code></pre>
               <span>
                 <i class="iconfont icon-tag"></i>
                 
-                  <a class="hover-with-bg" href="/tags/javascript">javascript</a>
-                
                   <a class="hover-with-bg" href="/tags/%E5%89%8D%E7%AB%AF">前端</a>
+                
+                  <a class="hover-with-bg" href="/tags/javascript">javascript</a>
                 
               </span>
             

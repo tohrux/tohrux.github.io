@@ -122,6 +122,62 @@
     
     
       <div class="col-12 col-md-4 m-auto">
+        <a href="/2019/12/05/12-5-1/" target="_self">
+          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191205142652.png" srcset="undefined" alt="CSS选择器" class="img-fluid rounded z-depth-3 index-thumbnails">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/2019/12/05/12-5-1/">
+        <p class="h4 index-header">CSS选择器</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">属性选择器语法:
+E[attribute]
+eg:
+td[lang]{} // 有lang属性的td都会被选择
+td[title=&quot;a&quot;]{} //title属性为&quot;a&quot;的都会被选择
+~=&quot;a&quot; //属性值包含&quot;a&quot; 且&quot;a&quot;前后只能有空格
+|=&quot;a&quot; //以&quot;a&quot;开头,&quot;a&quot;必须为独立单词,后面可以跟上连字符&quot;-&quot;
+兄弟选择器    &lt;style&gt;
+        div+span {
+            color: brown !important;
+        }
+    &lt;/style&gt;
+
+    &lt;span&gt;span0&lt;/span&gt;ad
+    &lt;div class=&quot;hi&quot;&gt;div0&lt;/div&gt;
+    &lt;span&gt;span2&lt;/span&gt;k
+    &lt;span&gt</div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-12-05&nbsp;&nbsp;
+        
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/css">css</a>&nbsp;
+          
+            <a href="/tags/selector">selector</a>&nbsp;
+          
+            <a href="/tags/%E5%89%8D%E7%AB%AF">前端</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+      <div class="col-12 col-md-4 m-auto">
         <a href="/2019/12/04/nmewd/" target="_self">
           <img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191204223042.png" srcset="undefined" alt="今天用bootstrap做的网页和随意画的一些logo" class="img-fluid rounded z-depth-3 index-thumbnails">
         </a>
@@ -247,13 +303,13 @@
         
           <i class="iconfont icon-tag"></i>
           
+            <a href="/tags/%E5%89%8D%E7%AB%AF">前端</a>&nbsp;
+          
             <a href="/tags/ajax">ajax</a>&nbsp;
           
             <a href="/tags/javascript">javascript</a>&nbsp;
           
             <a href="/tags/jQuery">jQuery</a>&nbsp;
-          
-            <a href="/tags/%E5%89%8D%E7%AB%AF">前端</a>&nbsp;
           
         
       </div>
@@ -277,8 +333,30 @@
           
         
         <div class="index-excerpt" >
-          <div class="index-text mb-1">jQ选择器*后续补充
-</div>
+          <div class="index-text mb-1">测试是否引入成功$(document).ready(function(){
+    alert(&#39;ohiyo~&#39;);
+})
+语法
+$(this).hide();
+$(“p”).hide(); //hide所有的p元素
+$(“p.test”).hide(); //hide所有class=test 的p元素
+
+入口函数jQ$(function(){
+
+})
+
+$(document).ready(function(){
+
+})
+JSwindow.onload(function(){
+
+})
+区别:$(document).ready(funtion(){}) : 等HTML所有标签(DOM)都加载完才执行
+window.onload(function(){}): 等所有内容都加载完,包括外部的图片,才执行
+JQ选择器属性选择器$(&quot;element[attribute]&quot;)
+eg:
+$(&quot;div[titles=test]&quot;).css(5px solid red);//titles = &#39;test&#39; 的所有div
+$(&quo</div>
         </div>
       </a>
 
@@ -290,11 +368,11 @@
         
           <i class="iconfont icon-tag"></i>
           
+            <a href="/tags/%E5%89%8D%E7%AB%AF">前端</a>&nbsp;
+          
             <a href="/tags/javascript">javascript</a>&nbsp;
           
             <a href="/tags/jQuery">jQuery</a>&nbsp;
-          
-            <a href="/tags/%E5%89%8D%E7%AB%AF">前端</a>&nbsp;
           
         
       </div>
@@ -443,8 +521,9 @@ var obj = new Object();
         
         <div class="index-excerpt" >
           <div class="index-text mb-1">
+### `&`,`||`的短路问题
 
-&amp;,||的短路问题console.log(1&amp;&amp;0);//0
+console.log(1&amp;&amp;0);//0
 console.log(0&amp;&amp;1);//0
 console.log(0 || 1);//1
 console.log(1 || 0);//1
@@ -459,9 +538,11 @@ console.log(result);//false
 运算优先级&amp;&amp; &gt; ||
 unicode编码在js中
 console.log(&quot;\u1234&quot;)
-在htm中
+在htlm中
 &lt;h1&gt;&amp;#1234;&lt;/h1&gt;
-</div>
+unicode编码转换
+&quot;中&quot;.charCodeAt(0);
+Stri</div>
         </div>
       </a>
 
@@ -473,9 +554,9 @@ console.log(&quot;\u1234&quot;)
         
           <i class="iconfont icon-tag"></i>
           
-            <a href="/tags/javascript">javascript</a>&nbsp;
-          
             <a href="/tags/%E5%89%8D%E7%AB%AF">前端</a>&nbsp;
+          
+            <a href="/tags/javascript">javascript</a>&nbsp;
           
         
       </div>
@@ -587,63 +668,9 @@ console.log(String(a));
         
           <i class="iconfont icon-tag"></i>
           
+            <a href="/tags/%E5%89%8D%E7%AB%AF">前端</a>&nbsp;
+          
             <a href="/tags/javascript">javascript</a>&nbsp;
-          
-            <a href="/tags/%E5%89%8D%E7%AB%AF">前端</a>&nbsp;
-          
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mb-4 mx-auto">
-    
-    
-      <div class="col-12 col-md-4 m-auto">
-        <a href="/2019/11/29/html5/" target="_self">
-          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191130141218.png" srcset="undefined" alt="html5 -private" class="img-fluid rounded z-depth-3 index-thumbnails">
-        </a>
-      </div>
-    
-    <div class="col-12 col-md-8 m-auto">
-      <a href="/2019/11/29/html5/">
-        <p class="h4 index-header">html5 -private</p>
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">本文算是一个个人向的笔记,涉及到的都是书上出现过,但是我不怎么熟悉的内容,相当于把书过一下
-index_img来自斉藤健吾@月曜日 南 ナ26ab (@kengo1212)： https://twitter.com/kengo1212?s=09
-插入个音乐播放器测试一下!
-
-
-
-一些常用H5标签    &lt;b&gt; bold
-    &lt;sub&gt; 下标
-    &lt;sup&gt; 上标
-    &lt;bdo dir=&quot;rtl&quot;&gt;123&lt;/bdo&gt; 
-    &lt;strong&gt; 强调(加粗,会优先使用)
-    &lt;em&gt; emphasized
-    &lt;i&gt; italic&lt;a&gt;&lt;a href=&quot;rikka.png&quot; donwnload=&quot;&quot;&gt;click here to download&lt;/a&gt;
-download标签:加入后点击链接不会跳转,而是直接开始下载
-&lt;dl&gt;定义列表dl: 英文全称definition</div>
-        </div>
-      </a>
-
-      <div>
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2019-11-29&nbsp;&nbsp;
-        
-        
-        
-          <i class="iconfont icon-tag"></i>
-          
-            <a href="/tags/%E5%89%8D%E7%AB%AF">前端</a>&nbsp;
-          
-            <a href="/tags/html">html</a>&nbsp;
-          
-            <a href="/tags/private">private</a>&nbsp;
           
         
       </div>
