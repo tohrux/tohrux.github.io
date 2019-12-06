@@ -114,12 +114,24 @@
                 
 
 <div class="list-group">
-  <p class="h4">共计 28 篇文章</p>
+  <p class="h4">共计 30 篇文章</p>
   <hr>
   
     
       
       <p class="h5">2019</p>
+    
+    <a href="/2019/12/06/phpFaceToObject/" class="list-group-item list-group-item-action">
+      <span class="archive-post-title">phpFaceToObject</span>
+      <span style="float: right;">12-06</span>
+    </a>
+  
+    
+    <a href="/2019/12/06/phpAndWeb/" class="list-group-item list-group-item-action">
+      <span class="archive-post-title">php与Web的页面交互</span>
+      <span style="float: right;">12-06</span>
+    </a>
+  
     
     <a href="/2019/12/05/12-5-1/" class="list-group-item list-group-item-action">
       <span class="archive-post-title">CSS选择器</span>
@@ -168,13 +180,19 @@
       <span style="float: right;">12-02</span>
     </a>
   
-    
-    <a href="/2019/12/01/12-01/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">12_01</span>
-      <span style="float: right;">12-01</span>
-    </a>
-  
 </div>
+
+  <nav aria-label="index posts navigation">
+    <span class="pagination pg-blue justify-content-center mt-5" id="pagination">
+      <span class="page-number current">1</span><a class="page-number" href="/archives/2019/12/page/2/">2</a><a class="extend next" rel="next" href="/archives/2019/12/page/2/"><i class="fas fa-angle-double-right"></i></a>
+    </span>
+  </nav>
+  
+  <script>
+    for (ele of document.getElementById("pagination").getElementsByClassName("page-number")) {
+      ele.href += '#board';
+    }
+  </script>
 
 
               </div>

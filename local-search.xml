@@ -4,6 +4,52 @@
   
   
   <entry>
+    <title>phpFaceToObject</title>
+    <link href="undefined2019/12/06/phpFaceToObject/"/>
+    <url>2019/12/06/phpFaceToObject/</url>
+    
+    <content type="html"><![CDATA[<h3 id="引入php文件"><a href="#引入php文件" class="headerlink" title="引入php文件"></a>引入php文件</h3><pre><code class="php">include &#39;angelina.php&#39;;</code></pre><h2 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数:"></a>构造函数:</h2><p>两种方法:</p><pre><code class="php">function __ construct($name,$sex,$age){}//function __ &quot;此类的类名&quot;(...){}</code></pre><h2 id="析构函数"><a href="#析构函数" class="headerlink" title="析构函数"></a>析构函数</h2><p>当对象结束其生命周期时,系统会自动执行这个函数</p><pre><code class="php">class Person{    function __destruct}</code></pre><h1 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h1><h2 id="var"><a href="#var" class="headerlink" title="var"></a>var</h2><p>php中默认将var 关键字解释为public var等同于public</p><h2 id="public"><a href="#public" class="headerlink" title="public"></a>public</h2><p>用public修饰的属性和方法是公开的,在程序的任何位置都可以访问,子类可以继承父类所有的公共成员</p><h2 id="private"><a href="#private" class="headerlink" title="private"></a>private</h2><p>private修饰的属性和方法只能在所属类的内部访问,子类也不能继承</p><pre><code class="php">//例如现在先定义一个类      class Person{        public $name;        private $money;        function __construct(){            $this-&gt;name = &quot;jack&quot;;        }    }  //    $jack = new Person();</code></pre>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>php</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>php与Web的页面交互</title>
+    <link href="undefined2019/12/06/phpAndWeb/"/>
+    <url>2019/12/06/phpAndWeb/</url>
+    
+    <content type="html"><![CDATA[<h1 id="GET-amp-POST"><a href="#GET-amp-POST" class="headerlink" title="$_GET[] &amp; $_POST[]"></a>$_GET[] &amp; $_POST[]</h1><p>究极全局变量 返回的是数组的形式</p><p>获取</p><pre><code class="php">var_dump($_GET[&#39;username&#39;]);</code></pre><h1 id="FILES"><a href="#FILES" class="headerlink" title="$_FILES[]"></a>$_FILES[]</h1><p>返回的是数组形式的5个值</p><p>需要在html文件中如下设置:</p><pre><code class="html">enctype=&quot;multipart/form-data&quot;</code></pre><h1 id="COOKIE"><a href="#COOKIE" class="headerlink" title="$_COOKIE[]"></a>$_COOKIE[]</h1><h2 id="设置一个cookie"><a href="#设置一个cookie" class="headerlink" title="设置一个cookie"></a>设置一个cookie</h2><pre><code class="php">setcookie(&#39;name&#39;,&#39;angelina&#39;,0,&#39;/&#39;);//分别为 名称,内容,存在时间(为0的话意味着在页面关闭时就会删除该cookie),目录(不设置目录的话,只对当前目录有效)</code></pre><h2 id="判断cookie是否存在"><a href="#判断cookie是否存在" class="headerlink" title="判断cookie是否存在:"></a>判断cookie是否存在:</h2><pre><code class="php">isset(cookie[&#39;name&#39;]); //返回的是true or false</code></pre><h2 id="创建cookie数组"><a href="#创建cookie数组" class="headerlink" title="创建cookie数组"></a>创建cookie数组</h2><pre><code class="php">setcookie(&quot;location[1]&quot;,&quot;beijing&quot;);setcookie(&quot;location[2]&quot;,&quot;beijing&quot;);setcookie(&quot;location[3]&quot;,&quot;beijing&quot;);var_dump ($_COOKIE[&quot;location&quot;]);//输出数组形式</code></pre><h1 id="SESSION"><a href="#SESSION" class="headerlink" title="$_SESSION[]"></a>$_SESSION[]</h1><h2 id="启动session"><a href="#启动session" class="headerlink" title="启动session"></a>启动session</h2><pre><code class="php">session_start();</code></pre><h2 id="设置session"><a href="#设置session" class="headerlink" title="设置session"></a>设置session</h2><pre><code class="php">$_session[&#39;username&#39;] = &quot;angelina&quot;;$_session[&#39;age&#39;] = 18;</code></pre><h3 id="销毁SESSION"><a href="#销毁SESSION" class="headerlink" title="销毁SESSION"></a>销毁SESSION</h3><pre><code class="php">unset($_SESSION[&#39;username&#39;]);或者使用session_destroy()函数来销毁全部session_destroy();</code></pre><p>👩即使使用了以上函数,但是由于php中的session是基于cookie的,所以session_id还存在于浏览器的cookie文件中需要调用cookie删除</p><pre><code class="php">if (isset($_COOKIE[session_name()])){    setcookie(session_name(),&quot;&quot;,time()+1,&quot;/&quot;);}</code></pre>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>前端</tag>
+      
+      <tag>php</tag>
+      
+      <tag>web</tag>
+      
+      <tag>页面交互</tag>
+      
+      <tag>后端</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>CSS选择器</title>
     <link href="undefined2019/12/05/12-5-1/"/>
     <url>2019/12/05/12-5-1/</url>
@@ -144,9 +190,9 @@
     
     <tags>
       
-      <tag>前端</tag>
-      
       <tag>js</tag>
+      
+      <tag>前端</tag>
       
       <tag>面向对象</tag>
       
