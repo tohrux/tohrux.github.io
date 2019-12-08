@@ -108,7 +108,7 @@
                   
                   &nbsp;<i class="far fa-chart-bar"></i>
                   <span class="post-count">
-                    177 字
+                    270 字
                   </span>&nbsp;
                 
 
@@ -172,7 +172,33 @@ function __ &quot;此类的类名&quot;(...){}</code></pre>
 //
     $jack = new Person();
 </code></pre>
-<h2 id="protect"><a href="#protect" class="headerlink" title="protect"></a>protect</h2>
+<h2 id="protected"><a href="#protected" class="headerlink" title="protected"></a>protected</h2><p>protected 修饰的属性和方法只有除了子类可以调用外,其他类不能调用,包括在类的外面</p>
+<pre><code class="php">&lt;?php
+//protect
+class Person
+{
+    public $name;
+    public $hello;
+    protected $money;
+    function __construct()
+    {
+        $this-&gt;name = &quot;angelina&quot;;
+        $this-&gt;age = 12;
+        $this-&gt;money = 10000;
+    }
+}
+
+class girl extends Person
+{
+    public function numOfMoney()
+    {
+        return $this-&gt;money;
+    }
+}
+$ange = new girl();
+echo $ange-&gt;numOfMoney();//10000
+echo $ange-&gt;money;//Fatal error: Uncaught Error: Cannot access protected property girl::$money</code></pre>
+
             <hr>
           </div>
           <br>
