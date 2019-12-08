@@ -122,6 +122,125 @@
     
     
       <div class="col-12 col-md-4 m-auto">
+        <a href="/2019/11/24/jkjk/" target="_self">
+          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos/img/laravel1.png" srcset="undefined" alt="lavavel视图" class="img-fluid rounded z-depth-3 index-thumbnails">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/2019/11/24/jkjk/">
+        <p class="h4 index-header">lavavel视图</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">视图文件的命名和渲染
+文件名习惯小写
+后缀为 blade.php 
+不使用 balde.php结尾的话就不能使用laravel提供的标签语法显示数据,只能使用原生语法显示数据
+
+实例在开发中可以使用compact(php内置函数)来进行数组的打包
+TextController:    public function test3()
+    {
+        //现在时间
+        $date = date(&#39;Y-m-d H:i:s&#39;, time());
+        //获取今天的星期
+        $day = &#39;sunday&#39;;
+        //show 视图
+        //return view(&#39;home/index/test3&#39;, [&#39;date&#39; =&gt; $date, &#39;day&#39; =&gt; $day]);
+        👆
+      效果一样   
+         👇
+        return view(&#39;home/index/test3&#39;</div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-11-24&nbsp;&nbsp;
+        
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/laravel">laravel</a>&nbsp;
+          
+            <a href="/tags/php">php</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+      <div class="col-12 col-md-4 m-auto">
+        <a href="/2019/11/22/laravel4/" target="_self">
+          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos/img/laravel1.png" srcset="undefined" alt="laravel中关于数据库的操作" class="img-fluid rounded z-depth-3 index-thumbnails">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/2019/11/22/laravel4/">
+        <p class="h4 index-header">laravel中关于数据库的操作</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">所有项目都由这六个部分组成
+增删改查
+循环
+判断
+
+DB类操作数据库按照MVC架构,对数据的操作都应该放在Model中完成.但如果不使用Model,也可以在laravel框架提供的DB类数据库操作数据.laravel中DB类的基本用法:DB::table(‘tableName’)
+在对数据库进行操作使用的是navicat
+
+new 一个新的数据库 qz04
+
+在 qz04下 new 一个新的table member
+
+新建查询,代码如下:
+
+
+create table member(
+    id int primary key auto_increment,
+    name varchar(32) not null,
+    age tinyint unsigned not null,
+    email varchar(32) not null
+)engine myisam charset utf8;
+
+在laravel中对 .env文件进行修改,链接到数据库
+DB_CONNECTION=mysql
+DB_HOST=localhost
+DB_PORT=3306
+DB_DATABA</div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-11-22&nbsp;&nbsp;
+        
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/laravel">laravel</a>&nbsp;
+          
+            <a href="/tags/php">php</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+      <div class="col-12 col-md-4 m-auto">
         <a href="/2019/11/22/laravel2/" target="_self">
           <img src="https://cdn.jsdelivr.net/gh/tohrux/photos/img/laravel1.png" srcset="undefined" alt="laravel控制器基础" class="img-fluid rounded z-depth-3 index-thumbnails">
         </a>
@@ -392,9 +511,9 @@ $defaultColor: red;
         
           <i class="iconfont icon-tag"></i>
           
-            <a href="/tags/css">css</a>&nbsp;
-          
             <a href="/tags/%E5%89%8D%E7%AB%AF">前端</a>&nbsp;
+          
+            <a href="/tags/css">css</a>&nbsp;
           
             <a href="/tags/sass">sass</a>&nbsp;
           
@@ -536,84 +655,11 @@ ps.这原本是11-16日凌晨4点写下的,因为一些原因现在重新上传�
     </div>
   </div>
 
-  <div class="row mb-4 mx-auto">
-    
-    
-      <div class="col-12 col-md-4 m-auto">
-        <a href="/2019/11/16/ceshi/" target="_self">
-          <img src="https://cdn.jsdelivr.net/gh/tohrux/tohrux.github.io@1.0//img/akane.jpg" srcset="undefined" alt="图片加载测试" class="img-fluid rounded z-depth-3 index-thumbnails">
-        </a>
-      </div>
-    
-    <div class="col-12 col-md-8 m-auto">
-      <a href="/2019/11/16/ceshi/">
-        <p class="h4 index-header">图片加载测试</p>
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">
-
-</div>
-        </div>
-      </a>
-
-      <div>
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2019-11-16&nbsp;&nbsp;
-        
-        
-        
-          <i class="iconfont icon-tag"></i>
-          
-            <a href="/tags/ssss">ssss</a>&nbsp;
-          
-            <a href="/tags/test">test</a>&nbsp;
-          
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mb-4 mx-auto">
-    
-    
-    <div class="col-12 col-md-8 m-auto">
-      <a href="/2019/11/15/hello-world/">
-        <p class="h4 index-header">Hello World</p>
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">Quick StartCreate a new post$ hexo new &quot;My New Post&quot;
-More info: Writing
-Run server$ hexo server
-More info: Server
-Generate static files$ hexo generate
-More info: Generating
-Deploy to remote sites$ hexo deploy
-More info: Deployment
-</div>
-        </div>
-      </a>
-
-      <div>
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2019-11-15&nbsp;&nbsp;
-        
-        
-        
-      </div>
-    </div>
-  </div>
-
 
 
   <nav aria-label="index posts navigation">
     <span class="pagination pg-blue justify-content-center mt-5" id="pagination">
-      <a class="extend prev" rel="prev" href="/page/2/"><i class="fas fa-angle-double-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+      <a class="extend prev" rel="prev" href="/page/2/"><i class="fas fa-angle-double-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/"><i class="fas fa-angle-double-right"></i></a>
     </span>
   </nav>
   

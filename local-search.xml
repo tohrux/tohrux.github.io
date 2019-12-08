@@ -4,11 +4,45 @@
   
   
   <entry>
+    <title>今天是美好的一天 不能浪费</title>
+    <link href="undefined2019/12/08/12-8/"/>
+    <url>2019/12/08/12-8/</url>
+    
+    <content type="html"><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191208113233.jpg" srcset="undefined" alt=""></p><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191208113301.jpg" srcset="undefined" alt=""></p><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191208113744.jpg" srcset="undefined" alt=""></p><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191208113815.jpg" srcset="undefined" alt=""></p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>nice</tag>
+      
+      <tag>sunday</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>phpMysql</title>
+    <link href="undefined2019/12/07/phpMysql/"/>
+    <url>2019/12/07/phpMysql/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>phpFaceToObject</title>
     <link href="undefined2019/12/06/phpFaceToObject/"/>
     <url>2019/12/06/phpFaceToObject/</url>
     
-    <content type="html"><![CDATA[<h3 id="引入php文件"><a href="#引入php文件" class="headerlink" title="引入php文件"></a>引入php文件</h3><pre><code class="php">include &#39;angelina.php&#39;;</code></pre><h2 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数:"></a>构造函数:</h2><p>两种方法:</p><pre><code class="php">function __ construct($name,$sex,$age){}//function __ &quot;此类的类名&quot;(...){}</code></pre><h2 id="析构函数"><a href="#析构函数" class="headerlink" title="析构函数"></a>析构函数</h2><p>当对象结束其生命周期时,系统会自动执行这个函数</p><pre><code class="php">class Person{    function __destruct}</code></pre><h1 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h1><h2 id="var"><a href="#var" class="headerlink" title="var"></a>var</h2><p>php中默认将var 关键字解释为public var等同于public</p><h2 id="public"><a href="#public" class="headerlink" title="public"></a>public</h2><p>用public修饰的属性和方法是公开的,在程序的任何位置都可以访问,子类可以继承父类所有的公共成员</p><h2 id="private"><a href="#private" class="headerlink" title="private"></a>private</h2><p>private修饰的属性和方法只能在所属类的内部访问,子类也不能继承</p><pre><code class="php">//例如现在先定义一个类      class Person{        public $name;        private $money;        function __construct(){            $this-&gt;name = &quot;jack&quot;;        }    }  //    $jack = new Person();</code></pre>]]></content>
+    <content type="html"><![CDATA[<h3 id="引入php文件"><a href="#引入php文件" class="headerlink" title="引入php文件"></a>引入php文件</h3><pre><code class="php">include &#39;angelina.php&#39;;</code></pre><h2 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数:"></a>构造函数:</h2><p>两种方法:</p><pre><code class="php">function __ construct($name,$sex,$age){}//function __ &quot;此类的类名&quot;(...){}</code></pre><h2 id="析构函数"><a href="#析构函数" class="headerlink" title="析构函数"></a>析构函数</h2><p>当对象结束其生命周期时,系统会自动执行这个函数</p><pre><code class="php">class Person{    function __destruct}</code></pre><h1 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h1><h2 id="var"><a href="#var" class="headerlink" title="var"></a>var</h2><p>php中默认将var 关键字解释为public var等同于public</p><h2 id="public"><a href="#public" class="headerlink" title="public"></a>public</h2><p>用public修饰的属性和方法是公开的,在程序的任何位置都可以访问,子类可以继承父类所有的公共成员</p><h2 id="private"><a href="#private" class="headerlink" title="private"></a>private</h2><p>private修饰的属性和方法只能在所属类的内部访问,子类也不能继承</p><pre><code class="php">//例如现在先定义一个类      class Person{        public $name;        private $money;        function __construct(){            $this-&gt;name = &quot;jack&quot;;        }    }  //    $jack = new Person();</code></pre><h2 id="protect"><a href="#protect" class="headerlink" title="protect"></a>protect</h2>]]></content>
     
     
     
@@ -60,11 +94,11 @@
     
     <tags>
       
+      <tag>前端</tag>
+      
       <tag>css</tag>
       
       <tag>selector</tag>
-      
-      <tag>前端</tag>
       
     </tags>
     
@@ -121,13 +155,13 @@
     
     <tags>
       
-      <tag>前端</tag>
-      
       <tag>ajax</tag>
       
       <tag>javascript</tag>
       
       <tag>jQuery</tag>
+      
+      <tag>前端</tag>
       
     </tags>
     
@@ -146,11 +180,11 @@
     
     <tags>
       
-      <tag>前端</tag>
-      
       <tag>javascript</tag>
       
       <tag>jQuery</tag>
+      
+      <tag>前端</tag>
       
     </tags>
     
@@ -190,9 +224,9 @@
     
     <tags>
       
-      <tag>前端</tag>
-      
       <tag>js</tag>
+      
+      <tag>前端</tag>
       
       <tag>面向对象</tag>
       
@@ -213,9 +247,9 @@
     
     <tags>
       
-      <tag>前端</tag>
-      
       <tag>javascript</tag>
+      
+      <tag>前端</tag>
       
     </tags>
     
@@ -253,9 +287,9 @@
     
     <tags>
       
-      <tag>前端</tag>
-      
       <tag>javascript</tag>
+      
+      <tag>前端</tag>
       
     </tags>
     
@@ -316,9 +350,9 @@
     
     <tags>
       
-      <tag>css</tag>
-      
       <tag>前端</tag>
+      
+      <tag>css</tag>
       
       <tag>flex</tag>
       
@@ -339,9 +373,9 @@
     
     <tags>
       
-      <tag>css</tag>
-      
       <tag>前端</tag>
+      
+      <tag>css</tag>
       
       <tag>flex</tag>
       
@@ -532,9 +566,9 @@
     
     <tags>
       
-      <tag>css</tag>
-      
       <tag>前端</tag>
+      
+      <tag>css</tag>
       
       <tag>sass</tag>
       

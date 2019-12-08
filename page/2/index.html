@@ -122,6 +122,133 @@
     
     
       <div class="col-12 col-md-4 m-auto">
+        <a href="/2019/12/02/js-12-2-2/" target="_self">
+          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191202110255.png" srcset="undefined" alt="js 对象 -private" class="img-fluid rounded z-depth-3 index-thumbnails">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/2019/12/02/js-12-2-2/">
+        <p class="h4 index-header">js 对象 -private</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">栈内存和堆内存
+https://blog.csdn.net/xdd19910505/article/details/41900693
+
+js中对象的分类
+内置对象
+
+例如javascript中的Math方法.
+
+宿主对象
+
+DOM,BOM,比如console,document 
+
+自定义对象
+
+var obj = new Object();
+对象的创建    //通过new关键字创建,调用了construct
+    var obj = new Object();
+    //字面量创建
+    var obj2 = {};
+    //先声明一个类
+    var User = function (name, age) {
+        this.name = name;
+        this.age = age;
+    }
+    var user1 = new User(&#39;angelina&#39;, 23);
+    console.log(user1);
+两个变量被同一个对象引用时    var obj = new Object();
+    obj.name</div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-12-02&nbsp;&nbsp;
+        
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/js">js</a>&nbsp;
+          
+            <a href="/tags/%E5%89%8D%E7%AB%AF">前端</a>&nbsp;
+          
+            <a href="/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1">面向对象</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+      <div class="col-12 col-md-4 m-auto">
+        <a href="/2019/12/02/js-12-2/" target="_self">
+          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191202105330.png" srcset="undefined" alt="js运算符 -private" class="img-fluid rounded z-depth-3 index-thumbnails">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/2019/12/02/js-12-2/">
+        <p class="h4 index-header">js运算符 -private</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">
+### `&`,`||`的短路问题
+
+console.log(1&amp;&amp;0);//0
+console.log(0&amp;&amp;1);//0
+console.log(0 || 1);//1
+console.log(1 || 0);//1
+对非布尔值进行布尔运算    var a = 1;
+    a = !a;
+    console.log(a); //false
+关系运算符//返回的一定是false or true eg:
+var result = 1 &lt; 3;
+console.log(result);//false
+非数值的比较*数值类型和非数值类型比较的话,非数值类型会被转换为数值类型
+*如果两边都是字符串型的数字话,则会被转换为unicode编码
+运算优先级&amp;&amp; &gt; ||
+unicode编码在js中
+console.log(&quot;\u1234&quot;)
+在htlm中
+&lt;h1&gt;&amp;#1234;&lt;/h1&gt;
+unicode编码转换
+&quot;中&quot;.charCodeAt(0);
+Stri</div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-12-02&nbsp;&nbsp;
+        
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/javascript">javascript</a>&nbsp;
+          
+            <a href="/tags/%E5%89%8D%E7%AB%AF">前端</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+      <div class="col-12 col-md-4 m-auto">
         <a href="/2019/12/01/12-01/" target="_self">
           <img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191202082444.jpg" srcset="undefined" alt="12_01" class="img-fluid rounded z-depth-3 index-thumbnails">
         </a>
@@ -223,9 +350,9 @@ console.log(String(a));
         
           <i class="iconfont icon-tag"></i>
           
-            <a href="/tags/%E5%89%8D%E7%AB%AF">前端</a>&nbsp;
-          
             <a href="/tags/javascript">javascript</a>&nbsp;
+          
+            <a href="/tags/%E5%89%8D%E7%AB%AF">前端</a>&nbsp;
           
         
       </div>
@@ -376,9 +503,9 @@ download标签:加入后点击链接不会跳转,而是直接开始下载
         
           <i class="iconfont icon-tag"></i>
           
-            <a href="/tags/css">css</a>&nbsp;
-          
             <a href="/tags/%E5%89%8D%E7%AB%AF">前端</a>&nbsp;
+          
+            <a href="/tags/css">css</a>&nbsp;
           
             <a href="/tags/flex">flex</a>&nbsp;
           
@@ -430,9 +557,9 @@ display:flex
         
           <i class="iconfont icon-tag"></i>
           
-            <a href="/tags/css">css</a>&nbsp;
-          
             <a href="/tags/%E5%89%8D%E7%AB%AF">前端</a>&nbsp;
+          
+            <a href="/tags/css">css</a>&nbsp;
           
             <a href="/tags/flex">flex</a>&nbsp;
           
@@ -599,130 +726,11 @@ csrf_field自动生成的htm</div>
     </div>
   </div>
 
-  <div class="row mb-4 mx-auto">
-    
-    
-      <div class="col-12 col-md-4 m-auto">
-        <a href="/2019/11/24/jkjk/" target="_self">
-          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos/img/laravel1.png" srcset="undefined" alt="lavavel视图" class="img-fluid rounded z-depth-3 index-thumbnails">
-        </a>
-      </div>
-    
-    <div class="col-12 col-md-8 m-auto">
-      <a href="/2019/11/24/jkjk/">
-        <p class="h4 index-header">lavavel视图</p>
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">视图文件的命名和渲染
-文件名习惯小写
-后缀为 blade.php 
-不使用 balde.php结尾的话就不能使用laravel提供的标签语法显示数据,只能使用原生语法显示数据
-
-实例在开发中可以使用compact(php内置函数)来进行数组的打包
-TextController:    public function test3()
-    {
-        //现在时间
-        $date = date(&#39;Y-m-d H:i:s&#39;, time());
-        //获取今天的星期
-        $day = &#39;sunday&#39;;
-        //show 视图
-        //return view(&#39;home/index/test3&#39;, [&#39;date&#39; =&gt; $date, &#39;day&#39; =&gt; $day]);
-        👆
-      效果一样   
-         👇
-        return view(&#39;home/index/test3&#39;</div>
-        </div>
-      </a>
-
-      <div>
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2019-11-24&nbsp;&nbsp;
-        
-        
-        
-          <i class="iconfont icon-tag"></i>
-          
-            <a href="/tags/laravel">laravel</a>&nbsp;
-          
-            <a href="/tags/php">php</a>&nbsp;
-          
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mb-4 mx-auto">
-    
-    
-      <div class="col-12 col-md-4 m-auto">
-        <a href="/2019/11/22/laravel4/" target="_self">
-          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos/img/laravel1.png" srcset="undefined" alt="laravel中关于数据库的操作" class="img-fluid rounded z-depth-3 index-thumbnails">
-        </a>
-      </div>
-    
-    <div class="col-12 col-md-8 m-auto">
-      <a href="/2019/11/22/laravel4/">
-        <p class="h4 index-header">laravel中关于数据库的操作</p>
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">所有项目都由这六个部分组成
-增删改查
-循环
-判断
-
-DB类操作数据库按照MVC架构,对数据的操作都应该放在Model中完成.但如果不使用Model,也可以在laravel框架提供的DB类数据库操作数据.laravel中DB类的基本用法:DB::table(‘tableName’)
-在对数据库进行操作使用的是navicat
-
-new 一个新的数据库 qz04
-
-在 qz04下 new 一个新的table member
-
-新建查询,代码如下:
-
-
-create table member(
-    id int primary key auto_increment,
-    name varchar(32) not null,
-    age tinyint unsigned not null,
-    email varchar(32) not null
-)engine myisam charset utf8;
-
-在laravel中对 .env文件进行修改,链接到数据库
-DB_CONNECTION=mysql
-DB_HOST=localhost
-DB_PORT=3306
-DB_DATABA</div>
-        </div>
-      </a>
-
-      <div>
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2019-11-22&nbsp;&nbsp;
-        
-        
-        
-          <i class="iconfont icon-tag"></i>
-          
-            <a href="/tags/laravel">laravel</a>&nbsp;
-          
-            <a href="/tags/php">php</a>&nbsp;
-          
-        
-      </div>
-    </div>
-  </div>
-
 
 
   <nav aria-label="index posts navigation">
     <span class="pagination pg-blue justify-content-center mt-5" id="pagination">
-      <a class="extend prev" rel="prev" href="/"><i class="fas fa-angle-double-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fas fa-angle-double-right"></i></a>
+      <a class="extend prev" rel="prev" href="/"><i class="fas fa-angle-double-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/"><i class="fas fa-angle-double-right"></i></a>
     </span>
   </nav>
   
