@@ -108,7 +108,7 @@
                   
                   &nbsp;<i class="far fa-chart-bar"></i>
                   <span class="post-count">
-                    270 字
+                    286 字
                   </span>&nbsp;
                 
 
@@ -158,7 +158,7 @@ function __ &quot;此类的类名&quot;(...){}</code></pre>
 <pre><code class="php">class Person{
     function __destruct
 }</code></pre>
-<h1 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h1><h2 id="var"><a href="#var" class="headerlink" title="var"></a>var</h2><p>php中默认将var 关键字解释为public var等同于public</p>
+<h1 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h1><h2 id="var"><a href="#var" class="headerlink" title="var"></a>var</h2><p>php中默认将var 关键字解释为public,var等同于public</p>
 <h2 id="public"><a href="#public" class="headerlink" title="public"></a>public</h2><p>用public修饰的属性和方法是公开的,在程序的任何位置都可以访问,子类可以继承父类所有的公共成员</p>
 <h2 id="private"><a href="#private" class="headerlink" title="private"></a>private</h2><p>private修饰的属性和方法只能在所属类的内部访问,子类也不能继承</p>
 <pre><code class="php">//例如现在先定义一个类
@@ -198,6 +198,8 @@ class girl extends Person
 $ange = new girl();
 echo $ange-&gt;numOfMoney();//10000
 echo $ange-&gt;money;//Fatal error: Uncaught Error: Cannot access protected property girl::$money</code></pre>
+<h2 id="extend"><a href="#extend" class="headerlink" title="extend"></a>extend</h2><p>继承一个类,但不支持多继承</p>
+<p>eg如上</p>
 
             <hr>
           </div>
