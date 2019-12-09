@@ -108,7 +108,7 @@
                   
                   &nbsp;<i class="far fa-chart-bar"></i>
                   <span class="post-count">
-                    435 字
+                    491 字
                   </span>&nbsp;
                 
 
@@ -213,8 +213,10 @@ $a = new MyClass;
 var_dump($a instanceof MyClass);//true
 var_dump($a instanceof MyInterface);//true</code></pre>
 <h2 id="魔术方法"><a href="#魔术方法" class="headerlink" title="魔术方法"></a>魔术方法</h2><p>“__”开头的方法都被称为魔术方法(属实👍)</p>
-<p>比如之前的__clone() 方法</p>
-<h3 id="set"><a href="#set" class="headerlink" title="__set()"></a>__set()</h3><h3 id="get"><a href="#get" class="headerlink" title="__get()"></a>__get()</h3><h3 id="call"><a href="#call" class="headerlink" title="__call()"></a>__call()</h3><p>用来处理程序在调用不存在或私有的方法时所导致的错误(友好)</p>
+<p>比如之前的 __construct() 每次实例化一个类都会先调用该方法进行初始化。</p>
+<h3 id="set"><a href="#set" class="headerlink" title="__set()"></a>__set()</h3><p>在给不可访问属性赋值时，<a href="https://www.php.net/manual/zh/language.oop5.overloading.php#object.set" target="_blank" rel="noopener">__set()</a> 会被调用。</p>
+<h3 id="get"><a href="#get" class="headerlink" title="__get()"></a>__get()</h3><p>public __get ( string <code>$name</code> ) : <a href="https://www.php.net/manual/zh/language.pseudo-types.php#language.types.mixed" target="_blank" rel="noopener">mixed</a> 当读取不可访问的属性时,__get()会被调用</p>
+<h3 id="call"><a href="#call" class="headerlink" title="__call()"></a>__call()</h3><p>用来处理程序在调用不存在或私有的方法时所导致的错误(友好)</p>
 <pre><code class="php">&lt;?php
 class Fruit
 {
@@ -224,8 +226,7 @@ class Fruit
     }
 }
 $a = new Fruit();
-$a-&gt;adf(123);//adf方法不存在
-</code></pre>
+$a-&gt;adf(123);//adf方法不存在</code></pre>
 <h4 id="toString-NaN"><a href="#toString-NaN" class="headerlink" title="__toString()"></a>__toString()</h4><p>👩:只对echo 和 print 有效,可以将对象输出为字符串</p>
 <p>输入:</p>
 <pre><code class="php">&lt;?php
