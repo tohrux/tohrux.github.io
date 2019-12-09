@@ -108,7 +108,7 @@
                   
                   &nbsp;<i class="far fa-chart-bar"></i>
                   <span class="post-count">
-                    286 字
+                    664 字
                   </span>&nbsp;
                 
 
@@ -116,7 +116,7 @@
                   
                   &nbsp;<i class="far fa-clock"></i>
                   <span class="post-count">
-                      1 分钟
+                      2 分钟
                   </span>&nbsp;
                 
 
@@ -200,6 +200,55 @@ echo $ange-&gt;numOfMoney();//10000
 echo $ange-&gt;money;//Fatal error: Uncaught Error: Cannot access protected property girl::$money</code></pre>
 <h2 id="extend"><a href="#extend" class="headerlink" title="extend"></a>extend</h2><p>继承一个类,但不支持多继承</p>
 <p>eg如上</p>
+<h2 id="final"><a href="#final" class="headerlink" title="final"></a>final</h2><blockquote>
+<p><strong>被final修饰的属性和方法不能被更改,</strong></p>
+<p><strong>被final关键字修饰的类不能被继承,</strong></p>
+<p><strong>被final关键字修饰的方法在子类中不能被重写,</strong></p>
+<p><strong>final不能修饰变量</strong></p>
+</blockquote>
+<h2 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h2><blockquote>
+<p><strong>指在面向对象中能够对同一个接口做出不同的实现,主要存在两种形式:</strong></p>
+</blockquote>
+<h3 id="重写"><a href="#重写" class="headerlink" title="重写"></a>重写</h3><blockquote>
+<p><strong>在子类中重写父类的方法,具有相同的方法名字,相同的参数表和相同的返回类型,常用于子类构造方法的重写.</strong></p>
+</blockquote>
+<h3 id="重载"><a href="#重载" class="headerlink" title="重载"></a>重载</h3><blockquote>
+<p><strong>通常是指同一个类中多个方法具有相同的名字,但这些方法具有不同的参数列表</strong></p>
+</blockquote>
+<pre><code class="php">&lt;?php
+//
+class Person
+{
+    public $name;
+    public $birthday;
+    function __construct($name, $birthday)
+    {
+        $this-&gt;name = $name;
+        $this-&gt;birthday = $birthday;
+    }
+}
+$girl = new Person(&quot;eyjafjalla&quot;, 12);
+echo &quot;&lt;pre&gt;&quot;;
+var_dump($girl);
+
+//输出结果
+object(Person)#1 (2) {
+  [&quot;name&quot;]=&gt;
+  string(10) &quot;eyjafjalla&quot;
+  [&quot;birthday&quot;]=&gt;
+  int(12)
+}</code></pre>
+<h2 id="“-”操作符"><a href="#“-”操作符" class="headerlink" title="“::”操作符"></a>“::”操作符</h2><blockquote>
+<p><strong>通常用于没有声明任何实例的情况下使用类的属性和方法</strong></p>
+</blockquote>
+<p>和$this的区别</p>
+<p><code>parent::</code>可以调用父类中的<strong>属性</strong>和<strong>方法</strong>和常量 比如构造函数</p>
+<p><code>self::</code>可以调用本类中的<strong>静态属性</strong>和<strong>方法</strong>和常量</p>
+<p><code>类名::</code> 可以调用某类中的<strong>静态属性</strong>和<strong>方法</strong></p>
+<p>👩:可以是非静态的,但是系统不推荐这样做</p>
+<h2 id="static"><a href="#static" class="headerlink" title="static"></a>static</h2><p>静态,可以使用 “类名::” 的方式调用.</p>
+<p>不需要实例化对象就可以访问或调用,</p>
+<p>static修饰的方法或属性</p>
 
             <hr>
           </div>
