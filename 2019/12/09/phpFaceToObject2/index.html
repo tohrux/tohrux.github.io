@@ -15,7 +15,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <meta name="keywords" content="">
-  <title>Tohrux!</title>
+  <title>phpFaceToObject2 ~ Tohrux!</title>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/font-awesome/css/all.min.css"  >
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/bootstrap/css/bootstrap.min.css"  >
@@ -36,7 +36,7 @@
 
 
 <body>
-  <header style="height: 100vh;">
+  <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -95,12 +95,43 @@
             </span>
 
             
+              <br>
+              
+                <p class="mt-3">
+                  <i class="fas fa-calendar-alt" aria-hidden="true"></i>&nbsp;
+                  星期一, 十二月 9日 2019, 3:04 下午
+                </p>
+              
+
+              <p>
+                
+                  
+                  &nbsp;<i class="far fa-chart-bar"></i>
+                  <span class="post-count">
+                    435 字
+                  </span>&nbsp;
+                
+
+                
+                  
+                  &nbsp;<i class="far fa-clock"></i>
+                  <span class="post-count">
+                      2 分钟
+                  </span>&nbsp;
+                
+
+                
+                  <!-- 不蒜子统计文章PV -->
+                  
+                  &nbsp;<i class="far fa-eye" aria-hidden="true"></i>&nbsp;
+                  <span id="busuanzi_container_page_pv">
+                    <span id="busuanzi_value_page_pv"></span> 次
+                  </span>&nbsp;
+                
+              </p>
+            
           </div>
 
-          
-            <div class="scroll-down-bar">
-              <i class="fas fa-angle-down scroll-down-arrow"></i>
-            </div>
           
         </div>
       </div>
@@ -109,203 +140,172 @@
 
   <main>
     
-      <div class="container nopadding-md">
-        <div class="py-5 z-depth-3" id="board">
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
+      
 
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="py-5 z-depth-3" id="board">
+        <div class="post-content mx-auto" id="post">
+          <div class="markdown-body">
+            <h2 id="对象的使用"><a href="#对象的使用" class="headerlink" title="对象的使用"></a>对象的使用</h2><h3 id="引用对象"><a href="#引用对象" class="headerlink" title="引用对象"></a>引用对象</h3><pre><code class="php">$a = &quot;hello&quot;;
+$b = &amp;$a;
+echo $b . &quot;&lt;/br&gt;&quot;; //hello
 
-  <div class="row mb-4 mx-auto">
-    
-    
-      <div class="col-12 col-md-4 m-auto">
-        <a href="/2019/11/17/cdn/" target="_self">
-          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos/img/cdn.png" srcset="undefined" alt="使用CDN来加速网页的访问" class="img-fluid rounded z-depth-3 index-thumbnails">
-        </a>
-      </div>
-    
-    <div class="col-12 col-md-8 m-auto">
-      <a href="/2019/11/17/cdn/">
-        <p class="h4 index-header">使用CDN来加速网页的访问</p>
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">前言今天是搭建github.io的第二天,很多功能都还在完善,比如说在一些地方(没错,说的就是你,天朝!)访问GitHub.Page很慢的问题,通过上网一番查找发现似乎可以用CDN来解决.
-什么是CDN?这里粘贴一段阿里云官网上面对CDN的描述:
-
-将源站内容分发至最接近用户的节点，使用户可就近取得所需内容，提高用户访问的响应速度和成功率。解决因分布、带宽、服务器性能带来的访问延迟问题，适用于站点加速、点播、直播等场景。
-
-总之它可以让别人访问自己的GitHub.Page的速度更快就对了!
-开始这里就拿我们网页中需要加载很久的图片来举例8,
-首先我们要找到放置自己github.io 页面的那个repo,如下图所示:
-
-我们需要的图片他们现在都静静的躺在img那个文件夹里
-如果想用CDN获取他们的话
-可以点击图片最顶端的release来发布版本
-例如我这里发布的版本为1.0  发布完成后我们就可通过jsDelivr来引用我们的资源了
-
-如上面的地址所示:
-​    gh 代表 github
-​    tohrux是我的GitHub用户名
-​    tohrux.github.io是我仓库</div>
-        </div>
-      </a>
-
-      <div>
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2019-11-17&nbsp;&nbsp;
-        
-        
-        
-          <i class="iconfont icon-tag"></i>
-          
-            <a href="/tags/build">build</a>&nbsp;
-          
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mb-4 mx-auto">
-    
-    
-      <div class="col-12 col-md-4 m-auto">
-        <a href="/2019/11/17/test1/" target="_self">
-          <img src="https://cdn.jsdelivr.net/gh/tohrux/tohrux.github.io@1.0//img/rikka.jpg" srcset="undefined" alt="现在开始我拥有了自己的博客!" class="img-fluid rounded z-depth-3 index-thumbnails">
-        </a>
-      </div>
-    
-    <div class="col-12 col-md-8 m-auto">
-      <a href="/2019/11/17/test1/">
-        <p class="h4 index-header">现在开始我拥有了自己的博客!</p>
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">现在开始我拥有了自己的博客!终于完成了,现在都快5点了,希望明天可以不上课8,(但估计打完这篇md要做的第一件事就是设闹钟了),
-晚安世界~
-上课的笔记什么的明天再更吧
-总之还是开心的!
-ps.这原本是11-16日凌晨4点写下的,因为一些原因现在重新上传了一遍
-</div>
-        </div>
-      </a>
-
-      <div>
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2019-11-17&nbsp;&nbsp;
-        
-        
-        
-          <i class="iconfont icon-tag"></i>
-          
-            <a href="/tags/happy">happy</a>&nbsp;
-          
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mb-4 mx-auto">
-    
-    
-      <div class="col-12 col-md-4 m-auto">
-        <a href="/2019/11/16/ceshi/" target="_self">
-          <img src="https://cdn.jsdelivr.net/gh/tohrux/tohrux.github.io@1.0//img/akane.jpg" srcset="undefined" alt="图片加载测试" class="img-fluid rounded z-depth-3 index-thumbnails">
-        </a>
-      </div>
-    
-    <div class="col-12 col-md-8 m-auto">
-      <a href="/2019/11/16/ceshi/">
-        <p class="h4 index-header">图片加载测试</p>
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">
-
-</div>
-        </div>
-      </a>
-
-      <div>
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2019-11-16&nbsp;&nbsp;
-        
-        
-        
-          <i class="iconfont icon-tag"></i>
-          
-            <a href="/tags/ssss">ssss</a>&nbsp;
-          
-            <a href="/tags/test">test</a>&nbsp;
-          
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mb-4 mx-auto">
-    
-    
-    <div class="col-12 col-md-8 m-auto">
-      <a href="/2019/11/15/hello-world/">
-        <p class="h4 index-header">Hello World</p>
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">Quick StartCreate a new post$ hexo new &quot;My New Post&quot;
-More info: Writing
-Run server$ hexo server
-More info: Server
-Generate static files$ hexo generate
-More info: Generating
-Deploy to remote sites$ hexo deploy
-More info: Deployment
-</div>
-        </div>
-      </a>
-
-      <div>
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2019-11-15&nbsp;&nbsp;
-        
-        
-        
-      </div>
-    </div>
-  </div>
-
-
-
-  <nav aria-label="index posts navigation">
-    <span class="pagination pg-blue justify-content-center mt-5" id="pagination">
-      <a class="extend prev" rel="prev" href="/page/3/"><i class="fas fa-angle-double-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
-    </span>
-  </nav>
-  
-  <script>
-    for (ele of document.getElementById("pagination").getElementsByClassName("page-number")) {
-      ele.href += '#board';
+$a = &quot;aloha&quot;;
+echo $b; //aloha</code></pre>
+<h3 id="克隆对象"><a href="#克隆对象" class="headerlink" title="克隆对象"></a>克隆对象</h3><pre><code class="php">class Person
+{
+    public $timeForCopy = 0;
+    function __clone()
+    {
+        $this-&gt;timeForCopy += 1;
     }
-  </script>
+}
+$a = new Person();
+$b = clone $a;
+$c = clone $b;
+echo $b-&gt;timeForCopy; //1
+echo $c-&gt;timeForCopy;//2</code></pre>
+<h3 id="比较对象"><a href="#比较对象" class="headerlink" title="比较对象"></a>比较对象</h3><pre><code class="php">&quot;===&quot; 表示比较两个对象的内存地址 &quot;==&quot;比较的是两个对象的内容</code></pre>
+<p>经过比较可以得出:</p>
+<pre><code class="php">clone的两个对象相比较的话: 值相等 ,但是内存地址不相等
+引用的两个对象: 值和内存地址都是相等的
+使用一样的构造函数生成的两个实例化对象: 值是一样的,但是内存地址不同</code></pre>
+<h3 id="检测对象类型"><a href="#检测对象类型" class="headerlink" title="检测对象类型"></a>检测对象类型</h3><p><em>案例来自php.net</em></p>
+<p>方法:</p>
+<pre><code class="php">instanceof 关键字</code></pre>
+<p>对两个不同无关的类使用</p>
+<pre><code class="php">&lt;?php
+class MyClass
+{ }
+class NotMyClass
+{ }
+$a = new MyClass;
 
+var_dump($a instanceof MyClass); //true
+var_dump($a instanceof NotMyClass);//false</code></pre>
+<p>对继承后的类使用</p>
+<pre><code class="php">&lt;?php
+class ParentClass
+{ }
 
+class MyClass extends ParentClass
+{ }
 
-              </div>
-            </div>
+$a = new MyClass;
+
+var_dump($a instanceof MyClass); //true
+var_dump($a instanceof ParentClass);//true</code></pre>
+<p>接口</p>
+<pre><code class="php">&lt;?php
+interface MyInterface
+{
+}
+
+class MyClass implements MyInterface
+{
+}
+
+$a = new MyClass;
+
+var_dump($a instanceof MyClass);//true
+var_dump($a instanceof MyInterface);//true</code></pre>
+<h2 id="魔术方法"><a href="#魔术方法" class="headerlink" title="魔术方法"></a>魔术方法</h2><p>“__”开头的方法都被称为魔术方法(属实👍)</p>
+<p>比如之前的__clone() 方法</p>
+<h3 id="set"><a href="#set" class="headerlink" title="__set()"></a>__set()</h3><h3 id="get"><a href="#get" class="headerlink" title="__get()"></a>__get()</h3><h3 id="call"><a href="#call" class="headerlink" title="__call()"></a>__call()</h3><p>用来处理程序在调用不存在或私有的方法时所导致的错误(友好)</p>
+<pre><code class="php">&lt;?php
+class Fruit
+{
+    function __call($method_name, $param)
+    {
+        echo $method_name . &quot;方法不存在&quot;;
+    }
+}
+$a = new Fruit();
+$a-&gt;adf(123);//adf方法不存在
+</code></pre>
+<h4 id="toString-NaN"><a href="#toString-NaN" class="headerlink" title="__toString()"></a>__toString()</h4><p>👩:只对echo 和 print 有效,可以将对象输出为字符串</p>
+<p>输入:</p>
+<pre><code class="php">&lt;?php
+echo &quot;&lt;pre&gt;&quot;;
+class Fruit
+{
+    function __toString()
+    {
+        return &quot;fruit man&quot;;
+    }
+}
+$a = new Fruit();
+print($a);
+echo &quot;&lt;/br&gt;&quot;;
+echo ($a);
+echo &quot;&lt;/br&gt;&quot;;
+var_dump($a);</code></pre>
+<p>输出:</p>
+<pre><code class="php">fruit man
+fruit man
+object(Fruit)#1 (0) {
+}</code></pre>
+
+            <hr>
+          </div>
+          <br>
+          <div>
+            <p>
+            
+            
+              <span>
+                <i class="iconfont icon-tag"></i>
+                
+                  <a class="hover-with-bg" href="/tags/php">php</a>
+                
+              </span>
+            
+            </p>
+            
           </div>
         </div>
       </div>
+    </div>
+    <div class="d-none d-lg-block col-lg-2 toc-container">
+      
+  <div id="toc">
+    <p class="h4"><i class="far fa-list-alt"></i>&nbsp;目录</p>
+    <div id="tocbot"></div>
+  </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- custom -->
+
+
+<!-- Comments -->
+<div class="col-lg-7 mx-auto nopadding-md">
+  <div class="container comments mx-auto" id="comments">
+    
+      <br><br>
+      
+      
+  <script defer src="https://utteranc.es/client.js"
+          repo="tohrux/tohrux.github.io"
+          issue-term="pathname"
+  
+          label="utterances"
+    
+          theme="github-light"
+          crossorigin="anonymous"
+          async>
+  </script>
+
+
+    
+  </div>
+</div>
+
     
   </main>
 
@@ -380,6 +380,11 @@ More info: Deployment
 
 
 
+  
+    <script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/tocbot/tocbot.min.js" ></script>
+  
+  <script src="/js/post.js" ></script>
+
 
 
   <script src="/lib/smooth-scroll/smooth-scroll.min.js" ></script>
@@ -420,7 +425,7 @@ More info: Deployment
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "aloha!&nbsp;",
+        "phpFaceToObject2&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
