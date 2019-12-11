@@ -15,7 +15,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <meta name="keywords" content="">
-  <title>lavavel视图 ~ Tohrux!</title>
+  <title>mysql ~ Tohrux!</title>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/font-awesome/css/all.min.css"  >
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/bootstrap/css/bootstrap.min.css"  >
@@ -84,7 +84,7 @@
 </nav>
 
     <div class="view intro-2" id="background"
-         style="background: url('https://cdn.jsdelivr.net/gh/tohrux/tohrux.github.io@1.0//img/fullVersionxx.jpg')no-repeat center center;
+         style="background: url('https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191209190454.png')no-repeat center center;
            background-size: cover;
            background-attachment: scroll;">
       <div class="full-bg-img">
@@ -99,7 +99,7 @@
               
                 <p class="mt-3">
                   <i class="fas fa-calendar-alt" aria-hidden="true"></i>&nbsp;
-                  星期日, 十一月 24日 2019, 1:32 下午
+                  星期一, 十二月 9日 2019, 6:45 晚上
                 </p>
               
 
@@ -108,7 +108,7 @@
                   
                   &nbsp;<i class="far fa-chart-bar"></i>
                   <span class="post-count">
-                    460 字
+                    746 字
                   </span>&nbsp;
                 
 
@@ -116,7 +116,7 @@
                   
                   &nbsp;<i class="far fa-clock"></i>
                   <span class="post-count">
-                      2 分钟
+                      3 分钟
                   </span>&nbsp;
                 
 
@@ -149,72 +149,92 @@
       <div class="py-5 z-depth-3" id="board">
         <div class="post-content mx-auto" id="post">
           <div class="markdown-body">
-            <h1 id="视图文件的命名和渲染"><a href="#视图文件的命名和渲染" class="headerlink" title="视图文件的命名和渲染"></a>视图文件的命名和渲染</h1><ol>
-<li>文件名习惯小写</li>
-<li>后缀为 <strong>blade.php</strong> </li>
-<li>不使用 <strong>balde.php</strong>结尾的话就不能使用laravel提供的标签语法显示数据,只能使用原生语法显示数据</li>
-</ol>
-<h1 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h1><p>在开发中可以使用compact(php内置函数)来进行数组的打包</p>
-<h3 id="TextController"><a href="#TextController" class="headerlink" title="TextController:"></a>TextController:</h3><pre><code class="php">    public function test3()
-    {
-        //现在时间
-        $date = date(&#39;Y-m-d H:i:s&#39;, time());
-        //获取今天的星期
-        $day = &#39;sunday&#39;;
-        //show 视图
-        //return view(&#39;home/index/test3&#39;, [&#39;date&#39; =&gt; $date, &#39;day&#39; =&gt; $day]);
-        👆
-      效果一样   
-         👇
-        return view(&#39;home/index/test3&#39;, compact(&#39;date&#39;, &#39;day&#39;));
-    }</code></pre>
-<h3 id="web-php"><a href="#web-php" class="headerlink" title="web.php:"></a>web.php:</h3><pre><code class="php">Route::get(&#39;/home/index/test3&#39;, &quot;TextController@test3&quot;);</code></pre>
-<h3 id="text3-blade-php"><a href="#text3-blade-php" class="headerlink" title="text3.blade.php:"></a>text3.blade.php:</h3><pre><code class="php">当前访问的是home/index/test3.blade.php文件&lt;br/&gt;
-现在是: {{$date}},今天是星期{{$day}}</code></pre>
-<h3 id="输出"><a href="#输出" class="headerlink" title="输出:"></a>输出:</h3><pre><code class="html">当前访问的是home/index/test3.blade.php文件
-现在是: 2019-11-23 01:47:37,今天是星期sunday</code></pre>
-<h3 id="之前输出当前时间"><a href="#之前输出当前时间" class="headerlink" title="之前输出当前时间:"></a>之前输出当前时间:</h3><pre><code class="php">时间戳 {{date('Y-m-d H:i:s',$time)}}</code></pre>
-<h3 id="一年后的时间"><a href="#一年后的时间" class="headerlink" title="一年后的时间:"></a>一年后的时间:</h3><pre><code class="PHP">{{date('Y-m-d H:i:s',strtotime('+1 year'))}};</code></pre>
-<h1 id="循环分支语法标签"><a href="#循环分支语法标签" class="headerlink" title="循环分支语法标签"></a>循环分支语法标签</h1><p>下面是一个案例</p>
-<p><strong>Controller</strong>中:</p>
-<pre><code class="php">use DB;
+            <p> <img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191209190454.png" srcset="undefined" alt=""></p>
+<h3 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h3><pre><code class="mysql">create database 数据库名;</code></pre>
+<h3 id="选择数据库"><a href="#选择数据库" class="headerlink" title="选择数据库"></a>选择数据库</h3><pre><code class="mysql">use 数据库名;</code></pre>
+<h3 id="删除数据库"><a href="#删除数据库" class="headerlink" title="删除数据库"></a>删除数据库</h3><pre><code class="mysql">drop database 数据库名;</code></pre>
+<h1 id="创建数据表"><a href="#创建数据表" class="headerlink" title="创建数据表"></a>创建数据表</h1><pre><code class="mysql">CREATE TABLE 数据表名 (字段名 字段类型);
 
-class TestController extends Controller
-{
-    //start
-    public function test1()
-    {
-        $db = DB::table(&#39;member&#39;)-&gt;get();
-        // dd($db);
-        return view(&#39;test.test1&#39;, compact(&#39;db&#39;));
-    }
-}
-</code></pre>
-<p><strong>blade</strong>中:</p>
-<pre><code class="php">id&amp;emsp;&amp;emsp;name&amp;emsp;&amp;emsp;email&amp;emsp;&lt;br&gt;
-@foreach ($db as $key =&gt; $value)
-{{-- 如果不要key的话可以直接省略 ($db as $value) --}}
-    {{$value -> id}}&amp;emsp;&amp;emsp;
-    {{$value -> name}}&amp;emsp;&amp;emsp;
-    {{$value -> email}}
-    &lt;br&gt;
-@endforeach
-</code></pre>
-<p><strong>输出结果:</strong></p>
-<pre><code class="html">id  name  email 
-1   阿龙   al@gmail
-2   阿B   ab@gmail</code></pre>
-<p>🙋‍特别注意</p>
-<p>get查询道德结果集中的每一条都是一个对象,因此在循环具体字段的时候需要注意使用对象调用属性的方式才可以获取其数据</p>
-<h1 id="判断语句"><a href="#判断语句" class="headerlink" title="判断语句"></a>判断语句</h1><pre><code class="php">if在模板引擎的写法
-@if (Expression1)
-statement1
-@elseif(Expression2)
-statement2
-...
-@else
-statement3
-@endif</code></pre>
+CREATE TABLE `tbl`(
+   `id` INT UNSIGNED AUTO_INCREMENT,
+   `title` VARCHAR(100) NOT NULL,
+   `author` VARCHAR(40) NOT NULL,
+   `date` DATE,
+   PRIMARY KEY ( `id` )
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;//引擎和格式</code></pre>
+<h4 id="comment-关键字"><a href="#comment-关键字" class="headerlink" title="comment 关键字"></a>comment 关键字</h4><p>后面跟上字符串 表示注释</p>
+<h4 id="default关键字"><a href="#default关键字" class="headerlink" title="default关键字"></a>default关键字</h4><p>后面跟不给值时的默认选项</p>
+<h4 id="unique"><a href="#unique" class="headerlink" title="unique"></a>unique</h4><p>可以为空甚至一直为空</p>
+<h4 id="primary-key"><a href="#primary-key" class="headerlink" title="primary key"></a>primary key</h4><p>primary key = unique + not null</p>
+<h3 id="insert-into"><a href="#insert-into" class="headerlink" title="insert into"></a>insert into</h3><pre><code class="mysql">insert into tb1 (id,title,date) values (1,&#39;one&#39;,&#39;2010-1-1&#39;);
+or
+insert into tb1 values(2,&#39;two&#39;,&#39;2019-9-9&#39;);</code></pre>
+<h3 id="delete"><a href="#delete" class="headerlink" title="delete"></a>delete</h3><pre><code class="mysql">delete * from tb1 where id=1;</code></pre>
+<h3 id="update"><a href="#update" class="headerlink" title="update"></a>update</h3><pre><code class="mysql">update tb1 set title = &quot;love&quot; where id=1;</code></pre>
+<h3 id="select"><a href="#select" class="headerlink" title="select"></a>select</h3><pre><code class="mysql">select * from tb1;</code></pre>
+<h1 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h1><p>不等于: <code>&lt;&gt;</code> <code>!=</code></p>
+<h2 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h2><h3 id="between-amp-and"><a href="#between-amp-and" class="headerlink" title="between&amp;and"></a>between&amp;and</h3><pre><code class="mysql">select * from tb1 where id between 1 and 3;</code></pre>
+<p>👩:包括1和3</p>
+<pre><code class="mysql">select * from tb1 where id&lt;3 and id&gt;1;</code></pre>
+<h3 id="in"><a href="#in" class="headerlink" title="in"></a>in</h3><pre><code class="mysql">select * from tb1 where id in(1,2,3);</code></pre>
+<h3 id="union-amp-unionall"><a href="#union-amp-unionall" class="headerlink" title="union &amp; unionall"></a>union &amp; unionall</h3><p>可以从不同的表中返回查询结果并结合在一起,</p>
+<p>区别是union会在unionall的基础上进行一次 <code>distinct</code> 查询</p>
+<h3 id="DISTINCT"><a href="#DISTINCT" class="headerlink" title="DISTINCT"></a>DISTINCT</h3><p> <em>adj. 明显的；独特的；清楚的；有区别的</em></p>
+<p><code>select DISTINCT 字段 from 表名</code></p>
+<p>排除重复的查询结果</p>
+<h3 id="group-by"><a href="#group-by" class="headerlink" title="group by"></a>group by</h3><p>默认时ascend;</p>
+<p>在 group by 后面可以跟上多个字段或者加上order by也行</p>
+<h2 id="模糊查询"><a href="#模糊查询" class="headerlink" title="模糊查询"></a>模糊查询</h2><h3 id="like关键字"><a href="#like关键字" class="headerlink" title="like关键字"></a>like关键字</h3><p><code>select 字段 from 表名 where 字段 like 值</code></p>
+<p><code>%u%</code></p>
+<p> <code>%</code> 用来匹配0个或多个字符,任意类型,任意长度,没有限制</p>
+<p><code>_u_</code></p>
+<p><code>_</code>匹配任意单个字符</p>
+<h2 id="排序查询"><a href="#排序查询" class="headerlink" title="排序查询"></a>排序查询</h2><h3 id="order-by"><a href="#order-by" class="headerlink" title="order by"></a>order by</h3><p>默认ascend</p>
+<pre><code class="mysql">select * from tb1 order by id desc/asc;</code></pre>
+<p>👩:descend / ascend</p>
+<h2 id="限制查询"><a href="#限制查询" class="headerlink" title="限制查询"></a>限制查询</h2><p><code>select 字段 limit 起始偏移量,行数</code></p>
+<h2 id="聚合"><a href="#聚合" class="headerlink" title="聚合"></a>聚合</h2><p><code>count(*)</code> <code>sum(字段名)</code> <code>max(字段名)</code>  <code>min(字段名)</code> </p>
+<p> <code>with rollup</code>表示对聚合分类后的对象再进行汇总</p>
+<p><code>having</code>分类聚合后的限制条件要用having而不是<code>where</code>;</p>
+<p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191210150306.png" srcset="undefined" alt=""></p>
+<p>👩:可以直接进行计算</p>
+<p><img src="../../../../AppData/Roaming/Typora/typora-user-images/image-20191210153053908.png" srcset="undefined" alt="image-20191210153053908"></p>
+<h2 id="连接"><a href="#连接" class="headerlink" title="连接"></a>连接</h2><h4 id="inner-join"><a href="#inner-join" class="headerlink" title="inner join"></a>inner join</h4><p>内连接,获取两个表中字段匹配关系的记录 (两个表中的重叠部分)</p>
+<h3 id="left-join"><a href="#left-join" class="headerlink" title="left join"></a>left join</h3><p>左连接,获取表中的所有记录,即使右边没有对应的匹配记录</p>
+<h3 id="right-join"><a href="#right-join" class="headerlink" title="right join"></a>right join</h3><p>同上</p>
+<h1 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h1><p>回滚 rollback</p>
+<p>提交 commit</p>
+<p>四大特性: 原子性, 一致性 ,隔离性, 持久性</p>
+<h1 id="子段操作"><a href="#子段操作" class="headerlink" title="子段操作"></a>子段操作</h1><p>增</p>
+<pre><code class="mysql">alter table 数据表名 add 新增字段 字段类型;</code></pre>
+<p>删</p>
+<pre><code class="mysql">alter table 数据表名 drop 字段名;</code></pre>
+<p>修改字段类型:</p>
+<pre><code class="mysql">alter table modify 字段名 数据类型;</code></pre>
+<p>修改表名:</p>
+<pre><code class="mysql">alter table 数据表名 rename 新表名</code></pre>
+<p>修改字段名</p>
+<pre><code class="mysql">alter table change 字段名 新字段名 新数据类型</code></pre>
+<h1 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h1><h3 id="创建索引"><a href="#创建索引" class="headerlink" title="创建索引"></a>创建索引</h3><p>1,创建普通索引,在创建表的时候创建索引</p>
+<pre><code class="mysql">create table index1(
+    id INT,
+    name VARCHAR(32),
+    INDEX(id)
+)</code></pre>
+<p>UNIQUE /FULLTEXT</p>
+<pre><code class="mysql">create table index1(
+    id INT,
+    name VARCHAR(32),
+    UNIQUE INDEX index_1(id ASC)
+)</code></pre>
+<p>2,用alter table创建索引</p>
+<pre><code class="mysql">alter TABLE 表名 ADD primary key (字段名); </code></pre>
+<p>3,用create index 创建索引</p>
+<pre><code class="mysql">create 索引类型 INDEX 索引名 ON 表名(字段名);</code></pre>
+<p>eg:</p>
+<pre><code class="mysql">create UNIQUE INDEX index_1 ON tb1(id);</code></pre>
+<h3 id="删除索引"><a href="#删除索引" class="headerlink" title="删除索引"></a>删除索引</h3><pre><code class="mysql">DROP INDEX index_1 on tb1;</code></pre>
+<h3 id="查看索引"><a href="#查看索引" class="headerlink" title="查看索引"></a>查看索引</h3><pre><code class="mysql">SHOW INDEX from tb1;</code></pre>
 
             <hr>
           </div>
@@ -226,9 +246,9 @@ statement3
               <span>
                 <i class="iconfont icon-tag"></i>
                 
-                  <a class="hover-with-bg" href="/tags/php">php</a>
+                  <a class="hover-with-bg" href="/tags/mysql">mysql</a>
                 
-                  <a class="hover-with-bg" href="/tags/laravel">laravel</a>
+                  <a class="hover-with-bg" href="/tags/database">database</a>
                 
               </span>
             
@@ -394,7 +414,7 @@ statement3
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "lavavel视图&nbsp;",
+        "mysql&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,

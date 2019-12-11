@@ -122,6 +122,61 @@
     
     
       <div class="col-12 col-md-4 m-auto">
+        <a href="/2019/12/09/mysql/" target="_self">
+          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191209190454.png" srcset="undefined" alt="mysql" class="img-fluid rounded z-depth-3 index-thumbnails">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/2019/12/09/mysql/">
+        <p class="h4 index-header">mysql</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1"> 
+创建数据库create database 数据库名;
+选择数据库use 数据库名;
+删除数据库drop database 数据库名;
+创建数据表CREATE TABLE 数据表名 (字段名 字段类型);
+
+CREATE TABLE `tbl`(
+   `id` INT UNSIGNED AUTO_INCREMENT,
+   `title` VARCHAR(100) NOT NULL,
+   `author` VARCHAR(40) NOT NULL,
+   `date` DATE,
+   PRIMARY KEY ( `id` )
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;//引擎和格式
+comment 关键字后面跟上字符串 表示注释
+default关键字后面跟不给值时的默认选项
+unique可以为空甚至一直为空
+primary keyprimary key = unique + not null
+insert intoinsert into tb1 (id,title,date) values (1,&#39;one&#39;,&#39;2010-1-</div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-12-09&nbsp;&nbsp;
+        
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/mysql">mysql</a>&nbsp;
+          
+            <a href="/tags/database">database</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+      <div class="col-12 col-md-4 m-auto">
         <a href="/2019/12/09/phpFaceToObject2/" target="_self">
           <img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191207110327.png" srcset="undefined" alt="phpFaceToObject2" class="img-fluid rounded z-depth-3 index-thumbnails">
         </a>
@@ -278,15 +333,44 @@ clone的两个对象相比较的话: 值相等 ,但是内存地址不相等
   <div class="row mb-4 mx-auto">
     
     
+      <div class="col-12 col-md-4 m-auto">
+        <a href="/2019/12/07/phpMysql/" target="_self">
+          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191209180726.png" srcset="undefined" alt="phpMysql -private" class="img-fluid rounded z-depth-3 index-thumbnails">
+        </a>
+      </div>
+    
     <div class="col-12 col-md-8 m-auto">
       <a href="/2019/12/07/phpMysql/">
-        <p class="h4 index-header">phpMysql</p>
+        <p class="h4 index-header">phpMysql -private</p>
         
         
           
         
         <div class="index-excerpt" >
-          <div class="index-text mb-1"></div>
+          <div class="index-text mb-1">
+访问数据库1.连接数据库
+//使用 mysqli_connect()
+2.选择服务器
+//使用 mysqli_select_db()来选择
+3.执行数据库操作
+//增删改查四部曲
+
+//
+    insert into
+//
+    delete
+//
+    update
+// 
+    select
+4.清除记录集,释放系统资源
+mysqli_free_result();
+5.关闭MySQL服务器
+mysqli_close();
+连接MySQL服务器$mysql = new mysqli($server,$username,$password,$dbname);
+//$server 服务器地址 一般本地的为localhost
+执行SQL语句待续
+</div>
         </div>
       </a>
 
@@ -552,61 +636,6 @@ td[title=&quot;a&quot;]{} //title属性为&quot;a&quot;的都会被选择
           <i class="iconfont icon-tag"></i>
           
             <a href="/tags/subarashii">subarashii</a>&nbsp;
-          
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mb-4 mx-auto">
-    
-    
-      <div class="col-12 col-md-4 m-auto">
-        <a href="/2019/12/03/ajax/" target="_self">
-          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191203123124.png" srcset="undefined" alt="AJAX JSON对象 XML -private" class="img-fluid rounded z-depth-3 index-thumbnails">
-        </a>
-      </div>
-    
-    <div class="col-12 col-md-8 m-auto">
-      <a href="/2019/12/03/ajax/">
-        <p class="h4 index-header">AJAX JSON对象 XML -private</p>
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">笔记来源于书
-原生ajax写法          var xhr = new XMLHttpRequest();
-        //
-        xhr.open(&quot;post&quot;, &quot;test.php&quot;);
-        //
-        xhr.setRequestHeader(&quot;Content-type&quot;, &quot;application/x-www-form-urlencoded&quot;);
-        //
-        xhr.send(&quot;a=1&amp;b=10&quot;);
-        //
-        xhr.onreadystatechange = function () {
-            if (xhr.status == 200 &amp;&amp; xhr.readyState == 4) {
-                var result = xhr.responseText;
-                alert(result);
- </div>
-        </div>
-      </a>
-
-      <div>
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2019-12-03&nbsp;&nbsp;
-        
-        
-        
-          <i class="iconfont icon-tag"></i>
-          
-            <a href="/tags/%E5%89%8D%E7%AB%AF">前端</a>&nbsp;
-          
-            <a href="/tags/ajax">ajax</a>&nbsp;
-          
-            <a href="/tags/javascript">javascript</a>&nbsp;
-          
-            <a href="/tags/jQuery">jQuery</a>&nbsp;
           
         
       </div>
