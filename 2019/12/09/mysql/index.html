@@ -108,7 +108,7 @@
                   
                   &nbsp;<i class="far fa-chart-bar"></i>
                   <span class="post-count">
-                    746 字
+                    805 字
                   </span>&nbsp;
                 
 
@@ -169,14 +169,15 @@ CREATE TABLE `tbl`(
 <h3 id="insert-into"><a href="#insert-into" class="headerlink" title="insert into"></a>insert into</h3><pre><code class="mysql">insert into tb1 (id,title,date) values (1,&#39;one&#39;,&#39;2010-1-1&#39;);
 or
 insert into tb1 values(2,&#39;two&#39;,&#39;2019-9-9&#39;);</code></pre>
-<h3 id="delete"><a href="#delete" class="headerlink" title="delete"></a>delete</h3><pre><code class="mysql">delete * from tb1 where id=1;</code></pre>
+<h3 id="delete"><a href="#delete" class="headerlink" title="delete"></a>delete</h3><pre><code class="mysql">delete from tb1 where id=1;</code></pre>
 <h3 id="update"><a href="#update" class="headerlink" title="update"></a>update</h3><pre><code class="mysql">update tb1 set title = &quot;love&quot; where id=1;</code></pre>
 <h3 id="select"><a href="#select" class="headerlink" title="select"></a>select</h3><pre><code class="mysql">select * from tb1;</code></pre>
 <h1 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h1><p>不等于: <code>&lt;&gt;</code> <code>!=</code></p>
 <h2 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h2><h3 id="between-amp-and"><a href="#between-amp-and" class="headerlink" title="between&amp;and"></a>between&amp;and</h3><pre><code class="mysql">select * from tb1 where id between 1 and 3;</code></pre>
 <p>👩:包括1和3</p>
 <pre><code class="mysql">select * from tb1 where id&lt;3 and id&gt;1;</code></pre>
-<h3 id="in"><a href="#in" class="headerlink" title="in"></a>in</h3><pre><code class="mysql">select * from tb1 where id in(1,2,3);</code></pre>
+<h3 id="in"><a href="#in" class="headerlink" title="in"></a>in</h3><p>!@!!@!@!@!@!!@!@!@!@!@</p>
+<pre><code class="mysql">select * from tb1 where id in(1,2,3);</code></pre>
 <h3 id="union-amp-unionall"><a href="#union-amp-unionall" class="headerlink" title="union &amp; unionall"></a>union &amp; unionall</h3><p>可以从不同的表中返回查询结果并结合在一起,</p>
 <p>区别是union会在unionall的基础上进行一次 <code>distinct</code> 查询</p>
 <h3 id="DISTINCT"><a href="#DISTINCT" class="headerlink" title="DISTINCT"></a>DISTINCT</h3><p> <em>adj. 明显的；独特的；清楚的；有区别的</em></p>
@@ -198,7 +199,7 @@ insert into tb1 values(2,&#39;two&#39;,&#39;2019-9-9&#39;);</code></pre>
 <p><code>having</code>分类聚合后的限制条件要用having而不是<code>where</code>;</p>
 <p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191210150306.png" srcset="undefined" alt=""></p>
 <p>👩:可以直接进行计算</p>
-<p><img src="../../../../AppData/Roaming/Typora/typora-user-images/image-20191210153053908.png" srcset="undefined" alt="image-20191210153053908"></p>
+<pre><code class="mysql">mysqli</code></pre>
 <h2 id="连接"><a href="#连接" class="headerlink" title="连接"></a>连接</h2><h4 id="inner-join"><a href="#inner-join" class="headerlink" title="inner join"></a>inner join</h4><p>内连接,获取两个表中字段匹配关系的记录 (两个表中的重叠部分)</p>
 <h3 id="left-join"><a href="#left-join" class="headerlink" title="left join"></a>left join</h3><p>左连接,获取表中的所有记录,即使右边没有对应的匹配记录</p>
 <h3 id="right-join"><a href="#right-join" class="headerlink" title="right join"></a>right join</h3><p>同上</p>
@@ -220,7 +221,22 @@ insert into tb1 values(2,&#39;two&#39;,&#39;2019-9-9&#39;);</code></pre>
     id INT,
     name VARCHAR(32),
     INDEX(id)
-)</code></pre>
+)
+</code></pre>
+<p>or</p>
+<pre><code class="mysqli"> mysql&gt; CREATE TABLE `jkjk` (  
+
+    -&gt;   `id` smallint(8) unsigned NOT NULL,  
+    -&gt;   `catid` smallint(5) unsigned NOT NULL DEFAULT &#39;0&#39;,  
+
+    -&gt;   `title` varchar(80) NOT NULL DEFAULT &#39;&#39;,  
+     -&gt;   `content` text NOT NULL,  
+
+   -&gt;   PRIMARY KEY (`id`),  
+
+    -&gt;   UNIQUE KEY `catename` (`catid`)  
+
+    -&gt; ) ;  </code></pre>
 <p>UNIQUE /FULLTEXT</p>
 <pre><code class="mysql">create table index1(
     id INT,
@@ -232,7 +248,8 @@ insert into tb1 values(2,&#39;two&#39;,&#39;2019-9-9&#39;);</code></pre>
 <p>3,用create index 创建索引</p>
 <pre><code class="mysql">create 索引类型 INDEX 索引名 ON 表名(字段名);</code></pre>
 <p>eg:</p>
-<pre><code class="mysql">create UNIQUE INDEX index_1 ON tb1(id);</code></pre>
+<pre><code class="mysql">create UNIQUE INDEX index_1 ON tb1(id);
+mysql&gt; CREATE UNIQUE INDEX catename ON wb_blog(catid); </code></pre>
 <h3 id="删除索引"><a href="#删除索引" class="headerlink" title="删除索引"></a>删除索引</h3><pre><code class="mysql">DROP INDEX index_1 on tb1;</code></pre>
 <h3 id="查看索引"><a href="#查看索引" class="headerlink" title="查看索引"></a>查看索引</h3><pre><code class="mysql">SHOW INDEX from tb1;</code></pre>
 

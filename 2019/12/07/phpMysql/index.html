@@ -108,7 +108,7 @@
                   
                   &nbsp;<i class="far fa-chart-bar"></i>
                   <span class="post-count">
-                    100 字
+                    560 字
                   </span>&nbsp;
                 
 
@@ -116,7 +116,7 @@
                   
                   &nbsp;<i class="far fa-clock"></i>
                   <span class="post-count">
-                      1 分钟
+                      2 分钟
                   </span>&nbsp;
                 
 
@@ -171,7 +171,140 @@
 <pre><code class="php">mysqli_close();</code></pre>
 <h2 id="连接MySQL服务器"><a href="#连接MySQL服务器" class="headerlink" title="连接MySQL服务器"></a>连接MySQL服务器</h2><pre><code class="php">$mysql = new mysqli($server,$username,$password,$dbname);
 //$server 服务器地址 一般本地的为localhost</code></pre>
-<h2 id="执行SQL语句"><a href="#执行SQL语句" class="headerlink" title="执行SQL语句"></a>执行SQL语句</h2><p>待续</p>
+<h3 id="mysqli-对象的内容"><a href="#mysqli-对象的内容" class="headerlink" title="mysqli 对象的内容"></a>mysqli 对象的内容</h3><pre><code class="php">mysqli Object
+(
+    [affected_rows] =&gt; 0
+    [client_info] =&gt; mysqlnd 5.0.12-dev - 20150407 - $Id: 7cc7cc96e675f6d72e5cf0f267f48e167c2abb23 $
+    [client_version] =&gt; 50012
+    [connect_errno] =&gt; 0
+    [connect_error] =&gt; 
+    [errno] =&gt; 0
+    [error] =&gt; 
+    [error_list] =&gt; Array
+        (
+        )
+
+    [field_count] =&gt; 0
+    [host_info] =&gt; localhost via TCP/IP
+    [info] =&gt; 
+    [insert_id] =&gt; 0
+    [server_info] =&gt; 5.5.5-10.4.8-MariaDB
+    [server_version] =&gt; 100408
+    [stat] =&gt; Uptime: 13265  Threads: 8  Questions: 163  Slow queries: 0  Opens: 29  Flush tables: 1  Open tables: 14  Queries per second avg: 0.012
+    [sqlstate] =&gt; 00000
+    [protocol_version] =&gt; 10
+    [thread_id] =&gt; 82
+    [warning_count] =&gt; 0
+)</code></pre>
+<h2 id="执行SQL语句"><a href="#执行SQL语句" class="headerlink" title="执行SQL语句"></a>执行SQL语句</h2><p>首先他们有两种风格 第二种是面向过程,略</p>
+<h3 id="objdect-oriented"><a href="#objdect-oriented" class="headerlink" title="objdect oriented"></a>objdect oriented</h3><pre><code class="php">面向对象:
+&lt;?php
+$serve = &quot;localhost&quot;;
+$user = &quot;root&quot;;
+$db = &quot;jk&quot;;
+$conn = new mysqli($serve, $user, &quot;&quot;, $db);
+//check connect 
+if ($conn-&gt;connect_errno) {
+    echo $conn-&gt;connect_error;
+}
+//insert into data
+$sql = &quot;insert into jkjk values(8,17,&#39;peachx&#39;);&quot;;
+$sql .= &quot;insert into jkjk values(9,16,&#39;peachxx&#39;);&quot;;
+$sql .= &quot;insert into jkjk values(10,16,&#39;peachxs&#39;)&quot;;
+$res = $conn-&gt;multi_query($sql);
+var_dump($res);
+//查询语句
+$sql = &quot;select * from jkjk&quot;;
+$res = $conn-&gt;query($sql);
+var_dump($res);//结果如下</code></pre>
+<p>👇</p>
+<pre><code class="php">mysqli_result Object
+(
+    [current_field] =&gt; 0
+    [field_count] =&gt; 3
+    [lengths] =&gt; 
+    [num_rows] =&gt; 10
+    [type] =&gt; 0
+)</code></pre>
+<h3 id="解析结果集"><a href="#解析结果集" class="headerlink" title="解析结果集"></a>解析结果集</h3><p>在使用完结果集后要记得使用结果集占用的内存</p>
+<table>
+<thead>
+<tr>
+<th>面向对象</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>free();close();free_result()</td>
+<td>mysqli_free_result()</td>
+</tr>
+</tbody></table>
+<h3 id="常用函数"><a href="#常用函数" class="headerlink" title="常用函数"></a>常用函数</h3><table>
+<thead>
+<tr>
+<th>面向对象($res = $conn-&gt;query($sql))</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>fetch_row()</td>
+<td>以索引数组的方式返回一行数据</td>
+</tr>
+<tr>
+<td>fetch_assoc()</td>
+<td>以关联数组的方式返回一行数据</td>
+</tr>
+<tr>
+<td>fetch_array()</td>
+<td>以索引数组+关联数组的方式返回一行数据</td>
+</tr>
+<tr>
+<td>fetch_object()</td>
+<td>以对象的方式返回一行数据</td>
+</tr>
+<tr>
+<td>num_rows</td>
+<td>返回数据的总行数</td>
+</tr>
+<tr>
+<td>data_seek()</td>
+<td>括号中必须给值,给0的话可以把fetch_*()中的数据偏移回初始行</td>
+</tr>
+</tbody></table>
+<h3 id="开始查询"><a href="#开始查询" class="headerlink" title="开始查询"></a>开始查询</h3><pre><code class="php">while ($row = $res-&gt;fetch_assoc()) {
+    print_r($row);
+    // echo $row;
+}
+
+相当于👇
+
+$res = $res-&gt;fetch_assoc();
+print_r($res);
+$res = $res-&gt;fetch_assoc();
+print_r($res);
+$res = $res-&gt;fetch_assoc();
+print_r($res);  
+......</code></pre>
+<p> 输出结果,这里只显示前三个</p>
+<pre><code class="php">Array
+(
+    [id] =&gt; 1
+    [price] =&gt; 12
+    [some] =&gt; apple
+)
+Array
+(
+    [id] =&gt; 2
+    [price] =&gt; 12
+    [some] =&gt; bnana
+)
+Array
+(
+    [id] =&gt; 3
+    [price] =&gt; 14
+    [some] =&gt; naizi
+)</code></pre>
+<p>辛苦啦~</p>
 
             <hr>
           </div>
