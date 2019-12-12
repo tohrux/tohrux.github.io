@@ -15,7 +15,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <meta name="keywords" content="">
-  <title>归档 ~ Tohrux!</title>
+  <title>12-12 ~ Tohrux!</title>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/font-awesome/css/all.min.css"  >
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/bootstrap/css/bootstrap.min.css"  >
@@ -36,7 +36,7 @@
 
 
 <body>
-  <header style="height: 80vh;">
+  <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -95,6 +95,41 @@
             </span>
 
             
+              <br>
+              
+                <p class="mt-3">
+                  <i class="fas fa-calendar-alt" aria-hidden="true"></i>&nbsp;
+                  星期四, 十二月 12日 2019, 9:23 晚上
+                </p>
+              
+
+              <p>
+                
+                  
+                  &nbsp;<i class="far fa-chart-bar"></i>
+                  <span class="post-count">
+                    214 字
+                  </span>&nbsp;
+                
+
+                
+                  
+                  &nbsp;<i class="far fa-clock"></i>
+                  <span class="post-count">
+                      1 分钟
+                  </span>&nbsp;
+                
+
+                
+                  <!-- 不蒜子统计文章PV -->
+                  
+                  &nbsp;<i class="far fa-eye" aria-hidden="true"></i>&nbsp;
+                  <span id="busuanzi_container_page_pv">
+                    <span id="busuanzi_value_page_pv"></span> 次
+                  </span>&nbsp;
+                
+              </p>
+            
           </div>
 
           
@@ -105,101 +140,99 @@
 
   <main>
     
-      <div class="container nopadding-md">
-        <div class="py-5 z-depth-3" id="board">
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<div class="list-group">
-  <p class="h4">共计 37 篇文章</p>
-  <hr>
-  
-    
       
-      <p class="h5">2019</p>
-    
-    <a href="/2019/12/12/12-12/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">12-12</span>
-      <span style="float: right;">12-12</span>
-    </a>
-  
-    
-    <a href="/2019/12/11/pdo/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">pdo</span>
-      <span style="float: right;">12-11</span>
-    </a>
-  
-    
-    <a href="/2019/12/09/mysql/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">mysql</span>
-      <span style="float: right;">12-09</span>
-    </a>
-  
-    
-    <a href="/2019/12/09/phpFaceToObject2/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">phpFaceToObject2</span>
-      <span style="float: right;">12-09</span>
-    </a>
-  
-    
-    <a href="/2019/12/08/12-8-1/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">weekly photos</span>
-      <span style="float: right;">12-08</span>
-    </a>
-  
-    
-    <a href="/2019/12/08/12-8/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">12-8</span>
-      <span style="float: right;">12-08</span>
-    </a>
-  
-    
-    <a href="/2019/12/07/phpMysql/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">phpMysql -private</span>
-      <span style="float: right;">12-07</span>
-    </a>
-  
-    
-    <a href="/2019/12/06/phpFaceToObject/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">phpFaceToObject1</span>
-      <span style="float: right;">12-06</span>
-    </a>
-  
-    
-    <a href="/2019/12/06/phpAndWeb/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">php与Web的页面交互</span>
-      <span style="float: right;">12-06</span>
-    </a>
-  
-    
-    <a href="/2019/12/05/12-5-1/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">CSS选择器</span>
-      <span style="float: right;">12-05</span>
-    </a>
-  
-</div>
 
-  <nav aria-label="index posts navigation">
-    <span class="pagination pg-blue justify-content-center mt-5" id="pagination">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><a class="page-number" href="/archives/page/4/">4</a><a class="extend next" rel="next" href="/archives/page/2/"><i class="fas fa-angle-double-right"></i></a>
-    </span>
-  </nav>
-  
-  <script>
-    for (ele of document.getElementById("pagination").getElementsByClassName("page-number")) {
-      ele.href += '#board';
-    }
-  </script>
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="py-5 z-depth-3" id="board">
+        <div class="post-content mx-auto" id="post">
+          <div class="markdown-body">
+            <p>今天被这个问题整自闭了</p>
+<pre><code class="js">    var obj = {
+        kk: function () {
+            function one() {
+                console.log(this);
+            }
+            one();
+        }
+    };
+    obj.kk();</code></pre>
+<p>这里的obj.kk()输出的是window对象.</p>
+<p>我一直在想,为什么它的结果不是obj对象,因为kk方法属于obj,所以这个one()方法的调用者也是obj,甚至在吃晚饭的路上,等待晚饭做好,在等晚饭变亮的等待的过程中,我也在思考这个问题,我甚至问了老师,</p>
+<p>他是这么回答的</p>
+<p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191212212826.png" srcset="undefined" alt=""></p>
+<p>我问了一个学习群里的人他们是这样回答的</p>
+<p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191212213104.png" srcset="undefined" alt=""></p>
+<p>我发现三个人给出了三种不同答案,真的很晕啊<br>目前可知情报:</p>
+<ul>
+<li><p>this指向的是函数运行时所在的环境</p>
+</li>
+<li><p>而这个one()指向的window</p>
+</li>
+<li><p>所以说这个one()是在全局环境下运行的</p>
+<p>这不是废话吗?</p>
+</li>
+</ul>
 
-
-              </div>
-            </div>
+            <hr>
+          </div>
+          <br>
+          <div>
+            <p>
+            
+            
+              <span>
+                <i class="iconfont icon-tag"></i>
+                
+                  <a class="hover-with-bg" href="/tags/don't%20know">don&#39;t know</a>
+                
+              </span>
+            
+            </p>
+            
           </div>
         </div>
       </div>
+    </div>
+    <div class="d-none d-lg-block col-lg-2 toc-container">
+      
+  <div id="toc">
+    <p class="h4"><i class="far fa-list-alt"></i>&nbsp;目录</p>
+    <div id="tocbot"></div>
+  </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- custom -->
+
+
+<!-- Comments -->
+<div class="col-lg-7 mx-auto nopadding-md">
+  <div class="container comments mx-auto" id="comments">
+    
+      <br><br>
+      
+      
+  <script defer src="https://utteranc.es/client.js"
+          repo="tohrux/tohrux.github.io"
+          issue-term="pathname"
+  
+          label="utterances"
+    
+          theme="github-light"
+          crossorigin="anonymous"
+          async>
+  </script>
+
+
+    
+  </div>
+</div>
+
     
   </main>
 
@@ -274,6 +307,11 @@
 
 
 
+  
+    <script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/tocbot/tocbot.min.js" ></script>
+  
+  <script src="/js/post.js" ></script>
+
 
 
   <script src="/lib/smooth-scroll/smooth-scroll.min.js" ></script>
@@ -314,7 +352,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "归档&nbsp;",
+        "12-12&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,

@@ -108,7 +108,7 @@
                   
                   &nbsp;<i class="far fa-chart-bar"></i>
                   <span class="post-count">
-                    384 字
+                    577 字
                   </span>&nbsp;
                 
 
@@ -116,7 +116,7 @@
                   
                   &nbsp;<i class="far fa-clock"></i>
                   <span class="post-count">
-                      1 分钟
+                      2 分钟
                   </span>&nbsp;
                 
 
@@ -149,8 +149,7 @@
       <div class="py-5 z-depth-3" id="board">
         <div class="post-content mx-auto" id="post">
           <div class="markdown-body">
-            <p><img src="../../../../AppData/Roaming/Typora/typora-user-images/image-20191211200235994.png" srcset="undefined" alt="image-20191211200235994"></p>
-<p>PDO,php data object <em>php数据对象</em></p>
+            <p>PDO,php data object <em>php数据对象</em></p>
 <h1 id="连接服务器"><a href="#连接服务器" class="headerlink" title="连接服务器"></a>连接服务器</h1><p>比php连接mysql多了一个参数,数据库类型</p>
 <p><strong>$dbms</strong> <em>Database Management System</em></p>
 <p><strong>$dsn</strong> <em>Data Source Name</em></p>
@@ -220,7 +219,33 @@ array(4) {
   [1]=&gt;
   string(5) &quot;jiill&quot;
 }</code></pre>
-
+<h1 id="预处理语句"><a href="#预处理语句" class="headerlink" title="预处理语句"></a>预处理语句</h1><p>PDO使用PDOStatemendeadaot来实现预处理语句,这个类的实例可以用query()方法得到,也可以用prepare(),区别是query()只能得到一条sql命令的数据集的结果,而prepare()得到的实例可以重复执行sql语句</p>
+<pre><code class="php">    //prepare() 预处理语句
+//数据占位符
+    $pre = $pdo-&gt;prepare(&quot;insert into jkjk2 (id,name)values(?,?)&quot;);
+    $id = 3;
+    $name = &quot;id3&quot;;
+    $pre -&gt; bindParam(1,$id);
+    $pre -&gt; bindParam(2,$name);
+    $pre -&gt; execute(); 
+//直接用数组写
+    $pre -&gt; execute(array(
+        4,&quot;id4&quot;
+    ));
+//命名参数
+    $pre = $pdo -&gt; prepare(&quot;insert into jkjk2 (id,name) values (:id,:name)&quot;);
+    $id = 7;
+    $name = &quot;id7&quot;;
+    $pre-&gt;bindValue(&quot;:id&quot;,$id);
+    $pre-&gt;bindValue(&quot;:name&quot;,$name);
+    $pre-&gt;execute();
+//关联数组
+    $pre -&gt; execute(array(
+        &quot;:id&quot; =&gt; 6,
+        &quot;:name&quot; =&gt; &quot;id6&quot;
+    ));
+</code></pre>
+<h1 id="解析结果集"><a href="#解析结果集" class="headerlink" title="解析结果集"></a>解析结果集</h1>
             <hr>
           </div>
           <br>
