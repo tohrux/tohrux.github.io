@@ -108,7 +108,7 @@
                   
                   &nbsp;<i class="far fa-chart-bar"></i>
                   <span class="post-count">
-                    577 字
+                    685 字
                   </span>&nbsp;
                 
 
@@ -116,7 +116,7 @@
                   
                   &nbsp;<i class="far fa-clock"></i>
                   <span class="post-count">
-                      2 分钟
+                      3 分钟
                   </span>&nbsp;
                 
 
@@ -245,7 +245,14 @@ array(4) {
         &quot;:name&quot; =&gt; &quot;id6&quot;
     ));
 </code></pre>
-<h1 id="解析结果集"><a href="#解析结果集" class="headerlink" title="解析结果集"></a>解析结果集</h1>
+<h1 id="解析结果集"><a href="#解析结果集" class="headerlink" title="解析结果集"></a>解析结果集</h1><h2 id="result-gt-fetch-PDO-FETCH"><a href="#result-gt-fetch-PDO-FETCH" class="headerlink" title="$result -&gt; fetch(PDO::FETCH())"></a>$result -&gt; fetch(PDO::FETCH())</h2><pre><code class="php">  var_dump($result -&gt; fetch());//仅仅输出一条
+  var_dump($result -&gt; fetchAll(PDO::FETCH_NUM));//剩下的所有的结果以索引数组的方式输出
+//$result -&gt; fetchAll(PDO::FETCH_OBJ/ASSOC/NUM)</code></pre>
+<h2 id="result-gt-fetchColumn"><a href="#result-gt-fetchColumn" class="headerlink" title="$result -&gt; fetchColumn(*)"></a>$result -&gt; fetchColumn(*)</h2><p>*为可选的数字 默认为0,从0开始,表示第一列</p>
+<p>整个函数返回的是下一行的结果的第*列</p>
+<h1 id="SQL注入"><a href="#SQL注入" class="headerlink" title="SQL注入"></a>SQL注入</h1><p>利用sql的查询语句恶意获取数据库信息</p>
+<h1 id="完结撒花"><a href="#完结撒花" class="headerlink" title="完结撒花~!"></a>完结撒花~!</h1><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191213091052.png" srcset="undefined" alt=""></p>
+
             <hr>
           </div>
           <br>
@@ -258,11 +265,11 @@ array(4) {
                 
                   <a class="hover-with-bg" href="/tags/php">php</a>
                 
-                  <a class="hover-with-bg" href="/tags/mysql">mysql</a>
+                  <a class="hover-with-bg" href="/tags/pdo">pdo</a>
                 
                   <a class="hover-with-bg" href="/tags/database">database</a>
                 
-                  <a class="hover-with-bg" href="/tags/pdo">pdo</a>
+                  <a class="hover-with-bg" href="/tags/mysql">mysql</a>
                 
                   <a class="hover-with-bg" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93">数据库</a>
                 
