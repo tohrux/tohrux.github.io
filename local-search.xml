@@ -4,6 +4,27 @@
   
   
   <entry>
+    <title>bs4</title>
+    <link href="undefined2019/12/13/bs4/"/>
+    <url>2019/12/13/bs4/</url>
+    
+    <content type="html"><![CDATA[<h1 id="媒体对象"><a href="#媒体对象" class="headerlink" title="媒体对象"></a>媒体对象</h1><pre><code class="html">//媒体对象 container&gt;row&gt;col&gt;media&gt;img + media body //&lt;-放文字    &lt;div class=&quot;container bg-danger&quot;&gt;        &lt;div class=&quot;row justify-content-center&quot;&gt;            &lt;div class=&quot;col-6 bg-info&quot;&gt;                &lt;div class=&quot; media&quot;&gt;                    &lt;img class=&quot;align-self-center&quot; src=&quot;ark/pzw.png&quot; alt=&quot;&quot;&gt;                    &lt;div class=&quot;media-body&quot;&gt;                        &lt;h5 class=&quot;mb-0&quot;&gt;Header&lt;/h5&gt;                        Content                    &lt;/div&gt;                &lt;/div&gt;            &lt;/div&gt;        &lt;/div&gt;    &lt;/div&gt;</code></pre><h1 id="text"><a href="#text" class="headerlink" title="text"></a>text</h1><ul><li>text-align</li><li>text-center</li><li>text-right</li><li>text-nowrap</li><li>text-justify //针对西文字体,可以让字体的间隔,尽量使左右侧都对齐</li><li>text-lowercase</li><li>text-uppercase</li><li>text-capitalize </li><li>*text-primary/dark/info…</li></ul><h1 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h1><pre><code class="html">ul&gt;li ol&gt;li dl&gt;dt&gt;dd*ul/ol/dl</code></pre><ul><li>list-unstyle 加在ul中  可以清除 但是依旧会保留ul的margin</li><li>list-inline 清除ul所有的样式</li><li>list-inline-item 加在每个li中 使他们变成行内元素</li></ul><pre><code class="html">    &lt;ol class=&quot;list-inline&quot;&gt;        &lt;li class=&quot;list-inline-item&quot;&gt;123&lt;/li&gt;        &lt;li class=&quot;list-inline-item&quot;&gt;123&lt;/li&gt;        &lt;li class=&quot;list-inline-item&quot;&gt;123&lt;/li&gt;    &lt;/ol&gt;</code></pre><h1 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h1><ul><li>table 每行增加水平分割线以及少量padding,最重要的是会变成响应式布局</li><li>table-responsive 会在小屏幕上出现滚动条</li><li>table-hover</li><li>table-striped</li><li>table-bordered</li><li>table-hover</li></ul><h1 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h1><ul><li>img-thumbnail</li></ul><h1 id="表单"><a href="#表单" class="headerlink" title="表单"></a>表单</h1><ul><li>.form-inline</li><li>.form-group</li><li>.form-control </li><li>.form-group-lg/sm</li><li>.input-lg/sm</li><li>.checkbox </li><li>.radio </li></ul><pre><code class="html">&lt;div class=&quot;form-inline &quot;&gt;        &lt;div class=&quot;form-group&quot;&gt;            &lt;label for=&quot;password&quot;&gt;pass&lt;/label&gt;            &lt;input type=&quot;password&quot; id=&quot;password&quot; class=&quot;form-control&quot;&gt;        &lt;/div&gt;        &lt;div class=&quot;form-group&quot;&gt;            &lt;label for=&quot;text&quot;&gt;lOGiN&lt;/label&gt;            &lt;input type=&quot;text&quot; id=&quot;text&quot; class=&quot;form-control&quot;&gt;        &lt;/div&gt;&lt;/div&gt;</code></pre><h1 id="按钮"><a href="#按钮" class="headerlink" title="按钮"></a>按钮</h1><ul><li>.btn</li><li>.btn-primary/success/info……</li><li>.btn-lg/sm/xs </li><li>.btn-block -&gt;块级按钮,会填满整个父容器</li><li>.active -&gt;被选中样式</li><li>.disable -&gt; 不可用</li><li>.focus -&gt; 获取焦点的样式</li><li>btn-group (-vertical)</li><li>btn-toobar</li></ul><h1 id="下拉菜单"><a href="#下拉菜单" class="headerlink" title="下拉菜单"></a>下拉菜单</h1><ul><li>.dropup/down 容器 </li><li>.dropdown-menu </li><li>.dropdown-item</li><li>.dropdown-toggle -&gt; 箭头小图标</li><li>data-toggle -&gt; 表示医生们进行触发</li><li>btn-group -&gt;使按钮的间距为0</li></ul><p>*下拉注册</p><pre><code class="html">    &lt;div class=&quot;dropdown btn-group&quot;&gt;        &lt;a href=&quot;&quot; class=&quot;btn btn-danger dropdown-toggle&quot; data-toggle=&quot;dropdown&quot;&gt;&lt;/a&gt;        &lt;button class=&quot;btn btn-danger&quot;&gt;about&lt;/button&gt;        &lt;button class=&quot;btn btn-danger&quot;&gt;about&lt;/button&gt;        &lt;div class=&quot;dropdown-menu p-0&quot;&gt;            &lt;form action=&quot;&quot;&gt;                &lt;div class=&quot; input-group&quot;&gt;                    &lt;input type=&quot;text&quot; class=&quot; form-control&quot; id=&quot;kk&quot;&gt;                &lt;/div&gt;                &lt;div class=&quot; input-group&quot;&gt;                    &lt;input type=&quot;text&quot; class=&quot; form-control&quot;&gt;                &lt;/div&gt;                &lt;div class=&quot; dropdown-divider&quot;&gt;&lt;/div&gt;                &lt;div class=&quot;row justify-content-center align-content-center&quot;&gt;                    &lt;a href=&quot;&quot; class=&quot;btn btn-dark text-center &quot;&gt;log in&lt;/a&gt;                &lt;/div&gt;            &lt;/form&gt;        &lt;/div&gt;</code></pre><h2 id="输入框组"><a href="#输入框组" class="headerlink" title="输入框组"></a>输入框组</h2><pre><code class="html">    &lt;div class=&quot;container&quot;&gt;        &lt;form action=&quot;&quot;&gt;            &lt;div class=&quot; input-group &quot;&gt;                &lt;div class=&quot; input-group-prepend&quot;&gt;                    &lt;span class=&quot;input-group-text&quot;&gt;@&lt;/span&gt;                &lt;/div&gt;                &lt;input class=&quot; form-control&quot; type=&quot;text&quot; placeholder=&quot;aloah&quot;&gt;            &lt;/div&gt;        &lt;/form&gt;    &lt;/div&gt;</code></pre><pre><code class="html">input-group&gt;(input-group-prepend&gt;input-group-text)+(input)</code></pre><ul><li>.input-group-prepend/append</li><li>.input-group-text</li><li>.input-group</li></ul><h1 id="nav"><a href="#nav" class="headerlink" title="nav"></a>nav</h1><ul><li>navbar</li><li>navbar-light/dark -&gt;修改字体颜色(nav brand)</li><li>navbar-brand -&gt;  brand</li><li>nav-justified -&gt; 按比例分配空间</li><li>nav-fill 等比分配空间</li><li>navbar-form</li><li>navbar- link</li><li>navbar-btn</li><li>navbar-text</li><li>navbar-left/right</li><li>navbar-fixed-bottom</li><li>navbar-fixed-top</li><li>navbar-static-top</li></ul><h1 id="分页"><a href="#分页" class="headerlink" title="分页"></a>分页</h1><ul><li>pagination</li></ul><h1 id="面包屑导航"><a href="#面包屑导航" class="headerlink" title="面包屑导航"></a>面包屑导航</h1><pre><code class="html"> &lt;ul class=&quot; breadcrumb&quot;&gt;        &lt;li class=&quot; breadcrumb-item&quot;&gt;&lt;a href=&quot;&quot;&gt;                hi            &lt;/a&gt;&lt;/li&gt;        &lt;li class=&quot; breadcrumb-item&quot;&gt;&lt;a href=&quot;&quot;&gt;                hey            &lt;/a&gt;&lt;/li&gt;    &lt;/ul&gt;</code></pre><h1 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h1><ul><li>label</li></ul><p>徽章</p><ul><li>badge</li></ul><pre><code class="html">    &lt;span&gt;hello&lt;/span&gt;    &lt;span class=&quot; badge badge-danger&quot;&gt;123&lt;/span&gt;</code></pre><h1 id="缩略图-v3"><a href="#缩略图-v3" class="headerlink" title="缩略图 v3"></a>缩略图 v3</h1><ul><li><p>thumbnail</p></li><li><p>caption</p><pre><code class="html"> &lt;div class=&quot; thumbnail&quot;&gt;        &lt;img src=&quot;&quot; alt=&quot;&quot;&gt;        &lt;div class=&quot; caption&quot;&gt;            &lt;h5&gt;&lt;/h5&gt;            &lt;button&gt;&lt;/button&gt;            &lt;button&gt;&lt;/button&gt;        &lt;/div&gt;    &lt;/div&gt;</code></pre></li></ul><h1 id="警告框"><a href="#警告框" class="headerlink" title="警告框"></a>警告框</h1><ul><li>alert -success/info/warnng….</li><li>alert-dismissable <code>&lt;可关闭的提示框&gt;</code></li></ul><pre><code class="html">    &lt;div class=&quot; alert alert-dismissible alert-primary&quot;&gt;        don&#39;t be sad        &lt;button class=&quot;close&quot; data-dismiss=&quot;alert&quot;&gt;            &amp;times;        &lt;/button&gt;    &lt;/div&gt;</code></pre><h1 id="进度条"><a href="#进度条" class="headerlink" title="进度条"></a>进度条</h1><pre><code class="html">    &lt;div class=&quot; progress&quot;&gt;        &lt;div class=&quot; progress-bar&quot; style=&quot;width: 10%;&quot;&gt;            &lt;span&gt;10%&lt;/span&gt;        &lt;/div&gt;    &lt;/div&gt;</code></pre><h1 id="巨幕"><a href="#巨幕" class="headerlink" title="巨幕"></a>巨幕</h1><ul><li>jumbotron</li></ul><h1 id="列表组"><a href="#列表组" class="headerlink" title="列表组"></a>列表组</h1><ul><li><p>list-group</p></li><li><p>list-group-item</p><pre><code class="html">    &lt;ul class=&quot; list-group bg-info&quot;&gt;        &lt;li class=&quot; list-group-item&quot;&gt;123&lt;/li&gt;        &lt;li class=&quot; list-group-item&quot;&gt;123&lt;/li&gt;        &lt;li class=&quot; list-group-item&quot;&gt;123&lt;/li&gt;        &lt;li class=&quot; list-group-item &quot;&gt;            kl            &lt;span class=&quot; badge-danger&quot;&gt;                123            &lt;/span&gt;        &lt;/li&gt;    &lt;/ul&gt;</code></pre></li></ul><h1 id="字体图标-v3"><a href="#字体图标-v3" class="headerlink" title="字体图标(v3)"></a>字体图标(v3)</h1><p>gliphicon </p><h1 id="之前的一些笔记"><a href="#之前的一些笔记" class="headerlink" title="之前的一些笔记"></a>之前的一些笔记</h1><h3 id="直接给col-而不是-col-1-2-3可以自动分配剩下的空间"><a href="#直接给col-而不是-col-1-2-3可以自动分配剩下的空间" class="headerlink" title="直接给col 而不是 col-1,2,3可以自动分配剩下的空间"></a>直接给col 而不是 col-1,2,3可以自动分配剩下的空间</h3><h3 id="可变宽度内容-col-breakpoint-auto"><a href="#可变宽度内容-col-breakpoint-auto" class="headerlink" title="可变宽度内容: col-{breakpoint}-auto"></a>可变宽度内容: col-{breakpoint}-auto</h3><h3 id="在BS中flex"><a href="#在BS中flex" class="headerlink" title="在BS中flex"></a>在BS中flex</h3><ol><li>align-items-start</li><li>align-self-start</li><li>justify-content-start</li></ol><h3 id="一列超过12行的话会自动跳到下一行"><a href="#一列超过12行的话会自动跳到下一行" class="headerlink" title="一列超过12行的话会自动跳到下一行"></a>一列超过12行的话会自动跳到下一行</h3><h3 id="order"><a href="#order" class="headerlink" title="order"></a>order</h3><pre><code class="js">order:1 order:2</code></pre><h3 id="offset"><a href="#offset" class="headerlink" title="offset"></a>offset</h3><p>通过marginleft实现,后面的元素会跟着移动</p><p>修改默认的md,lg等大小</p><pre><code class="html">$grid-breakpoint:()    xs: 420px,    sm: 768px,    .....;</code></pre><h3 id=""><a href="#" class="headerlink" title=""></a></h3><pre><code class="html">&lt;small&gt;&lt;/small&gt;&lt;mark&gt;&lt;/mark&gt;&lt;abbr&gt;&lt;/abbr&gt;&lt;blockquote&gt;&lt;/blockquote&gt;</code></pre><h3 id="w-25-h-25"><a href="#w-25-h-25" class="headerlink" title="w-25 h-25"></a>w-25 h-25</h3><p>整体的25%</p><h2 id="x-y-m-p"><a href="#x-y-m-p" class="headerlink" title="x,y,m,p"></a>x,y,m,p</h2><p>x:lr</p><p>y:tb;</p><h3 id="size-rem"><a href="#size-rem" class="headerlink" title="size(rem)"></a>size(rem)</h3><ul><li>1:0.25;</li><li>2:0.5;</li><li>3: 1.0 rem</li><li>4: 1.5 rem</li><li>5: 3.0 rem</li><li>6:auto 自动计算</li></ul>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>css</tag>
+      
+      <tag>bootstrap</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>12-12</title>
     <link href="undefined2019/12/12/12-12/"/>
     <url>2019/12/12/12-12/</url>
@@ -35,11 +56,11 @@
       
       <tag>php</tag>
       
-      <tag>pdo</tag>
+      <tag>mysql</tag>
       
       <tag>database</tag>
       
-      <tag>mysql</tag>
+      <tag>pdo</tag>
       
       <tag>数据库</tag>
       
@@ -60,9 +81,9 @@
     
     <tags>
       
-      <tag>database</tag>
-      
       <tag>mysql</tag>
+      
+      <tag>database</tag>
       
     </tags>
     
@@ -337,9 +358,9 @@
     
     <tags>
       
-      <tag>前端</tag>
-      
       <tag>js</tag>
+      
+      <tag>前端</tag>
       
       <tag>面向对象</tag>
       
