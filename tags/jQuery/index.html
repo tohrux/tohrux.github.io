@@ -15,7 +15,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <meta name="keywords" content="">
-  <title>标签 - jQuery ~ Tohrux!</title>
+  <title>标签 - jquery ~ Tohrux!</title>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/font-awesome/css/all.min.css"  >
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/bootstrap/css/bootstrap.min.css"  >
@@ -114,22 +114,16 @@
                 
 
 <div class="list-group">
-  <p class="h4">共计 2 篇文章</p>
+  <p class="h4">共计 1 篇文章</p>
   <hr>
   
     
       
       <p class="h5">2019</p>
     
-    <a href="/2019/12/03/ajax/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">AJAX JSON对象 XML -private</span>
-      <span style="float: right;">12-03</span>
-    </a>
-  
-    
-    <a href="/2019/12/03/jq1/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">jQ -private</span>
-      <span style="float: right;">12-03</span>
+    <a href="/2019/12/16/l5/" class="list-group-item list-group-item-action">
+      <span class="archive-post-title">jQ复习 -private</span>
+      <span style="float: right;">12-16</span>
     </a>
   
 </div>
@@ -254,7 +248,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "标签 - jQuery&nbsp;",
+        "标签 - jquery&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
@@ -303,6 +297,22 @@
     $("#post img:not(.no-zoom img, img[no-zoom])").each(
       function () {
         var element = document.createElement("a");
+        $(element).attr("data-fancybox", "images");
+        $(element).attr("href", $(this).attr("src"));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+</body>
+</html>
+cument.createElement("a");
         $(element).attr("data-fancybox", "images");
         $(element).attr("href", $(this).attr("src"));
         $(this).wrap(element);

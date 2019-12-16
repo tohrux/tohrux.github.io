@@ -15,7 +15,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <meta name="keywords" content="">
-  <title>AJAX JSON对象 XML -private ~ Tohrux!</title>
+  <title>jQ复习 -private ~ Tohrux!</title>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/font-awesome/css/all.min.css"  >
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/bootstrap/css/bootstrap.min.css"  >
@@ -99,7 +99,7 @@
               
                 <p class="mt-3">
                   <i class="fas fa-calendar-alt" aria-hidden="true"></i>&nbsp;
-                  星期二, 十二月 3日 2019, 8:49 早上
+                  星期一, 十二月 16日 2019, 6:45 晚上
                 </p>
               
 
@@ -108,7 +108,7 @@
                   
                   &nbsp;<i class="far fa-chart-bar"></i>
                   <span class="post-count">
-                    925 字
+                    825 字
                   </span>&nbsp;
                 
 
@@ -149,144 +149,200 @@
       <div class="py-5 z-depth-3" id="board">
         <div class="post-content mx-auto" id="post">
           <div class="markdown-body">
-            <p><em>笔记来源于书</em></p>
-<h3 id="原生ajax写法"><a href="#原生ajax写法" class="headerlink" title="原生ajax写法"></a>原生ajax写法</h3><pre><code class="js">          var xhr = new XMLHttpRequest();
-        //
-        xhr.open(&quot;post&quot;, &quot;test.php&quot;);
-        //
-        xhr.setRequestHeader(&quot;Content-type&quot;, &quot;application/x-www-form-urlencoded&quot;);
-        //
-        xhr.send(&quot;a=1&amp;b=10&quot;);
-        //
-        xhr.onreadystatechange = function () {
-            if (xhr.status == 200 &amp;&amp; xhr.readyState == 4) {
-                var result = xhr.responseText;
-                alert(result);
-            }
-        }</code></pre>
-<p>👩: 在上面的代码中:</p>
-<p>​    1.<code>XMLHttpRequest()</code>是ajax的一个内置对象,能知道传值的地址,传地数据和传递数据的方式</p>
-<p>​    2.<code>open()</code>,初始化<code>XMLHttpRequest</code>对象,指定http请求的方法和要使用的服务器的URL;</p>
-<p>​            格式:<code>open(method: string, url: string):</code></p>
-<p>​    3.<code>send()</code>,发送该请求,指定发送的数据,如果http请求是<code>get</code>,可以不指定参数,或者用null..</p>
-<p>​    4. <code>status==200</code>:成功处理了请求，一般情况下都是返回此状态码</p>
-<pre><code> 5. `readyState==4` 请求完成加载
- 6. `onreadystatechange`:XMLHttpRequest调用的时间处理器,他会检测readystate和http的状态,即上面的4和5.</code></pre><h3 id="jQuery中的ajax的写法"><a href="#jQuery中的ajax的写法" class="headerlink" title="jQuery中的ajax的写法"></a>jQuery中的ajax的写法</h3><pre><code class="js"> $.ajax({
-            url: &#39;&#39;,
-            type: &#39;post|get&#39;,
-            data: &#39;数据&#39;,
-            dataType: &#39;text|json|xml|script&#39;,
-            success: function (re) {
-                //服务器回传的数据处理
-            }
-        })</code></pre>
-<h3 id="JSON对象"><a href="#JSON对象" class="headerlink" title="JSON对象"></a>JSON对象</h3><p>可以理解为有格式的字符串,以键值的形式存放;他的作用是存放数据</p>
-<p>有两种格式:</p>
-<pre><code>{name:&#39;angelina&#39;,age:19};</code></pre><pre><code class="js">[{name:&#39;angelina&#39;,age:19},{name:&#39;angelina&#39;,age:19},{name:&#39;angelina&#39;,age:19}]</code></pre>
-<p>两种格式的结合:</p>
-<pre><code class="js">{list:[{name:&#39;angelina&#39;,age:17},{name:&#39;eyjfjalla&#39;,age:18}]}</code></pre>
-<h3 id="对象解析为JSON对象"><a href="#对象解析为JSON对象" class="headerlink" title="对象解析为JSON对象"></a>对象解析为JSON对象</h3><p><code>JSON.stringify(Object)</code></p>
-<h3 id="字符串解析为JSON对象"><a href="#字符串解析为JSON对象" class="headerlink" title="字符串解析为JSON对象"></a>字符串解析为JSON对象</h3><p>JSON.parse({…,..,…})</p>
-<h3 id="JSON传值"><a href="#JSON传值" class="headerlink" title="JSON传值"></a>JSON传值</h3><pre><code class="html">&lt;!DOCTYPE html&gt;
+            <pre><code class="js">&lt;script&gt;
+        $(document).ready(function () {
+            $(&quot;body&quot;).click(function () {
+                var txt = $(&quot;#msg&quot;).html() + &quot;&lt;p&gt;body被点击&lt;/p&gt;&quot;;
+                $(&quot;#msg&quot;).html(txt);
+            })
+
+
+            $(&quot;#content&quot;).click(function () {
+                var txt = $(&quot;#msg&quot;).html() + &quot;&lt;p&gt;外部div被点击&lt;/p&gt;&quot;;
+                $(&quot;#msg&quot;).html(txt);
+
+            })
+            $(&quot;span&quot;).click(function (event) {
+                var txt = $(&quot;#msg&quot;).html() + &quot;&lt;p&gt;内部span被点击&lt;/p&gt;&quot;;
+                $(&quot;#msg&quot;).html(txt);
+                // event.stopPropagation();
+
+            })
+            // $(&quot;button&quot;).click(function (e) {
+            //     if ($(&quot;button&quot;).text() == &quot;&quot;) {
+            //         e.preventDefault();
+            //     }
+            // })
+
+        })
+&lt;/script&gt;
+
+&lt;body&gt;
+
+    &lt;button&gt;&lt;/button&gt;
+    &lt;div id=&quot;content&quot;&gt;
+        &lt;span&gt;span&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div id=&quot;msg&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;</code></pre>
+<h1 id="表单验证"><a href="#表单验证" class="headerlink" title="表单验证"></a>表单验证</h1><pre><code class="html">&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;en&quot;&gt;
 
 &lt;head&gt;
     &lt;meta charset=&quot;UTF-8&quot;&gt;
     &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
     &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;script src=&quot;jquery-3.4.1.js&quot;&gt;&lt;/script&gt;
-    &lt;script type=&quot;text/JavaScript&quot;&gt;
-        var aStudent = {
-            name: &#39;angelina&#39;,
-            age: 18
-        };
-        var students = [{
-            name: &#39;a&#39;,
-            age: 12
-        }, {
-            name: &#39;b&#39;,
-            age: 13
-        }];
+    &lt;script src=&quot;js/jquery-3.4.1.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        function checkName() {
+            var username = $(&quot;[name=&#39;username&#39;]&quot;).val();
+            var reg = /^[a-zA-Z]{3,7}$/.test(username);
+            if (reg) {
+                $(&#39;#m_username&#39;).html(&#39;available&#39;);
+                return true;
 
-        $(function () {
-            var n;
-            var a;
-            for (var k in students) {
-                n = students[k].name;
-                a = students[k].age;
-                $(&quot;#s&quot;).append(&quot;&lt;tr&gt;&lt;td&gt;&quot;+n+&quot;&lt;/td&gt;&lt;td&gt;&quot;+a+&quot;&lt;/td&gt;&lt;/tr&gt;&quot;);
+            } else {
+                $(&#39;#m_username&#39;).html(&#39;unavailable&#39;);
+                return false;
             }
-        })
+        }
+
+        function a() {
+            checkName();
+            console.log(checkName());
+        }
     &lt;/script&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+
+    &lt;/style&gt;
 &lt;/head&gt;
 
 &lt;body&gt;
-    &lt;h1&gt;JSON:&lt;/h1&gt;
-    aStudent的名称:
-    &lt;script type=&quot;text/JavaScript&quot;&gt;document.write(aStudent.name)&lt;/script&gt;
-    &lt;br /&gt;
-    students的第一个名称:
-    &lt;script&gt;
-        document.write(students[0].name)
-    &lt;/script&gt;
-    &lt;table id=&quot;s&quot; border=&quot;1&quot;&gt;
-        &lt;tr&gt;
-            &lt;th&gt;name&lt;/th&gt;
-            &lt;th&gt;age&lt;/th&gt;
-        &lt;/tr&gt;
+    &lt;form action=&quot;&quot;&gt;
+        &lt;input type=&quot;text&quot; name=&quot;username&quot; id=&quot;username&quot; value=&quot;&quot; onblur=&quot;a()&quot;&gt;
+        &lt;span id=&quot;m_username&quot;&gt;&lt;/span&gt;
+        &lt;input type=&quot;button&quot; id=&quot;button&quot; value=&quot;click&quot;&gt;
 
-    &lt;/table&gt;
+    &lt;/form&gt;
 &lt;/body&gt;
 
 &lt;/html&gt;</code></pre>
-<h3 id="XML的基本格式"><a href="#XML的基本格式" class="headerlink" title="XML的基本格式"></a>XML的基本格式</h3><pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
-&lt;list&gt;
-    &lt;province id=&quot;1&quot; name=&quot;河北&quot;&gt;
-        &lt;city id=&quot;11&quot; name=&quot;石家庄&quot;&gt;&lt;/city&gt;
-        &lt;city id=&quot;12&quot; name=&quot;承德&quot;&gt;&lt;/city&gt;
-    &lt;/province&gt;
-&lt;/list&gt;</code></pre>
-<h3 id="load"><a href="#load" class="headerlink" title="load()"></a>load()</h3><p>语法:</p>
-<pre><code class="js">$(selector).load(url,data,callback)</code></pre>
-<p>url:文件地址</p>
-<p>data: 规定与请求共同发送的查询字符串键值对的集合,是可选的</p>
-<p>fallback: 回调函数,可选的</p>
-<p>👇</p>
-<p>fallback里面可以有三个值:</p>
-<pre><code class="js">$(&#39;#who&#39;).load(&quot;book.html&quot;, function (responseText, statusText,xhr){}</code></pre>
-<p>responseText为返回的调用成功后的结果内容</p>
-<p>statusText为调用的状态,成功的话会 返回 “success”</p>
-<p>xhr 为整个XMLHtmlRequest对象</p>
-<p>👩:可以通过console log 来check it out</p>
-<pre><code class="js">$(function () {
-            $(&#39;.button2&#39;).click(function () {
-                $(&#39;#who&#39;).load(&quot;book.html&quot;, function (responseText, statusText, xhr) {
-                    console.log(xhr.status);
-                    console.log(xhr.responseText);
-                    console.log(xhr.statusText);
-                    console.log(responseText);
-                    console.log(statusText);
-                });
-            })
-        })</code></pre>
-<pre><code class="html">result:
+<h1 id="图片定时切换-只使用setTimeout"><a href="#图片定时切换-只使用setTimeout" class="headerlink" title="图片定时切换(只使用setTimeout"></a>图片定时切换(只使用setTimeout</h1><pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
 
-xdd.html:14 200
-xdd.html:15     &lt;ul&gt;
-        &lt;li&gt;nihao&lt;/li&gt;
-        &lt;li&gt;nihao&lt;/li&gt;
-        &lt;li&gt;nihao&lt;/li&gt;
-        &lt;li&gt;nihao&lt;/li&gt;
-    &lt;/ul&gt;
-xdd.html:16 OK
-xdd.html:17     &lt;ul&gt;
-        &lt;li&gt;nihao&lt;/li&gt;
-        &lt;li&gt;nihao&lt;/li&gt;
-        &lt;li&gt;nihao&lt;/li&gt;
-        &lt;li&gt;nihao&lt;/li&gt;
-    &lt;/ul&gt;
-xdd.html:18 success</code></pre>
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;script src=&quot;js/jquery-3.4.1.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        var g;
+        var k = 0;
+        var t;
+        var arr = [&quot;ark/gushou.png&quot;, &quot;ark/pzw.png&quot;, &quot;ark/qsl.png&quot;];
+
+        function changeSrc() {
+            k++;
+            if (k &gt; 2) {
+                k = 0;
+            }
+            var path = arr[k];
+            $(&quot;img&quot;).attr(&quot;src&quot;, path);
+            t = setTimeout(changeSrc, 1000);
+        }
+        $(function () {
+            g = setTimeout(changeSrc, 1000)
+            $(&quot;#button&quot;).click(function () {
+                clearTimeout(t);
+            })
+            $(&quot;#button1&quot;).click(function () {
+                t = setTimeout(changeSrc, 1000);
+            })
+
+            // $(&quot;img&quot;).hover(
+            //     function () {
+            //         clearTimeout(t);
+            //     },
+            //     function () {
+            //         t = setTimeout(changeSrc, 1000);
+            //     }
+            // )
+
+        })
+    &lt;/script&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div&gt;
+        &lt;img id=&quot;img&quot; src=&quot;ark/gushou.png&quot; alt=&quot;&quot;&gt;
+    &lt;/div&gt;
+    &lt;button id=&quot;button&quot;&gt;stop&lt;/button&gt;
+    &lt;button id=&quot;button1&quot;&gt;start&lt;/button&gt;
+
+
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+<p>这里有点奇怪,</p>
+<pre><code class="html"> // $(&quot;img&quot;).hover(
+            //     function () {
+            //         clearTimeout(t);
+            //     },
+            //     function () {
+            //         t = setTimeout(changeSrc, 1000);
+            //     }
+            // )</code></pre>
+<p>使用这段的时候无法停止</p>
+<h1 id="动画属性"><a href="#动画属性" class="headerlink" title="动画属性"></a>动画属性</h1><pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;script src=&quot;js/jquery-3.4.1.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        $(function () {
+            $(&quot;#div1&quot;).bind(&quot;click&quot;, function () {
+                $(this).animate({
+                    left: &#39;+=200px&#39;,
+                    width: &#39;+=200px&#39;
+                }, 1300, function () {
+                    $(this).animate({
+                        left: &#39;0px&#39;,
+                        width: &#39;100px&#39;
+                    }, 1000)
+                })
+            })
+        })
+    &lt;/script&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+        #div1 {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: #abcdef;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div id=&quot;div1&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+<h1 id="鼠标位置获取"><a href="#鼠标位置获取" class="headerlink" title="鼠标位置获取"></a>鼠标位置获取</h1><pre><code class="html">$(&quot;#div1&quot;).bind(&quot;mousemove&quot;, function (e) {
+                var x = e.pageX;
+                var y = e.pageY;
+                $(this).text(&quot;x:&quot; + x + &quot;;y:&quot; + y);
+            })</code></pre>
+<p>👩:mousemove 比较适合这种时候用</p>
 
             <hr>
           </div>
@@ -298,13 +354,9 @@ xdd.html:18 success</code></pre>
               <span>
                 <i class="iconfont icon-tag"></i>
                 
-                  <a class="hover-with-bg" href="/tags/ajax">ajax</a>
+                  <a class="hover-with-bg" href="/tags/js">js</a>
                 
-                  <a class="hover-with-bg" href="/tags/javascript">javascript</a>
-                
-                  <a class="hover-with-bg" href="/tags/jQuery">jQuery</a>
-                
-                  <a class="hover-with-bg" href="/tags/%E5%89%8D%E7%AB%AF">前端</a>
+                  <a class="hover-with-bg" href="/tags/jquery">jquery</a>
                 
               </span>
             
@@ -470,7 +522,7 @@ xdd.html:18 success</code></pre>
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "AJAX JSON对象 XML -private&nbsp;",
+        "jQ复习 -private&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
