@@ -15,7 +15,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <meta name="keywords" content="">
-  <title>jQ复习 -private ~ Tohrux!</title>
+  <title>vue12-23 ~ Tohrux!</title>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/font-awesome/css/all.min.css"  >
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/bootstrap/css/bootstrap.min.css"  >
@@ -99,7 +99,7 @@
               
                 <p class="mt-3">
                   <i class="fas fa-calendar-alt" aria-hidden="true"></i>&nbsp;
-                  星期一, 十二月 16日 2019, 6:45 晚上
+                  星期一, 十二月 23日 2019, 7:59 晚上
                 </p>
               
 
@@ -108,7 +108,7 @@
                   
                   &nbsp;<i class="far fa-chart-bar"></i>
                   <span class="post-count">
-                    1.2k 字
+                    110 字
                   </span>&nbsp;
                 
 
@@ -116,7 +116,7 @@
                   
                   &nbsp;<i class="far fa-clock"></i>
                   <span class="post-count">
-                      7 分钟
+                      1 分钟
                   </span>&nbsp;
                 
 
@@ -149,272 +149,23 @@
       <div class="py-5 z-depth-3" id="board">
         <div class="post-content mx-auto" id="post">
           <div class="markdown-body">
-            <pre><code class="js">&lt;script&gt;
-        $(document).ready(function () {
-            $(&quot;body&quot;).click(function () {
-                var txt = $(&quot;#msg&quot;).html() + &quot;&lt;p&gt;body被点击&lt;/p&gt;&quot;;
-                $(&quot;#msg&quot;).html(txt);
-            })
-
-
-            $(&quot;#content&quot;).click(function () {
-                var txt = $(&quot;#msg&quot;).html() + &quot;&lt;p&gt;外部div被点击&lt;/p&gt;&quot;;
-                $(&quot;#msg&quot;).html(txt);
-
-            })
-            $(&quot;span&quot;).click(function (event) {
-                var txt = $(&quot;#msg&quot;).html() + &quot;&lt;p&gt;内部span被点击&lt;/p&gt;&quot;;
-                $(&quot;#msg&quot;).html(txt);
-                // event.stopPropagation();
-
-            })
-            // $(&quot;button&quot;).click(function (e) {
-            //     if ($(&quot;button&quot;).text() == &quot;&quot;) {
-            //         e.preventDefault();
-            //     }
-            // })
-
-        })
-&lt;/script&gt;
-
-&lt;body&gt;
-
-    &lt;button&gt;&lt;/button&gt;
-    &lt;div id=&quot;content&quot;&gt;
-        &lt;span&gt;span&lt;/span&gt;
+            <p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191224154153.png" srcset="undefined" alt="">mvvm</p>
+<p>一段基本结构代码</p>
+<pre><code class="html"> &lt;div id=&quot;app&quot;&gt;
+        &lt;p&gt;
+            {{msg}}
+        &lt;/p&gt;
     &lt;/div&gt;
-    &lt;div id=&quot;msg&quot;&gt;&lt;/div&gt;
-&lt;/body&gt;</code></pre>
-<h1 id="键盘事件-选择器"><a href="#键盘事件-选择器" class="headerlink" title="键盘事件,选择器"></a>键盘事件,选择器</h1><pre><code class="html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;script src=&quot;js/jquery-3.4.1.js&quot;&gt;&lt;/script&gt;
     &lt;script&gt;
-        $(document).ready(function () {
-            $(&quot;span:nth-child(1)&quot;).css(&quot;background&quot;, &quot;yellow&quot;);
-            $(&quot;p:nth-of-type(2)&quot;).after(&quot;&lt;div id=&#39;hello&#39;&gt;nihao&lt;/div&gt;&quot;);
-            $(&quot;p:nth-of-type(1)&quot;).css(&quot;background&quot;, &quot;red&quot;);
-            $(&quot;p[class = jk]&quot;).hover(
-                function () {
-                    $(this).css(&quot;background&quot;, &quot;blue&quot;);
-                },
-                function () {
-                    $(this).css(&quot;background&quot;, &quot;pink&quot;);
-                }
-            )
-            $(&quot;input&quot;).keydown(function () {
-                $(this).css(&quot;background&quot;, &quot;yellow&quot;);
-            })
-            $(&#39;input&#39;).keyup(function () {
-                $(this).css(&quot;background&quot;, &quot;white&quot;);
-            })
-            $(&quot;form&quot;).submit(function () {
-                alert(&quot;submitting&quot;);
-            })
-            $(&quot;input&quot;).change(function () {
-                alert(&quot;had been change&quot;);
-            })
-            var x = 0;
-            $(&quot;#myScroll&quot;).scroll(function () {
-                $(this).next().html(x += 1);
-                // alert(123);
-            })
-            $(window).resize(function () {
-                // $(&quot;body&quot;).text(x += 1);
-            })
-        })
-    &lt;/script&gt;
-    &lt;style&gt;
-        #hello {
-            background-color: green;
-        }
-    &lt;/style&gt;
-&lt;/head&gt;
-
-&lt;body&gt;
-    &lt;input type=&quot;text&quot;&gt;
-    &lt;/br&gt;
-    &lt;span&gt;h&lt;/span&gt;
-    &lt;p&gt;pnihao&lt;/p&gt;
-    &lt;p&gt;nihaop&lt;/p&gt;
-    &lt;p class=&quot;jk&quot;&gt;helo&lt;/p&gt;
-    &lt;form action=&quot;&quot;&gt;
-        &lt;input type=&quot;text&quot;&gt;
-        &lt;input id=&quot;mySubmit&quot; type=&quot;submit&quot;&gt;
-    &lt;/form&gt;
-    &lt;div id=&quot;myScroll&quot; style=&quot;width: 100px;height: 100px;background-color: yellow;overflow: scroll;&quot;&gt;
-        nihaodajiadsfsafasf
-        nihaodajiadsfsafasf
-        nihaodajiadsfsafasf
-        nihaodajiadsfsafasf
-    &lt;/div&gt;
-    &lt;span&gt;0&lt;/span&gt;
-&lt;/body&gt;
-
-&lt;/html&gt;</code></pre>
-<h1 id="表单验证"><a href="#表单验证" class="headerlink" title="表单验证"></a>表单验证</h1><pre><code class="html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
-    &lt;script src=&quot;js/jquery-3.4.1.js&quot;&gt;&lt;/script&gt;
-    &lt;script&gt;
-        function checkName() {
-            var username = $(&quot;[name=&#39;username&#39;]&quot;).val();
-            var reg = /^[a-zA-Z]{3,7}$/.test(username);
-            if (reg) {
-                $(&#39;#m_username&#39;).html(&#39;available&#39;);
-                return true;
-
-            } else {
-                $(&#39;#m_username&#39;).html(&#39;unavailable&#39;);
-                return false;
+        var vm = new Vue({
+            el: &#39;#app&#39;, //表示上面new的vue的实例,要控制页面上的哪个区域
+            data: { //data属性中存放的是el中要用到的数据
+                msg: &#39;hello,我是msg&#39;,
             }
-        }
-
-        function a() {
-            checkName();
-            console.log(checkName());
-        }
-    &lt;/script&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;style&gt;
-
-    &lt;/style&gt;
-&lt;/head&gt;
-
-&lt;body&gt;
-    &lt;form action=&quot;&quot;&gt;
-        &lt;input type=&quot;text&quot; name=&quot;username&quot; id=&quot;username&quot; value=&quot;&quot; onblur=&quot;a()&quot;&gt;
-        &lt;span id=&quot;m_username&quot;&gt;&lt;/span&gt;
-        &lt;input type=&quot;button&quot; id=&quot;button&quot; value=&quot;click&quot;&gt;
-
-    &lt;/form&gt;
-&lt;/body&gt;
-
-&lt;/html&gt;</code></pre>
-<h1 id="图片定时切换-只使用setTimeout"><a href="#图片定时切换-只使用setTimeout" class="headerlink" title="图片定时切换(只使用setTimeout"></a>图片定时切换(只使用setTimeout</h1><pre><code class="html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
-    &lt;script src=&quot;js/jquery-3.4.1.js&quot;&gt;&lt;/script&gt;
-    &lt;script&gt;
-        var g;
-        var k = 0;
-        var t;
-        var arr = [&quot;ark/gushou.png&quot;, &quot;ark/pzw.png&quot;, &quot;ark/qsl.png&quot;];
-
-        function changeSrc() {
-            k++;
-            if (k &gt; 2) {
-                k = 0;
-            }
-            var path = arr[k];
-            $(&quot;img&quot;).attr(&quot;src&quot;, path);
-            t = setTimeout(changeSrc, 1000);
-        }
-        $(function () {
-            g = setTimeout(changeSrc, 1000)
-            $(&quot;#button&quot;).click(function () {
-                clearTimeout(t);
-            })
-            $(&quot;#button1&quot;).click(function () {
-                t = setTimeout(changeSrc, 1000);
-            })
-
-            // $(&quot;img&quot;).hover(
-            //     function () {
-            //         clearTimeout(t);
-            //     },
-            //     function () {
-            //         t = setTimeout(changeSrc, 1000);
-            //     }
-            // )
-
-        })
-    &lt;/script&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;style&gt;
-
-    &lt;/style&gt;
-&lt;/head&gt;
-
-&lt;body&gt;
-    &lt;div&gt;
-        &lt;img id=&quot;img&quot; src=&quot;ark/gushou.png&quot; alt=&quot;&quot;&gt;
-    &lt;/div&gt;
-    &lt;button id=&quot;button&quot;&gt;stop&lt;/button&gt;
-    &lt;button id=&quot;button1&quot;&gt;start&lt;/button&gt;
-
-
-&lt;/body&gt;
-
-&lt;/html&gt;</code></pre>
-<p>这里有点奇怪,</p>
-<pre><code class="html"> // $(&quot;img&quot;).hover(
-            //     function () {
-            //         clearTimeout(t);
-            //     },
-            //     function () {
-            //         t = setTimeout(changeSrc, 1000);
-            //     }
-            // )</code></pre>
-<p>使用这段的时候无法停止</p>
-<h1 id="动画属性"><a href="#动画属性" class="headerlink" title="动画属性"></a>动画属性</h1><pre><code class="html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
-    &lt;script src=&quot;js/jquery-3.4.1.js&quot;&gt;&lt;/script&gt;
-    &lt;script&gt;
-        $(function () {
-            $(&quot;#div1&quot;).bind(&quot;click&quot;, function () {
-                $(this).animate({
-                    left: &#39;+=200px&#39;,
-                    width: &#39;+=200px&#39;
-                }, 1300, function () {
-                    $(this).animate({
-                        left: &#39;0px&#39;,
-                        width: &#39;100px&#39;
-                    }, 1000)
-                })
-            })
-        })
-    &lt;/script&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;style&gt;
-        #div1 {
-            position: absolute;
-            width: 100px;
-            height: 100px;
-            background-color: #abcdef;
-        }
-    &lt;/style&gt;
-&lt;/head&gt;
-
-&lt;body&gt;
-    &lt;div id=&quot;div1&quot;&gt;&lt;/div&gt;
-&lt;/body&gt;
-
-&lt;/html&gt;</code></pre>
-<h1 id="鼠标位置获取"><a href="#鼠标位置获取" class="headerlink" title="鼠标位置获取"></a>鼠标位置获取</h1><pre><code class="html">$(&quot;#div1&quot;).bind(&quot;mousemove&quot;, function (e) {
-                var x = e.pageX;
-                var y = e.pageY;
-                $(this).text(&quot;x:&quot; + x + &quot;;y:&quot; + y);
-            })</code></pre>
-<p>👩:mousemove 比较适合这种时候用</p>
+        })</code></pre>
+<p>👩: id=”app”  的div 是 “v”</p>
+<p>​        vm对象是 “vm” 她在”m” 和 “v” 中起了 调度作用</p>
+<p>​        data中的内容是 “m”</p>
 
             <hr>
           </div>
@@ -426,9 +177,7 @@
               <span>
                 <i class="iconfont icon-tag"></i>
                 
-                  <a class="hover-with-bg" href="/tags/js">js</a>
-                
-                  <a class="hover-with-bg" href="/tags/jquery">jquery</a>
+                  <a class="hover-with-bg" href="/tags/vue">vue</a>
                 
               </span>
             
@@ -594,7 +343,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "jQ复习 -private&nbsp;",
+        "vue12-23&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
