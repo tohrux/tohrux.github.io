@@ -121,6 +121,52 @@
   <div class="row mb-4 mx-auto">
     
     
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/2020/01/20/vue1-20/">
+        <p class="h4 index-header">vue 1/20</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">箭头函数内的this指向的是此函数的外部的this
+methods: {
+                kk() {
+                    setInterval(() =&gt; {
+                        var start = this.msg1.substring(0, 1);
+                        var end = this.msg1.substring(1);
+                        this.msg1 = end + start;
+                        console.log(this.msg1);
+
+                    }, 400);
+                }
+            }
+👆的this指向的是vue对象
+事件修饰符阻止冒泡stop
+&lt;div id=&quot;app&quot;&gt;
+        &lt;p @click=&quot;imp&quot;&gt;
+            &l</div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2020-01-20&nbsp;&nbsp;
+        
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/vue">vue</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
       <div class="col-12 col-md-4 m-auto">
         <a href="/2019/12/26/1225/" target="_self">
           <img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191224154153.png" srcset="undefined" alt="vue 12/25" class="img-fluid rounded z-depth-3 index-thumbnails">
@@ -568,65 +614,6 @@ insert intoinsert into tb1 (id,title,date) values (1,&#39;one&#39;,&#39;2010-1-<
             <a href="/tags/mysql">mysql</a>&nbsp;
           
             <a href="/tags/database">database</a>&nbsp;
-          
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mb-4 mx-auto">
-    
-    
-      <div class="col-12 col-md-4 m-auto">
-        <a href="/2019/12/09/phpFaceToObject2/" target="_self">
-          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191207110327.png" srcset="undefined" alt="phpFaceToObject2" class="img-fluid rounded z-depth-3 index-thumbnails">
-        </a>
-      </div>
-    
-    <div class="col-12 col-md-8 m-auto">
-      <a href="/2019/12/09/phpFaceToObject2/">
-        <p class="h4 index-header">phpFaceToObject2</p>
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">对象的使用引用对象$a = &quot;hello&quot;;
-$b = &amp;$a;
-echo $b . &quot;&lt;/br&gt;&quot;; //hello
-
-$a = &quot;aloha&quot;;
-echo $b; //aloha
-克隆对象class Person
-{
-    public $timeForCopy = 0;
-    function __clone()
-    {
-        $this-&gt;timeForCopy += 1;
-    }
-}
-$a = new Person();
-$b = clone $a;
-$c = clone $b;
-echo $b-&gt;timeForCopy; //1
-echo $c-&gt;timeForCopy;//2
-比较对象&quot;===&quot; 表示比较两个对象的内存地址 &quot;==&quot;比较的是两个对象的内容
-经过比较可以得出:
-clone的两个对象相比较的话: 值相等 ,但是内存地址不相等
-引用的两个对象: 值和内存地址都是相等的
-使用一样的构造函数生成的两个实例化对</div>
-        </div>
-      </a>
-
-      <div>
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2019-12-09&nbsp;&nbsp;
-        
-        
-        
-          <i class="iconfont icon-tag"></i>
-          
-            <a href="/tags/php">php</a>&nbsp;
           
         
       </div>
