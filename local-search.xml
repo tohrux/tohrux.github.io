@@ -4,11 +4,49 @@
   
   
   <entry>
+    <title>vue 12/25</title>
+    <link href="undefined2019/12/26/1225/"/>
+    <url>2019/12/26/1225/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>vue</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>vue v-text/html/插值表达式/v-bind/v-on</title>
+    <link href="undefined2019/12/25/vue2/"/>
+    <url>2019/12/25/vue2/</url>
+    
+    <content type="html"><![CDATA[<pre><code class="html">    &lt;div id=&quot;app&quot;&gt;        &lt;p&gt;            {{msg}}            &lt;div&gt;hello&lt;/div&gt;        &lt;/p&gt;        &lt;div v-html=&quot;msg2&quot;&gt;&lt;/div&gt;        &lt;input type=&quot;button&quot; v-on:click=&quot;show&quot; :value=&quot;msg&quot;&gt;    &lt;/div&gt;    &lt;script&gt;        var vm = new Vue({            el: &#39;#app&#39;, //表示上面new的vue的实例,要控制页面上的哪个区域            data: { //data属性中存放的是el中要用到的数据                msg: &#39;hello,我是msg&#39;,                msg2: &#39;&lt;h1&gt;hello ,I am msg2&lt;/h1&gt;&#39;,                btbMsg: &#39;click me&#39;            },            methods: {                show: function(){                    alert(123);                }            }        })    &lt;/script&gt;</code></pre><p>v-html,v-text:👩</p><pre><code>v-html,会直接解析data中的字符串里的html标签两者在使用时,在被绑定的html标签(&lt;div v-html=&quot;msg2&quot;&gt;&lt;/div&gt;中间输入内容是无效的,如果需要输入内容可以使用{{插值表达式}}</code></pre><p>v-bind:</p><pre><code>要为非v-开头的属性赋值时且想用datao里的数据可以使用&quot;v-bind:&quot;,简写&quot;:&quot;,👩:可以加上字符串或数字,把data中的属性当作变量使用👇    :value=&quot;btbMsg+123&quot;</code></pre><p>v-on: Vue提供的事件绑定机制 (简写@ 下面可以直接写成@click=’show’)</p><pre><code>&lt;input type=&quot;button&quot; v-on:click=&quot;show&quot; :value=&quot;msg&quot;&gt;需要在Vue里定义method</code></pre>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>vue</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>vue12-23</title>
     <link href="undefined2019/12/23/vue12-23/"/>
     <url>2019/12/23/vue12-23/</url>
     
-    <content type="html"><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191224154153.png" srcset="undefined" alt="">mvvm</p><p>一段基本结构代码</p><pre><code class="html"> &lt;div id=&quot;app&quot;&gt;        &lt;p&gt;            {{msg}}        &lt;/p&gt;    &lt;/div&gt;    &lt;script&gt;        var vm = new Vue({            el: &#39;#app&#39;, //表示上面new的vue的实例,要控制页面上的哪个区域            data: { //data属性中存放的是el中要用到的数据                msg: &#39;hello,我是msg&#39;,            }        })</code></pre><p>👩: id=”app”  的div 是 “v”</p><p>​        vm对象是 “vm” 她在”m” 和 “v” 中起了 调度作用</p><p>​        data中的内容是 “m”</p>]]></content>
+    <content type="html"><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191224154153.png" srcset="undefined" alt=""></p><p>mvvm</p><p>一段基本结构代码</p><pre><code class="html"> &lt;div id=&quot;app&quot;&gt;        &lt;p&gt;            {{msg}}        &lt;/p&gt;    &lt;/div&gt;    &lt;script&gt;        var vm = new Vue({            el: &#39;#app&#39;, //表示上面new的vue的实例,要控制页面上的哪个区域            data: { //data属性中存放的是el中要用到的数据                msg: &#39;hello,我是msg&#39;,            }        })</code></pre><p>👩: id=”app”  的div 是 “v”</p><p>​        vm对象是 “vm” 她在”m” 和 “v” 中起了 调度作用</p><p>​        data中的内容是 “m”</p>]]></content>
     
     
     
@@ -73,9 +111,9 @@
     
     <tags>
       
-      <tag>bootstrap</tag>
-      
       <tag>css</tag>
+      
+      <tag>bootstrap</tag>
       
     </tags>
     
