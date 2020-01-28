@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>vue添加删除搜索列表中的数据</title>
+    <link href="undefined2020/01/28/vue1-28/"/>
+    <url>2020/01/28/vue1-28/</url>
+    
+    <content type="html"><![CDATA[<pre><code class="html">&lt;!DOCTYPE html&gt;&lt;html lang=&quot;en&quot;&gt;&lt;head&gt;    &lt;meta charset=&quot;UTF-8&quot;&gt;    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;    &lt;title&gt;Document&lt;/title&gt;    &lt;script src=&quot;js/vue.js&quot;&gt;&lt;/script&gt;    &lt;link rel=&quot;stylesheet&quot; href=&quot;css/bootstrap.css&quot;&gt;&lt;/head&gt;&lt;body&gt;    &lt;div id=&quot;app&quot;&gt;        &lt;table class=&quot;table table-light&quot;&gt;            &lt;thead class=&quot;thead-light&quot;&gt;                &lt;tr&gt;                    &lt;th&gt;id&lt;/th&gt;                    &lt;th&gt;name&lt;/th&gt;                    &lt;th&gt;time&lt;/th&gt;                    &lt;th&gt;operation&lt;/th&gt;                &lt;/tr&gt;            &lt;/thead&gt;            &lt;tbody&gt;                &lt;tr v-for=&quot;value in search(result)&quot; :key=&quot;value.id&quot;&gt;                    &lt;td&gt; {{value.id}} &lt;/td&gt;                    &lt;td&gt; {{value.name}} &lt;/td&gt;                    &lt;td&gt; {{value.time}} &lt;/td&gt;                    &lt;td&gt; &lt;a href=&quot;&quot; @click.prevent=&quot;del(value.id)&quot;&gt;del&lt;/a&gt; &lt;/td&gt;                &lt;/tr&gt;            &lt;/tbody&gt;            &lt;tfoot&gt;                &lt;tr&gt;                    &lt;th&gt;#&lt;/th&gt;                &lt;/tr&gt;            &lt;/tfoot&gt;        &lt;/table&gt;        &lt;input type=&quot;text&quot; v-model=&quot;id&quot;&gt;        &lt;input type=&quot;text&quot; v-model=&quot;name&quot;&gt;        &lt;input type=&quot;button&quot; value=&quot;add&quot; @click=&quot;add&quot;&gt;        &lt;input type=&quot;text&quot; v-model=&quot;result&quot;&gt;    &lt;/div&gt;    &lt;script&gt;        var vm = new Vue({            el: &quot;#app&quot;,            data: {                id: &quot;&quot;,                name: &quot;&quot;,                result: &quot;&quot;,                list: [{                        id: 1,                        name: &quot;angelina&quot;,                        time: new Date()                    },                    {                        id: 2,                        name: &quot;skade&quot;,                        time: new Date()                    },                    {                        id: 3,                        name: &quot;eyjafjala&quot;,                        time: new Date()                    }                ]            },            methods: {                add() {                    this.list.push({                        id: this.id,                        name: this.name,                        time: new Date()                    });                    this.id = &quot;&quot;;                    this.name = &quot;&quot;;                },                del(id) {                    this.list.some((value, index) =&gt; {                        if (value.id == id) {                            this.list.splice(index, 1);                            return true;                        }                    })                },                search(result) {                    var newList = [];                    this.list.forEach((value) =&gt; {                        if (value.name.includes(result)) {                            newList.push(value);                        }                    })                    return newList;                    //es6新提供了一种字符串的检索方式,includes,用法和indexOf类似,                    // filter方法是直接返回一个新的数组,                    //var newList = this.list.filter(value=&gt;{                    // if(value.name.includes(result)){return value}                    // })                    // return newList;                }            },        })    &lt;/script&gt;&lt;/body&gt;&lt;/html&gt;</code></pre>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>vue</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>1/27</title>
     <link href="undefined2020/01/27/1-27/"/>
     <url>2020/01/27/1-27/</url>
