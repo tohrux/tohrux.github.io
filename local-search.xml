@@ -4,6 +4,44 @@
   
   
   <entry>
+    <title>vue按键修饰符/自定义全局指令</title>
+    <link href="undefined2020/01/29/vue1-29/"/>
+    <url>2020/01/29/vue1-29/</url>
+    
+    <content type="html"><![CDATA[<h2 id="按键自定义-keyup-F2-add"><a href="#按键自定义-keyup-F2-add" class="headerlink" title="按键自定义@keyup.F2=add()"></a>按键自定义<code>@keyup.F2=add()</code></h2><pre><code class="html">&lt;!DOCTYPE html&gt;&lt;html lang=&quot;en&quot;&gt;&lt;head&gt;    &lt;meta charset=&quot;UTF-8&quot;&gt;    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;    &lt;title&gt;Document&lt;/title&gt;    &lt;script src=&quot;js/vue.js&quot;&gt;&lt;/script&gt;&lt;/head&gt;&lt;body&gt;    &lt;div id=&quot;app&quot;&gt;        &lt;div v-fontweight=&quot;900&quot; v-fontsize=&quot;50&quot;&gt;            {{msg}}        &lt;/div&gt;        {{msg | msgformat}}        {{time | timeFormat}}        &lt;input type=&quot;button&quot; @click=&quot;add&quot; value=&quot;click me baby&quot;&gt;        &lt;input type=&quot;text&quot; @keyup.F2=&#39;add()&#39; v-focusme v-color=&quot;&#39;blue&#39;&quot;&gt;    &lt;/div&gt;    &lt;script&gt;        // Vue.config.keyCodes.f2 = 113;        //使用Vue.direction()定义全局的自定义的指令         // 参数一:你想要的名字,调用时必须要加v-前缀        //参数二:一个对象,在这个对象身上,有一些相关的函数        //在每个函数中,第一个参数永远是el,表示被绑定了指令的那个元素,这个el是一个原生的js对象        // 例如 bind:function(el){} 当指令绑定到元素上的时候,会立刻执行这个bind函数,只执行一次        // 例如 inserted:function(el){} 当元素插入到DOM中,会执行inserted         // 例如 updated:function(el){} 当Vnode更新时,会执行updated,会执行多次        Vue.directive(&#39;focusme&#39;, {            bind: function (el) {            },            inserted: function (el) {                el.focus();            },            updated: function (el) {            }        });        Vue.directive(&#39;color&#39;, {            bind: function (el, binding) {                el.style.color = binding.value;                //binding.name:指令名,binding.value:最终值,binding.expression:绑定值得字符串形式                console.log(binding.value);                console.log(binding.name);                console.log(binding.expression);            }        });        Vue.filter(&#39;msgformat&#39;, function (msg) {            return msg.replace(/hello/g, &quot;hey&quot;);        })        var vm = new Vue({            el: &quot;#app&quot;,            data: {                time: &quot;&quot;,                msg: &quot;hello&quot;            },            methods: {                add() {                    this.msg = &quot;少年&quot;;                }            },            filters: {                timeFormat: function () {                    var t = new Date();                    var y = t.getFullYear();                    var m = t.getMonth() + 1;                    var d = t.getDate();                    return `${y}-${m}-${d}`;                }            },            directives: {                fontweight: {                    bind: function (el, binding) {                        el.style.fontWeight = binding.value;                    }                },                fontsize: function (el, binding) {                    el.style.fontSize = parseInt(binding.value) + &quot;px&quot;;                } //简写-如果这样写得话相当于直接把function写入bind和updated中            }        })    &lt;/script&gt;&lt;/body&gt;&lt;/html&gt;</code></pre><p>👩注意要大写</p><h2 id="自定义全局指令"><a href="#自定义全局指令" class="headerlink" title="自定义全局指令"></a>自定义全局指令</h2><p>在某个指定Vue对象中写:</p><pre><code class="js">directives:{    color:{        bind: function(el,binding){            el.style.color = binding.value;        }    },        //简写    fontweight:function(el.binding){        el.style.fontWeight = binding.value;    }}</code></pre><p>在全局写:</p><pre><code class="js">Vue.directive(&#39;color&#39;),{    bind: function(el,binding){},    inserted: function(el,binding){},    updated: function(el,binding){}}</code></pre><pre><code class="html">&lt;body&gt;    &lt;div id=&quot;app&quot;&gt;        {{msg}}        &lt;input type=&quot;button&quot; @click=&quot;add&quot; value=&quot;click me baby&quot;&gt;        &lt;input type=&quot;text&quot; @keyup.F2=&#39;add()&#39; v-focusme v-color&gt;    &lt;/div&gt;    &lt;script&gt;        // Vue.config.keyCodes.f2 = 113;        //使用Vue.direction()定义全局的自定义的指令         // 参数一:你想要的名字,调用时必须要加v-前缀        //参数二:一个对象,在这个对象身上,有一些相关的函数        //在每个函数中,第一个参数永远是el,表示被绑定了指令的那个元素,这个el是一个原生的js对象        // 例如 bind:function(el){} 当指令绑定到元素上的时候,会立刻执行这个bind函数,只执行一次        // 例如 inserted:function(el){} 当元素插入到DOM中,会执行inserted         // 例如 update:function(el){} 当Vnode更新时,会执行updated,会执行多次        Vue.directive(&#39;focusme&#39;, {            bind: function (el) {            },            inserted: function (el) {                el.focus();            },            updated: function (el) {            }        })        Vue.directive(&#39;color&#39;, {            bind: function (el) {                el.style.color = &quot;red&quot;;            }        })        var vm = new Vue({            el: &quot;#app&quot;,            data: {                msg: &quot;hello&quot;            },            methods: {                add() {                    this.msg = &quot;少年&quot;;                }            },        })    &lt;/script&gt;&lt;/body&gt;</code></pre><p>👩注意,第一个参数中不可以带大写字母</p><p>❓之所以v-color可以直接在bind中生效是因为它是修改样式,不需要操作dom</p><pre><code class="js">&lt;input type=&quot;text&quot; @keyup.F2=&#39;add()&#39; v-focusme v-color=&quot;&#39;blue&#39;&quot;&gt;Vue.directive(&#39;color&#39;, {            bind: function (el, binding) {                el.style.color = binding.value;                //binding.name:指令名,binding.value:最终值,binding.expression:绑定值得字符串形式            }        })</code></pre>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>vue</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>vue过滤器/padStart</title>
+    <link href="undefined2020/01/28/1-28-2/"/>
+    <url>2020/01/28/1-28-2/</url>
+    
+    <content type="html"><![CDATA[<pre><code class="html"> &lt;div id=&quot;app&quot;&gt;        &lt;div&gt; {{msg | msgFormat('hello',"boy")}} &lt;/div&gt;    &lt;/div&gt;    &lt;script&gt;        Vue.filter(&#39;msgFormat&#39;, function (msg, arg, arg2) {            return msg.replace(/善良/g, &#39;邪恶&#39; + arg + arg2);            //过滤器可以多个叠加,可以传参数        });        var vm = new Vue({            el: &quot;#app&quot;,            data: {                msg: &quot;大家好,我是一个善良的人,我很善良&quot;,            },            methods: {            },        })    &lt;/script&gt;</code></pre><p>同名过滤器会就近选择</p><pre><code class="html">&lt;!DOCTYPE html&gt;&lt;html lang=&quot;en&quot;&gt;&lt;head&gt;    &lt;meta charset=&quot;UTF-8&quot;&gt;    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;    &lt;title&gt;Document&lt;/title&gt;    &lt;script src=&quot;js/vue.js&quot;&gt;&lt;/script&gt;&lt;/head&gt;&lt;body&gt;    &lt;div&gt;        {{1+1}}    &lt;/div&gt;    &lt;div id=&quot;app&quot;&gt;        &lt;div&gt;            {{time | timeFormat}}        &lt;/div&gt;        &lt;div&gt; {{time}} &lt;/div&gt;    &lt;/div&gt;    &lt;script&gt;        Vue.filter(&#39;timeFormat&#39;, function () {            var t = new Date();            var y = t.getFullYear();            var m = t.getMonth() + 1;            var d = t.getDate();            var min = t.getMinutes();            return `${y}-${m}-${d}`;        });        var vm = new Vue({            el: &quot;#app&quot;,            data: {                list: [{                    time: new Date(),                    id: 2                }],                time: new Date(),            },            filters: {                timeFormat: function () {                    var t = new Date();                    var y = t.getFullYear();                    var m = t.getMonth() + 1;                    var d = t.getDate();                    var min = t.getMinutes();                    return `${y}-${m}-${d}-----`;                }            }        })    &lt;/script&gt;&lt;/body&gt;&lt;/html&gt;</code></pre><p>padStart()&amp;padEnd()</p><pre><code class="html">var d = t.getDate().toString().padStart(2, &#39;0&#39;);////若不足两个字符串,则在开头添加 &quot;0&quot;</code></pre>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>vue</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>vue添加删除搜索列表中的数据</title>
     <link href="undefined2020/01/28/vue1-28/"/>
     <url>2020/01/28/vue1-28/</url>
@@ -210,11 +248,11 @@
       
       <tag>php</tag>
       
-      <tag>pdo</tag>
+      <tag>mysql</tag>
       
       <tag>database</tag>
       
-      <tag>mysql</tag>
+      <tag>pdo</tag>
       
       <tag>数据库</tag>
       
@@ -235,9 +273,9 @@
     
     <tags>
       
-      <tag>database</tag>
-      
       <tag>mysql</tag>
+      
+      <tag>database</tag>
       
     </tags>
     
@@ -512,9 +550,9 @@
     
     <tags>
       
-      <tag>js</tag>
-      
       <tag>前端</tag>
+      
+      <tag>js</tag>
       
       <tag>面向对象</tag>
       

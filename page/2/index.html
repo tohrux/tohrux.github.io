@@ -121,6 +121,111 @@
   <div class="row mb-4 mx-auto">
     
     
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/2019/12/13/bs4/">
+        <p class="h4 index-header">bs</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">媒体对象//媒体对象 container&gt;row&gt;col&gt;media&gt;img + media body //&lt;-放文字
+
+    &lt;div class=&quot;container bg-danger&quot;&gt;
+        &lt;div class=&quot;row justify-content-center&quot;&gt;
+            &lt;div class=&quot;col-6 bg-info&quot;&gt;
+                &lt;div class=&quot; media&quot;&gt;
+                    &lt;img class=&quot;align-self-center&quot; src=&quot;ark/pzw.png&quot; alt=&quot;&quot;&gt;
+                    &lt;div class=&quot;media-body&quot;&gt;
+                      </div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-12-13&nbsp;&nbsp;
+        
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/css">css</a>&nbsp;
+          
+            <a href="/tags/bootstrap">bootstrap</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+      <div class="col-12 col-md-4 m-auto">
+        <a href="/2019/12/12/12-12/" target="_self">
+          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191213084556.png" srcset="undefined" alt="12-12" class="img-fluid rounded z-depth-3 index-thumbnails">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/2019/12/12/12-12/">
+        <p class="h4 index-header">12-12</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">今天被这个问题整自闭了
+    var obj = {
+        kk: function () {
+            function one() {
+                console.log(this);
+            }
+            one();
+        }
+    };
+    obj.kk();
+这里的obj.kk()输出的是window对象.
+我一直在想,为什么它的结果不是obj对象,因为kk方法属于obj,所以这个one()方法的调用者也是obj,甚至在吃晚饭的路上,等待晚饭做好,在等晚饭变亮的等待的过程中,我也在思考这个问题,我甚至问了老师,
+他是这么回答的
+
+我问了一个学习群里的人他们是这样回答的
+
+我发现三个人给出了三种不同答案,真的很晕啊目前可知情报:
+
+this指向的是函数运行时所在的环境
+
+而这个one()指向的window
+
+所以说这个one()是在全局环境下运行的
+这不是废话吗?
+
+
+12/13 更新
+
+好像把我一系列的问题都给解决了 开森~
+</div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-12-12&nbsp;&nbsp;
+        
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/don't%20know">don&#39;t know</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
       <div class="col-12 col-md-4 m-auto">
         <a href="/2019/12/11/pdo/" target="_self">
           <img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191211200234.png" srcset="undefined" alt="pdo" class="img-fluid rounded z-depth-3 index-thumbnails">
@@ -168,11 +273,11 @@ try{
           
             <a href="/tags/php">php</a>&nbsp;
           
-            <a href="/tags/pdo">pdo</a>&nbsp;
+            <a href="/tags/mysql">mysql</a>&nbsp;
           
             <a href="/tags/database">database</a>&nbsp;
           
-            <a href="/tags/mysql">mysql</a>&nbsp;
+            <a href="/tags/pdo">pdo</a>&nbsp;
           
             <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93">数据库</a>&nbsp;
           
@@ -227,9 +332,9 @@ insert intoinsert into tb1 (id,title,date) values (1,&#39;one&#39;,&#39;2010-1-<
         
           <i class="iconfont icon-tag"></i>
           
-            <a href="/tags/database">database</a>&nbsp;
-          
             <a href="/tags/mysql">mysql</a>&nbsp;
+          
+            <a href="/tags/database">database</a>&nbsp;
           
         
       </div>
@@ -559,105 +664,6 @@ setcookie(&quo</div>
             <a href="/tags/%E9%A1%B5%E9%9D%A2%E4%BA%A4%E4%BA%92">页面交互</a>&nbsp;
           
             <a href="/tags/%E5%90%8E%E7%AB%AF">后端</a>&nbsp;
-          
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mb-4 mx-auto">
-    
-    
-      <div class="col-12 col-md-4 m-auto">
-        <a href="/2019/12/05/12-5-1/" target="_self">
-          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191205142652.png" srcset="undefined" alt="CSS选择器" class="img-fluid rounded z-depth-3 index-thumbnails">
-        </a>
-      </div>
-    
-    <div class="col-12 col-md-8 m-auto">
-      <a href="/2019/12/05/12-5-1/">
-        <p class="h4 index-header">CSS选择器</p>
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">属性选择器语法:
-E[attribute]
-eg:
-td[lang]{} // 有lang属性的td都会被选择
-td[title=&quot;a&quot;]{} //title属性为&quot;a&quot;的都会被选择
-~=&quot;a&quot; //属性值包含&quot;a&quot; 且&quot;a&quot;前后只能有空格
-|=&quot;a&quot; //以&quot;a&quot;开头,&quot;a&quot;必须为独立单词,后面可以跟上连字符&quot;-&quot;
-兄弟选择器    &lt;style&gt;
-        div+span {
-            color: brown !important;
-        }
-    &lt;/style&gt;
-
-    &lt;span&gt;span0&lt;/span&gt;ad
-    &lt;div class=&quot;hi&quot;&gt;div0&lt;/div&gt;
-    &lt;span&gt;span2&lt;/span&gt;k
-    &lt;span&gt</div>
-        </div>
-      </a>
-
-      <div>
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2019-12-05&nbsp;&nbsp;
-        
-        
-        
-          <i class="iconfont icon-tag"></i>
-          
-            <a href="/tags/css">css</a>&nbsp;
-          
-            <a href="/tags/selector">selector</a>&nbsp;
-          
-            <a href="/tags/%E5%89%8D%E7%AB%AF">前端</a>&nbsp;
-          
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mb-4 mx-auto">
-    
-    
-      <div class="col-12 col-md-4 m-auto">
-        <a href="/2019/12/04/nmewd/" target="_self">
-          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191204223042.png" srcset="undefined" alt="今天用bootstrap做的网页和随意画的一些logo" class="img-fluid rounded z-depth-3 index-thumbnails">
-        </a>
-      </div>
-    
-    <div class="col-12 col-md-8 m-auto">
-      <a href="/2019/12/04/nmewd/">
-        <p class="h4 index-header">今天用bootstrap做的网页和随意画的一些logo</p>
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">今天用bootstrap做的网页和随意画的一些logo:太累了今天,眼睛都张不开了
-
-
-
-
-
-
-晚安世界</div>
-        </div>
-      </a>
-
-      <div>
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2019-12-04&nbsp;&nbsp;
-        
-        
-        
-          <i class="iconfont icon-tag"></i>
-          
-            <a href="/tags/so%20tired">so tired</a>&nbsp;
           
         
       </div>

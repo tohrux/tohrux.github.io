@@ -15,7 +15,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <meta name="keywords" content="">
-  <title>mysql ~ Tohrux!</title>
+  <title>vue按键修饰符/自定义全局指令 ~ Tohrux!</title>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/font-awesome/css/all.min.css"  >
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/bootstrap/css/bootstrap.min.css"  >
@@ -84,7 +84,7 @@
 </nav>
 
     <div class="view intro-2" id="background"
-         style="background: url('https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191209190454.png')no-repeat center center;
+         style="background: url('https://cdn.jsdelivr.net/gh/tohrux/tohrux.github.io@1.0//img/fullVersionxx.jpg')no-repeat center center;
            background-size: cover;
            background-attachment: scroll;">
       <div class="full-bg-img">
@@ -99,7 +99,7 @@
               
                 <p class="mt-3">
                   <i class="fas fa-calendar-alt" aria-hidden="true"></i>&nbsp;
-                  星期一, 十二月 9日 2019, 6:45 晚上
+                  星期三, 一月 29日 2020, 3:08 下午
                 </p>
               
 
@@ -108,7 +108,7 @@
                   
                   &nbsp;<i class="far fa-chart-bar"></i>
                   <span class="post-count">
-                    805 字
+                    946 字
                   </span>&nbsp;
                 
 
@@ -116,7 +116,7 @@
                   
                   &nbsp;<i class="far fa-clock"></i>
                   <span class="post-count">
-                      3 分钟
+                      4 分钟
                   </span>&nbsp;
                 
 
@@ -149,109 +149,172 @@
       <div class="py-5 z-depth-3" id="board">
         <div class="post-content mx-auto" id="post">
           <div class="markdown-body">
-            <p> <img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191209190454.png" srcset="undefined" alt=""></p>
-<h3 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h3><pre><code class="mysql">create database 数据库名;</code></pre>
-<h3 id="选择数据库"><a href="#选择数据库" class="headerlink" title="选择数据库"></a>选择数据库</h3><pre><code class="mysql">use 数据库名;</code></pre>
-<h3 id="删除数据库"><a href="#删除数据库" class="headerlink" title="删除数据库"></a>删除数据库</h3><pre><code class="mysql">drop database 数据库名;</code></pre>
-<h1 id="创建数据表"><a href="#创建数据表" class="headerlink" title="创建数据表"></a>创建数据表</h1><pre><code class="mysql">CREATE TABLE 数据表名 (字段名 字段类型);
+            <h2 id="按键自定义-keyup-F2-add"><a href="#按键自定义-keyup-F2-add" class="headerlink" title="按键自定义@keyup.F2=add()"></a>按键自定义<code>@keyup.F2=add()</code></h2><pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
 
-CREATE TABLE `tbl`(
-   `id` INT UNSIGNED AUTO_INCREMENT,
-   `title` VARCHAR(100) NOT NULL,
-   `author` VARCHAR(40) NOT NULL,
-   `date` DATE,
-   PRIMARY KEY ( `id` )
-)ENGINE=InnoDB DEFAULT CHARSET=utf8;//引擎和格式</code></pre>
-<h4 id="comment-关键字"><a href="#comment-关键字" class="headerlink" title="comment 关键字"></a>comment 关键字</h4><p>后面跟上字符串 表示注释</p>
-<h4 id="default关键字"><a href="#default关键字" class="headerlink" title="default关键字"></a>default关键字</h4><p>后面跟不给值时的默认选项</p>
-<h4 id="unique"><a href="#unique" class="headerlink" title="unique"></a>unique</h4><p>可以为空甚至一直为空</p>
-<h4 id="primary-key"><a href="#primary-key" class="headerlink" title="primary key"></a>primary key</h4><p>primary key = unique + not null</p>
-<h3 id="insert-into"><a href="#insert-into" class="headerlink" title="insert into"></a>insert into</h3><pre><code class="mysql">insert into tb1 (id,title,date) values (1,&#39;one&#39;,&#39;2010-1-1&#39;);
-or
-insert into tb1 values(2,&#39;two&#39;,&#39;2019-9-9&#39;);</code></pre>
-<h3 id="delete"><a href="#delete" class="headerlink" title="delete"></a>delete</h3><pre><code class="mysql">delete from tb1 where id=1;</code></pre>
-<h3 id="update"><a href="#update" class="headerlink" title="update"></a>update</h3><pre><code class="mysql">update tb1 set title = &quot;love&quot; where id=1;</code></pre>
-<h3 id="select"><a href="#select" class="headerlink" title="select"></a>select</h3><pre><code class="mysql">select * from tb1;</code></pre>
-<h1 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h1><p>不等于: <code>&lt;&gt;</code> <code>!=</code></p>
-<h2 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h2><h3 id="between-amp-and"><a href="#between-amp-and" class="headerlink" title="between&amp;and"></a>between&amp;and</h3><pre><code class="mysql">select * from tb1 where id between 1 and 3;</code></pre>
-<p>👩:包括1和3</p>
-<pre><code class="mysql">select * from tb1 where id&lt;3 and id&gt;1;</code></pre>
-<h3 id="in"><a href="#in" class="headerlink" title="in"></a>in</h3><p>!@!!@!@!@!@!!@!@!@!@!@</p>
-<pre><code class="mysql">select * from tb1 where id in(1,2,3);</code></pre>
-<h3 id="union-amp-unionall"><a href="#union-amp-unionall" class="headerlink" title="union &amp; unionall"></a>union &amp; unionall</h3><p>可以从不同的表中返回查询结果并结合在一起,</p>
-<p>区别是union会在unionall的基础上进行一次 <code>distinct</code> 查询</p>
-<h3 id="DISTINCT"><a href="#DISTINCT" class="headerlink" title="DISTINCT"></a>DISTINCT</h3><p> <em>adj. 明显的；独特的；清楚的；有区别的</em></p>
-<p><code>select DISTINCT 字段 from 表名</code></p>
-<p>排除重复的查询结果</p>
-<h3 id="group-by"><a href="#group-by" class="headerlink" title="group by"></a>group by</h3><p>默认时ascend;</p>
-<p>在 group by 后面可以跟上多个字段或者加上order by也行</p>
-<h2 id="模糊查询"><a href="#模糊查询" class="headerlink" title="模糊查询"></a>模糊查询</h2><h3 id="like关键字"><a href="#like关键字" class="headerlink" title="like关键字"></a>like关键字</h3><p><code>select 字段 from 表名 where 字段 like 值</code></p>
-<p><code>%u%</code></p>
-<p> <code>%</code> 用来匹配0个或多个字符,任意类型,任意长度,没有限制</p>
-<p><code>_u_</code></p>
-<p><code>_</code>匹配任意单个字符</p>
-<h2 id="排序查询"><a href="#排序查询" class="headerlink" title="排序查询"></a>排序查询</h2><h3 id="order-by"><a href="#order-by" class="headerlink" title="order by"></a>order by</h3><p>默认ascend</p>
-<pre><code class="mysql">select * from tb1 order by id desc/asc;</code></pre>
-<p>👩:descend / ascend</p>
-<h2 id="限制查询"><a href="#限制查询" class="headerlink" title="限制查询"></a>限制查询</h2><p><code>select 字段 limit 起始偏移量,行数</code></p>
-<h2 id="聚合"><a href="#聚合" class="headerlink" title="聚合"></a>聚合</h2><p><code>count(*)</code> <code>sum(字段名)</code> <code>max(字段名)</code>  <code>min(字段名)</code> </p>
-<p> <code>with rollup</code>表示对聚合分类后的对象再进行汇总</p>
-<p><code>having</code>分类聚合后的限制条件要用having而不是<code>where</code>;</p>
-<p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191210150306.png" srcset="undefined" alt=""></p>
-<p>👩:可以直接进行计算</p>
-<pre><code class="mysql">mysqli</code></pre>
-<h2 id="连接"><a href="#连接" class="headerlink" title="连接"></a>连接</h2><h4 id="inner-join"><a href="#inner-join" class="headerlink" title="inner join"></a>inner join</h4><p>内连接,获取两个表中字段匹配关系的记录 (两个表中的重叠部分)</p>
-<h3 id="left-join"><a href="#left-join" class="headerlink" title="left join"></a>left join</h3><p>左连接,获取表中的所有记录,即使右边没有对应的匹配记录</p>
-<h3 id="right-join"><a href="#right-join" class="headerlink" title="right join"></a>right join</h3><p>同上</p>
-<h1 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h1><p>回滚 rollback</p>
-<p>提交 commit</p>
-<p>四大特性: 原子性, 一致性 ,隔离性, 持久性</p>
-<h1 id="子段操作"><a href="#子段操作" class="headerlink" title="子段操作"></a>子段操作</h1><p>增</p>
-<pre><code class="mysql">alter table 数据表名 add 新增字段 字段类型;</code></pre>
-<p>删</p>
-<pre><code class="mysql">alter table 数据表名 drop 字段名;</code></pre>
-<p>修改字段类型:</p>
-<pre><code class="mysql">alter table modify 字段名 数据类型;</code></pre>
-<p>修改表名:</p>
-<pre><code class="mysql">alter table 数据表名 rename 新表名</code></pre>
-<p>修改字段名</p>
-<pre><code class="mysql">alter table change 字段名 新字段名 新数据类型</code></pre>
-<h1 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h1><h3 id="创建索引"><a href="#创建索引" class="headerlink" title="创建索引"></a>创建索引</h3><p>1,创建普通索引,在创建表的时候创建索引</p>
-<pre><code class="mysql">create table index1(
-    id INT,
-    name VARCHAR(32),
-    INDEX(id)
-)
-</code></pre>
-<p>or</p>
-<pre><code class="mysqli"> mysql&gt; CREATE TABLE `jkjk` (  
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;script src=&quot;js/vue.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
 
-    -&gt;   `id` smallint(8) unsigned NOT NULL,  
-    -&gt;   `catid` smallint(5) unsigned NOT NULL DEFAULT &#39;0&#39;,  
+&lt;body&gt;
+    &lt;div id=&quot;app&quot;&gt;
+        &lt;div v-fontweight=&quot;900&quot; v-fontsize=&quot;50&quot;&gt;
+            {{msg}}
+        &lt;/div&gt;
+        {{msg | msgformat}}
+        {{time | timeFormat}}
+        &lt;input type=&quot;button&quot; @click=&quot;add&quot; value=&quot;click me baby&quot;&gt;
+        &lt;input type=&quot;text&quot; @keyup.F2=&#39;add()&#39; v-focusme v-color=&quot;&#39;blue&#39;&quot;&gt;
+    &lt;/div&gt;
+    &lt;script&gt;
+        // Vue.config.keyCodes.f2 = 113;
 
-    -&gt;   `title` varchar(80) NOT NULL DEFAULT &#39;&#39;,  
-     -&gt;   `content` text NOT NULL,  
+        //使用Vue.direction()定义全局的自定义的指令 
+        // 参数一:你想要的名字,调用时必须要加v-前缀
+        //参数二:一个对象,在这个对象身上,有一些相关的函数
+        //在每个函数中,第一个参数永远是el,表示被绑定了指令的那个元素,这个el是一个原生的js对象
+        // 例如 bind:function(el){} 当指令绑定到元素上的时候,会立刻执行这个bind函数,只执行一次
+        // 例如 inserted:function(el){} 当元素插入到DOM中,会执行inserted 
+        // 例如 updated:function(el){} 当Vnode更新时,会执行updated,会执行多次
+        Vue.directive(&#39;focusme&#39;, {
+            bind: function (el) {
 
-   -&gt;   PRIMARY KEY (`id`),  
+            },
+            inserted: function (el) {
+                el.focus();
+            },
+            updated: function (el) {
 
-    -&gt;   UNIQUE KEY `catename` (`catid`)  
+            }
+        });
+        Vue.directive(&#39;color&#39;, {
+            bind: function (el, binding) {
+                el.style.color = binding.value;
+                //binding.name:指令名,binding.value:最终值,binding.expression:绑定值得字符串形式
+                console.log(binding.value);
+                console.log(binding.name);
+                console.log(binding.expression);
 
-    -&gt; ) ;  </code></pre>
-<p>UNIQUE /FULLTEXT</p>
-<pre><code class="mysql">create table index1(
-    id INT,
-    name VARCHAR(32),
-    UNIQUE INDEX index_1(id ASC)
-)</code></pre>
-<p>2,用alter table创建索引</p>
-<pre><code class="mysql">alter TABLE 表名 ADD primary key (字段名); </code></pre>
-<p>3,用create index 创建索引</p>
-<pre><code class="mysql">create 索引类型 INDEX 索引名 ON 表名(字段名);</code></pre>
-<p>eg:</p>
-<pre><code class="mysql">create UNIQUE INDEX index_1 ON tb1(id);
-mysql&gt; CREATE UNIQUE INDEX catename ON wb_blog(catid); </code></pre>
-<h3 id="删除索引"><a href="#删除索引" class="headerlink" title="删除索引"></a>删除索引</h3><pre><code class="mysql">DROP INDEX index_1 on tb1;</code></pre>
-<h3 id="查看索引"><a href="#查看索引" class="headerlink" title="查看索引"></a>查看索引</h3><pre><code class="mysql">SHOW INDEX from tb1;</code></pre>
+            }
+        });
+
+        Vue.filter(&#39;msgformat&#39;, function (msg) {
+            return msg.replace(/hello/g, &quot;hey&quot;);
+        })
+        var vm = new Vue({
+            el: &quot;#app&quot;,
+            data: {
+                time: &quot;&quot;,
+                msg: &quot;hello&quot;
+            },
+            methods: {
+                add() {
+                    this.msg = &quot;少年&quot;;
+                }
+            },
+            filters: {
+                timeFormat: function () {
+                    var t = new Date();
+                    var y = t.getFullYear();
+                    var m = t.getMonth() + 1;
+                    var d = t.getDate();
+                    return `${y}-${m}-${d}`;
+                }
+            },
+            directives: {
+                fontweight: {
+                    bind: function (el, binding) {
+                        el.style.fontWeight = binding.value;
+                    }
+                },
+                fontsize: function (el, binding) {
+                    el.style.fontSize = parseInt(binding.value) + &quot;px&quot;;
+                } //简写-如果这样写得话相当于直接把function写入bind和updated中
+            }
+        })
+    &lt;/script&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+<p>👩注意要大写</p>
+<h2 id="自定义全局指令"><a href="#自定义全局指令" class="headerlink" title="自定义全局指令"></a>自定义全局指令</h2><p>在某个指定Vue对象中写:</p>
+<pre><code class="js">directives:{
+    color:{
+        bind: function(el,binding){
+            el.style.color = binding.value;
+        }
+    },
+        //简写
+    fontweight:function(el.binding){
+        el.style.fontWeight = binding.value;
+    }
+}</code></pre>
+<p>在全局写:</p>
+<pre><code class="js">Vue.directive(&#39;color&#39;),{
+    bind: function(el,binding){},
+    inserted: function(el,binding){},
+    updated: function(el,binding){}
+}</code></pre>
+<pre><code class="html">&lt;body&gt;
+    &lt;div id=&quot;app&quot;&gt;
+        {{msg}}
+        &lt;input type=&quot;button&quot; @click=&quot;add&quot; value=&quot;click me baby&quot;&gt;
+        &lt;input type=&quot;text&quot; @keyup.F2=&#39;add()&#39; v-focusme v-color&gt;
+    &lt;/div&gt;
+    &lt;script&gt;
+        // Vue.config.keyCodes.f2 = 113;
+
+        //使用Vue.direction()定义全局的自定义的指令 
+        // 参数一:你想要的名字,调用时必须要加v-前缀
+        //参数二:一个对象,在这个对象身上,有一些相关的函数
+        //在每个函数中,第一个参数永远是el,表示被绑定了指令的那个元素,这个el是一个原生的js对象
+        // 例如 bind:function(el){} 当指令绑定到元素上的时候,会立刻执行这个bind函数,只执行一次
+        // 例如 inserted:function(el){} 当元素插入到DOM中,会执行inserted 
+        // 例如 update:function(el){} 当Vnode更新时,会执行updated,会执行多次
+        Vue.directive(&#39;focusme&#39;, {
+            bind: function (el) {
+
+            },
+            inserted: function (el) {
+                el.focus();
+            },
+            updated: function (el) {
+
+            }
+        })
+        Vue.directive(&#39;color&#39;, {
+            bind: function (el) {
+                el.style.color = &quot;red&quot;;
+            }
+        })
+        var vm = new Vue({
+            el: &quot;#app&quot;,
+            data: {
+
+                msg: &quot;hello&quot;
+            },
+            methods: {
+                add() {
+                    this.msg = &quot;少年&quot;;
+                }
+            },
+        })
+    &lt;/script&gt;
+&lt;/body&gt;</code></pre>
+<p>👩注意,第一个参数中不可以带大写字母</p>
+<p>❓之所以v-color可以直接在bind中生效是因为它是修改样式,不需要操作dom</p>
+<pre><code class="js">&lt;input type=&quot;text&quot; @keyup.F2=&#39;add()&#39; v-focusme v-color=&quot;&#39;blue&#39;&quot;&gt;
+
+Vue.directive(&#39;color&#39;, {
+            bind: function (el, binding) {
+                el.style.color = binding.value;
+                //binding.name:指令名,binding.value:最终值,binding.expression:绑定值得字符串形式
+            }
+        })</code></pre>
 
             <hr>
           </div>
@@ -263,9 +326,7 @@ mysql&gt; CREATE UNIQUE INDEX catename ON wb_blog(catid); </code></pre>
               <span>
                 <i class="iconfont icon-tag"></i>
                 
-                  <a class="hover-with-bg" href="/tags/mysql">mysql</a>
-                
-                  <a class="hover-with-bg" href="/tags/database">database</a>
+                  <a class="hover-with-bg" href="/tags/vue">vue</a>
                 
               </span>
             
@@ -431,7 +492,7 @@ mysql&gt; CREATE UNIQUE INDEX catename ON wb_blog(catid); </code></pre>
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "mysql&nbsp;",
+        "vue按键修饰符/自定义全局指令&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
