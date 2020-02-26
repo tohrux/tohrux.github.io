@@ -122,6 +122,178 @@
     
     
       <div class="col-12 col-md-4 m-auto">
+        <a href="/2019/12/07/phpMysql/" target="_self">
+          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191209180726.png" srcset="undefined" alt="phpMysql -private" class="img-fluid rounded z-depth-3 index-thumbnails">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/2019/12/07/phpMysql/">
+        <p class="h4 index-header">phpMysql -private</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">
+访问数据库1.连接数据库
+//使用 mysqli_connect()
+2.选择服务器
+//使用 mysqli_select_db()来选择
+3.执行数据库操作
+//增删改查四部曲
+
+//
+    insert into
+//
+    delete
+//
+    update
+// 
+    select
+4.清除记录集,释放系统资源
+mysqli_free_result();
+5.关闭MySQL服务器
+mysqli_close();
+连接MySQL服务器$mysql = new mysqli($server,$username,$password,$dbname);
+//$server 服务器地址 一般本地的为localhost
+mysqli 对象的内容mysqli Object
+(
+    [affected_rows] =&gt; 0
+    [client_info] =&gt; mysqlnd 5.0.12-dev - 20150407 - $Id: 7cc7cc96e675f6d72e5cf0f267f48e167c2abb23 $
+    [client_version]</div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-12-07&nbsp;&nbsp;
+        
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/php">php</a>&nbsp;
+          
+            <a href="/tags/database">database</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+      <div class="col-12 col-md-4 m-auto">
+        <a href="/2019/12/06/phpFaceToObject/" target="_self">
+          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191207110327.png" srcset="undefined" alt="phpFaceToObject1" class="img-fluid rounded z-depth-3 index-thumbnails">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/2019/12/06/phpFaceToObject/">
+        <p class="h4 index-header">phpFaceToObject1</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">引入php文件include &#39;angelina.php&#39;;
+构造函数:两种方法:
+function __ construct($name,$sex,$age){}
+//
+function __ &quot;此类的类名&quot;(...){}
+析构函数当对象结束其生命周期时,系统会自动执行这个函数
+class Person{
+    function __destruct
+}
+封装varphp中默认将var 关键字解释为public,var等同于public
+public用public修饰的属性和方法是公开的,在程序的任何位置都可以访问,子类可以继承父类所有的公共成员
+privateprivate修饰的属性和方法只能在所属类的内部访问,子类也不能继承
+//例如现在先定义一个类
+      class Person{
+        public $name;
+        private $money;
+        function __construct(){
+            $this-&gt;name = &quot;jack&quot;;
+   </div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-12-06&nbsp;&nbsp;
+        
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/php">php</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+      <div class="col-12 col-md-4 m-auto">
+        <a href="/2019/12/06/phpAndWeb/" target="_self">
+          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191207110525.png" srcset="undefined" alt="php与Web的页面交互" class="img-fluid rounded z-depth-3 index-thumbnails">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/2019/12/06/phpAndWeb/">
+        <p class="h4 index-header">php与Web的页面交互</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">$_GET[] &amp; $_POST[]究极全局变量 返回的是数组的形式
+获取
+var_dump($_GET[&#39;username&#39;]);
+$_FILES[]返回的是数组形式的5个值
+需要在html文件中如下设置:
+enctype=&quot;multipart/form-data&quot;
+$_COOKIE[]设置一个cookiesetcookie(&#39;name&#39;,&#39;angelina&#39;,0,&#39;/&#39;);//分别为 名称,内容,存在时间(为0的话意味着在页面关闭时就会删除该cookie),目录(不设置目录的话,只对当前目录有效)
+判断cookie是否存在:isset(cookie[&#39;name&#39;]); //返回的是true or false
+创建cookie数组setcookie(&quot;location[1]&quot;,&quot;beijing&quot;);
+setcookie(&quot;location[2]&quot;,&quot;beijing&quot;);
+setcookie(&quo</div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-12-06&nbsp;&nbsp;
+        
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/%E5%89%8D%E7%AB%AF">前端</a>&nbsp;
+          
+            <a href="/tags/php">php</a>&nbsp;
+          
+            <a href="/tags/web">web</a>&nbsp;
+          
+            <a href="/tags/%E9%A1%B5%E9%9D%A2%E4%BA%A4%E4%BA%92">页面交互</a>&nbsp;
+          
+            <a href="/tags/%E5%90%8E%E7%AB%AF">后端</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+      <div class="col-12 col-md-4 m-auto">
         <a href="/2019/12/05/12-5-1/" target="_self">
           <img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191205142652.png" srcset="undefined" alt="CSS选择器" class="img-fluid rounded z-depth-3 index-thumbnails">
         </a>
@@ -492,185 +664,11 @@ var obj = new Object();
         
           <i class="iconfont icon-tag"></i>
           
-            <a href="/tags/%E5%89%8D%E7%AB%AF">前端</a>&nbsp;
-          
             <a href="/tags/js">js</a>&nbsp;
           
+            <a href="/tags/%E5%89%8D%E7%AB%AF">前端</a>&nbsp;
+          
             <a href="/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1">面向对象</a>&nbsp;
-          
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mb-4 mx-auto">
-    
-    
-      <div class="col-12 col-md-4 m-auto">
-        <a href="/2019/12/02/js-12-2/" target="_self">
-          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191202105330.png" srcset="undefined" alt="js运算符 -private" class="img-fluid rounded z-depth-3 index-thumbnails">
-        </a>
-      </div>
-    
-    <div class="col-12 col-md-8 m-auto">
-      <a href="/2019/12/02/js-12-2/">
-        <p class="h4 index-header">js运算符 -private</p>
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">
-### `&`,`||`的短路问题
-
-console.log(1&amp;&amp;0);//0
-console.log(0&amp;&amp;1);//0
-console.log(0 || 1);//1
-console.log(1 || 0);//1
-对非布尔值进行布尔运算    var a = 1;
-    a = !a;
-    console.log(a); //false
-关系运算符//返回的一定是false or true eg:
-var result = 1 &lt; 3;
-console.log(result);//false
-非数值的比较*数值类型和非数值类型比较的话,非数值类型会被转换为数值类型
-*如果两边都是字符串型的数字话,则会被转换为unicode编码
-运算优先级&amp;&amp; &gt; ||
-unicode编码在js中
-console.log(&quot;\u1234&quot;)
-在htlm中
-&lt;h1&gt;&amp;#1234;&lt;/h1&gt;
-unicode编码转换
-&quot;中&quot;.charCodeAt(0);
-Stri</div>
-        </div>
-      </a>
-
-      <div>
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2019-12-02&nbsp;&nbsp;
-        
-        
-        
-          <i class="iconfont icon-tag"></i>
-          
-            <a href="/tags/%E5%89%8D%E7%AB%AF">前端</a>&nbsp;
-          
-            <a href="/tags/javascript">javascript</a>&nbsp;
-          
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mb-4 mx-auto">
-    
-    
-      <div class="col-12 col-md-4 m-auto">
-        <a href="/2019/12/01/12-01/" target="_self">
-          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191202082444.jpg" srcset="undefined" alt="12_01" class="img-fluid rounded z-depth-3 index-thumbnails">
-        </a>
-      </div>
-    
-    <div class="col-12 col-md-8 m-auto">
-      <a href="/2019/12/01/12-01/">
-        <p class="h4 index-header">12_01</p>
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">banner_img&amp;index_img来自arkstation.com的neon-yang 
-hello,12月,时间过得太快辣!!!!!!!
-再过一个月就是2020年了,东京奥运会,以及和高中同学约好的2020年要一起去日本,感觉我要🕊了.为什么我一直认为去旅行好浪费钱,感觉从买机/车票开始,钱就会在钱包中开始逐渐消失,而不像购买实物–钱只是换了一种形式陪在自己的身边.
-2020年还有一种未来的感觉,对我来说时间仿佛还停留在2008年的北京奥运会我还在沙发上蹦跶着看着电视的那个晚上,那个时候肯定会想2020应该会有很多不可思议的科技会实现吧,结果到了2020,世界也没什么多大的变化就是了.
-今天了解到了一个很棒的网站,arkstation.com,对于我来说是新大陆!还看了一些自制的同人像素游戏的相关视频,不可否认的是,在像素游戏中音乐真的是游戏表现力中占比很高的一环.
-
-以及今日最佳!发现了在油管有一个日本人几年来一直陆陆续续地在用打工挣的钱,到亚洲的各地靠着自己为和平做出贡献.他叫桑原功一,是一个勇敢和伟大的人,他是个英雄.
-
-</div>
-        </div>
-      </a>
-
-      <div>
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2019-12-01&nbsp;&nbsp;
-        
-        
-        
-          <i class="iconfont icon-tag"></i>
-          
-            <a href="/tags/diary">diary</a>&nbsp;
-          
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mb-4 mx-auto">
-    
-    
-      <div class="col-12 col-md-4 m-auto">
-        <a href="/2019/11/30/js11-30/" target="_self">
-          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191130140650.png" srcset="undefined" alt="js变量 -private" class="img-fluid rounded z-depth-3 index-thumbnails">
-        </a>
-      </div>
-    
-    <div class="col-12 col-md-8 m-auto">
-      <a href="/2019/11/30/js11-30/">
-        <p class="h4 index-header">js变量 -private</p>
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">本文为private个人向
-字面量字面量就是 常量,以前一直都不知道2333
-变量var是variant的缩写
-命名规范
-只能由$, _ ,英文字母,数字组成,但是不能用数字开头
-尽量使用驼峰命名
-不允许使用空格
-最多255个字符
-
-👩:在javascript中变量名是区分大小写的
-变量的数据类型值类型:number,boolean,string,undefined,null
-引用型: object
-判断数据类型
-console.log(typeof a);
-👩:返回值为小写字母
-转义字符\t
-\n
-\\
-\&quot;
-\&#39;
-\r
-\b
-👩:\n与\r的区别:
-
-回车 \r  本义是光标重新回到本行开头。r 的英文return，控制字符可以写成CR，即Carriage Return
-换行 \n  本义是光标往下一行（不一定到下一行行首）。n 的英文newline，控制字符可以写成LF，即Line Feed
-
-类型转换
-String()
-var a =10;
-console.log(String(a));
-
-👩对于Number和Boolean，实际上就是调用toStri</div>
-        </div>
-      </a>
-
-      <div>
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2019-11-30&nbsp;&nbsp;
-        
-        
-        
-          <i class="iconfont icon-tag"></i>
-          
-            <a href="/tags/%E5%89%8D%E7%AB%AF">前端</a>&nbsp;
-          
-            <a href="/tags/javascript">javascript</a>&nbsp;
           
         
       </div>
@@ -681,7 +679,7 @@ console.log(String(a));
 
   <nav aria-label="index posts navigation">
     <span class="pagination pg-blue justify-content-center mt-5" id="pagination">
-      <a class="extend prev" rel="prev" href="/page/2/"><i class="fas fa-angle-double-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/"><i class="fas fa-angle-double-right"></i></a>
+      <a class="extend prev" rel="prev" href="/page/2/"><i class="fas fa-angle-double-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/4/"><i class="fas fa-angle-double-right"></i></a>
     </span>
   </nav>
   

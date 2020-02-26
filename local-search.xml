@@ -4,6 +4,63 @@
   
   
   <entry>
+    <title>some/filter/findIndex</title>
+    <link href="undefined2020/02/26/2020-2-26/"/>
+    <url>2020/02/26/2020-2-26/</url>
+    
+    <content type="html"><![CDATA[<h1 id="some"><a href="#some" class="headerlink" title="some()"></a>some()</h1>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>vue</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>计算属性/侦听器/过滤器/数组方法</title>
+    <link href="undefined2020/02/24/2020-2-24/"/>
+    <url>2020/02/24/2020-2-24/</url>
+    
+    <content type="html"><![CDATA[<pre><code class="html">&lt;!DOCTYPE html&gt;&lt;html lang=&quot;en&quot;&gt;&lt;head&gt;    &lt;meta charset=&quot;UTF-8&quot;&gt;    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;    &lt;title&gt;Document&lt;/title&gt;    &lt;script src=&quot;js/vue.js&quot;&gt;&lt;/script&gt;&lt;/head&gt;&lt;body&gt;    &lt;div id=&quot;app&quot;&gt;        {{msg.split('').reverse().join('')}}        {{reverseMsg}}        {{reverseMsg}}        {{reverseMsg}}        {{reverseMsg}}        {{reverseMethod()}}        {{reverseMethod()}}    &lt;/div&gt;    &lt;script&gt;        var vm = new Vue({            el: &#39;#app&#39;,            data: {                msg:&#39;hello&#39;            },            methods: {                reverseMethod:function(){                    console.log(&#39;method&#39;);                    return this.msg.split(&#39;&#39;).reverse().join(&#39;&#39;);                }            },            computed: {                reverseMsg:function(){                    console.log(&#39;conputed&#39;);                    return this.msg.split(&#39;&#39;).reverse().join(&#39;&#39;);                }            },        });    &lt;/script&gt;&lt;/body&gt;&lt;/html&gt;</code></pre><p>👩computed和methods的区别:</p><p>conputed里的方法只会执行一次,然后把结果缓存起来,下次直接使用这个结果</p><p>methods每调用一次就执行一次,<code>method在插值表达式中调用时要加上()</code></p><h1 id="侦听器"><a href="#侦听器" class="headerlink" title="侦听器"></a>侦听器</h1><h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景:"></a>应用场景:</h3><p>数据变化时执行异步或开销较大的操作</p><h3 id="触发方式"><a href="#触发方式" class="headerlink" title="触发方式:"></a>触发方式:</h3><p>数据一变化就通知侦听器绑定方法</p><pre><code class="html">var vm = new Vue({            el: &#39;#app&#39;,            data: {                firstname:&#39;anglina&#39;,                lastname:&#39;Me&#39;,                fullname: &#39;angelina Me&#39;,            },            methods: {},            watch: {                firstname:function(val){                    this.fullname = val + &#39; &#39; + this.lastname;                },                lastname:function(val){                    this.fullname = this.firstname + &#39; &#39; + val;                }            },        });</code></pre><h2 id="computed的实现方式"><a href="#computed的实现方式" class="headerlink" title="computed的实现方式"></a>computed的实现方式</h2><pre><code class="html">var vm = new Vue({            el: &#39;#app&#39;,            data: {                firstname: &#39;anglina&#39;,                lastname: &#39;Me&#39;,                // fullname: &#39;angelina Me&#39;,            },            methods: {},            computed: {                fullname: function () {                    return this.firstname + this.lastname;                }            }</code></pre><h2 id="侦听器的应用场景"><a href="#侦听器的应用场景" class="headerlink" title="侦听器的应用场景"></a>侦听器的应用场景</h2><pre><code class="html">&lt;body&gt;    &lt;div id=&quot;app&quot;&gt;        &lt;input type=&quot;text&quot; v-model=&#39;uname&#39;&gt;        &lt;div&gt;            {{msg}}        &lt;/div&gt;    &lt;/div&gt;    &lt;script&gt;        var vm = new Vue({            el: &#39;#app&#39;,            data: {                uname: &#39;&#39;,                msg: &#39;请输入你的名字&#39;            },            methods: {                check(message) {                    var that = this;                    setTimeout(function () {                        if (message === &#39;angelina&#39;) {                            that.msg = &#39;已经被占用了&#39;;                        } else {                            that.msg = &#39;congratulation&#39;;                        }                    }, 1000)                }            },            watch: {                uname: function (val) {                    this.check(val);                    this.msg = &#39;loading&#39;;                }            },        });    &lt;/script&gt;&lt;/body&gt;</code></pre><h2 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h2><pre><code class="html">&lt;body&gt;    &lt;div id=&quot;app&quot;&gt;        {{msg|msgFormat}}    &lt;/div&gt;    &lt;script&gt;        var vm = new Vue({            el: &#39;#app&#39;,            data: {                msg: &#39;hello&#39;            },            methods: {},            filters: {                msgFormat: function (val) {                    return val.charAt(0).toUpperCase() + val.slice(1);                }            }        });    &lt;/script&gt;&lt;/body&gt;</code></pre><h2 id="时间过滤"><a href="#时间过滤" class="headerlink" title="时间过滤"></a>时间过滤</h2><pre><code class="html">&lt;body&gt;    &lt;div id=&quot;app&quot;&gt;        {{date | format('k')}}    &lt;/div&gt;    &lt;script&gt;        Vue.filter(&#39;format&#39;, function (value, arg) {            if (arg == &#39;k&#39;) {                return value.getFullYear() + &#39;-&#39; + (value.getMonth() + 1) + &#39;-&#39; + value.getDate()            }        })        var vm = new Vue({            el: &#39;#app&#39;,            data: {                date: new Date()            },            methods: {},        });    &lt;/script&gt;&lt;/body&gt;</code></pre><h3 id="过滤器串联"><a href="#过滤器串联" class="headerlink" title="过滤器串联"></a>过滤器串联</h3><pre><code class="js">{{ msg | toUpperCase | toLowerCase}} 从前往后将上一个值传递过滤下去</code></pre><h1 id="数组方法"><a href="#数组方法" class="headerlink" title="数组方法"></a>数组方法</h1><ul><li><p>push()</p></li><li><p>pop()</p></li><li><p>shift()</p></li><li><p>unshift()</p></li><li><p>splice()</p></li><li><p>sort()</p></li><li><p>reverse()</p><p>👆变异方法(修改原有数据</p><p>👇生成新的数组</p><ul><li>filter()</li><li>concat()</li><li>slice()</li></ul></li></ul><h1 id="动态修改数组数据"><a href="#动态修改数组数据" class="headerlink" title="动态修改数组数据"></a>动态修改数组数据</h1><pre><code class="html">&lt;script&gt;        var vm = new Vue({            el: &#39;#app&#39;,            data: {                arr:[&#39;orange&#39;,&#39;ba&#39;,&#39;ca&#39;],                obj:{                    a:&#39;apple&#39;,                    b:&#39;banana&#39;                },                obj2:[                    {id:1,name:&#39;angelina&#39;},                    {id:1,name:&#39;angelina&#39;},                ]            },            methods: {}        });        vm.$set(vm.arr,0,&#39;key&#39;);        vm.$set(vm.obj,&#39;a&#39;,&#39;kk&#39;);        vm.$set(vm.obj,&#39;c&#39;,&#39;ccc&#39;);    &lt;/script&gt;</code></pre>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>vue</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>vue/v-model/表单</title>
+    <link href="undefined2020/02/23/2020-2-23/"/>
+    <url>2020/02/23/2020-2-23/</url>
+    
+    <content type="html"><![CDATA[<pre><code class="html">&lt;!DOCTYPE html&gt;&lt;html lang=&quot;en&quot;&gt;&lt;head&gt;    &lt;meta charset=&quot;UTF-8&quot;&gt;    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;    &lt;title&gt;Document&lt;/title&gt;    &lt;script src=&quot;./vue.js&quot;&gt;&lt;/script&gt;&lt;/head&gt;&lt;body&gt;    &lt;div id=&quot;app&quot;&gt;        &lt;form action=&quot;https://www.baidu.com&quot;&gt;            name:&lt;input type=&quot;text&quot; v-model=&#39;uname&#39;&gt;            &lt;div&gt;                male: &lt;input type=&quot;radio&quot; value=&quot;1&quot; id=&quot;male&quot; v-model=&#39;gender&#39;&gt;                female: &lt;input type=&quot;radio&quot; value=&quot;2&quot; id=&#39;female&#39; v-model=&#39;gender&#39;&gt;            &lt;/div&gt;            &lt;div&gt;                hobby:                ball&lt;input type=&quot;checkbox&quot; value=&quot;1&quot; id=&quot;ball&quot; v-model=&#39;hobby&#39;&gt;                game&lt;input type=&quot;checkbox&quot; value=&quot;2&quot; id=&quot;ball&quot; v-model=&#39;hobby&#39;&gt;                girlfriend&lt;input type=&quot;checkbox&quot; value=&quot;3&quot; id=&quot;ball&quot; v-model=&#39;hobby&#39;&gt;            &lt;/div&gt;            &lt;div&gt;                &lt;select name=&quot;&quot; id=&quot;&quot; v-model=&#39;occupation&#39;&gt;                    &lt;option value=&quot;0&quot; disabled&gt;select your occupation&lt;/option&gt;                    &lt;option value=&quot;doctor&quot;&gt;doctor&lt;/option&gt;                    &lt;option value=&quot;painter&quot;&gt;painter&lt;/option&gt;                &lt;/select&gt;            &lt;/div&gt;            &lt;div&gt;                &lt;textarea name=&quot;&quot; id=&quot;&quot; v-model=&#39;textarea&#39;&gt;&lt;/textarea&gt;            &lt;/div&gt;            &lt;input type=&quot;submit&quot; name=&quot;&quot; @click.prevent=&#39;sub&#39;&gt;        &lt;/form&gt;    &lt;/div&gt;    &lt;script&gt;        var vm = new Vue({            el: &#39;#app&#39;,            data: {                msg: &#39;123&#39;,                uname: &#39;&#39;,                gender: 1,                hobby: [1],                occupation:&#39;doctor&#39;,                textarea:&#39;&#39;            },            methods: {                sub() {                    console.log(this.gender, this.hobby.toString(),this.occupation,this.textarea);                }            }        });    &lt;/script&gt;&lt;/body&gt;&lt;/html&gt;</code></pre><h1 id="表单域修饰符"><a href="#表单域修饰符" class="headerlink" title="表单域修饰符"></a>表单域修饰符</h1><ul><li>number:转换为数值</li><li>trim:去掉开始和结尾的空格</li><li>lazy:将input事件切换为change事件</li></ul><pre><code class="js">&lt;input type=&#39;text&#39; v-model.number=&#39;age&#39;/&gt;</code></pre>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>vue</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>vue按键修饰符/自定义全局指令</title>
     <link href="undefined2020/01/29/vue1-29/"/>
     <url>2020/01/29/vue1-29/</url>
@@ -550,9 +607,9 @@
     
     <tags>
       
-      <tag>前端</tag>
-      
       <tag>js</tag>
+      
+      <tag>前端</tag>
       
       <tag>面向对象</tag>
       
