@@ -122,6 +122,161 @@
     
     
       <div class="col-12 col-md-4 m-auto">
+        <a href="/2019/11/25/laravel1-25/" target="_self">
+          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos/img/laravel1.png" srcset="undefined" alt="larave表单验证" class="img-fluid rounded z-depth-3 index-thumbnails">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/2019/11/25/laravel1-25/">
+        <p class="h4 index-header">larave表单验证</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">表单验证:多个验证规则可以通过”|”隔开:
+语法:
+$this-&gt;validate(数据对象,[数组形式的验证规则])
+
+
+
+规则名
+说明
+
+
+
+require
+不能为空
+
+
+max:value
+字段值必须小于或等于value,如果是字符串 value则为字符串的个数
+
+
+email
+验证邮箱是否合法
+
+
+confirmed
+验证两个字段是否相同,如果是password则必须输入与之匹配的paasword_confirmation字段
+
+
+url
+字段必须为有效URL
+
+
+integer
+必须为整数
+
+
+numeric
+必须为数值
+
+
+max
+最多255字符
+
+
+min
+最少1字符
+
+
+实现用户验证功能
+创建一个用户控制器
+
+新建一个index.blade.php页面
+
+引入静态资源 CSS,Js等 
+
+配置路由
+
+csrf验证:
+{{csrf_token()}}//会在页面显示 纯文本显示 用在异步提交 ajax
+
+{{csrf_field()}}//一般已html元素的形式生成 自动hidden
+👇也可以直接写成这个
+    @csrf
+csrf_field自动生成的htm</div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-11-25&nbsp;&nbsp;
+        
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/laravel">laravel</a>&nbsp;
+          
+            <a href="/tags/php">php</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+      <div class="col-12 col-md-4 m-auto">
+        <a href="/2019/11/24/jkjk/" target="_self">
+          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos/img/laravel1.png" srcset="undefined" alt="lavavel视图" class="img-fluid rounded z-depth-3 index-thumbnails">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/2019/11/24/jkjk/">
+        <p class="h4 index-header">lavavel视图</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">视图文件的命名和渲染
+文件名习惯小写
+后缀为 blade.php 
+不使用 balde.php结尾的话就不能使用laravel提供的标签语法显示数据,只能使用原生语法显示数据
+
+实例在开发中可以使用compact(php内置函数)来进行数组的打包
+TextController:    public function test3()
+    {
+        //现在时间
+        $date = date(&#39;Y-m-d H:i:s&#39;, time());
+        //获取今天的星期
+        $day = &#39;sunday&#39;;
+        //show 视图
+        //return view(&#39;home/index/test3&#39;, [&#39;date&#39; =&gt; $date, &#39;day&#39; =&gt; $day]);
+        👆
+      效果一样   
+         👇
+        return view(&#39;home/index/test3&#39;</div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-11-24&nbsp;&nbsp;
+        
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/laravel">laravel</a>&nbsp;
+          
+            <a href="/tags/php">php</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+      <div class="col-12 col-md-4 m-auto">
         <a href="/2019/11/22/laravel4/" target="_self">
           <img src="https://cdn.jsdelivr.net/gh/tohrux/photos/img/laravel1.png" srcset="undefined" alt="laravel中关于数据库的操作" class="img-fluid rounded z-depth-3 index-thumbnails">
         </a>
@@ -553,87 +708,6 @@ have a nice day~ henrietta,or should I called you ‘胡琼琼’? 😄😄😄<
           <i class="iconfont icon-tag"></i>
           
             <a href="/tags/build">build</a>&nbsp;
-          
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mb-4 mx-auto">
-    
-    
-      <div class="col-12 col-md-4 m-auto">
-        <a href="/2019/11/17/test1/" target="_self">
-          <img src="https://cdn.jsdelivr.net/gh/tohrux/tohrux.github.io@1.0//img/rikka.jpg" srcset="undefined" alt="现在开始我拥有了自己的博客!" class="img-fluid rounded z-depth-3 index-thumbnails">
-        </a>
-      </div>
-    
-    <div class="col-12 col-md-8 m-auto">
-      <a href="/2019/11/17/test1/">
-        <p class="h4 index-header">现在开始我拥有了自己的博客!</p>
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">现在开始我拥有了自己的博客!终于完成了,现在都快5点了,希望明天可以不上课8,(但估计打完这篇md要做的第一件事就是设闹钟了),
-晚安世界~
-上课的笔记什么的明天再更吧
-总之还是开心的!
-ps.这原本是11-16日凌晨4点写下的,因为一些原因现在重新上传了一遍
-</div>
-        </div>
-      </a>
-
-      <div>
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2019-11-17&nbsp;&nbsp;
-        
-        
-        
-          <i class="iconfont icon-tag"></i>
-          
-            <a href="/tags/happy">happy</a>&nbsp;
-          
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mb-4 mx-auto">
-    
-    
-      <div class="col-12 col-md-4 m-auto">
-        <a href="/2019/11/16/ceshi/" target="_self">
-          <img src="https://cdn.jsdelivr.net/gh/tohrux/tohrux.github.io@1.0//img/akane.jpg" srcset="undefined" alt="图片加载测试" class="img-fluid rounded z-depth-3 index-thumbnails">
-        </a>
-      </div>
-    
-    <div class="col-12 col-md-8 m-auto">
-      <a href="/2019/11/16/ceshi/">
-        <p class="h4 index-header">图片加载测试</p>
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">
-
-</div>
-        </div>
-      </a>
-
-      <div>
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2019-11-16&nbsp;&nbsp;
-        
-        
-        
-          <i class="iconfont icon-tag"></i>
-          
-            <a href="/tags/ssss">ssss</a>&nbsp;
-          
-            <a href="/tags/test">test</a>&nbsp;
           
         
       </div>

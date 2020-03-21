@@ -15,7 +15,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <meta name="keywords" content="">
-  <title>some/filter/findIndex/图书管理系统 ~ Tohrux!</title>
+  <title>组件注册的注意事项 ~ Tohrux!</title>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/font-awesome/css/all.min.css"  >
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/bootstrap/css/bootstrap.min.css"  >
@@ -99,7 +99,7 @@
               
                 <p class="mt-3">
                   <i class="fas fa-calendar-alt" aria-hidden="true"></i>&nbsp;
-                  星期三, 二月 26日 2020, 2:16 下午
+                  星期四, 二月 27日 2020, 12:45 下午
                 </p>
               
 
@@ -108,7 +108,7 @@
                   
                   &nbsp;<i class="far fa-chart-bar"></i>
                   <span class="post-count">
-                    681 字
+                    549 字
                   </span>&nbsp;
                 
 
@@ -149,169 +149,131 @@
       <div class="py-5 z-depth-3" id="board">
         <div class="post-content mx-auto" id="post">
           <div class="markdown-body">
-            <h1 id="some"><a href="#some" class="headerlink" title="some()"></a>some()</h1><p>判断数组中是否每个元素的满足条件,只要满足一个就返回true;</p>
-<h1 id="filter"><a href="#filter" class="headerlink" title="filter()"></a>filter()</h1><p>使用指定的函数测试所有元素,并创建一个包含所有通过测试的元素的数组;</p>
-<p>不会改变原数组</p>
-<h1 id="findIndex"><a href="#findIndex" class="headerlink" title="findIndex()"></a>findIndex()</h1><p>返回一个符合条件的的数组成员的位置,如果没有找到就返回-1;</p>
-<h1 id="图书管理系统"><a href="#图书管理系统" class="headerlink" title="图书管理系统"></a>图书管理系统</h1><pre><code class="html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
+            <h1 id="模板例子"><a href="#模板例子" class="headerlink" title="模板例子"></a>模板例子</h1><pre><code class="html">Vue.component(&#39;button-counter&#39;, {
+            data: function () {
+                return {
+                    count: 0
+                }
+            },
+            template: &#39;&lt;button @click=&quot;handle&quot;&gt;点击了{{count}}次&lt;/button&gt;&#39;,
+            methods: {
+                handle: function () {
+                    this.count+=2;
+                }
+            }
+        })</code></pre>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><h3 id="1-data-必须是一个函数"><a href="#1-data-必须是一个函数" class="headerlink" title="1.data 必须是一个函数"></a>1.data 必须是一个函数</h3><h3 id="2-组件模板内容必须是单个根元素"><a href="#2-组件模板内容必须是单个根元素" class="headerlink" title="2.组件模板内容必须是单个根元素"></a>2.组件模板内容必须是单个根元素</h3><h3 id="3-可以使用模板字符串"><a href="#3-可以使用模板字符串" class="headerlink" title="3.可以使用模板字符串"></a>3.可以使用模板字符串</h3><h3 id="4-最好使用短横线的命名方式"><a href="#4-最好使用短横线的命名方式" class="headerlink" title="4.最好使用短横线的命名方式"></a>4.最好使用短横线的命名方式</h3><h3 id="5-局部组件只能在注册他的父组件下使用"><a href="#5-局部组件只能在注册他的父组件下使用" class="headerlink" title="5.局部组件只能在注册他的父组件下使用"></a>5.局部组件只能在注册他的父组件下使用</h3><h1 id="局部注册方式"><a href="#局部注册方式" class="headerlink" title="局部注册方式"></a>局部注册方式</h1><pre><code class="html"> var HelloWorld = {
+            data: function () {
+                return {
+                    msg: &quot;hello,I&#39;m message&quot;
+                }
+            },
+            template: `&lt;div&gt;msg&lt;/div&gt;`,
+            methods: {
 
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;script src=&quot;js/vue.js&quot;&gt;&lt;/script&gt;
-    &lt;style&gt;
-        thead {
-            background-color: orange;
+            }
         }
-    &lt;/style&gt;
-&lt;/head&gt;
+        var vm = new Vue({
+            el: &#39;#app&#39;,
+            data: {},
+            methods: {},
+            components: {
+                &#39;hello-world&#39;: HelloWorld
 
-&lt;body&gt;
+            }
+        })</code></pre>
+<h1 id="父组件向子组件传递值"><a href="#父组件向子组件传递值" class="headerlink" title="父组件向子组件传递值"></a>父组件向子组件传递值</h1><h2 id="1-组件内部通过props接受传递过来的值"><a href="#1-组件内部通过props接受传递过来的值" class="headerlink" title="1,组件内部通过props接受传递过来的值"></a>1,组件内部通过props接受传递过来的值</h2><pre><code class="js">&lt;body&gt;
     &lt;div id=&quot;app&quot;&gt;
-        id:&lt;input type=&quot;text&quot; v-model=&#39;uid&#39; :disabled=&#39;flag&#39; v-focus&gt;
-        name:&lt;input type=&quot;text&quot; v-model=&#39;uname&#39;&gt;
-        &lt;input type=&quot;button&quot; value=&#39;add&#39; @click=&#39;add()&#39; :disabled=&#39;addFlag&#39;&gt;
-        &lt;div&gt;
-            total:{{total}}
-        &lt;/div&gt;
-        &lt;table class=&quot;table table-light&quot;&gt;
-            &lt;thead class=&quot;thead-light&quot;&gt;
-                &lt;tr&gt;
-                    &lt;!-- &lt;th&gt;#&lt;/th&gt; --&gt;
-                    &lt;th&gt;id&lt;/th&gt;
-                    &lt;th&gt;name&lt;/th&gt;
-                    &lt;th&gt;time&lt;/th&gt;
-                    &lt;th&gt;operation&lt;/th&gt;
-                &lt;/tr&gt;
-            &lt;/thead&gt;
-            &lt;tbody&gt;
-                &lt;tr v-for=&#39;(value,index) in msg&#39; :key=&#39;value.id&#39;&gt;
-                    &lt;td&gt;{{value.id}}&lt;/td&gt;
-                    &lt;td&gt;{{value.name}}&lt;/td&gt;
-                    &lt;td&gt;{{value.time | timeFormat}}&lt;/td&gt;
-                    &lt;td&gt;
-                        &lt;a href=&quot;&quot; @click.prevent=&#39;toEdit(value.id)&#39;&gt;编辑&lt;/a&gt;
-                        |
-                        &lt;a href=&quot;&quot; @click.prevent=&#39;del(value.id)&#39;&gt;删除&lt;/a&gt;
-                    &lt;/td&gt;
-
-                &lt;/tr&gt;
-            &lt;/tbody&gt;
-        &lt;/table&gt;
+        &lt;div&gt;{{pmsg}}&lt;/div&gt;
+        &lt;menu-item :title=&#39;ptitle&#39; content=&#39;hello&#39;&gt;&lt;/menu-item&gt;
     &lt;/div&gt;
 
     &lt;script&gt;
-        Vue.directive(&#39;focus&#39;, {
-            inserted: function (el, building) {
-                el.focus();
-            }
+        Vue.component(&#39;menu-item&#39;, {
+            props:[&#39;title&#39;,&#39;content&#39;],
+            data: function () {
+                return {
+                    msg: &#39;子组件本身的数据&#39;
+                }
+            },
+            template: `&lt;div&gt;{{msg+'----'+title+'---'+content}}&lt;/div&gt;`
+
         })
         var vm = new Vue({
             el: &#39;#app&#39;,
             data: {
-                uid: &#39;&#39;,
-                uname: &#39;&#39;,
-                addFlag: false,
-                flag: false,
-                msg: &#39;&#39;
+                pmsg: &#39;父组件的内容&#39;,
+                ptitle:&#39;动态属性绑定&#39;
             },
-            methods: {
-                toEdit(id) {
-                    this.msg.some((item) =&gt; {
-                        if (item.id == id) {
-                            this.uid = item.id;
-                            this.uname = item.name;
-                            return true;
-                        }
-                    })
-                    this.flag = true;
+            methods: {}
+        });
+    &lt;/script&gt;
+&lt;/body&gt;</code></pre>
+<h2 id="2-父组件传递数据给子组件"><a href="#2-父组件传递数据给子组件" class="headerlink" title="2.父组件传递数据给子组件"></a>2.父组件传递数据给子组件</h2><pre><code class="html">&lt;body&gt;
+    &lt;div id=&quot;app&quot;&gt;
+        &lt;menu-list :arr=&#39;arr&#39; :obj=&#39;pobj&#39; :num=&#39;num&#39;&gt;
+            &lt;menu-list /&gt;
+    &lt;/div&gt;
+
+    &lt;script&gt;
+        Vue.component(&#39;menu-list&#39;, {
+            props: [&#39;arr&#39;, &#39;obj&#39;, &#39;num&#39;],
+            data: function () {
+                return {
+                    msg: &#39;hello&#39;
+                }
+            },
+            template: `&lt;div&gt;&lt;div v-for=&#39;item in arr&#39;&gt;{{item}}&lt;/div&gt;&lt;/div&gt;`
+        })
+        var vm = new Vue({
+            el: &#39;#app&#39;,
+            data: {
+                arr: [1, 2, 3, 4],
+                pobj: {
+                    id: &#39;angelina&#39;,
+                    name: 12,
 
                 },
-                del(id) {
-                    this.msg = this.msg.filter((item) =&gt; {
-                        return item.id != id;
-                    })
-
-                    // var index = this.msg.findIndex(function (item) {
-                    //     return item.id == id;
-                    // })
-                    // this.msg.splice(index, 1);
-                },
-                add() {
-                    if (this.flag) {
-                        this.msg[this.uid - 1].name = this.uname;
-                        this.uname = &#39;&#39;;
-                        this.uid = &#39;&#39;;
-                        this.flag = false;
-                    } else if (this.msg.some((item) =&gt; {
-                            return item.id == this.uid
-                        })) {
-                        alert(&#39;Duplicate ID!&#39;);
-                    } else {
-                        this.msg.push({
-                            id: this.uid,
-                            name: this.uname,
-                            time: new Date()
-                        })
-                    }
-                }
+                num: &#39;hello&#39;
             },
-            filters: {
-                timeFormat: function (el, arg) {
-                    var ret = &#39;&#39;;
-                    ret = el.getFullYear() + &#39;-&#39; + (el.getMonth() + 1) + &#39;-&#39; + el.getDate() + &#39;/&#39; + el
-                        .getHours() + &#39;:&#39; + el.getMinutes() + &#39;:&#39; + el.getSeconds();
-                    return ret;
-                }
-            },
-            computed: {
-                total: function () {
-                    return this.msg.length;
-                }
-            },
-            watch: {
-                uname: function (val) {
-                    var msgFlag = this.msg.some(function (item) {
-                        return item.name == val;
-                    });
-                    if (msgFlag) {
-                        this.addFlag = true;
-                    }
-
-                }
-            },
-            mounted() {
-                var data = [{
-                        id: 1,
-                        name: &#39;水浒传&#39;,
-                        time: new Date()
-                    },
-                    {
-                        id: 2,
-                        name: &#39;三国演义&#39;,
-                        time: new Date()
-                    },
-                    {
-                        id: 3,
-                        name: &#39;红楼梦&#39;,
-                        time: new Date()
-                    },
-                    {
-                        id: 4,
-                        name: &#39;西游记&#39;,
-                        time: new Date()
-                    },
-                ];
-                this.msg = data;
-            },
+            methods: {}
         });
     &lt;/script&gt;
 &lt;/body&gt;
 
 &lt;/html&gt;</code></pre>
+<h1 id="3-子组件传递数据给父组件"><a href="#3-子组件传递数据给父组件" class="headerlink" title="3.子组件传递数据给父组件"></a>3.子组件传递数据给父组件</h1><pre><code class="html">&lt;body&gt;
+    &lt;div id=&quot;app&quot;&gt;
+        &lt;div :style=&#39;{fontSize:fontSize+&quot;px&quot;}&#39;&gt;{{pmsg}}&lt;/div&gt;
+        &lt;my-com1 @enlarge-text=&#39;handle($event)&#39;&gt;
+            &lt;/mycon1&gt;
+    &lt;/div&gt;
+
+    &lt;script&gt;
+        Vue.component(&#39;my-com1&#39;, {
+            props: [],
+            template: `
+            &lt;div&gt;
+                &lt;button @click=&#39;$emit(&quot;enlarge-text&quot;,5)&#39;&gt;click me&lt;/button&gt;
+                &lt;button @click=&#39;$emit(&quot;enlarge-text&quot;,20)&#39;&gt;click me&lt;/button&gt;
+            &lt;/div&gt;
+            `
+
+        })
+        var vm = new Vue({
+            el: &#39;#app&#39;,
+            data: {
+                pmsg: &#39;父组件中内容&#39;,
+                fontSize: 10
+            },
+            methods: {
+                handle(val) {
+                    this.fontSize += val;
+                }
+            }
+        });
+    &lt;/script&gt;
+&lt;/body&gt;</code></pre>
 
             <hr>
           </div>
@@ -489,7 +451,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "some/filter/findIndex/图书管理系统&nbsp;",
+        "组件注册的注意事项&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
