@@ -15,7 +15,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <meta name="keywords" content="">
-  <title>归档 ~ Tohrux!</title>
+  <title>$nextTick ~ Tohrux!</title>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/font-awesome/css/all.min.css"  >
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/bootstrap/css/bootstrap.min.css"  >
@@ -36,7 +36,7 @@
 
 
 <body>
-  <header style="height: 80vh;">
+  <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -95,6 +95,41 @@
             </span>
 
             
+              <br>
+              
+                <p class="mt-3">
+                  <i class="fas fa-calendar-alt" aria-hidden="true"></i>&nbsp;
+                  星期三, 四月 1日 2020, 1:27 凌晨
+                </p>
+              
+
+              <p>
+                
+                  
+                  &nbsp;<i class="far fa-chart-bar"></i>
+                  <span class="post-count">
+                    155 字
+                  </span>&nbsp;
+                
+
+                
+                  
+                  &nbsp;<i class="far fa-clock"></i>
+                  <span class="post-count">
+                      1 分钟
+                  </span>&nbsp;
+                
+
+                
+                  <!-- 不蒜子统计文章PV -->
+                  
+                  &nbsp;<i class="far fa-eye" aria-hidden="true"></i>&nbsp;
+                  <span id="busuanzi_container_page_pv">
+                    <span id="busuanzi_value_page_pv"></span> 次
+                  </span>&nbsp;
+                
+              </p>
+            
           </div>
 
           
@@ -105,59 +140,81 @@
 
   <main>
     
-      <div class="container nopadding-md">
-        <div class="py-5 z-depth-3" id="board">
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<div class="list-group">
-  <p class="h4">共计 55 篇文章</p>
-  <hr>
-  
-    
       
-      <p class="h5">2020</p>
-    
-    <a href="/2020/02/28/2020-2-28/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">动画效果</span>
-      <span style="float: right;">02-28</span>
-    </a>
-  
-    
-    <a href="/2020/02/27/2020-2-27/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">组件注册的注意事项</span>
-      <span style="float: right;">02-27</span>
-    </a>
-  
-    
-    <a href="/2020/02/26/2020-2-26/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">some/filter/findIndex/图书管理系统</span>
-      <span style="float: right;">02-26</span>
-    </a>
-  
-    
-    <a href="/2020/02/24/2020-2-24/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">计算属性/侦听器/过滤器/数组方法</span>
-      <span style="float: right;">02-24</span>
-    </a>
-  
-    
-    <a href="/2020/02/23/2020-2-23/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">vue/v-model/表单</span>
-      <span style="float: right;">02-23</span>
-    </a>
-  
-</div>
 
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="py-5 z-depth-3" id="board">
+        <div class="post-content mx-auto" id="post">
+          <div class="markdown-body">
+            <pre><code class="js"> showInput (scope) {
+      scope.row.inputVisible = true
 
-              </div>
-            </div>
+      // 当页面上的元素重新渲染后才会执行回调函数中的代码
+      this.$nextTick(() =&gt; {
+        this.$refs.saveTagInput.focus()
+      })
+    }</code></pre>
+<pre><code class="html">&lt;template slot-scope=&quot;scope&quot;&gt;
+                &lt;el-tag type=&quot;success&quot; v-for=&quot;(item,i) in scope.row.attr_vals&quot; :key=&quot;i&quot; closable&gt;{{item}}&lt;/el-tag&gt;
+                &lt;el-input ref=&quot;saveTagInput&quot; v-if=&quot;scope.row.inputVisible&quot; v-model=&quot;scope.row.inputValue&quot; class=&quot;input-new-tag&quot; size=&quot;small&quot;
+                @keyup.enter.native=&quot;handleInputConfirm(scope)&quot;
+                @blur=&quot;handleInputConfirm(scope)&quot;&gt;&lt;/el-input&gt;
+                &lt;el-button type=&quot;primary&quot; v-else class=&quot;button-new-tag&quot; size=&quot;small&quot; @click=&quot;showInput(scope)&quot;&gt;+ new tag&lt;/el-button&gt;
+              &lt;/template&gt;</code></pre>
+
+            <hr>
+          </div>
+          <br>
+          <div>
+            <p>
+            
+            
+            </p>
+            
           </div>
         </div>
       </div>
+    </div>
+    <div class="d-none d-lg-block col-lg-2 toc-container">
+      
+  <div id="toc">
+    <p class="h4"><i class="far fa-list-alt"></i>&nbsp;目录</p>
+    <div id="tocbot"></div>
+  </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- custom -->
+
+
+<!-- Comments -->
+<div class="col-lg-7 mx-auto nopadding-md">
+  <div class="container comments mx-auto" id="comments">
+    
+      <br><br>
+      
+      
+  <script defer src="https://utteranc.es/client.js"
+          repo="tohrux/tohrux.github.io"
+          issue-term="pathname"
+  
+          label="utterances"
+    
+          theme="github-light"
+          crossorigin="anonymous"
+          async>
+  </script>
+
+
+    
+  </div>
+</div>
+
     
   </main>
 
@@ -232,6 +289,11 @@
 
 
 
+  
+    <script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/tocbot/tocbot.min.js" ></script>
+  
+  <script src="/js/post.js" ></script>
+
 
 
   <script src="/lib/smooth-scroll/smooth-scroll.min.js" ></script>
@@ -272,7 +334,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "归档&nbsp;",
+        "$nextTick&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,

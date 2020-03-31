@@ -4,6 +4,32 @@
   
   
   <entry>
+    <title>$nextTick</title>
+    <link href="undefined2020/04/01/2020-4-1/"/>
+    <url>2020/04/01/2020-4-1/</url>
+    
+    <content type="html"><![CDATA[<pre><code class="js"> showInput (scope) {      scope.row.inputVisible = true      // 当页面上的元素重新渲染后才会执行回调函数中的代码      this.$nextTick(() =&gt; {        this.$refs.saveTagInput.focus()      })    }</code></pre><pre><code class="html">&lt;template slot-scope=&quot;scope&quot;&gt;                &lt;el-tag type=&quot;success&quot; v-for=&quot;(item,i) in scope.row.attr_vals&quot; :key=&quot;i&quot; closable&gt;{{item}}&lt;/el-tag&gt;                &lt;el-input ref=&quot;saveTagInput&quot; v-if=&quot;scope.row.inputVisible&quot; v-model=&quot;scope.row.inputValue&quot; class=&quot;input-new-tag&quot; size=&quot;small&quot;                @keyup.enter.native=&quot;handleInputConfirm(scope)&quot;                @blur=&quot;handleInputConfirm(scope)&quot;&gt;&lt;/el-input&gt;                &lt;el-button type=&quot;primary&quot; v-else class=&quot;button-new-tag&quot; size=&quot;small&quot; @click=&quot;showInput(scope)&quot;&gt;+ new tag&lt;/el-button&gt;              &lt;/template&gt;</code></pre>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2020/3/21</title>
+    <link href="undefined2020/03/21/2020-3-21/"/>
+    <url>2020/03/21/2020-3-21/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>动画效果</title>
     <link href="undefined2020/02/28/2020-2-28/"/>
     <url>2020/02/28/2020-2-28/</url>

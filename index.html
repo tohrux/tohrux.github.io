@@ -122,6 +122,66 @@
     
     
     <div class="col-12 col-md-8 m-auto">
+      <a href="/2020/04/01/2020-4-1/">
+        <p class="h4 index-header">$nextTick</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1"> showInput (scope) {
+      scope.row.inputVisible = true
+
+      // 当页面上的元素重新渲染后才会执行回调函数中的代码
+      this.$nextTick(() =&gt; {
+        this.$refs.saveTagInput.focus()
+      })
+    }
+&lt;template slot-scope=&quot;scope&quot;&gt;
+                &lt;el-tag type=&quot;success&quot; v-for=&quot;(item,i) in scope.row.attr_vals&quot; :key=&quot;i&quot; closable&gt;{{item}}&lt;/el-tag&gt;
+                &lt;el-input ref=&quot;saveTagInput&quot; v-if=&quot;scope.row.inputVisible&quot; v-model=&quot;scope.</div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2020-04-01&nbsp;&nbsp;
+        
+        
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/2020/03/21/2020-3-21/">
+        <p class="h4 index-header">2020/3/21</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1"></div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2020-03-21&nbsp;&nbsp;
+        
+        
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+    <div class="col-12 col-md-8 m-auto">
       <a href="/2020/02/28/2020-2-28/">
         <p class="h4 index-header">动画效果</p>
         
@@ -452,89 +512,6 @@ findIndex()返回一个符合条件的的数组成员的位置,如果没有找�
       <div>
         
           <i class="iconfont icon-riqi2"></i>&nbsp;2020-01-28&nbsp;&nbsp;
-        
-        
-        
-          <i class="iconfont icon-tag"></i>
-          
-            <a href="/tags/vue">vue</a>&nbsp;
-          
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mb-4 mx-auto">
-    
-    
-      <div class="col-12 col-md-4 m-auto">
-        <a href="/2020/01/27/1-27/" target="_self">
-          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20200127152244.png" srcset="undefined" alt="1/27" class="img-fluid rounded z-depth-3 index-thumbnails">
-        </a>
-      </div>
-    
-    <div class="col-12 col-md-8 m-auto">
-      <a href="/2020/01/27/1-27/">
-        <p class="h4 index-header">1/27</p>
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">
-</div>
-        </div>
-      </a>
-
-      <div>
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2020-01-27&nbsp;&nbsp;
-        
-        
-        
-          <i class="iconfont icon-tag"></i>
-          
-            <a href="/tags/draw">draw</a>&nbsp;
-          
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mb-4 mx-auto">
-    
-    
-    <div class="col-12 col-md-8 m-auto">
-      <a href="/2020/01/20/vue1-20/">
-        <p class="h4 index-header">vue 1/20</p>
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">箭头函数内的this指向的是此函数的外部的this
-methods: {
-                kk() {
-                    setInterval(() =&gt; {
-                        var start = this.msg1.substring(0, 1);
-                        var end = this.msg1.substring(1);
-                        this.msg1 = end + start;
-                        console.log(this.msg1);
-
-                    }, 400);
-                }
-            }
-👆的this指向的是vue对象
-事件修饰符阻止冒泡stop
-&lt;div id=&quot;app&quot;&gt;
-        &lt;p @click=&quot;imp&quot;&gt;
-            &l</div>
-        </div>
-      </a>
-
-      <div>
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2020-01-20&nbsp;&nbsp;
         
         
         
