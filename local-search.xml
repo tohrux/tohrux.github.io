@@ -223,11 +223,11 @@
       
       <tag>php</tag>
       
-      <tag>mysql</tag>
+      <tag>pdo</tag>
       
       <tag>database</tag>
       
-      <tag>pdo</tag>
+      <tag>mysql</tag>
       
       <tag>数据库</tag>
       
@@ -248,9 +248,9 @@
     
     <tags>
       
-      <tag>mysql</tag>
-      
       <tag>database</tag>
+      
+      <tag>mysql</tag>
       
     </tags>
     
