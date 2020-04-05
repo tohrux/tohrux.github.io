@@ -4,24 +4,49 @@
   
   
   <entry>
-    <title>$nextTick</title>
-    <link href="undefined2020/04/01/2020-4-1/"/>
-    <url>2020/04/01/2020-4-1/</url>
+    <title>git新建gh-pages分支展示项目</title>
+    <link href="undefined2020/04/05/4-5/"/>
+    <url>2020/04/05/4-5/</url>
     
-    <content type="html"><![CDATA[<pre><code class="js"> showInput (scope) {      scope.row.inputVisible = true      // 当页面上的元素重新渲染后才会执行回调函数中的代码      this.$nextTick(() =&gt; {        this.$refs.saveTagInput.focus()      })    }</code></pre><pre><code class="html">&lt;template slot-scope=&quot;scope&quot;&gt;                &lt;el-tag type=&quot;success&quot; v-for=&quot;(item,i) in scope.row.attr_vals&quot; :key=&quot;i&quot; closable&gt;{{item}}&lt;/el-tag&gt;                &lt;el-input ref=&quot;saveTagInput&quot; v-if=&quot;scope.row.inputVisible&quot; v-model=&quot;scope.row.inputValue&quot; class=&quot;input-new-tag&quot; size=&quot;small&quot;                @keyup.enter.native=&quot;handleInputConfirm(scope)&quot;                @blur=&quot;handleInputConfirm(scope)&quot;&gt;&lt;/el-input&gt;                &lt;el-button type=&quot;primary&quot; v-else class=&quot;button-new-tag&quot; size=&quot;small&quot; @click=&quot;showInput(scope)&quot;&gt;+ new tag&lt;/el-button&gt;              &lt;/template&gt;</code></pre>]]></content>
+    <content type="html"><![CDATA[<pre><code class="git">git subtree push --prefix=dist origin gh-pages</code></pre><p>只上传dist文件夹中的内容</p>]]></content>
     
     
+    
+    <tags>
+      
+      <tag>git</tag>
+      
+    </tags>
     
   </entry>
   
   
   
   <entry>
-    <title>2020/3/21</title>
-    <link href="undefined2020/03/21/2020-3-21/"/>
-    <url>2020/03/21/2020-3-21/</url>
+    <title>vue路由懒加载</title>
+    <link href="undefined2020/04/02/2020-4-2/"/>
+    <url>2020/04/02/2020-4-2/</url>
     
-    <content type="html"><![CDATA[]]></content>
+    <content type="html"><![CDATA[<p>安装插件 @babel/plugin-syntax-dynamic-import</p><p>👇</p><p>在<code>babel.config.js</code>中导入</p><p>👇</p><pre><code class="js">// import login from &#39;../components/login.vue&#39;// import home from &#39;../components/Home.vue&#39;// import welcome from &#39;../components/Welcome.vue&#39;// import users from &#39;../components/users/Users.vue&#39;// import rights from &#39;../components/power/Rights.vue&#39;// import roles from &#39;../components/power/Roles.vue&#39;// import cate from &#39;../components/goods/Cate.vue&#39;// import params from &#39;../components/goods/Params.vue&#39;// import goodList from &#39;../components/goods/goodList.vue&#39;// import Add from &#39;../components/goods/Add.vue&#39;// import order from &#39;../components/order/order.vue&#39;// import report from &#39;../components/report/report.vue&#39;const Login = () =&gt; import(/* webpackChunkName: &quot;login_home_welcome&quot; */ &#39;../components/login.vue&#39;)const Home = () =&gt; import(/* webpackChunkName: &quot;login_home_welcome&quot; */ &#39;../components/Home.vue&#39;)const Welcome = () =&gt; import(/* webpackChunkName: &quot;login_home_welcome&quot; */ &#39;../components/Welcome.vue&#39;)const Users = () =&gt; import(/* webpackChunkName: &quot;Users_Rights_Roles&quot; */ &#39;../components/users/Users.vue&#39;)const Rights = () =&gt; import(/* webpackChunkName: &quot;Users_Rights_Roles&quot; */ &#39;../components/power/Rights.vue&#39;)const Roles = () =&gt; import(/* webpackChunkName: &quot;Users_Rights_Roles&quot; */ &#39;../components/power/Roles.vue&#39;)const Cate = () =&gt; import(/* webpackChunkName: &quot;Cate_Params&quot; */ &#39;../components/goods/Cate.vue&#39;)const Params = () =&gt; import(/* webpackChunkName: &quot;Cate_Params&quot; */ &#39;../components/goods/Params.vue&#39;)const GoodsList = () =&gt; import(/* webpackChunkName: &quot;GoodsList_Add&quot; */ &#39;../components/goods/goodList.vue&#39;)const Add = () =&gt; import(/* webpackChunkName: &quot;GoodsList_Add&quot; */ &#39;../components/goods/Add.vue&#39;)const Order = () =&gt; import(/* webpackChunkName: &quot;Order_Report&quot; */ &#39;../components/order/order.vue&#39;)const Report = () =&gt; import(/* webpackChunkName: &quot;Order_Report&quot; */ &#39;../components/report/report.vue&#39;)</code></pre>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>vue</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>$nextTick</title>
+    <link href="undefined2020/04/01/2020-4-1/"/>
+    <url>2020/04/01/2020-4-1/</url>
+    
+    <content type="html"><![CDATA[<pre><code class="js"> showInput (scope) {      scope.row.inputVisible = true      // 当页面上的元素重新渲染后才会执行回调函数中的代码      this.$nextTick(() =&gt; {        this.$refs.saveTagInput.focus()      })    }</code></pre><pre><code class="html">&lt;template slot-scope=&quot;scope&quot;&gt;                &lt;el-tag type=&quot;success&quot; v-for=&quot;(item,i) in scope.row.attr_vals&quot; :key=&quot;i&quot; closable&gt;{{item}}&lt;/el-tag&gt;                &lt;el-input ref=&quot;saveTagInput&quot; v-if=&quot;scope.row.inputVisible&quot; v-model=&quot;scope.row.inputValue&quot; class=&quot;input-new-tag&quot; size=&quot;small&quot;                @keyup.enter.native=&quot;handleInputConfirm(scope)&quot;                @blur=&quot;handleInputConfirm(scope)&quot;&gt;&lt;/el-input&gt;                &lt;el-button type=&quot;primary&quot; v-else class=&quot;button-new-tag&quot; size=&quot;small&quot; @click=&quot;showInput(scope)&quot;&gt;+ new tag&lt;/el-button&gt;              &lt;/template&gt;</code></pre>]]></content>
     
     
     
