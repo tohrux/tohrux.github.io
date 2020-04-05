@@ -4,44 +4,6 @@
   
   
   <entry>
-    <title>git新建gh-pages分支展示项目</title>
-    <link href="undefined2020/04/05/4-5/"/>
-    <url>2020/04/05/4-5/</url>
-    
-    <content type="html"><![CDATA[<pre><code class="git">git subtree push --prefix=dist origin gh-pages</code></pre><p>只上传dist文件夹中的内容</p>]]></content>
-    
-    
-    
-    <tags>
-      
-      <tag>git</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>vue路由懒加载</title>
-    <link href="undefined2020/04/02/2020-4-2/"/>
-    <url>2020/04/02/2020-4-2/</url>
-    
-    <content type="html"><![CDATA[<p>安装插件 @babel/plugin-syntax-dynamic-import</p><p>👇</p><p>在<code>babel.config.js</code>中导入</p><p>👇</p><pre><code class="js">// import login from &#39;../components/login.vue&#39;// import home from &#39;../components/Home.vue&#39;// import welcome from &#39;../components/Welcome.vue&#39;// import users from &#39;../components/users/Users.vue&#39;// import rights from &#39;../components/power/Rights.vue&#39;// import roles from &#39;../components/power/Roles.vue&#39;// import cate from &#39;../components/goods/Cate.vue&#39;// import params from &#39;../components/goods/Params.vue&#39;// import goodList from &#39;../components/goods/goodList.vue&#39;// import Add from &#39;../components/goods/Add.vue&#39;// import order from &#39;../components/order/order.vue&#39;// import report from &#39;../components/report/report.vue&#39;const Login = () =&gt; import(/* webpackChunkName: &quot;login_home_welcome&quot; */ &#39;../components/login.vue&#39;)const Home = () =&gt; import(/* webpackChunkName: &quot;login_home_welcome&quot; */ &#39;../components/Home.vue&#39;)const Welcome = () =&gt; import(/* webpackChunkName: &quot;login_home_welcome&quot; */ &#39;../components/Welcome.vue&#39;)const Users = () =&gt; import(/* webpackChunkName: &quot;Users_Rights_Roles&quot; */ &#39;../components/users/Users.vue&#39;)const Rights = () =&gt; import(/* webpackChunkName: &quot;Users_Rights_Roles&quot; */ &#39;../components/power/Rights.vue&#39;)const Roles = () =&gt; import(/* webpackChunkName: &quot;Users_Rights_Roles&quot; */ &#39;../components/power/Roles.vue&#39;)const Cate = () =&gt; import(/* webpackChunkName: &quot;Cate_Params&quot; */ &#39;../components/goods/Cate.vue&#39;)const Params = () =&gt; import(/* webpackChunkName: &quot;Cate_Params&quot; */ &#39;../components/goods/Params.vue&#39;)const GoodsList = () =&gt; import(/* webpackChunkName: &quot;GoodsList_Add&quot; */ &#39;../components/goods/goodList.vue&#39;)const Add = () =&gt; import(/* webpackChunkName: &quot;GoodsList_Add&quot; */ &#39;../components/goods/Add.vue&#39;)const Order = () =&gt; import(/* webpackChunkName: &quot;Order_Report&quot; */ &#39;../components/order/order.vue&#39;)const Report = () =&gt; import(/* webpackChunkName: &quot;Order_Report&quot; */ &#39;../components/report/report.vue&#39;)</code></pre>]]></content>
-    
-    
-    
-    <tags>
-      
-      <tag>vue</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>$nextTick</title>
     <link href="undefined2020/04/01/2020-4-1/"/>
     <url>2020/04/01/2020-4-1/</url>
@@ -49,25 +11,6 @@
     <content type="html"><![CDATA[<pre><code class="js"> showInput (scope) {      scope.row.inputVisible = true      // 当页面上的元素重新渲染后才会执行回调函数中的代码      this.$nextTick(() =&gt; {        this.$refs.saveTagInput.focus()      })    }</code></pre><pre><code class="html">&lt;template slot-scope=&quot;scope&quot;&gt;                &lt;el-tag type=&quot;success&quot; v-for=&quot;(item,i) in scope.row.attr_vals&quot; :key=&quot;i&quot; closable&gt;{{item}}&lt;/el-tag&gt;                &lt;el-input ref=&quot;saveTagInput&quot; v-if=&quot;scope.row.inputVisible&quot; v-model=&quot;scope.row.inputValue&quot; class=&quot;input-new-tag&quot; size=&quot;small&quot;                @keyup.enter.native=&quot;handleInputConfirm(scope)&quot;                @blur=&quot;handleInputConfirm(scope)&quot;&gt;&lt;/el-input&gt;                &lt;el-button type=&quot;primary&quot; v-else class=&quot;button-new-tag&quot; size=&quot;small&quot; @click=&quot;showInput(scope)&quot;&gt;+ new tag&lt;/el-button&gt;              &lt;/template&gt;</code></pre>]]></content>
     
     
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>动画效果</title>
-    <link href="undefined2020/02/28/2020-2-28/"/>
-    <url>2020/02/28/2020-2-28/</url>
-    
-    <content type="html"><![CDATA[<pre><code class="html">&lt;!DOCTYPE html&gt;&lt;html lang=&quot;en&quot;&gt;&lt;head&gt;    &lt;meta charset=&quot;UTF-8&quot;&gt;    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;    &lt;title&gt;Document&lt;/title&gt;    &lt;script src=&quot;js/vue.js&quot;&gt;&lt;/script&gt;    &lt;style&gt;        .v-enter,        .v-leave-to {            opacity: 0;            transform: translateX(150px);        }        .v-enter-active,        .v-leave-active {            transition: all 0.5s ease;        }    &lt;/style&gt;&lt;/head&gt;&lt;body&gt;    &lt;div id=&quot;app&quot;&gt;        &lt;a href=&quot;&quot; @click.prevent=&quot;comname=&#39;login&#39;&quot;&gt;login&lt;/a&gt;        &lt;a href=&quot;&quot; @click.prevent=&quot;comname=&#39;register&#39;&quot;&gt;register&lt;/a&gt;        &lt;transition mode=&quot;out-in&quot;&gt;            &lt;component :is=&quot;comname&quot;&gt;&lt;/component&gt;        &lt;/transition&gt;    &lt;/div&gt;    &lt;script&gt;        Vue.component(&#39;login&#39;, {            template: `&lt;div&gt;login&lt;/div&gt;`        })        Vue.component(&#39;register&#39;, {            template: `&lt;div&gt;register&lt;/div&gt;`        })        var vm = new Vue({            el: &#39;#app&#39;,            data: {                comname: &#39;&#39;            },            methods: {}        });    &lt;/script&gt;&lt;/body&gt;&lt;/html&gt;</code></pre>]]></content>
-    
-    
-    
-    <tags>
-      
-      <tag>vue</tag>
-      
-    </tags>
     
   </entry>
   
@@ -131,25 +74,6 @@
   
   
   <entry>
-    <title>vue/v-model/表单</title>
-    <link href="undefined2020/02/23/2020-2-23/"/>
-    <url>2020/02/23/2020-2-23/</url>
-    
-    <content type="html"><![CDATA[<pre><code class="html">&lt;!DOCTYPE html&gt;&lt;html lang=&quot;en&quot;&gt;&lt;head&gt;    &lt;meta charset=&quot;UTF-8&quot;&gt;    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;    &lt;title&gt;Document&lt;/title&gt;    &lt;script src=&quot;./vue.js&quot;&gt;&lt;/script&gt;&lt;/head&gt;&lt;body&gt;    &lt;div id=&quot;app&quot;&gt;        &lt;form action=&quot;https://www.baidu.com&quot;&gt;            name:&lt;input type=&quot;text&quot; v-model=&#39;uname&#39;&gt;            &lt;div&gt;                male: &lt;input type=&quot;radio&quot; value=&quot;1&quot; id=&quot;male&quot; v-model=&#39;gender&#39;&gt;                female: &lt;input type=&quot;radio&quot; value=&quot;2&quot; id=&#39;female&#39; v-model=&#39;gender&#39;&gt;            &lt;/div&gt;            &lt;div&gt;                hobby:                ball&lt;input type=&quot;checkbox&quot; value=&quot;1&quot; id=&quot;ball&quot; v-model=&#39;hobby&#39;&gt;                game&lt;input type=&quot;checkbox&quot; value=&quot;2&quot; id=&quot;ball&quot; v-model=&#39;hobby&#39;&gt;                girlfriend&lt;input type=&quot;checkbox&quot; value=&quot;3&quot; id=&quot;ball&quot; v-model=&#39;hobby&#39;&gt;            &lt;/div&gt;            &lt;div&gt;                &lt;select name=&quot;&quot; id=&quot;&quot; v-model=&#39;occupation&#39;&gt;                    &lt;option value=&quot;0&quot; disabled&gt;select your occupation&lt;/option&gt;                    &lt;option value=&quot;doctor&quot;&gt;doctor&lt;/option&gt;                    &lt;option value=&quot;painter&quot;&gt;painter&lt;/option&gt;                &lt;/select&gt;            &lt;/div&gt;            &lt;div&gt;                &lt;textarea name=&quot;&quot; id=&quot;&quot; v-model=&#39;textarea&#39;&gt;&lt;/textarea&gt;            &lt;/div&gt;            &lt;input type=&quot;submit&quot; name=&quot;&quot; @click.prevent=&#39;sub&#39;&gt;        &lt;/form&gt;    &lt;/div&gt;    &lt;script&gt;        var vm = new Vue({            el: &#39;#app&#39;,            data: {                msg: &#39;123&#39;,                uname: &#39;&#39;,                gender: 1,                hobby: [1],                occupation:&#39;doctor&#39;,                textarea:&#39;&#39;            },            methods: {                sub() {                    console.log(this.gender, this.hobby.toString(),this.occupation,this.textarea);                }            }        });    &lt;/script&gt;&lt;/body&gt;&lt;/html&gt;</code></pre><h1 id="表单域修饰符"><a href="#表单域修饰符" class="headerlink" title="表单域修饰符"></a>表单域修饰符</h1><ul><li>number:转换为数值</li><li>trim:去掉开始和结尾的空格</li><li>lazy:将input事件切换为change事件</li></ul><pre><code class="js">&lt;input type=&#39;text&#39; v-model.number=&#39;age&#39;/&gt;</code></pre>]]></content>
-    
-    
-    
-    <tags>
-      
-      <tag>vue</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>vue按键修饰符/自定义全局指令</title>
     <link href="undefined2020/01/29/vue1-29/"/>
     <url>2020/01/29/vue1-29/</url>
@@ -161,63 +85,6 @@
     <tags>
       
       <tag>vue</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>vue过滤器/padStart</title>
-    <link href="undefined2020/01/28/1-28-2/"/>
-    <url>2020/01/28/1-28-2/</url>
-    
-    <content type="html"><![CDATA[<pre><code class="html"> &lt;div id=&quot;app&quot;&gt;        &lt;div&gt; {{msg | msgFormat('hello',"boy")}} &lt;/div&gt;    &lt;/div&gt;    &lt;script&gt;        Vue.filter(&#39;msgFormat&#39;, function (msg, arg, arg2) {            return msg.replace(/善良/g, &#39;邪恶&#39; + arg + arg2);            //过滤器可以多个叠加,可以传参数        });        var vm = new Vue({            el: &quot;#app&quot;,            data: {                msg: &quot;大家好,我是一个善良的人,我很善良&quot;,            },            methods: {            },        })    &lt;/script&gt;</code></pre><p>同名过滤器会就近选择</p><pre><code class="html">&lt;!DOCTYPE html&gt;&lt;html lang=&quot;en&quot;&gt;&lt;head&gt;    &lt;meta charset=&quot;UTF-8&quot;&gt;    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;    &lt;title&gt;Document&lt;/title&gt;    &lt;script src=&quot;js/vue.js&quot;&gt;&lt;/script&gt;&lt;/head&gt;&lt;body&gt;    &lt;div&gt;        {{1+1}}    &lt;/div&gt;    &lt;div id=&quot;app&quot;&gt;        &lt;div&gt;            {{time | timeFormat}}        &lt;/div&gt;        &lt;div&gt; {{time}} &lt;/div&gt;    &lt;/div&gt;    &lt;script&gt;        Vue.filter(&#39;timeFormat&#39;, function () {            var t = new Date();            var y = t.getFullYear();            var m = t.getMonth() + 1;            var d = t.getDate();            var min = t.getMinutes();            return `${y}-${m}-${d}`;        });        var vm = new Vue({            el: &quot;#app&quot;,            data: {                list: [{                    time: new Date(),                    id: 2                }],                time: new Date(),            },            filters: {                timeFormat: function () {                    var t = new Date();                    var y = t.getFullYear();                    var m = t.getMonth() + 1;                    var d = t.getDate();                    var min = t.getMinutes();                    return `${y}-${m}-${d}-----`;                }            }        })    &lt;/script&gt;&lt;/body&gt;&lt;/html&gt;</code></pre><p>padStart()&amp;padEnd()</p><pre><code class="html">var d = t.getDate().toString().padStart(2, &#39;0&#39;);////若不足两个字符串,则在开头添加 &quot;0&quot;</code></pre>]]></content>
-    
-    
-    
-    <tags>
-      
-      <tag>vue</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>vue添加删除搜索列表中的数据</title>
-    <link href="undefined2020/01/28/vue1-28/"/>
-    <url>2020/01/28/vue1-28/</url>
-    
-    <content type="html"><![CDATA[<pre><code class="html">&lt;!DOCTYPE html&gt;&lt;html lang=&quot;en&quot;&gt;&lt;head&gt;    &lt;meta charset=&quot;UTF-8&quot;&gt;    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;    &lt;title&gt;Document&lt;/title&gt;    &lt;script src=&quot;js/vue.js&quot;&gt;&lt;/script&gt;    &lt;link rel=&quot;stylesheet&quot; href=&quot;css/bootstrap.css&quot;&gt;&lt;/head&gt;&lt;body&gt;    &lt;div id=&quot;app&quot;&gt;        &lt;table class=&quot;table table-light&quot;&gt;            &lt;thead class=&quot;thead-light&quot;&gt;                &lt;tr&gt;                    &lt;th&gt;id&lt;/th&gt;                    &lt;th&gt;name&lt;/th&gt;                    &lt;th&gt;time&lt;/th&gt;                    &lt;th&gt;operation&lt;/th&gt;                &lt;/tr&gt;            &lt;/thead&gt;            &lt;tbody&gt;                &lt;tr v-for=&quot;value in search(result)&quot; :key=&quot;value.id&quot;&gt;                    &lt;td&gt; {{value.id}} &lt;/td&gt;                    &lt;td&gt; {{value.name}} &lt;/td&gt;                    &lt;td&gt; {{value.time}} &lt;/td&gt;                    &lt;td&gt; &lt;a href=&quot;&quot; @click.prevent=&quot;del(value.id)&quot;&gt;del&lt;/a&gt; &lt;/td&gt;                &lt;/tr&gt;            &lt;/tbody&gt;            &lt;tfoot&gt;                &lt;tr&gt;                    &lt;th&gt;#&lt;/th&gt;                &lt;/tr&gt;            &lt;/tfoot&gt;        &lt;/table&gt;        &lt;input type=&quot;text&quot; v-model=&quot;id&quot;&gt;        &lt;input type=&quot;text&quot; v-model=&quot;name&quot;&gt;        &lt;input type=&quot;button&quot; value=&quot;add&quot; @click=&quot;add&quot;&gt;        &lt;input type=&quot;text&quot; v-model=&quot;result&quot;&gt;    &lt;/div&gt;    &lt;script&gt;        var vm = new Vue({            el: &quot;#app&quot;,            data: {                id: &quot;&quot;,                name: &quot;&quot;,                result: &quot;&quot;,                list: [{                        id: 1,                        name: &quot;angelina&quot;,                        time: new Date()                    },                    {                        id: 2,                        name: &quot;skade&quot;,                        time: new Date()                    },                    {                        id: 3,                        name: &quot;eyjafjala&quot;,                        time: new Date()                    }                ]            },            methods: {                add() {                    this.list.push({                        id: this.id,                        name: this.name,                        time: new Date()                    });                    this.id = &quot;&quot;;                    this.name = &quot;&quot;;                },                del(id) {                    this.list.some((value, index) =&gt; {                        if (value.id == id) {                            this.list.splice(index, 1);                            return true;                        }                    })                },                search(result) {                    var newList = [];                    this.list.forEach((value) =&gt; {                        if (value.name.includes(result)) {                            newList.push(value);                        }                    })                    return newList;                    //es6新提供了一种字符串的检索方式,includes,用法和indexOf类似,                    // filter方法是直接返回一个新的数组,                    //var newList = this.list.filter(value=&gt;{                    // if(value.name.includes(result)){return value}                    // })                    // return newList;                }            },        })    &lt;/script&gt;&lt;/body&gt;&lt;/html&gt;</code></pre>]]></content>
-    
-    
-    
-    <tags>
-      
-      <tag>vue</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>1/27</title>
-    <link href="undefined2020/01/27/1-27/"/>
-    <url>2020/01/27/1-27/</url>
-    
-    <content type="html"><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20200127152244.png" srcset="undefined" alt=""></p>]]></content>
-    
-    
-    
-    <tags>
-      
-      <tag>draw</tag>
       
     </tags>
     
@@ -245,49 +112,11 @@
   
   
   <entry>
-    <title>vue 12/25</title>
-    <link href="undefined2019/12/26/1225/"/>
-    <url>2019/12/26/1225/</url>
-    
-    <content type="html"><![CDATA[]]></content>
-    
-    
-    
-    <tags>
-      
-      <tag>vue</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>vue v-text/html/插值表达式/v-bind/v-on</title>
     <link href="undefined2019/12/25/vue2/"/>
     <url>2019/12/25/vue2/</url>
     
     <content type="html"><![CDATA[<pre><code class="html">    &lt;div id=&quot;app&quot;&gt;        &lt;p&gt;            {{msg}}            &lt;div&gt;hello&lt;/div&gt;        &lt;/p&gt;        &lt;div v-html=&quot;msg2&quot;&gt;&lt;/div&gt;        &lt;input type=&quot;button&quot; v-on:click=&quot;show&quot; :value=&quot;msg&quot;&gt;    &lt;/div&gt;    &lt;script&gt;        var vm = new Vue({            el: &#39;#app&#39;, //表示上面new的vue的实例,要控制页面上的哪个区域            data: { //data属性中存放的是el中要用到的数据                msg: &#39;hello,我是msg&#39;,                msg2: &#39;&lt;h1&gt;hello ,I am msg2&lt;/h1&gt;&#39;,                btbMsg: &#39;click me&#39;            },            methods: {                show: function(){                    alert(123);                }            }        })    &lt;/script&gt;</code></pre><p>v-html,v-text:👩</p><pre><code>v-html,会直接解析data中的字符串里的html标签两者在使用时,在被绑定的html标签(&lt;div v-html=&quot;msg2&quot;&gt;&lt;/div&gt;中间输入内容是无效的,如果需要输入内容可以使用{{插值表达式}}</code></pre><p>v-bind:</p><pre><code>要为非v-开头的属性赋值时且想用datao里的数据可以使用&quot;v-bind:&quot;,简写&quot;:&quot;,👩:可以加上字符串或数字,把data中的属性当作变量使用👇    :value=&quot;btbMsg+123&quot;</code></pre><p>v-on: Vue提供的事件绑定机制 (简写@ 下面可以直接写成@click=’show’)</p><pre><code>&lt;input type=&quot;button&quot; v-on:click=&quot;show&quot; :value=&quot;msg&quot;&gt;需要在Vue里定义method</code></pre>]]></content>
-    
-    
-    
-    <tags>
-      
-      <tag>vue</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>vue12-23</title>
-    <link href="undefined2019/12/23/vue12-23/"/>
-    <url>2019/12/23/vue12-23/</url>
-    
-    <content type="html"><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191224154153.png" srcset="undefined" alt=""></p><p>mvvm</p><p>一段基本结构代码</p><pre><code class="html"> &lt;div id=&quot;app&quot;&gt;        &lt;p&gt;            {{msg}}        &lt;/p&gt;    &lt;/div&gt;    &lt;script&gt;        var vm = new Vue({            el: &#39;#app&#39;, //表示上面new的vue的实例,要控制页面上的哪个区域            data: { //data属性中存放的是el中要用到的数据                msg: &#39;hello,我是msg&#39;,            }        })</code></pre><p>👩: id=”app”  的div 是 “v”</p><p>​        vm对象是 “vm” 她在”m” 和 “v” 中起了 调度作用</p><p>​        data中的内容是 “m”</p>]]></content>
     
     
     
