@@ -122,41 +122,6 @@
     
     
     <div class="col-12 col-md-8 m-auto">
-      <a href="/2020/04/01/2020-4-1/">
-        <p class="h4 index-header">$nextTick</p>
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1"> showInput (scope) {
-      scope.row.inputVisible = true
-
-      // 当页面上的元素重新渲染后才会执行回调函数中的代码
-      this.$nextTick(() =&gt; {
-        this.$refs.saveTagInput.focus()
-      })
-    }
-&lt;template slot-scope=&quot;scope&quot;&gt;
-                &lt;el-tag type=&quot;success&quot; v-for=&quot;(item,i) in scope.row.attr_vals&quot; :key=&quot;i&quot; closable&gt;{{item}}&lt;/el-tag&gt;
-                &lt;el-input ref=&quot;saveTagInput&quot; v-if=&quot;scope.row.inputVisible&quot; v-model=&quot;scope.</div>
-        </div>
-      </a>
-
-      <div>
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2020-04-01&nbsp;&nbsp;
-        
-        
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mb-4 mx-auto">
-    
-    
-    <div class="col-12 col-md-8 m-auto">
       <a href="/2020/02/27/2020-2-27/">
         <p class="h4 index-header">组件注册的注意事项</p>
         
@@ -184,48 +149,6 @@
       <div>
         
           <i class="iconfont icon-riqi2"></i>&nbsp;2020-02-27&nbsp;&nbsp;
-        
-        
-        
-          <i class="iconfont icon-tag"></i>
-          
-            <a href="/tags/vue">vue</a>&nbsp;
-          
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mb-4 mx-auto">
-    
-    
-    <div class="col-12 col-md-8 m-auto">
-      <a href="/2020/02/26/2020-2-26/">
-        <p class="h4 index-header">some/filter/findIndex/图书管理系统</p>
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">some()判断数组中是否每个元素的满足条件,只要满足一个就返回true;
-filter()使用指定的函数测试所有元素,并创建一个包含所有通过测试的元素的数组;
-不会改变原数组
-findIndex()返回一个符合条件的的数组成员的位置,如果没有找到就返回-1;
-图书管理系统&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;script src=&quot;j</div>
-        </div>
-      </a>
-
-      <div>
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2020-02-26&nbsp;&nbsp;
         
         
         
@@ -312,52 +235,6 @@ findIndex()返回一个符合条件的的数组成员的位置,如果没有找�
       <div>
         
           <i class="iconfont icon-riqi2"></i>&nbsp;2020-01-29&nbsp;&nbsp;
-        
-        
-        
-          <i class="iconfont icon-tag"></i>
-          
-            <a href="/tags/vue">vue</a>&nbsp;
-          
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mb-4 mx-auto">
-    
-    
-    <div class="col-12 col-md-8 m-auto">
-      <a href="/2020/01/20/vue1-20/">
-        <p class="h4 index-header">vue 1/20</p>
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">箭头函数内的this指向的是此函数的外部的this
-methods: {
-                kk() {
-                    setInterval(() =&gt; {
-                        var start = this.msg1.substring(0, 1);
-                        var end = this.msg1.substring(1);
-                        this.msg1 = end + start;
-                        console.log(this.msg1);
-
-                    }, 400);
-                }
-            }
-👆的this指向的是vue对象
-事件修饰符阻止冒泡stop
-&lt;div id=&quot;app&quot;&gt;
-        &lt;p @click=&quot;imp&quot;&gt;
-            &l</div>
-        </div>
-      </a>
-
-      <div>
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2020-01-20&nbsp;&nbsp;
         
         
         
@@ -547,6 +424,189 @@ caption-side =&gt</div>
             <a href="/tags/css">css</a>&nbsp;
           
             <a href="/tags/bootstrap">bootstrap</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+      <div class="col-12 col-md-4 m-auto">
+        <a href="/2019/12/12/12-12/" target="_self">
+          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191213084556.png" srcset="undefined" alt="12-12" class="img-fluid rounded z-depth-3 index-thumbnails">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/2019/12/12/12-12/">
+        <p class="h4 index-header">12-12</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">今天被这个问题整自闭了
+    var obj = {
+        kk: function () {
+            function one() {
+                console.log(this);
+            }
+            one();
+        }
+    };
+    obj.kk();
+这里的obj.kk()输出的是window对象.
+我一直在想,为什么它的结果不是obj对象,因为kk方法属于obj,所以这个one()方法的调用者也是obj,甚至在吃晚饭的路上,等待晚饭做好,在等晚饭变亮的等待的过程中,我也在思考这个问题,我甚至问了老师,
+他是这么回答的
+
+我问了一个学习群里的人他们是这样回答的
+
+我发现三个人给出了三种不同答案,真的很晕啊目前可知情报:
+
+this指向的是函数运行时所在的环境
+
+而这个one()指向的window
+
+所以说这个one()是在全局环境下运行的
+这不是废话吗?
+
+
+12/13 更新
+
+好像把我一系列的问题都给解决了 开森~
+</div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-12-12&nbsp;&nbsp;
+        
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/don't%20know">don&#39;t know</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+      <div class="col-12 col-md-4 m-auto">
+        <a href="/2019/12/11/pdo/" target="_self">
+          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191211200234.png" srcset="undefined" alt="pdo" class="img-fluid rounded z-depth-3 index-thumbnails">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/2019/12/11/pdo/">
+        <p class="h4 index-header">pdo</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">PDO,php data object php数据对象
+连接服务器比php连接mysql多了一个参数,数据库类型
+$dbms Database Management System
+$dsn Data Source Name
+&lt;?php
+echo &quot;&lt;pre&gt;&quot;;
+$dbms = &#39;mysql&#39;;
+$host = &#39;localhost&#39;;
+$dbName = &#39;jk&#39;;
+$user = &#39;root&#39;;
+$pass = &#39;&#39;;
+$dsn = &quot;$dbms:host=$host;dbname=$dbName&quot;;
+// echo $dsn;
+
+try{
+    //去try,去执行,去创建,这个pdo对象
+    $pdo = new PDO($dsn,$user,$pass);
+    echo &quot;success&quot;;
+} catch(PDOException $e){
+   //如果try中内容有错误,则会在catch中捕获异常;即对象</div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-12-11&nbsp;&nbsp;
+        
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/php">php</a>&nbsp;
+          
+            <a href="/tags/mysql">mysql</a>&nbsp;
+          
+            <a href="/tags/database">database</a>&nbsp;
+          
+            <a href="/tags/pdo">pdo</a>&nbsp;
+          
+            <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93">数据库</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+      <div class="col-12 col-md-4 m-auto">
+        <a href="/2019/12/09/mysql/" target="_self">
+          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191209190454.png" srcset="undefined" alt="mysql" class="img-fluid rounded z-depth-3 index-thumbnails">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/2019/12/09/mysql/">
+        <p class="h4 index-header">mysql</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1"> 
+创建数据库create database 数据库名;
+选择数据库use 数据库名;
+删除数据库drop database 数据库名;
+创建数据表CREATE TABLE 数据表名 (字段名 字段类型);
+
+CREATE TABLE `tbl`(
+   `id` INT UNSIGNED AUTO_INCREMENT,
+   `title` VARCHAR(100) NOT NULL,
+   `author` VARCHAR(40) NOT NULL,
+   `date` DATE,
+   PRIMARY KEY ( `id` )
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;//引擎和格式
+comment 关键字后面跟上字符串 表示注释
+default关键字后面跟不给值时的默认选项
+unique可以为空甚至一直为空
+primary keyprimary key = unique + not null
+insert intoinsert into tb1 (id,title,date) values (1,&#39;one&#39;,&#39;2010-1-</div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-12-09&nbsp;&nbsp;
+        
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/mysql">mysql</a>&nbsp;
+          
+            <a href="/tags/database">database</a>&nbsp;
           
         
       </div>
