@@ -4,6 +4,63 @@
   
   
   <entry>
+    <title>git tag</title>
+    <link href="undefined2020/04/15/2020-4-15/"/>
+    <url>2020/04/15/2020-4-15/</url>
+    
+    <content type="html"><![CDATA[<h1 id="git-tag"><a href="#git-tag" class="headerlink" title="git tag"></a>git tag</h1><h2 id="使用git-tag-git-reset-–hard-hash-回退到某一次tag"><a href="#使用git-tag-git-reset-–hard-hash-回退到某一次tag" class="headerlink" title="使用git tag + git reset –hard *hash 回退到某一次tag"></a>使用git tag + git reset –hard *hash 回退到某一次tag</h2><ol><li><code>git add .</code></li><li><code>git commit -m &#39;foo&#39;</code></li><li><code>git tag tag_01</code></li><li><code>git push --tags</code></li></ol><h2 id="回退"><a href="#回退" class="headerlink" title="回退:"></a>回退:</h2><ol><li>git reset –hard * hash</li></ol><h2 id="在github-clone-别人的代码"><a href="#在github-clone-别人的代码" class="headerlink" title="在github clone 别人的代码"></a>在github clone 别人的代码</h2><ol><li>git clone  + 别人的仓库地址</li><li>git checkout + tag的名字</li></ol>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>git</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>es6</title>
+    <link href="undefined2020/04/08/2020-4-8/"/>
+    <url>2020/04/08/2020-4-8/</url>
+    
+    <content type="html"><![CDATA[<h1 id="set"><a href="#set" class="headerlink" title="set"></a>set</h1><p>类似于数组,所有成员有唯一性</p><pre><code class="js">//规定一个随机重复数组const arr = [1,2,4,5,325,5,345,3,3,3let arr2 = [...new Set(arr)]</code></pre><h1 id="map"><a href="#map" class="headerlink" title="map"></a>map</h1><pre><code class="js">const m = new Map()m.set(&#39;name&#39;,&#39;amy&#39;).set(&#39;age&#39;,12)for of</code></pre>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>es6</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>css垂直居中</title>
+    <link href="undefined2020/04/07/2020-4-7/"/>
+    <url>2020/04/07/2020-4-7/</url>
+    
+    <content type="html"><![CDATA[<h3 id="1-父元素不设置高度-添加上下padding"><a href="#1-父元素不设置高度-添加上下padding" class="headerlink" title="1.父元素不设置高度,添加上下padding"></a>1.父元素不设置高度,添加上下padding</h3>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>css</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>组件注册的注意事项</title>
     <link href="undefined2020/02/27/2020-2-27/"/>
     <url>2020/02/27/2020-2-27/</url>
