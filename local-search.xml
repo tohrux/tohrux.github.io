@@ -23,25 +23,6 @@
   
   
   <entry>
-    <title>es6</title>
-    <link href="undefined2020/04/08/2020-4-8/"/>
-    <url>2020/04/08/2020-4-8/</url>
-    
-    <content type="html"><![CDATA[<h1 id="set"><a href="#set" class="headerlink" title="set"></a>set</h1><p>类似于数组,所有成员有唯一性</p><pre><code class="js">//规定一个随机重复数组const arr = [1,2,4,5,325,5,345,3,3,3let arr2 = [...new Set(arr)]</code></pre><h1 id="map"><a href="#map" class="headerlink" title="map"></a>map</h1><pre><code class="js">const m = new Map()m.set(&#39;name&#39;,&#39;amy&#39;).set(&#39;age&#39;,12)for of</code></pre>]]></content>
-    
-    
-    
-    <tags>
-      
-      <tag>es6</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>css垂直居中</title>
     <link href="undefined2020/04/07/2020-4-7/"/>
     <url>2020/04/07/2020-4-7/</url>
