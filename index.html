@@ -122,6 +122,83 @@
     
     
     <div class="col-12 col-md-8 m-auto">
+      <a href="/2020/04/16/2020-4-16/">
+        <p class="h4 index-header">page实例的生命周期</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">
+</div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2020-04-16&nbsp;&nbsp;
+        
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/mini">mini</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/2020/04/15/2020-4-15-2/">
+        <p class="h4 index-header">微信小程序的一些学习笔记</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">循环&lt;view wx:for=&quot;{{students}}&quot;&gt;{{item.id}}--{{item.name}}&lt;/view&gt;
+默认会生成item,index
+修改页面上的数据因为页面上的数据不是双向绑定的,要想实现页面数据的变化,需要调用set.data()
+set.data()的实现原理(数据驱动):
+使用diff算法得到差异,再把这个差异应用到原来的dom对象上
+handle(){
+    this.setData({
+    age:this.data.age+2
+})
+}
+sitemap.json用于设置该小程序是否会被搜索到
+project.config.json用于设置项目的一些配置项,一般建议直接在详情直接修改,而不是直接改这个JSON文件
+app.json:小程序的入口“pages”所有的页面都要在这里进行注册
+可以直接写入例如pages/home/home来快速生成page
+“window”主要用来设置窗口的的一些样式
+“tabbar”设置tabbar的样式
+*在单个页面的.json文件中的设置会覆盖掉全局的app.jso</div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2020-04-15&nbsp;&nbsp;
+        
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/wx">wx</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+    <div class="col-12 col-md-8 m-auto">
       <a href="/2020/04/15/2020-4-15/">
         <p class="h4 index-header">git tag</p>
         
@@ -457,111 +534,6 @@ caption-side =&gt</div>
             <a href="/tags/js">js</a>&nbsp;
           
             <a href="/tags/jquery">jquery</a>&nbsp;
-          
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mb-4 mx-auto">
-    
-    
-    <div class="col-12 col-md-8 m-auto">
-      <a href="/2019/12/13/bs4/">
-        <p class="h4 index-header">bs</p>
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">媒体对象//媒体对象 container&gt;row&gt;col&gt;media&gt;img + media body //&lt;-放文字
-
-    &lt;div class=&quot;container bg-danger&quot;&gt;
-        &lt;div class=&quot;row justify-content-center&quot;&gt;
-            &lt;div class=&quot;col-6 bg-info&quot;&gt;
-                &lt;div class=&quot; media&quot;&gt;
-                    &lt;img class=&quot;align-self-center&quot; src=&quot;ark/pzw.png&quot; alt=&quot;&quot;&gt;
-                    &lt;div class=&quot;media-body&quot;&gt;
-                      </div>
-        </div>
-      </a>
-
-      <div>
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2019-12-13&nbsp;&nbsp;
-        
-        
-        
-          <i class="iconfont icon-tag"></i>
-          
-            <a href="/tags/css">css</a>&nbsp;
-          
-            <a href="/tags/bootstrap">bootstrap</a>&nbsp;
-          
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mb-4 mx-auto">
-    
-    
-      <div class="col-12 col-md-4 m-auto">
-        <a href="/2019/12/12/12-12/" target="_self">
-          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191213084556.png" srcset="undefined" alt="12-12" class="img-fluid rounded z-depth-3 index-thumbnails">
-        </a>
-      </div>
-    
-    <div class="col-12 col-md-8 m-auto">
-      <a href="/2019/12/12/12-12/">
-        <p class="h4 index-header">12-12</p>
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">今天被这个问题整自闭了
-    var obj = {
-        kk: function () {
-            function one() {
-                console.log(this);
-            }
-            one();
-        }
-    };
-    obj.kk();
-这里的obj.kk()输出的是window对象.
-我一直在想,为什么它的结果不是obj对象,因为kk方法属于obj,所以这个one()方法的调用者也是obj,甚至在吃晚饭的路上,等待晚饭做好,在等晚饭变亮的等待的过程中,我也在思考这个问题,我甚至问了老师,
-他是这么回答的
-
-我问了一个学习群里的人他们是这样回答的
-
-我发现三个人给出了三种不同答案,真的很晕啊目前可知情报:
-
-this指向的是函数运行时所在的环境
-
-而这个one()指向的window
-
-所以说这个one()是在全局环境下运行的
-这不是废话吗?
-
-
-12/13 更新
-
-好像把我一系列的问题都给解决了 开森~
-</div>
-        </div>
-      </a>
-
-      <div>
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2019-12-12&nbsp;&nbsp;
-        
-        
-        
-          <i class="iconfont icon-tag"></i>
-          
-            <a href="/tags/don't%20know">don&#39;t know</a>&nbsp;
           
         
       </div>

@@ -15,7 +15,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <meta name="keywords" content="">
-  <title>归档 ~ Tohrux!</title>
+  <title>page实例的生命周期 ~ Tohrux!</title>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/font-awesome/css/all.min.css"  >
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/bootstrap/css/bootstrap.min.css"  >
@@ -36,7 +36,7 @@
 
 
 <body>
-  <header style="height: 80vh;">
+  <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -95,6 +95,41 @@
             </span>
 
             
+              <br>
+              
+                <p class="mt-3">
+                  <i class="fas fa-calendar-alt" aria-hidden="true"></i>&nbsp;
+                  星期四, 四月 16日 2020, 3:16 下午
+                </p>
+              
+
+              <p>
+                
+                  
+                  &nbsp;<i class="far fa-chart-bar"></i>
+                  <span class="post-count">
+                    0 字
+                  </span>&nbsp;
+                
+
+                
+                  
+                  &nbsp;<i class="far fa-clock"></i>
+                  <span class="post-count">
+                      1 分钟
+                  </span>&nbsp;
+                
+
+                
+                  <!-- 不蒜子统计文章PV -->
+                  
+                  &nbsp;<i class="far fa-eye" aria-hidden="true"></i>&nbsp;
+                  <span id="busuanzi_container_page_pv">
+                    <span id="busuanzi_value_page_pv"></span> 次
+                  </span>&nbsp;
+                
+              </p>
+            
           </div>
 
           
@@ -105,101 +140,74 @@
 
   <main>
     
-      <div class="container nopadding-md">
-        <div class="py-5 z-depth-3" id="board">
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<div class="list-group">
-  <p class="h4">共计 48 篇文章</p>
-  <hr>
-  
-    
       
-      <p class="h5">2019</p>
-    
-    <a href="/2019/11/29/html5/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">html5 -private</span>
-      <span style="float: right;">11-29</span>
-    </a>
-  
-    
-    <a href="/2019/11/28/11-28/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">11_28</span>
-      <span style="float: right;">11-28</span>
-    </a>
-  
-    
-    <a href="/2019/11/27/flex2/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">flex布局中 align-items和align-content</span>
-      <span style="float: right;">11-27</span>
-    </a>
-  
-    
-    <a href="/2019/11/26/flex/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">flex布局</span>
-      <span style="float: right;">11-26</span>
-    </a>
-  
-    
-    <a href="/2019/11/25/laravel-extends/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">laravel的继承与包含(extend&amp;include</span>
-      <span style="float: right;">11-25</span>
-    </a>
-  
-    
-    <a href="/2019/11/25/laravel1-25/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">larave表单验证</span>
-      <span style="float: right;">11-25</span>
-    </a>
-  
-    
-    <a href="/2019/11/24/jkjk/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">lavavel视图</span>
-      <span style="float: right;">11-24</span>
-    </a>
-  
-    
-    <a href="/2019/11/22/laravel4/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">laravel中关于数据库的操作</span>
-      <span style="float: right;">11-22</span>
-    </a>
-  
-    
-    <a href="/2019/11/22/laravel2/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">laravel控制器基础</span>
-      <span style="float: right;">11-22</span>
-    </a>
-  
-    
-    <a href="/2019/11/21/lavaral/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">laravel路由规则的使用</span>
-      <span style="float: right;">11-21</span>
-    </a>
-  
-</div>
 
-  <nav aria-label="index posts navigation">
-    <span class="pagination pg-blue justify-content-center mt-5" id="pagination">
-      <a class="extend prev" rel="prev" href="/archives/page/3/"><i class="fas fa-angle-double-left"></i></a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/archives/page/5/">5</a><a class="extend next" rel="next" href="/archives/page/5/"><i class="fas fa-angle-double-right"></i></a>
-    </span>
-  </nav>
-  
-  <script>
-    for (ele of document.getElementById("pagination").getElementsByClassName("page-number")) {
-      ele.href += '#board';
-    }
-  </script>
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="py-5 z-depth-3" id="board">
+        <div class="post-content mx-auto" id="post">
+          <div class="markdown-body">
+            <p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20200416152036.png" srcset="undefined" alt=""></p>
 
-
-              </div>
-            </div>
+            <hr>
+          </div>
+          <br>
+          <div>
+            <p>
+            
+            
+              <span>
+                <i class="iconfont icon-tag"></i>
+                
+                  <a class="hover-with-bg" href="/tags/mini">mini</a>
+                
+              </span>
+            
+            </p>
+            
           </div>
         </div>
       </div>
+    </div>
+    <div class="d-none d-lg-block col-lg-2 toc-container">
+      
+  <div id="toc">
+    <p class="h4"><i class="far fa-list-alt"></i>&nbsp;目录</p>
+    <div id="tocbot"></div>
+  </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- custom -->
+
+
+<!-- Comments -->
+<div class="col-lg-7 mx-auto nopadding-md">
+  <div class="container comments mx-auto" id="comments">
+    
+      <br><br>
+      
+      
+  <script defer src="https://utteranc.es/client.js"
+          repo="tohrux/tohrux.github.io"
+          issue-term="pathname"
+  
+          label="utterances"
+    
+          theme="github-light"
+          crossorigin="anonymous"
+          async>
+  </script>
+
+
+    
+  </div>
+</div>
+
     
   </main>
 
@@ -274,6 +282,11 @@
 
 
 
+  
+    <script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/tocbot/tocbot.min.js" ></script>
+  
+  <script src="/js/post.js" ></script>
+
 
 
   <script src="/lib/smooth-scroll/smooth-scroll.min.js" ></script>
@@ -314,7 +327,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "归档&nbsp;",
+        "page实例的生命周期&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
