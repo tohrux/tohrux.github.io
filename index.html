@@ -130,6 +130,7 @@
         
         <div class="index-excerpt" >
           <div class="index-text mb-1">
+整个实例分为两个线程–渲染层和逻辑层,两个线程同时执行
 </div>
         </div>
       </a>
@@ -162,8 +163,8 @@
         <div class="index-excerpt" >
           <div class="index-text mb-1">循环&lt;view wx:for=&quot;{{students}}&quot;&gt;{{item.id}}--{{item.name}}&lt;/view&gt;
 默认会生成item,index
-修改页面上的数据因为页面上的数据不是双向绑定的,要想实现页面数据的变化,需要调用set.data()
-set.data()的实现原理(数据驱动):
+修改页面上的数据因为页面上的数据不是双向绑定的,要想实现页面数据的变化,需要调用setdata()
+setdata()的实现原理(数据驱动):
 使用diff算法得到差异,再把这个差异应用到原来的dom对象上
 handle(){
     this.setData({
@@ -176,7 +177,7 @@ app.json:小程序的入口“pages”所有的页面都要在这里进行注册
 可以直接写入例如pages/home/home来快速生成page
 “window”主要用来设置窗口的的一些样式
 “tabbar”设置tabbar的样式
-*在单个页面的.json文件中的设置会覆盖掉全局的app.jso</div>
+*在单个页面的.json文件中的设置会覆盖掉全局的app.json样</div>
         </div>
       </a>
 
