@@ -148,7 +148,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    1.3k 字
+                    1.2k 字
                   </span>
                 
 
@@ -158,7 +158,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    23
+                    20
                      分钟
                   </span>
                 
@@ -187,21 +187,22 @@
           <div class="post-content mx-auto" id="post">
             
             <article class="markdown-body">
-              <h1 id="媒体对象"><a href="#媒体对象" class="headerlink" title="媒体对象"></a>媒体对象</h1><pre><code class="html">//媒体对象 container&gt;row&gt;col&gt;media&gt;img + media body //&lt;-放文字
+              <h1 id="媒体对象"><a href="#媒体对象" class="headerlink" title="媒体对象"></a>媒体对象</h1><pre><code class="hljs html">//媒体对象 container&gt;row&gt;col&gt;media&gt;img + media body //&lt;-放文字
 
-    &lt;div class=&quot;container bg-danger&quot;&gt;
-        &lt;div class=&quot;row justify-content-center&quot;&gt;
-            &lt;div class=&quot;col-6 bg-info&quot;&gt;
-                &lt;div class=&quot; media&quot;&gt;
-                    &lt;img class=&quot;align-self-center&quot; src=&quot;ark/pzw.png&quot; alt=&quot;&quot;&gt;
-                    &lt;div class=&quot;media-body&quot;&gt;
-                        &lt;h5 class=&quot;mb-0&quot;&gt;Header&lt;/h5&gt;
+    &lt;div class="container bg-danger"&gt;
+        &lt;div class="row justify-content-center"&gt;
+            &lt;div class="col-6 bg-info"&gt;
+                &lt;div class=" media"&gt;
+                    &lt;img class="align-self-center" src="ark/pzw.png" alt=""&gt;
+                    &lt;div class="media-body"&gt;
+                        &lt;h5 class="mb-0"&gt;Header&lt;/h5&gt;
                         Content
                     &lt;/div&gt;
                 &lt;/div&gt;
             &lt;/div&gt;
         &lt;/div&gt;
     &lt;/div&gt;</code></pre>
+
 <h1 id="text"><a href="#text" class="headerlink" title="text"></a>text</h1><ul>
 <li>text-align</li>
 <li>text-center</li>
@@ -213,18 +214,20 @@
 <li>text-capitalize </li>
 <li>*text-primary/dark/info…</li>
 </ul>
-<h1 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h1><pre><code class="html">ul&gt;li ol&gt;li dl&gt;dt&gt;dd
+<h1 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h1><pre><code class="hljs html">ul&gt;li ol&gt;li dl&gt;dt&gt;dd
 *ul/ol/dl</code></pre>
+
 <ul>
 <li>list-unstyle 加在ul中  可以清除 但是依旧会保留ul的margin</li>
 <li>list-inline 清除ul所有的样式</li>
 <li>list-inline-item 加在每个li中 使他们变成行内元素</li>
 </ul>
-<pre><code class="html">    &lt;ol class=&quot;list-inline&quot;&gt;
-        &lt;li class=&quot;list-inline-item&quot;&gt;123&lt;/li&gt;
-        &lt;li class=&quot;list-inline-item&quot;&gt;123&lt;/li&gt;
-        &lt;li class=&quot;list-inline-item&quot;&gt;123&lt;/li&gt;
-    &lt;/ol&gt;</code></pre>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">ol</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-inline"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-inline-item"</span>&gt;</span>123<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-inline-item"</span>&gt;</span>123<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-inline-item"</span>&gt;</span>123<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ol</span>&gt;</span></code></pre>
+
 <h1 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h1><ul>
 <li>table 每行增加水平分割线以及少量padding,最重要的是会变成响应式布局</li>
 <li>table-responsive 会在小屏幕上出现滚动条</li>
@@ -245,16 +248,17 @@
 <li>.checkbox </li>
 <li>.radio </li>
 </ul>
-<pre><code class="html">&lt;div class=&quot;form-inline &quot;&gt;
-        &lt;div class=&quot;form-group&quot;&gt;
-            &lt;label for=&quot;password&quot;&gt;pass&lt;/label&gt;
-            &lt;input type=&quot;password&quot; id=&quot;password&quot; class=&quot;form-control&quot;&gt;
-        &lt;/div&gt;
-        &lt;div class=&quot;form-group&quot;&gt;
-            &lt;label for=&quot;text&quot;&gt;lOGiN&lt;/label&gt;
-            &lt;input type=&quot;text&quot; id=&quot;text&quot; class=&quot;form-control&quot;&gt;
-        &lt;/div&gt;
-&lt;/div&gt;</code></pre>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-inline "</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-group"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"password"</span>&gt;</span>pass<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"password"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"password"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-control"</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-group"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"text"</span>&gt;</span>lOGiN<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-control"</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+
 <h1 id="按钮"><a href="#按钮" class="headerlink" title="按钮"></a>按钮</h1><ul>
 <li>.btn</li>
 <li>.btn-primary/success/info……</li>
@@ -275,36 +279,39 @@
 <li>btn-group -&gt;使按钮的间距为0</li>
 </ul>
 <p>*下拉注册</p>
-<pre><code class="html">    &lt;div class=&quot;dropdown btn-group&quot;&gt;
-        &lt;a href=&quot;&quot; class=&quot;btn btn-danger dropdown-toggle&quot; data-toggle=&quot;dropdown&quot;&gt;&lt;/a&gt;
-        &lt;button class=&quot;btn btn-danger&quot;&gt;about&lt;/button&gt;
-        &lt;button class=&quot;btn btn-danger&quot;&gt;about&lt;/button&gt;
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dropdown btn-group"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">""</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-danger dropdown-toggle"</span> <span class="hljs-attr">data-toggle</span>=<span class="hljs-string">"dropdown"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-danger"</span>&gt;</span>about<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-danger"</span>&gt;</span>about<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
 
-        &lt;div class=&quot;dropdown-menu p-0&quot;&gt;
-            &lt;form action=&quot;&quot;&gt;
-                &lt;div class=&quot; input-group&quot;&gt;
-                    &lt;input type=&quot;text&quot; class=&quot; form-control&quot; id=&quot;kk&quot;&gt;
-                &lt;/div&gt;
-                &lt;div class=&quot; input-group&quot;&gt;
-                    &lt;input type=&quot;text&quot; class=&quot; form-control&quot;&gt;
-                &lt;/div&gt;
-                &lt;div class=&quot; dropdown-divider&quot;&gt;&lt;/div&gt;
-                &lt;div class=&quot;row justify-content-center align-content-center&quot;&gt;
-                    &lt;a href=&quot;&quot; class=&quot;btn btn-dark text-center &quot;&gt;log in&lt;/a&gt;
-                &lt;/div&gt;
-            &lt;/form&gt;
-        &lt;/div&gt;</code></pre>
-<h2 id="输入框组"><a href="#输入框组" class="headerlink" title="输入框组"></a>输入框组</h2><pre><code class="html">    &lt;div class=&quot;container&quot;&gt;
-        &lt;form action=&quot;&quot;&gt;
-            &lt;div class=&quot; input-group &quot;&gt;
-                &lt;div class=&quot; input-group-prepend&quot;&gt;
-                    &lt;span class=&quot;input-group-text&quot;&gt;@&lt;/span&gt;
-                &lt;/div&gt;
-                &lt;input class=&quot; form-control&quot; type=&quot;text&quot; placeholder=&quot;aloah&quot;&gt;
-            &lt;/div&gt;
-        &lt;/form&gt;
-    &lt;/div&gt;</code></pre>
-<pre><code class="html">input-group&gt;(input-group-prepend&gt;input-group-text)+(input)</code></pre>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dropdown-menu p-0"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">""</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">" input-group"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">" form-control"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"kk"</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">" input-group"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">" form-control"</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">" dropdown-divider"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"row justify-content-center align-content-center"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">""</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-dark text-center "</span>&gt;</span>log in<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+
+<h2 id="输入框组"><a href="#输入框组" class="headerlink" title="输入框组"></a>输入框组</h2><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"container"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">""</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">" input-group "</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">" input-group-prepend"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"input-group-text"</span>&gt;</span>@<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">class</span>=<span class="hljs-string">" form-control"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"aloah"</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+
+<pre><code class="hljs html">input-group&gt;(input-group-prepend&gt;input-group-text)+(input)</code></pre>
+
 <ul>
 <li>.input-group-prepend/append</li>
 <li>.input-group-text</li>
@@ -328,14 +335,15 @@
 <h1 id="分页"><a href="#分页" class="headerlink" title="分页"></a>分页</h1><ul>
 <li>pagination</li>
 </ul>
-<h1 id="面包屑导航"><a href="#面包屑导航" class="headerlink" title="面包屑导航"></a>面包屑导航</h1><pre><code class="html"> &lt;ul class=&quot; breadcrumb&quot;&gt;
-        &lt;li class=&quot; breadcrumb-item&quot;&gt;&lt;a href=&quot;&quot;&gt;
-                hi
-            &lt;/a&gt;&lt;/li&gt;
-        &lt;li class=&quot; breadcrumb-item&quot;&gt;&lt;a href=&quot;&quot;&gt;
-                hey
-            &lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;</code></pre>
+<h1 id="面包屑导航"><a href="#面包屑导航" class="headerlink" title="面包屑导航"></a>面包屑导航</h1><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">" breadcrumb"</span>&gt;</span>
+       <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">" breadcrumb-item"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">""</span>&gt;</span>
+               hi
+           <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+       <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">" breadcrumb-item"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">""</span>&gt;</span>
+               hey
+           <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+   <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span></code></pre>
+
 <h1 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h1><ul>
 <li>label</li>
 </ul>
@@ -343,37 +351,41 @@
 <ul>
 <li>badge</li>
 </ul>
-<pre><code class="html">    &lt;span&gt;hello&lt;/span&gt;
-    &lt;span class=&quot; badge badge-danger&quot;&gt;123&lt;/span&gt;</code></pre>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>hello<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">" badge badge-danger"</span>&gt;</span>123<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></code></pre>
+
 <h1 id="缩略图-v3"><a href="#缩略图-v3" class="headerlink" title="缩略图 v3"></a>缩略图 v3</h1><ul>
 <li><p>thumbnail</p>
 </li>
 <li><p>caption</p>
-<pre><code class="html"> &lt;div class=&quot; thumbnail&quot;&gt;
-        &lt;img src=&quot;&quot; alt=&quot;&quot;&gt;
-        &lt;div class=&quot; caption&quot;&gt;
-            &lt;h5&gt;&lt;/h5&gt;
-            &lt;button&gt;&lt;/button&gt;
-            &lt;button&gt;&lt;/button&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;</code></pre>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">" thumbnail"</span>&gt;</span>
+       <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">""</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span>&gt;</span>
+       <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">" caption"</span>&gt;</span>
+           <span class="hljs-tag">&lt;<span class="hljs-name">h5</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">h5</span>&gt;</span>
+           <span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+           <span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+       <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+
 </li>
 </ul>
 <h1 id="警告框"><a href="#警告框" class="headerlink" title="警告框"></a>警告框</h1><ul>
 <li>alert -success/info/warnng….</li>
 <li>alert-dismissable <code>&lt;可关闭的提示框&gt;</code></li>
 </ul>
-<pre><code class="html">    &lt;div class=&quot; alert alert-dismissible alert-primary&quot;&gt;
-        don&#39;t be sad
-        &lt;button class=&quot;close&quot; data-dismiss=&quot;alert&quot;&gt;
-            &amp;times;
-        &lt;/button&gt;
-    &lt;/div&gt;</code></pre>
-<h1 id="进度条"><a href="#进度条" class="headerlink" title="进度条"></a>进度条</h1><pre><code class="html">    &lt;div class=&quot; progress&quot;&gt;
-        &lt;div class=&quot; progress-bar&quot; style=&quot;width: 10%;&quot;&gt;
-            &lt;span&gt;10%&lt;/span&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;</code></pre>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">" alert alert-dismissible alert-primary"</span>&gt;</span>
+    don't be sad
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"close"</span> <span class="hljs-attr">data-dismiss</span>=<span class="hljs-string">"alert"</span>&gt;</span>
+        &amp;times;
+    <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+
+<h1 id="进度条"><a href="#进度条" class="headerlink" title="进度条"></a>进度条</h1><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">" progress"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">" progress-bar"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"width: 10%;"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>10%<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+
 <h1 id="巨幕"><a href="#巨幕" class="headerlink" title="巨幕"></a>巨幕</h1><ul>
 <li>jumbotron</li>
 </ul>
@@ -381,17 +393,20 @@
 <li><p>list-group</p>
 </li>
 <li><p>list-group-item</p>
-<pre><code class="html">    &lt;ul class=&quot; list-group bg-info&quot;&gt;
-        &lt;li class=&quot; list-group-item&quot;&gt;123&lt;/li&gt;
-        &lt;li class=&quot; list-group-item&quot;&gt;123&lt;/li&gt;
-        &lt;li class=&quot; list-group-item&quot;&gt;123&lt;/li&gt;
-        &lt;li class=&quot; list-group-item &quot;&gt;
-            kl
-            &lt;span class=&quot; badge-danger&quot;&gt;
-                123
-            &lt;/span&gt;
-        &lt;/li&gt;
-    &lt;/ul&gt;</code></pre>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">" list-group bg-info"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">" list-group-item"</span>&gt;</span>123<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">" list-group-item"</span>&gt;</span>123<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">" list-group-item"</span>&gt;</span>123<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">" list-group-item "</span>&gt;</span>
+        kl
+        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">" badge-danger"</span>&gt;</span>
+            123
+        <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span></code></pre>
+
+
+
 </li>
 </ul>
 <h1 id="字体图标v3"><a href="#字体图标v3" class="headerlink" title="字体图标v3"></a>字体图标v3</h1><p>gliphicon </p>
@@ -400,19 +415,24 @@
 <li>align-self-start</li>
 <li>justify-content-start</li>
 </ol>
-<h3 id="一列超过12行的话会自动跳到下一行"><a href="#一列超过12行的话会自动跳到下一行" class="headerlink" title="一列超过12行的话会自动跳到下一行"></a>一列超过12行的话会自动跳到下一行</h3><h3 id="order"><a href="#order" class="headerlink" title="order"></a>order</h3><pre><code class="js">order:1 order:2</code></pre>
+<h3 id="一列超过12行的话会自动跳到下一行"><a href="#一列超过12行的话会自动跳到下一行" class="headerlink" title="一列超过12行的话会自动跳到下一行"></a>一列超过12行的话会自动跳到下一行</h3><h3 id="order"><a href="#order" class="headerlink" title="order"></a>order</h3><pre><code class="hljs js">order:<span class="hljs-number">1</span> order:<span class="hljs-number">2</span></code></pre>
+
+
+
 <h3 id="offset"><a href="#offset" class="headerlink" title="offset"></a>offset</h3><p>通过marginleft实现,后面的元素会跟着移动</p>
 <p>修改默认的md,lg等大小</p>
-<pre><code class="html">$grid-breakpoint:()
-    xs: 420px,
-    sm: 768px,
-    .....
+<pre><code class="hljs html">$grid-breakpoint:()
+	xs: 420px,
+	sm: 768px,
+	.....
 ;</code></pre>
-<h3 id=""><a href="#" class="headerlink" title=""></a></h3><pre><code class="html">&lt;small&gt;&lt;/small&gt;
-&lt;mark&gt;&lt;/mark&gt;
-&lt;abbr&gt;&lt;/abbr&gt;
-&lt;blockquote&gt;
-&lt;/blockquote&gt;</code></pre>
+
+<h3 id=""><a href="#" class="headerlink" title=""></a></h3><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">small</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">small</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">mark</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">mark</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">abbr</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">abbr</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">blockquote</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">blockquote</span>&gt;</span></code></pre>
+
 <h3 id="w-25-h-25"><a href="#w-25-h-25" class="headerlink" title="w-25 h-25"></a>w-25 h-25</h3><p>整体的25%</p>
 <h2 id="x-y-m-p"><a href="#x-y-m-p" class="headerlink" title="x,y,m,p"></a>x,y,m,p</h2><p>x:lr</p>
 <p>y:tb;</p>

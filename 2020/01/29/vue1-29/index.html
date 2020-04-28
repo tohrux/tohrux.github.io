@@ -148,7 +148,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    946 字
+                    966 字
                   </span>
                 
 
@@ -158,7 +158,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    14
+                    15
                      分钟
                   </span>
                 
@@ -187,172 +187,179 @@
           <div class="post-content mx-auto" id="post">
             
             <article class="markdown-body">
-              <h2 id="按键自定义-keyup-F2-add"><a href="#按键自定义-keyup-F2-add" class="headerlink" title="按键自定义@keyup.F2=add()"></a>按键自定义<code>@keyup.F2=add()</code></h2><pre><code class="html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
+              <h2 id="按键自定义-keyup-F2-add"><a href="#按键自定义-keyup-F2-add" class="headerlink" title="按键自定义@keyup.F2=add()"></a>按键自定义<code>@keyup.F2=add()</code></h2><pre><code class="hljs html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"en"</span>&gt;</span>
 
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;script src=&quot;js/vue.js&quot;&gt;&lt;/script&gt;
-&lt;/head&gt;
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"UTF-8"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"viewport"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"width=device-width, initial-scale=1.0"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">"X-UA-Compatible"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"ie=edge"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Document<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"js/vue.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
 
-&lt;body&gt;
-    &lt;div id=&quot;app&quot;&gt;
-        &lt;div v-fontweight=&quot;900&quot; v-fontsize=&quot;50&quot;&gt;
-            {{msg}}
-        &lt;/div&gt;
-        {{msg | msgformat}}
-        {{time | timeFormat}}
-        &lt;input type=&quot;button&quot; @click=&quot;add&quot; value=&quot;click me baby&quot;&gt;
-        &lt;input type=&quot;text&quot; @keyup.F2=&#39;add()&#39; v-focusme v-color=&quot;&#39;blue&#39;&quot;&gt;
-    &lt;/div&gt;
-    &lt;script&gt;
-        // Vue.config.keyCodes.f2 = 113;
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"app"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-fontweight</span>=<span class="hljs-string">"900"</span> <span class="hljs-attr">v-fontsize</span>=<span class="hljs-string">"50"</span>&gt;</span>
+            &#123;&#123;msg&#125;&#125;
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        &#123;&#123;msg | msgformat&#125;&#125;
+        &#123;&#123;time | timeFormat&#125;&#125;
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">"add"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"click me baby"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> @<span class="hljs-attr">keyup.F2</span>=<span class="hljs-string">'add()'</span> <span class="hljs-attr">v-focusme</span> <span class="hljs-attr">v-color</span>=<span class="hljs-string">"'blue'"</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+        <span class="hljs-comment">// Vue.config.keyCodes.f2 = 113;</span>
 
-        //使用Vue.direction()定义全局的自定义的指令 
-        // 参数一:你想要的名字,调用时必须要加v-前缀
-        //参数二:一个对象,在这个对象身上,有一些相关的函数
-        //在每个函数中,第一个参数永远是el,表示被绑定了指令的那个元素,这个el是一个原生的js对象
-        // 例如 bind:function(el){} 当指令绑定到元素上的时候,会立刻执行这个bind函数,只执行一次
-        // 例如 inserted:function(el){} 当元素插入到DOM中,会执行inserted 
-        // 例如 updated:function(el){} 当Vnode更新时,会执行updated,会执行多次
-        Vue.directive(&#39;focusme&#39;, {
-            bind: function (el) {
+        <span class="hljs-comment">//使用Vue.direction()定义全局的自定义的指令 </span>
+        <span class="hljs-comment">// 参数一:你想要的名字,调用时必须要加v-前缀</span>
+        <span class="hljs-comment">//参数二:一个对象,在这个对象身上,有一些相关的函数</span>
+        <span class="hljs-comment">//在每个函数中,第一个参数永远是el,表示被绑定了指令的那个元素,这个el是一个原生的js对象</span>
+        <span class="hljs-comment">// 例如 bind:function(el)&#123;&#125; 当指令绑定到元素上的时候,会立刻执行这个bind函数,只执行一次</span>
+        <span class="hljs-comment">// 例如 inserted:function(el)&#123;&#125; 当元素插入到DOM中,会执行inserted </span>
+        <span class="hljs-comment">// 例如 updated:function(el)&#123;&#125; 当Vnode更新时,会执行updated,会执行多次</span>
+        Vue.directive(<span class="hljs-string">'focusme'</span>, &#123;
+            <span class="hljs-attr">bind</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">el</span>) </span>&#123;
 
-            },
-            inserted: function (el) {
+            &#125;,
+            <span class="hljs-attr">inserted</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">el</span>) </span>&#123;
                 el.focus();
-            },
-            updated: function (el) {
+            &#125;,
+            <span class="hljs-attr">updated</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">el</span>) </span>&#123;
 
-            }
-        });
-        Vue.directive(&#39;color&#39;, {
-            bind: function (el, binding) {
+            &#125;
+        &#125;);
+        Vue.directive(<span class="hljs-string">'color'</span>, &#123;
+            <span class="hljs-attr">bind</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">el, binding</span>) </span>&#123;
                 el.style.color = binding.value;
-                //binding.name:指令名,binding.value:最终值,binding.expression:绑定值得字符串形式
-                console.log(binding.value);
-                console.log(binding.name);
-                console.log(binding.expression);
+                <span class="hljs-comment">//binding.name:指令名,binding.value:最终值,binding.expression:绑定值得字符串形式</span>
+                <span class="hljs-built_in">console</span>.log(binding.value);
+                <span class="hljs-built_in">console</span>.log(binding.name);
+                <span class="hljs-built_in">console</span>.log(binding.expression);
 
-            }
-        });
+            &#125;
+        &#125;);
 
-        Vue.filter(&#39;msgformat&#39;, function (msg) {
-            return msg.replace(/hello/g, &quot;hey&quot;);
-        })
-        var vm = new Vue({
-            el: &quot;#app&quot;,
-            data: {
-                time: &quot;&quot;,
-                msg: &quot;hello&quot;
-            },
-            methods: {
-                add() {
-                    this.msg = &quot;少年&quot;;
-                }
-            },
-            filters: {
-                timeFormat: function () {
-                    var t = new Date();
-                    var y = t.getFullYear();
-                    var m = t.getMonth() + 1;
-                    var d = t.getDate();
-                    return `${y}-${m}-${d}`;
-                }
-            },
-            directives: {
-                fontweight: {
-                    bind: function (el, binding) {
+        Vue.filter(<span class="hljs-string">'msgformat'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">msg</span>) </span>&#123;
+            <span class="hljs-keyword">return</span> msg.replace(<span class="hljs-regexp">/hello/g</span>, <span class="hljs-string">"hey"</span>);
+        &#125;)
+        <span class="hljs-keyword">var</span> vm = <span class="hljs-keyword">new</span> Vue(&#123;
+            <span class="hljs-attr">el</span>: <span class="hljs-string">"#app"</span>,
+            <span class="hljs-attr">data</span>: &#123;
+                <span class="hljs-attr">time</span>: <span class="hljs-string">""</span>,
+                <span class="hljs-attr">msg</span>: <span class="hljs-string">"hello"</span>
+            &#125;,
+            <span class="hljs-attr">methods</span>: &#123;
+                add() &#123;
+                    <span class="hljs-keyword">this</span>.msg = <span class="hljs-string">"少年"</span>;
+                &#125;
+            &#125;,
+            <span class="hljs-attr">filters</span>: &#123;
+                <span class="hljs-attr">timeFormat</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+                    <span class="hljs-keyword">var</span> t = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>();
+                    <span class="hljs-keyword">var</span> y = t.getFullYear();
+                    <span class="hljs-keyword">var</span> m = t.getMonth() + <span class="hljs-number">1</span>;
+                    <span class="hljs-keyword">var</span> d = t.getDate();
+                    <span class="hljs-keyword">return</span> <span class="hljs-string">`<span class="hljs-subst">$&#123;y&#125;</span>-<span class="hljs-subst">$&#123;m&#125;</span>-<span class="hljs-subst">$&#123;d&#125;</span>`</span>;
+                &#125;
+            &#125;,
+            <span class="hljs-attr">directives</span>: &#123;
+                <span class="hljs-attr">fontweight</span>: &#123;
+                    <span class="hljs-attr">bind</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">el, binding</span>) </span>&#123;
                         el.style.fontWeight = binding.value;
-                    }
-                },
-                fontsize: function (el, binding) {
-                    el.style.fontSize = parseInt(binding.value) + &quot;px&quot;;
-                } //简写-如果这样写得话相当于直接把function写入bind和updated中
-            }
-        })
-    &lt;/script&gt;
-&lt;/body&gt;
+                    &#125;
+                &#125;,
+                <span class="hljs-attr">fontsize</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">el, binding</span>) </span>&#123;
+                    el.style.fontSize = <span class="hljs-built_in">parseInt</span>(binding.value) + <span class="hljs-string">"px"</span>;
+                &#125; <span class="hljs-comment">//简写-如果这样写得话相当于直接把function写入bind和updated中</span>
+            &#125;
+        &#125;)
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
 
-&lt;/html&gt;</code></pre>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre>
+
 <p>👩注意要大写</p>
 <h2 id="自定义全局指令"><a href="#自定义全局指令" class="headerlink" title="自定义全局指令"></a>自定义全局指令</h2><p>在某个指定Vue对象中写:</p>
-<pre><code class="js">directives:{
-    color:{
-        bind: function(el,binding){
+<pre><code class="hljs js">directives:&#123;
+    <span class="hljs-attr">color</span>:&#123;
+		<span class="hljs-attr">bind</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">el,binding</span>)</span>&#123;
             el.style.color = binding.value;
-        }
-    },
-        //简写
-    fontweight:function(el.binding){
+        &#125;
+    &#125;,
+        <span class="hljs-comment">//简写</span>
+    <span class="hljs-attr">fontweight</span>:<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">el.binding</span>)</span>&#123;
         el.style.fontWeight = binding.value;
-    }
-}</code></pre>
+    &#125;
+&#125;</code></pre>
+
 <p>在全局写:</p>
-<pre><code class="js">Vue.directive(&#39;color&#39;),{
-    bind: function(el,binding){},
-    inserted: function(el,binding){},
-    updated: function(el,binding){}
-}</code></pre>
-<pre><code class="html">&lt;body&gt;
-    &lt;div id=&quot;app&quot;&gt;
-        {{msg}}
-        &lt;input type=&quot;button&quot; @click=&quot;add&quot; value=&quot;click me baby&quot;&gt;
-        &lt;input type=&quot;text&quot; @keyup.F2=&#39;add()&#39; v-focusme v-color&gt;
-    &lt;/div&gt;
-    &lt;script&gt;
-        // Vue.config.keyCodes.f2 = 113;
+<pre><code class="hljs js">Vue.directive(<span class="hljs-string">'color'</span>),&#123;
+    <span class="hljs-attr">bind</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">el,binding</span>)</span>&#123;&#125;,
+    <span class="hljs-attr">inserted</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">el,binding</span>)</span>&#123;&#125;,
+    <span class="hljs-attr">updated</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">el,binding</span>)</span>&#123;&#125;
+&#125;</code></pre>
 
-        //使用Vue.direction()定义全局的自定义的指令 
-        // 参数一:你想要的名字,调用时必须要加v-前缀
-        //参数二:一个对象,在这个对象身上,有一些相关的函数
-        //在每个函数中,第一个参数永远是el,表示被绑定了指令的那个元素,这个el是一个原生的js对象
-        // 例如 bind:function(el){} 当指令绑定到元素上的时候,会立刻执行这个bind函数,只执行一次
-        // 例如 inserted:function(el){} 当元素插入到DOM中,会执行inserted 
-        // 例如 update:function(el){} 当Vnode更新时,会执行updated,会执行多次
-        Vue.directive(&#39;focusme&#39;, {
-            bind: function (el) {
 
-            },
-            inserted: function (el) {
+
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"app"</span>&gt;</span>
+        &#123;&#123;msg&#125;&#125;
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">"add"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"click me baby"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> @<span class="hljs-attr">keyup.F2</span>=<span class="hljs-string">'add()'</span> <span class="hljs-attr">v-focusme</span> <span class="hljs-attr">v-color</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="actionscript">
+        <span class="hljs-comment">// Vue.config.keyCodes.f2 = 113;</span>
+
+        <span class="hljs-comment">//使用Vue.direction()定义全局的自定义的指令 </span>
+        <span class="hljs-comment">// 参数一:你想要的名字,调用时必须要加v-前缀</span>
+        <span class="hljs-comment">//参数二:一个对象,在这个对象身上,有一些相关的函数</span>
+        <span class="hljs-comment">//在每个函数中,第一个参数永远是el,表示被绑定了指令的那个元素,这个el是一个原生的js对象</span>
+        <span class="hljs-comment">// 例如 bind:function(el)&#123;&#125; 当指令绑定到元素上的时候,会立刻执行这个bind函数,只执行一次</span>
+        <span class="hljs-comment">// 例如 inserted:function(el)&#123;&#125; 当元素插入到DOM中,会执行inserted </span>
+        <span class="hljs-comment">// 例如 update:function(el)&#123;&#125; 当Vnode更新时,会执行updated,会执行多次</span>
+        Vue.directive(<span class="hljs-string">'focusme'</span>, &#123;
+            bind: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(el)</span> </span>&#123;
+
+            &#125;,
+            inserted: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(el)</span> </span>&#123;
                 el.focus();
-            },
-            updated: function (el) {
+            &#125;,
+            updated: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(el)</span> </span>&#123;
 
-            }
-        })
-        Vue.directive(&#39;color&#39;, {
-            bind: function (el) {
-                el.style.color = &quot;red&quot;;
-            }
-        })
-        var vm = new Vue({
-            el: &quot;#app&quot;,
-            data: {
+            &#125;
+        &#125;)
+        Vue.directive(<span class="hljs-string">'color'</span>, &#123;
+            bind: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(el)</span> </span>&#123;
+                el.style.color = <span class="hljs-string">"red"</span>;
+            &#125;
+        &#125;)
+        <span class="hljs-keyword">var</span> vm = <span class="hljs-keyword">new</span> Vue(&#123;
+            el: <span class="hljs-string">"#app"</span>,
+            data: &#123;
 
-                msg: &quot;hello&quot;
-            },
-            methods: {
-                add() {
-                    this.msg = &quot;少年&quot;;
-                }
-            },
-        })
-    &lt;/script&gt;
-&lt;/body&gt;</code></pre>
+                msg: <span class="hljs-string">"hello"</span>
+            &#125;,
+            methods: &#123;
+                add() &#123;
+                    <span class="hljs-keyword">this</span>.msg = <span class="hljs-string">"少年"</span>;
+                &#125;
+            &#125;,
+        &#125;)
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></code></pre>
+
 <p>👩注意,第一个参数中不可以带大写字母</p>
 <p>❓之所以v-color可以直接在bind中生效是因为它是修改样式,不需要操作dom</p>
-<pre><code class="js">&lt;input type=&quot;text&quot; @keyup.F2=&#39;add()&#39; v-focusme v-color=&quot;&#39;blue&#39;&quot;&gt;
+<pre><code class="hljs js">&lt;input type=<span class="hljs-string">"text"</span> @keyup.F2=<span class="hljs-string">'add()'</span> v-focusme v-color=<span class="hljs-string">"'blue'"</span>&gt;
 
-Vue.directive(&#39;color&#39;, {
-            bind: function (el, binding) {
+Vue.directive(<span class="hljs-string">'color'</span>, &#123;
+            <span class="hljs-attr">bind</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">el, binding</span>) </span>&#123;
                 el.style.color = binding.value;
-                //binding.name:指令名,binding.value:最终值,binding.expression:绑定值得字符串形式
-            }
-        })</code></pre>
+                <span class="hljs-comment">//binding.name:指令名,binding.value:最终值,binding.expression:绑定值得字符串形式</span>
+            &#125;
+        &#125;)</code></pre>
+
 
             </article>
             <hr>

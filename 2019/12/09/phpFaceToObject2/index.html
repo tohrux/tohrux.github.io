@@ -148,7 +148,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    491 字
+                    497 字
                   </span>
                 
 
@@ -158,7 +158,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    6
+                    7
                      分钟
                   </span>
                 
@@ -187,106 +187,117 @@
           <div class="post-content mx-auto" id="post">
             
             <article class="markdown-body">
-              <h2 id="对象的使用"><a href="#对象的使用" class="headerlink" title="对象的使用"></a>对象的使用</h2><h3 id="引用对象"><a href="#引用对象" class="headerlink" title="引用对象"></a>引用对象</h3><pre><code class="php">$a = &quot;hello&quot;;
+              <h2 id="对象的使用"><a href="#对象的使用" class="headerlink" title="对象的使用"></a>对象的使用</h2><h3 id="引用对象"><a href="#引用对象" class="headerlink" title="引用对象"></a>引用对象</h3><pre><code class="hljs php">$a = <span class="hljs-string">"hello"</span>;
 $b = &amp;$a;
-echo $b . &quot;&lt;/br&gt;&quot;; //hello
+<span class="hljs-keyword">echo</span> $b . <span class="hljs-string">"&lt;/br&gt;"</span>; <span class="hljs-comment">//hello</span>
 
-$a = &quot;aloha&quot;;
-echo $b; //aloha</code></pre>
-<h3 id="克隆对象"><a href="#克隆对象" class="headerlink" title="克隆对象"></a>克隆对象</h3><pre><code class="php">class Person
-{
-    public $timeForCopy = 0;
-    function __clone()
-    {
-        $this-&gt;timeForCopy += 1;
-    }
-}
-$a = new Person();
-$b = clone $a;
-$c = clone $b;
-echo $b-&gt;timeForCopy; //1
-echo $c-&gt;timeForCopy;//2</code></pre>
-<h3 id="比较对象"><a href="#比较对象" class="headerlink" title="比较对象"></a>比较对象</h3><pre><code class="php">&quot;===&quot; 表示比较两个对象的内存地址 &quot;==&quot;比较的是两个对象的内容</code></pre>
+$a = <span class="hljs-string">"aloha"</span>;
+<span class="hljs-keyword">echo</span> $b; <span class="hljs-comment">//aloha</span></code></pre>
+
+<h3 id="克隆对象"><a href="#克隆对象" class="headerlink" title="克隆对象"></a>克隆对象</h3><pre><code class="hljs php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person</span>
+</span>&#123;
+    <span class="hljs-keyword">public</span> $timeForCopy = <span class="hljs-number">0</span>;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__clone</span><span class="hljs-params">()</span>
+    </span>&#123;
+        <span class="hljs-keyword">$this</span>-&gt;timeForCopy += <span class="hljs-number">1</span>;
+    &#125;
+&#125;
+$a = <span class="hljs-keyword">new</span> Person();
+$b = <span class="hljs-keyword">clone</span> $a;
+$c = <span class="hljs-keyword">clone</span> $b;
+<span class="hljs-keyword">echo</span> $b-&gt;timeForCopy; <span class="hljs-comment">//1</span>
+<span class="hljs-keyword">echo</span> $c-&gt;timeForCopy;<span class="hljs-comment">//2</span></code></pre>
+
+<h3 id="比较对象"><a href="#比较对象" class="headerlink" title="比较对象"></a>比较对象</h3><pre><code class="hljs php"><span class="hljs-string">"==="</span> 表示比较两个对象的内存地址 <span class="hljs-string">"=="</span>比较的是两个对象的内容</code></pre>
+
 <p>经过比较可以得出:</p>
-<pre><code class="php">clone的两个对象相比较的话: 值相等 ,但是内存地址不相等
+<pre><code class="hljs php"><span class="hljs-keyword">clone</span>的两个对象相比较的话: 值相等 ,但是内存地址不相等
 引用的两个对象: 值和内存地址都是相等的
 使用一样的构造函数生成的两个实例化对象: 值是一样的,但是内存地址不同</code></pre>
+
 <h3 id="检测对象类型"><a href="#检测对象类型" class="headerlink" title="检测对象类型"></a>检测对象类型</h3><p><em>案例来自php.net</em></p>
 <p>方法:</p>
-<pre><code class="php">instanceof 关键字</code></pre>
+<pre><code class="hljs php"><span class="hljs-keyword">instanceof</span> 关键字</code></pre>
+
 <p>对两个不同无关的类使用</p>
-<pre><code class="php">&lt;?php
-class MyClass
-{ }
-class NotMyClass
-{ }
-$a = new MyClass;
+<pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyClass</span>
+</span>&#123; &#125;
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">NotMyClass</span>
+</span>&#123; &#125;
+$a = <span class="hljs-keyword">new</span> MyClass;
 
-var_dump($a instanceof MyClass); //true
-var_dump($a instanceof NotMyClass);//false</code></pre>
+var_dump($a <span class="hljs-keyword">instanceof</span> MyClass); <span class="hljs-comment">//true</span>
+var_dump($a <span class="hljs-keyword">instanceof</span> NotMyClass);<span class="hljs-comment">//false</span></code></pre>
+
 <p>对继承后的类使用</p>
-<pre><code class="php">&lt;?php
-class ParentClass
-{ }
+<pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ParentClass</span>
+</span>&#123; &#125;
 
-class MyClass extends ParentClass
-{ }
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyClass</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">ParentClass</span>
+</span>&#123; &#125;
 
-$a = new MyClass;
+$a = <span class="hljs-keyword">new</span> MyClass;
 
-var_dump($a instanceof MyClass); //true
-var_dump($a instanceof ParentClass);//true</code></pre>
+var_dump($a <span class="hljs-keyword">instanceof</span> MyClass); <span class="hljs-comment">//true</span>
+var_dump($a <span class="hljs-keyword">instanceof</span> ParentClass);<span class="hljs-comment">//true</span></code></pre>
+
 <p>接口</p>
-<pre><code class="php">&lt;?php
-interface MyInterface
-{
-}
+<pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span>
+<span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">MyInterface</span>
+</span>&#123;
+&#125;
 
-class MyClass implements MyInterface
-{
-}
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyClass</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">MyInterface</span>
+</span>&#123;
+&#125;
 
-$a = new MyClass;
+$a = <span class="hljs-keyword">new</span> MyClass;
 
-var_dump($a instanceof MyClass);//true
-var_dump($a instanceof MyInterface);//true</code></pre>
+var_dump($a <span class="hljs-keyword">instanceof</span> MyClass);<span class="hljs-comment">//true</span>
+var_dump($a <span class="hljs-keyword">instanceof</span> MyInterface);<span class="hljs-comment">//true</span></code></pre>
+
 <h2 id="魔术方法"><a href="#魔术方法" class="headerlink" title="魔术方法"></a>魔术方法</h2><p>“__”开头的方法都被称为魔术方法(属实👍)</p>
 <p>比如之前的 __construct() 每次实例化一个类都会先调用该方法进行初始化。</p>
 <h3 id="set"><a href="#set" class="headerlink" title="__set()"></a>__set()</h3><p>在给不可访问属性赋值时，<a href="https://www.php.net/manual/zh/language.oop5.overloading.php#object.set" target="_blank" rel="noopener">__set()</a> 会被调用。</p>
 <h3 id="get"><a href="#get" class="headerlink" title="__get()"></a>__get()</h3><p>public __get ( string <code>$name</code> ) : <a href="https://www.php.net/manual/zh/language.pseudo-types.php#language.types.mixed" target="_blank" rel="noopener">mixed</a> 当读取不可访问的属性时,__get()会被调用</p>
 <h3 id="call"><a href="#call" class="headerlink" title="__call()"></a>__call()</h3><p>用来处理程序在调用不存在或私有的方法时所导致的错误(友好)</p>
-<pre><code class="php">&lt;?php
-class Fruit
-{
-    function __call($method_name, $param)
-    {
-        echo $method_name . &quot;方法不存在&quot;;
-    }
-}
-$a = new Fruit();
-$a-&gt;adf(123);//adf方法不存在</code></pre>
+<pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Fruit</span>
+</span>&#123;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__call</span><span class="hljs-params">($method_name, $param)</span>
+    </span>&#123;
+        <span class="hljs-keyword">echo</span> $method_name . <span class="hljs-string">"方法不存在"</span>;
+    &#125;
+&#125;
+$a = <span class="hljs-keyword">new</span> Fruit();
+$a-&gt;adf(<span class="hljs-number">123</span>);<span class="hljs-comment">//adf方法不存在</span></code></pre>
+
 <h4 id="toString-NaN"><a href="#toString-NaN" class="headerlink" title="__toString()"></a>__toString()</h4><p>👩:只对echo 和 print 有效,可以将对象输出为字符串</p>
 <p>输入:</p>
-<pre><code class="php">&lt;?php
-echo &quot;&lt;pre&gt;&quot;;
-class Fruit
-{
-    function __toString()
-    {
-        return &quot;fruit man&quot;;
-    }
-}
-$a = new Fruit();
-print($a);
-echo &quot;&lt;/br&gt;&quot;;
-echo ($a);
-echo &quot;&lt;/br&gt;&quot;;
+<pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span>
+<span class="hljs-keyword">echo</span> <span class="hljs-string">"&lt;pre&gt;"</span>;
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Fruit</span>
+</span>&#123;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__toString</span><span class="hljs-params">()</span>
+    </span>&#123;
+        <span class="hljs-keyword">return</span> <span class="hljs-string">"fruit man"</span>;
+    &#125;
+&#125;
+$a = <span class="hljs-keyword">new</span> Fruit();
+<span class="hljs-keyword">print</span>($a);
+<span class="hljs-keyword">echo</span> <span class="hljs-string">"&lt;/br&gt;"</span>;
+<span class="hljs-keyword">echo</span> ($a);
+<span class="hljs-keyword">echo</span> <span class="hljs-string">"&lt;/br&gt;"</span>;
 var_dump($a);</code></pre>
+
 <p>输出:</p>
-<pre><code class="php">fruit man
+<pre><code class="hljs php">fruit man
 fruit man
-object(Fruit)#1 (0) {
-}</code></pre>
+object(Fruit)<span class="hljs-comment">#1 (0) &#123;</span>
+&#125;</code></pre>
+
 
             </article>
             <hr>

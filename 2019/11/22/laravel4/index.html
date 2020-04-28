@@ -148,7 +148,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    862 字
+                    750 字
                   </span>
                 
 
@@ -158,7 +158,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    12
+                    10
                      分钟
                   </span>
                 
@@ -202,15 +202,16 @@
 <li><p>新建查询,代码如下:</p>
 </li>
 </ol>
-<pre><code class="mysql">create table member(
+<pre><code class="hljs mysql">create table member(
     id int primary key auto_increment,
     name varchar(32) not null,
     age tinyint unsigned not null,
     email varchar(32) not null
 )engine myisam charset utf8;</code></pre>
+
 <ol start="4">
 <li><p>在laravel中对 <strong>.env</strong>文件进行修改,链接到数据库</p>
-<pre><code class="txt">DB_CONNECTION=mysql
+<pre><code class="hljs txt">DB_CONNECTION=mysql
 DB_HOST=localhost
 DB_PORT=3306
 DB_DATABASE=qz04
@@ -218,90 +219,105 @@ DB_USERNAME=root
 DB_PASSWORD=</code></pre>
 </li>
 <li><p>在TextController控制器中引入DB门面</p>
-<pre><code class="php">use DB;//因为已经在app.php文件中定义,所以可以直接use</code></pre>
+<pre><code class="hljs php"><span class="hljs-keyword">use</span> <span class="hljs-title">DB</span>;<span class="hljs-comment">//因为已经在app.php文件中定义,所以可以直接use</span></code></pre>
 </li>
 <li><p>在web.php注册路由</p>
-<pre><code class="php">//增删改查
-Route::group([&#39;prefix&#39; =&gt; &#39;home/index&#39;], function () {
-    Route::get(&#39;/add&#39;, &quot;TextController@add&quot;);
-    Route::get(&#39;/del&#39;, &quot;TextController@del&quot;);
-    Route::get(&#39;/update&#39;, &quot;TextController@update&quot;);
-    Route::get(&#39;/select&#39;, &quot;TextController@select&quot;);
-});</code></pre>
+<pre><code class="hljs php"><span class="hljs-comment">//增删改查</span>
+Route::group([<span class="hljs-string">'prefix'</span> =&gt; <span class="hljs-string">'home/index'</span>], <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>&#123;
+    Route::get(<span class="hljs-string">'/add'</span>, <span class="hljs-string">"TextController@add"</span>);
+    Route::get(<span class="hljs-string">'/del'</span>, <span class="hljs-string">"TextController@del"</span>);
+    Route::get(<span class="hljs-string">'/update'</span>, <span class="hljs-string">"TextController@update"</span>);
+    Route::get(<span class="hljs-string">'/select'</span>, <span class="hljs-string">"TextController@select"</span>);
+&#125;);</code></pre>
+
+
+
 </li>
 </ol>
 <h2 id="增加信息-insert"><a href="#增加信息-insert" class="headerlink" title="增加信息(insert)"></a>增加信息(insert)</h2><p>▶<strong>insert(数组)可以同时添加一条或多条,返回的是布尔类型</strong></p>
-<pre><code class="php">DB::table(&#39;无前缀表名&#39;) -&gt; insert(); //链式操作;</code></pre>
+<pre><code class="hljs php">DB::table(<span class="hljs-string">'无前缀表名'</span>) -&gt; insert(); <span class="hljs-comment">//链式操作;</span></code></pre>
+
+
+
 <p>向member表同时添加多条数据:</p>
-<pre><code class="php">    public function add()
-    {
-        //定义相关联的表名
-        $db = DB::table(&#39;member&#39;);
-        //使用insert增加数据
-        $result = $db-&gt;insert([
-            [
-                &#39;name&#39; =&gt; &#39;安洁莉娜&#39;,
-                &#39;age&#39;  =&gt; &#39;17&#39;,
-                &#39;email&#39; =&gt; &#39;angelina@gmail.com&#39;
-            ],
-            [
-                &#39;name&#39; =&gt; &#39;艾雅法拉&#39;,
-                &#39;age&#39;  =&gt; &#39;17&#39;,
-                &#39;email&#39; =&gt; &#39;eyjafjalla@gmail.com&#39;
-            ],
-            [
-                &#39;name&#39; =&gt; &#39;陈&#39;,
-                &#39;age&#39;  =&gt; &#39;17&#39;,
-                &#39;email&#39; =&gt; &#39;chen@gmail.com&#39;
-            ]
-        ]);
-        dd($result);//返回为true
-    }</code></pre>
+<pre><code class="hljs php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">add</span><span class="hljs-params">()</span>
+</span>&#123;
+    <span class="hljs-comment">//定义相关联的表名</span>
+    $db = DB::table(<span class="hljs-string">'member'</span>);
+    <span class="hljs-comment">//使用insert增加数据</span>
+    $result = $db-&gt;insert([
+        [
+            <span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'安洁莉娜'</span>,
+            <span class="hljs-string">'age'</span>  =&gt; <span class="hljs-string">'17'</span>,
+            <span class="hljs-string">'email'</span> =&gt; <span class="hljs-string">'angelina@gmail.com'</span>
+        ],
+        [
+            <span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'艾雅法拉'</span>,
+            <span class="hljs-string">'age'</span>  =&gt; <span class="hljs-string">'17'</span>,
+            <span class="hljs-string">'email'</span> =&gt; <span class="hljs-string">'eyjafjalla@gmail.com'</span>
+        ],
+        [
+            <span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'陈'</span>,
+            <span class="hljs-string">'age'</span>  =&gt; <span class="hljs-string">'17'</span>,
+            <span class="hljs-string">'email'</span> =&gt; <span class="hljs-string">'chen@gmail.com'</span>
+        ]
+    ]);
+    dd($result);<span class="hljs-comment">//返回为true</span>
+&#125;</code></pre>
+
 <p>extra🤹‍♀️: 也可以使用以下方法进行 <strong>insert</strong> 的操作:</p>
-<pre><code class="php">$db = DB::table(&#39;member&#39;);
+<pre><code class="hljs php">$db = DB::table(<span class="hljs-string">'member'</span>);
 $result = $db-&gt; insertGetId([
-    &#39;name&#39; =&gt; &#39;马冬梅&#39;,
+    <span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'马冬梅'</span>,
      ...
 ])
-dd($result);//返回id的值;</code></pre>
+dd($result);<span class="hljs-comment">//返回id的值;</span></code></pre>
+
 <h2 id="修改数据-update"><a href="#修改数据-update" class="headerlink" title="修改数据(update)"></a>修改数据(update)</h2><p>▶修改数据可以使用where(‘字段名’,’符号’,’值’)  -&gt; update([]); 如下:</p>
-<pre><code class="php">  public function update()
-    {
-        //定义需要操作的数据表
-        $db = DB::table(&#39;member&#39;);
-        //修改id为1的用户的name
-        $result = $db-&gt;where(&#39;id&#39;, &#39;=&#39;, &#39;1&#39;)-&gt;update([
-            &#39;name&#39; =&gt; &#39;安洁莉娜是jk&#39;
-        ]);
-        dd($result); //👩返回1 表示为收到影响的行数
-    }</code></pre>
-<h2 id="查询数据"><a href="#查询数据" class="headerlink" title="查询数据"></a>查询数据</h2><pre><code class="php">▶DB:table(&#39;member&#39;)-&gt;get(); //相当于 select * from member;</code></pre>
-<pre><code class="php">    public function select()
-    {
-        $db = DB::table(&#39;member&#39;);
-        $result = $db-&gt;get();
-        //尝试循环遍历数组
-        foreach ($result as $key =&gt; $value) {
-            dump($value);
-        }
-        //获取指定范围的数据
-        $kk = $db-&gt;get()-&gt;where(&#39;id&#39;, &#39;&lt;&#39;, &#39;3&#39;)-&gt;where(&#39;id&#39;, &#39;&gt;&#39;, &#39;1&#39;);
-        //获取where(&#39;id&#39;, &#39;&lt;&#39;, &#39;3&#39;)中的第一行数据
-        $kk1 = $db-&gt;get()-&gt;where(&#39;id&#39;, &#39;&lt;&#39;, &#39;3&#39;)-&gt;first();
-        dump($kk);
-        dump($kk1);
-    }</code></pre>
+<pre><code class="hljs php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">update</span><span class="hljs-params">()</span>
+  </span>&#123;
+      <span class="hljs-comment">//定义需要操作的数据表</span>
+      $db = DB::table(<span class="hljs-string">'member'</span>);
+      <span class="hljs-comment">//修改id为1的用户的name</span>
+      $result = $db-&gt;where(<span class="hljs-string">'id'</span>, <span class="hljs-string">'='</span>, <span class="hljs-string">'1'</span>)-&gt;update([
+          <span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'安洁莉娜是jk'</span>
+      ]);
+      dd($result); <span class="hljs-comment">//👩返回1 表示为收到影响的行数</span>
+  &#125;</code></pre>
+
+<h2 id="查询数据"><a href="#查询数据" class="headerlink" title="查询数据"></a>查询数据</h2><pre><code class="hljs php">▶DB:table(<span class="hljs-string">'member'</span>)-&gt;get(); <span class="hljs-comment">//相当于 select * from member;</span></code></pre>
+
+<pre><code class="hljs php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">select</span><span class="hljs-params">()</span>
+</span>&#123;
+    $db = DB::table(<span class="hljs-string">'member'</span>);
+    $result = $db-&gt;get();
+    <span class="hljs-comment">//尝试循环遍历数组</span>
+    <span class="hljs-keyword">foreach</span> ($result <span class="hljs-keyword">as</span> $key =&gt; $value) &#123;
+        dump($value);
+    &#125;
+    <span class="hljs-comment">//获取指定范围的数据</span>
+    $kk = $db-&gt;get()-&gt;where(<span class="hljs-string">'id'</span>, <span class="hljs-string">'&lt;'</span>, <span class="hljs-string">'3'</span>)-&gt;where(<span class="hljs-string">'id'</span>, <span class="hljs-string">'&gt;'</span>, <span class="hljs-string">'1'</span>);
+    <span class="hljs-comment">//获取where('id', '&lt;', '3')中的第一行数据</span>
+    $kk1 = $db-&gt;get()-&gt;where(<span class="hljs-string">'id'</span>, <span class="hljs-string">'&lt;'</span>, <span class="hljs-string">'3'</span>)-&gt;first();
+    dump($kk);
+    dump($kk1);
+&#125;</code></pre>
+
 <p>按照指定字段进行特定规则的排序</p>
-<pre><code class="php">$kk2 = DB::table(&#39;member&#39;)-&gt;orderBy(&#39;age&#39;, &#39;desc&#39;)-&gt;get();</code></pre>
+<pre><code class="hljs php">$kk2 = DB::table(<span class="hljs-string">'member'</span>)-&gt;orderBy(<span class="hljs-string">'age'</span>, <span class="hljs-string">'desc'</span>)-&gt;get();</code></pre>
+
 <p>分页操作</p>
-<pre><code class="php">$kk3 = DB::table(&#39;member&#39;)-&gt;limit(2)-&gt;offset(2)-&gt;get();
-//limit(x) x:最多显示的行数 offset(y) y:从第y行开始取</code></pre>
+<pre><code class="hljs php">$kk3 = DB::table(<span class="hljs-string">'member'</span>)-&gt;limit(<span class="hljs-number">2</span>)-&gt;offset(<span class="hljs-number">2</span>)-&gt;get();
+<span class="hljs-comment">//limit(x) x:最多显示的行数 offset(y) y:从第y行开始取</span></code></pre>
+
 <h2 id="删除数据-delete"><a href="#删除数据-delete" class="headerlink" title="删除数据(delete)"></a>删除数据(delete)</h2><p>删除中有两种方式,第一种是物理删除(本质是删除),<strong>逻辑删除(本质是修改);</strong></p>
 <p>数据删除可以通过delete函数和truncate函数实现,</p>
-<pre><code class="php">Delete 表示删除记录;
+<pre><code class="hljs php">Delete 表示删除记录;
 Truncate 表示清空整个数据表;</code></pre>
-<pre><code class="php">$db = DB::table(&#39;member&#39;);
-$result = $db-&gt;where(&#39;id&#39;, &#39;=&#39;, &#39;1&#39;)-&gt;delete();//返回的是受影响的行数;</code></pre>
+
+<pre><code class="hljs php">$db = DB::table(<span class="hljs-string">'member'</span>);
+$result = $db-&gt;where(<span class="hljs-string">'id'</span>, <span class="hljs-string">'='</span>, <span class="hljs-string">'1'</span>)-&gt;delete();<span class="hljs-comment">//返回的是受影响的行数;</span></code></pre>
+
 <h1 id="书上的增删改查的方法"><a href="#书上的增删改查的方法" class="headerlink" title="书上的增删改查的方法"></a>书上的增删改查的方法</h1>
             </article>
             <hr>

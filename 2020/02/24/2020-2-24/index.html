@@ -148,7 +148,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    713 字
+                    724 字
                   </span>
                 
 
@@ -187,169 +187,178 @@
           <div class="post-content mx-auto" id="post">
             
             <article class="markdown-body">
-              <pre><code class="html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
+              <pre><code class="hljs html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"en"</span>&gt;</span>
 
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;script src=&quot;js/vue.js&quot;&gt;&lt;/script&gt;
-&lt;/head&gt;
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"UTF-8"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"viewport"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"width=device-width, initial-scale=1.0"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">"X-UA-Compatible"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"ie=edge"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Document<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"js/vue.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
 
-&lt;body&gt;
-    &lt;div id=&quot;app&quot;&gt;
-        {{msg.split('').reverse().join('')}}
-        {{reverseMsg}}
-        {{reverseMsg}}
-        {{reverseMsg}}
-        {{reverseMsg}}
-        {{reverseMethod()}}
-        {{reverseMethod()}}
-    &lt;/div&gt;
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"app"</span>&gt;</span>
+        &#123;&#123;msg.split('').reverse().join('')&#125;&#125;
+        &#123;&#123;reverseMsg&#125;&#125;
+        &#123;&#123;reverseMsg&#125;&#125;
+        &#123;&#123;reverseMsg&#125;&#125;
+        &#123;&#123;reverseMsg&#125;&#125;
+        &#123;&#123;reverseMethod()&#125;&#125;
+        &#123;&#123;reverseMethod()&#125;&#125;
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 
-    &lt;script&gt;
-        var vm = new Vue({
-            el: &#39;#app&#39;,
-            data: {
-                msg:&#39;hello&#39;
-            },
-            methods: {
-                reverseMethod:function(){
-                    console.log(&#39;method&#39;);
-                    return this.msg.split(&#39;&#39;).reverse().join(&#39;&#39;);
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+        <span class="hljs-keyword">var</span> vm = <span class="hljs-keyword">new</span> Vue(&#123;
+            <span class="hljs-attr">el</span>: <span class="hljs-string">'#app'</span>,
+            <span class="hljs-attr">data</span>: &#123;
+                <span class="hljs-attr">msg</span>:<span class="hljs-string">'hello'</span>
+            &#125;,
+            <span class="hljs-attr">methods</span>: &#123;
+                <span class="hljs-attr">reverseMethod</span>:<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;
+                    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'method'</span>);
+                    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.msg.split(<span class="hljs-string">''</span>).reverse().join(<span class="hljs-string">''</span>);
+                    
+                    
+                &#125;
+            &#125;,
+            <span class="hljs-attr">computed</span>: &#123;
+                <span class="hljs-attr">reverseMsg</span>:<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;
+                    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'conputed'</span>);
+                    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.msg.split(<span class="hljs-string">''</span>).reverse().join(<span class="hljs-string">''</span>);
+                &#125;
+            &#125;,
+        &#125;);
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
 
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre>
 
-                }
-            },
-            computed: {
-                reverseMsg:function(){
-                    console.log(&#39;conputed&#39;);
-                    return this.msg.split(&#39;&#39;).reverse().join(&#39;&#39;);
-                }
-            },
-        });
-    &lt;/script&gt;
-&lt;/body&gt;
-
-&lt;/html&gt;</code></pre>
 <p>👩computed和methods的区别:</p>
 <p>conputed里的方法只会执行一次,然后把结果缓存起来,下次直接使用这个结果</p>
 <p>methods每调用一次就执行一次,<code>method在插值表达式中调用时要加上()</code></p>
 <h1 id="侦听器"><a href="#侦听器" class="headerlink" title="侦听器"></a>侦听器</h1><h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景:"></a>应用场景:</h3><p>数据变化时执行异步或开销较大的操作</p>
 <h3 id="触发方式"><a href="#触发方式" class="headerlink" title="触发方式:"></a>触发方式:</h3><p>数据一变化就通知侦听器绑定方法</p>
-<pre><code class="html">var vm = new Vue({
-            el: &#39;#app&#39;,
-            data: {
-                firstname:&#39;anglina&#39;,
-                lastname:&#39;Me&#39;,
-                fullname: &#39;angelina Me&#39;,
-            },
-            methods: {},
-            watch: {
-                firstname:function(val){
-                    this.fullname = val + &#39; &#39; + this.lastname;
-                },
-                lastname:function(val){
-                    this.fullname = this.firstname + &#39; &#39; + val;
-                }
-            },
-        });</code></pre>
-<h2 id="computed的实现方式"><a href="#computed的实现方式" class="headerlink" title="computed的实现方式"></a>computed的实现方式</h2><pre><code class="html">var vm = new Vue({
-            el: &#39;#app&#39;,
-            data: {
-                firstname: &#39;anglina&#39;,
-                lastname: &#39;Me&#39;,
-                // fullname: &#39;angelina Me&#39;,
-            },
-            methods: {},
-            computed: {
-                fullname: function () {
+<pre><code class="hljs html">var vm = new Vue(&#123;
+            el: '#app',
+            data: &#123;
+                firstname:'anglina',
+                lastname:'Me',
+                fullname: 'angelina Me',
+            &#125;,
+            methods: &#123;&#125;,
+            watch: &#123;
+                firstname:function(val)&#123;
+                    this.fullname = val + ' ' + this.lastname;
+                &#125;,
+                lastname:function(val)&#123;
+                    this.fullname = this.firstname + ' ' + val;
+                &#125;
+            &#125;,
+        &#125;);</code></pre>
+
+<h2 id="computed的实现方式"><a href="#computed的实现方式" class="headerlink" title="computed的实现方式"></a>computed的实现方式</h2><pre><code class="hljs html">var vm = new Vue(&#123;
+            el: '#app',
+            data: &#123;
+                firstname: 'anglina',
+                lastname: 'Me',
+                // fullname: 'angelina Me',
+            &#125;,
+            methods: &#123;&#125;,
+            computed: &#123;
+                fullname: function () &#123;
                     return this.firstname + this.lastname;
-                }
-            }</code></pre>
-<h2 id="侦听器的应用场景"><a href="#侦听器的应用场景" class="headerlink" title="侦听器的应用场景"></a>侦听器的应用场景</h2><pre><code class="html">&lt;body&gt;
-    &lt;div id=&quot;app&quot;&gt;
-        &lt;input type=&quot;text&quot; v-model=&#39;uname&#39;&gt;
-        &lt;div&gt;
-            {{msg}}
-        &lt;/div&gt;
+                &#125;
+            &#125;</code></pre>
 
-    &lt;/div&gt;
+<h2 id="侦听器的应用场景"><a href="#侦听器的应用场景" class="headerlink" title="侦听器的应用场景"></a>侦听器的应用场景</h2><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"app"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">'uname'</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+            &#123;&#123;msg&#125;&#125;
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 
-    &lt;script&gt;
-        var vm = new Vue({
-            el: &#39;#app&#39;,
-            data: {
-                uname: &#39;&#39;,
-                msg: &#39;请输入你的名字&#39;
-            },
-            methods: {
-                check(message) {
-                    var that = this;
-                    setTimeout(function () {
-                        if (message === &#39;angelina&#39;) {
-                            that.msg = &#39;已经被占用了&#39;;
-                        } else {
-                            that.msg = &#39;congratulation&#39;;
-                        }
-                    }, 1000)
-                }
-            },
-            watch: {
-                uname: function (val) {
-                    this.check(val);
-                    this.msg = &#39;loading&#39;;
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 
-                }
-            },
-        });
-    &lt;/script&gt;
-&lt;/body&gt;</code></pre>
-<h2 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h2><pre><code class="html">&lt;body&gt;
-    &lt;div id=&quot;app&quot;&gt;
-        {{msg|msgFormat}}
-    &lt;/div&gt;
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="actionscript">
+        <span class="hljs-keyword">var</span> vm = <span class="hljs-keyword">new</span> Vue(&#123;
+            el: <span class="hljs-string">'#app'</span>,
+            data: &#123;
+                uname: <span class="hljs-string">''</span>,
+                msg: <span class="hljs-string">'请输入你的名字'</span>
+            &#125;,
+            methods: &#123;
+                check(message) &#123;
+                    <span class="hljs-keyword">var</span> that = <span class="hljs-keyword">this</span>;
+                    setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>&#123;
+                        <span class="hljs-keyword">if</span> (message === <span class="hljs-string">'angelina'</span>) &#123;
+                            that.msg = <span class="hljs-string">'已经被占用了'</span>;
+                        &#125; <span class="hljs-keyword">else</span> &#123;
+                            that.msg = <span class="hljs-string">'congratulation'</span>;
+                        &#125;
+                    &#125;, <span class="hljs-number">1000</span>)
+                &#125;
+            &#125;,
+            watch: &#123;
+                uname: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(val)</span> </span>&#123;
+                    <span class="hljs-keyword">this</span>.check(val);
+                    <span class="hljs-keyword">this</span>.msg = <span class="hljs-string">'loading'</span>;
 
-    &lt;script&gt;
-        var vm = new Vue({
-            el: &#39;#app&#39;,
-            data: {
-                msg: &#39;hello&#39;
-            },
-            methods: {},
-            filters: {
-                msgFormat: function (val) {
-                    return val.charAt(0).toUpperCase() + val.slice(1);
-                }
-            }
-        });
-    &lt;/script&gt;
-&lt;/body&gt;</code></pre>
-<h2 id="时间过滤"><a href="#时间过滤" class="headerlink" title="时间过滤"></a>时间过滤</h2><pre><code class="html">&lt;body&gt;
-    &lt;div id=&quot;app&quot;&gt;
-        {{date | format('k')}}
-    &lt;/div&gt;
+                &#125;
+            &#125;,
+        &#125;);
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></code></pre>
 
-    &lt;script&gt;
-        Vue.filter(&#39;format&#39;, function (value, arg) {
-            if (arg == &#39;k&#39;) {
-                return value.getFullYear() + &#39;-&#39; + (value.getMonth() + 1) + &#39;-&#39; + value.getDate()
-            }
+<h2 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h2><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"app"</span>&gt;</span>
+        &#123;&#123;msg|msgFormat&#125;&#125;
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 
-        })
-        var vm = new Vue({
-            el: &#39;#app&#39;,
-            data: {
-                date: new Date()
-            },
-            methods: {},
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="actionscript">
+        <span class="hljs-keyword">var</span> vm = <span class="hljs-keyword">new</span> Vue(&#123;
+            el: <span class="hljs-string">'#app'</span>,
+            data: &#123;
+                msg: <span class="hljs-string">'hello'</span>
+            &#125;,
+            methods: &#123;&#125;,
+            filters: &#123;
+                msgFormat: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(val)</span> </span>&#123;
+                    <span class="hljs-keyword">return</span> val.charAt(<span class="hljs-number">0</span>).toUpperCase() + val.slice(<span class="hljs-number">1</span>);
+                &#125;
+            &#125;
+        &#125;);
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></code></pre>
 
-        });
-    &lt;/script&gt;
-&lt;/body&gt;</code></pre>
-<h3 id="过滤器串联"><a href="#过滤器串联" class="headerlink" title="过滤器串联"></a>过滤器串联</h3><pre><code class="js">{{ msg | toUpperCase | toLowerCase}} 从前往后将上一个值传递过滤下去</code></pre>
+<h2 id="时间过滤"><a href="#时间过滤" class="headerlink" title="时间过滤"></a>时间过滤</h2><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"app"</span>&gt;</span>
+        &#123;&#123;date | format('k')&#125;&#125;
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+        Vue.filter(<span class="hljs-string">'format'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">value, arg</span>) </span>&#123;
+            <span class="hljs-keyword">if</span> (arg == <span class="hljs-string">'k'</span>) &#123;
+                <span class="hljs-keyword">return</span> value.getFullYear() + <span class="hljs-string">'-'</span> + (value.getMonth() + <span class="hljs-number">1</span>) + <span class="hljs-string">'-'</span> + value.getDate()
+            &#125;
+
+        &#125;)
+        <span class="hljs-keyword">var</span> vm = <span class="hljs-keyword">new</span> Vue(&#123;
+            <span class="hljs-attr">el</span>: <span class="hljs-string">'#app'</span>,
+            <span class="hljs-attr">data</span>: &#123;
+                <span class="hljs-attr">date</span>: <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>()
+            &#125;,
+            <span class="hljs-attr">methods</span>: &#123;&#125;,
+
+        &#125;);
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></code></pre>
+
+
+
+<h3 id="过滤器串联"><a href="#过滤器串联" class="headerlink" title="过滤器串联"></a>过滤器串联</h3><pre><code class="hljs js">&#123;&#123; msg | toUpperCase | toLowerCase&#125;&#125; 从前往后将上一个值传递过滤下去</code></pre>
+
 <h1 id="数组方法"><a href="#数组方法" class="headerlink" title="数组方法"></a>数组方法</h1><ul>
 <li><p>push()</p>
 </li>
@@ -373,26 +382,27 @@
 </ul>
 </li>
 </ul>
-<h1 id="动态修改数组数据"><a href="#动态修改数组数据" class="headerlink" title="动态修改数组数据"></a>动态修改数组数据</h1><pre><code class="html">&lt;script&gt;
-        var vm = new Vue({
-            el: &#39;#app&#39;,
-            data: {
-                arr:[&#39;orange&#39;,&#39;ba&#39;,&#39;ca&#39;],
-                obj:{
-                    a:&#39;apple&#39;,
-                    b:&#39;banana&#39;
-                },
+<h1 id="动态修改数组数据"><a href="#动态修改数组数据" class="headerlink" title="动态修改数组数据"></a>动态修改数组数据</h1><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="actionscript">
+        <span class="hljs-keyword">var</span> vm = <span class="hljs-keyword">new</span> Vue(&#123;
+            el: <span class="hljs-string">'#app'</span>,
+            data: &#123;
+                arr:[<span class="hljs-string">'orange'</span>,<span class="hljs-string">'ba'</span>,<span class="hljs-string">'ca'</span>],
+                obj:&#123;
+                    a:<span class="hljs-string">'apple'</span>,
+                    b:<span class="hljs-string">'banana'</span>
+                &#125;,
                 obj2:[
-                    {id:1,name:&#39;angelina&#39;},
-                    {id:1,name:&#39;angelina&#39;},
+                    &#123;id:<span class="hljs-number">1</span>,name:<span class="hljs-string">'angelina'</span>&#125;,
+                    &#123;id:<span class="hljs-number">1</span>,name:<span class="hljs-string">'angelina'</span>&#125;,
                 ]
-            },
-            methods: {}
-        });
-        vm.$set(vm.arr,0,&#39;key&#39;);
-        vm.$set(vm.obj,&#39;a&#39;,&#39;kk&#39;);
-        vm.$set(vm.obj,&#39;c&#39;,&#39;ccc&#39;);
-    &lt;/script&gt;</code></pre>
+            &#125;,
+            methods: &#123;&#125;
+        &#125;);
+        vm.$<span class="hljs-keyword">set</span>(vm.arr,<span class="hljs-number">0</span>,<span class="hljs-string">'key'</span>);
+        vm.$<span class="hljs-keyword">set</span>(vm.obj,<span class="hljs-string">'a'</span>,<span class="hljs-string">'kk'</span>);
+        vm.$<span class="hljs-keyword">set</span>(vm.obj,<span class="hljs-string">'c'</span>,<span class="hljs-string">'ccc'</span>);
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+
 
             </article>
             <hr>

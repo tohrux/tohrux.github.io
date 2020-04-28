@@ -148,7 +148,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    684 字
+                    638 字
                   </span>
                 
 
@@ -158,7 +158,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    10
+                    9
                      分钟
                   </span>
                 
@@ -187,43 +187,48 @@
           <div class="post-content mx-auto" id="post">
             
             <article class="markdown-body">
-              <h2 id="测试是否引入成功"><a href="#测试是否引入成功" class="headerlink" title="测试是否引入成功"></a>测试是否引入成功</h2><pre><code class="js">$(document).ready(function(){
-    alert(&#39;ohiyo~&#39;);
-})</code></pre>
+              <h2 id="测试是否引入成功"><a href="#测试是否引入成功" class="headerlink" title="测试是否引入成功"></a>测试是否引入成功</h2><pre><code class="hljs js">$(<span class="hljs-built_in">document</span>).ready(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;
+    alert(<span class="hljs-string">'ohiyo~'</span>);
+&#125;)</code></pre>
+
 <h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><ul>
 <li>$(this).hide();</li>
 <li>$(“p”).hide(); //hide所有的p元素</li>
 <li>$(“p.test”).hide(); //hide所有class=test 的p元素</li>
 </ul>
-<h2 id="入口函数"><a href="#入口函数" class="headerlink" title="入口函数"></a>入口函数</h2><h3 id="jQ"><a href="#jQ" class="headerlink" title="jQ"></a>jQ</h3><pre><code class="js">$(function(){
+<h2 id="入口函数"><a href="#入口函数" class="headerlink" title="入口函数"></a>入口函数</h2><h3 id="jQ"><a href="#jQ" class="headerlink" title="jQ"></a>jQ</h3><pre><code class="hljs js">$(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;
+    
+&#125;)
 
-})
+$(<span class="hljs-built_in">document</span>).ready(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;
+    
+&#125;)</code></pre>
 
-$(document).ready(function(){
+<h3 id="JS"><a href="#JS" class="headerlink" title="JS"></a>JS</h3><pre><code class="hljs html">window.onload(function()&#123;
+	
+&#125;)</code></pre>
 
-})</code></pre>
-<h3 id="JS"><a href="#JS" class="headerlink" title="JS"></a>JS</h3><pre><code class="html">window.onload(function(){
-
-})</code></pre>
 <h3 id="区别"><a href="#区别" class="headerlink" title="区别:"></a>区别:</h3><p><code>$(document).ready(funtion(){})</code> : 等HTML所有标签(DOM)都加载完才执行</p>
 <p><code>window.onload(function(){})</code>: 等所有内容都加载完,包括外部的图片,才执行</p>
 <h2 id="JQ选择器"><a href="#JQ选择器" class="headerlink" title="JQ选择器"></a>JQ选择器</h2><h3 id="属性选择器"><a href="#属性选择器" class="headerlink" title="属性选择器"></a>属性选择器</h3><p><code>$(&quot;element[attribute]&quot;)</code></p>
-<pre><code class="javascript">eg:
-$(&quot;div[titles=test]&quot;).css(5px solid red);//titles = &#39;test&#39; 的所有div
-$(&quot;[title^=ohiyo]&quot;)//以&#39;ohiyo&#39;开头
-$(&quot;[title$=ohiyo]&quot;)//以&#39;ohiyo&#39;结尾
-$(&quot;[title*=ohiyo]&quot;)//包含&#39;ohiyo&#39;</code></pre>
+<pre><code class="hljs javascript">eg:
+$(<span class="hljs-string">"div[titles=test]"</span>).css(<span class="hljs-number">5</span>px solid red);<span class="hljs-comment">//titles = 'test' 的所有div</span>
+$(<span class="hljs-string">"[title^=ohiyo]"</span>)<span class="hljs-comment">//以'ohiyo'开头</span>
+$(<span class="hljs-string">"[title$=ohiyo]"</span>)<span class="hljs-comment">//以'ohiyo'结尾</span>
+$(<span class="hljs-string">"[title*=ohiyo]"</span>)<span class="hljs-comment">//包含'ohiyo'</span></code></pre>
+
 <h3 id="位置选择器"><a href="#位置选择器" class="headerlink" title="位置选择器"></a>位置选择器</h3><p><code>$(&quot;element:position&quot;)</code></p>
-<pre><code class="js">eg:
-$(&quot;button[class=ohiyo]:first&quot;) // 表示class = &#39;ohiyo&#39; 的第一个button
+<pre><code class="hljs js">eg:
+$(<span class="hljs-string">"button[class=ohiyo]:first"</span>) <span class="hljs-comment">// 表示class = 'ohiyo' 的第一个button</span>
 可选值
 :last
-:odd //奇数
-:even //偶数 👩:0也算是哦,baby~
+:odd <span class="hljs-comment">//奇数</span>
+:even <span class="hljs-comment">//偶数 👩:0也算是哦,baby~</span>
 :eq(n)
-:gt(n) //Greater Than 大于 
-:lt(n) //Less Than 小于
-👩:这里要注意,gt是一个段落筛选,从指定索引的下一个开始,例如gt(1)代表从大于索引为1的的选择器,所以它是从2开始的</code></pre>
+:gt(n) <span class="hljs-comment">//Greater Than 大于 </span>
+:lt(n) <span class="hljs-comment">//Less Than 小于</span>
+👩:这里要注意,gt是一个段落筛选,从指定索引的下一个开始,例如gt(<span class="hljs-number">1</span>)代表从大于索引为<span class="hljs-number">1</span>的的选择器,所以它是从<span class="hljs-number">2</span>开始的</code></pre>
+
 <p>额外选择器:</p>
 <ul>
 <li><p>next()</p>
@@ -240,43 +245,48 @@ $(&quot;button[class=ohiyo]:first&quot;) // 表示class = &#39;ohiyo&#39; 的第
 <h3 id="多选择器的写法"><a href="#多选择器的写法" class="headerlink" title="多选择器的写法"></a>多选择器的写法</h3><p><code>$(&quot;[title*=ohiyo]:eq(0),[title*=ohiyo]:eq(1)&quot;)</code></p>
 <p>后代 ,子代, id  ,类 ,标记, 略</p>
 <h3 id="一些个人的eeeee"><a href="#一些个人的eeeee" class="headerlink" title="一些个人的eeeee"></a>一些个人的eeeee</h3><p>关于eq()的一些问题</p>
-<pre><code class="html">&lt;body&gt;
-    &lt;ul class=&quot;navi&quot;&gt;
-        &lt;li&gt;nihao&lt;/li&gt;
-        &lt;li&gt;nihao&lt;/li&gt;
-        &lt;li&gt;nihao&lt;/li&gt;
-        &lt;li&gt;nihao&lt;/li&gt;
-        &lt;li&gt;nihao&lt;/li&gt;
-        &lt;li&gt;nihao&lt;/li&gt;
-    &lt;/ul&gt;
-    &lt;ul class=&quot;navi&quot;&gt;
-        &lt;li&gt;hei&lt;/li&gt;
-        &lt;li&gt;hie&lt;/li&gt;
-        &lt;li&gt;hie&lt;/li&gt;
-        &lt;li&gt;hie&lt;/li&gt;
-        &lt;li&gt;hie&lt;/li&gt;
-    &lt;/ul&gt;
-&lt;/body&gt;
-&lt;script&gt;
-    $(&quot;ul.navi li:eq(3)&quot;).css(&quot;background&quot;,&quot;red&quot;);
-&lt;/script&gt;
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"navi"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>nihao<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>nihao<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>nihao<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>nihao<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>nihao<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>nihao<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"navi"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>hei<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>hie<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>hie<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>hie<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>hie<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+    $(<span class="hljs-string">"ul.navi li:eq(3)"</span>).css(<span class="hljs-string">"background"</span>,<span class="hljs-string">"red"</span>);
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 👩:这里的li中只有第一个ul的第四个li才会变red
 👨:那如果我想让每个ul的第四个li变red要怎么做?
 👩:那你可以这写:
-    $(&quot;ul.navi&quot;).each(function(){
-        $(this).find(&quot;li:eq(3)&quot;).css(&quot;color&quot;,&quot;red&quot;);
-    });
+	$("ul.navi").each(function()&#123;
+    	$(this).find("li:eq(3)").css("color","red");
+    &#125;);
 👨:我佛了,那么复杂?给👴爬
 👩:那宁可以这样✍:
-    $(&quot;ul.navi li:nth-child(4)&quot;).css(&quot;color&quot;,&quot;red&quot;);</code></pre>
-<h3 id="选择器对象"><a href="#选择器对象" class="headerlink" title="选择器对象"></a>选择器对象</h3><pre><code class="html">    $(&quot;ul.navi&quot;).each(function(){
-        $(this).find(&quot;li:eq(3)&quot;).css(&quot;color&quot;,&quot;red&quot;);
-    });</code></pre>
-<h2 id="创建和添加html元素"><a href="#创建和添加html元素" class="headerlink" title="创建和添加html元素"></a>创建和添加html元素</h2><pre><code class="js">    $btn = $(&quot;button&quot;);
-    $btn.click(function () {
-        var $li = $(&quot;&lt;li&gt;我爱这个世界&lt;/li&gt;&quot;);
-        $(&quot;ul[title=first_title]&quot;).append($li);
-    });</code></pre>
+	$("ul.navi li:nth-child(4)").css("color","red");</code></pre>
+
+
+
+<h3 id="选择器对象"><a href="#选择器对象" class="headerlink" title="选择器对象"></a>选择器对象</h3><pre><code class="hljs html">$("ul.navi").each(function()&#123;
+   	$(this).find("li:eq(3)").css("color","red");
+   &#125;);</code></pre>
+
+<h2 id="创建和添加html元素"><a href="#创建和添加html元素" class="headerlink" title="创建和添加html元素"></a>创建和添加html元素</h2><pre><code class="hljs js">$btn = $(<span class="hljs-string">"button"</span>);
+$btn.click(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+    <span class="hljs-keyword">var</span> $li = $(<span class="hljs-string">"&lt;li&gt;我爱这个世界&lt;/li&gt;"</span>);
+    $(<span class="hljs-string">"ul[title=first_title]"</span>).append($li);
+&#125;);</code></pre>
+
 <h3 id="append"><a href="#append" class="headerlink" title="append()"></a>append()</h3><h3 id="apendTo"><a href="#apendTo" class="headerlink" title="apendTo()"></a>apendTo()</h3><h3 id="prepend"><a href="#prepend" class="headerlink" title="prepend()"></a>prepend()</h3><h3 id="prependTo"><a href="#prependTo" class="headerlink" title="prependTo()"></a>prependTo()</h3><h3 id="after"><a href="#after" class="headerlink" title="after()"></a>after()</h3><h3 id="before"><a href="#before" class="headerlink" title="before()"></a>before()</h3><h2 id="删除元素"><a href="#删除元素" class="headerlink" title="删除元素"></a>删除元素</h2><h3 id="remove"><a href="#remove" class="headerlink" title="remove()"></a>remove()</h3><p>它的效果是将元素删除,<strong>包括它的后代</strong></p>
 <h3 id="empty"><a href="#empty" class="headerlink" title="empty()"></a>empty()</h3><p>它的效果是删除该元素的后代删除,<strong>但是不会删除自己本身</strong></p>
 <p>👩括号中的参数可以是node,dom,$对象</p>

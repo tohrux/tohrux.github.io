@@ -269,11 +269,15 @@
           
         
         <div>笔记来源于书
-原生ajax写法          var xhr = new XMLHttpRequest();
-        //
-        xhr.open(&quot;post&quot;, &quot;test.php&quot;);
-        //
-        xhr.setRequestHeader(&quot;Content-type&quot;, &quot;ap</div>
+原生ajax写法var xhr = new XMLHttpRequest();
+ //
+ xhr.open("post", "test.php");
+ //
+ xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+ //
+ xhr.send("a=1&amp;b=10");
+ //
+ xh</div>
       </a>
 
       <div class="index-btm post-metas">
@@ -318,19 +322,18 @@
         
           
         
-        <div>测试是否引入成功$(document).ready(function(){
-    alert(&#39;ohiyo~&#39;);
-})
+        <div>测试是否引入成功$(document).ready(function()&#123;
+    alert('ohiyo~');
+&#125;)
+
 语法
 $(this).hide();
 $(“p”).hide(); //hide所有的p元素
 $(“p.test”).hide(); //hide所有class=test 的p元素
 
-入口函数jQ$(function(){
-
-})
-
-$(document).r</div>
+入口函数jQ$(function()&#123;
+    
+&#125</div>
       </a>
 
       <div class="index-btm post-metas">
@@ -380,9 +383,10 @@ concat() 方法用于连接两个或多个数组。
 
 语法
 arrayObject.concat(arrayX,arrayX,......,arrayX)
+
 👩:括号中可以给具体值,或者是数组名
 join()
-join() 方法将一个数组（或一个类数组对象）的所有元素连接成一个字符串</div>
+join() 方法将一个数组（或一个类数组对象）的所有元素连接成一个字符</div>
       </a>
 
       <div class="index-btm post-metas">
@@ -438,7 +442,8 @@ DOM,BOM,比如console,document
 自定义对象
 
 var obj = new Object();
-对象的创建    //通过new关键字创建,调用了con</div>
+
+对象的创建//通过new关键字创建,调用了constr</div>
       </a>
 
       <div class="index-btm post-metas">
@@ -486,12 +491,15 @@ var obj = new Object();
 
 console.log(1&amp;&amp;0);//0
 console.log(0&amp;&amp;1);//0
+
 console.log(0 || 1);//1
 console.log(1 || 0);//1
-对非布尔值进行布尔运算    var a = 1;
-    a = !a;
-    console.log(a); //false
-关系运算符/</div>
+
+对非布尔值进行布尔运算var a = 1;
+a = !a;
+console.log(a); //false
+
+关系运算符//返回的一定是fa</div>
       </a>
 
       <div class="index-btm post-metas">
@@ -632,9 +640,10 @@ index_img来自斉藤健吾@月曜日 南 ナ26ab (@kengo1212)： https://twitte
 
 
 
-一些常用H5标签    &lt;b&gt; bold
-    &lt;sub&gt; 下标
-    &lt;sup&gt</div>
+一些常用H5标签&lt;b&gt; bold
+   &lt;sub&gt; 下标
+   &lt;sup&gt; 上标
+ </div>
       </a>
 
       <div class="index-btm post-metas">

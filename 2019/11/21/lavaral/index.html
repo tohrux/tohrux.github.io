@@ -148,7 +148,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    739 字
+                    683 字
                   </span>
                 
 
@@ -158,7 +158,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    10
+                    9
                      分钟
                   </span>
                 
@@ -188,99 +188,106 @@
             
             <article class="markdown-body">
               <h1 id="4种常用的路由方法"><a href="#4种常用的路由方法" class="headerlink" title="4种常用的路由方法"></a>4种常用的路由方法</h1><p>post/get/any/match</p>
-<pre><code class="php">//get 语法
-//例如访问/hey的时候可以这样写
-Route::get (&#39;/hey&#39;, function() {
-    return &quot;hello&quot;;
-});
+<pre><code class="hljs php"><span class="hljs-comment">//get 语法</span>
+<span class="hljs-comment">//例如访问/hey的时候可以这样写</span>
+Route::get (<span class="hljs-string">'/hey'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>&#123;
+    <span class="hljs-keyword">return</span> <span class="hljs-string">"hello"</span>;
+&#125;);
 
 
-//post
-//post方法可以用postman来获取值
-//👩post请求需要在VerifycsrfToken中修改把不想要csrf请求的路由写在这里:
-    protected $except = [
-        //把不想csrf验证得路由写在这里
-        &#39;/hello&#39;
+<span class="hljs-comment">//post</span>
+<span class="hljs-comment">//post方法可以用postman来获取值</span>
+<span class="hljs-comment">//👩post请求需要在VerifycsrfToken中修改把不想要csrf请求的路由写在这里:</span>
+	<span class="hljs-keyword">protected</span> $except = [
+        <span class="hljs-comment">//把不想csrf验证得路由写在这里</span>
+        <span class="hljs-string">'/hello'</span>
     ];
-Route::post (&#39;/hello&#39;, function() {
-    return &quot;hello from post&quot;;
-});
+Route::post (<span class="hljs-string">'/hello'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>&#123;
+    <span class="hljs-keyword">return</span> <span class="hljs-string">"hello from post"</span>;
+&#125;);
 
 
 
-//any
-//任意类型
-Route::any(&#39;/test2&#39;, function () {
-    echo &#39;当前是用any访问&#39;;
-});
-//match
-Route::match([&#39;get&#39;, &#39;post&#39;], &#39;/test3&#39;, function () {
-    echo &#39;当前是用match访问&#39;;
-});</code></pre>
+<span class="hljs-comment">//any</span>
+<span class="hljs-comment">//任意类型</span>
+Route::any(<span class="hljs-string">'/test2'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>&#123;
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">'当前是用any访问'</span>;
+&#125;);
+<span class="hljs-comment">//match</span>
+Route::match([<span class="hljs-string">'get'</span>, <span class="hljs-string">'post'</span>], <span class="hljs-string">'/test3'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>&#123;
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">'当前是用match访问'</span>;
+&#125;);</code></pre>
+
 <h1 id="路由参数"><a href="#路由参数" class="headerlink" title="路由参数"></a>路由参数</h1><p>路由参数其实就是给路由传递参数</p>
 <p>参数分为<strong>必选参数</strong>和<strong>可选参数</strong></p>
-<pre><code class="php">//必选参数 给定默认值
-Route::any(&#39;users/{id}&#39;, function ($id=&#39;&#39;) {
-    echo &#39;当前用户的id是&#39;.$id;
-});
+<pre><code class="hljs php"><span class="hljs-comment">//必选参数 给定默认值</span>
+Route::any(<span class="hljs-string">'users/&#123;id&#125;'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($id=<span class="hljs-string">''</span>)</span> </span>&#123;
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">'当前用户的id是'</span>.$id;
+&#125;);
 👆这样写会报错,不能预先给定值,必须要用户输入数字才可以
-    eg:example.com/users/123  //输出 当前用户的id是123
-//可选参数 给定默认值
-Route::any(&#39;users2/{id?}&#39;, function ($id=&#39;&#39;) {
-    echo &#39;当前用户的id是&#39;.$id;
-});
+    eg:example.com/users/<span class="hljs-number">123</span>  <span class="hljs-comment">//输出 当前用户的id是123</span>
+<span class="hljs-comment">//可选参数 给定默认值</span>
+Route::any(<span class="hljs-string">'users2/&#123;id?&#125;'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($id=<span class="hljs-string">''</span>)</span> </span>&#123;
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">'当前用户的id是'</span>.$id;
+&#125;);
 👆可预先给定值
-//通过?形式传递get参数
-Route::any(&#39;/user3&#39;, function () {
-    echo &#39;当前用户的id是&#39;.$_GET[&#39;id&#39;];
-});
-//限制路由参数 例如:必须是数字 必须有参数
-Route::get(&#39;hello2/{id}&#39;, function ($id) {
-    echo &quot;now is&quot;.$id;
-}) -&gt; where(&#39;id&#39;,&#39;[0-9]+&#39;);</code></pre>
+<span class="hljs-comment">//通过?形式传递get参数</span>
+Route::any(<span class="hljs-string">'/user3'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>&#123;
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">'当前用户的id是'</span>.$_GET[<span class="hljs-string">'id'</span>];
+&#125;);
+<span class="hljs-comment">//限制路由参数 例如:必须是数字 必须有参数</span>
+Route::get(<span class="hljs-string">'hello2/&#123;id&#125;'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($id)</span> </span>&#123;
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">"now is"</span>.$id;
+&#125;) -&gt; where(<span class="hljs-string">'id'</span>,<span class="hljs-string">'[0-9]+'</span>);</code></pre>
+
 <h1 id="MVC"><a href="#MVC" class="headerlink" title="MVC"></a>MVC</h1><p>使代码不累赘</p>
 <p>c –处理用户交互逻辑,如果需要交互就会跳到mdel处理数据</p>
 <p>else -&gt; 直接跳转到view</p>
 <p>model –用于处理数据的增删改查</p>
-<h1 id="路由别名"><a href="#路由别名" class="headerlink" title="路由别名"></a>路由别名</h1><pre><code class="php">//路由别名
-//🙅不可以直接输入到地址栏,但是可以作为简写被别的方法调用
-Route::any(&#39;/user4/afadfaf/asdfasfasdf/asdfasd&#39;, function () {
-    echo &#39;IamUser4&#39;;
-}) -&gt; name(&#39;user4&#39;);
-Route::get(&#39;/na&#39;, function () {
-    return redirect()-&gt;route(&#39;user4&#39;);
-});
+<h1 id="路由别名"><a href="#路由别名" class="headerlink" title="路由别名"></a>路由别名</h1><pre><code class="hljs php"><span class="hljs-comment">//路由别名</span>
+<span class="hljs-comment">//🙅不可以直接输入到地址栏,但是可以作为简写被别的方法调用</span>
+Route::any(<span class="hljs-string">'/user4/afadfaf/asdfasfasdf/asdfasd'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>&#123;
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">'IamUser4'</span>;
+&#125;) -&gt; name(<span class="hljs-string">'user4'</span>);
+Route::get(<span class="hljs-string">'/na'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>&#123;
+    <span class="hljs-keyword">return</span> redirect()-&gt;route(<span class="hljs-string">'user4'</span>);
+&#125;);
 
-Route::group([&#39;prefix&#39; =&gt; &#39;admin&#39;], function () {
-    Route::get(&#39;/test1&#39;, function () {
-        return &#39;IamTest1&#39;;
-    });
-    Route::get(&#39;/test2&#39;, function () {
-        echo &quot;IamTest2&quot;;
-    });
-});</code></pre>
+Route::group([<span class="hljs-string">'prefix'</span> =&gt; <span class="hljs-string">'admin'</span>], <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>&#123;
+    Route::get(<span class="hljs-string">'/test1'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>&#123;
+        <span class="hljs-keyword">return</span> <span class="hljs-string">'IamTest1'</span>;
+    &#125;);
+    Route::get(<span class="hljs-string">'/test2'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>&#123;
+        <span class="hljs-keyword">echo</span> <span class="hljs-string">"IamTest2"</span>;
+    &#125;);
+&#125;);</code></pre>
+
+
+
 <h1 id="查看系统当前路由别名"><a href="#查看系统当前路由别名" class="headerlink" title="查看系统当前路由别名"></a>查看系统当前路由别名</h1><p>在laravel根目录下cmd -&gt; php artisan可以查看所有命令, 找到route:list(这代表了路由列表,然后再cmd -&gt; php artisan route:list  🆗</p>
 <h1 id="路由群组"><a href="#路由群组" class="headerlink" title="路由群组:"></a>路由群组:</h1><p>如果路由层级过多,每次要重新定义路由会很麻烦,我们可以将前缀一样的路由放在路由群组里</p>
-<pre><code class="php">Route::group([&#39;prefix&#39; =&gt; &#39;admin&#39;], function () {
-    Route::get(&#39;/test1&#39;, function () {
-        return &#39;IamTest1&#39;;
-        //匹配 &quot;/admin/test1&quot; URl
-    });
-    Route::get(&#39;/test2&#39;, function () {
-        echo &quot;IamTest2&quot;;
-        //匹配 &quot;/admin/test2&quot; URl
-    });
-    Route::group([&#39;prefix&#39; =&gt; &#39;/test1&#39;], function () {
-        Route::get(&#39;/login&#39;, function () {
-            return &#39;我是二级路由test1下面的三级路由login&#39;;
-        });
-    });
-});
-👆以上代码中admin被称为一级路由,test1/test2被称为2级路由,以此类推</code></pre>
-<h1 id="限制路由参数"><a href="#限制路由参数" class="headerlink" title="限制路由参数"></a>限制路由参数</h1><pre><code class="php">//限制路由参数 例如:必须是数字 必须有参数
-Route::get(&#39;hello2/{id}&#39;, function ($id) {
-    echo &quot;now is&quot;.$id;
-}) -&gt; where(&#39;id&#39;,&#39;[0-9]+&#39;);</code></pre>
+<pre><code class="hljs php">Route::group([<span class="hljs-string">'prefix'</span> =&gt; <span class="hljs-string">'admin'</span>], <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>&#123;
+    Route::get(<span class="hljs-string">'/test1'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>&#123;
+        <span class="hljs-keyword">return</span> <span class="hljs-string">'IamTest1'</span>;
+        <span class="hljs-comment">//匹配 "/admin/test1" URl</span>
+    &#125;);
+    Route::get(<span class="hljs-string">'/test2'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>&#123;
+        <span class="hljs-keyword">echo</span> <span class="hljs-string">"IamTest2"</span>;
+        <span class="hljs-comment">//匹配 "/admin/test2" URl</span>
+    &#125;);
+    Route::group([<span class="hljs-string">'prefix'</span> =&gt; <span class="hljs-string">'/test1'</span>], <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>&#123;
+        Route::get(<span class="hljs-string">'/login'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>&#123;
+            <span class="hljs-keyword">return</span> <span class="hljs-string">'我是二级路由test1下面的三级路由login'</span>;
+        &#125;);
+    &#125;);
+&#125;);
+👆以上代码中admin被称为一级路由,test1/test2被称为<span class="hljs-number">2</span>级路由,以此类推</code></pre>
+
+<h1 id="限制路由参数"><a href="#限制路由参数" class="headerlink" title="限制路由参数"></a>限制路由参数</h1><pre><code class="hljs php"><span class="hljs-comment">//限制路由参数 例如:必须是数字 必须有参数</span>
+Route::get(<span class="hljs-string">'hello2/&#123;id&#125;'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($id)</span> </span>&#123;
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">"now is"</span>.$id;
+&#125;) -&gt; where(<span class="hljs-string">'id'</span>,<span class="hljs-string">'[0-9]+'</span>);</code></pre>
+
 
             </article>
             <hr>

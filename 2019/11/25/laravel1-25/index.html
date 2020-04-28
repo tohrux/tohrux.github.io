@@ -148,7 +148,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    680 字
+                    642 字
                   </span>
                 
 
@@ -158,7 +158,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    10
+                    9
                      分钟
                   </span>
                 
@@ -189,7 +189,8 @@
             <article class="markdown-body">
               <h1 id="表单验证"><a href="#表单验证" class="headerlink" title="表单验证:"></a>表单验证:</h1><p>多个验证规则可以通过”|”隔开:</p>
 <p>语法:</p>
-<pre><code class="php">$this-&gt;validate(数据对象,[数组形式的验证规则])</code></pre>
+<pre><code class="hljs php"><span class="hljs-keyword">$this</span>-&gt;validate(数据对象,[数组形式的验证规则])</code></pre>
+
 <table>
 <thead>
 <tr>
@@ -244,85 +245,96 @@
 <li><p>配置路由</p>
 </li>
 <li><p>csrf验证:</p>
-<pre><code class="php">{{csrf_token()}}//会在页面显示 纯文本显示 用在异步提交 ajax
+<pre><code class="hljs php">&#123;&#123;csrf_token()&#125;&#125;<span class="hljs-comment">//会在页面显示 纯文本显示 用在异步提交 ajax</span>
 
-{{csrf_field()}}//一般已html元素的形式生成 自动hidden
+&#123;&#123;csrf_field()&#125;&#125;<span class="hljs-comment">//一般已html元素的形式生成 自动hidden</span>
 👇也可以直接写成这个
     @csrf</code></pre>
+
 <p>csrf_field自动生成的html元素:</p>
-<pre><code class="html">&lt;input type=&quot;hidden&quot; name=&quot;_token&quot; value=&quot;i4Q2RwjAN5NpYyUwJogKSjsza9VBi4hYtwQ7gvvu&quot;&gt;</code></pre>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"hidden"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"_token"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"i4Q2RwjAN5NpYyUwJogKSjsza9VBi4hYtwQ7gvvu"</span>&gt;</span></code></pre>
+
+
+
 </li>
 </ol>
-<h1 id="如何得知一个请求类型"><a href="#如何得知一个请求类型" class="headerlink" title="如何得知一个请求类型"></a>如何得知一个请求类型</h1><pre><code class="php"> public function index(Request $request)
-    {
-        echo $request-&gt;method();
-    }</code></pre>
-<h1 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h1><pre><code class="php">//CONTROLLER.PHP:
+<h1 id="如何得知一个请求类型"><a href="#如何得知一个请求类型" class="headerlink" title="如何得知一个请求类型"></a>如何得知一个请求类型</h1><pre><code class="hljs php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">index</span><span class="hljs-params">(Request $request)</span>
+   </span>&#123;
+       <span class="hljs-keyword">echo</span> $request-&gt;method();
+   &#125;</code></pre>
+
+<h1 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h1><pre><code class="hljs php">//CONTROLLER.PHP:
     public function index(Request $request)
-    {
-        if ($request-&gt;method() == &#39;POST&#39;) {
+    &#123;
+        if ($request-&gt;method() == 'POST') &#123;
             echo $request-&gt;method();
             $this-&gt;validate($request, [
-                &#39;name&#39; =&gt; &#39;required|min:2|max:20&#39;,
-                &#39;password&#39; =&gt; &#39;required|min:6&#39;
+                'name' =&gt; 'required|min:2|max:20',
+                'password' =&gt; 'required|min:6'
             ]);
-            echo &quot;success!&quot;;
-        } else {
+            echo "success!";
+        &#125; else &#123;
             echo $request-&gt;method();
-            return view(&#39;users.index.index&#39;);
-        }
-    }
+            return view('users.index.index');
+        &#125;
+    &#125;
 
 
 //INDEX.BLADE.PHP:
     @if(count($errors) &gt; 0)
-    &lt;div class=&quot;alert alert-danger&quot;&gt;
+    &lt;div class="alert alert-danger"&gt;
         &lt;ul&gt;
             @foreach ($errors-&gt;all() as $error)
-                &lt;li&gt;{{ $error }}&lt;/li&gt;
+                &lt;li&gt;&#123;&#123; $error &#125;&#125;&lt;/li&gt;
             @endforeach
         &lt;/ul&gt;
     &lt;/div&gt;
     @endif
 
-    &lt;form action=&quot;&quot; method=&quot;post&quot; &gt;
-            &lt;p&gt;usrname&lt;input type=&quot;text&quot; name=&quot;name&quot;&gt;&lt;/p&gt;
-            &lt;p&gt;password&lt;input type=&quot;password&quot; name=&quot;password&quot;&gt;&lt;/p&gt;
+    &lt;form action="" method="post" &gt;
+            &lt;p&gt;usrname&lt;input type="text" name="name"&gt;&lt;/p&gt;
+            &lt;p&gt;password&lt;input type="password" name="password"&gt;&lt;/p&gt;
             @csrf
-            &lt;p&gt;&lt;input type=&quot;submit&quot;&gt;&lt;/p&gt;
+            &lt;p&gt;&lt;input type="submit"&gt;&lt;/p&gt;
        &lt;/form&gt;
 //WEB.PHP
-        Route::any(&#39;/users/index/adduser&#39;, &#39;UserController@index&#39;);</code></pre>
-<h2 id="独立验证实现"><a href="#独立验证实现" class="headerlink" title="独立验证实现"></a>独立验证实现</h2><pre><code class="php">$validate = Validator::make($request-&gt;all(), [
-&#39;name&#39; =&gt; &#39;required|min:2|max:20&#39;,
-&#39;password&#39; =&gt; &#39;required|min:6&#39;
-]);
-//打印对象所有的方法 04:fails
-dump(get_class_methods($validate));
-if ($validate-&gt;fails()) {
-//通过重定向回退
-// return redirect()-&gt;back()-&gt;withErros($validate);
-}</code></pre>
-<h2 id="通过验证器文件来实现"><a href="#通过验证器文件来实现" class="headerlink" title="通过验证器文件来实现"></a>通过验证器文件来实现</h2><p>通过命令行创建一个验证器文件</p>
-<pre><code class="cmd">php artisan make:request UserRequest</code></pre>
-<p>然后在该文件进行配置</p>
-<pre><code class="php">    public function rules()
-    {
-        return [
-            //编写自定义规则
-            &#39;name&#39; =&gt; &#39;required|min:2|max:20&#39;,
-            &#39;password&#39; =&gt; &#39;required|min:6&#39;
-        ];
-    }
-    //如果需要中文的错误提示,则需要手动写方法
-    public function message()
-    {
-        return [
-            &#39;name.requiired&#39; =&gt; &#39;不能为空&#39;,
-            &#39;password.requiired&#39; =&gt; &#39;不能为空&#39;
+        Route::any('/users/index/adduser', 'UserController@index');</code></pre>
 
-        ];
-    }</code></pre>
+<h2 id="独立验证实现"><a href="#独立验证实现" class="headerlink" title="独立验证实现"></a>独立验证实现</h2><pre><code class="hljs php">$validate = Validator::make($request-&gt;all(), [
+<span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'required|min:2|max:20'</span>,
+<span class="hljs-string">'password'</span> =&gt; <span class="hljs-string">'required|min:6'</span>
+]);
+<span class="hljs-comment">//打印对象所有的方法 04:fails</span>
+dump(get_class_methods($validate));
+<span class="hljs-keyword">if</span> ($validate-&gt;fails()) &#123;
+<span class="hljs-comment">//通过重定向回退</span>
+<span class="hljs-comment">// return redirect()-&gt;back()-&gt;withErros($validate);</span>
+&#125;</code></pre>
+
+<h2 id="通过验证器文件来实现"><a href="#通过验证器文件来实现" class="headerlink" title="通过验证器文件来实现"></a>通过验证器文件来实现</h2><p>通过命令行创建一个验证器文件</p>
+<pre><code class="hljs cmd">php artisan make:request UserRequest</code></pre>
+
+<p>然后在该文件进行配置</p>
+<pre><code class="hljs php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">rules</span><span class="hljs-params">()</span>
+</span>&#123;
+    <span class="hljs-keyword">return</span> [
+        <span class="hljs-comment">//编写自定义规则</span>
+        <span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'required|min:2|max:20'</span>,
+        <span class="hljs-string">'password'</span> =&gt; <span class="hljs-string">'required|min:6'</span>
+    ];
+&#125;
+<span class="hljs-comment">//如果需要中文的错误提示,则需要手动写方法</span>
+<span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">message</span><span class="hljs-params">()</span>
+</span>&#123;
+    <span class="hljs-keyword">return</span> [
+        <span class="hljs-string">'name.requiired'</span> =&gt; <span class="hljs-string">'不能为空'</span>,
+        <span class="hljs-string">'password.requiired'</span> =&gt; <span class="hljs-string">'不能为空'</span>
+
+    ];
+&#125;</code></pre>
+
+
+
 <h2 id="关于验证语言包"><a href="#关于验证语言包" class="headerlink" title="关于验证语言包"></a>关于验证语言包</h2><p>可以通过这个网站去下载<a href="https://packagist.org/packages/caouecs/laravel-lang" target="_blank" rel="noopener" title="packagist">packagist</a></p>
 <p>使用composer安装完后 再到vendor下拿到这个文件复制到\resources\lang下</p>
 <p>再在validation把locale修改为想要的语言就🆗</p>

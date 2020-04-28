@@ -200,8 +200,9 @@
 </blockquote>
 <h1 id="一些概念"><a href="#一些概念" class="headerlink" title="一些概念"></a>一些概念</h1><p>首先使用Flex布局一定要知道的一点是,这种布局总是以父子的形式存在,父级元素被称为 <strong>容器</strong>(container),有些地方也会称为<strong>弹性盒</strong>,而所有的子级元素会自动地成为这个<strong>容器</strong>的成员,成为 Flex项目(item)</p>
 <p>在下文会用 <strong>container</strong> 表示容器, <strong>item</strong>表示Flex项目</p>
-<pre><code class="html">display:flex
+<pre><code class="hljs html">display:flex
 //当一个元素的display被设置为flex后，它就会成为一个 *container</code></pre>
+
 <blockquote>
 <p>:hand:这里需要注意的是一旦一个元素被设置为display：flex，子元素的 float,clear,vertical-align将会失效</p>
 </blockquote>
@@ -209,213 +210,229 @@
 <p>一般来说，主轴是指水平方向的轴，而副轴是指垂直方向的轴,但是却不是绝对的,比如说下面的这个<code>flex-direction</code>属性就可以决定主轴的方向👇</p>
 <h1 id="flex-direction"><a href="#flex-direction" class="headerlink" title="flex-direction"></a>flex-direction</h1><p>这个属性决定的是主轴的方向 ,即item们的排列方式</p>
 <p>一共有 4个值 分别为 <strong>row</strong> | <strong>row-reverse</strong> | <strong>column</strong> | <strong>column-reverse</strong>; </p>
-<pre><code class="html">.container{
-    display: flex;
-    flex-direction:  row | row-reverse | column | column-reverse;
-}</code></pre>
+<pre><code class="hljs html">.container&#123;
+	display: flex;
+	flex-direction:  row | row-reverse | column | column-reverse;
+&#125;</code></pre>
+
 <p>在demo中，我的初始代码如下：</p>
-<pre><code class="html">//css部分
-&lt;style&gt;
-        * {
-            padding: 0;
-            margin: 0;
-        }
+<pre><code class="hljs html">//css部分
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
+        * &#123;
+            <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span>;
+            <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;
+        &#125;
 
-        .container {
-            display: flex;
-            flex-direction: row;
-        }
+        <span class="hljs-selector-class">.container</span> &#123;
+            <span class="hljs-attribute">display</span>: flex;
+            <span class="hljs-attribute">flex-direction</span>: row;
+        &#125;
 
-        .container&gt;div {
-            width: 100px;
-            height: 100px;
-        }
+        <span class="hljs-selector-class">.container</span>&gt;<span class="hljs-selector-tag">div</span> &#123;
+            <span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;
+            <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;
+        &#125;
 
-        .item1 {
-            background-color: red;
-        }
+        <span class="hljs-selector-class">.item1</span> &#123;
+            <span class="hljs-attribute">background-color</span>: red;
+        &#125;
 
-        .item2 {
-            background-color: yellow;
-        }
+        <span class="hljs-selector-class">.item2</span> &#123;
+            <span class="hljs-attribute">background-color</span>: yellow;
+        &#125;
 
-        .item3 {
-            background-color: blue;
-        }
-    &lt;/style&gt;
+        <span class="hljs-selector-class">.item3</span> &#123;
+            <span class="hljs-attribute">background-color</span>: blue;
+        &#125;
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
 ----------------------------------------------------------------------------------
 
 //body部分
-    &lt;body&gt;
-    &lt;div class=&quot;container&quot;&gt;
-        &lt;div class=&quot;item1&quot;&gt;&lt;/div&gt;
-        &lt;div class=&quot;item2&quot;&gt;&lt;/div&gt;
-        &lt;div class=&quot;item3&quot;&gt;&lt;/div&gt;
-    &lt;/div&gt;
-&lt;/body&gt;</code></pre>
+	<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"container"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item1"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item2"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item3"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></code></pre>
+
 <p>现在分别展示4种 <strong>flex-direction</strong>的效果 :</p>
 <p>👩要注意的是，在我的代码中<strong>container</strong>默认宽度是整个<strong>body</strong>的宽度,而高度则内容物(分别是红,黄,蓝三个盒子)而确定.</p>
-<h3 id="row-从左向右排列"><a href="#row-从左向右排列" class="headerlink" title="row :从左向右排列"></a>row :从左向右排列</h3><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/flex_a1.png" srcset="undefined" alt=""></p>
+<h3 id="row-从左向右排列"><a href="#row-从左向右排列" class="headerlink" title="row :从左向右排列"></a>row :从左向右排列</h3><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/flex_a1.png" srcset="/img/loading.gif" alt=""></p>
 <h3 id="row-reverse-从右向左排列"><a href="#row-reverse-从右向左排列" class="headerlink" title="row-reverse:从右向左排列"></a>row-reverse:从右向左排列</h3><p>👩这种布局中,并不是单纯地将三个盒子调转了顺序,而是还加了一步:把<strong>item</strong>全都在<strong>container</strong>中从右向左排列.</p>
-<p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/flex_a2.png" srcset="undefined" alt=""></p>
-<h3 id="column-从上到下排列"><a href="#column-从上到下排列" class="headerlink" title="column:从上到下排列"></a>column:从上到下排列</h3><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/flex_a3.png" srcset="undefined" alt=""></p>
-<h3 id="column-reverse-从下到上排列"><a href="#column-reverse-从下到上排列" class="headerlink" title="column-reverse:从下到上排列"></a>column-reverse:从下到上排列</h3><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/flex_a4.png" srcset="undefined" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/flex_a2.png" srcset="/img/loading.gif" alt=""></p>
+<h3 id="column-从上到下排列"><a href="#column-从上到下排列" class="headerlink" title="column:从上到下排列"></a>column:从上到下排列</h3><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/flex_a3.png" srcset="/img/loading.gif" alt=""></p>
+<h3 id="column-reverse-从下到上排列"><a href="#column-reverse-从下到上排列" class="headerlink" title="column-reverse:从下到上排列"></a>column-reverse:从下到上排列</h3><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/flex_a4.png" srcset="/img/loading.gif" alt=""></p>
 <h1 id="flex-wrap"><a href="#flex-wrap" class="headerlink" title="flex-wrap"></a>flex-wrap</h1><p>这个属性定义的是,如果在一条水平线上已经存在了过多的<strong>item</strong>(意思就是挤不下了),这些<strong>item</strong>将如何换行.</p>
 <p>这个属性有3个值:</p>
-<pre><code class="html">.container{
-    display: flex;
-    flex-wrap: nowrap | wrap | wrap-reverse;
-}</code></pre>
+<pre><code class="hljs html">.container&#123;
+	display: flex;
+	flex-wrap: nowrap | wrap | wrap-reverse;
+&#125;</code></pre>
+
 <p>在demo中我的初始代码如下:</p>
-<pre><code class="html">css部分
+<pre><code class="hljs html">css部分
 -----------------------------------------------------------------------------------------
-&lt;style&gt;
-        * {
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="xml">
+        * &#123;
             padding: 0;
             margin: 0;
-        }
+        &#125;
 
-        .container {
+        .container &#123;
             display: flex;
             flex-direction: row;
             flex-wrap: nowrap;
-        }
+        &#125;
 
-        .container&gt;div {
+        .container&gt;div &#123;
             width: 100px;
             height: 100px;
             border: 1px solid black;
-        }
+        &#125;
 body部分
 -----------------------------------------------------------------------------------------
-    &lt;body&gt;
-    &lt;div class=&quot;container&quot;&gt;
-        &lt;div&gt;1&lt;/div&gt;
-        &lt;div&gt;2&lt;/div&gt;
-        &lt;div&gt;3&lt;/div&gt;
-        &lt;div&gt;4&lt;/div&gt;
-        &lt;div&gt;5&lt;/div&gt;
-        &lt;div&gt;6&lt;/div&gt;
-        &lt;div&gt;7&lt;/div&gt;
-        &lt;div&gt;8&lt;/div&gt;
-    &lt;/div&gt;
-&lt;/body&gt;</code></pre>
+    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"container"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>4<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>5<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>6<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>7<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>8<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></span></code></pre>
+
+
+
 <p>下面来看看效果吧:</p>
-<h3 id="默认效果"><a href="#默认效果" class="headerlink" title="默认效果:"></a>默认效果:</h3><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/flex_b1.png" srcset="undefined" alt=""></p>
+<h3 id="默认效果"><a href="#默认效果" class="headerlink" title="默认效果:"></a>默认效果:</h3><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/flex_b1.png" srcset="/img/loading.gif" alt=""></p>
 <h3 id="nowrap-不换行"><a href="#nowrap-不换行" class="headerlink" title="nowrap:不换行"></a><strong>nowrap</strong>:不换行</h3><p>现在我减小了浏览器窗口的宽度👇</p>
-<p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/flex_b2.png" srcset="undefined" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/flex_b2.png" srcset="/img/loading.gif" alt=""></p>
 <p>再缩小:</p>
-<p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/flex_b3.png" srcset="undefined" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/flex_b3.png" srcset="/img/loading.gif" alt=""></p>
 <p>👨hey!!我似乎发现了华点!这就是 <strong>弹性布局</strong>这个名字的由来吗?👆</p>
 <h3 id="wrap-换行"><a href="#wrap-换行" class="headerlink" title="wrap:换行"></a>wrap:换行</h3><p>减小浏览器的宽度:</p>
-<p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/flex_b4.png" srcset="undefined" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/flex_b4.png" srcset="/img/loading.gif" alt=""></p>
 <p>再减小:</p>
-<p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/flex_b5.png" srcset="undefined" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/flex_b5.png" srcset="/img/loading.gif" alt=""></p>
 <h3 id="wrap-reverse-颠倒顺序的换行方式"><a href="#wrap-reverse-颠倒顺序的换行方式" class="headerlink" title="wrap-reverse:颠倒顺序的换行方式"></a>wrap-reverse:颠倒顺序的换行方式</h3><p>减小浏览器的宽度:</p>
-<p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/flex_b6.png" srcset="undefined" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/flex_b6.png" srcset="/img/loading.gif" alt=""></p>
 <p>再减小:</p>
-<p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/flex_b7.png" srcset="undefined" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/flex_b7.png" srcset="/img/loading.gif" alt=""></p>
 <p>👩可以看到wrap-reverse和wrap中的item顺序是完全反过来的</p>
 <h1 id="flex-flow"><a href="#flex-flow" class="headerlink" title="flex-flow"></a>flex-flow</h1><p>这个属性就不多说辣,他的作用是将上面两个属性 <strong>flex-direction</strong> ,<strong>flex-wrap</strong> 写在一行,属于一种简写形式</p>
-<pre><code class="html">.container{
-    flex-flow:&lt;flex-direction&gt; &lt;flex-wrap&gt; ;
-}</code></pre>
+<pre><code class="hljs html">.container&#123;
+	flex-flow:<span class="hljs-tag">&lt;<span class="hljs-name">flex-direction</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">flex-wrap</span>&gt;</span> ;
+&#125;</code></pre>
+
 <p>比如说:</p>
-<pre><code class="html">.container {
+<pre><code class="hljs html">.container &#123;
             display: flex;
             flex-direction: row;
             flex-wrap: wrap-reverse;
-        }</code></pre>
+        &#125;</code></pre>
+
 <p>👇👆效果完全一样</p>
-<pre><code class="html">.container {
+<pre><code class="hljs html">.container &#123;
             display: flex;
             flex-flow: nowrap row;
-        }</code></pre>
+        &#125;</code></pre>
+
 <p>👩tips:这里 <strong>flex-direction</strong> <strong>flex-wrap</strong> 这两个值的顺序是可以调换的</p>
 <h1 id="justify-content"><a href="#justify-content" class="headerlink" title="justify-content"></a>justify-content</h1><p>这个属性可以设置item们在主轴上的排列方式</p>
-<pre><code class="html">.container{
-    justify-content: flex-start | flex-end | center | space-between | space-around
-    //常用的有这5个值
-}</code></pre>
+<pre><code class="hljs html">.container&#123;
+	justify-content: flex-start | flex-end | center | space-between | space-around
+	//常用的有这5个值
+&#125;</code></pre>
+
+
+
 <p>这是我的初始代码:</p>
-<pre><code class="html">    &lt;style&gt;
-        * {
-            padding: 0;
-            margin: 0;
-        }
+<pre><code class="hljs html">    <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
+        * &#123;
+            <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span>;
+            <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;
+        &#125;
 
-        .container {
-            display: flex;
-            flex-flow: nowrap row;
-            justify-content: flex-start;
-            background-color: #0080ff;
-            height: 150px;
+        <span class="hljs-selector-class">.container</span> &#123;
+            <span class="hljs-attribute">display</span>: flex;
+            <span class="hljs-attribute">flex-flow</span>: nowrap row;
+            <span class="hljs-attribute">justify-content</span>: flex-start;
+            <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#0080ff</span>;
+            <span class="hljs-attribute">height</span>: <span class="hljs-number">150px</span>;
 
-        }
+        &#125;
 
-        .container&gt;div {
-            width: 100px;
-            height: 100px;
-            border: 1px solid black;
-        }
+        <span class="hljs-selector-class">.container</span>&gt;<span class="hljs-selector-tag">div</span> &#123;
+            <span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;
+            <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;
+            <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid black;
+        &#125;
 
-        .item1 {
-            background-color: #a3daff;
-        }
+        <span class="hljs-selector-class">.item1</span> &#123;
+            <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#a3daff</span>;
+        &#125;
 
-        .item2 {
-            background-color: #1ec0ff;
-            width: 200px !important;
-        }
-    &lt;/style&gt;
-&lt;/head&gt;
+        <span class="hljs-selector-class">.item2</span> &#123;
+            <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#1ec0ff</span>;
+            <span class="hljs-attribute">width</span>: <span class="hljs-number">200px</span> <span class="hljs-meta">!important</span>;
+        &#125;
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
 
-&lt;body&gt;
-    &lt;div&gt;flex-start&lt;/div&gt;
-    &lt;div class=&quot;container&quot;&gt;
-        &lt;div class=&quot;item1&quot;&gt;1&lt;/div&gt;
-        &lt;div class=&quot;item2&quot;&gt;2&lt;/div&gt;
-        &lt;div class=&quot;item1&quot;&gt;3&lt;/div&gt;
-        &lt;div class=&quot;item1&quot;&gt;4&lt;/div&gt;
-    &lt;/div&gt;
-&lt;/body&gt;</code></pre>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>flex-start<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"container"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item1"</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item2"</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item1"</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item1"</span>&gt;</span>4<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></code></pre>
+
 <p>👩这里设置了一个<code>item2</code>,它的样子与众不同,已此来形成对比</p>
-<h3 id="flex-start"><a href="#flex-start" class="headerlink" title="flex-start"></a>flex-start</h3><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127105724.png" srcset="undefined" alt=""></p>
-<h3 id="flex-end"><a href="#flex-end" class="headerlink" title="flex-end"></a>flex-end</h3><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/flex_justify_content_end.png" srcset="undefined" alt=""></p>
-<h3 id="center"><a href="#center" class="headerlink" title="center"></a>center</h3><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127114926.png" srcset="undefined" alt=""></p>
-<h3 id="space-between"><a href="#space-between" class="headerlink" title="space-between"></a>space-between</h3><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127114600.png" srcset="undefined" alt=""></p>
-<h3 id="space-around"><a href="#space-around" class="headerlink" title="space-around"></a>space-around</h3><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127114814.png" srcset="undefined" alt=""></p>
+<h3 id="flex-start"><a href="#flex-start" class="headerlink" title="flex-start"></a>flex-start</h3><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127105724.png" srcset="/img/loading.gif" alt=""></p>
+<h3 id="flex-end"><a href="#flex-end" class="headerlink" title="flex-end"></a>flex-end</h3><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/flex_justify_content_end.png" srcset="/img/loading.gif" alt=""></p>
+<h3 id="center"><a href="#center" class="headerlink" title="center"></a>center</h3><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127114926.png" srcset="/img/loading.gif" alt=""></p>
+<h3 id="space-between"><a href="#space-between" class="headerlink" title="space-between"></a>space-between</h3><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127114600.png" srcset="/img/loading.gif" alt=""></p>
+<h3 id="space-around"><a href="#space-around" class="headerlink" title="space-around"></a>space-around</h3><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127114814.png" srcset="/img/loading.gif" alt=""></p>
 <p>👩注意:<code>space-around</code>和<code>space-between</code>的区别是:<code>space-around</code>会在浏览器窗口内的左右两边生成空隙,空隙的<code>width</code>=1/2相邻<code>item</code>的间距</p>
 <h1 id="align-items"><a href="#align-items" class="headerlink" title="align-items"></a>align-items</h1><p>这个属性可以设置<code>item</code>们在副轴上的排列方式,一共有5个可选值</p>
-<pre><code class="html">align-item: flex-start | flex-end | center | baseline | stretch;</code></pre>
+<pre><code class="hljs html">align-item: flex-start | flex-end | center | baseline | stretch;</code></pre>
+
 <p>效果如下:</p>
-<h3 id="flex-start-1"><a href="#flex-start-1" class="headerlink" title="flex-start:"></a>flex-start:</h3><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127124701.png" srcset="undefined" alt=""></p>
-<h3 id="flex-end-1"><a href="#flex-end-1" class="headerlink" title="flex-end:"></a>flex-end:</h3><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127124750.png" srcset="undefined" alt=""></p>
-<h3 id="center-1"><a href="#center-1" class="headerlink" title="center:"></a>center:</h3><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127124852.png" srcset="undefined" alt=""></p>
-<h3 id="baseline"><a href="#baseline" class="headerlink" title="baseline:"></a>baseline:</h3><p>​    <img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127130434.png" srcset="undefined" alt=""></p>
+<h3 id="flex-start-1"><a href="#flex-start-1" class="headerlink" title="flex-start:"></a>flex-start:</h3><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127124701.png" srcset="/img/loading.gif" alt=""></p>
+<h3 id="flex-end-1"><a href="#flex-end-1" class="headerlink" title="flex-end:"></a>flex-end:</h3><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127124750.png" srcset="/img/loading.gif" alt=""></p>
+<h3 id="center-1"><a href="#center-1" class="headerlink" title="center:"></a>center:</h3><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127124852.png" srcset="/img/loading.gif" alt=""></p>
+<h3 id="baseline"><a href="#baseline" class="headerlink" title="baseline:"></a>baseline:</h3><p>​    <img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127130434.png" srcset="/img/loading.gif" alt=""></p>
 <p>👩此处我为每个<code>item</code>都设置了 <code>line-height</code>=<code>height</code>,可以看到 <strong>baseline</strong>的对齐方式很特别,是以文字的基线作为标准的,我觉得可以用来做一些视觉设计.</p>
 <h3 id="stretch"><a href="#stretch" class="headerlink" title="stretch"></a>stretch</h3><p>待续</p>
 <h1 id="align-content"><a href="#align-content" class="headerlink" title="align-content"></a>align-content</h1><p>设置<code>container</code>的中<code>item</code>们垂直方向上的对齐方式</p>
-<pre><code class="html">align-content: flex-start | flex-end | center | stretch | spave-between | space-around</code></pre>
-<h3 id="center-2"><a href="#center-2" class="headerlink" title="center"></a>center</h3><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127140350.png" srcset="undefined" alt=""></p>
-<h3 id="flex-start-2"><a href="#flex-start-2" class="headerlink" title="flex-start"></a>flex-start</h3><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127140505.png" srcset="undefined" alt=""></p>
-<h3 id="flex-end-2"><a href="#flex-end-2" class="headerlink" title="flex-end"></a>flex-end</h3><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127140728.png" srcset="undefined" alt=""></p>
-<h3 id="stretch-1"><a href="#stretch-1" class="headerlink" title="stretch"></a>stretch</h3><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127140909.png" srcset="undefined" alt=""></p>
+<pre><code class="hljs html">align-content: flex-start | flex-end | center | stretch | spave-between | space-around</code></pre>
+
+<h3 id="center-2"><a href="#center-2" class="headerlink" title="center"></a>center</h3><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127140350.png" srcset="/img/loading.gif" alt=""></p>
+<h3 id="flex-start-2"><a href="#flex-start-2" class="headerlink" title="flex-start"></a>flex-start</h3><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127140505.png" srcset="/img/loading.gif" alt=""></p>
+<h3 id="flex-end-2"><a href="#flex-end-2" class="headerlink" title="flex-end"></a>flex-end</h3><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127140728.png" srcset="/img/loading.gif" alt=""></p>
+<h3 id="stretch-1"><a href="#stretch-1" class="headerlink" title="stretch"></a>stretch</h3><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127140909.png" srcset="/img/loading.gif" alt=""></p>
 <p>👩这里的话<code>stretch</code>的效果是把整个<code>container</code>除去内容后剩余的高度平均分配成行间距,有一点需要说明一下:第一行是会顶到顶部的,而最后一行下面会留下行间距. 大家可以和 <code>align-content: flex-start</code>进行对比哦</p>
-<h3 id="space-between-1"><a href="#space-between-1" class="headerlink" title="space-between"></a>space-between</h3><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127142848.png" srcset="undefined" alt=""></p>
-<h3 id="space-around-1"><a href="#space-around-1" class="headerlink" title="space-around"></a>space-around</h3><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127142802.png" srcset="undefined" alt=""></p>
+<h3 id="space-between-1"><a href="#space-between-1" class="headerlink" title="space-between"></a>space-between</h3><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127142848.png" srcset="/img/loading.gif" alt=""></p>
+<h3 id="space-around-1"><a href="#space-around-1" class="headerlink" title="space-around"></a>space-around</h3><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127142802.png" srcset="/img/loading.gif" alt=""></p>
 <p>👩看到这里大家在心里会有个疑惑吧,<code>align-item</code>和<code>align-content</code>的区别是什么呢,其实这是我现在内心中的问号,于是我写下了这篇👇</p>
 <blockquote>
 <p><a href="https://tohrux.github.io/2019/11/27/flex2/" target="_blank" rel="noopener">https://tohrux.github.io/2019/11/27/flex2/</a></p>
 </blockquote>
 <h1 id="item上的属性"><a href="#item上的属性" class="headerlink" title="item上的属性"></a><code>item</code>上的属性</h1><h3 id="order"><a href="#order" class="headerlink" title="order"></a>order</h3><p>可以为<code>item</code>加上order属性,来改变<code>item</code>们的顺序,order值越大的会排在越前面.</p>
-<pre><code class="css">//语法
-.item1{order = 2};
-.item2{order = 1};</code></pre>
+<pre><code class="hljs css">//语法
+.item1&#123;order = 2&#125;;
+.item2&#123;order = 1&#125;;</code></pre>
+
 <p>原本默认的顺序(未加上order属性时):</p>
-<p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191128192154.png" srcset="undefined" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191128192154.png" srcset="/img/loading.gif" alt=""></p>
 <p>加上上面代码块的默认属性后:</p>
-<p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191128103407.png" srcset="undefined" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191128103407.png" srcset="/img/loading.gif" alt=""></p>
 <h3 id="flex-grow"><a href="#flex-grow" class="headerlink" title="flex-grow"></a>flex-grow</h3><p>可以设置<code>item</code>的扩展比率,根据所给予的数字大小来分配剩余空间(<code>width</code>).</p>
 <p><strong>分配空间的计算方式</strong>:</p>
 <blockquote>
@@ -428,9 +445,12 @@ body部分
 <p><a href="https://blog.csdn.net/m0_37058714/article/details/80765562" target="_blank" rel="noopener">https://blog.csdn.net/m0_37058714/article/details/80765562</a></p>
 <p>作者 <strong>wxk_前端开发</strong></p>
 <h3 id="align-self"><a href="#align-self" class="headerlink" title="align-self"></a>align-self</h3><p>这个属性可以单独定义<code>item</code>在 <strong>cross axis</strong> 上的属性,并且可以覆盖<code>align-item</code>的属性,前五个值和之前的<code>align-item</code>用法一样,如果不给值,则默认给<code>auto</code>,表示继承 <code>align-item</code>,如果<code>align-item</code>也没有给值,则默认值为<code>flex-start</code>.</p>
-<pre><code class="css">.item {
-  align-self: flex-start | flex-end | center | baseline | stretch | auto ;
-}</code></pre>
+<pre><code class="hljs css"><span class="hljs-selector-class">.item</span> &#123;
+  <span class="hljs-attribute">align-self</span>: flex-start | flex-end | center | baseline | stretch | auto ;
+&#125;</code></pre>
+
+
+
 <p>未来可能会回来更新,因为到目前为止都只是把案例打了一遍,实际运用中遇到的问题,会记录下来,感谢在互联网上分享知识的人们,i了i了.</p>
 <p>关于一些实际运用可以参考阮一峰老师的这篇博文:</p>
 <p><a href="http://www.ruanyifeng.com/blog/2015/07/flex-examples.html" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2015/07/flex-examples.html</a></p>

@@ -148,7 +148,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    1.4k 字
+                    1.3k 字
                   </span>
                 
 
@@ -158,7 +158,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    20
+                    18
                      分钟
                   </span>
                 
@@ -193,42 +193,51 @@
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=454224982&auto=1&height=66"></iframe>
 
 
-<h2 id="一些常用H5标签"><a href="#一些常用H5标签" class="headerlink" title="一些常用H5标签"></a>一些常用H5标签</h2><pre><code>    &lt;b&gt; bold
-    &lt;sub&gt; 下标
-    &lt;sup&gt; 上标
-    &lt;bdo dir=&quot;rtl&quot;&gt;123&lt;/bdo&gt; 
-    &lt;strong&gt; 强调(加粗,会优先使用)
-    &lt;em&gt; emphasized
-    &lt;i&gt; italic</code></pre><h3 id="lt-a-gt"><a href="#lt-a-gt" class="headerlink" title="&lt;a&gt;"></a>&lt;a&gt;</h3><pre><code class="html">&lt;a href=&quot;rikka.png&quot; donwnload=&quot;&quot;&gt;click here to download&lt;/a&gt;</code></pre>
+<h2 id="一些常用H5标签"><a href="#一些常用H5标签" class="headerlink" title="一些常用H5标签"></a>一些常用H5标签</h2><pre><code class="hljs plain">&lt;b&gt; bold
+   &lt;sub&gt; 下标
+   &lt;sup&gt; 上标
+   &lt;bdo dir=&quot;rtl&quot;&gt;123&lt;/bdo&gt; 
+   &lt;strong&gt; 强调(加粗,会优先使用)
+   &lt;em&gt; emphasized
+   &lt;i&gt; italic</code></pre>
+
+<h3 id="lt-a-gt"><a href="#lt-a-gt" class="headerlink" title="&lt;a&gt;"></a>&lt;a&gt;</h3><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"rikka.png"</span> <span class="hljs-attr">donwnload</span>=<span class="hljs-string">""</span>&gt;</span>click here to download<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></code></pre>
+
 <p><strong>download</strong>标签:加入后点击链接不会跳转,而是直接开始下载</p>
 <h3 id="lt-dl-gt"><a href="#lt-dl-gt" class="headerlink" title="&lt;dl&gt;"></a>&lt;dl&gt;</h3><p>定义列表dl: 英文全称definition list</p>
-<pre><code>    &lt;dl&gt;
-        &lt;dt&gt;地区&lt;/dt&gt;//denifition title
-        &lt;dd&gt;上海&lt;/dd&gt;//definition description
-        &lt;dd&gt;上海&lt;/dd&gt;
-        &lt;dd&gt;上海&lt;/dd&gt;
-    &lt;/dl&gt;</code></pre><p>输出:</p>
-<pre><code class="html">地区
-    上海
-    上海
-    上海</code></pre>
+<pre><code class="hljs plain">&lt;dl&gt;
+    &lt;dt&gt;地区&lt;/dt&gt;//denifition title
+    &lt;dd&gt;上海&lt;/dd&gt;//definition description
+    &lt;dd&gt;上海&lt;/dd&gt;
+    &lt;dd&gt;上海&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+
+<p>输出:</p>
+<pre><code class="hljs html">地区
+	上海
+	上海
+	上海</code></pre>
+
 <p>👩如果margin和padding设置为0,则不会有缩进的效果</p>
 <h1 id="表格元素-lt-table-gt"><a href="#表格元素-lt-table-gt" class="headerlink" title="表格元素&lt;table&gt;"></a>表格元素&lt;table&gt;</h1><h3 id="lt-caption-gt"><a href="#lt-caption-gt" class="headerlink" title="&lt;caption&gt;"></a>&lt;caption&gt;</h3><p>用于定义表格的标题</p>
-<h3 id="lt-th-gt"><a href="#lt-th-gt" class="headerlink" title="&lt;th&gt;"></a>&lt;th&gt;</h3><pre><code class="html">    &lt;table&gt;
-        &lt;tr&gt;
-            &lt;th&gt;1&lt;/th&gt;
-            &lt;th&gt;2&lt;/th&gt;
-            &lt;th&gt;3&lt;/th&gt;
-        &lt;/tr&gt;
-    &lt;/table&gt;</code></pre>
+<h3 id="lt-th-gt"><a href="#lt-th-gt" class="headerlink" title="&lt;th&gt;"></a>&lt;th&gt;</h3><pre><code class="hljs html">    <span class="hljs-tag">&lt;<span class="hljs-name">table</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span></code></pre>
+
 <h3 id="rowspan-amp-colspan"><a href="#rowspan-amp-colspan" class="headerlink" title="rowspan&amp;colspan"></a>rowspan&amp;colspan</h3><p>用于合并单元格,直接在<code>td</code>中使用</p>
-<pre><code class="html">eg:&lt;td rowspan=&quot;2&quot;&gt;</code></pre>
+<pre><code class="hljs html">eg:<span class="hljs-tag">&lt;<span class="hljs-name">td</span> <span class="hljs-attr">rowspan</span>=<span class="hljs-string">"2"</span>&gt;</span></code></pre>
+
 <h3 id="lt-colgroup-gt"><a href="#lt-colgroup-gt" class="headerlink" title="&lt;colgroup&gt;"></a>&lt;colgroup&gt;</h3><p>//这标签完全可以用在css中写样式的方式代替</p>
 <p>通常在&lt;table&gt;的下方直接加,与<code>col</code>一起使用</p>
-<pre><code class="html">        &lt;colgroup&gt;
-            &lt;col span=&quot;2&quot; width=&quot;200&quot;&gt;
-            &lt;col width=&quot;100&quot;&gt;
-        &lt;/colgroup&gt;</code></pre>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">colgroup</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">col</span> <span class="hljs-attr">span</span>=<span class="hljs-string">"2"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"200"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">col</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"100"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">colgroup</span>&gt;</span></code></pre>
+
 <p>👆,<code>span</code>:&lt;number&gt;,表示样式被改变的列数,不给值得话默认为1</p>
 <p>​    <code>width</code>:表示被当前&lt;col&gt;影响的列的宽度.</p>
 <p>​    &lt;col&gt;:如果第一个&lt;col&gt;标签的 span=2,那么第二个&lt;col&gt;标签就会从第三列开始执行.</p>
@@ -246,18 +255,24 @@
 <p>例如可以在&lt;table&gt;,&lt;div&gt;中添加此元素</p>
 <p>但是刷新后修改的内容就会丢失</p>
 <p>👩<code>designMode</code> ,这个属性可以在在js修改.相当于全局的 contentedittable</p>
-<pre><code class="js">document.designMode = &quot;on&quot;;</code></pre>
+<pre><code class="hljs js"><span class="hljs-built_in">document</span>.designMode = <span class="hljs-string">"on"</span>;</code></pre>
+
+
+
 <h2 id="hidden"><a href="#hidden" class="headerlink" title="hidden"></a>hidden</h2><p>html5所有的元素都有hidden属性,hidden=”true” 相当于 dispaly=”none”</p>
 <p>//onclick里可以直接添加js内容👇</p>
-<pre><code class="html">    &lt;button id=&quot;button&quot; onclick=&quot;
-        var target = document.getElementById(&#39;target&#39;);
-        target.hidden = !target.hidden;
-        var button = document.getElementById(&#39;button&#39;);
-        if(target.hidden){button.innerHTML=&#39;show&#39;}else{button.innerHTML=&#39;hidden&#39;}
-    &quot;&gt;show&lt;/button&gt;
-    &lt;div id=&quot;target&quot; hidden=&quot;true&quot;&gt;
-        say what?
-    &lt;/div&gt;</code></pre>
+<pre><code class="hljs html">   <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">"
+       var target = document.getElementById('target');
+       target.hidden = !target.hidden;
+       var button = document.getElementById('button');
+       if(target.hidden)&#123;button.innerHTML='show'&#125;else&#123;button.innerHTML='hidden'&#125;
+   "</span>&gt;</span>show<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"target"</span> <span class="hljs-attr">hidden</span>=<span class="hljs-string">"true"</span>&gt;</span>
+       say what?
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+
+
+
 <h1 id="表单元素-lt-form-gt"><a href="#表单元素-lt-form-gt" class="headerlink" title="表单元素&lt;form&gt;"></a>表单元素&lt;form&gt;</h1><p>在需要上传时,<code>enctype</code>的值需要改为 <code>multipart/form-data</code></p>
 <p><code>name</code>的值的设置一般要与<code>id</code>的相同</p>
 <h1 id="表单控件"><a href="#表单控件" class="headerlink" title="表单控件"></a>表单控件</h1><h2 id="lt-input-gt"><a href="#lt-input-gt" class="headerlink" title="&lt;input&gt;"></a>&lt;input&gt;</h2><p>可选值</p>
@@ -276,56 +291,67 @@
 </ul>
 <p>属性:<code>maxlength</code> <code>readonly</code> <code>disable</code></p>
 <h2 id="lt-label-gt"><a href="#lt-label-gt" class="headerlink" title="&lt;label&gt;"></a>&lt;label&gt;</h2><p>有两种用法:</p>
-<pre><code class="html">    &lt;label&gt;
+<pre><code class="hljs html">    <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>
         nihao
-        &lt;input type=&quot;text&quot; id=&quot;hello&quot;&gt;
-    &lt;/label&gt;
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"hello"</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
 2&gt; 
-    &lt;label for=&quot;hello&quot;&gt;
+	<span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"hello"</span>&gt;</span>
         nihao
-        &lt;input type=&quot;text&quot; id=&quot;hello&quot;&gt;
-    &lt;/label&gt;</code></pre>
-<h2 id="lt-select-gt"><a href="#lt-select-gt" class="headerlink" title="&lt;select&gt;"></a>&lt;select&gt;</h2><pre><code class="html">select</code></pre>
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"hello"</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span></code></pre>
+
+<h2 id="lt-select-gt"><a href="#lt-select-gt" class="headerlink" title="&lt;select&gt;"></a>&lt;select&gt;</h2><pre><code class="hljs html">select</code></pre>
+
+
+
 <h2 id="lt-button-gt"><a href="#lt-button-gt" class="headerlink" title="&lt;button&gt;"></a>&lt;button&gt;</h2><p>type =<code>button</code> / <code>submit</code>/ <code>reset</code></p>
 <h2 id="formaction"><a href="#formaction" class="headerlink" title="formaction"></a>formaction</h2><p>当你不需要一次提交整个form中的数据时,可以在<code>submit</code>中使用这个属性</p>
 <p>formaction = “你需要提交的id值”</p>
-<pre><code class="html">    &lt;form action=&quot;&quot; method=&quot;get&quot;&gt;
-        &lt;input type=&quot;text&quot; id=&quot;username&quot; name=&quot;username&quot;&gt;
-        &lt;input type=&quot;password&quot; id=&quot;password&quot; name=&quot;password&quot;&gt;
-        &lt;input type=&quot;submit&quot; formaction=&quot;username&quot;&gt;
-        &lt;input type=&quot;submit&quot; formaction=&quot;password&quot;&gt;
-    &lt;/form&gt;</code></pre>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">""</span> <span class="hljs-attr">method</span>=<span class="hljs-string">"get"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"username"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"username"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"password"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"password"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"password"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span> <span class="hljs-attr">formaction</span>=<span class="hljs-string">"username"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span> <span class="hljs-attr">formaction</span>=<span class="hljs-string">"password"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span></code></pre>
+
 <p>👩 <code>formmethod</code>/ <code>formenctype</code> / <code>formtarget</code> 同理</p>
 <h2 id="autocomplete-autofocus"><a href="#autocomplete-autofocus" class="headerlink" title="autocomplete/autofocus"></a>autocomplete/autofocus</h2><p>autocomplete为自动填充,</p>
 <p>autofocus,当你为某个<code>input</code>添加这个元素时,打开页面的同时这个<code>input</code>会获取焦点.</p>
 <h2 id="list"><a href="#list" class="headerlink" title="list"></a>list</h2><p>建议和<code>datalist</code>一起使用 eg:</p>
-<pre><code class="html">    &lt;form action=&quot;&quot; method=&quot;get&quot;&gt;
-        &lt;label&gt;
-            &lt;input type=&quot;text&quot; list=&quot;location&quot; placeholder=&quot;waifu&quot;&gt;
-        &lt;/label&gt;
-    &lt;/form&gt;
-    &lt;datalist id=&quot;location&quot;&gt;
-        &lt;option value=&quot;angelina&quot;&gt;安洁莉娜&lt;/option&gt;
-        &lt;option value=&quot;Eyjafjalla&quot;&gt;艾雅法拉&lt;/option&gt;
-        &lt;option value=&quot;chen&quot;&gt;陈&lt;/option&gt;
-    &lt;/datalist&gt;</code></pre>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">""</span> <span class="hljs-attr">method</span>=<span class="hljs-string">"get"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">list</span>=<span class="hljs-string">"location"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"waifu"</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">datalist</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"location"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"angelina"</span>&gt;</span>安洁莉娜<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Eyjafjalla"</span>&gt;</span>艾雅法拉<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"chen"</span>&gt;</span>陈<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">datalist</span>&gt;</span></code></pre>
+
 <p>效果还挺炫:</p>
-<p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191129194042.png" srcset="undefined" alt="">输入为空时</p>
-<p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191129194106.png" srcset="undefined" alt="">输入一个’a’</p>
+<p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191129194042.png" srcset="/img/loading.gif" alt="">输入为空时</p>
+<p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191129194106.png" srcset="/img/loading.gif" alt="">输入一个’a’</p>
 <h3 id="patter"><a href="#patter" class="headerlink" title="patter"></a>patter</h3><p>用于给当前的<code>input</code>加入验证,(正则表达式)</p>
 <p>eg:</p>
-<pre><code class="html">    &lt;form action=&quot;&quot;&gt;
-        &lt;input type=&quot;text&quot; name=&quot;&quot; id=&quot;&quot; pattern=&quot;[0-9]*&quot;&gt;
-        &lt;input type=&quot;submit&quot;&gt;
-    &lt;/form&gt;</code></pre>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">""</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">""</span> <span class="hljs-attr">id</span>=<span class="hljs-string">""</span> <span class="hljs-attr">pattern</span>=<span class="hljs-string">"[0-9]*"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span></code></pre>
+
 <h2 id="novalidate"><a href="#novalidate" class="headerlink" title="novalidate"></a>novalidate</h2><p>在表单内加入这个属性,就可以避免验证直接提交</p>
 <p>👩<code>form</code>标签,<code>input</code>标签都可以使用</p>
-<pre><code class="html">&lt;form action=&quot;&quot; novalidate=&quot;novalidate&quot;&gt;
-        &lt;input type=&quot;email&quot; name=&quot;user_email&quot; /&gt;
-          &lt;input type=&quot;submit&quot; /&gt;
-&lt;/form&gt;</code></pre>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">""</span> <span class="hljs-attr">novalidate</span>=<span class="hljs-string">"novalidate"</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"email"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"user_email"</span> /&gt;</span>
+  		<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span> /&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span></code></pre>
+
+
+
 <h3 id="required"><a href="#required" class="headerlink" title="required"></a>required</h3><p>规定必须要填入内容,否则无法提交</p>
-<pre><code class="html">&lt;input type=&quot;text&quot; name=&quot;usr_name&quot; required=&quot;required&quot; /&gt;</code></pre>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"usr_name"</span> <span class="hljs-attr">required</span>=<span class="hljs-string">"required"</span> /&gt;</span></code></pre>
+
 
             </article>
             <hr>

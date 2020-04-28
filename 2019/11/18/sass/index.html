@@ -148,7 +148,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    1.3k 字
+                    1.5k 字
                   </span>
                 
 
@@ -158,7 +158,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    19
+                    22
                      分钟
                   </span>
                 
@@ -192,328 +192,363 @@
 <p>(在网上搜索Ruby的时候 看到的评价都在说这门语言很优雅,以后有空的话会去接触下的!)</p>
 <p>👇</p>
 <p>然后在命令行中 输入 </p>
-<pre><code class="命令行">gem install sass </code></pre>
+<pre><code class="hljs 命令行">gem install sass</code></pre>
+
 <p>等待执行完毕后 然后输入在命令行输入</p>
-<pre><code class="c">sass -v</code></pre>
+<pre><code class="hljs c">sass -v</code></pre>
+
 <p>如果出现了相应的版本号 就意味着安装成功了👏</p>
-<h1 id="开始基础语法"><a href="#开始基础语法" class="headerlink" title="开始基础语法"></a>开始基础语法</h1><h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><pre><code class="scss">/*注释*/ 👈这种注释会在编译后的CSS中显示
-//注释   👈这种则不会</code></pre>
-<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><pre><code class="scss">$变量名字:变量属性值</code></pre>
+<h1 id="开始基础语法"><a href="#开始基础语法" class="headerlink" title="开始基础语法"></a>开始基础语法</h1><h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><pre><code class="hljs scss"><span class="hljs-comment">/*注释*/</span> 👈这种注释会在编译后的CSS中显示
+<span class="hljs-comment">//注释   👈这种则不会</span></code></pre>
+
+<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><pre><code class="hljs scss">$变量名字:变量属性值</code></pre>
+
 <p>使用! default 会让之前的样式覆盖掉当前的样式</p>
-<pre><code class="SCSS">//你好 我是sass
+<pre><code class="hljs SCSS"><span class="hljs-comment">//你好 我是sass</span>
 
-$defaultColor: red;
+<span class="hljs-variable">$defaultColor</span>: red;
 
-$defaultColor: #0000ff !default;
+<span class="hljs-variable">$defaultColor</span>: <span class="hljs-number">#0000ff</span> !default;
 
-h1{color:$defaultColor;}</code></pre>
+<span class="hljs-selector-tag">h1</span>&#123;<span class="hljs-attribute">color</span>:<span class="hljs-variable">$defaultColor</span>;&#125;</code></pre>
+
 <p>编译后的css:</p>
-<pre><code class="css">h1 {
-  color: red;
-}</code></pre>
+<pre><code class="hljs css"><span class="hljs-selector-tag">h1</span> &#123;
+  <span class="hljs-attribute">color</span>: red;
+&#125;</code></pre>
+
 <h2 id="关于变量的作用域"><a href="#关于变量的作用域" class="headerlink" title="关于变量的作用域"></a>关于变量的作用域</h2><p>💡需要注意的是如果上述变量的作用域在所有类的外面,那它就是全局变量,否则他的作用域只在当前的类</p>
-<h2 id="嵌套CSS规则"><a href="#嵌套CSS规则" class="headerlink" title="嵌套CSS规则"></a>嵌套CSS规则</h2><pre><code class="scss">/* SASS嵌套 */
-$defaultColor: red;
-#content{
-    article{
-        h1{color: $defaultColor;}
-        p{color: $defaultColor;}
-    }
-    aside{
-        color: aqua; 
-    }
-}</code></pre>
+<h2 id="嵌套CSS规则"><a href="#嵌套CSS规则" class="headerlink" title="嵌套CSS规则"></a>嵌套CSS规则</h2><pre><code class="hljs scss"><span class="hljs-comment">/* SASS嵌套 */</span>
+<span class="hljs-variable">$defaultColor</span>: red;
+<span class="hljs-selector-id">#content</span>&#123;
+    <span class="hljs-selector-tag">article</span>&#123;
+        <span class="hljs-selector-tag">h1</span>&#123;<span class="hljs-attribute">color</span>: <span class="hljs-variable">$defaultColor</span>;&#125;
+        <span class="hljs-selector-tag">p</span>&#123;<span class="hljs-attribute">color</span>: <span class="hljs-variable">$defaultColor</span>;&#125;
+    &#125;
+    <span class="hljs-selector-tag">aside</span>&#123;
+        <span class="hljs-attribute">color</span>: aqua; 
+    &#125;
+&#125;</code></pre>
+
 <p>编译后的css:</p>
-<pre><code class="css">#content article h1 {
-  color: red;
-}
+<pre><code class="hljs css"><span class="hljs-selector-id">#content</span> <span class="hljs-selector-tag">article</span> <span class="hljs-selector-tag">h1</span> &#123;
+  <span class="hljs-attribute">color</span>: red;
+&#125;
 
-#content article p {
-  color: red;
-}
+<span class="hljs-selector-id">#content</span> <span class="hljs-selector-tag">article</span> <span class="hljs-selector-tag">p</span> &#123;
+  <span class="hljs-attribute">color</span>: red;
+&#125;
 
-#content aside {
-  color: aqua;
-}</code></pre>
-<h2 id="“-”同时也可以代表父元素选择器"><a href="#“-”同时也可以代表父元素选择器" class="headerlink" title="“$”同时也可以代表父元素选择器"></a>“$”同时也可以代表父元素选择器</h2><pre><code class="scss">/*sass*/
-a{
-    font-weight: bold;
-    text-decoration: none;
-    $:hover{ color:yellow; }
-    p.login $ {font:weight:normal}
+<span class="hljs-selector-id">#content</span> <span class="hljs-selector-tag">aside</span> &#123;
+  <span class="hljs-attribute">color</span>: aqua;
+&#125;</code></pre>
 
-}</code></pre>
-<pre><code class="css">/*编译后的CSS*/
-a{
-    font-weight: bold;
-    text-decoration: none;
-}
-a:hover{
-        color:yellow;
-        }
-p.login a {font:weight:normal}</code></pre>
+<h2 id="“-”同时也可以代表父元素选择器"><a href="#“-”同时也可以代表父元素选择器" class="headerlink" title="“$”同时也可以代表父元素选择器"></a>“$”同时也可以代表父元素选择器</h2><pre><code class="hljs scss"><span class="hljs-comment">/*sass*/</span>
+<span class="hljs-selector-tag">a</span>&#123;
+    <span class="hljs-attribute">font-weight</span>: bold;
+    <span class="hljs-attribute">text-decoration</span>: none;
+    $:hover&#123; <span class="hljs-attribute">color</span>:yellow; &#125;
+    <span class="hljs-selector-tag">p</span><span class="hljs-selector-class">.login</span> $ &#123;<span class="hljs-attribute">font</span>:weight:normal&#125;
+     
+&#125;</code></pre>
+
+<pre><code class="hljs css"><span class="hljs-comment">/*编译后的CSS*/</span>
+<span class="hljs-selector-tag">a</span>&#123;
+    <span class="hljs-attribute">font-weight</span>: bold;
+    <span class="hljs-attribute">text-decoration</span>: none;
+&#125;
+<span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:hover</span>&#123;
+        <span class="hljs-attribute">color</span>:yellow;
+        &#125;
+<span class="hljs-selector-tag">p</span><span class="hljs-selector-class">.login</span> <span class="hljs-selector-tag">a</span> &#123;<span class="hljs-attribute">font</span>:weight:normal&#125;</code></pre>
+
 <h2 id="定义混合指令"><a href="#定义混合指令" class="headerlink" title="定义混合指令"></a>定义混合指令</h2><p>如果网站中有很多地方需要部署相似的样式,可以使用@mixin来进行封装</p>
-<pre><code class="scss">/*Sass*/
-    @mixin large-text {
-        font:{
+<pre><code class="hljs scss"><span class="hljs-comment">/*Sass*/</span>
+    @<span class="hljs-keyword">mixin</span> large-text &#123;
+        <span class="hljs-attribute">font</span>:&#123;
             family: Arial;
-            size: 20px;
+            size: <span class="hljs-number">20px</span>;
             weight: bold;
-        }
-        color: #ff0000;
-    }
-    p {@include large-text()}
-    a {@include large-text()}</code></pre>
-<pre><code class="css">/*编译后的CSS*/
-p {
-  font-family: Arial;
-  font-size: 20px;
-  font-weight: bold;
-  color: #ff0000;
-}
+        &#125;
+        <span class="hljs-attribute">color</span>: <span class="hljs-number">#ff0000</span>;
+    &#125;
+    <span class="hljs-selector-tag">p</span> &#123;@<span class="hljs-keyword">include</span> large-text()&#125;
+	a &#123;@<span class="hljs-keyword">include</span> large-text()&#125;</code></pre>
 
-a {
-  font-family: Arial;
-  font-size: 20px;
-  font-weight: bold;
-  color: #ff0000;
-}</code></pre>
-<h3 id="使用-指向父类选择器"><a href="#使用-指向父类选择器" class="headerlink" title="使用$指向父类选择器"></a>使用$指向父类选择器</h3><pre><code class="scss">/*Sass*/
-//@mixin 混合指令  
-$xu:#010203;
-$w:10px;
-@mixin text{
-    font:{
+<pre><code class="hljs css"><span class="hljs-comment">/*编译后的CSS*/</span>
+<span class="hljs-selector-tag">p</span> &#123;
+  <span class="hljs-attribute">font-family</span>: Arial;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">20px</span>;
+  <span class="hljs-attribute">font-weight</span>: bold;
+  <span class="hljs-attribute">color</span>: <span class="hljs-number">#ff0000</span>;
+&#125;
+
+<span class="hljs-selector-tag">a</span> &#123;
+  <span class="hljs-attribute">font-family</span>: Arial;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">20px</span>;
+  <span class="hljs-attribute">font-weight</span>: bold;
+  <span class="hljs-attribute">color</span>: <span class="hljs-number">#ff0000</span>;
+&#125;</code></pre>
+
+<h3 id="使用-指向父类选择器"><a href="#使用-指向父类选择器" class="headerlink" title="使用$指向父类选择器"></a>使用$指向父类选择器</h3><pre><code class="hljs scss"><span class="hljs-comment">/*Sass*/</span>
+<span class="hljs-comment">//@mixin 混合指令  </span>
+<span class="hljs-variable">$xu</span>:<span class="hljs-number">#010203</span>;
+<span class="hljs-variable">$w</span>:<span class="hljs-number">10px</span>;
+@<span class="hljs-keyword">mixin</span> text&#123;
+    <span class="hljs-attribute">font</span>:&#123;
        family: 华文宋体;
        weight: bold;
-       size: $w*2.5;
-    }
-    &amp;:hover{
-      cursor: pointer;
-      text-decoration:underline #a94442 ;
-    }
-  }
-  p{
-    //通过@include调用  导入
-    @include text;
-  }</code></pre>
-<pre><code class="css">/*编译成CSS*/
-p {
-  font-family: 华文宋体;
-  font-weight: bold;
-  font-size: 25px;
-}
+       size: <span class="hljs-variable">$w</span>*<span class="hljs-number">2.5</span>;
+    &#125;
+    &amp;:hover&#123;
+      <span class="hljs-attribute">cursor</span>: pointer;
+      <span class="hljs-attribute">text-decoration</span>:underline <span class="hljs-number">#a94442</span> ;
+    &#125;
+  &#125;
+  <span class="hljs-selector-tag">p</span>&#123;
+    <span class="hljs-comment">//通过@include调用  导入</span>
+    @<span class="hljs-keyword">include</span> text;
+  &#125;</code></pre>
 
-p:hover {
-  cursor: pointer;
-  text-decoration: underline #a94442;
-}</code></pre>
+<pre><code class="hljs css"><span class="hljs-comment">/*编译成CSS*/</span>
+<span class="hljs-selector-tag">p</span> &#123;
+  <span class="hljs-attribute">font-family</span>: 华文宋体;
+  <span class="hljs-attribute">font-weight</span>: bold;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">25px</span>;
+&#125;
+
+<span class="hljs-selector-tag">p</span><span class="hljs-selector-pseudo">:hover</span> &#123;
+  <span class="hljs-attribute">cursor</span>: pointer;
+  <span class="hljs-attribute">text-decoration</span>: underline <span class="hljs-number">#a94442</span>;
+&#125;</code></pre>
+
 <h3 id="通过传参-gt-有参函数"><a href="#通过传参-gt-有参函数" class="headerlink" title="通过传参  =&gt; 有参函数"></a>通过传参  =&gt; 有参函数</h3><p>(可以给定默认值 例如$width = 1 ,这样在不给参数的时候就会默认显示1)</p>
-<pre><code class="scss">/*sass*/  
-@mixin myborder($color,$width,$style){
-    border:{
-      width: $width;
-      color: $color;
-      style: $style;
-    }
- }
- .b{
-   //  传参需要一一对应
-   @include myborder(red,5px,solid);
- }</code></pre>
-<pre><code class="css">/*编译成CSS*/
-.b {
-  border-width: 5px;
-  border-color: red;
-  border-style: solid;
-}</code></pre>
-<h3 id="不确定参数的数量时…"><a href="#不确定参数的数量时…" class="headerlink" title="不确定参数的数量时…"></a>不确定参数的数量时…</h3><pre><code class="scss">//  不确定参数的写法
-@mixin box-s($shadow...){
-    -moz-box-shadow:$shadow;
-    box-shadow:$shadow;
-    -o-box-shadow: $shadow;
-}
-.b3{
- //    属性可以省略   参数3不能负数
-//           水平阴影 垂直 阴影半径 阴影程度 颜色 Insert内扩
-@include box-s(5px 5px 5px 5px #123654);
-}</code></pre>
-<pre><code class="css">/*编译后*/
-.b3 {
-  -moz-box-shadow: 5px 5px 5px 5px #123654;
-  box-shadow: 5px 5px 5px 5px #123654;
-  -o-box-shadow: 5px 5px 5px 5px #123654;
-}</code></pre>
+<pre><code class="hljs scss"><span class="hljs-comment">/*sass*/</span>  
+@<span class="hljs-keyword">mixin</span> myborder(<span class="hljs-variable">$color</span>,<span class="hljs-variable">$width</span>,<span class="hljs-variable">$style</span>)&#123;
+    <span class="hljs-attribute">border</span>:&#123;
+      width: <span class="hljs-variable">$width</span>;
+      <span class="hljs-attribute">color</span>: <span class="hljs-variable">$color</span>;
+      <span class="hljs-selector-tag">style</span>: <span class="hljs-variable">$style</span>;
+    &#125;
+ &#125;
+ <span class="hljs-selector-class">.b</span>&#123;
+   <span class="hljs-comment">//  传参需要一一对应</span>
+   @<span class="hljs-keyword">include</span> myborder(red,<span class="hljs-number">5px</span>,solid);
+ &#125;</code></pre>
+
+<pre><code class="hljs css"><span class="hljs-comment">/*编译成CSS*/</span>
+<span class="hljs-selector-class">.b</span> &#123;
+  <span class="hljs-attribute">border-width</span>: <span class="hljs-number">5px</span>;
+  <span class="hljs-attribute">border-color</span>: red;
+  <span class="hljs-attribute">border-style</span>: solid;
+&#125;</code></pre>
+
+<h3 id="不确定参数的数量时…"><a href="#不确定参数的数量时…" class="headerlink" title="不确定参数的数量时…"></a>不确定参数的数量时…</h3><pre><code class="hljs scss"><span class="hljs-comment">//  不确定参数的写法</span>
+@<span class="hljs-keyword">mixin</span> box-s(<span class="hljs-variable">$shadow</span>...)&#123;
+    -moz-<span class="hljs-attribute">box-shadow</span>:<span class="hljs-variable">$shadow</span>;
+    <span class="hljs-attribute">box-shadow</span>:<span class="hljs-variable">$shadow</span>;
+    -o-<span class="hljs-attribute">box-shadow</span>: <span class="hljs-variable">$shadow</span>;
+&#125;
+<span class="hljs-selector-class">.b3</span>&#123;
+ <span class="hljs-comment">//    属性可以省略   参数3不能负数</span>
+<span class="hljs-comment">//           水平阴影 垂直 阴影半径 阴影程度 颜色 Insert内扩</span>
+@<span class="hljs-keyword">include</span> box-s(<span class="hljs-number">5px</span> 5px 5px 5px <span class="hljs-number">#123654</span>);
+&#125;</code></pre>
+
+<pre><code class="hljs css"><span class="hljs-comment">/*编译后*/</span>
+<span class="hljs-selector-class">.b3</span> &#123;
+  <span class="hljs-attribute">-moz-box-shadow</span>: <span class="hljs-number">5px</span> <span class="hljs-number">5px</span> <span class="hljs-number">5px</span> <span class="hljs-number">5px</span> <span class="hljs-number">#123654</span>;
+  <span class="hljs-attribute">box-shadow</span>: <span class="hljs-number">5px</span> <span class="hljs-number">5px</span> <span class="hljs-number">5px</span> <span class="hljs-number">5px</span> <span class="hljs-number">#123654</span>;
+  <span class="hljs-attribute">-o-box-shadow</span>: <span class="hljs-number">5px</span> <span class="hljs-number">5px</span> <span class="hljs-number">5px</span> <span class="hljs-number">5px</span> <span class="hljs-number">#123654</span>;
+&#125;</code></pre>
+
 <h2 id="运算"><a href="#运算" class="headerlink" title="运算"></a>运算</h2><h3 id="数字运算"><a href="#数字运算" class="headerlink" title="数字运算"></a>数字运算</h3><p>Sass支持 +,-,*,/,%等运算</p>
 <p>如果在运算时不给单位的话,则会自动补充单位</p>
-<pre><code class="scss">.fon{
-    $a:10px;
-    $b:10;
-    $c:#123456;
+<pre><code class="hljs scss"><span class="hljs-selector-class">.fon</span>&#123;
+    <span class="hljs-variable">$a</span>:<span class="hljs-number">10px</span>;
+    <span class="hljs-variable">$b</span>:<span class="hljs-number">10</span>;
+    <span class="hljs-variable">$c</span>:<span class="hljs-number">#123456</span>;
+                                                                                
+    <span class="hljs-attribute">min-width</span>: <span class="hljs-variable">$a</span>/<span class="hljs-number">2</span>;
+    <span class="hljs-attribute">max-width</span>: <span class="hljs-variable">$a</span>*<span class="hljs-number">2</span>; 
+    <span class="hljs-attribute">margin</span>: (<span class="hljs-number">10px</span>/<span class="hljs-number">2</span>);<span class="hljs-comment">//两个数字之间要加括号才可以进行除法运算</span>
+    <span class="hljs-attribute">padding</span>: #&#123;<span class="hljs-variable">$a</span>&#125;/#&#123;<span class="hljs-variable">$b</span>&#125;;<span class="hljs-comment">//使用#&#123;$a&#125;可以不进行除法运算</span>
+&#125;</code></pre>
 
-    min-width: $a/2;
-    max-width: $a*2; 
-    margin: (10px/2);//两个数字之间要加括号才可以进行除法运算
-    padding: #{$a}/#{$b};//使用#{$a}可以不进行除法运算
-}</code></pre>
-<pre><code class="css">/*编译后的css*/
-.fon{min-width:5px;max-width:20px;margin:5px;padding:10px/10}</code></pre>
-<h2 id="字符串运算"><a href="#字符串运算" class="headerlink" title="字符串运算"></a>字符串运算</h2><pre><code class="scss">.str {
-    $s:&quot;宋体&quot;;
-    $t:&quot;微软雅黑&quot;;
-    $r:&quot;sans&quot;;
-    font-family: $s + $t;
-    font-family: $r + &quot;-self&quot;;
-}</code></pre>
-<pre><code class="css">/*编译后的CSS*/
-.str{
-    font-family:&quot;宋体微软雅黑&quot;;
-    font-family:&quot;sans-self&quot;
-}</code></pre>
+<pre><code class="hljs css"><span class="hljs-comment">/*编译后的css*/</span>
+<span class="hljs-selector-class">.fon</span>&#123;<span class="hljs-attribute">min-width</span>:<span class="hljs-number">5px</span>;<span class="hljs-attribute">max-width</span>:<span class="hljs-number">20px</span>;<span class="hljs-attribute">margin</span>:<span class="hljs-number">5px</span>;<span class="hljs-attribute">padding</span>:<span class="hljs-number">10px</span>/<span class="hljs-number">10</span>&#125;</code></pre>
+
+<h2 id="字符串运算"><a href="#字符串运算" class="headerlink" title="字符串运算"></a>字符串运算</h2><pre><code class="hljs scss"><span class="hljs-selector-class">.str</span> &#123;
+    <span class="hljs-variable">$s</span>:<span class="hljs-string">"宋体"</span>;
+    <span class="hljs-variable">$t</span>:<span class="hljs-string">"微软雅黑"</span>;
+    <span class="hljs-variable">$r</span>:<span class="hljs-string">"sans"</span>;
+    <span class="hljs-attribute">font-family</span>: <span class="hljs-variable">$s</span> + <span class="hljs-variable">$t</span>;
+    <span class="hljs-attribute">font-family</span>: <span class="hljs-variable">$r</span> + <span class="hljs-string">"-self"</span>;
+&#125;</code></pre>
+
+<pre><code class="hljs css"><span class="hljs-comment">/*编译后的CSS*/</span>
+<span class="hljs-selector-class">.str</span>&#123;
+    <span class="hljs-attribute">font-family</span>:<span class="hljs-string">"宋体微软雅黑"</span>;
+    <span class="hljs-attribute">font-family</span>:<span class="hljs-string">"sans-self"</span>
+&#125;</code></pre>
+
 <h2 id="条件判断和循环"><a href="#条件判断和循环" class="headerlink" title="条件判断和循环"></a>条件判断和循环</h2><h3 id="使用-if-和-else"><a href="#使用-if-和-else" class="headerlink" title="使用@if 和 @else"></a>使用@if 和 @else</h3><p>(支持and/or/on/not)</p>
-<pre><code class="scss">.bol{
-    $age:25;
-    @if ($age &gt; 18 and $age &lt; 27){
-        color: yellow;
+<pre><code class="hljs scss"><span class="hljs-selector-class">.bol</span>&#123;
+    <span class="hljs-variable">$age</span>:<span class="hljs-number">25</span>;
+    @<span class="hljs-keyword">if</span> (<span class="hljs-variable">$age</span> &gt; 18 and <span class="hljs-variable">$age</span> &lt; 27)&#123;
+        <span class="hljs-attribute">color</span>: yellow;
 
-    }@else{
-        color: green;
-    }
-}</code></pre>
-<pre><code class="css">/*编译后的CSS*/
-.bol{color:yellow}</code></pre>
+    &#125;@<span class="hljs-keyword">else</span>&#123;
+        <span class="hljs-attribute">color</span>: green;
+    &#125;
+&#125;</code></pre>
+
+<pre><code class="hljs css"><span class="hljs-comment">/*编译后的CSS*/</span>
+<span class="hljs-selector-class">.bol</span>&#123;<span class="hljs-attribute">color</span>:yellow&#125;</code></pre>
+
 <p>eg2:</p>
-<pre><code class="scss">@mixin block($bol){
-    @if($bol){
+<pre><code class="hljs scss">@<span class="hljs-keyword">mixin</span> block(<span class="hljs-variable">$bol</span>)&#123;
+    @<span class="hljs-keyword">if</span>(<span class="hljs-variable">$bol</span>)&#123;
         dispaly:block;
-    }@else{
-        display: none;
-    }
-}
-.block{
-    @include block(true);
-}
-.hidden{
-    @include block(false);
-}</code></pre>
-<pre><code class="css">/*编译后的css*/
-.block {
-  dispaly: block;
-}
+    &#125;@<span class="hljs-keyword">else</span>&#123;
+        <span class="hljs-attribute">display</span>: none;
+    &#125;
+&#125;
+<span class="hljs-selector-class">.block</span>&#123;
+    @<span class="hljs-keyword">include</span> block(true);
+&#125;
+<span class="hljs-selector-class">.hidden</span>&#123;
+    @<span class="hljs-keyword">include</span> block(false);
+&#125;</code></pre>
 
-.hidden {
-  display: none;
-}</code></pre>
+<pre><code class="hljs css"><span class="hljs-comment">/*编译后的css*/</span>
+<span class="hljs-selector-class">.block</span> &#123;
+  <span class="hljs-attribute">dispaly</span>: block;
+&#125;
+
+<span class="hljs-selector-class">.hidden</span> &#123;
+  <span class="hljs-attribute">display</span>: none;
+&#125;</code></pre>
+
 <h3 id="for-循环"><a href="#for-循环" class="headerlink" title="@for 循环"></a>@for 循环</h3><p>@for $i from <start> through <end> {}(会through最后一个数字)</p>
 <p>@for $i from <start> to <end>{} (忽略最后一个数字)</p>
-<pre><code class="scss">@for $var from 1 through(或者to) 3 {
-    .item-#{$var} {width: 2em * $var;}
-}</code></pre>
-<pre><code class="css">/*编译后的css*/
-.item-1 {
-  width: 2em;
-}
+<pre><code class="hljs scss">@<span class="hljs-keyword">for</span> <span class="hljs-variable">$var</span> from 1 through(或者to) 3 &#123;
+    <span class="hljs-selector-class">.item-</span>#&#123;<span class="hljs-variable">$var</span>&#125; &#123;<span class="hljs-attribute">width</span>: <span class="hljs-number">2em</span> * <span class="hljs-variable">$var</span>;&#125;
+&#125;</code></pre>
 
-.item-2 {
-  width: 4em;
-}
+<pre><code class="hljs css"><span class="hljs-comment">/*编译后的css*/</span>
+<span class="hljs-selector-class">.item-1</span> &#123;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">2em</span>;
+&#125;
 
-.item-3 {
-  width: 6em;
-}</code></pre>
+<span class="hljs-selector-class">.item-2</span> &#123;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">4em</span>;
+&#125;
+
+<span class="hljs-selector-class">.item-3</span> &#123;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">6em</span>;
+&#125;</code></pre>
+
 <h3 id="each"><a href="#each" class="headerlink" title="@each"></a>@each</h3><p>@each $example in example1,example2,example3{}</p>
-<pre><code class="scss">@each $animal in puma, sea-slug, egret,salamander{
-    .#{$animal}-icon{
-        background-image: url(&#39;image/#{$animal}.png&#39;);
-    }
+<pre><code class="hljs scss">@<span class="hljs-keyword">each</span> <span class="hljs-variable">$animal</span> in puma, sea-slug, egret,salamander&#123;
+    .#&#123;<span class="hljs-variable">$animal</span>&#125;-<span class="hljs-attribute">icon</span>&#123;
+        <span class="hljs-attribute">background-image</span>: url(<span class="hljs-string">'image/#&#123;$animal&#125;.png'</span>);
+    &#125;
 
-}
-@each $header, $size in (h1:2em, h2:1.5em, h3:1em){
-    #{$header}{
-        font-size: $size;
-    }
-}
-</code></pre>
-<pre><code class="css">/*编译后CSS*/
-.puma-icon {
-  background-image: url(&quot;image/puma.png&quot;);
-}
+&#125;
+@<span class="hljs-keyword">each</span> <span class="hljs-variable">$header</span>, <span class="hljs-variable">$size</span> in (h1:<span class="hljs-number">2em</span>, h2:<span class="hljs-number">1.5em</span>, h3:<span class="hljs-number">1em</span>)&#123;
+    #&#123;<span class="hljs-variable">$header</span>&#125;&#123;
+        <span class="hljs-attribute">font-size</span>: <span class="hljs-variable">$size</span>;
+    &#125;
+&#125;</code></pre>
 
-.sea-slug-icon {
-  background-image: url(&quot;image/sea-slug.png&quot;);
-}
+<pre><code class="hljs css"><span class="hljs-comment">/*编译后CSS*/</span>
+<span class="hljs-selector-class">.puma-icon</span> &#123;
+  <span class="hljs-attribute">background-image</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">"image/puma.png"</span>);
+&#125;
 
-.egret-icon {
-  background-image: url(&quot;image/egret.png&quot;);
-}
+<span class="hljs-selector-class">.sea-slug-icon</span> &#123;
+  <span class="hljs-attribute">background-image</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">"image/sea-slug.png"</span>);
+&#125;
 
-.salamander-icon {
-  background-image: url(&quot;image/salamander.png&quot;);
-}
+<span class="hljs-selector-class">.egret-icon</span> &#123;
+  <span class="hljs-attribute">background-image</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">"image/egret.png"</span>);
+&#125;
 
-h1 {
-  font-size: 2em;
-}
+<span class="hljs-selector-class">.salamander-icon</span> &#123;
+  <span class="hljs-attribute">background-image</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">"image/salamander.png"</span>);
+&#125;
 
-h2 {
-  font-size: 1.5em;
-}
+<span class="hljs-selector-tag">h1</span> &#123;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">2em</span>;
+&#125;
 
-h3 {
-  font-size: 1em;
-}
-</code></pre>
+<span class="hljs-selector-tag">h2</span> &#123;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">1.5em</span>;
+&#125;
+
+<span class="hljs-selector-tag">h3</span> &#123;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">1em</span>;
+&#125;</code></pre>
+
 <h3 id="while"><a href="#while" class="headerlink" title="@while"></a>@while</h3><p>while循环使用指令重复输出格式知道表达式返回结果为false.可以实现比@for循环更为复杂的指令</p>
-<pre><code class="scss">$i: 5;
-@while $i&gt;0{
-    .h#{$i} {
-        width: 2em * $i;
-        $i : $i - 2;
-    }
-}</code></pre>
-<pre><code class="css">.h5 {
-  width: 10em;
-}
+<pre><code class="hljs scss"><span class="hljs-variable">$i</span>: <span class="hljs-number">5</span>;
+@<span class="hljs-keyword">while</span> <span class="hljs-variable">$i</span>&gt;<span class="hljs-number">0</span>&#123;
+    <span class="hljs-selector-class">.h</span>#&#123;<span class="hljs-variable">$i</span>&#125; &#123;
+        <span class="hljs-attribute">width</span>: <span class="hljs-number">2em</span> * <span class="hljs-variable">$i</span>;
+        <span class="hljs-variable">$i</span> : <span class="hljs-variable">$i</span> - <span class="hljs-number">2</span>;
+    &#125;
+&#125;</code></pre>
 
-.h3 {
-  width: 6em;
-}
+<pre><code class="hljs css"><span class="hljs-selector-class">.h5</span> &#123;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">10em</span>;
+&#125;
 
-.h1 {
-  width: 2em;
-}</code></pre>
+<span class="hljs-selector-class">.h3</span> &#123;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">6em</span>;
+&#125;
+
+<span class="hljs-selector-class">.h1</span> &#123;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">2em</span>;
+&#125;</code></pre>
+
 <h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><p>Sass的数组常常被称为”map”,它总是以键值对的形式出现–”key:value”</p>
 <p>语法格式:</p>
-<pre><code class="scss">$map: (
+<pre><code class="hljs scss"><span class="hljs-variable">$map</span>: (
     key1:value1,
     key2: (
-        key2-1: value2-1,
-        key2-2: value2-2,
+        key2-<span class="hljs-number">1</span>: value2-<span class="hljs-number">1</span>,
+        key2-<span class="hljs-number">2</span>: value2-<span class="hljs-number">2</span>,
     ),
     key3: value3
 );</code></pre>
+
 <p>例子:</p>
-<pre><code class="scss">$some-color:(
-    a: #ea4c89,
-    b: #3b5998,
-     c: #171515
+<pre><code class="hljs scss"><span class="hljs-variable">$some-color</span>:(
+    a: <span class="hljs-number">#ea4c89</span>,
+    b: <span class="hljs-number">#3b5998</span>,
+     c: <span class="hljs-number">#171515</span>
 );
-.btn-a{
-    color:map-get($some-color, a ) //👈这里使用了map-get方法 这是map自带的方法
-}</code></pre>
-<pre><code class="css">/*编译后*/
-.btn-a {
-  color: #ea4c89;
-}</code></pre>
-<h3 id="选择器继承-extend"><a href="#选择器继承-extend" class="headerlink" title="选择器继承@extend"></a>选择器继承@extend</h3><pre><code class="scss">.father{
-    border: 1px solid black;
-}
-.son{
-    @extend .father;
-}</code></pre>
-<pre><code class="css">.father, .son {
-  border: 1px solid black;
-}</code></pre>
+<span class="hljs-selector-class">.btn-a</span>&#123;
+    <span class="hljs-attribute">color</span>:map-get(<span class="hljs-variable">$some-color</span>, a ) //👈这里使用了map-get方法 这是map自带的方法
+&#125;</code></pre>
+
+<pre><code class="hljs css"><span class="hljs-comment">/*编译后*/</span>
+<span class="hljs-selector-class">.btn-a</span> &#123;
+  <span class="hljs-attribute">color</span>: <span class="hljs-number">#ea4c89</span>;
+&#125;</code></pre>
+
+<h3 id="选择器继承-extend"><a href="#选择器继承-extend" class="headerlink" title="选择器继承@extend"></a>选择器继承@extend</h3><pre><code class="hljs scss"><span class="hljs-selector-class">.father</span>&#123;
+    <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid black;
+&#125;
+<span class="hljs-selector-class">.son</span>&#123;
+    @<span class="hljs-keyword">extend</span> .father;
+&#125;</code></pre>
+
+<pre><code class="hljs css"><span class="hljs-selector-class">.father</span>, <span class="hljs-selector-class">.son</span> &#123;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid black;
+&#125;</code></pre>
+
 <h1 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h1><p>终于完成了,😭,虽然有些疲惫.</p>
 <p>以上都是基于我的老师@帅帅徐 笔记内容&amp;上课所讲,以及 书(@web前端开发中级 下册) 和自己微不足道的总结,</p>
 <p>感谢阅读🙌</p>

@@ -148,7 +148,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    1.2k 字
+                    1k 字
                   </span>
                 
 
@@ -158,7 +158,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    22
+                    19
                      分钟
                   </span>
                 
@@ -187,271 +187,280 @@
           <div class="post-content mx-auto" id="post">
             
             <article class="markdown-body">
-              <pre><code class="js">&lt;script&gt;
-        $(document).ready(function () {
-            $(&quot;body&quot;).click(function () {
-                var txt = $(&quot;#msg&quot;).html() + &quot;&lt;p&gt;body被点击&lt;/p&gt;&quot;;
-                $(&quot;#msg&quot;).html(txt);
-            })
+              <pre><code class="hljs js">&lt;script&gt;
+        $(document).ready(function () &#123;
+            $("body").click(function () &#123;
+                var txt = $("#msg").html() + "&lt;p&gt;body被点击&lt;/p&gt;";
+                $("#msg").html(txt);
+            &#125;)
 
 
-            $(&quot;#content&quot;).click(function () {
-                var txt = $(&quot;#msg&quot;).html() + &quot;&lt;p&gt;外部div被点击&lt;/p&gt;&quot;;
-                $(&quot;#msg&quot;).html(txt);
+            $("#content").click(function () &#123;
+                var txt = $("#msg").html() + "&lt;p&gt;外部div被点击&lt;/p&gt;";
+                $("#msg").html(txt);
 
-            })
-            $(&quot;span&quot;).click(function (event) {
-                var txt = $(&quot;#msg&quot;).html() + &quot;&lt;p&gt;内部span被点击&lt;/p&gt;&quot;;
-                $(&quot;#msg&quot;).html(txt);
+            &#125;)
+            $("span").click(function (event) &#123;
+                var txt = $("#msg").html() + "&lt;p&gt;内部span被点击&lt;/p&gt;";
+                $("#msg").html(txt);
                 // event.stopPropagation();
 
-            })
-            // $(&quot;button&quot;).click(function (e) {
-            //     if ($(&quot;button&quot;).text() == &quot;&quot;) {
+            &#125;)
+            // $("button").click(function (e) &#123;
+            //     if ($("button").text() == "") &#123;
             //         e.preventDefault();
-            //     }
-            // })
+            //     &#125;
+            // &#125;)
 
-        })
+        &#125;)
 &lt;/script&gt;
 
 &lt;body&gt;
 
     &lt;button&gt;&lt;/button&gt;
-    &lt;div id=&quot;content&quot;&gt;
+    &lt;div id="content"&gt;
         &lt;span&gt;span&lt;/span&gt;
     &lt;/div&gt;
-    &lt;div id=&quot;msg&quot;&gt;&lt;/div&gt;
+    &lt;div id="msg"&gt;&lt;/div&gt;
 &lt;/body&gt;</code></pre>
-<h1 id="键盘事件-选择器"><a href="#键盘事件-选择器" class="headerlink" title="键盘事件,选择器"></a>键盘事件,选择器</h1><pre><code class="html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
 
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;script src=&quot;js/jquery-3.4.1.js&quot;&gt;&lt;/script&gt;
-    &lt;script&gt;
-        $(document).ready(function () {
-            $(&quot;span:nth-child(1)&quot;).css(&quot;background&quot;, &quot;yellow&quot;);
-            $(&quot;p:nth-of-type(2)&quot;).after(&quot;&lt;div id=&#39;hello&#39;&gt;nihao&lt;/div&gt;&quot;);
-            $(&quot;p:nth-of-type(1)&quot;).css(&quot;background&quot;, &quot;red&quot;);
-            $(&quot;p[class = jk]&quot;).hover(
-                function () {
-                    $(this).css(&quot;background&quot;, &quot;blue&quot;);
-                },
-                function () {
-                    $(this).css(&quot;background&quot;, &quot;pink&quot;);
-                }
+<h1 id="键盘事件-选择器"><a href="#键盘事件-选择器" class="headerlink" title="键盘事件,选择器"></a>键盘事件,选择器</h1><pre><code class="hljs html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"en"</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"UTF-8"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"viewport"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"width=device-width, initial-scale=1.0"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">"X-UA-Compatible"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"ie=edge"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Document<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"js/jquery-3.4.1.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+        $(<span class="hljs-built_in">document</span>).ready(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+            $(<span class="hljs-string">"span:nth-child(1)"</span>).css(<span class="hljs-string">"background"</span>, <span class="hljs-string">"yellow"</span>);
+            $(<span class="hljs-string">"p:nth-of-type(2)"</span>).after(<span class="hljs-string">"&lt;div id='hello'&gt;nihao&lt;/div&gt;"</span>);
+            $(<span class="hljs-string">"p:nth-of-type(1)"</span>).css(<span class="hljs-string">"background"</span>, <span class="hljs-string">"red"</span>);
+            $(<span class="hljs-string">"p[class = jk]"</span>).hover(
+                <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+                    $(<span class="hljs-keyword">this</span>).css(<span class="hljs-string">"background"</span>, <span class="hljs-string">"blue"</span>);
+                &#125;,
+                <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+                    $(<span class="hljs-keyword">this</span>).css(<span class="hljs-string">"background"</span>, <span class="hljs-string">"pink"</span>);
+                &#125;
             )
-            $(&quot;input&quot;).keydown(function () {
-                $(this).css(&quot;background&quot;, &quot;yellow&quot;);
-            })
-            $(&#39;input&#39;).keyup(function () {
-                $(this).css(&quot;background&quot;, &quot;white&quot;);
-            })
-            $(&quot;form&quot;).submit(function () {
-                alert(&quot;submitting&quot;);
-            })
-            $(&quot;input&quot;).change(function () {
-                alert(&quot;had been change&quot;);
-            })
-            var x = 0;
-            $(&quot;#myScroll&quot;).scroll(function () {
-                $(this).next().html(x += 1);
-                // alert(123);
-            })
-            $(window).resize(function () {
-                // $(&quot;body&quot;).text(x += 1);
-            })
-        })
-    &lt;/script&gt;
-    &lt;style&gt;
-        #hello {
-            background-color: green;
-        }
-    &lt;/style&gt;
-&lt;/head&gt;
+            $(<span class="hljs-string">"input"</span>).keydown(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+                $(<span class="hljs-keyword">this</span>).css(<span class="hljs-string">"background"</span>, <span class="hljs-string">"yellow"</span>);
+            &#125;)
+            $(<span class="hljs-string">'input'</span>).keyup(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+                $(<span class="hljs-keyword">this</span>).css(<span class="hljs-string">"background"</span>, <span class="hljs-string">"white"</span>);
+            &#125;)
+            $(<span class="hljs-string">"form"</span>).submit(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+                alert(<span class="hljs-string">"submitting"</span>);
+            &#125;)
+            $(<span class="hljs-string">"input"</span>).change(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+                alert(<span class="hljs-string">"had been change"</span>);
+            &#125;)
+            <span class="hljs-keyword">var</span> x = <span class="hljs-number">0</span>;
+            $(<span class="hljs-string">"#myScroll"</span>).scroll(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+                $(<span class="hljs-keyword">this</span>).next().html(x += <span class="hljs-number">1</span>);
+                <span class="hljs-comment">// alert(123);</span>
+            &#125;)
+            $(<span class="hljs-built_in">window</span>).resize(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+                <span class="hljs-comment">// $("body").text(x += 1);</span>
+            &#125;)
+        &#125;)
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
+        <span class="hljs-selector-id">#hello</span> &#123;
+            <span class="hljs-attribute">background-color</span>: green;
+        &#125;
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
 
-&lt;body&gt;
-    &lt;input type=&quot;text&quot;&gt;
-    &lt;/br&gt;
-    &lt;span&gt;h&lt;/span&gt;
-    &lt;p&gt;pnihao&lt;/p&gt;
-    &lt;p&gt;nihaop&lt;/p&gt;
-    &lt;p class=&quot;jk&quot;&gt;helo&lt;/p&gt;
-    &lt;form action=&quot;&quot;&gt;
-        &lt;input type=&quot;text&quot;&gt;
-        &lt;input id=&quot;mySubmit&quot; type=&quot;submit&quot;&gt;
-    &lt;/form&gt;
-    &lt;div id=&quot;myScroll&quot; style=&quot;width: 100px;height: 100px;background-color: yellow;overflow: scroll;&quot;&gt;
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">br</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>h<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>pnihao<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>nihaop<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"jk"</span>&gt;</span>helo<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">""</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"mySubmit"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"myScroll"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"width: 100px;height: 100px;background-color: yellow;overflow: scroll;"</span>&gt;</span>
         nihaodajiadsfsafasf
         nihaodajiadsfsafasf
         nihaodajiadsfsafasf
         nihaodajiadsfsafasf
-    &lt;/div&gt;
-    &lt;span&gt;0&lt;/span&gt;
-&lt;/body&gt;
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
 
-&lt;/html&gt;</code></pre>
-<h1 id="表单验证"><a href="#表单验证" class="headerlink" title="表单验证"></a>表单验证</h1><pre><code class="html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre>
 
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
-    &lt;script src=&quot;js/jquery-3.4.1.js&quot;&gt;&lt;/script&gt;
-    &lt;script&gt;
-        function checkName() {
-            var username = $(&quot;[name=&#39;username&#39;]&quot;).val();
-            var reg = /^[a-zA-Z]{3,7}$/.test(username);
-            if (reg) {
-                $(&#39;#m_username&#39;).html(&#39;available&#39;);
-                return true;
 
-            } else {
-                $(&#39;#m_username&#39;).html(&#39;unavailable&#39;);
-                return false;
-            }
-        }
 
-        function a() {
+<h1 id="表单验证"><a href="#表单验证" class="headerlink" title="表单验证"></a>表单验证</h1><pre><code class="hljs html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"en"</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"UTF-8"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"viewport"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"width=device-width, initial-scale=1.0"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">"X-UA-Compatible"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"ie=edge"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"js/jquery-3.4.1.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">checkName</span>(<span class="hljs-params"></span>) </span>&#123;
+            <span class="hljs-keyword">var</span> username = $(<span class="hljs-string">"[name='username']"</span>).val();
+            <span class="hljs-keyword">var</span> reg = <span class="hljs-regexp">/^[a-zA-Z]&#123;3,7&#125;$/</span>.test(username);
+            <span class="hljs-keyword">if</span> (reg) &#123;
+                $(<span class="hljs-string">'#m_username'</span>).html(<span class="hljs-string">'available'</span>);
+                <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+
+            &#125; <span class="hljs-keyword">else</span> &#123;
+                $(<span class="hljs-string">'#m_username'</span>).html(<span class="hljs-string">'unavailable'</span>);
+                <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+            &#125;
+        &#125;
+
+        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">a</span>(<span class="hljs-params"></span>) </span>&#123;
             checkName();
-            console.log(checkName());
-        }
-    &lt;/script&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;style&gt;
+            <span class="hljs-built_in">console</span>.log(checkName());
+        &#125;
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Document<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span>
 
-    &lt;/style&gt;
-&lt;/head&gt;
+    <span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
 
-&lt;body&gt;
-    &lt;form action=&quot;&quot;&gt;
-        &lt;input type=&quot;text&quot; name=&quot;username&quot; id=&quot;username&quot; value=&quot;&quot; onblur=&quot;a()&quot;&gt;
-        &lt;span id=&quot;m_username&quot;&gt;&lt;/span&gt;
-        &lt;input type=&quot;button&quot; id=&quot;button&quot; value=&quot;click&quot;&gt;
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">""</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"username"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"username"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">""</span> <span class="hljs-attr">onblur</span>=<span class="hljs-string">"a()"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"m_username"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"click"</span>&gt;</span>
 
-    &lt;/form&gt;
-&lt;/body&gt;
+    <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
 
-&lt;/html&gt;</code></pre>
-<h1 id="图片定时切换-只使用setTimeout"><a href="#图片定时切换-只使用setTimeout" class="headerlink" title="图片定时切换(只使用setTimeout"></a>图片定时切换(只使用setTimeout</h1><pre><code class="html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre>
 
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
-    &lt;script src=&quot;js/jquery-3.4.1.js&quot;&gt;&lt;/script&gt;
-    &lt;script&gt;
-        var g;
-        var k = 0;
-        var t;
-        var arr = [&quot;ark/gushou.png&quot;, &quot;ark/pzw.png&quot;, &quot;ark/qsl.png&quot;];
+<h1 id="图片定时切换-只使用setTimeout"><a href="#图片定时切换-只使用setTimeout" class="headerlink" title="图片定时切换(只使用setTimeout"></a>图片定时切换(只使用setTimeout</h1><pre><code class="hljs html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"en"</span>&gt;</span>
 
-        function changeSrc() {
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"UTF-8"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"viewport"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"width=device-width, initial-scale=1.0"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">"X-UA-Compatible"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"ie=edge"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"js/jquery-3.4.1.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+        <span class="hljs-keyword">var</span> g;
+        <span class="hljs-keyword">var</span> k = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">var</span> t;
+        <span class="hljs-keyword">var</span> arr = [<span class="hljs-string">"ark/gushou.png"</span>, <span class="hljs-string">"ark/pzw.png"</span>, <span class="hljs-string">"ark/qsl.png"</span>];
+
+        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">changeSrc</span>(<span class="hljs-params"></span>) </span>&#123;
             k++;
-            if (k &gt; 2) {
-                k = 0;
-            }
-            var path = arr[k];
-            $(&quot;img&quot;).attr(&quot;src&quot;, path);
-            t = setTimeout(changeSrc, 1000);
-        }
-        $(function () {
-            g = setTimeout(changeSrc, 1000)
-            $(&quot;#button&quot;).click(function () {
+            <span class="hljs-keyword">if</span> (k &gt; <span class="hljs-number">2</span>) &#123;
+                k = <span class="hljs-number">0</span>;
+            &#125;
+            <span class="hljs-keyword">var</span> path = arr[k];
+            $(<span class="hljs-string">"img"</span>).attr(<span class="hljs-string">"src"</span>, path);
+            t = setTimeout(changeSrc, <span class="hljs-number">1000</span>);
+        &#125;
+        $(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+            g = setTimeout(changeSrc, <span class="hljs-number">1000</span>)
+            $(<span class="hljs-string">"#button"</span>).click(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
                 clearTimeout(t);
-            })
-            $(&quot;#button1&quot;).click(function () {
-                t = setTimeout(changeSrc, 1000);
-            })
+            &#125;)
+            $(<span class="hljs-string">"#button1"</span>).click(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+                t = setTimeout(changeSrc, <span class="hljs-number">1000</span>);
+            &#125;)
 
-            // $(&quot;img&quot;).hover(
-            //     function () {
-            //         clearTimeout(t);
-            //     },
-            //     function () {
-            //         t = setTimeout(changeSrc, 1000);
-            //     }
-            // )
+            <span class="hljs-comment">// $("img").hover(</span>
+            <span class="hljs-comment">//     function () &#123;</span>
+            <span class="hljs-comment">//         clearTimeout(t);</span>
+            <span class="hljs-comment">//     &#125;,</span>
+            <span class="hljs-comment">//     function () &#123;</span>
+            <span class="hljs-comment">//         t = setTimeout(changeSrc, 1000);</span>
+            <span class="hljs-comment">//     &#125;</span>
+            <span class="hljs-comment">// )</span>
 
-        })
-    &lt;/script&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;style&gt;
+        &#125;)
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Document<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span>
 
-    &lt;/style&gt;
-&lt;/head&gt;
+    <span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
 
-&lt;body&gt;
-    &lt;div&gt;
-        &lt;img id=&quot;img&quot; src=&quot;ark/gushou.png&quot; alt=&quot;&quot;&gt;
-    &lt;/div&gt;
-    &lt;button id=&quot;button&quot;&gt;stop&lt;/button&gt;
-    &lt;button id=&quot;button1&quot;&gt;start&lt;/button&gt;
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"img"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"ark/gushou.png"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"button"</span>&gt;</span>stop<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"button1"</span>&gt;</span>start<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
 
 
-&lt;/body&gt;
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
 
-&lt;/html&gt;</code></pre>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre>
+
 <p>这里有点奇怪,</p>
-<pre><code class="html"> // $(&quot;img&quot;).hover(
-            //     function () {
-            //         clearTimeout(t);
-            //     },
-            //     function () {
-            //         t = setTimeout(changeSrc, 1000);
-            //     }
-            // )</code></pre>
+<pre><code class="hljs html">// $("img").hover(
+           //     function () &#123;
+           //         clearTimeout(t);
+           //     &#125;,
+           //     function () &#123;
+           //         t = setTimeout(changeSrc, 1000);
+           //     &#125;
+           // )</code></pre>
+
 <p>使用这段的时候无法停止</p>
-<h1 id="动画属性"><a href="#动画属性" class="headerlink" title="动画属性"></a>动画属性</h1><pre><code class="html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
+<h1 id="动画属性"><a href="#动画属性" class="headerlink" title="动画属性"></a>动画属性</h1><pre><code class="hljs html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"en"</span>&gt;</span>
 
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
-    &lt;script src=&quot;js/jquery-3.4.1.js&quot;&gt;&lt;/script&gt;
-    &lt;script&gt;
-        $(function () {
-            $(&quot;#div1&quot;).bind(&quot;click&quot;, function () {
-                $(this).animate({
-                    left: &#39;+=200px&#39;,
-                    width: &#39;+=200px&#39;
-                }, 1300, function () {
-                    $(this).animate({
-                        left: &#39;0px&#39;,
-                        width: &#39;100px&#39;
-                    }, 1000)
-                })
-            })
-        })
-    &lt;/script&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;style&gt;
-        #div1 {
-            position: absolute;
-            width: 100px;
-            height: 100px;
-            background-color: #abcdef;
-        }
-    &lt;/style&gt;
-&lt;/head&gt;
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"UTF-8"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"viewport"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"width=device-width, initial-scale=1.0"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">"X-UA-Compatible"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"ie=edge"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"js/jquery-3.4.1.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+        $(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+            $(<span class="hljs-string">"#div1"</span>).bind(<span class="hljs-string">"click"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+                $(<span class="hljs-keyword">this</span>).animate(&#123;
+                    <span class="hljs-attr">left</span>: <span class="hljs-string">'+=200px'</span>,
+                    <span class="hljs-attr">width</span>: <span class="hljs-string">'+=200px'</span>
+                &#125;, <span class="hljs-number">1300</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+                    $(<span class="hljs-keyword">this</span>).animate(&#123;
+                        <span class="hljs-attr">left</span>: <span class="hljs-string">'0px'</span>,
+                        <span class="hljs-attr">width</span>: <span class="hljs-string">'100px'</span>
+                    &#125;, <span class="hljs-number">1000</span>)
+                &#125;)
+            &#125;)
+        &#125;)
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Document<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
+        <span class="hljs-selector-id">#div1</span> &#123;
+            <span class="hljs-attribute">position</span>: absolute;
+            <span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;
+            <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;
+            <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#abcdef</span>;
+        &#125;
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
 
-&lt;body&gt;
-    &lt;div id=&quot;div1&quot;&gt;&lt;/div&gt;
-&lt;/body&gt;
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"div1"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
 
-&lt;/html&gt;</code></pre>
-<h1 id="鼠标位置获取"><a href="#鼠标位置获取" class="headerlink" title="鼠标位置获取"></a>鼠标位置获取</h1><pre><code class="html">$(&quot;#div1&quot;).bind(&quot;mousemove&quot;, function (e) {
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre>
+
+<h1 id="鼠标位置获取"><a href="#鼠标位置获取" class="headerlink" title="鼠标位置获取"></a>鼠标位置获取</h1><pre><code class="hljs html">$("#div1").bind("mousemove", function (e) &#123;
                 var x = e.pageX;
                 var y = e.pageY;
-                $(this).text(&quot;x:&quot; + x + &quot;;y:&quot; + y);
-            })</code></pre>
+                $(this).text("x:" + x + ";y:" + y);
+            &#125;)</code></pre>
+
 <p>👩:mousemove 比较适合这种时候用</p>
 
             </article>

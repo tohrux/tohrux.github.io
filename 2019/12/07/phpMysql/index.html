@@ -148,7 +148,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    563 字
+                    545 字
                   </span>
                 
 
@@ -187,83 +187,94 @@
           <div class="post-content mx-auto" id="post">
             
             <article class="markdown-body">
-              <p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191209180726.png" srcset="undefined" alt=""></p>
+              <p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191209180726.png" srcset="/img/loading.gif" alt=""></p>
 <h1 id="访问数据库"><a href="#访问数据库" class="headerlink" title="访问数据库"></a>访问数据库</h1><p>1.连接数据库</p>
-<pre><code class="php">//使用 mysqli_connect()</code></pre>
-<p>2.选择服务器</p>
-<pre><code class="php">//使用 mysqli_select_db()来选择</code></pre>
-<p>3.执行数据库操作</p>
-<pre><code class="php">//增删改查四部曲
+<pre><code class="hljs php"><span class="hljs-comment">//使用 mysqli_connect()</span></code></pre>
 
-//
-    insert into
-//
+<p>2.选择服务器</p>
+<pre><code class="hljs php"><span class="hljs-comment">//使用 mysqli_select_db()来选择</span></code></pre>
+
+<p>3.执行数据库操作</p>
+<pre><code class="hljs php"><span class="hljs-comment">//增删改查四部曲</span>
+
+<span class="hljs-comment">//</span>
+	insert into
+<span class="hljs-comment">//</span>
     delete
-//
+<span class="hljs-comment">//</span>
     update
-// 
+<span class="hljs-comment">// </span>
     select</code></pre>
+
 <p>4.清除记录集,释放系统资源</p>
-<pre><code class="php">mysqli_free_result();</code></pre>
+<pre><code class="hljs php">mysqli_free_result();</code></pre>
+
 <p>5.关闭MySQL服务器</p>
-<pre><code class="php">mysqli_close();</code></pre>
-<h2 id="连接MySQL服务器"><a href="#连接MySQL服务器" class="headerlink" title="连接MySQL服务器"></a>连接MySQL服务器</h2><pre><code class="php">$mysql = new mysqli($server,$username,$password,$dbname);
-//$server 服务器地址 一般本地的为localhost</code></pre>
-<h3 id="mysqli-对象的内容"><a href="#mysqli-对象的内容" class="headerlink" title="mysqli 对象的内容"></a>mysqli 对象的内容</h3><pre><code class="php">mysqli Object
+<pre><code class="hljs php">mysqli_close();</code></pre>
+
+<h2 id="连接MySQL服务器"><a href="#连接MySQL服务器" class="headerlink" title="连接MySQL服务器"></a>连接MySQL服务器</h2><pre><code class="hljs php">$mysql = <span class="hljs-keyword">new</span> mysqli($server,$username,$password,$dbname);
+<span class="hljs-comment">//$server 服务器地址 一般本地的为localhost</span></code></pre>
+
+<h3 id="mysqli-对象的内容"><a href="#mysqli-对象的内容" class="headerlink" title="mysqli 对象的内容"></a>mysqli 对象的内容</h3><pre><code class="hljs php">mysqli Object
 (
-    [affected_rows] =&gt; 0
-    [client_info] =&gt; mysqlnd 5.0.12-dev - 20150407 - $Id: 7cc7cc96e675f6d72e5cf0f267f48e167c2abb23 $
-    [client_version] =&gt; 50012
-    [connect_errno] =&gt; 0
+    [affected_rows] =&gt; <span class="hljs-number">0</span>
+    [client_info] =&gt; mysqlnd <span class="hljs-number">5.0</span><span class="hljs-number">.12</span>-dev - <span class="hljs-number">20150407</span> - $Id: <span class="hljs-number">7</span>cc7cc96e675f6d72e5cf0f267f48e167c2abb23 $
+    [client_version] =&gt; <span class="hljs-number">50012</span>
+    [connect_errno] =&gt; <span class="hljs-number">0</span>
     [connect_error] =&gt; 
-    [errno] =&gt; 0
+    [errno] =&gt; <span class="hljs-number">0</span>
     [error] =&gt; 
-    [error_list] =&gt; Array
+    [error_list] =&gt; <span class="hljs-keyword">Array</span>
         (
         )
 
-    [field_count] =&gt; 0
+    [field_count] =&gt; <span class="hljs-number">0</span>
     [host_info] =&gt; localhost via TCP/IP
     [info] =&gt; 
-    [insert_id] =&gt; 0
-    [server_info] =&gt; 5.5.5-10.4.8-MariaDB
-    [server_version] =&gt; 100408
-    [stat] =&gt; Uptime: 13265  Threads: 8  Questions: 163  Slow queries: 0  Opens: 29  Flush tables: 1  Open tables: 14  Queries per second avg: 0.012
-    [sqlstate] =&gt; 00000
-    [protocol_version] =&gt; 10
-    [thread_id] =&gt; 82
-    [warning_count] =&gt; 0
+    [insert_id] =&gt; <span class="hljs-number">0</span>
+    [server_info] =&gt; <span class="hljs-number">5.5</span><span class="hljs-number">.5</span><span class="hljs-number">-10.4</span><span class="hljs-number">.8</span>-MariaDB
+    [server_version] =&gt; <span class="hljs-number">100408</span>
+    [stat] =&gt; Uptime: <span class="hljs-number">13265</span>  Threads: <span class="hljs-number">8</span>  Questions: <span class="hljs-number">163</span>  Slow queries: <span class="hljs-number">0</span>  Opens: <span class="hljs-number">29</span>  Flush tables: <span class="hljs-number">1</span>  Open tables: <span class="hljs-number">14</span>  Queries per second avg: <span class="hljs-number">0.012</span>
+    [sqlstate] =&gt; <span class="hljs-number">00000</span>
+    [protocol_version] =&gt; <span class="hljs-number">10</span>
+    [thread_id] =&gt; <span class="hljs-number">82</span>
+    [warning_count] =&gt; <span class="hljs-number">0</span>
 )</code></pre>
+
+
+
 <h2 id="执行SQL语句"><a href="#执行SQL语句" class="headerlink" title="执行SQL语句"></a>执行SQL语句</h2><p>首先他们有两种风格 第二种是面向过程,略</p>
-<h3 id="objdect-oriented"><a href="#objdect-oriented" class="headerlink" title="objdect oriented"></a>objdect oriented</h3><pre><code class="php">面向对象:
-&lt;?php
-$serve = &quot;localhost&quot;;
-$user = &quot;root&quot;;
-$db = &quot;jk&quot;;
-$conn = new mysqli($serve, $user, &quot;&quot;, $db);
-//check connect 
-if ($conn-&gt;connect_errno) {
-    echo $conn-&gt;connect_error;
-}
-//insert into data
-$sql = &quot;insert into jkjk values(8,17,&#39;peachx&#39;);&quot;;
-$sql .= &quot;insert into jkjk values(9,16,&#39;peachxx&#39;);&quot;;
-$sql .= &quot;insert into jkjk values(10,16,&#39;peachxs&#39;)&quot;;
+<h3 id="objdect-oriented"><a href="#objdect-oriented" class="headerlink" title="objdect oriented"></a>objdect oriented</h3><pre><code class="hljs php">面向对象:
+<span class="hljs-meta">&lt;?php</span>
+$serve = <span class="hljs-string">"localhost"</span>;
+$user = <span class="hljs-string">"root"</span>;
+$db = <span class="hljs-string">"jk"</span>;
+$conn = <span class="hljs-keyword">new</span> mysqli($serve, $user, <span class="hljs-string">""</span>, $db);
+<span class="hljs-comment">//check connect </span>
+<span class="hljs-keyword">if</span> ($conn-&gt;connect_errno) &#123;
+    <span class="hljs-keyword">echo</span> $conn-&gt;connect_error;
+&#125;
+<span class="hljs-comment">//insert into data</span>
+$sql = <span class="hljs-string">"insert into jkjk values(8,17,'peachx');"</span>;
+$sql .= <span class="hljs-string">"insert into jkjk values(9,16,'peachxx');"</span>;
+$sql .= <span class="hljs-string">"insert into jkjk values(10,16,'peachxs')"</span>;
 $res = $conn-&gt;multi_query($sql);
 var_dump($res);
-//查询语句
-$sql = &quot;select * from jkjk&quot;;
+<span class="hljs-comment">//查询语句</span>
+$sql = <span class="hljs-string">"select * from jkjk"</span>;
 $res = $conn-&gt;query($sql);
-var_dump($res);//结果如下</code></pre>
+var_dump($res);<span class="hljs-comment">//结果如下</span></code></pre>
+
 <p>👇</p>
-<pre><code class="php">mysqli_result Object
+<pre><code class="hljs php">mysqli_result Object
 (
-    [current_field] =&gt; 0
-    [field_count] =&gt; 3
+    [current_field] =&gt; <span class="hljs-number">0</span>
+    [field_count] =&gt; <span class="hljs-number">3</span>
     [lengths] =&gt; 
-    [num_rows] =&gt; 10
-    [type] =&gt; 0
+    [num_rows] =&gt; <span class="hljs-number">10</span>
+    [type] =&gt; <span class="hljs-number">0</span>
 )</code></pre>
+
 <h3 id="解析结果集"><a href="#解析结果集" class="headerlink" title="解析结果集"></a>解析结果集</h3><p>在使用完结果集后要记得使用结果集占用的内存</p>
 <table>
 <thead>
@@ -309,13 +320,13 @@ var_dump($res);//结果如下</code></pre>
 <td>括号中必须给值,给0的话可以把fetch_*()中的数据偏移回初始行</td>
 </tr>
 </tbody></table>
-<h3 id="开始查询"><a href="#开始查询" class="headerlink" title="开始查询"></a>开始查询</h3><pre><code class="php">while ($row = $res-&gt;fetch_assoc()) {
+<h3 id="开始查询"><a href="#开始查询" class="headerlink" title="开始查询"></a>开始查询</h3><pre><code class="hljs php"><span class="hljs-keyword">while</span> ($row = $res-&gt;fetch_assoc()) &#123;
     print_r($row);
-    // echo $row;
-}
+    <span class="hljs-comment">// echo $row;</span>
+&#125;
 
 相当于👇
-
+    
 $res = $res-&gt;fetch_assoc();
 print_r($res);
 $res = $res-&gt;fetch_assoc();
@@ -323,25 +334,27 @@ print_r($res);
 $res = $res-&gt;fetch_assoc();
 print_r($res);  
 ......</code></pre>
+
 <p> 输出结果,这里只显示前三个</p>
-<pre><code class="php">Array
+<pre><code class="hljs php"><span class="hljs-keyword">Array</span>
 (
-    [id] =&gt; 1
-    [price] =&gt; 12
+    [id] =&gt; <span class="hljs-number">1</span>
+    [price] =&gt; <span class="hljs-number">12</span>
     [some] =&gt; apple
 )
-Array
+<span class="hljs-keyword">Array</span>
 (
-    [id] =&gt; 2
-    [price] =&gt; 12
+    [id] =&gt; <span class="hljs-number">2</span>
+    [price] =&gt; <span class="hljs-number">12</span>
     [some] =&gt; bnana
 )
-Array
+<span class="hljs-keyword">Array</span>
 (
-    [id] =&gt; 3
-    [price] =&gt; 14
+    [id] =&gt; <span class="hljs-number">3</span>
+    [price] =&gt; <span class="hljs-number">14</span>
     [some] =&gt; naizi
 )</code></pre>
+
 <p>辛苦啦~</p>
 
             </article>

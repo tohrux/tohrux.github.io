@@ -148,7 +148,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    460 字
+                    475 字
                   </span>
                 
 
@@ -158,7 +158,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    6
+                    7
                      分钟
                   </span>
                 
@@ -193,66 +193,76 @@
 <li>不使用 <strong>balde.php</strong>结尾的话就不能使用laravel提供的标签语法显示数据,只能使用原生语法显示数据</li>
 </ol>
 <h1 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h1><p>在开发中可以使用compact(php内置函数)来进行数组的打包</p>
-<h3 id="TextController"><a href="#TextController" class="headerlink" title="TextController:"></a>TextController:</h3><pre><code class="php">    public function test3()
-    {
-        //现在时间
-        $date = date(&#39;Y-m-d H:i:s&#39;, time());
-        //获取今天的星期
-        $day = &#39;sunday&#39;;
-        //show 视图
-        //return view(&#39;home/index/test3&#39;, [&#39;date&#39; =&gt; $date, &#39;day&#39; =&gt; $day]);
-        👆
-      效果一样   
-         👇
-        return view(&#39;home/index/test3&#39;, compact(&#39;date&#39;, &#39;day&#39;));
-    }</code></pre>
-<h3 id="web-php"><a href="#web-php" class="headerlink" title="web.php:"></a>web.php:</h3><pre><code class="php">Route::get(&#39;/home/index/test3&#39;, &quot;TextController@test3&quot;);</code></pre>
-<h3 id="text3-blade-php"><a href="#text3-blade-php" class="headerlink" title="text3.blade.php:"></a>text3.blade.php:</h3><pre><code class="php">当前访问的是home/index/test3.blade.php文件&lt;br/&gt;
-现在是: {{$date}},今天是星期{{$day}}</code></pre>
-<h3 id="输出"><a href="#输出" class="headerlink" title="输出:"></a>输出:</h3><pre><code class="html">当前访问的是home/index/test3.blade.php文件
+<h3 id="TextController"><a href="#TextController" class="headerlink" title="TextController:"></a>TextController:</h3><pre><code class="hljs php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">test3</span><span class="hljs-params">()</span>
+</span>&#123;
+    <span class="hljs-comment">//现在时间</span>
+    $date = date(<span class="hljs-string">'Y-m-d H:i:s'</span>, time());
+    <span class="hljs-comment">//获取今天的星期</span>
+    $day = <span class="hljs-string">'sunday'</span>;
+    <span class="hljs-comment">//show 视图</span>
+    <span class="hljs-comment">//return view('home/index/test3', ['date' =&gt; $date, 'day' =&gt; $day]);</span>
+    👆
+  效果一样   
+     👇
+    <span class="hljs-keyword">return</span> view(<span class="hljs-string">'home/index/test3'</span>, compact(<span class="hljs-string">'date'</span>, <span class="hljs-string">'day'</span>));
+&#125;</code></pre>
+
+<h3 id="web-php"><a href="#web-php" class="headerlink" title="web.php:"></a>web.php:</h3><pre><code class="hljs php">Route::get(<span class="hljs-string">'/home/index/test3'</span>, <span class="hljs-string">"TextController@test3"</span>);</code></pre>
+
+<h3 id="text3-blade-php"><a href="#text3-blade-php" class="headerlink" title="text3.blade.php:"></a>text3.blade.php:</h3><pre><code class="hljs php">当前访问的是home/index/test3.blade.php文件&lt;br/&gt;
+现在是: &#123;&#123;$date&#125;&#125;,今天是星期&#123;&#123;$day&#125;&#125;</code></pre>
+
+<h3 id="输出"><a href="#输出" class="headerlink" title="输出:"></a>输出:</h3><pre><code class="hljs html">当前访问的是home/index/test3.blade.php文件
 现在是: 2019-11-23 01:47:37,今天是星期sunday</code></pre>
-<h3 id="之前输出当前时间"><a href="#之前输出当前时间" class="headerlink" title="之前输出当前时间:"></a>之前输出当前时间:</h3><pre><code class="php">时间戳 {{date('Y-m-d H:i:s',$time)}}</code></pre>
-<h3 id="一年后的时间"><a href="#一年后的时间" class="headerlink" title="一年后的时间:"></a>一年后的时间:</h3><pre><code class="PHP">{{date('Y-m-d H:i:s',strtotime('+1 year'))}};</code></pre>
+
+<h3 id="之前输出当前时间"><a href="#之前输出当前时间" class="headerlink" title="之前输出当前时间:"></a>之前输出当前时间:</h3><pre><code class="hljs php">时间戳 &#123;&#123;date(<span class="hljs-string">'Y-m-d H:i:s'</span>,$time)&#125;&#125;</code></pre>
+
+<h3 id="一年后的时间"><a href="#一年后的时间" class="headerlink" title="一年后的时间:"></a>一年后的时间:</h3><pre><code class="hljs PHP">&#123;&#123;date(<span class="hljs-string">'Y-m-d H:i:s'</span>,strtotime(<span class="hljs-string">'+1 year'</span>))&#125;&#125;;</code></pre>
+
 <h1 id="循环分支语法标签"><a href="#循环分支语法标签" class="headerlink" title="循环分支语法标签"></a>循环分支语法标签</h1><p>下面是一个案例</p>
 <p><strong>Controller</strong>中:</p>
-<pre><code class="php">use DB;
+<pre><code class="hljs php"><span class="hljs-keyword">use</span> <span class="hljs-title">DB</span>;
 
-class TestController extends Controller
-{
-    //start
-    public function test1()
-    {
-        $db = DB::table(&#39;member&#39;)-&gt;get();
-        // dd($db);
-        return view(&#39;test.test1&#39;, compact(&#39;db&#39;));
-    }
-}
-</code></pre>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TestController</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Controller</span>
+</span>&#123;
+    <span class="hljs-comment">//start</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">test1</span><span class="hljs-params">()</span>
+    </span>&#123;
+        $db = DB::table(<span class="hljs-string">'member'</span>)-&gt;get();
+        <span class="hljs-comment">// dd($db);</span>
+        <span class="hljs-keyword">return</span> view(<span class="hljs-string">'test.test1'</span>, compact(<span class="hljs-string">'db'</span>));
+    &#125;
+&#125;</code></pre>
+
+
+
 <p><strong>blade</strong>中:</p>
-<pre><code class="php">id&amp;emsp;&amp;emsp;name&amp;emsp;&amp;emsp;email&amp;emsp;&lt;br&gt;
-@foreach ($db as $key =&gt; $value)
-{{-- 如果不要key的话可以直接省略 ($db as $value) --}}
-    {{$value -> id}}&amp;emsp;&amp;emsp;
-    {{$value -> name}}&amp;emsp;&amp;emsp;
-    {{$value -> email}}
+<pre><code class="hljs php">id&amp;emsp;&amp;emsp;name&amp;emsp;&amp;emsp;email&amp;emsp;&lt;br&gt;
+@<span class="hljs-keyword">foreach</span> ($db <span class="hljs-keyword">as</span> $key =&gt; $value)
+&#123;&#123;-- 如果不要key的话可以直接省略 ($db <span class="hljs-keyword">as</span> $value) --&#125;&#125;
+    &#123;&#123;$value -&gt; id&#125;&#125;&amp;emsp;&amp;emsp;
+    &#123;&#123;$value -&gt; name&#125;&#125;&amp;emsp;&amp;emsp;
+    &#123;&#123;$value -&gt; email&#125;&#125;
     &lt;br&gt;
-@endforeach
-</code></pre>
+@<span class="hljs-keyword">endforeach</span></code></pre>
+
 <p><strong>输出结果:</strong></p>
-<pre><code class="html">id  name  email 
+<pre><code class="hljs html">id  name  email 
 1   阿龙   al@gmail
 2   阿B   ab@gmail</code></pre>
+
 <p>🙋‍特别注意</p>
 <p>get查询道德结果集中的每一条都是一个对象,因此在循环具体字段的时候需要注意使用对象调用属性的方式才可以获取其数据</p>
-<h1 id="判断语句"><a href="#判断语句" class="headerlink" title="判断语句"></a>判断语句</h1><pre><code class="php">if在模板引擎的写法
-@if (Expression1)
+<h1 id="判断语句"><a href="#判断语句" class="headerlink" title="判断语句"></a>判断语句</h1><pre><code class="hljs php"><span class="hljs-keyword">if</span>在模板引擎的写法
+@<span class="hljs-keyword">if</span> (Expression1)
 statement1
-@elseif(Expression2)
+@<span class="hljs-keyword">elseif</span>(Expression2)
 statement2
 ...
-@else
+@<span class="hljs-keyword">else</span>
 statement3
-@endif</code></pre>
+@<span class="hljs-keyword">endif</span></code></pre>
+
 
             </article>
             <hr>

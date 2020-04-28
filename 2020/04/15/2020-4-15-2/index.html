@@ -148,7 +148,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    1.7k 字
+                    1.8k 字
                   </span>
                 
 
@@ -158,7 +158,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    22
+                    24
                      分钟
                   </span>
                 
@@ -187,16 +187,18 @@
           <div class="post-content mx-auto" id="post">
             
             <article class="markdown-body">
-              <h1 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h1><pre><code class="html">&lt;view wx:for=&quot;{{students}}&quot;&gt;{{item.id}}--{{item.name}}&lt;/view&gt;</code></pre>
+              <h1 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h1><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">view</span> <span class="hljs-attr">wx:for</span>=<span class="hljs-string">"&#123;&#123;students&#125;&#125;"</span>&gt;</span>&#123;&#123;item.id&#125;&#125;--&#123;&#123;item.name&#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span></code></pre>
+
 <p>默认会生成item,index</p>
 <h1 id="修改页面上的数据"><a href="#修改页面上的数据" class="headerlink" title="修改页面上的数据"></a>修改页面上的数据</h1><p>因为页面上的数据不是双向绑定的,要想实现页面数据的变化,需要调用<code>setdata()</code></p>
 <p><code>setdata()</code>的实现原理(数据驱动):</p>
 <p><code>使用diff算法得到差异,再把这个差异应用到原来的dom对象上</code></p>
-<pre><code class="html">handle(){
-    this.setData({
-    age:this.data.age+2
-})
-}</code></pre>
+<pre><code class="hljs html">handle()&#123;
+	this.setData(&#123;
+	age:this.data.age+2
+&#125;)
+&#125;</code></pre>
+
 <h1 id="sitemap-json"><a href="#sitemap-json" class="headerlink" title="sitemap.json"></a>sitemap.json</h1><p>用于设置该小程序是否会被搜索到</p>
 <h1 id="project-config-json"><a href="#project-config-json" class="headerlink" title="project.config.json"></a>project.config.json</h1><p>用于设置项目的一些配置项,一般建议直接在<code>详情</code>直接修改,而不是直接改这个JSON文件</p>
 <h1 id="app-json-小程序的入口"><a href="#app-json-小程序的入口" class="headerlink" title="app.json:小程序的入口"></a>app.json:小程序的入口</h1><h2 id="“pages”"><a href="#“pages”" class="headerlink" title="“pages”"></a>“pages”</h2><p>所有的页面都要在这里进行注册</p>
@@ -208,20 +210,23 @@
 <p>wxss -&gt;样式文件</p>
 <p>使用WebView进行渲染,一个页面会配置一个WebView线程</p>
 <h3 id="逻辑层"><a href="#逻辑层" class="headerlink" title="逻辑层"></a>逻辑层</h3><p>使用jsCore来运行JS脚本</p>
-<h2 id="界面渲染过程"><a href="#界面渲染过程" class="headerlink" title="界面渲染过程"></a>界面渲染过程</h2><pre><code class="html">&lt;view&gt;msg&lt;/view&gt;</code></pre>
+<h2 id="界面渲染过程"><a href="#界面渲染过程" class="headerlink" title="界面渲染过程"></a>界面渲染过程</h2><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">view</span>&gt;</span>msg<span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span></code></pre>
+
 <p>＋</p>
-<pre><code class="js">{
-    msg:&#39;hello world&#39;
-}</code></pre>
+<pre><code class="hljs js">&#123;
+    <span class="hljs-attr">msg</span>:<span class="hljs-string">'hello world'</span>
+&#125;</code></pre>
+
 <p>👇js对象</p>
-<pre><code class="js">{
-    name:&#39;view&#39;,
-    children:[
-        {
-            text:&#39;hello world&#39;
-        }
+<pre><code class="hljs js">&#123;
+    <span class="hljs-attr">name</span>:<span class="hljs-string">'view'</span>,
+    <span class="hljs-attr">children</span>:[
+        &#123;
+            <span class="hljs-attr">text</span>:<span class="hljs-string">'hello world'</span>
+        &#125;
     ]
-}</code></pre>
+&#125;</code></pre>
+
 <p>👇变成真正的dom</p>
 <p>通过WebView渲染到用户视图</p>
 <h1 id="小程序的生命周期"><a href="#小程序的生命周期" class="headerlink" title="小程序的生命周期"></a>小程序的生命周期</h1><p>下载小程序的包</p>
@@ -242,7 +247,9 @@
 <p>使用以上方法修改样式</p>
 <h1 id="scroll-view"><a href="#scroll-view" class="headerlink" title="scroll-view"></a>scroll-view</h1><p>主要是用来实现局部滚动</p>
 <h1 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h1><h1 id="WXS的使用"><a href="#WXS的使用" class="headerlink" title="WXS的使用"></a>WXS的使用</h1><p>html:</p>
-<pre><code>&lt;wxs src=&quot;&quot;&gt;&lt;/wxs&gt;</code></pre><h1 id="常用事件"><a href="#常用事件" class="headerlink" title="常用事件"></a>常用事件</h1><p><code>bind:touchstart</code></p>
+<pre><code class="hljs plain">&lt;wxs src=&quot;&quot;&gt;&lt;/wxs&gt;</code></pre>
+
+<h1 id="常用事件"><a href="#常用事件" class="headerlink" title="常用事件"></a>常用事件</h1><p><code>bind:touchstart</code></p>
 <p><code>bind:touchmove</code></p>
 <p><code>bind:touchend</code></p>
 <p><code>bind:tap</code></p>
@@ -266,221 +273,233 @@
 <li>标签<code>slot</code></li>
 <li>自定义事件</li>
 </ul>
-<h1 id="页面中直接调用组件修改方法"><a href="#页面中直接调用组件修改方法" class="headerlink" title="页面中直接调用组件修改方法"></a>页面中直接调用组件修改方法</h1><h3 id="监听页面中点击"><a href="#监听页面中点击" class="headerlink" title="监听页面中点击:"></a>监听页面中点击:</h3><pre><code class="js">onClick(e){
-   //按钮被点击
-    const eventbtn = this.selectComponent(&#39;#envent-btn&#39;)
+<h1 id="页面中直接调用组件修改方法"><a href="#页面中直接调用组件修改方法" class="headerlink" title="页面中直接调用组件修改方法"></a>页面中直接调用组件修改方法</h1><h3 id="监听页面中点击"><a href="#监听页面中点击" class="headerlink" title="监听页面中点击:"></a>监听页面中点击:</h3><pre><code class="hljs js">onClick(e)&#123;
+   <span class="hljs-comment">//按钮被点击</span>
+    <span class="hljs-keyword">const</span> eventbtn = <span class="hljs-keyword">this</span>.selectComponent(<span class="hljs-string">'#envent-btn'</span>)
     eventbtn.increment()
-}</code></pre>
-<h3 id="组件内监听"><a href="#组件内监听" class="headerlink" title="组件内监听:"></a>组件内监听:</h3><pre><code class="js">increment(){
-    this.setData({
-        counter: ++this.data.counter
-    })
-}</code></pre>
-<h1 id="多插槽的使用方法"><a href="#多插槽的使用方法" class="headerlink" title="多插槽的使用方法"></a>多插槽的使用方法</h1><h3 id="组件中"><a href="#组件中" class="headerlink" title="组件中:"></a>组件中:</h3><pre><code class="html">&lt;view&gt;header&lt;/view&gt;
-&lt;slot name=&#39;me1&#39;&gt;&lt;/slot&gt;
-&lt;slot name=&#39;me2&#39;&gt;&lt;/slot&gt;
-&lt;slot&gt;&lt;/slot&gt;
-&lt;view&gt;footer&lt;/view&gt;</code></pre>
-<h3 id="组件-js中"><a href="#组件-js中" class="headerlink" title="组件.js中:"></a>组件.js中:</h3><pre><code class="js">component({
-    options:{
-        multipteSlot:true
-}
-})</code></pre>
-<h3 id="在Page中"><a href="#在Page中" class="headerlink" title="在Page中"></a>在Page中</h3><pre><code class="html">&lt;my-slot&gt;
-    &lt;view slot=&quot;me1&quot;&gt;&lt;/view&gt;
-&lt;/my-slot&gt;
-</code></pre>
-<h1 id="组件总结"><a href="#组件总结" class="headerlink" title="组件总结"></a>组件总结</h1><pre><code class="js">// components/my-tab/my-tab.js
-Component({
-  /**
+&#125;</code></pre>
+
+<h3 id="组件内监听"><a href="#组件内监听" class="headerlink" title="组件内监听:"></a>组件内监听:</h3><pre><code class="hljs js">increment()&#123;
+    <span class="hljs-keyword">this</span>.setData(&#123;
+        <span class="hljs-attr">counter</span>: ++<span class="hljs-keyword">this</span>.data.counter
+    &#125;)
+&#125;</code></pre>
+
+<h1 id="多插槽的使用方法"><a href="#多插槽的使用方法" class="headerlink" title="多插槽的使用方法"></a>多插槽的使用方法</h1><h3 id="组件中"><a href="#组件中" class="headerlink" title="组件中:"></a>组件中:</h3><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">view</span>&gt;</span>header<span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">slot</span> <span class="hljs-attr">name</span>=<span class="hljs-string">'me1'</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">slot</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">slot</span> <span class="hljs-attr">name</span>=<span class="hljs-string">'me2'</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">slot</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">slot</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">slot</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">view</span>&gt;</span>footer<span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span></code></pre>
+
+<h3 id="组件-js中"><a href="#组件-js中" class="headerlink" title="组件.js中:"></a>组件.js中:</h3><pre><code class="hljs js">component(&#123;
+    <span class="hljs-attr">options</span>:&#123;
+        <span class="hljs-attr">multipteSlot</span>:<span class="hljs-literal">true</span>
+&#125;
+&#125;)</code></pre>
+
+<h3 id="在Page中"><a href="#在Page中" class="headerlink" title="在Page中"></a>在Page中</h3><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">my-slot</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">view</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">"me1"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">my-slot</span>&gt;</span></code></pre>
+
+<h1 id="组件总结"><a href="#组件总结" class="headerlink" title="组件总结"></a>组件总结</h1><pre><code class="hljs js"><span class="hljs-comment">// components/my-tab/my-tab.js</span>
+Component(&#123;
+  <span class="hljs-comment">/**
    * 组件的属性列表
-   */
-  options:{
-    multipleSlots:true
-  },
-  properties: {
-    titles:{
-      type:Array,//类型
-      value:&#39;可以设置为默认值&#39;,
-      observer:function(newval,old){//监听value值的变化
-          console.log(newval,oldval)
-      }
-    }
-  },
-    observers:{//可以用来监听properties/data的改变
-        counter:function(newval){//只有newval,没有oldval
+   */</span>
+  <span class="hljs-attr">options</span>:&#123;
+    <span class="hljs-attr">multipleSlots</span>:<span class="hljs-literal">true</span>
+  &#125;,
+  <span class="hljs-attr">properties</span>: &#123;
+    <span class="hljs-attr">titles</span>:&#123;
+      <span class="hljs-attr">type</span>:<span class="hljs-built_in">Array</span>,<span class="hljs-comment">//类型</span>
+      <span class="hljs-attr">value</span>:<span class="hljs-string">'可以设置为默认值'</span>,
+      <span class="hljs-attr">observer</span>:<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">newval,old</span>)</span>&#123;<span class="hljs-comment">//监听value值的变化</span>
+          <span class="hljs-built_in">console</span>.log(newval,oldval)
+      &#125;
+    &#125;
+  &#125;,
+    <span class="hljs-attr">observers</span>:&#123;<span class="hljs-comment">//可以用来监听properties/data的改变</span>
+        <span class="hljs-attr">counter</span>:<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">newval</span>)</span>&#123;<span class="hljs-comment">//只有newval,没有oldval</span>
+            
+        &#125;
+    &#125;
 
-        }
-    }
-
-  /**
+  <span class="hljs-comment">/**
    * 组件的初始数据
-   */
-  data: {
-        couter:
-        currentIndex:0,
-  },
+   */</span>
+  <span class="hljs-attr">data</span>: &#123;
+        <span class="hljs-attr">couter</span>:
+    	currentIndex:<span class="hljs-number">0</span>,
+  &#125;,
 
-  /**
+  <span class="hljs-comment">/**
    * 组件的方法列表
-   */
-  methods: {
-    onItemClick(e){
-      console.log(e)
-      this.setData({
-        currentIndex:e.currentTarget.dataset.index
-      })
-    }
-  }
-})
-</code></pre>
-<h2 id="组件中生命函数"><a href="#组件中生命函数" class="headerlink" title="组件中生命函数"></a>组件中生命函数</h2><h3 id="1-监听所在页面的生命周期"><a href="#1-监听所在页面的生命周期" class="headerlink" title="1.监听所在页面的生命周期"></a>1.监听所在页面的生命周期</h3><pre><code class="js">pagelifetimes:{
-    show(){
-        console.log(&#39;页面显示出来&#39;)
-    },
-        hide(){
-            console.log(&#39;页面隐藏起来&#39;)
-        },
-         resize(){
-             console.log(&#39;resize&#39;)
-         }
+   */</span>
+  <span class="hljs-attr">methods</span>: &#123;
+    onItemClick(e)&#123;
+      <span class="hljs-built_in">console</span>.log(e)
+      <span class="hljs-keyword">this</span>.setData(&#123;
+        <span class="hljs-attr">currentIndex</span>:e.currentTarget.dataset.index
+      &#125;)
+    &#125;
+  &#125;
+&#125;)</code></pre>
+
+<h2 id="组件中生命函数"><a href="#组件中生命函数" class="headerlink" title="组件中生命函数"></a>组件中生命函数</h2><h3 id="1-监听所在页面的生命周期"><a href="#1-监听所在页面的生命周期" class="headerlink" title="1.监听所在页面的生命周期"></a>1.监听所在页面的生命周期</h3><pre><code class="hljs js">pagelifetimes:&#123;
+    show()&#123;
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'页面显示出来'</span>)
+    &#125;,
+        hide()&#123;
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'页面隐藏起来'</span>)
+        &#125;,
+         resize()&#123;
+             <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'resize'</span>)
+         &#125;
+  	
+            
+      
+&#125;</code></pre>
 
 
 
-}</code></pre>
-<h3 id="2-监听组件本身的生命函数"><a href="#2-监听组件本身的生命函数" class="headerlink" title="2.监听组件本身的生命函数"></a>2.监听组件本身的生命函数</h3><pre><code class="js">lifetimes:{
-    created(){
-        console.log(&#39;组件被创建&#39;)
-    },
-    attached(){
-        console.log(&#39;组件被添加到自己的页面&#39;)
-    },
-       ready(){
-        console.log(&#39;组件被渲染出来&#39;)
-    },
-    moved(){
-        console.log(&#39;组件被移动&#39;)
-    },
-    detached(){//应用场景wx:if
-        console.log(&#39;组件被移除&#39;)
-    }
-}</code></pre>
-<h1 id="内置api"><a href="#内置api" class="headerlink" title="内置api"></a>内置api</h1><h2 id="网络请求"><a href="#网络请求" class="headerlink" title="网络请求"></a>网络请求</h2><pre><code class="js">//网络请求
-wx.request({
-    url:&#39;http://123.205.32.32:3000/recomend&#39;,
-    success:function(res){
-        console.log(res)
-    }
-})</code></pre>
-<p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20200420133210.png" srcset="undefined" alt=""></p>
+<h3 id="2-监听组件本身的生命函数"><a href="#2-监听组件本身的生命函数" class="headerlink" title="2.监听组件本身的生命函数"></a>2.监听组件本身的生命函数</h3><pre><code class="hljs js">lifetimes:&#123;
+    created()&#123;
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'组件被创建'</span>)
+    &#125;,
+    attached()&#123;
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'组件被添加到自己的页面'</span>)
+    &#125;,
+   	ready()&#123;
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'组件被渲染出来'</span>)
+    &#125;,
+    moved()&#123;
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'组件被移动'</span>)
+    &#125;,
+    detached()&#123;<span class="hljs-comment">//应用场景wx:if</span>
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'组件被移除'</span>)
+    &#125;
+&#125;</code></pre>
+
+<h1 id="内置api"><a href="#内置api" class="headerlink" title="内置api"></a>内置api</h1><h2 id="网络请求"><a href="#网络请求" class="headerlink" title="网络请求"></a>网络请求</h2><pre><code class="hljs js"><span class="hljs-comment">//网络请求</span>
+wx.request(&#123;
+    <span class="hljs-attr">url</span>:<span class="hljs-string">'http://123.205.32.32:3000/recomend'</span>,
+    <span class="hljs-attr">success</span>:<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">res</span>)</span>&#123;
+        <span class="hljs-built_in">console</span>.log(res)
+    &#125;
+&#125;)</code></pre>
+
+<p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20200420133210.png" srcset="/img/loading.gif" alt=""></p>
 <h2 id="小程序导入流程"><a href="#小程序导入流程" class="headerlink" title="小程序导入流程"></a>小程序导入流程</h2><ul>
 <li>调用wx.login获取code(返回的code只有5分钟有效期)</li>
 <li>调用wx.request发送code到我们自己的服务器(服务器通常会返回一个登入态的标识,比如token)</li>
 <li>将token进行存储,供下次使用</li>
 <li>请求需要登入态标识的接口,携带token</li>
 </ul>
-<pre><code class="js">App({
-  onLaunch:function(){
-    wx.login({
-      success:(res)=&gt;{
-        const code = res.code
-      }
-    })
-    wx.request({
-       url:&#39;&#39;,
-       method:&#39;&#39;,
-       data:{
+<pre><code class="hljs js">App(&#123;
+  <span class="hljs-attr">onLaunch</span>:<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;
+    wx.login(&#123;
+      <span class="hljs-attr">success</span>:<span class="hljs-function">(<span class="hljs-params">res</span>)=&gt;</span>&#123;
+        <span class="hljs-keyword">const</span> code = res.code
+      &#125;
+    &#125;)
+    wx.request(&#123;
+       <span class="hljs-attr">url</span>:<span class="hljs-string">''</span>,
+       <span class="hljs-attr">method</span>:<span class="hljs-string">''</span>,
+       <span class="hljs-attr">data</span>:&#123;
          code
-       },
-       success:(res)=&gt;{
-        const token = res.token
-        this.globalData.token = token
-       }
-    })
-  }
-})
-</code></pre>
-<h3 id="在别的页面中调用token"><a href="#在别的页面中调用token" class="headerlink" title="在别的页面中调用token"></a>在别的页面中调用token</h3><pre><code class="js">const app = getApp()</code></pre>
+       &#125;,
+       <span class="hljs-attr">success</span>:<span class="hljs-function">(<span class="hljs-params">res</span>)=&gt;</span>&#123;
+        <span class="hljs-keyword">const</span> token = res.token
+        <span class="hljs-keyword">this</span>.globalData.token = token
+       &#125;
+    &#125;)
+  &#125;
+&#125;)</code></pre>
+
+<h3 id="在别的页面中调用token"><a href="#在别的页面中调用token" class="headerlink" title="在别的页面中调用token"></a>在别的页面中调用token</h3><pre><code class="hljs js"><span class="hljs-keyword">const</span> app = getApp()</code></pre>
+
 <h1 id="实际开发"><a href="#实际开发" class="headerlink" title="实际开发"></a>实际开发</h1><h2 id="app-js"><a href="#app-js" class="headerlink" title="app.js"></a>app.js</h2><p>这个页面是入口页面,在app({})中的onLaunch中,我们需要做两件事:</p>
 <ul>
 <li><p>检测更新</p>
 <p>注:<code>canIUse</code>函数是用来判断当前用户所处环境中是否可以执行某些命令,return Boolean</p>
-<pre><code class="js">appColdBoot: function () { // 版本更新
-    if (wx.canIUse(&#39;getUpdateManager&#39;)) {
-      const updateManager = wx.getUpdateManager()
-      updateManager.onCheckForUpdate(function (res) {
-        if (res.hasUpdate) { // 请求完新版本信息的回调
-          updateManager.onUpdateReady(function () {
-            wx.showModal({
-              title: &#39;更新提示&#39;,
-              content: &#39;发现新版本，是否重启应用？&#39;,
-              success: function (res) {
-                if (res.confirm) { // 新的版本已经下载好，调用 applyUpdate 应用新版本并重启
+<pre><code class="hljs js">appColdBoot: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123; <span class="hljs-comment">// 版本更新</span>
+    <span class="hljs-keyword">if</span> (wx.canIUse(<span class="hljs-string">'getUpdateManager'</span>)) &#123;
+      <span class="hljs-keyword">const</span> updateManager = wx.getUpdateManager()
+      updateManager.onCheckForUpdate(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">res</span>) </span>&#123;
+        <span class="hljs-keyword">if</span> (res.hasUpdate) &#123; <span class="hljs-comment">// 请求完新版本信息的回调</span>
+          updateManager.onUpdateReady(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+            wx.showModal(&#123;
+              <span class="hljs-attr">title</span>: <span class="hljs-string">'更新提示'</span>,
+              <span class="hljs-attr">content</span>: <span class="hljs-string">'发现新版本，是否重启应用？'</span>,
+              <span class="hljs-attr">success</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">res</span>) </span>&#123;
+                <span class="hljs-keyword">if</span> (res.confirm) &#123; <span class="hljs-comment">// 新的版本已经下载好，调用 applyUpdate 应用新版本并重启</span>
                   updateManager.applyUpdate()
-                }
-              }
-            })
-          })
-          updateManager.onUpdateFailed(function () {
-            wx.showModal({ // 新的版本下载失败
-              title: &#39;新版本上线啦&#39;,
-              content: &#39;请删除小程序，重新搜索打开&#39;,
-            })
-          })
-        }
-      })
-    } else {
-      wx.showModal({ // 如果希望用户在最新版本的客户端上体验您的小程序，可以这样子提示
-        title: &#39;温馨提示&#39;,
-        content: &#39;当前微信版本过低，请升级到最新微信版本后重试。&#39;
-      })
-    }
-  }</code></pre>
+                &#125;
+              &#125;
+            &#125;)
+          &#125;)
+          updateManager.onUpdateFailed(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+            wx.showModal(&#123; <span class="hljs-comment">// 新的版本下载失败</span>
+              <span class="hljs-attr">title</span>: <span class="hljs-string">'新版本上线啦'</span>,
+              <span class="hljs-attr">content</span>: <span class="hljs-string">'请删除小程序，重新搜索打开'</span>,
+            &#125;)
+          &#125;)
+        &#125;
+      &#125;)
+    &#125; <span class="hljs-keyword">else</span> &#123;
+      wx.showModal(&#123; <span class="hljs-comment">// 如果希望用户在最新版本的客户端上体验您的小程序，可以这样子提示</span>
+        <span class="hljs-attr">title</span>: <span class="hljs-string">'温馨提示'</span>,
+        <span class="hljs-attr">content</span>: <span class="hljs-string">'当前微信版本过低，请升级到最新微信版本后重试。'</span>
+      &#125;)
+    &#125;
+  &#125;</code></pre>
+
+
+
 </li>
 </ul>
 <ul>
 <li>获取用户数据,让用户登入</li>
 </ul>
-<pre><code class="js">login(){
-    // 登录
-    let that = this
-    wx.login({
-      success: ({ code }) =&gt; {
-        console.log({code})
-        console.log(&#39;login===&#39;)
-        wx.request({
-          url: wx.environment(&#39;/api/user/getopenid&#39;),
-          method: &#39;POST&#39;,
-          data: {
-            reqdata: {
-              code: code
-            }
-          },
-          success(res) {
-            console.log(res)
-            let data = {
-              token: res.data.object.token,
-              openid: res.data.object.weixinOpenid,
-              userToken: res.data.object.userToken
-            }
-            if (res.data.object.nickname &amp;&amp; res.data.object.avatar) {
+<pre><code class="hljs js">login()&#123;
+    <span class="hljs-comment">// 登录</span>
+    <span class="hljs-keyword">let</span> that = <span class="hljs-keyword">this</span>
+    wx.login(&#123;
+      <span class="hljs-attr">success</span>: <span class="hljs-function">(<span class="hljs-params">&#123; code &#125;</span>) =&gt;</span> &#123;
+        <span class="hljs-built_in">console</span>.log(&#123;code&#125;)
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'login==='</span>)
+        wx.request(&#123;
+          <span class="hljs-attr">url</span>: wx.environment(<span class="hljs-string">'/api/user/getopenid'</span>),
+          <span class="hljs-attr">method</span>: <span class="hljs-string">'POST'</span>,
+          <span class="hljs-attr">data</span>: &#123;
+            <span class="hljs-attr">reqdata</span>: &#123;
+              <span class="hljs-attr">code</span>: code
+            &#125;
+          &#125;,
+          success(res) &#123;
+            <span class="hljs-built_in">console</span>.log(res)
+            <span class="hljs-keyword">let</span> data = &#123;
+              <span class="hljs-attr">token</span>: res.data.object.token,
+              <span class="hljs-attr">openid</span>: res.data.object.weixinOpenid,
+              <span class="hljs-attr">userToken</span>: res.data.object.userToken
+            &#125;
+            <span class="hljs-keyword">if</span> (res.data.object.nickname &amp;&amp; res.data.object.avatar) &#123;
               that.globalData.userInfo = res.data.object
-              wx.setStorageSync(&#39;hasAuth&#39;, true)
-            } else {
-              wx.setStorageSync(&#39;hasAuth&#39;, false)
-            }
-            // 产品的token
-            // data.token = &#39;5f2ac866-3095-4c8f-a13d-5fc2bfa8f634&#39;//(测试)
-            // data.token = &#39;28b92dc9-3a00-4965-b514-98d16381b60f&#39;//(正式)
+              wx.setStorageSync(<span class="hljs-string">'hasAuth'</span>, <span class="hljs-literal">true</span>)
+            &#125; <span class="hljs-keyword">else</span> &#123;
+              wx.setStorageSync(<span class="hljs-string">'hasAuth'</span>, <span class="hljs-literal">false</span>)
+            &#125;
+            <span class="hljs-comment">// 产品的token</span>
+            <span class="hljs-comment">// data.token = '5f2ac866-3095-4c8f-a13d-5fc2bfa8f634'//(测试)</span>
+            <span class="hljs-comment">// data.token = '28b92dc9-3a00-4965-b514-98d16381b60f'//(正式)</span>
             that.globalData.openid = data
-            wx.setStorageSync(&#39;openid&#39;, data)
-            // that.checkWxAuth()
-          }
-        })
-      }
-    })
-  }</code></pre>
-
+            wx.setStorageSync(<span class="hljs-string">'openid'</span>, data)
+            <span class="hljs-comment">// that.checkWxAuth()</span>
+          &#125;
+        &#125;)
+      &#125;
+    &#125;)
+  &#125;</code></pre>
             </article>
             <hr>
             <div>

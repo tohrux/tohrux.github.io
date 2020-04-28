@@ -148,7 +148,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    729 字
+                    707 字
                   </span>
                 
 
@@ -158,7 +158,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    11
+                    10
                      分钟
                   </span>
                 
@@ -187,102 +187,108 @@
           <div class="post-content mx-auto" id="post">
             
             <article class="markdown-body">
-              <h3 id="首先先给出我当前的CSS和HTML"><a href="#首先先给出我当前的CSS和HTML" class="headerlink" title="首先先给出我当前的CSS和HTML"></a>首先先给出我当前的CSS和HTML</h3><pre><code class="html">    &lt;style&gt;
-        * {
-            padding: 0;
-            margin: 0;
-        }
+              <h3 id="首先先给出我当前的CSS和HTML"><a href="#首先先给出我当前的CSS和HTML" class="headerlink" title="首先先给出我当前的CSS和HTML"></a>首先先给出我当前的CSS和HTML</h3><pre><code class="hljs html">    <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
+        * &#123;
+            <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span>;
+            <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;
+        &#125;
 
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: flex-start;
-            align-content: space-between;
-            background-color: #0080ff;
-            height: 700px;
+        <span class="hljs-selector-class">.container</span> &#123;
+            <span class="hljs-attribute">display</span>: flex;
+            <span class="hljs-attribute">flex-wrap</span>: wrap;
+            <span class="hljs-attribute">flex-direction</span>: row;
+            <span class="hljs-attribute">justify-content</span>: space-between;
+            <span class="hljs-attribute">align-items</span>: flex-start;
+            <span class="hljs-attribute">align-content</span>: space-between;
+            <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#0080ff</span>;
+            <span class="hljs-attribute">height</span>: <span class="hljs-number">700px</span>;
 
-        }
+        &#125;
 
-        .container&gt;div {
-            width: 100px;
-            height: 100px;
-            /* border: 1px solid black; */
-        }
+        <span class="hljs-selector-class">.container</span>&gt;<span class="hljs-selector-tag">div</span> &#123;
+            <span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;
+            <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;
+            <span class="hljs-comment">/* border: 1px solid black; */</span>
+        &#125;
 
-        .item1 {
-            background-color: #a3daff;
-            line-height: 100px;
-            /* font-size: 120px; */
-        }
+        <span class="hljs-selector-class">.item1</span> &#123;
+            <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#a3daff</span>;
+            <span class="hljs-attribute">line-height</span>: <span class="hljs-number">100px</span>;
+            <span class="hljs-comment">/* font-size: 120px; */</span>
+        &#125;
 
-        .item2 {
-            background-color: #1ec0ff;
-            width: 200px !important;
-            height: 130px !important;
-            font-size: 100px;
-            line-height: 130px;
-        }
+        <span class="hljs-selector-class">.item2</span> &#123;
+            <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#1ec0ff</span>;
+            <span class="hljs-attribute">width</span>: <span class="hljs-number">200px</span> <span class="hljs-meta">!important</span>;
+            <span class="hljs-attribute">height</span>: <span class="hljs-number">130px</span> <span class="hljs-meta">!important</span>;
+            <span class="hljs-attribute">font-size</span>: <span class="hljs-number">100px</span>;
+            <span class="hljs-attribute">line-height</span>: <span class="hljs-number">130px</span>;
+        &#125;
 
-        .item3 {
-            background-color: #FBFFB9;
+        <span class="hljs-selector-class">.item3</span> &#123;
+            <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#FBFFB9</span>;
 
-        }
-    &lt;/style&gt;
-&lt;/head&gt;
+        &#125;
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
 
-&lt;body&gt;
-    &lt;div&gt;&lt;/div&gt;
-    &lt;div class=&quot;container&quot;&gt;
-        &lt;div class=&quot;item1&quot;&gt;1&lt;/div&gt;
-        &lt;div class=&quot;item2&quot;&gt;2&lt;/div&gt;
-        &lt;div class=&quot;item1&quot;&gt;3&lt;/div&gt;
-        &lt;div class=&quot;item1&quot;&gt;4&lt;/div&gt;
-        &lt;div class=&quot;item1&quot;&gt;5&lt;/div&gt;
-        &lt;div class=&quot;item2&quot;&gt;6&lt;/div&gt;
-        &lt;div class=&quot;item1&quot;&gt;7&lt;/div&gt;
-        &lt;div class=&quot;item1&quot;&gt;8&lt;/div&gt;
-        &lt;div class=&quot;item1&quot;&gt;9&lt;/div&gt;
-        &lt;div class=&quot;item2&quot;&gt;10&lt;/div&gt;
-        &lt;div class=&quot;item1&quot;&gt;11&lt;/div&gt;
-        &lt;div class=&quot;item1&quot;&gt;12&lt;/div&gt;
-        &lt;div class=&quot;item1&quot;&gt;13&lt;/div&gt;
-        &lt;div class=&quot;item2&quot;&gt;14&lt;/div&gt;
-        &lt;div class=&quot;item1&quot;&gt;15&lt;/div&gt;
-        &lt;div class=&quot;item1&quot;&gt;16&lt;/div&gt;
-    &lt;/div&gt;
-&lt;/body&gt;</code></pre>
-<h3 id="👩这里我同时给了align-item和align-content的值"><a href="#👩这里我同时给了align-item和align-content的值" class="headerlink" title="👩这里我同时给了align-item和align-content的值"></a>👩这里我同时给了<code>align-item</code>和<code>align-content</code>的值</h3><pre><code class="css">align-items: flex-start;
-align-content: space-between;</code></pre>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"container"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item1"</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item2"</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item1"</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item1"</span>&gt;</span>4<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item1"</span>&gt;</span>5<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item2"</span>&gt;</span>6<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item1"</span>&gt;</span>7<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item1"</span>&gt;</span>8<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item1"</span>&gt;</span>9<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item2"</span>&gt;</span>10<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item1"</span>&gt;</span>11<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item1"</span>&gt;</span>12<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item1"</span>&gt;</span>13<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item2"</span>&gt;</span>14<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item1"</span>&gt;</span>15<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item1"</span>&gt;</span>16<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></code></pre>
+
+<h3 id="👩这里我同时给了align-item和align-content的值"><a href="#👩这里我同时给了align-item和align-content的值" class="headerlink" title="👩这里我同时给了align-item和align-content的值"></a>👩这里我同时给了<code>align-item</code>和<code>align-content</code>的值</h3><pre><code class="hljs css"><span class="hljs-selector-tag">align-items</span>: <span class="hljs-selector-tag">flex-start</span>;
+<span class="hljs-selector-tag">align-content</span>: <span class="hljs-selector-tag">space-between</span>;</code></pre>
+
 <p>呈现如下:</p>
-<img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127150714.png" srcset="undefined" style="zoom:67%;" />
+<img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127150714.png" srcset="/img/loading.gif" style="zoom:67%;" />
 
 <p>可以看到,<code>align-item</code>只在每一行中起效果,即在每行中所有的<code>item</code>都会顶到当前行的最上方</p>
 <h3 id="👩再给他们换别的值"><a href="#👩再给他们换别的值" class="headerlink" title="👩再给他们换别的值"></a>👩再给他们换别的值</h3><p>现在我把他们修改为,并调整了窗口的大小:</p>
-<pre><code class="css">align-items: flex-end;
-align-content: flex-start;</code></pre>
-<p>呈现如下:</p>
-<p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127151648.png" srcset="undefined" alt=""></p>
-<p>可以看到<code>align-content</code>作用于整个<code>container</code>,而<code>align-item</code>则作用于他自己那行,和之前的结论一样,<s>好像这段没有必要的样子</s></p>
-<h3 id="👨注释掉align-content"><a href="#👨注释掉align-content" class="headerlink" title="👨注释掉align-content"></a>👨注释掉align-content</h3><pre><code class="css">align-items: flex-end;
-/* align-content: flex-start; */</code></pre>
-<p>这次我把<code>align-content</code>给注释掉了,并且修改了窗口大小,呈现如下:</p>
-<img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127161505.png" srcset="undefined" style="zoom:67%;" />
+<pre><code class="hljs css"><span class="hljs-selector-tag">align-items</span>: <span class="hljs-selector-tag">flex-end</span>;
+<span class="hljs-selector-tag">align-content</span>: <span class="hljs-selector-tag">flex-start</span>;</code></pre>
 
-<h3 id="👴给align-content-flex-end"><a href="#👴给align-content-flex-end" class="headerlink" title="👴给align-content: flex-end;"></a>👴给align-content: flex-end;</h3><pre><code class="css">align-items: flex-end;
-align-content: flex-end;</code></pre>
+<p>呈现如下:</p>
+<p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127151648.png" srcset="/img/loading.gif" alt=""></p>
+<p>可以看到<code>align-content</code>作用于整个<code>container</code>,而<code>align-item</code>则作用于他自己那行,和之前的结论一样,<s>好像这段没有必要的样子</s></p>
+<h3 id="👨注释掉align-content"><a href="#👨注释掉align-content" class="headerlink" title="👨注释掉align-content"></a>👨注释掉align-content</h3><pre><code class="hljs css"><span class="hljs-selector-tag">align-items</span>: <span class="hljs-selector-tag">flex-end</span>;
+<span class="hljs-comment">/* align-content: flex-start; */</span></code></pre>
+
+<p>这次我把<code>align-content</code>给注释掉了,并且修改了窗口大小,呈现如下:</p>
+<img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127161505.png" srcset="/img/loading.gif" style="zoom:67%;" />
+
+<h3 id="👴给align-content-flex-end"><a href="#👴给align-content-flex-end" class="headerlink" title="👴给align-content: flex-end;"></a>👴给align-content: flex-end;</h3><pre><code class="hljs css"><span class="hljs-selector-tag">align-items</span>: <span class="hljs-selector-tag">flex-end</span>;
+<span class="hljs-selector-tag">align-content</span>: <span class="hljs-selector-tag">flex-end</span>;</code></pre>
+
 <p>这次给了<code>align-content</code>值,同样为<code>flex-end</code></p>
-<img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127162559.png" srcset="undefined" style="zoom:67%;" />
+<img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127162559.png" srcset="/img/loading.gif" style="zoom:67%;" />
 
 <p>我们可以看到在全局下(指<code>container</code>) ,每一行的间距已经变成了0.</p>
-<h3 id="👵将align-item注释掉"><a href="#👵将align-item注释掉" class="headerlink" title="👵将align-item注释掉"></a>👵将align-item注释掉</h3><pre><code class="css">/* align-items: flex-end; */
-align-content: flex-end;</code></pre>
-<img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127163124.png" srcset="undefined" style="zoom: 67%;" />
+<h3 id="👵将align-item注释掉"><a href="#👵将align-item注释掉" class="headerlink" title="👵将align-item注释掉"></a>👵将align-item注释掉</h3><pre><code class="hljs css"><span class="hljs-comment">/* align-items: flex-end; */</span>
+<span class="hljs-selector-tag">align-content</span>: <span class="hljs-selector-tag">flex-end</span>;</code></pre>
+
+<img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127163124.png" srcset="/img/loading.gif" style="zoom: 67%;" />
 
 <p>这里的<code>align-item</code>的value已经成为了默认值<code>flex-start</code>了</p>
 <h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p><code>align-item</code>只作用于每一行的行本身,而<code>align-content</code>则作用于全<code>container</code>;如果只给<code>align-item</code>值,则在全局的每一行间都会有一段默认的不为0的距离,👈这是她的兼职工作,同时<code>align-item</code>也会完成她的本分工作:在每一行设置<code>item</code>水平排列方式;如果在这时加入个专门做调整全局(<code>container</code>)布局的<code>align-content</code>的话,<code>align-item</code>的兼职工作就会被接过.此时,<code>align-content</code>仿佛在对<code>align-item</code>说,”你就是<code>align-item</code>吗?感谢你之前做的一切,从现在开始请不要担♥任何事,因为我来了!”.然后留下<code>align-item</code>在原地露出迷妹般的星星眼.</p>
-<img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127165804.gif" srcset="undefined" style="zoom: 150%;" />
+<img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127165804.gif" srcset="/img/loading.gif" style="zoom: 150%;" />
 
 
 

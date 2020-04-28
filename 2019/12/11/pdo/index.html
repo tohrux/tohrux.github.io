@@ -148,7 +148,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    685 字
+                    617 字
                   </span>
                 
 
@@ -158,7 +158,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    10
+                    9
                      分钟
                   </span>
                 
@@ -191,105 +191,116 @@
 <h1 id="连接服务器"><a href="#连接服务器" class="headerlink" title="连接服务器"></a>连接服务器</h1><p>比php连接mysql多了一个参数,数据库类型</p>
 <p><strong>$dbms</strong> <em>Database Management System</em></p>
 <p><strong>$dsn</strong> <em>Data Source Name</em></p>
-<pre><code class="php">&lt;?php
-echo &quot;&lt;pre&gt;&quot;;
-$dbms = &#39;mysql&#39;;
-$host = &#39;localhost&#39;;
-$dbName = &#39;jk&#39;;
-$user = &#39;root&#39;;
-$pass = &#39;&#39;;
-$dsn = &quot;$dbms:host=$host;dbname=$dbName&quot;;
-// echo $dsn;
+<pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span>
+<span class="hljs-keyword">echo</span> <span class="hljs-string">"&lt;pre&gt;"</span>;
+$dbms = <span class="hljs-string">'mysql'</span>;
+$host = <span class="hljs-string">'localhost'</span>;
+$dbName = <span class="hljs-string">'jk'</span>;
+$user = <span class="hljs-string">'root'</span>;
+$pass = <span class="hljs-string">''</span>;
+$dsn = <span class="hljs-string">"$dbms:host=$host;dbname=$dbName"</span>;
+<span class="hljs-comment">// echo $dsn;</span>
 
-try{
-    //去try,去执行,去创建,这个pdo对象
-    $pdo = new PDO($dsn,$user,$pass);
-    echo &quot;success&quot;;
-} catch(PDOException $e){
-   //如果try中内容有错误,则会在catch中捕获异常;即对象没有创建成功,则会执行catch里面的内容,捕获异常的时候要使用PDO自己的异常处理类 &quot;PDOException $e&quot;
+<span class="hljs-keyword">try</span>&#123;
+    <span class="hljs-comment">//去try,去执行,去创建,这个pdo对象</span>
+    $pdo = <span class="hljs-keyword">new</span> PDO($dsn,$user,$pass);
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">"success"</span>;
+&#125; <span class="hljs-keyword">catch</span>(PDOException $e)&#123;
+   <span class="hljs-comment">//如果try中内容有错误,则会在catch中捕获异常;即对象没有创建成功,则会执行catch里面的内容,捕获异常的时候要使用PDO自己的异常处理类 "PDOException $e"</span>
+    
+   <span class="hljs-keyword">die</span>($e-&gt;getMessage());  <span class="hljs-comment">//因为没有必要往下进行了,所以直接die打印出$e-&gt;getMessage()</span>
+&#125;</code></pre>
 
-   die($e-&gt;getMessage());  //因为没有必要往下进行了,所以直接die打印出$e-&gt;getMessage()
-}</code></pre>
 <h1 id="执行sql语句"><a href="#执行sql语句" class="headerlink" title="执行sql语句"></a>执行sql语句</h1><h2 id="exec-需要结果集的sql语句"><a href="#exec-需要结果集的sql语句" class="headerlink" title="exec() 需要结果集的sql语句"></a>exec() 需要结果集的sql语句</h2><p>insert into ,delete ,update</p>
-<pre><code class="php">$sql = &quot;insert into jkjk2 (name) values (&#39;popo&#39;)&quot;;
+<pre><code class="hljs php">$sql = <span class="hljs-string">"insert into jkjk2 (name) values ('popo')"</span>;
 $ret = $pdo-&gt;exec($sql);
-print_r($ret); //受影响的行</code></pre>
-<h2 id="query-不需要结果集的sql语句"><a href="#query-不需要结果集的sql语句" class="headerlink" title="query() 不需要结果集的sql语句"></a>query() 不需要结果集的sql语句</h2><pre><code class="php">$sql = &quot;select * from jkjk2&quot;;
+print_r($ret); <span class="hljs-comment">//受影响的行</span></code></pre>
+
+
+
+<h2 id="query-不需要结果集的sql语句"><a href="#query-不需要结果集的sql语句" class="headerlink" title="query() 不需要结果集的sql语句"></a>query() 不需要结果集的sql语句</h2><pre><code class="hljs php">$sql = <span class="hljs-string">"select * from jkjk2"</span>;
 $ret = $pdo-&gt;query($sql);
 print_r($ret);</code></pre>
+
 <p>👇</p>
-<pre><code class="php">PDOStatement Object//预处理对象
+<pre><code class="hljs php">PDOStatement Object<span class="hljs-comment">//预处理对象</span>
 (
     [queryString] =&gt; select * from jkjk2
 )</code></pre>
+
 <p>再使用foreach循环出 PDOStatement Object中的数据</p>
-<pre><code class="php">foreach($ret as $row){
+<pre><code class="hljs php"><span class="hljs-keyword">foreach</span>($ret <span class="hljs-keyword">as</span> $row)&#123;
     var_dump($row);
-}</code></pre>
+&#125;</code></pre>
+
 <p>👇</p>
-<pre><code class="php">array(4) {
-  [&quot;id&quot;]=&gt;
-  string(1) &quot;1&quot;
-  [0]=&gt;
-  string(1) &quot;1&quot;
-  [&quot;name&quot;]=&gt;
-  string(4) &quot;popo&quot;
-  [1]=&gt;
-  string(4) &quot;popo&quot;
-}
-array(4) {
-  [&quot;id&quot;]=&gt;
-  string(1) &quot;2&quot;
-  [0]=&gt;
-  string(1) &quot;2&quot;
-  [&quot;name&quot;]=&gt;
-  string(3) &quot;din&quot;
-  [1]=&gt;
-  string(3) &quot;din&quot;
-}
-array(4) {
-  [&quot;id&quot;]=&gt;
-  string(2) &quot;17&quot;
-  [0]=&gt;
-  string(2) &quot;17&quot;
-  [&quot;name&quot;]=&gt;
-  string(5) &quot;jiill&quot;
-  [1]=&gt;
-  string(5) &quot;jiill&quot;
-}</code></pre>
+<pre><code class="hljs php"><span class="hljs-keyword">array</span>(<span class="hljs-number">4</span>) &#123;
+  [<span class="hljs-string">"id"</span>]=&gt;
+  string(<span class="hljs-number">1</span>) <span class="hljs-string">"1"</span>
+  [<span class="hljs-number">0</span>]=&gt;
+  string(<span class="hljs-number">1</span>) <span class="hljs-string">"1"</span>
+  [<span class="hljs-string">"name"</span>]=&gt;
+  string(<span class="hljs-number">4</span>) <span class="hljs-string">"popo"</span>
+  [<span class="hljs-number">1</span>]=&gt;
+  string(<span class="hljs-number">4</span>) <span class="hljs-string">"popo"</span>
+&#125;
+<span class="hljs-keyword">array</span>(<span class="hljs-number">4</span>) &#123;
+  [<span class="hljs-string">"id"</span>]=&gt;
+  string(<span class="hljs-number">1</span>) <span class="hljs-string">"2"</span>
+  [<span class="hljs-number">0</span>]=&gt;
+  string(<span class="hljs-number">1</span>) <span class="hljs-string">"2"</span>
+  [<span class="hljs-string">"name"</span>]=&gt;
+  string(<span class="hljs-number">3</span>) <span class="hljs-string">"din"</span>
+  [<span class="hljs-number">1</span>]=&gt;
+  string(<span class="hljs-number">3</span>) <span class="hljs-string">"din"</span>
+&#125;
+<span class="hljs-keyword">array</span>(<span class="hljs-number">4</span>) &#123;
+  [<span class="hljs-string">"id"</span>]=&gt;
+  string(<span class="hljs-number">2</span>) <span class="hljs-string">"17"</span>
+  [<span class="hljs-number">0</span>]=&gt;
+  string(<span class="hljs-number">2</span>) <span class="hljs-string">"17"</span>
+  [<span class="hljs-string">"name"</span>]=&gt;
+  string(<span class="hljs-number">5</span>) <span class="hljs-string">"jiill"</span>
+  [<span class="hljs-number">1</span>]=&gt;
+  string(<span class="hljs-number">5</span>) <span class="hljs-string">"jiill"</span>
+&#125;</code></pre>
+
 <h1 id="预处理语句"><a href="#预处理语句" class="headerlink" title="预处理语句"></a>预处理语句</h1><p>PDO使用PDOStatemendeadaot来实现预处理语句,这个类的实例可以用query()方法得到,也可以用prepare(),区别是query()只能得到一条sql命令的数据集的结果,而prepare()得到的实例可以重复执行sql语句</p>
-<pre><code class="php">    //prepare() 预处理语句
-//数据占位符
-    $pre = $pdo-&gt;prepare(&quot;insert into jkjk2 (id,name)values(?,?)&quot;);
-    $id = 3;
-    $name = &quot;id3&quot;;
-    $pre -&gt; bindParam(1,$id);
-    $pre -&gt; bindParam(2,$name);
+<pre><code class="hljs php">    <span class="hljs-comment">//prepare() 预处理语句</span>
+<span class="hljs-comment">//数据占位符</span>
+    $pre = $pdo-&gt;prepare(<span class="hljs-string">"insert into jkjk2 (id,name)values(?,?)"</span>);
+    $id = <span class="hljs-number">3</span>;
+    $name = <span class="hljs-string">"id3"</span>;
+    $pre -&gt; bindParam(<span class="hljs-number">1</span>,$id);
+    $pre -&gt; bindParam(<span class="hljs-number">2</span>,$name);
     $pre -&gt; execute(); 
-//直接用数组写
-    $pre -&gt; execute(array(
-        4,&quot;id4&quot;
+<span class="hljs-comment">//直接用数组写</span>
+    $pre -&gt; execute(<span class="hljs-keyword">array</span>(
+        <span class="hljs-number">4</span>,<span class="hljs-string">"id4"</span>
     ));
-//命名参数
-    $pre = $pdo -&gt; prepare(&quot;insert into jkjk2 (id,name) values (:id,:name)&quot;);
-    $id = 7;
-    $name = &quot;id7&quot;;
-    $pre-&gt;bindValue(&quot;:id&quot;,$id);
-    $pre-&gt;bindValue(&quot;:name&quot;,$name);
+<span class="hljs-comment">//命名参数</span>
+    $pre = $pdo -&gt; prepare(<span class="hljs-string">"insert into jkjk2 (id,name) values (:id,:name)"</span>);
+    $id = <span class="hljs-number">7</span>;
+    $name = <span class="hljs-string">"id7"</span>;
+    $pre-&gt;bindValue(<span class="hljs-string">":id"</span>,$id);
+    $pre-&gt;bindValue(<span class="hljs-string">":name"</span>,$name);
     $pre-&gt;execute();
-//关联数组
-    $pre -&gt; execute(array(
-        &quot;:id&quot; =&gt; 6,
-        &quot;:name&quot; =&gt; &quot;id6&quot;
-    ));
-</code></pre>
-<h1 id="解析结果集"><a href="#解析结果集" class="headerlink" title="解析结果集"></a>解析结果集</h1><h2 id="result-gt-fetch-PDO-FETCH"><a href="#result-gt-fetch-PDO-FETCH" class="headerlink" title="$result -&gt; fetch(PDO::FETCH())"></a>$result -&gt; fetch(PDO::FETCH())</h2><pre><code class="php">  var_dump($result -&gt; fetch());//仅仅输出一条
-  var_dump($result -&gt; fetchAll(PDO::FETCH_NUM));//剩下的所有的结果以索引数组的方式输出
-//$result -&gt; fetchAll(PDO::FETCH_OBJ/ASSOC/NUM)</code></pre>
+<span class="hljs-comment">//关联数组</span>
+    $pre -&gt; execute(<span class="hljs-keyword">array</span>(
+        <span class="hljs-string">":id"</span> =&gt; <span class="hljs-number">6</span>,
+        <span class="hljs-string">":name"</span> =&gt; <span class="hljs-string">"id6"</span>
+    ));</code></pre>
+
+
+
+<h1 id="解析结果集"><a href="#解析结果集" class="headerlink" title="解析结果集"></a>解析结果集</h1><h2 id="result-gt-fetch-PDO-FETCH"><a href="#result-gt-fetch-PDO-FETCH" class="headerlink" title="$result -&gt; fetch(PDO::FETCH())"></a>$result -&gt; fetch(PDO::FETCH())</h2><pre><code class="hljs php">  var_dump($result -&gt; fetch());<span class="hljs-comment">//仅仅输出一条</span>
+  var_dump($result -&gt; fetchAll(PDO::FETCH_NUM));<span class="hljs-comment">//剩下的所有的结果以索引数组的方式输出</span>
+<span class="hljs-comment">//$result -&gt; fetchAll(PDO::FETCH_OBJ/ASSOC/NUM)</span></code></pre>
+
 <h2 id="result-gt-fetchColumn"><a href="#result-gt-fetchColumn" class="headerlink" title="$result -&gt; fetchColumn(*)"></a>$result -&gt; fetchColumn(*)</h2><p>*为可选的数字 默认为0,从0开始,表示第一列</p>
 <p>整个函数返回的是下一行的结果的第*列</p>
 <h1 id="SQL注入"><a href="#SQL注入" class="headerlink" title="SQL注入"></a>SQL注入</h1><p>利用sql的查询语句恶意获取数据库信息</p>
-<h1 id="完结撒花"><a href="#完结撒花" class="headerlink" title="完结撒花~!"></a>完结撒花~!</h1><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191213091052.png" srcset="undefined" alt=""></p>
+<h1 id="完结撒花"><a href="#完结撒花" class="headerlink" title="完结撒花~!"></a>完结撒花~!</h1><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191213091052.png" srcset="/img/loading.gif" alt=""></p>
 
             </article>
             <hr>

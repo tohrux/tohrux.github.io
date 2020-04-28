@@ -217,15 +217,15 @@
           
         
         <div>首先先给出我当前的CSS和HTML    &lt;style&gt;
-        * {
+        * &#123;
             padding: 0;
             margin: 0;
-        }
+        &#125;
 
-        .container {
+        .container &#123;
             display: flex;
             flex-wrap: wrap;
-            flex-d</div>
+   </div>
       </a>
 
       <div class="index-btm post-metas">
@@ -269,16 +269,22 @@
           
         
         <div>@include可以用来引进别的页面
-@include(&#39;文件名&#39;)
-@extends父级页面 语法:@yield(&#39;名字&#39;) 
-子级页面:@extends(&#39;view下的路径&#39;)
-@section(&#39;名字&#39;)
+@include('文件名')
+
+
+
+@extends父级页面 语法:@yield('名字')
+
+子级页面:@extends('view下的路径')
+@section('名字')
 内容
 @endsection
+
 实例:
 父级页面:
 &lt;h1&gt;我是头部&lt;/h1&gt;
-{{-- 可变区 --</div>
+&#123;&#123;-- 可变区 --&#125;&#125;
+@yiel</div>
       </a>
 
       <div class="index-btm post-metas">
@@ -325,6 +331,7 @@ $this-&gt;validate(数据对象,[数组形式的验证规则])
 
 
 
+
 规则名
 说明
 
@@ -343,7 +350,7 @@ email
 
 
 confirmed
-验证两个字段是否相同,如果是password则必须输入与之匹配的p</div>
+验证两个字段是否相同,如果是password则必须输入与之匹配的</div>
       </a>
 
       <div class="index-btm post-metas">
@@ -390,10 +397,10 @@ confirmed
 不使用 balde.php结尾的话就不能使用laravel提供的标签语法显示数据,只能使用原生语法显示数据
 
 实例在开发中可以使用compact(php内置函数)来进行数组的打包
-TextController:    public function test3()
-    {
-        //现在时间
-        $dat</div>
+TextController:public function test3()
+&#123;
+    //现在时间
+    $date = date('Y</div>
       </a>
 
       <div class="index-btm post-metas">
@@ -491,8 +498,9 @@ new 一个新的数据库 qz04
 控制器的结构代码🚫不需要我们自己去写,可以通过artisan来生成
 相应命令:
 php artisan make:controller TestController
+
 创建资源控制器:(自动生成很多方法
-php artisan make:controller Te</div>
+php artisan make:controller T</div>
       </a>
 
       <div class="index-btm post-metas">
@@ -536,14 +544,14 @@ php artisan make:controller Te</div>
         <div>4种常用的路由方法post/get/any/match
 //get 语法
 //例如访问/hey的时候可以这样写
-Route::get (&#39;/hey&#39;, function() {
-    return &quot;hello&quot;;
-});
+Route::get ('/hey', function() &#123;
+    return "hello";
+&#125;);
 
 
 //post
 //post方法可以用postman来获取值
-//👩post请求需要在VerifycsrfToken中修改把不想要cs</div>
+//👩post请求需要在VerifycsrfToken中修改把不想要csrf请求的路由写</div>
       </a>
 
       <div class="index-btm post-metas">

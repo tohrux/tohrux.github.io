@@ -176,16 +176,17 @@
           
         
         <div>今天被这个问题整自闭了
-    var obj = {
-        kk: function () {
-            function one() {
-                console.log(this);
-            }
-            one();
-        }
-    };
-    obj.kk();
-这里的obj.kk()输出的是win</div>
+var obj = &#123;
+    kk: function () &#123;
+        function one() &#123;
+            console.log(this);
+        &#125;
+        one();
+    &#125;
+&#125;;
+obj.kk();
+
+这里的obj.kk()输出的是window对象</div>
       </a>
 
       <div class="index-btm post-metas">
@@ -229,9 +230,11 @@
 $dbms Database Management System
 $dsn Data Source Name
 &lt;?php
-echo &quot;&lt;pre&gt;&quot;;
-$dbms = &#39;mysql&#39;;
-$host = &#39;localhost&#</div>
+echo "&lt;pre&gt;";
+$dbms = 'mysql';
+$host = 'localhost';
+$dbName = 'jk';
+$user</div>
       </a>
 
       <div class="index-btm post-metas">
@@ -280,14 +283,17 @@ $host = &#39;localhost&#</div>
         
         <div> 
 创建数据库create database 数据库名;
+
 选择数据库use 数据库名;
+
 删除数据库drop database 数据库名;
+
 创建数据表CREATE TABLE 数据表名 (字段名 字段类型);
 
 CREATE TABLE `tbl`(
    `id` INT UNSIGNED AUTO_INCREMENT,
    `title` VARCHAR(100) NOT NULL,
-   `</div>
+ </div>
       </a>
 
       <div class="index-btm post-metas">
@@ -328,16 +334,19 @@ CREATE TABLE `tbl`(
         
           
         
-        <div>对象的使用引用对象$a = &quot;hello&quot;;
+        <div>对象的使用引用对象$a = "hello";
 $b = &amp;$a;
-echo $b . &quot;&lt;/br&gt;&quot;; //hello
+echo $b . "&lt;/br&gt;"; //hello
 
-$a = &quot;aloha&quot;;
+$a = "aloha";
 echo $b; //aloha
+
 克隆对象class Person
-{
+&#123;
     public $timeForCopy = 0;
-    function __clone</div>
+    function __clone()
+    &#123;
+        $t</div>
       </a>
 
       <div class="index-btm post-metas">
@@ -483,22 +492,26 @@ echo $b; //aloha
         <div>
 访问数据库1.连接数据库
 //使用 mysqli_connect()
+
 2.选择服务器
 //使用 mysqli_select_db()来选择
+
 3.执行数据库操作
 //增删改查四部曲
 
 //
-    insert into
+	insert into
 //
     delete
 //
     update
 // 
     select
+
 4.清除记录集,释放系统资源
 mysqli_free_result();
-5.关闭MySQL</div>
+
+5.关闭MySQ</div>
       </a>
 
       <div class="index-btm post-metas">
@@ -539,16 +552,16 @@ mysqli_free_result();
         
           
         
-        <div>引入php文件include &#39;angelina.php&#39;;
+        <div>引入php文件include 'angelina.php';
+
 构造函数:两种方法:
-function __ construct($name,$sex,$age){}
+function __ construct($name,$sex,$age)&#123;&#125;
 //
-function __ &quot;此类的类名&quot;(...){}
+function __ "此类的类名"(...)&#123;&#125;
+
 析构函数当对象结束其生命周期时,系统会自动执行这个函数
-class Person{
-    function __destruct
-}
-封</div>
+class Person&#123;
+    function __des</div>
       </a>
 
       <div class="index-btm post-metas">
@@ -589,11 +602,15 @@ class Person{
         
         <div>$_GET[] &amp; $_POST[]究极全局变量 返回的是数组的形式
 获取
-var_dump($_GET[&#39;username&#39;]);
+var_dump($_GET['username']);
+
+
+
 $_FILES[]返回的是数组形式的5个值
 需要在html文件中如下设置:
-enctype=&quot;multipart/form-data&quot;
-$_COOKIE[]设置一个cookiesetcookie(&#39;name&#39</div>
+enctype="multipart/form-data"
+
+$_COOKIE[]设置一个cookiesetcookie('name','angelina',0,'/');//</div>
       </a>
 
       <div class="index-btm post-metas">
@@ -643,10 +660,12 @@ $_COOKIE[]设置一个cookiesetcookie(&#39;name&#39</div>
         <div>属性选择器语法:
 E[attribute]
 eg:
-td[lang]{} // 有lang属性的td都会被选择
-td[title=&quot;a&quot;]{} //title属性为&quot;a&quot;的都会被选择
-~=&quot;a&quot; //属性值包含&quot;a&quot; 且&quot;a&quot;前后只能有空格
-|=&quot;a&quot; //以&quot;a&qu</div>
+td[lang]&#123;&#125; // 有lang属性的td都会被选择
+td[title="a"]&#123;&#125; //title属性为"a"的都会被选择
+~="a" //属性值包含"a" 且"a"前后只能有空格
+|="a" //以"a"开头,"a"必须为独立单词,后面可以跟上连字符"-"
+
+兄弟选择器    &lt;style&</div>
       </a>
 
       <div class="index-btm post-metas">

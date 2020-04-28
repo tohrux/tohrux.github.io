@@ -148,7 +148,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    875 字
+                    793 字
                   </span>
                 
 
@@ -158,7 +158,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    11
+                    10
                      分钟
                   </span>
                 
@@ -193,35 +193,38 @@
 <p><strong>该方法不会改变现有的数组</strong>，而仅仅会返回被连接数组的一个副本。</p>
 </blockquote>
 <p>语法</p>
-<pre><code class="js">arrayObject.concat(arrayX,arrayX,......,arrayX)</code></pre>
+<pre><code class="hljs js">arrayObject.concat(arrayX,arrayX,......,arrayX)</code></pre>
+
 <p>👩:括号中可以给具体值,或者是数组名</p>
 <h3 id="join"><a href="#join" class="headerlink" title="join()"></a>join()</h3><blockquote>
 <p><code>join()</code> 方法将一个数组（或一个<a href="https://developer.mozilla.org/zh-CN//docs/Web/JavaScript/Guide/Indexed_collections#Working_with_array-like_objects" target="_blank" rel="noopener">类数组对象</a>）的所有元素连接成一个字符串并返回这个字符串。如果数组只有一个项目，那么将返回该项目而不使用分隔符。</p>
 </blockquote>
-<pre><code class="js">    const elements = [&#39;Fire&#39;, &#39;Air&#39;, &#39;Water&#39;];
+<pre><code class="hljs js"><span class="hljs-keyword">const</span> elements = [<span class="hljs-string">'Fire'</span>, <span class="hljs-string">'Air'</span>, <span class="hljs-string">'Water'</span>];
 
-    console.log(elements.join());
-    // expected output: &quot;Fire,Air,Water&quot;
+<span class="hljs-built_in">console</span>.log(elements.join());
+<span class="hljs-comment">// expected output: "Fire,Air,Water"</span>
 
-    console.log(elements.join(&#39;&#39;));
-    // expected output: &quot;FireAirWater&quot;
+<span class="hljs-built_in">console</span>.log(elements.join(<span class="hljs-string">''</span>));
+<span class="hljs-comment">// expected output: "FireAirWater"</span>
 
-    console.log(elements.join(&#39;-&#39;));
-    // expected output: &quot;Fire-Air-Water&quot;</code></pre>
+<span class="hljs-built_in">console</span>.log(elements.join(<span class="hljs-string">'-'</span>));
+<span class="hljs-comment">// expected output: "Fire-Air-Water"</span></code></pre>
+
 <p>👩:其中,<code>elements.join()</code>等效于<code>element.toString()</code></p>
 <h3 id="slice"><a href="#slice" class="headerlink" title="slice()"></a>slice()</h3><blockquote>
 <p><code>slice()</code> 方法返回一个新的数组对象，这一对象是一个由 <code>begin</code> 和 <code>end</code> 决定的原数组的<strong>浅拷贝</strong>（包括 <code>begin</code>，不包括<code>end</code>）。原始数组不会被改变。</p>
 </blockquote>
-<pre><code class="js">const animals = [&#39;ant&#39;, &#39;bison&#39;, &#39;camel&#39;, &#39;duck&#39;, &#39;elephant&#39;];
+<pre><code class="hljs js"><span class="hljs-keyword">const</span> animals = [<span class="hljs-string">'ant'</span>, <span class="hljs-string">'bison'</span>, <span class="hljs-string">'camel'</span>, <span class="hljs-string">'duck'</span>, <span class="hljs-string">'elephant'</span>];
 
-console.log(animals.slice(2));
-// expected output: Array [&quot;camel&quot;, &quot;duck&quot;, &quot;elephant&quot;]
+<span class="hljs-built_in">console</span>.log(animals.slice(<span class="hljs-number">2</span>));
+<span class="hljs-comment">// expected output: Array ["camel", "duck", "elephant"]</span>
 
-console.log(animals.slice(2, 4));
-// expected output: Array [&quot;camel&quot;, &quot;duck&quot;]
+<span class="hljs-built_in">console</span>.log(animals.slice(<span class="hljs-number">2</span>, <span class="hljs-number">4</span>));
+<span class="hljs-comment">// expected output: Array ["camel", "duck"]</span>
 
-console.log(animals.slice(1, 5));
-// expected output: Array [&quot;bison&quot;, &quot;camel&quot;, &quot;duck&quot;, &quot;elephant&quot;]</code></pre>
+<span class="hljs-built_in">console</span>.log(animals.slice(<span class="hljs-number">1</span>, <span class="hljs-number">5</span>));
+<span class="hljs-comment">// expected output: Array ["bison", "camel", "duck", "elephant"]</span></code></pre>
+
 <blockquote>
 <ul>
 <li><p>如果该元素是个对象引用 （不是实际的对象），<code>slice</code> 会拷贝这个对象引用到新的数组里。两个对象引用都引用了同一个对象。如果被引用的对象发生改变，则新的和原来的数组中的这个元素也会发生改变。</p>
@@ -234,17 +237,17 @@ console.log(animals.slice(1, 5));
 <h3 id="splice"><a href="#splice" class="headerlink" title="splice()"></a>splice()</h3><blockquote>
 <p><strong><code>splice()</code></strong> 方法通过删除或替换现有元素或者原地添加新的元素来修改数组,并以数组形式返回被修改的内容。<strong>此方法会改变原数组</strong>。</p>
 </blockquote>
-<pre><code class="js">const months = [&#39;Jan&#39;, &#39;March&#39;, &#39;April&#39;, &#39;June&#39;];
-months.splice(1, 0, &#39;Feb&#39;);
-// inserts at index 1
-console.log(months);
-// expected output: Array [&quot;Jan&quot;, &quot;Feb&quot;, &quot;March&quot;, &quot;April&quot;, &quot;June&quot;]
+<pre><code class="hljs js"><span class="hljs-keyword">const</span> months = [<span class="hljs-string">'Jan'</span>, <span class="hljs-string">'March'</span>, <span class="hljs-string">'April'</span>, <span class="hljs-string">'June'</span>];
+months.splice(<span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-string">'Feb'</span>);
+<span class="hljs-comment">// inserts at index 1</span>
+<span class="hljs-built_in">console</span>.log(months);
+<span class="hljs-comment">// expected output: Array ["Jan", "Feb", "March", "April", "June"]</span>
 
-months.splice(4, 1, &#39;May&#39;);
-// replaces 1 element at index 4
-console.log(months);
-// expected output: Array [&quot;Jan&quot;, &quot;Feb&quot;, &quot;March&quot;, &quot;April&quot;, &quot;May&quot;]
-</code></pre>
+months.splice(<span class="hljs-number">4</span>, <span class="hljs-number">1</span>, <span class="hljs-string">'May'</span>);
+<span class="hljs-comment">// replaces 1 element at index 4</span>
+<span class="hljs-built_in">console</span>.log(months);
+<span class="hljs-comment">// expected output: Array ["Jan", "Feb", "March", "April", "May"]</span></code></pre>
+
 <blockquote>
 <p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/slice" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/slice</a> 👈例子</p>
 </blockquote>
@@ -256,19 +259,22 @@ console.log(months);
 <h3 id="reverse"><a href="#reverse" class="headerlink" title="reverse()"></a>reverse()</h3><p>翻转数组</p>
 <h3 id="sort"><a href="#sort" class="headerlink" title="sort()"></a>sort()</h3><p>默认按照数组成员的首字母的ASCII码值排序</p>
 <h3 id="indexOf"><a href="#indexOf" class="headerlink" title="indexOf()"></a>indexOf()</h3><p>有两个可选值</p>
-<pre><code class="js">String.indexOf(&#39;a&#39;,b);
-//第一个数值是指要检索的值,第二个值是index
-//返回的值是被检索的字符串的首位字符的index值
-//若找不到要检索的值则返回 -1</code></pre>
+<pre><code class="hljs js"><span class="hljs-built_in">String</span>.indexOf(<span class="hljs-string">'a'</span>,b);
+<span class="hljs-comment">//第一个数值是指要检索的值,第二个值是index</span>
+<span class="hljs-comment">//返回的值是被检索的字符串的首位字符的index值</span>
+<span class="hljs-comment">//若找不到要检索的值则返回 -1</span></code></pre>
+
 <h3 id="lastIndexOf"><a href="#lastIndexOf" class="headerlink" title="lastIndexOf()"></a>lastIndexOf()</h3><p>和<code>indexOf()</code>的区别是direction是反的;</p>
-<h3 id="search"><a href="#search" class="headerlink" title="search()"></a>search()</h3><pre><code class="js">String.search(&#39;a&#39;);
-//和indexOf()的使用场景几乎一样,但是不能給index,即不能规定从哪开始找.
-//比indexOf()多了一个功能,可以在括号中使用正则表达式
+<h3 id="search"><a href="#search" class="headerlink" title="search()"></a>search()</h3><pre><code class="hljs js"><span class="hljs-built_in">String</span>.search(<span class="hljs-string">'a'</span>);
+<span class="hljs-comment">//和indexOf()的使用场景几乎一样,但是不能給index,即不能规定从哪开始找.</span>
+<span class="hljs-comment">//比indexOf()多了一个功能,可以在括号中使用正则表达式</span>
 eg:
-var str = &#39;abcDEF&#39;;
-console.log(str.search(/d/i));</code></pre>
+<span class="hljs-keyword">var</span> str = <span class="hljs-string">'abcDEF'</span>;
+<span class="hljs-built_in">console</span>.log(str.search(<span class="hljs-regexp">/d/i</span>));</code></pre>
+
 <h3 id="match"><a href="#match" class="headerlink" title="match()"></a>match()</h3><p>语法:</p>
-<pre><code class="js">String.match(搜索值) 或 String.match(正则表达式)</code></pre>
+<pre><code class="hljs js"><span class="hljs-built_in">String</span>.match(搜索值) 或 <span class="hljs-built_in">String</span>.match(正则表达式)</code></pre>
+
 
             </article>
             <hr>

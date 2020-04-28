@@ -148,7 +148,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    179 字
+                    177 字
                   </span>
                 
 
@@ -190,23 +190,29 @@
               <iframe src="https://open.spotify.com/embed/track/2AmRjWxvLxJK3DjCYNruLI" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
 ### `&`,`||`的短路问题
 
-<pre><code class="javascript">console.log(1&amp;&amp;0);//0
-console.log(0&amp;&amp;1);//0</code></pre>
-<pre><code class="JavaScript">console.log(0 || 1);//1
-console.log(1 || 0);//1</code></pre>
-<h3 id="对非布尔值进行布尔运算"><a href="#对非布尔值进行布尔运算" class="headerlink" title="对非布尔值进行布尔运算"></a>对非布尔值进行布尔运算</h3><pre><code class="js">    var a = 1;
-    a = !a;
-    console.log(a); //false</code></pre>
-<h3 id="关系运算符"><a href="#关系运算符" class="headerlink" title="关系运算符"></a>关系运算符</h3><pre><code class="js">//返回的一定是false or true eg:
-var result = 1 &lt; 3;
-console.log(result);//false</code></pre>
+<pre><code class="hljs javascript"><span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span>&amp;&amp;<span class="hljs-number">0</span>);<span class="hljs-comment">//0</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-number">0</span>&amp;&amp;<span class="hljs-number">1</span>);<span class="hljs-comment">//0</span></code></pre>
+
+<pre><code class="hljs JavaScript"><span class="hljs-built_in">console</span>.log(<span class="hljs-number">0</span> || <span class="hljs-number">1</span>);<span class="hljs-comment">//1</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span> || <span class="hljs-number">0</span>);<span class="hljs-comment">//1</span></code></pre>
+
+<h3 id="对非布尔值进行布尔运算"><a href="#对非布尔值进行布尔运算" class="headerlink" title="对非布尔值进行布尔运算"></a>对非布尔值进行布尔运算</h3><pre><code class="hljs js"><span class="hljs-keyword">var</span> a = <span class="hljs-number">1</span>;
+a = !a;
+<span class="hljs-built_in">console</span>.log(a); <span class="hljs-comment">//false</span></code></pre>
+
+<h3 id="关系运算符"><a href="#关系运算符" class="headerlink" title="关系运算符"></a>关系运算符</h3><pre><code class="hljs js"><span class="hljs-comment">//返回的一定是false or true eg:</span>
+<span class="hljs-keyword">var</span> result = <span class="hljs-number">1</span> &lt; <span class="hljs-number">3</span>;
+<span class="hljs-built_in">console</span>.log(result);<span class="hljs-comment">//false</span></code></pre>
+
 <h3 id="非数值的比较"><a href="#非数值的比较" class="headerlink" title="非数值的比较"></a>非数值的比较</h3><p>*数值类型和非数值类型比较的话,非数值类型会被转换为数值类型</p>
 <p>*如果两边都是字符串型的数字话,则会被转换为unicode编码</p>
 <h3 id="运算优先级"><a href="#运算优先级" class="headerlink" title="运算优先级"></a>运算优先级</h3><p>&amp;&amp; &gt; ||</p>
 <h2 id="unicode编码"><a href="#unicode编码" class="headerlink" title="unicode编码"></a>unicode编码</h2><p>在js中</p>
-<pre><code class="js">console.log(&quot;\u1234&quot;)</code></pre>
+<pre><code class="hljs js"><span class="hljs-built_in">console</span>.log(<span class="hljs-string">"\u1234"</span>)</code></pre>
+
 <p>在htlm中</p>
-<pre><code class="html">&lt;h1&gt;&amp;#1234;&lt;/h1&gt;</code></pre>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>&amp;#1234;<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span></code></pre>
+
 <p>unicode编码转换</p>
 <p><code>&quot;中&quot;.charCodeAt(0);</code></p>
 <p><code>String.fromCharCode(20013);</code></p>

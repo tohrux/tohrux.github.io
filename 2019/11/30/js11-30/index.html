@@ -148,7 +148,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    768 字
+                    766 字
                   </span>
                 
 
@@ -216,15 +216,19 @@
 </blockquote>
 <h2 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h2><ul>
 <li><p><strong>String()</strong></p>
-<pre><code class="js">var a =10;
-console.log(String(a));</code></pre>
-<pre><code>
-👩对于Number和Boolean，实际上就是调用toString()方法。
+<pre><code class="hljs js"><span class="hljs-keyword">var</span> a =<span class="hljs-number">10</span>;
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">String</span>(a));</code></pre>
+<pre><code class="hljs plain">  
+  👩对于Number和Boolean，实际上就是调用toString()方法。
+  
+  而在转换为undefined和null类型时,直接输出&quot;undefined&quot;,&quot;null&quot;
 
-而在转换为undefined和null类型时,直接输出&quot;undefined&quot;,&quot;null&quot;</code></pre></li>
-<li><p><strong>toString()</strong></p>
-<pre><code class="js">var a = 10;
-console.log(a.toString(x));//在转换时,x的值是需要转换的进制数,不给值默认为10进制转换;并且toString()不会改变原来a的值</code></pre>
+- **toString()**
+
+  ```js
+  var a = 10;
+  console.log(a.toString(x));//在转换时,x的值是需要转换的进制数,不给值默认为10进制转换;并且toString()不会改变原来a的值</code></pre>
+
 <p>👩:区别<code>toString()</code>无法转换null和undefined,所以一般我们用<code>String()</code>就完事了</p>
 </li>
 <li><p><strong>Number()</strong></p>
@@ -243,11 +247,15 @@ console.log(a.toString(x));//在转换时,x的值是需要转换的进制数,不
 <p>只保留字符串最开头的数字</p>
 <p>如果开头就不是数字,直接返回<code>NaN</code></p>
 <p><strong>对小数的处理:</strong></p>
-<pre><code class="js">console.log(parseInt(&quot;5.9&quot;));//5</code></pre>
+<pre><code class="hljs js"><span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">parseInt</span>(<span class="hljs-string">"5.9"</span>));<span class="hljs-comment">//5</span></code></pre>
+
 <p>对非String的处理:先转换为String类型,再转换为Number返回<code>NaN</code></p>
 <p><strong>转换为别的进制:</strong></p>
-<pre><code class="js">var a = 0b11;
-console.log(parseInt(a,10));//3</code></pre>
+<pre><code class="hljs js"><span class="hljs-keyword">var</span> a = <span class="hljs-number">0b11</span>;
+<span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">parseInt</span>(a,<span class="hljs-number">10</span>));<span class="hljs-comment">//3</span></code></pre>
+
+
+
 </li>
 </ul>
 <ul>
@@ -274,18 +282,22 @@ console.log(parseInt(a,10));//3</code></pre>
 <h3 id="浮点数运算"><a href="#浮点数运算" class="headerlink" title="浮点数运算"></a>浮点数运算</h3><p>尽量不要再js中使用浮点数运算,因为结果不准确</p>
 <h3 id="隐式转换"><a href="#隐式转换" class="headerlink" title="隐式转换"></a>隐式转换</h3><p><code>+</code>比较特别</p>
 <h2 id="null"><a href="#null" class="headerlink" title="null"></a>null</h2><p>用来表示一个空的对象</p>
-<pre><code class="js">    var a = null;
-    console.log(typeof a);//object</code></pre>
-<h2 id="undefined"><a href="#undefined" class="headerlink" title="undefined"></a>undefined</h2><pre><code class="js">    var a = undefined;
-    console.log(typeof a);//undefined</code></pre>
-<h2 id="👇-underfined-与-null-的区别和相似之处"><a href="#👇-underfined-与-null-的区别和相似之处" class="headerlink" title="👇 underfined 与 null 的区别和相似之处"></a>👇 underfined 与 null 的区别和相似之处</h2><pre><code class="js">    var a = undefined;
-    var b = null;
-    console.log(a == b);//true
-    console.log(a === b);//false</code></pre>
-<pre><code class="js">    var a = undefined;
-    var b = null;
-    console.log(a + 10);//NaN
-    console.log(b + 10);//10</code></pre>
+<pre><code class="hljs js"><span class="hljs-keyword">var</span> a = <span class="hljs-literal">null</span>;
+<span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> a);<span class="hljs-comment">//object</span></code></pre>
+
+<h2 id="undefined"><a href="#undefined" class="headerlink" title="undefined"></a>undefined</h2><pre><code class="hljs js"><span class="hljs-keyword">var</span> a = <span class="hljs-literal">undefined</span>;
+<span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> a);<span class="hljs-comment">//undefined</span></code></pre>
+
+<h2 id="👇-underfined-与-null-的区别和相似之处"><a href="#👇-underfined-与-null-的区别和相似之处" class="headerlink" title="👇 underfined 与 null 的区别和相似之处"></a>👇 underfined 与 null 的区别和相似之处</h2><pre><code class="hljs js">   <span class="hljs-keyword">var</span> a = <span class="hljs-literal">undefined</span>;
+   <span class="hljs-keyword">var</span> b = <span class="hljs-literal">null</span>;
+   <span class="hljs-built_in">console</span>.log(a == b);<span class="hljs-comment">//true</span>
+<span class="hljs-built_in">console</span>.log(a === b);<span class="hljs-comment">//false</span></code></pre>
+
+<pre><code class="hljs js"><span class="hljs-keyword">var</span> a = <span class="hljs-literal">undefined</span>;
+<span class="hljs-keyword">var</span> b = <span class="hljs-literal">null</span>;
+<span class="hljs-built_in">console</span>.log(a + <span class="hljs-number">10</span>);<span class="hljs-comment">//NaN</span>
+<span class="hljs-built_in">console</span>.log(b + <span class="hljs-number">10</span>);<span class="hljs-comment">//10</span></code></pre>
+
 <h2 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h2><p>与<code>&amp;&amp;</code> </p>
 <p>或<code>||</code></p>
 <h2 id="i-i"><a href="#i-i" class="headerlink" title="++i,i++"></a>++i,i++</h2><blockquote>

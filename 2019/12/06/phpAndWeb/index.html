@@ -148,7 +148,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    265 字
+                    229 字
                   </span>
                 
 
@@ -158,7 +158,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    3
+                    2
                      分钟
                   </span>
                 
@@ -189,28 +189,39 @@
             <article class="markdown-body">
               <h1 id="GET-amp-POST"><a href="#GET-amp-POST" class="headerlink" title="$_GET[] &amp; $_POST[]"></a>$_GET[] &amp; $_POST[]</h1><p>究极全局变量 返回的是数组的形式</p>
 <p>获取</p>
-<pre><code class="php">var_dump($_GET[&#39;username&#39;]);</code></pre>
+<pre><code class="hljs php">var_dump($_GET[<span class="hljs-string">'username'</span>]);</code></pre>
+
+
+
 <h1 id="FILES"><a href="#FILES" class="headerlink" title="$_FILES[]"></a>$_FILES[]</h1><p>返回的是数组形式的5个值</p>
 <p>需要在html文件中如下设置:</p>
-<pre><code class="html">enctype=&quot;multipart/form-data&quot;</code></pre>
-<h1 id="COOKIE"><a href="#COOKIE" class="headerlink" title="$_COOKIE[]"></a>$_COOKIE[]</h1><h2 id="设置一个cookie"><a href="#设置一个cookie" class="headerlink" title="设置一个cookie"></a>设置一个cookie</h2><pre><code class="php">setcookie(&#39;name&#39;,&#39;angelina&#39;,0,&#39;/&#39;);//分别为 名称,内容,存在时间(为0的话意味着在页面关闭时就会删除该cookie),目录(不设置目录的话,只对当前目录有效)</code></pre>
-<h2 id="判断cookie是否存在"><a href="#判断cookie是否存在" class="headerlink" title="判断cookie是否存在:"></a>判断cookie是否存在:</h2><pre><code class="php">isset(cookie[&#39;name&#39;]); //返回的是true or false</code></pre>
-<h2 id="创建cookie数组"><a href="#创建cookie数组" class="headerlink" title="创建cookie数组"></a>创建cookie数组</h2><pre><code class="php">setcookie(&quot;location[1]&quot;,&quot;beijing&quot;);
-setcookie(&quot;location[2]&quot;,&quot;beijing&quot;);
-setcookie(&quot;location[3]&quot;,&quot;beijing&quot;);
+<pre><code class="hljs html">enctype="multipart/form-data"</code></pre>
 
-var_dump ($_COOKIE[&quot;location&quot;]);
-//输出数组形式</code></pre>
-<h1 id="SESSION"><a href="#SESSION" class="headerlink" title="$_SESSION[]"></a>$_SESSION[]</h1><h2 id="启动session"><a href="#启动session" class="headerlink" title="启动session"></a>启动session</h2><pre><code class="php">session_start();</code></pre>
-<h2 id="设置session"><a href="#设置session" class="headerlink" title="设置session"></a>设置session</h2><pre><code class="php">$_session[&#39;username&#39;] = &quot;angelina&quot;;
-$_session[&#39;age&#39;] = 18;</code></pre>
-<h3 id="销毁SESSION"><a href="#销毁SESSION" class="headerlink" title="销毁SESSION"></a>销毁SESSION</h3><pre><code class="php">unset($_SESSION[&#39;username&#39;]);
+<h1 id="COOKIE"><a href="#COOKIE" class="headerlink" title="$_COOKIE[]"></a>$_COOKIE[]</h1><h2 id="设置一个cookie"><a href="#设置一个cookie" class="headerlink" title="设置一个cookie"></a>设置一个cookie</h2><pre><code class="hljs php">setcookie(<span class="hljs-string">'name'</span>,<span class="hljs-string">'angelina'</span>,<span class="hljs-number">0</span>,<span class="hljs-string">'/'</span>);<span class="hljs-comment">//分别为 名称,内容,存在时间(为0的话意味着在页面关闭时就会删除该cookie),目录(不设置目录的话,只对当前目录有效)</span></code></pre>
+
+<h2 id="判断cookie是否存在"><a href="#判断cookie是否存在" class="headerlink" title="判断cookie是否存在:"></a>判断cookie是否存在:</h2><pre><code class="hljs php"><span class="hljs-keyword">isset</span>(cookie[<span class="hljs-string">'name'</span>]); <span class="hljs-comment">//返回的是true or false</span></code></pre>
+
+<h2 id="创建cookie数组"><a href="#创建cookie数组" class="headerlink" title="创建cookie数组"></a>创建cookie数组</h2><pre><code class="hljs php">setcookie(<span class="hljs-string">"location[1]"</span>,<span class="hljs-string">"beijing"</span>);
+setcookie(<span class="hljs-string">"location[2]"</span>,<span class="hljs-string">"beijing"</span>);
+setcookie(<span class="hljs-string">"location[3]"</span>,<span class="hljs-string">"beijing"</span>);
+
+var_dump ($_COOKIE[<span class="hljs-string">"location"</span>]);
+<span class="hljs-comment">//输出数组形式</span></code></pre>
+
+<h1 id="SESSION"><a href="#SESSION" class="headerlink" title="$_SESSION[]"></a>$_SESSION[]</h1><h2 id="启动session"><a href="#启动session" class="headerlink" title="启动session"></a>启动session</h2><pre><code class="hljs php">session_start();</code></pre>
+
+<h2 id="设置session"><a href="#设置session" class="headerlink" title="设置session"></a>设置session</h2><pre><code class="hljs php">$_session[<span class="hljs-string">'username'</span>] = <span class="hljs-string">"angelina"</span>;
+$_session[<span class="hljs-string">'age'</span>] = <span class="hljs-number">18</span>;</code></pre>
+
+<h3 id="销毁SESSION"><a href="#销毁SESSION" class="headerlink" title="销毁SESSION"></a>销毁SESSION</h3><pre><code class="hljs php"><span class="hljs-keyword">unset</span>($_SESSION[<span class="hljs-string">'username'</span>]);
 或者使用session_destroy()函数来销毁全部
 session_destroy();</code></pre>
+
 <p>👩即使使用了以上函数,但是由于php中的session是基于cookie的,所以session_id还存在于浏览器的cookie文件中需要调用cookie删除</p>
-<pre><code class="php">if (isset($_COOKIE[session_name()])){
-    setcookie(session_name(),&quot;&quot;,time()+1,&quot;/&quot;);
-}</code></pre>
+<pre><code class="hljs php"><span class="hljs-keyword">if</span> (<span class="hljs-keyword">isset</span>($_COOKIE[session_name()]))&#123;
+    setcookie(session_name(),<span class="hljs-string">""</span>,time()+<span class="hljs-number">1</span>,<span class="hljs-string">"/"</span>);
+&#125;</code></pre>
+
 
             </article>
             <hr>

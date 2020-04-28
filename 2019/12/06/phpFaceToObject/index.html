@@ -148,7 +148,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    825 字
+                    833 字
                   </span>
                 
 
@@ -187,55 +187,59 @@
           <div class="post-content mx-auto" id="post">
             
             <article class="markdown-body">
-              <h3 id="引入php文件"><a href="#引入php文件" class="headerlink" title="引入php文件"></a>引入php文件</h3><pre><code class="php">include &#39;angelina.php&#39;;</code></pre>
+              <h3 id="引入php文件"><a href="#引入php文件" class="headerlink" title="引入php文件"></a>引入php文件</h3><pre><code class="hljs php"><span class="hljs-keyword">include</span> <span class="hljs-string">'angelina.php'</span>;</code></pre>
+
 <h2 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数:"></a>构造函数:</h2><p>两种方法:</p>
-<pre><code class="php">function __ construct($name,$sex,$age){}
-//
-function __ &quot;此类的类名&quot;(...){}</code></pre>
+<pre><code class="hljs php"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__</span> <span class="hljs-title">construct</span><span class="hljs-params">($name,$sex,$age)</span></span>&#123;&#125;
+<span class="hljs-comment">//</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__</span> "此类的类名"<span class="hljs-params">(...)</span></span>&#123;&#125;</code></pre>
+
 <h2 id="析构函数"><a href="#析构函数" class="headerlink" title="析构函数"></a>析构函数</h2><p>当对象结束其生命周期时,系统会自动执行这个函数</p>
-<pre><code class="php">class Person{
-    function __destruct
-}</code></pre>
+<pre><code class="hljs php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person</span></span>&#123;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__destruct</span>
+&#125;</span></code></pre>
+
 <h1 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h1><h2 id="var"><a href="#var" class="headerlink" title="var"></a>var</h2><p>php中默认将var 关键字解释为public,var等同于public</p>
 <h2 id="public"><a href="#public" class="headerlink" title="public"></a>public</h2><p>用public修饰的属性和方法是公开的,在程序的任何位置都可以访问,子类可以继承父类所有的公共成员</p>
 <h2 id="private"><a href="#private" class="headerlink" title="private"></a>private</h2><p>private修饰的属性和方法只能在所属类的内部访问,子类也不能继承</p>
-<pre><code class="php">//例如现在先定义一个类
-      class Person{
-        public $name;
-        private $money;
-        function __construct(){
-            $this-&gt;name = &quot;jack&quot;;
-        }
-    }  
-//
-    $jack = new Person();
-</code></pre>
-<h2 id="protected"><a href="#protected" class="headerlink" title="protected"></a>protected</h2><p>protected 修饰的属性和方法只有除了子类可以调用外,其他类不能调用,包括在类的外面</p>
-<pre><code class="php">&lt;?php
-//protect
-class Person
-{
-    public $name;
-    public $hello;
-    protected $money;
-    function __construct()
-    {
-        $this-&gt;name = &quot;angelina&quot;;
-        $this-&gt;age = 12;
-        $this-&gt;money = 10000;
-    }
-}
+<pre><code class="hljs php"><span class="hljs-comment">//例如现在先定义一个类</span>
+  	<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person</span></span>&#123;
+        <span class="hljs-keyword">public</span> $name;
+        <span class="hljs-keyword">private</span> $money;
+        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">()</span></span>&#123;
+            <span class="hljs-keyword">$this</span>-&gt;name = <span class="hljs-string">"jack"</span>;
+        &#125;
+    &#125;  
+<span class="hljs-comment">//</span>
+	$jack = <span class="hljs-keyword">new</span> Person();</code></pre>
 
-class girl extends Person
-{
-    public function numOfMoney()
-    {
-        return $this-&gt;money;
-    }
-}
-$ange = new girl();
-echo $ange-&gt;numOfMoney();//10000
-echo $ange-&gt;money;//Fatal error: Uncaught Error: Cannot access protected property girl::$money</code></pre>
+<h2 id="protected"><a href="#protected" class="headerlink" title="protected"></a>protected</h2><p>protected 修饰的属性和方法只有除了子类可以调用外,其他类不能调用,包括在类的外面</p>
+<pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span>
+<span class="hljs-comment">//protect</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person</span>
+</span>&#123;
+    <span class="hljs-keyword">public</span> $name;
+    <span class="hljs-keyword">public</span> $hello;
+    <span class="hljs-keyword">protected</span> $money;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">()</span>
+    </span>&#123;
+        <span class="hljs-keyword">$this</span>-&gt;name = <span class="hljs-string">"angelina"</span>;
+        <span class="hljs-keyword">$this</span>-&gt;age = <span class="hljs-number">12</span>;
+        <span class="hljs-keyword">$this</span>-&gt;money = <span class="hljs-number">10000</span>;
+    &#125;
+&#125;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">girl</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Person</span>
+</span>&#123;
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">numOfMoney</span><span class="hljs-params">()</span>
+    </span>&#123;
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;money;
+    &#125;
+&#125;
+$ange = <span class="hljs-keyword">new</span> girl();
+<span class="hljs-keyword">echo</span> $ange-&gt;numOfMoney();<span class="hljs-comment">//10000</span>
+<span class="hljs-keyword">echo</span> $ange-&gt;money;<span class="hljs-comment">//Fatal error: Uncaught Error: Cannot access protected property girl::$money</span></code></pre>
+
 <h2 id="extend"><a href="#extend" class="headerlink" title="extend"></a>extend</h2><p>继承一个类,但不支持多继承</p>
 <p>eg如上</p>
 <h2 id="final"><a href="#final" class="headerlink" title="final"></a>final</h2><blockquote>
@@ -253,29 +257,32 @@ echo $ange-&gt;money;//Fatal error: Uncaught Error: Cannot access protected prop
 <h3 id="重载"><a href="#重载" class="headerlink" title="重载"></a>重载</h3><blockquote>
 <p><strong>通常是指同一个类中多个方法具有相同的名字,但这些方法具有不同的参数列表</strong></p>
 </blockquote>
-<pre><code class="php">&lt;?php
-//
-class Person
-{
-    public $name;
-    public $birthday;
-    function __construct($name, $birthday)
-    {
-        $this-&gt;name = $name;
-        $this-&gt;birthday = $birthday;
-    }
-}
-$girl = new Person(&quot;eyjafjalla&quot;, 12);
-echo &quot;&lt;pre&gt;&quot;;
+<pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span>
+<span class="hljs-comment">//</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person</span>
+</span>&#123;
+    <span class="hljs-keyword">public</span> $name;
+    <span class="hljs-keyword">public</span> $birthday;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">($name, $birthday)</span>
+    </span>&#123;
+        <span class="hljs-keyword">$this</span>-&gt;name = $name;
+        <span class="hljs-keyword">$this</span>-&gt;birthday = $birthday;
+    &#125;
+&#125;
+$girl = <span class="hljs-keyword">new</span> Person(<span class="hljs-string">"eyjafjalla"</span>, <span class="hljs-number">12</span>);
+<span class="hljs-keyword">echo</span> <span class="hljs-string">"&lt;pre&gt;"</span>;
 var_dump($girl);
 
-//输出结果
-object(Person)#1 (2) {
-  [&quot;name&quot;]=&gt;
-  string(10) &quot;eyjafjalla&quot;
-  [&quot;birthday&quot;]=&gt;
-  int(12)
-}</code></pre>
+<span class="hljs-comment">//输出结果</span>
+object(Person)<span class="hljs-comment">#1 (2) &#123;</span>
+  [<span class="hljs-string">"name"</span>]=&gt;
+  string(<span class="hljs-number">10</span>) <span class="hljs-string">"eyjafjalla"</span>
+  [<span class="hljs-string">"birthday"</span>]=&gt;
+  int(<span class="hljs-number">12</span>)
+&#125;</code></pre>
+
+
+
 <h2 id="“-”操作符"><a href="#“-”操作符" class="headerlink" title="“::”操作符"></a>“::”操作符</h2><blockquote>
 <p><strong>通常用于没有声明任何实例的情况下使用类的属性和方法</strong></p>
 </blockquote>
@@ -289,30 +296,32 @@ object(Person)#1 (2) {
 <h2 id="abstract"><a href="#abstract" class="headerlink" title="abstract"></a>abstract</h2><blockquote>
 <p>抽象类,它是一种不能被实例化的类,必须至少要有一个抽象方法,且抽象方法没有方法体,要连接一个分号,通常需要定义一个子类</p>
 </blockquote>
-<pre><code class="php">abstract class Person(){
+<pre><code class="hljs php">abstract class Person()&#123;
     abstract function get_area();
-}</code></pre>
+&#125;</code></pre>
+
 <h2 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h2><blockquote>
 <p>用interface关键字来定义,它是一种特殊的抽象类,接口中未实现的方法,即使是空方法,也必须在子类中实现.一个类只能继承一个父类,但是却可以实现多个接口,通过implements 关键字可以实现接口</p>
 </blockquote>
-<pre><code class="js">//interface &amp; implements
+<pre><code class="hljs js"><span class="hljs-comment">//interface &amp; implements</span>
 interface Work
-{
-    function getJobSkill();
-}
-class Programmer implements Work
-{
-    function getJobSkill()
-    {
-        return array(
-            &quot;java&quot;,
-            &quot;php&quot;,
-            &quot;C&quot;
+&#123;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getJobSkill</span>(<span class="hljs-params"></span>);
+&#125;
+<span class="hljs-title">class</span> <span class="hljs-title">Programmer</span> <span class="hljs-title">implements</span> <span class="hljs-title">Work</span>
+</span>&#123;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getJobSkill</span>(<span class="hljs-params"></span>)
+    </span>&#123;
+        <span class="hljs-keyword">return</span> array(
+            <span class="hljs-string">"java"</span>,
+            <span class="hljs-string">"php"</span>,
+            <span class="hljs-string">"C"</span>
         );
-    }
-}
-$a = new Programmer();
+    &#125;
+&#125;
+$a = <span class="hljs-keyword">new</span> Programmer();
 var_dump($a-&gt;getJobSkill());</code></pre>
+
 
             </article>
             <hr>

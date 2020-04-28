@@ -216,13 +216,14 @@
 <p>scroll: 一直会有滚动条</p>
 <h1 id="position"><a href="#position" class="headerlink" title="position"></a>position</h1><p>默认值 static: 会忽略掉top,right,bottom,left,z-index属性</p>
 <p>relative:不会脱离文档流</p>
-<h1 id="清除浮动"><a href="#清除浮动" class="headerlink" title="清除浮动"></a>清除浮动</h1><pre><code class="css">.clearfix:after{
-        content: &quot;&quot;;
-        display: block;
-        height: 0;
-        clear:both;
-        visibility: hidden;
-}</code></pre>
+<h1 id="清除浮动"><a href="#清除浮动" class="headerlink" title="清除浮动"></a>清除浮动</h1><pre><code class="hljs css"><span class="hljs-selector-class">.clearfix</span><span class="hljs-selector-pseudo">:after</span>&#123;
+        <span class="hljs-attribute">content</span>: <span class="hljs-string">""</span>;
+        <span class="hljs-attribute">display</span>: block;
+        <span class="hljs-attribute">height</span>: <span class="hljs-number">0</span>;
+        <span class="hljs-attribute">clear</span>:both;
+    	<span class="hljs-attribute">visibility</span>: hidden;
+&#125;</code></pre>
+
 <p>clear:left/right/both;</p>
 
             </article>

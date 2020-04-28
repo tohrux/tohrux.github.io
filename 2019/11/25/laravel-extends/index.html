@@ -148,7 +148,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    179 字
+                    173 字
                   </span>
                 
 
@@ -188,22 +188,28 @@
             
             <article class="markdown-body">
               <h1 id="include"><a href="#include" class="headerlink" title="@include"></a>@include</h1><p>可以用来引进别的页面</p>
-<pre><code class="php">@include(&#39;文件名&#39;)</code></pre>
-<h1 id="extends"><a href="#extends" class="headerlink" title="@extends"></a>@extends</h1><pre><code class="php">父级页面 语法:@yield(&#39;名字&#39;) </code></pre>
-<pre><code class="php">子级页面:@extends(&#39;view下的路径&#39;)
-@section(&#39;名字&#39;)
+<pre><code class="hljs php">@<span class="hljs-keyword">include</span>(<span class="hljs-string">'文件名'</span>)</code></pre>
+
+
+
+<h1 id="extends"><a href="#extends" class="headerlink" title="@extends"></a>@extends</h1><pre><code class="hljs php">父级页面 语法:@<span class="hljs-keyword">yield</span>(<span class="hljs-string">'名字'</span>)</code></pre>
+
+<pre><code class="hljs php">子级页面:@extends(<span class="hljs-string">'view下的路径'</span>)
+@section(<span class="hljs-string">'名字'</span>)
 内容
 @endsection</code></pre>
+
 <p><strong>实例</strong>:</p>
 <p>父级页面:</p>
-<pre><code class="php">&lt;h1&gt;我是头部&lt;/h1&gt;
-{{-- 可变区 --}}
-@yield(&#39;myBody&#39;)
-{{-- 可变区 --}}
+<pre><code class="hljs php">&lt;h1&gt;我是头部&lt;/h1&gt;
+&#123;&#123;-- 可变区 --&#125;&#125;
+@<span class="hljs-keyword">yield</span>(<span class="hljs-string">'myBody'</span>)
+&#123;&#123;-- 可变区 --&#125;&#125;
 &lt;h1&gt;我是尾部&lt;/h1&gt;</code></pre>
+
 <p>子级页面:</p>
-<pre><code class="php">@extends(&#39;test/test2&#39;)
-@section(&#39;myBody&#39;)
+<pre><code class="hljs php">@extends(<span class="hljs-string">'test/test2'</span>)
+@section(<span class="hljs-string">'myBody'</span>)
 &lt;h1&gt;
     Lorem ipsum dolor sit amet consectetur a
     dipisicing elit. Ea quibusdam quas nobis minima, aspernatur laborum nihil, natus omnis quia solu
@@ -211,8 +217,9 @@
     ? Voluptatibus, nulla mollitia. Possimus, laborum adipisci?
 &lt;/h1&gt;
 @endsection</code></pre>
+
 <p>结果:</p>
-<pre><code class="php">我是头部
+<pre><code class="hljs php">我是头部
 Lorem ipsum dolor sit amet consectetur a dipisicing elit. Ea quibusdam quas nobis minima, aspernatur laborum nihil, natus omnis quia solu ta beatae recusandae deleniti neque ? Voluptatibus, nulla mollitia. Possimus, laborum adipisci?
 我是尾部</code></pre>
 

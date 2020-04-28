@@ -148,7 +148,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    314 字
+                    312 字
                   </span>
                 
 
@@ -187,38 +187,45 @@
           <div class="post-content mx-auto" id="post">
             
             <article class="markdown-body">
-              <pre><code class="html">    &lt;div id=&quot;app&quot;&gt;
-        &lt;p&gt;
-            {{msg}}
-            &lt;div&gt;hello&lt;/div&gt;
-        &lt;/p&gt;
-        &lt;div v-html=&quot;msg2&quot;&gt;&lt;/div&gt;
-        &lt;input type=&quot;button&quot; v-on:click=&quot;show&quot; :value=&quot;msg&quot;&gt;
-    &lt;/div&gt;
-    &lt;script&gt;
-        var vm = new Vue({
-            el: &#39;#app&#39;, //表示上面new的vue的实例,要控制页面上的哪个区域
-            data: { //data属性中存放的是el中要用到的数据
-                msg: &#39;hello,我是msg&#39;,
-                msg2: &#39;&lt;h1&gt;hello ,I am msg2&lt;/h1&gt;&#39;,
-                btbMsg: &#39;click me&#39;
-            },
-            methods: {
-                show: function(){
-                    alert(123);
-                }
-            }
-        })
+              <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"app"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+        &#123;&#123;msg&#125;&#125;
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>hello<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-html</span>=<span class="hljs-string">"msg2"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">v-on:click</span>=<span class="hljs-string">"show"</span> <span class="hljs-attr">:value</span>=<span class="hljs-string">"msg"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="actionscript">
+    <span class="hljs-keyword">var</span> vm = <span class="hljs-keyword">new</span> Vue(&#123;
+        el: <span class="hljs-string">'#app'</span>, <span class="hljs-comment">//表示上面new的vue的实例,要控制页面上的哪个区域</span>
+        data: &#123; <span class="hljs-comment">//data属性中存放的是el中要用到的数据</span>
+            msg: <span class="hljs-string">'hello,我是msg'</span>,
+            msg2: <span class="hljs-string">'&lt;h1&gt;hello ,I am msg2&lt;/h1&gt;'</span>,
+            btbMsg: <span class="hljs-string">'click me'</span>
+        &#125;,
+        methods: &#123;
+            show: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>&#123;
+                alert(<span class="hljs-number">123</span>);
+            &#125;
+        &#125;
+    &#125;)
 
+    
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
 
-    &lt;/script&gt;</code></pre>
 <p>v-html,v-text:👩</p>
-<pre><code>v-html,会直接解析data中的字符串里的html标签
-两者在使用时,在被绑定的html标签(&lt;div v-html=&quot;msg2&quot;&gt;&lt;/div&gt;中间输入内容是无效的,如果需要输入内容可以使用{{插值表达式}}</code></pre><p>v-bind:</p>
-<pre><code>要为非v-开头的属性赋值时且想用datao里的数据可以使用&quot;v-bind:&quot;,简写&quot;:&quot;,👩:可以加上字符串或数字,把data中的属性当作变量使用👇
-    :value=&quot;btbMsg+123&quot;</code></pre><p>v-on: Vue提供的事件绑定机制 (简写@ 下面可以直接写成@click=’show’)</p>
-<pre><code>&lt;input type=&quot;button&quot; v-on:click=&quot;show&quot; :value=&quot;msg&quot;&gt;
+<pre><code class="hljs plain">v-html,会直接解析data中的字符串里的html标签
+两者在使用时,在被绑定的html标签(&lt;div v-html=&quot;msg2&quot;&gt;&lt;/div&gt;中间输入内容是无效的,如果需要输入内容可以使用&#123;&#123;插值表达式&#125;&#125;</code></pre>
+
+<p>v-bind:</p>
+<pre><code class="hljs plain">要为非v-开头的属性赋值时且想用datao里的数据可以使用&quot;v-bind:&quot;,简写&quot;:&quot;,👩:可以加上字符串或数字,把data中的属性当作变量使用👇
+	:value=&quot;btbMsg+123&quot;</code></pre>
+
+<p>v-on: Vue提供的事件绑定机制 (简写@ 下面可以直接写成@click=’show’)</p>
+<pre><code class="hljs plain">&lt;input type=&quot;button&quot; v-on:click=&quot;show&quot; :value=&quot;msg&quot;&gt;
 需要在Vue里定义method</code></pre>
+
+
             </article>
             <hr>
             <div>

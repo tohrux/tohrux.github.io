@@ -148,7 +148,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    596 字
+                    572 字
                   </span>
                 
 
@@ -192,71 +192,80 @@
 <h1 id="命名控制器文件"><a href="#命名控制器文件" class="headerlink" title="命名控制器文件"></a>命名控制器文件</h1><p>驼峰命名+Controller.php</p>
 <h1 id="控制器的结构代码"><a href="#控制器的结构代码" class="headerlink" title="控制器的结构代码"></a>控制器的结构代码</h1><p>🚫不需要我们自己去写,可以通过artisan来生成</p>
 <p>相应命令:</p>
-<pre><code class="cmd">php artisan make:controller TestController</code></pre>
+<pre><code class="hljs cmd">php artisan make:controller TestController</code></pre>
+
 <p>创建资源控制器:(自动生成很多方法</p>
-<pre><code class="php">php artisan make:controller TestController --resource //简写 --r</code></pre>
+<pre><code class="hljs php">php artisan make:controller TestController --resource <span class="hljs-comment">//简写 --r</span></code></pre>
+
 <p>分目录控制器(没有这个文件夹的话就会创建)</p>
-<pre><code class="cmd">php artisan make:controller Admin/TestController</code></pre>
+<pre><code class="hljs cmd">php artisan make:controller Admin/TestController</code></pre>
+
 <p>创建成功的提示:</p>
-<pre><code class="cmd">Controller created successfully.</code></pre>
+<pre><code class="hljs cmd">Controller created successfully.</code></pre>
+
+
+
 <p>生成的结构代码:</p>
-<pre><code class="php">&lt;?php
+<pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span>
 
-namespace App\Http\Controllers;//命名空间
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">App</span>\<span class="hljs-title">Http</span>\<span class="hljs-title">Controllers</span>;<span class="hljs-comment">//命名空间</span>
 
-use Illuminate\Http\Request;//命名空间三元素: 常量,方法,类
+<span class="hljs-keyword">use</span> <span class="hljs-title">Illuminate</span>\<span class="hljs-title">Http</span>\<span class="hljs-title">Request</span>;<span class="hljs-comment">//命名空间三元素: 常量,方法,类</span>
 
-class TestController extends Controller
-{
-    //
-}
-</code></pre>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TestController</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Controller</span>
+</span>&#123;
+    <span class="hljs-comment">//</span>
+&#125;</code></pre>
+
 <h1 id="控制器路由"><a href="#控制器路由" class="headerlink" title="控制器路由"></a>控制器路由</h1><p>#使用路由规则调用控制器下的方法,而不再走回调函数.</p>
 <p>格式</p>
-<pre><code class="php">控制器类名@方法名</code></pre>
-<h1 id="控制下的命名空间分组"><a href="#控制下的命名空间分组" class="headerlink" title="控制下的命名空间分组"></a>控制下的命名空间分组</h1><pre><code class="php">Route::group([&#39;namespace&#39;=&gt;&#39;Admin&#39;],function(){
-    Route:get(&#39;/shit/test1&#39;,&#39;TestController@test1&#39;)
-})</code></pre>
+<pre><code class="hljs php">控制器类名@方法名</code></pre>
+
+<h1 id="控制下的命名空间分组"><a href="#控制下的命名空间分组" class="headerlink" title="控制下的命名空间分组"></a>控制下的命名空间分组</h1><pre><code class="hljs php">Route::group([<span class="hljs-string">'namespace'</span>=&gt;<span class="hljs-string">'Admin'</span>],<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>&#123;
+    Route:get(<span class="hljs-string">'/shit/test1'</span>,<span class="hljs-string">'TestController@test1'</span>)
+&#125;)</code></pre>
+
 <h1 id="接受用户输入"><a href="#接受用户输入" class="headerlink" title="接受用户输入"></a>接受用户输入</h1><p>接受用户输入的类:illuminate\support\facades\input</p>
 <p><strong>facades:介于一个类实例化与没有实例化之间的一个状态,是类的一个接口的实现,说白了就是静态方法.</strong></p>
 <blockquote>
 <p>在laravel中如果需要使用facades,但是又不想写那么长:Use Illuminate\Support\Facades\Input 则可以在config/app.php中定义别名</p>
 </blockquote>
-<pre><code class="php">//自己添加的别名
-        &#39;Input&#39; =&gt; Illuminate\Support\Facades\Input::class</code></pre>
+<pre><code class="hljs php"><span class="hljs-comment">//自己添加的别名</span>
+        <span class="hljs-string">'Input'</span> =&gt; Illuminate\Support\Facades\Input::class</code></pre>
+
 <p>👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆</p>
 <p>😤😤😤😤😤😤😤😤😤😤😤😤</p>
 <p>上面真的是血的教训,我用的laravel是最新的6.5的,但是在5.2版本之后就开始用Request替代Input了</p>
 <p>一开始疯狂检测自己的拼写,甚至重装laravel,花了大概一个半小时才解决了问题.</p>
 <p>不过这个过程还是挺有意义的;</p>
-<pre><code class="php">&lt;?php
+<pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span>
 
-namespace App\Http\Controllers;
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">App</span>\<span class="hljs-title">Http</span>\<span class="hljs-title">Controllers</span>;
 
-use Illuminate\Http\Request; //声明 这是自动生成的
+<span class="hljs-keyword">use</span> <span class="hljs-title">Illuminate</span>\<span class="hljs-title">Http</span>\<span class="hljs-title">Request</span>; <span class="hljs-comment">//声明 这是自动生成的</span>
 
-class TextController extends Controller
-{
-    public function home(Request $request)//实例化对象
-
-    {    
-        //获取全部请求的数据
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TextController</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Controller</span>
+</span>&#123;
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">home</span><span class="hljs-params">(Request $request)</span>//实例化对象
+        
+    </span>&#123;	
+        <span class="hljs-comment">//获取全部请求的数据</span>
         dump($request-&gt;all());
-        //只获取a,b字段的值
-        dump($request-&gt;only([&#39;a&#39;, &#39;b&#39;]));
-        //获取除了a,b以外的值
-        dump($request-&gt;except([&#39;a&#39;, &#39;b&#39;]));
-        //判断是否存在id的这个字段,exists完全等同于has
-        dump($request-&gt;has(&#39;id&#39;));
+		<span class="hljs-comment">//只获取a,b字段的值</span>
+        dump($request-&gt;only([<span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>]));
+		<span class="hljs-comment">//获取除了a,b以外的值</span>
+        dump($request-&gt;except([<span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>]));
+		<span class="hljs-comment">//判断是否存在id的这个字段,exists完全等同于has</span>
+        dump($request-&gt;has(<span class="hljs-string">'id'</span>));
 
-        dump($request-&gt;exists(&#39;id&#39;));
-        //获取id的值,如果请求字段为空的话就用 &#39;xxx&#39; 代替
-        dump($request-&gt;input(&#39;id&#39;, &#39;xxx&#39;));
-        //&quot;.&quot;可以用来分别获取每个数组元素
-        dump($request-&gt;input(&#39;books.0&#39;));
-    }
-}
-</code></pre>
+        dump($request-&gt;exists(<span class="hljs-string">'id'</span>));
+		<span class="hljs-comment">//获取id的值,如果请求字段为空的话就用 'xxx' 代替</span>
+        dump($request-&gt;input(<span class="hljs-string">'id'</span>, <span class="hljs-string">'xxx'</span>));
+        <span class="hljs-comment">//"."可以用来分别获取每个数组元素</span>
+        dump($request-&gt;input(<span class="hljs-string">'books.0'</span>));
+    &#125;
+&#125;</code></pre>
+
 
             </article>
             <hr>

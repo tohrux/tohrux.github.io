@@ -148,7 +148,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    925 字
+                    874 字
                   </span>
                 
 
@@ -158,7 +158,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    15
+                    14
                      分钟
                   </span>
                 
@@ -188,143 +188,155 @@
             
             <article class="markdown-body">
               <p><em>笔记来源于书</em></p>
-<h3 id="原生ajax写法"><a href="#原生ajax写法" class="headerlink" title="原生ajax写法"></a>原生ajax写法</h3><pre><code class="js">          var xhr = new XMLHttpRequest();
-        //
-        xhr.open(&quot;post&quot;, &quot;test.php&quot;);
-        //
-        xhr.setRequestHeader(&quot;Content-type&quot;, &quot;application/x-www-form-urlencoded&quot;);
-        //
-        xhr.send(&quot;a=1&amp;b=10&quot;);
-        //
-        xhr.onreadystatechange = function () {
-            if (xhr.status == 200 &amp;&amp; xhr.readyState == 4) {
-                var result = xhr.responseText;
-                alert(result);
-            }
-        }</code></pre>
+<h3 id="原生ajax写法"><a href="#原生ajax写法" class="headerlink" title="原生ajax写法"></a>原生ajax写法</h3><pre><code class="hljs js"><span class="hljs-keyword">var</span> xhr = <span class="hljs-keyword">new</span> XMLHttpRequest();
+ <span class="hljs-comment">//</span>
+ xhr.open(<span class="hljs-string">"post"</span>, <span class="hljs-string">"test.php"</span>);
+ <span class="hljs-comment">//</span>
+ xhr.setRequestHeader(<span class="hljs-string">"Content-type"</span>, <span class="hljs-string">"application/x-www-form-urlencoded"</span>);
+ <span class="hljs-comment">//</span>
+ xhr.send(<span class="hljs-string">"a=1&amp;b=10"</span>);
+ <span class="hljs-comment">//</span>
+ xhr.onreadystatechange = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+     <span class="hljs-keyword">if</span> (xhr.status == <span class="hljs-number">200</span> &amp;&amp; xhr.readyState == <span class="hljs-number">4</span>) &#123;
+         <span class="hljs-keyword">var</span> result = xhr.responseText;
+         alert(result);
+     &#125;
+ &#125;</code></pre>
+
 <p>👩: 在上面的代码中:</p>
 <p>​    1.<code>XMLHttpRequest()</code>是ajax的一个内置对象,能知道传值的地址,传地数据和传递数据的方式</p>
 <p>​    2.<code>open()</code>,初始化<code>XMLHttpRequest</code>对象,指定http请求的方法和要使用的服务器的URL;</p>
 <p>​            格式:<code>open(method: string, url: string):</code></p>
 <p>​    3.<code>send()</code>,发送该请求,指定发送的数据,如果http请求是<code>get</code>,可以不指定参数,或者用null..</p>
 <p>​    4. <code>status==200</code>:成功处理了请求，一般情况下都是返回此状态码</p>
-<pre><code> 5. `readyState==4` 请求完成加载
- 6. `onreadystatechange`:XMLHttpRequest调用的时间处理器,他会检测readystate和http的状态,即上面的4和5.</code></pre><h3 id="jQuery中的ajax的写法"><a href="#jQuery中的ajax的写法" class="headerlink" title="jQuery中的ajax的写法"></a>jQuery中的ajax的写法</h3><pre><code class="js"> $.ajax({
-            url: &#39;&#39;,
-            type: &#39;post|get&#39;,
-            data: &#39;数据&#39;,
-            dataType: &#39;text|json|xml|script&#39;,
-            success: function (re) {
-                //服务器回传的数据处理
-            }
-        })</code></pre>
+<pre><code>5. `readyState==4` 请求完成加载
+6. `onreadystatechange`:XMLHttpRequest调用的时间处理器,他会检测readystate和http的状态,即上面的4和5.</code></pre><h3 id="jQuery中的ajax的写法"><a href="#jQuery中的ajax的写法" class="headerlink" title="jQuery中的ajax的写法"></a>jQuery中的ajax的写法</h3><pre><code class="hljs js">$.ajax(&#123;
+           <span class="hljs-attr">url</span>: <span class="hljs-string">''</span>,
+           <span class="hljs-attr">type</span>: <span class="hljs-string">'post|get'</span>,
+           <span class="hljs-attr">data</span>: <span class="hljs-string">'数据'</span>,
+           <span class="hljs-attr">dataType</span>: <span class="hljs-string">'text|json|xml|script'</span>,
+           <span class="hljs-attr">success</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">re</span>) </span>&#123;
+               <span class="hljs-comment">//服务器回传的数据处理</span>
+           &#125;
+       &#125;)</code></pre>
+
 <h3 id="JSON对象"><a href="#JSON对象" class="headerlink" title="JSON对象"></a>JSON对象</h3><p>可以理解为有格式的字符串,以键值的形式存放;他的作用是存放数据</p>
 <p>有两种格式:</p>
-<pre><code>{name:&#39;angelina&#39;,age:19};</code></pre><pre><code class="js">[{name:&#39;angelina&#39;,age:19},{name:&#39;angelina&#39;,age:19},{name:&#39;angelina&#39;,age:19}]</code></pre>
+<pre><code class="hljs plain">&#123;name:&apos;angelina&apos;,age:19&#125;;</code></pre>
+
+<pre><code class="hljs js">[&#123;<span class="hljs-attr">name</span>:<span class="hljs-string">'angelina'</span>,<span class="hljs-attr">age</span>:<span class="hljs-number">19</span>&#125;,&#123;<span class="hljs-attr">name</span>:<span class="hljs-string">'angelina'</span>,<span class="hljs-attr">age</span>:<span class="hljs-number">19</span>&#125;,&#123;<span class="hljs-attr">name</span>:<span class="hljs-string">'angelina'</span>,<span class="hljs-attr">age</span>:<span class="hljs-number">19</span>&#125;]</code></pre>
+
 <p>两种格式的结合:</p>
-<pre><code class="js">{list:[{name:&#39;angelina&#39;,age:17},{name:&#39;eyjfjalla&#39;,age:18}]}</code></pre>
+<pre><code class="hljs js">&#123;<span class="hljs-attr">list</span>:[&#123;<span class="hljs-attr">name</span>:<span class="hljs-string">'angelina'</span>,<span class="hljs-attr">age</span>:<span class="hljs-number">17</span>&#125;,&#123;<span class="hljs-attr">name</span>:<span class="hljs-string">'eyjfjalla'</span>,<span class="hljs-attr">age</span>:<span class="hljs-number">18</span>&#125;]&#125;</code></pre>
+
 <h3 id="对象解析为JSON对象"><a href="#对象解析为JSON对象" class="headerlink" title="对象解析为JSON对象"></a>对象解析为JSON对象</h3><p><code>JSON.stringify(Object)</code></p>
 <h3 id="字符串解析为JSON对象"><a href="#字符串解析为JSON对象" class="headerlink" title="字符串解析为JSON对象"></a>字符串解析为JSON对象</h3><p>JSON.parse({…,..,…})</p>
-<h3 id="JSON传值"><a href="#JSON传值" class="headerlink" title="JSON传值"></a>JSON传值</h3><pre><code class="html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
+<h3 id="JSON传值"><a href="#JSON传值" class="headerlink" title="JSON传值"></a>JSON传值</h3><pre><code class="hljs html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"en"</span>&gt;</span>
 
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;script src=&quot;jquery-3.4.1.js&quot;&gt;&lt;/script&gt;
-    &lt;script type=&quot;text/JavaScript&quot;&gt;
-        var aStudent = {
-            name: &#39;angelina&#39;,
-            age: 18
-        };
-        var students = [{
-            name: &#39;a&#39;,
-            age: 12
-        }, {
-            name: &#39;b&#39;,
-            age: 13
-        }];
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"UTF-8"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"viewport"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"width=device-width, initial-scale=1.0"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">"X-UA-Compatible"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"ie=edge"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Document<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"jquery-3.4.1.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/JavaScript"</span>&gt;</span><span class="javascript">
+        <span class="hljs-keyword">var</span> aStudent = &#123;
+            <span class="hljs-attr">name</span>: <span class="hljs-string">'angelina'</span>,
+            <span class="hljs-attr">age</span>: <span class="hljs-number">18</span>
+        &#125;;
+        <span class="hljs-keyword">var</span> students = [&#123;
+            <span class="hljs-attr">name</span>: <span class="hljs-string">'a'</span>,
+            <span class="hljs-attr">age</span>: <span class="hljs-number">12</span>
+        &#125;, &#123;
+            <span class="hljs-attr">name</span>: <span class="hljs-string">'b'</span>,
+            <span class="hljs-attr">age</span>: <span class="hljs-number">13</span>
+        &#125;];
 
-        $(function () {
-            var n;
-            var a;
-            for (var k in students) {
+        $(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+            <span class="hljs-keyword">var</span> n;
+            <span class="hljs-keyword">var</span> a;
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> k <span class="hljs-keyword">in</span> students) &#123;
                 n = students[k].name;
                 a = students[k].age;
-                $(&quot;#s&quot;).append(&quot;&lt;tr&gt;&lt;td&gt;&quot;+n+&quot;&lt;/td&gt;&lt;td&gt;&quot;+a+&quot;&lt;/td&gt;&lt;/tr&gt;&quot;);
-            }
-        })
-    &lt;/script&gt;
-&lt;/head&gt;
+                $(<span class="hljs-string">"#s"</span>).append(<span class="hljs-string">"&lt;tr&gt;&lt;td&gt;"</span>+n+<span class="hljs-string">"&lt;/td&gt;&lt;td&gt;"</span>+a+<span class="hljs-string">"&lt;/td&gt;&lt;/tr&gt;"</span>);
+            &#125;
+        &#125;)
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
 
-&lt;body&gt;
-    &lt;h1&gt;JSON:&lt;/h1&gt;
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>JSON:<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
     aStudent的名称:
-    &lt;script type=&quot;text/JavaScript&quot;&gt;document.write(aStudent.name)&lt;/script&gt;
-    &lt;br /&gt;
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/JavaScript"</span>&gt;</span><span class="javascript"><span class="hljs-built_in">document</span>.write(aStudent.name)</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span>
     students的第一个名称:
-    &lt;script&gt;
-        document.write(students[0].name)
-    &lt;/script&gt;
-    &lt;table id=&quot;s&quot; border=&quot;1&quot;&gt;
-        &lt;tr&gt;
-            &lt;th&gt;name&lt;/th&gt;
-            &lt;th&gt;age&lt;/th&gt;
-        &lt;/tr&gt;
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+        <span class="hljs-built_in">document</span>.write(students[<span class="hljs-number">0</span>].name)
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">table</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"s"</span> <span class="hljs-attr">border</span>=<span class="hljs-string">"1"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>name<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>age<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
 
-    &lt;/table&gt;
-&lt;/body&gt;
+    <span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
 
-&lt;/html&gt;</code></pre>
-<h3 id="XML的基本格式"><a href="#XML的基本格式" class="headerlink" title="XML的基本格式"></a>XML的基本格式</h3><pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
-&lt;list&gt;
-    &lt;province id=&quot;1&quot; name=&quot;河北&quot;&gt;
-        &lt;city id=&quot;11&quot; name=&quot;石家庄&quot;&gt;&lt;/city&gt;
-        &lt;city id=&quot;12&quot; name=&quot;承德&quot;&gt;&lt;/city&gt;
-    &lt;/province&gt;
-&lt;/list&gt;</code></pre>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre>
+
+<h3 id="XML的基本格式"><a href="#XML的基本格式" class="headerlink" title="XML的基本格式"></a>XML的基本格式</h3><pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version="1.0" encoding="utf-8" ?&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">list</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">province</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"1"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"河北"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">city</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"11"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"石家庄"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">city</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">city</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"12"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"承德"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">city</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">province</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">list</span>&gt;</span></code></pre>
+
 <h3 id="load"><a href="#load" class="headerlink" title="load()"></a>load()</h3><p>语法:</p>
-<pre><code class="js">$(selector).load(url,data,callback)</code></pre>
+<pre><code class="hljs js">$(selector).load(url,data,callback)</code></pre>
+
 <p>url:文件地址</p>
 <p>data: 规定与请求共同发送的查询字符串键值对的集合,是可选的</p>
 <p>fallback: 回调函数,可选的</p>
 <p>👇</p>
 <p>fallback里面可以有三个值:</p>
-<pre><code class="js">$(&#39;#who&#39;).load(&quot;book.html&quot;, function (responseText, statusText,xhr){}</code></pre>
+<pre><code class="hljs js">$(<span class="hljs-string">'#who'</span>).load(<span class="hljs-string">"book.html"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">responseText, statusText,xhr</span>)</span>&#123;&#125;</code></pre>
+
 <p>responseText为返回的调用成功后的结果内容</p>
 <p>statusText为调用的状态,成功的话会 返回 “success”</p>
 <p>xhr 为整个XMLHtmlRequest对象</p>
 <p>👩:可以通过console log 来check it out</p>
-<pre><code class="js">$(function () {
-            $(&#39;.button2&#39;).click(function () {
-                $(&#39;#who&#39;).load(&quot;book.html&quot;, function (responseText, statusText, xhr) {
-                    console.log(xhr.status);
-                    console.log(xhr.responseText);
-                    console.log(xhr.statusText);
-                    console.log(responseText);
-                    console.log(statusText);
-                });
-            })
-        })</code></pre>
-<pre><code class="html">result:
+<pre><code class="hljs js">$(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+            $(<span class="hljs-string">'.button2'</span>).click(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+                $(<span class="hljs-string">'#who'</span>).load(<span class="hljs-string">"book.html"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">responseText, statusText, xhr</span>) </span>&#123;
+                    <span class="hljs-built_in">console</span>.log(xhr.status);
+                    <span class="hljs-built_in">console</span>.log(xhr.responseText);
+                    <span class="hljs-built_in">console</span>.log(xhr.statusText);
+                    <span class="hljs-built_in">console</span>.log(responseText);
+                    <span class="hljs-built_in">console</span>.log(statusText);
+                &#125;);
+            &#125;)
+        &#125;)</code></pre>
+
+<pre><code class="hljs html">result:
 
 xdd.html:14 200
-xdd.html:15     &lt;ul&gt;
-        &lt;li&gt;nihao&lt;/li&gt;
-        &lt;li&gt;nihao&lt;/li&gt;
-        &lt;li&gt;nihao&lt;/li&gt;
-        &lt;li&gt;nihao&lt;/li&gt;
-    &lt;/ul&gt;
+xdd.html:15     <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>nihao<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>nihao<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>nihao<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>nihao<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
 xdd.html:16 OK
-xdd.html:17     &lt;ul&gt;
-        &lt;li&gt;nihao&lt;/li&gt;
-        &lt;li&gt;nihao&lt;/li&gt;
-        &lt;li&gt;nihao&lt;/li&gt;
-        &lt;li&gt;nihao&lt;/li&gt;
-    &lt;/ul&gt;
+xdd.html:17     <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>nihao<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>nihao<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>nihao<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>nihao<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
 xdd.html:18 success</code></pre>
+
 
             </article>
             <hr>

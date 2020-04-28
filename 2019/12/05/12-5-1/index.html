@@ -148,7 +148,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    207 字
+                    195 字
                   </span>
                 
 
@@ -158,7 +158,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    3
+                    2
                      分钟
                   </span>
                 
@@ -190,27 +190,28 @@
               <h2 id="属性选择器"><a href="#属性选择器" class="headerlink" title="属性选择器"></a>属性选择器</h2><p>语法:</p>
 <p><code>E[attribute]</code></p>
 <p>eg:</p>
-<pre><code class="css">td[lang]{} // 有lang属性的td都会被选择
-td[title=&quot;a&quot;]{} //title属性为&quot;a&quot;的都会被选择
-~=&quot;a&quot; //属性值包含&quot;a&quot; 且&quot;a&quot;前后只能有空格
-|=&quot;a&quot; //以&quot;a&quot;开头,&quot;a&quot;必须为独立单词,后面可以跟上连字符&quot;-&quot;</code></pre>
-<h2 id="兄弟选择器"><a href="#兄弟选择器" class="headerlink" title="兄弟选择器"></a>兄弟选择器</h2><pre><code class="css">    &lt;style&gt;
-        div+span {
+<pre><code class="hljs css">td[lang]&#123;&#125; // 有lang属性的td都会被选择
+td[title="a"]&#123;&#125; //title属性为"a"的都会被选择
+~="a" //属性值包含"a" 且"a"前后只能有空格
+|="a" //以"a"开头,"a"必须为独立单词,后面可以跟上连字符"-"</code></pre>
+
+<h2 id="兄弟选择器"><a href="#兄弟选择器" class="headerlink" title="兄弟选择器"></a>兄弟选择器</h2><pre><code class="hljs css">    &lt;style&gt;
+        div+span &#123;
             color: brown !important;
-        }
+        &#125;
     &lt;/style&gt;
 
     &lt;span&gt;span0&lt;/span&gt;ad
-    &lt;div class=&quot;hi&quot;&gt;div0&lt;/div&gt;
+    &lt;div class="hi"&gt;div0&lt;/div&gt;
     &lt;span&gt;span2&lt;/span&gt;k
     &lt;span&gt;span3&lt;/span&gt;
 
 👩:这里起效果的只有span2 
 
-h2~p{
+h2~p&#123;
     color:red; //和该h2是兄弟并且在这个h2所有的p都会受到影响
-}
-</code></pre>
+&#125;</code></pre>
+
 <h2 id="伪类选择器"><a href="#伪类选择器" class="headerlink" title="伪类选择器"></a>伪类选择器</h2><ul>
 <li>:active</li>
 <li>:focus //input</li>

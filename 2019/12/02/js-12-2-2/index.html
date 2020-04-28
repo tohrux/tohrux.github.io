@@ -148,7 +148,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    319 字
+                    315 字
                   </span>
                 
 
@@ -201,44 +201,51 @@
 <ul>
 <li>自定义对象</li>
 </ul>
-<pre><code class="js">var obj = new Object();</code></pre>
-<h3 id="对象的创建"><a href="#对象的创建" class="headerlink" title="对象的创建"></a>对象的创建</h3><pre><code class="js">    //通过new关键字创建,调用了construct
-    var obj = new Object();
-    //字面量创建
-    var obj2 = {};
-    //构造函数
-    var User = function (name, age) {
-        this.name = name;
-        this.age = age;
-    }
-    var user1 = new User(&#39;angelina&#39;, 23);
-    console.log(user1);</code></pre>
-<h3 id="两个变量被同一个对象引用时"><a href="#两个变量被同一个对象引用时" class="headerlink" title="两个变量被同一个对象引用时"></a>两个变量被同一个对象引用时</h3><pre><code class="js">    var obj = new Object();
-    obj.name = &#39;angelina&#39;;
-    var obj2 = obj;
-    obj2.name = &#39;eyjafjalla&#39;;
-    console.log(obj.name);//eyjafjalla</code></pre>
+<pre><code class="hljs js"><span class="hljs-keyword">var</span> obj = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Object</span>();</code></pre>
+
+<h3 id="对象的创建"><a href="#对象的创建" class="headerlink" title="对象的创建"></a>对象的创建</h3><pre><code class="hljs js"><span class="hljs-comment">//通过new关键字创建,调用了construct</span>
+<span class="hljs-keyword">var</span> obj = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Object</span>();
+<span class="hljs-comment">//字面量创建</span>
+<span class="hljs-keyword">var</span> obj2 = &#123;&#125;;
+<span class="hljs-comment">//构造函数</span>
+<span class="hljs-keyword">var</span> User = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">name, age</span>) </span>&#123;
+    <span class="hljs-keyword">this</span>.name = name;
+    <span class="hljs-keyword">this</span>.age = age;
+&#125;
+<span class="hljs-keyword">var</span> user1 = <span class="hljs-keyword">new</span> User(<span class="hljs-string">'angelina'</span>, <span class="hljs-number">23</span>);
+<span class="hljs-built_in">console</span>.log(user1);</code></pre>
+
+<h3 id="两个变量被同一个对象引用时"><a href="#两个变量被同一个对象引用时" class="headerlink" title="两个变量被同一个对象引用时"></a>两个变量被同一个对象引用时</h3><pre><code class="hljs js"><span class="hljs-keyword">var</span> obj = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Object</span>();
+obj.name = <span class="hljs-string">'angelina'</span>;
+<span class="hljs-keyword">var</span> obj2 = obj;
+obj2.name = <span class="hljs-string">'eyjafjalla'</span>;
+<span class="hljs-built_in">console</span>.log(obj.name);<span class="hljs-comment">//eyjafjalla</span></code></pre>
+
 <p>👩:这里输出<code>eyjafjalla</code>是因为 obj2 和 obj 都指向了同一个堆内存地址</p>
-<h3 id="打印对象"><a href="#打印对象" class="headerlink" title="打印对象"></a>打印对象</h3><pre><code class="js">    var obj = new Object();
-    obj.name = &#39;angelina&#39;;
-    obj.age = 12;
-    console.log(obj);
-    console.log(JSON.stringify(obj));//转换为字符串</code></pre>
-<p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191202131731.png" srcset="undefined" alt=""></p>
+<h3 id="打印对象"><a href="#打印对象" class="headerlink" title="打印对象"></a>打印对象</h3><pre><code class="hljs js"><span class="hljs-keyword">var</span> obj = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Object</span>();
+obj.name = <span class="hljs-string">'angelina'</span>;
+obj.age = <span class="hljs-number">12</span>;
+<span class="hljs-built_in">console</span>.log(obj);
+<span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">JSON</span>.stringify(obj));<span class="hljs-comment">//转换为字符串</span></code></pre>
+
+<p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191202131731.png" srcset="/img/loading.gif" alt=""></p>
 <p>👩:属性值可以是数组,对象也可以是方法</p>
-<h3 id="删除对象的属性"><a href="#删除对象的属性" class="headerlink" title="删除对象的属性"></a>删除对象的属性</h3><pre><code class="js">delete obj.name;</code></pre>
+<h3 id="删除对象的属性"><a href="#删除对象的属性" class="headerlink" title="删除对象的属性"></a>删除对象的属性</h3><pre><code class="hljs js"><span class="hljs-keyword">delete</span> obj.name;</code></pre>
+
 <h3 id="in-属性"><a href="#in-属性" class="headerlink" title="in 属性"></a>in 属性</h3><p>可以用来检测一个对象是否有某个属性</p>
-<pre><code class="js">console.log(&quot;name&quot; in obj);//有的话为true,否则为false</code></pre>
+<pre><code class="hljs js"><span class="hljs-built_in">console</span>.log(<span class="hljs-string">"name"</span> <span class="hljs-keyword">in</span> obj);<span class="hljs-comment">//有的话为true,否则为false</span></code></pre>
+
 <p>👩:这里要注意,属性要用双引号括住</p>
 <h3 id="for-in-不需要获取数组或对象的长度"><a href="#for-in-不需要获取数组或对象的长度" class="headerlink" title="for in(不需要获取数组或对象的长度)"></a>for in(不需要获取数组或对象的长度)</h3><p>用来遍历对象,数组</p>
 <p>eg:</p>
-<pre><code class="js">    var jill = {
-        id: 1,
-        name: &#39;angelina&#39;
-    };
-    for (var key in jill) {
-        console.log(key + jill[key]);
-    }</code></pre>
+<pre><code class="hljs js"><span class="hljs-keyword">var</span> jill = &#123;
+    <span class="hljs-attr">id</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-attr">name</span>: <span class="hljs-string">'angelina'</span>
+&#125;;
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> key <span class="hljs-keyword">in</span> jill) &#123;
+    <span class="hljs-built_in">console</span>.log(key + jill[key]);
+&#125;</code></pre>
+
 <p>*<code>key</code> 为键 <code>jill[key]</code>为值</p>
 
             </article>
