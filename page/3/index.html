@@ -7,29 +7,35 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="https://cdn.jsdelivr.net/gh/tohrux/tohrux.github.io@1.0//img/apple-touch-icon.png# 用于苹果设备的 icon">
-  <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/tohrux/tohrux.github.io@1.0//img/favicon.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon2.png">
+  <link rel="icon" type="image/png" href="/img/favicon2.png">
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#FFA500">
   <meta name="description" content="">
   <meta name="author" content="">
   <meta name="keywords" content="">
   <title>Tohrux!</title>
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/font-awesome/css/all.min.css"  >
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/bootstrap/css/bootstrap.min.css"  >
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/mdbootstrap/css/mdb.min.css"  >
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/github-markdown/github-markdown.min.css"  >
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1067060_qzomjdt8bmp.css">
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/bootstrap/css/bootstrap.min.css" />
+<link  rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/github-markdown/github-markdown.min.css" />
 
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/prettify/tomorrow-night.min.css"  >
-
-<link rel="stylesheet" href="/css/main.css"  >
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.18.1/styles/github-gist.min.css" />
 
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/fancybox/jquery.fancybox.min.css/jquery.fancybox.min.css"  >
+<!-- 主题依赖的图标库，不要自行修改 -->
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_fmb4a04yx8h.css">
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_ijqayz9ro8k.css">
+
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
 
 
 </head>
@@ -40,7 +46,7 @@
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
-       href="/">&nbsp;<strong>tohru&#39;s blog</strong>&nbsp;</a>
+       href="/">&nbsp;<strong>Tohrux!</strong>&nbsp;</a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent"
@@ -54,20 +60,56 @@
         
           
           
+          
           <li class="nav-item">
-            <a class="nav-link" href="/">Home</a>
+            <a class="nav-link" href="/">
+              <i class="iconfont icon-home-fill"></i>
+              首页</a>
           </li>
         
           
           
+          
           <li class="nav-item">
-            <a class="nav-link" href="/about/">关于我</a>
+            <a class="nav-link" href="/archives/">
+              <i class="iconfont icon-archive-fill"></i>
+              归档</a>
           </li>
         
           
           
+          
           <li class="nav-item">
-            <a class="nav-link" href="/archives/">回档 !</a>
+            <a class="nav-link" href="/categories/">
+              <i class="iconfont icon-category-fill"></i>
+              分类</a>
+          </li>
+        
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/tags/">
+              <i class="iconfont icon-tags-fill"></i>
+              标签</a>
+          </li>
+        
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/about/">
+              <i class="iconfont icon-user-fill"></i>
+              关于</a>
+          </li>
+        
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/links/">
+              <i class="iconfont icon-link-fill"></i>
+              友链</a>
           </li>
         
         
@@ -79,16 +121,13 @@
       </ul>
     </div>
   </div>
-
-
 </nav>
 
-    <div class="view intro-2" id="background"
-         style="background: url('https://cdn.jsdelivr.net/gh/tohrux/tohrux.github.io@1.0//img/fullVersionxx.jpg')no-repeat center center;
-           background-size: cover;
-           background-attachment: scroll;">
+    <div class="view intro-2" id="background" parallax=true
+         style="background: url('https://cdn.jsdelivr.net/gh/tohrux/tohrux.github.io@1.0//img/fullVersionxx.jpg') no-repeat center center;
+           background-size: cover;">
       <div class="full-bg-img">
-        <div class="mask rgba-black-light flex-center">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="container text-center white-text fadeInUp">
             <span class="h2" id="subtitle">
               
@@ -99,7 +138,7 @@
 
           
             <div class="scroll-down-bar">
-              <i class="fas fa-angle-down scroll-down-arrow"></i>
+              <i class="iconfont icon-arrowdown"></i>
             </div>
           
         </div>
@@ -110,7 +149,8 @@
   <main>
     
       <div class="container nopadding-md">
-        <div class="py-5 z-depth-3" id="board">
+        <div class="py-5" id="board"
+          style=margin-top:0>
           
           <div class="container">
             <div class="row">
@@ -118,252 +158,24 @@
                 
 
 
-  <div class="row mb-4 mx-auto">
+  <div class="row mx-auto index-card">
     
     
-      <div class="col-12 col-md-4 m-auto">
-        <a href="/2019/12/07/phpMysql/" target="_self">
-          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191209180726.png" srcset="undefined" alt="phpMysql -private" class="img-fluid rounded z-depth-3 index-thumbnails">
-        </a>
-      </div>
-    
-    <div class="col-12 col-md-8 m-auto">
-      <a href="/2019/12/07/phpMysql/">
-        <p class="h4 index-header">phpMysql -private</p>
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">
-访问数据库1.连接数据库
-//使用 mysqli_connect()
-2.选择服务器
-//使用 mysqli_select_db()来选择
-3.执行数据库操作
-//增删改查四部曲
-
-//
-    insert into
-//
-    delete
-//
-    update
-// 
-    select
-4.清除记录集,释放系统资源
-mysqli_free_result();
-5.关闭MySQL服务器
-mysqli_close();
-连接MySQL服务器$mysql = new mysqli($server,$username,$password,$dbname);
-//$server 服务器地址 一般本地的为localhost
-mysqli 对象的内容mysqli Object
-(
-    [affected_rows] =&gt; 0
-    [client_info] =&gt; mysqlnd 5.0.12-dev - 20150407 - $Id: 7cc7cc96e675f6d72e5cf0f267f48e167c2abb23 $
-    [client_version]</div>
-        </div>
-      </a>
-
-      <div>
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2019-12-07&nbsp;&nbsp;
-        
-        
-        
-          <i class="iconfont icon-tag"></i>
-          
-            <a href="/tags/php">php</a>&nbsp;
-          
-            <a href="/tags/database">database</a>&nbsp;
-          
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mb-4 mx-auto">
-    
-    
-      <div class="col-12 col-md-4 m-auto">
-        <a href="/2019/12/06/phpFaceToObject/" target="_self">
-          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191207110327.png" srcset="undefined" alt="phpFaceToObject1" class="img-fluid rounded z-depth-3 index-thumbnails">
-        </a>
-      </div>
-    
-    <div class="col-12 col-md-8 m-auto">
-      <a href="/2019/12/06/phpFaceToObject/">
-        <p class="h4 index-header">phpFaceToObject1</p>
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">引入php文件include &#39;angelina.php&#39;;
-构造函数:两种方法:
-function __ construct($name,$sex,$age){}
-//
-function __ &quot;此类的类名&quot;(...){}
-析构函数当对象结束其生命周期时,系统会自动执行这个函数
-class Person{
-    function __destruct
-}
-封装varphp中默认将var 关键字解释为public,var等同于public
-public用public修饰的属性和方法是公开的,在程序的任何位置都可以访问,子类可以继承父类所有的公共成员
-privateprivate修饰的属性和方法只能在所属类的内部访问,子类也不能继承
-//例如现在先定义一个类
-      class Person{
-        public $name;
-        private $money;
-        function __construct(){
-            $this-&gt;name = &quot;jack&quot;;
-   </div>
-        </div>
-      </a>
-
-      <div>
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2019-12-06&nbsp;&nbsp;
-        
-        
-        
-          <i class="iconfont icon-tag"></i>
-          
-            <a href="/tags/php">php</a>&nbsp;
-          
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mb-4 mx-auto">
-    
-    
-      <div class="col-12 col-md-4 m-auto">
-        <a href="/2019/12/06/phpAndWeb/" target="_self">
-          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191207110525.png" srcset="undefined" alt="php与Web的页面交互" class="img-fluid rounded z-depth-3 index-thumbnails">
-        </a>
-      </div>
-    
-    <div class="col-12 col-md-8 m-auto">
-      <a href="/2019/12/06/phpAndWeb/">
-        <p class="h4 index-header">php与Web的页面交互</p>
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">$_GET[] &amp; $_POST[]究极全局变量 返回的是数组的形式
-获取
-var_dump($_GET[&#39;username&#39;]);
-$_FILES[]返回的是数组形式的5个值
-需要在html文件中如下设置:
-enctype=&quot;multipart/form-data&quot;
-$_COOKIE[]设置一个cookiesetcookie(&#39;name&#39;,&#39;angelina&#39;,0,&#39;/&#39;);//分别为 名称,内容,存在时间(为0的话意味着在页面关闭时就会删除该cookie),目录(不设置目录的话,只对当前目录有效)
-判断cookie是否存在:isset(cookie[&#39;name&#39;]); //返回的是true or false
-创建cookie数组setcookie(&quot;location[1]&quot;,&quot;beijing&quot;);
-setcookie(&quot;location[2]&quot;,&quot;beijing&quot;);
-setcookie(&quo</div>
-        </div>
-      </a>
-
-      <div>
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2019-12-06&nbsp;&nbsp;
-        
-        
-        
-          <i class="iconfont icon-tag"></i>
-          
-            <a href="/tags/%E5%89%8D%E7%AB%AF">前端</a>&nbsp;
-          
-            <a href="/tags/php">php</a>&nbsp;
-          
-            <a href="/tags/web">web</a>&nbsp;
-          
-            <a href="/tags/%E9%A1%B5%E9%9D%A2%E4%BA%A4%E4%BA%92">页面交互</a>&nbsp;
-          
-            <a href="/tags/%E5%90%8E%E7%AB%AF">后端</a>&nbsp;
-          
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mb-4 mx-auto">
-    
-    
-      <div class="col-12 col-md-4 m-auto">
-        <a href="/2019/12/05/12-5-1/" target="_self">
-          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191205142652.png" srcset="undefined" alt="CSS选择器" class="img-fluid rounded z-depth-3 index-thumbnails">
-        </a>
-      </div>
-    
-    <div class="col-12 col-md-8 m-auto">
-      <a href="/2019/12/05/12-5-1/">
-        <p class="h4 index-header">CSS选择器</p>
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">属性选择器语法:
-E[attribute]
-eg:
-td[lang]{} // 有lang属性的td都会被选择
-td[title=&quot;a&quot;]{} //title属性为&quot;a&quot;的都会被选择
-~=&quot;a&quot; //属性值包含&quot;a&quot; 且&quot;a&quot;前后只能有空格
-|=&quot;a&quot; //以&quot;a&quot;开头,&quot;a&quot;必须为独立单词,后面可以跟上连字符&quot;-&quot;
-兄弟选择器    &lt;style&gt;
-        div+span {
-            color: brown !important;
-        }
-    &lt;/style&gt;
-
-    &lt;span&gt;span0&lt;/span&gt;ad
-    &lt;div class=&quot;hi&quot;&gt;div0&lt;/div&gt;
-    &lt;span&gt;span2&lt;/span&gt;k
-    &lt;span&gt</div>
-        </div>
-      </a>
-
-      <div>
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2019-12-05&nbsp;&nbsp;
-        
-        
-        
-          <i class="iconfont icon-tag"></i>
-          
-            <a href="/tags/css">css</a>&nbsp;
-          
-            <a href="/tags/selector">selector</a>&nbsp;
-          
-            <a href="/tags/%E5%89%8D%E7%AB%AF">前端</a>&nbsp;
-          
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mb-4 mx-auto">
-    
-    
-      <div class="col-12 col-md-4 m-auto">
+      <div class="col-12 col-md-4 m-auto index-img">
         <a href="/2019/12/04/nmewd/" target="_self">
-          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191204223042.png" srcset="undefined" alt="今天用bootstrap做的网页和随意画的一些logo" class="img-fluid rounded z-depth-3 index-thumbnails">
+          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191204223042.png" srcset="/img/loading.gif" alt="今天用bootstrap做的网页和随意画的一些logo">
         </a>
       </div>
     
-    <div class="col-12 col-md-8 m-auto">
-      <a href="/2019/12/04/nmewd/">
-        <p class="h4 index-header">今天用bootstrap做的网页和随意画的一些logo</p>
+    <div class="col-12 col-md-8 mx-auto index-info">
+      <a class="index-header" href="/2019/12/04/nmewd/">今天用bootstrap做的网页和随意画的一些logo</a>
+
+      <a href="/2019/12/04/nmewd/" class="index-excerpt">
         
         
           
         
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">今天用bootstrap做的网页和随意画的一些logo:太累了今天,眼睛都张不开了
+        <div>今天用bootstrap做的网页和随意画的一些logo:太累了今天,眼睛都张不开了
 
 
 
@@ -371,42 +183,45 @@ td[title=&quot;a&quot;]{} //title属性为&quot;a&quot;的都会被选择
 
 
 晚安世界</div>
-        </div>
       </a>
 
-      <div>
+      <div class="index-btm post-metas">
         
-          <i class="iconfont icon-riqi2"></i>&nbsp;2019-12-04&nbsp;&nbsp;
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>&nbsp;2019-12-04
+          </div>
         
         
         
-          <i class="iconfont icon-tag"></i>
-          
-            <a href="/tags/so%20tired">so tired</a>&nbsp;
-          
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/so-tired/">so tired</a>
+            
+          </div>
         
       </div>
     </div>
   </div>
 
-  <div class="row mb-4 mx-auto">
+  <div class="row mx-auto index-card">
     
     
-      <div class="col-12 col-md-4 m-auto">
+      <div class="col-12 col-md-4 m-auto index-img">
         <a href="/2019/12/03/noon/" target="_self">
-          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191203123400.png" srcset="undefined" alt="noon" class="img-fluid rounded z-depth-3 index-thumbnails">
+          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191203123400.png" srcset="/img/loading.gif" alt="noon">
         </a>
       </div>
     
-    <div class="col-12 col-md-8 m-auto">
-      <a href="/2019/12/03/noon/">
-        <p class="h4 index-header">noon</p>
+    <div class="col-12 col-md-8 mx-auto index-info">
+      <a class="index-header" href="/2019/12/03/noon/">noon</a>
+
+      <a href="/2019/12/03/noon/" class="index-excerpt">
         
         
           
         
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">慢悠悠地从食堂听着radwimps的&lt;火花&gt;走回机房.
+        <div>慢悠悠地从食堂听着radwimps的&lt;火花&gt;走回机房.
 穿着三件衣服略微有些冷的温度,
 一路上沿着学校的湖畔,
 阳光随着树荫没有规则地照射在脸上,
@@ -415,97 +230,95 @@ td[title=&quot;a&quot;]{} //title属性为&quot;a&quot;的都会被选择
 第一次明白了午后的阳光的含义,
 赞美太阳!
 </div>
-        </div>
       </a>
 
-      <div>
+      <div class="index-btm post-metas">
         
-          <i class="iconfont icon-riqi2"></i>&nbsp;2019-12-03&nbsp;&nbsp;
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>&nbsp;2019-12-03
+          </div>
         
         
         
-          <i class="iconfont icon-tag"></i>
-          
-            <a href="/tags/subarashii">subarashii</a>&nbsp;
-          
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/subarashii/">subarashii</a>
+            
+          </div>
         
       </div>
     </div>
   </div>
 
-  <div class="row mb-4 mx-auto">
+  <div class="row mx-auto index-card">
     
     
-      <div class="col-12 col-md-4 m-auto">
+      <div class="col-12 col-md-4 m-auto index-img">
         <a href="/2019/12/03/ajax/" target="_self">
-          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191203123124.png" srcset="undefined" alt="AJAX JSON对象 XML -private" class="img-fluid rounded z-depth-3 index-thumbnails">
+          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191203123124.png" srcset="/img/loading.gif" alt="AJAX JSON对象 XML -private">
         </a>
       </div>
     
-    <div class="col-12 col-md-8 m-auto">
-      <a href="/2019/12/03/ajax/">
-        <p class="h4 index-header">AJAX JSON对象 XML -private</p>
+    <div class="col-12 col-md-8 mx-auto index-info">
+      <a class="index-header" href="/2019/12/03/ajax/">AJAX JSON对象 XML -private</a>
+
+      <a href="/2019/12/03/ajax/" class="index-excerpt">
         
         
           
         
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">笔记来源于书
+        <div>笔记来源于书
 原生ajax写法          var xhr = new XMLHttpRequest();
         //
         xhr.open(&quot;post&quot;, &quot;test.php&quot;);
         //
-        xhr.setRequestHeader(&quot;Content-type&quot;, &quot;application/x-www-form-urlencoded&quot;);
-        //
-        xhr.send(&quot;a=1&amp;b=10&quot;);
-        //
-        xhr.onreadystatechange = function () {
-            if (xhr.status == 200 &amp;&amp; xhr.readyState == 4) {
-                var result = xhr.responseText;
-                alert(result);
- </div>
-        </div>
+        xhr.setRequestHeader(&quot;Content-type&quot;, &quot;ap</div>
       </a>
 
-      <div>
+      <div class="index-btm post-metas">
         
-          <i class="iconfont icon-riqi2"></i>&nbsp;2019-12-03&nbsp;&nbsp;
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>&nbsp;2019-12-03
+          </div>
         
         
         
-          <i class="iconfont icon-tag"></i>
-          
-            <a href="/tags/%E5%89%8D%E7%AB%AF">前端</a>&nbsp;
-          
-            <a href="/tags/ajax">ajax</a>&nbsp;
-          
-            <a href="/tags/javascript">javascript</a>&nbsp;
-          
-            <a href="/tags/jQuery">jQuery</a>&nbsp;
-          
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E5%89%8D%E7%AB%AF/">前端</a>
+            
+              <a href="/tags/ajax/">ajax</a>
+            
+              <a href="/tags/javascript/">javascript</a>
+            
+              <a href="/tags/jQuery/">jQuery</a>
+            
+          </div>
         
       </div>
     </div>
   </div>
 
-  <div class="row mb-4 mx-auto">
+  <div class="row mx-auto index-card">
     
     
-      <div class="col-12 col-md-4 m-auto">
+      <div class="col-12 col-md-4 m-auto index-img">
         <a href="/2019/12/03/jq1/" target="_self">
-          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191203123227.png" srcset="undefined" alt="jQ -private" class="img-fluid rounded z-depth-3 index-thumbnails">
+          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191203123227.png" srcset="/img/loading.gif" alt="jQ -private">
         </a>
       </div>
     
-    <div class="col-12 col-md-8 m-auto">
-      <a href="/2019/12/03/jq1/">
-        <p class="h4 index-header">jQ -private</p>
+    <div class="col-12 col-md-8 mx-auto index-info">
+      <a class="index-header" href="/2019/12/03/jq1/">jQ -private</a>
+
+      <a href="/2019/12/03/jq1/" class="index-excerpt">
         
         
           
         
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">测试是否引入成功$(document).ready(function(){
+        <div>测试是否引入成功$(document).ready(function(){
     alert(&#39;ohiyo~&#39;);
 })
 语法
@@ -517,58 +330,50 @@ $(“p.test”).hide(); //hide所有class=test 的p元素
 
 })
 
-$(document).ready(function(){
-
-})
-JSwindow.onload(function(){
-
-})
-区别:$(document).ready(funtion(){}) : 等HTML所有标签(DOM)都加载完才执行
-window.onload(function(){}): 等所有内容都加载完,包括外部的图片,才执行
-JQ选择器属性选择器$(&quot;element[attribute]&quot;)
-eg:
-$(&quot;div[titles=test]&quot;).css(5px solid red);//titles = &#39;test&#39; 的所有div
-$(&quo</div>
-        </div>
+$(document).r</div>
       </a>
 
-      <div>
+      <div class="index-btm post-metas">
         
-          <i class="iconfont icon-riqi2"></i>&nbsp;2019-12-03&nbsp;&nbsp;
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>&nbsp;2019-12-03
+          </div>
         
         
         
-          <i class="iconfont icon-tag"></i>
-          
-            <a href="/tags/%E5%89%8D%E7%AB%AF">前端</a>&nbsp;
-          
-            <a href="/tags/javascript">javascript</a>&nbsp;
-          
-            <a href="/tags/jQuery">jQuery</a>&nbsp;
-          
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E5%89%8D%E7%AB%AF/">前端</a>
+            
+              <a href="/tags/javascript/">javascript</a>
+            
+              <a href="/tags/jQuery/">jQuery</a>
+            
+          </div>
         
       </div>
     </div>
   </div>
 
-  <div class="row mb-4 mx-auto">
+  <div class="row mx-auto index-card">
     
     
-      <div class="col-12 col-md-4 m-auto">
+      <div class="col-12 col-md-4 m-auto index-img">
         <a href="/2019/12/02/12-2-3/" target="_self">
-          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191202143707.png" srcset="undefined" alt="js 数组 -private" class="img-fluid rounded z-depth-3 index-thumbnails">
+          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191202143707.png" srcset="/img/loading.gif" alt="js 数组 -private">
         </a>
       </div>
     
-    <div class="col-12 col-md-8 m-auto">
-      <a href="/2019/12/02/12-2-3/">
-        <p class="h4 index-header">js 数组 -private</p>
+    <div class="col-12 col-md-8 mx-auto index-info">
+      <a class="index-header" href="/2019/12/02/12-2-3/">js 数组 -private</a>
+
+      <a href="/2019/12/02/12-2-3/" class="index-excerpt">
         
         
           
         
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">方法的解释来源于w3c MDN
+        <div>方法的解释来源于w3c MDN
 数组方法concat()
 concat() 方法用于连接两个或多个数组。
 该方法不会改变现有的数组，而仅仅会返回被连接数组的一个副本。
@@ -577,55 +382,48 @@ concat() 方法用于连接两个或多个数组。
 arrayObject.concat(arrayX,arrayX,......,arrayX)
 👩:括号中可以给具体值,或者是数组名
 join()
-join() 方法将一个数组（或一个类数组对象）的所有元素连接成一个字符串并返回这个字符串。如果数组只有一个项目，那么将返回该项目而不使用分隔符。
-
-    const elements = [&#39;Fire&#39;, &#39;Air&#39;, &#39;Water&#39;];
-
-    console.log(elements.join());
-    // expected output: &quot;Fire,Air,Water&quot;
-
-    console.log(elements.join(&#39;&#39;));
-    // expected output: &quot;FireAirWater&quot;
-
-    consol</div>
-        </div>
+join() 方法将一个数组（或一个类数组对象）的所有元素连接成一个字符串</div>
       </a>
 
-      <div>
+      <div class="index-btm post-metas">
         
-          <i class="iconfont icon-riqi2"></i>&nbsp;2019-12-02&nbsp;&nbsp;
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>&nbsp;2019-12-02
+          </div>
         
         
         
-          <i class="iconfont icon-tag"></i>
-          
-            <a href="/tags/js">js</a>&nbsp;
-          
-            <a href="/tags/%E6%95%B0%E7%BB%84">数组</a>&nbsp;
-          
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/js/">js</a>
+            
+              <a href="/tags/%E6%95%B0%E7%BB%84/">数组</a>
+            
+          </div>
         
       </div>
     </div>
   </div>
 
-  <div class="row mb-4 mx-auto">
+  <div class="row mx-auto index-card">
     
     
-      <div class="col-12 col-md-4 m-auto">
+      <div class="col-12 col-md-4 m-auto index-img">
         <a href="/2019/12/02/js-12-2-2/" target="_self">
-          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191202110255.png" srcset="undefined" alt="js 对象 -private" class="img-fluid rounded z-depth-3 index-thumbnails">
+          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191202110255.png" srcset="/img/loading.gif" alt="js 对象 -private">
         </a>
       </div>
     
-    <div class="col-12 col-md-8 m-auto">
-      <a href="/2019/12/02/js-12-2-2/">
-        <p class="h4 index-header">js 对象 -private</p>
+    <div class="col-12 col-md-8 mx-auto index-info">
+      <a class="index-header" href="/2019/12/02/js-12-2-2/">js 对象 -private</a>
+
+      <a href="/2019/12/02/js-12-2-2/" class="index-excerpt">
         
         
           
         
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">栈内存和堆内存
+        <div>栈内存和堆内存
 https://blog.csdn.net/xdd19910505/article/details/41900693
 
 js中对象的分类
@@ -640,36 +438,223 @@ DOM,BOM,比如console,document
 自定义对象
 
 var obj = new Object();
-对象的创建    //通过new关键字创建,调用了construct
-    var obj = new Object();
-    //字面量创建
-    var obj2 = {};
-    //构造函数
-    var User = function (name, age) {
-        this.name = name;
-        this.age = age;
-    }
-    var user1 = new User(&#39;angelina&#39;, 23);
-    console.log(user1);
-两个变量被同一个对象引用时    var obj = new Object();
-    obj.name =</div>
-        </div>
+对象的创建    //通过new关键字创建,调用了con</div>
       </a>
 
-      <div>
+      <div class="index-btm post-metas">
         
-          <i class="iconfont icon-riqi2"></i>&nbsp;2019-12-02&nbsp;&nbsp;
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>&nbsp;2019-12-02
+          </div>
         
         
         
-          <i class="iconfont icon-tag"></i>
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/js/">js</a>
+            
+              <a href="/tags/%E5%89%8D%E7%AB%AF/">前端</a>
+            
+              <a href="/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">面向对象</a>
+            
+          </div>
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2019/12/02/js-12-2/" target="_self">
+          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191202105330.png" srcset="/img/loading.gif" alt="js运算符 -private">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 mx-auto index-info">
+      <a class="index-header" href="/2019/12/02/js-12-2/">js运算符 -private</a>
+
+      <a href="/2019/12/02/js-12-2/" class="index-excerpt">
+        
+        
           
-            <a href="/tags/js">js</a>&nbsp;
+        
+        <div>
+### `&`,`||`的短路问题
+
+console.log(1&amp;&amp;0);//0
+console.log(0&amp;&amp;1);//0
+console.log(0 || 1);//1
+console.log(1 || 0);//1
+对非布尔值进行布尔运算    var a = 1;
+    a = !a;
+    console.log(a); //false
+关系运算符/</div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>&nbsp;2019-12-02
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E5%89%8D%E7%AB%AF/">前端</a>
+            
+              <a href="/tags/javascript/">javascript</a>
+            
+          </div>
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2019/12/01/12-01/" target="_self">
+          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191202082444.jpg" srcset="/img/loading.gif" alt="12_01">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 mx-auto index-info">
+      <a class="index-header" href="/2019/12/01/12-01/">12_01</a>
+
+      <a href="/2019/12/01/12-01/" class="index-excerpt">
+        
+        
           
-            <a href="/tags/%E5%89%8D%E7%AB%AF">前端</a>&nbsp;
+        
+        <div>banner_img&amp;index_img来自arkstation.com的neon-yang 
+hello,12月,时间过得太快辣!!!!!!!
+再过一个月就是2020年了,东京奥运会,以及和高中同学约好的2020年要一起去日本,感觉我要🕊了.为什么我一直认为去旅行好浪费钱,感觉从买机/车票开始,钱就会在钱包中开始逐渐消失,而不像购买实物–钱只是换了一种形式陪在自己的身边.
+2020年还</div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>&nbsp;2019-12-01
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/diary/">diary</a>
+            
+          </div>
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2019/11/30/js11-30/" target="_self">
+          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191130140650.png" srcset="/img/loading.gif" alt="js变量 -private">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 mx-auto index-info">
+      <a class="index-header" href="/2019/11/30/js11-30/">js变量 -private</a>
+
+      <a href="/2019/11/30/js11-30/" class="index-excerpt">
+        
+        
           
-            <a href="/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1">面向对象</a>&nbsp;
+        
+        <div>本文为private个人向
+字面量字面量就是 常量,以前一直都不知道2333
+变量var是variant的缩写
+命名规范
+只能由$, _ ,英文字母,数字组成,但是不能用数字开头
+尽量使用驼峰命名
+不允许使用空格
+最多255个字符
+
+👩:在javascript中变量名是区分大小写的
+变量的数据类型值类型:number,boolean,string,undefined,null
+引用型: obje</div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>&nbsp;2019-11-30
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E5%89%8D%E7%AB%AF/">前端</a>
+            
+              <a href="/tags/javascript/">javascript</a>
+            
+          </div>
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2019/11/29/html5/" target="_self">
+          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191130141218.png" srcset="/img/loading.gif" alt="html5 -private">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 mx-auto index-info">
+      <a class="index-header" href="/2019/11/29/html5/">html5 -private</a>
+
+      <a href="/2019/11/29/html5/" class="index-excerpt">
+        
+        
           
+        
+        <div>本文算是一个个人向的笔记,涉及到的都是书上出现过,但是我不怎么熟悉的内容,相当于把书过一下
+index_img来自斉藤健吾@月曜日 南 ナ26ab (@kengo1212)： https://twitter.com/kengo1212?s=09
+插入个音乐播放器测试一下!
+
+
+
+一些常用H5标签    &lt;b&gt; bold
+    &lt;sub&gt; 下标
+    &lt;sup&gt</div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>&nbsp;2019-11-29
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E5%89%8D%E7%AB%AF/">前端</a>
+            
+              <a href="/tags/html/">html</a>
+            
+              <a href="/tags/private/">private</a>
+            
+          </div>
         
       </div>
     </div>
@@ -677,14 +662,14 @@ var obj = new Object();
 
 
 
-  <nav aria-label="index posts navigation">
-    <span class="pagination pg-blue justify-content-center mt-5" id="pagination">
-      <a class="extend prev" rel="prev" href="/page/2/"><i class="fas fa-angle-double-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/"><i class="fas fa-angle-double-right"></i></a>
+  <nav aria-label="navigation">
+    <span class="pagination" id="pagination">
+      <a class="extend prev" rel="prev" href="/page/2/"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/"><i class="iconfont icon-arrowright"></i></a>
     </span>
   </nav>
   
   <script>
-    for (ele of document.getElementById("pagination").getElementsByClassName("page-number")) {
+    for (ele of document.getElementById("pagination").getElementsByTagName("a")) {
       ele.href += '#board';
     }
   </script>
@@ -700,8 +685,8 @@ var obj = new Object();
   </main>
 
   
-    <a class="z-depth-1" id="scroll-top-button" href="#" role="button">
-      <i class="fa fa-chevron-up scroll-top-arrow" aria-hidden="true"></i>
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
     </a>
   
 
@@ -729,88 +714,56 @@ var obj = new Object();
 </div>
   
 
+  
+
+  
+
   <footer class="mt-5">
   <div class="text-center py-3">
-    <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><b>Hexo</b></a>
-    <i class="iconfont icon-love"></i>
-    <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"> <b>Fluid</b></a>
-    <br>
-
+    <div>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
+        <span>Fluid</span></a>
+    </div>
     
-  
-    <!-- 不蒜子统计PV -->
-    
-    &nbsp;<span id="busuanzi_container_site_pv">总访问量 
-          <span id="busuanzi_value_site_pv"></span> 次</span>&nbsp;
-  
-  
-    <!-- 不蒜子统计UV -->
-    
-    &nbsp;<span id="busuanzi_container_site_uv">总访客数 
-            <span id="busuanzi_value_site_uv"></span> 人</span>&nbsp;
-  
-  <br>
-
-
 
     
 
+    
   </div>
 </footer>
 
 <!-- SCRIPTS -->
-<script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/jquery/jquery.min.js" ></script>
-<script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/popper/popper.min.js" ></script>
-<script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/bootstrap/js/bootstrap.min.js" ></script>
-<script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/mdbootstrap/js/mdb.min.js" ></script>
-<script src="/js/main.js" ></script>
+<script  src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/jquery/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/bootstrap/js/bootstrap.min.js" ></script>
+<script  src="/js/main.js" ></script>
 
 
-  <script src="/js/lazyload.js" ></script>
+  <script  src="/js/lazyload.js" ></script>
 
 
 
 
 
-  <script src="/lib/smooth-scroll/smooth-scroll.min.js" ></script>
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
 
 
 
-  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
 
 
 <!-- Plugins -->
 
 
-  
 
-  
-
-  
-
-  
-
-  
-
-
-
-
-  <script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/prettify/prettify.min.js" ></script>
-  <script>
-    $(document).ready(function () {
-      $('pre').addClass('prettyprint  linenums');
-      prettyPrint();
-    })
-  </script>
-
-
-
-  <script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/typed/typed.min.js" ></script>
+  <script  src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/typed/typed.min.js" ></script>
   <script>
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "aloha!&nbsp;",
+        "&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
@@ -825,11 +778,11 @@ var obj = new Object();
 
 
 
-  <script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/anchor/anchor.min.js" ></script>
+  <script  src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/anchor/anchor.min.js" ></script>
   <script>
     anchors.options = {
       placement: "right",
-      visible: "false",
+      visible: "hover",
       
     };
     var el = "h1,h2,h3,h4,h5,h6".split(",");
@@ -842,7 +795,7 @@ var obj = new Object();
 
 
 
-  <script src="/js/local-search.js" ></script>
+  <script  src="/js/local-search.js" ></script>
   <script>
     var path = "/local-search.xml";
     var inputArea = document.querySelector("#local-search-input");
@@ -854,17 +807,16 @@ var obj = new Object();
 
 
 
-  <script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/fancybox/jquery.fancybox.min.css/jquery.fancybox.min.js" ></script>
-  <script>
-    $("#post img:not(.no-zoom img, img[no-zoom])").each(
-      function () {
-        var element = document.createElement("a");
-        $(element).attr("data-fancybox", "images");
-        $(element).attr("href", $(this).attr("src"));
-        $(this).wrap(element);
-      }
-    );
-  </script>
+
+
+
+
+
+
+
+
+
+
 
 
 
