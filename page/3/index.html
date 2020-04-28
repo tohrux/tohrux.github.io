@@ -122,6 +122,70 @@
     
     
       <div class="col-12 col-md-4 m-auto">
+        <a href="/2019/12/07/phpMysql/" target="_self">
+          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191209180726.png" srcset="undefined" alt="phpMysql -private" class="img-fluid rounded z-depth-3 index-thumbnails">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/2019/12/07/phpMysql/">
+        <p class="h4 index-header">phpMysql -private</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">
+访问数据库1.连接数据库
+//使用 mysqli_connect()
+2.选择服务器
+//使用 mysqli_select_db()来选择
+3.执行数据库操作
+//增删改查四部曲
+
+//
+    insert into
+//
+    delete
+//
+    update
+// 
+    select
+4.清除记录集,释放系统资源
+mysqli_free_result();
+5.关闭MySQL服务器
+mysqli_close();
+连接MySQL服务器$mysql = new mysqli($server,$username,$password,$dbname);
+//$server 服务器地址 一般本地的为localhost
+mysqli 对象的内容mysqli Object
+(
+    [affected_rows] =&gt; 0
+    [client_info] =&gt; mysqlnd 5.0.12-dev - 20150407 - $Id: 7cc7cc96e675f6d72e5cf0f267f48e167c2abb23 $
+    [client_version]</div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-12-07&nbsp;&nbsp;
+        
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/php">php</a>&nbsp;
+          
+            <a href="/tags/database">database</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+      <div class="col-12 col-md-4 m-auto">
         <a href="/2019/12/06/phpFaceToObject/" target="_self">
           <img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191207110327.png" srcset="undefined" alt="phpFaceToObject1" class="img-fluid rounded z-depth-3 index-thumbnails">
         </a>
@@ -605,66 +669,6 @@ var obj = new Object();
             <a href="/tags/%E5%89%8D%E7%AB%AF">前端</a>&nbsp;
           
             <a href="/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1">面向对象</a>&nbsp;
-          
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mb-4 mx-auto">
-    
-    
-      <div class="col-12 col-md-4 m-auto">
-        <a href="/2019/12/02/js-12-2/" target="_self">
-          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191202105330.png" srcset="undefined" alt="js运算符 -private" class="img-fluid rounded z-depth-3 index-thumbnails">
-        </a>
-      </div>
-    
-    <div class="col-12 col-md-8 m-auto">
-      <a href="/2019/12/02/js-12-2/">
-        <p class="h4 index-header">js运算符 -private</p>
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">
-### `&`,`||`的短路问题
-
-console.log(1&amp;&amp;0);//0
-console.log(0&amp;&amp;1);//0
-console.log(0 || 1);//1
-console.log(1 || 0);//1
-对非布尔值进行布尔运算    var a = 1;
-    a = !a;
-    console.log(a); //false
-关系运算符//返回的一定是false or true eg:
-var result = 1 &lt; 3;
-console.log(result);//false
-非数值的比较*数值类型和非数值类型比较的话,非数值类型会被转换为数值类型
-*如果两边都是字符串型的数字话,则会被转换为unicode编码
-运算优先级&amp;&amp; &gt; ||
-unicode编码在js中
-console.log(&quot;\u1234&quot;)
-在htlm中
-&lt;h1&gt;&amp;#1234;&lt;/h1&gt;
-unicode编码转换
-&quot;中&quot;.charCodeAt(0);
-Stri</div>
-        </div>
-      </a>
-
-      <div>
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2019-12-02&nbsp;&nbsp;
-        
-        
-        
-          <i class="iconfont icon-tag"></i>
-          
-            <a href="/tags/%E5%89%8D%E7%AB%AF">前端</a>&nbsp;
-          
-            <a href="/tags/javascript">javascript</a>&nbsp;
           
         
       </div>

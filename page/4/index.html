@@ -122,6 +122,66 @@
     
     
       <div class="col-12 col-md-4 m-auto">
+        <a href="/2019/12/02/js-12-2/" target="_self">
+          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191202105330.png" srcset="undefined" alt="js运算符 -private" class="img-fluid rounded z-depth-3 index-thumbnails">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/2019/12/02/js-12-2/">
+        <p class="h4 index-header">js运算符 -private</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">
+### `&`,`||`的短路问题
+
+console.log(1&amp;&amp;0);//0
+console.log(0&amp;&amp;1);//0
+console.log(0 || 1);//1
+console.log(1 || 0);//1
+对非布尔值进行布尔运算    var a = 1;
+    a = !a;
+    console.log(a); //false
+关系运算符//返回的一定是false or true eg:
+var result = 1 &lt; 3;
+console.log(result);//false
+非数值的比较*数值类型和非数值类型比较的话,非数值类型会被转换为数值类型
+*如果两边都是字符串型的数字话,则会被转换为unicode编码
+运算优先级&amp;&amp; &gt; ||
+unicode编码在js中
+console.log(&quot;\u1234&quot;)
+在htlm中
+&lt;h1&gt;&amp;#1234;&lt;/h1&gt;
+unicode编码转换
+&quot;中&quot;.charCodeAt(0);
+Stri</div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-12-02&nbsp;&nbsp;
+        
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/%E5%89%8D%E7%AB%AF">前端</a>&nbsp;
+          
+            <a href="/tags/javascript">javascript</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+      <div class="col-12 col-md-4 m-auto">
         <a href="/2019/12/01/12-01/" target="_self">
           <img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191202082444.jpg" srcset="undefined" alt="12_01" class="img-fluid rounded z-depth-3 index-thumbnails">
         </a>
@@ -644,65 +704,6 @@ DB_CONNECTION=mysql
 DB_HOST=localhost
 DB_PORT=3306
 DB_DATABA</div>
-        </div>
-      </a>
-
-      <div>
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2019-11-22&nbsp;&nbsp;
-        
-        
-        
-          <i class="iconfont icon-tag"></i>
-          
-            <a href="/tags/laravel">laravel</a>&nbsp;
-          
-            <a href="/tags/php">php</a>&nbsp;
-          
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mb-4 mx-auto">
-    
-    
-      <div class="col-12 col-md-4 m-auto">
-        <a href="/2019/11/22/laravel2/" target="_self">
-          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos/img/laravel1.png" srcset="undefined" alt="laravel控制器基础" class="img-fluid rounded z-depth-3 index-thumbnails">
-        </a>
-      </div>
-    
-    <div class="col-12 col-md-8 m-auto">
-      <a href="/2019/11/22/laravel2/">
-        <p class="h4 index-header">laravel控制器基础</p>
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">控制器文件的位置控制器属于项目代码
-位于app/http/Controllers
-命名控制器文件驼峰命名+Controller.php
-控制器的结构代码🚫不需要我们自己去写,可以通过artisan来生成
-相应命令:
-php artisan make:controller TestController
-创建资源控制器:(自动生成很多方法
-php artisan make:controller TestController --resource //简写 --r
-分目录控制器(没有这个文件夹的话就会创建)
-php artisan make:controller Admin/TestController
-创建成功的提示:
-Controller created successfully.
-生成的结构代码:
-&lt;?php
-
-namespace App\Http\Controllers;//命名空间
-
-use Illuminate\Http\Request;//命名空间三元素: 常量,方法,类
-
-class TestController extends Controller
-{
-    //</div>
         </div>
       </a>
 

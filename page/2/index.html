@@ -121,6 +121,55 @@
   <div class="row mb-4 mx-auto">
     
     
+      <div class="col-12 col-md-4 m-auto">
+        <a href="/2019/12/25/vue2/" target="_self">
+          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191224154153.png" srcset="undefined" alt="vue v-text/html/插值表达式/v-bind/v-on" class="img-fluid rounded z-depth-3 index-thumbnails">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/2019/12/25/vue2/">
+        <p class="h4 index-header">vue v-text/html/插值表达式/v-bind/v-on</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">    &lt;div id=&quot;app&quot;&gt;
+        &lt;p&gt;
+            {{msg}}
+            &lt;div&gt;hello&lt;/div&gt;
+        &lt;/p&gt;
+        &lt;div v-html=&quot;msg2&quot;&gt;&lt;/div&gt;
+        &lt;input type=&quot;button&quot; v-on:click=&quot;show&quot; :value=&quot;msg&quot;&gt;
+    &lt;/div&gt;
+    &lt;script&gt;
+        var vm = new Vue({
+            el: &#39;#app&#39;, //表示上面new的vue的实例,要控制页面上的哪个区域
+            data: { //data属性中存放的是el中要用到的数据
+                msg: &#39;hello,我是msg&#39;,
+   </div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-12-25&nbsp;&nbsp;
+        
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/vue">vue</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
     <div class="col-12 col-md-8 m-auto">
       <a href="/2019/12/17/12-17/">
         <p class="h4 index-header">last day4</p>
@@ -586,70 +635,6 @@ clone的两个对象相比较的话: 值相等 ,但是内存地址不相等
             <a href="/tags/nice">nice</a>&nbsp;
           
             <a href="/tags/sunday">sunday</a>&nbsp;
-          
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mb-4 mx-auto">
-    
-    
-      <div class="col-12 col-md-4 m-auto">
-        <a href="/2019/12/07/phpMysql/" target="_self">
-          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191209180726.png" srcset="undefined" alt="phpMysql -private" class="img-fluid rounded z-depth-3 index-thumbnails">
-        </a>
-      </div>
-    
-    <div class="col-12 col-md-8 m-auto">
-      <a href="/2019/12/07/phpMysql/">
-        <p class="h4 index-header">phpMysql -private</p>
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">
-访问数据库1.连接数据库
-//使用 mysqli_connect()
-2.选择服务器
-//使用 mysqli_select_db()来选择
-3.执行数据库操作
-//增删改查四部曲
-
-//
-    insert into
-//
-    delete
-//
-    update
-// 
-    select
-4.清除记录集,释放系统资源
-mysqli_free_result();
-5.关闭MySQL服务器
-mysqli_close();
-连接MySQL服务器$mysql = new mysqli($server,$username,$password,$dbname);
-//$server 服务器地址 一般本地的为localhost
-mysqli 对象的内容mysqli Object
-(
-    [affected_rows] =&gt; 0
-    [client_info] =&gt; mysqlnd 5.0.12-dev - 20150407 - $Id: 7cc7cc96e675f6d72e5cf0f267f48e167c2abb23 $
-    [client_version]</div>
-        </div>
-      </a>
-
-      <div>
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2019-12-07&nbsp;&nbsp;
-        
-        
-        
-          <i class="iconfont icon-tag"></i>
-          
-            <a href="/tags/php">php</a>&nbsp;
-          
-            <a href="/tags/database">database</a>&nbsp;
           
         
       </div>
