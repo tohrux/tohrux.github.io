@@ -1,5 +1,5 @@
 ---
-title: what did I learn today? 21-07-30
+title: 21-07-30
 date: 2021-07-30 19:32:53
 tags: diary
 ---
