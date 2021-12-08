@@ -61,7 +61,7 @@ smooth_scroll: # 平滑滚动效果
 # Header
 #---------------------------
 navbar:
-  blog_title: JOJO # 导航栏左侧的标题，为空则按 hexo config.title 显示
+  blog_title: tohrux # 导航栏左侧的标题，为空则按 hexo config.title 显示
   menu: # 可自行增减，若想减去某个入口，可以将值留空
     Home: /
     关于我: /about/
