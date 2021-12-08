@@ -42,7 +42,7 @@
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
-       href="/">&nbsp;<strong>tohru&#39;s blog</strong>&nbsp;</a>
+       href="/">&nbsp;<strong>JOJO</strong>&nbsp;</a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent"
@@ -157,332 +157,51 @@ bot什么时候会推送我的推荐?会按照发信的顺序进行排列~
     
     
       <div class="col-12 col-md-4 m-auto">
-        <a href="/2021/08/11/flex/" target="_self">
-          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127121638.png" srcset="undefined" alt="flex布局" class="img-fluid rounded z-depth-3 index-thumbnails">
+        <a href="/2019/12/08/photo-share/" target="_self">
+          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191208200607.jpg" srcset="undefined" alt="weekly photos" class="img-fluid rounded z-depth-3 index-thumbnails">
         </a>
       </div>
     
     <div class="col-12 col-md-8 m-auto">
-      <a href="/2021/08/11/flex/">
-        <p class="h4 index-header">flex布局</p>
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">发现很多地方都会用上Flex布局,所以就决定今晚把Flex给整活了,冲冲冲🐛
-在看了一些博客后决定结合自己的理解写下一些笔记
-参照：
-
-https://juejin.im/post/5ddc78f851882573520fb199  作者：锐玩道
-
-
-https://www.jianshu.com/p/4b14a7a1c6cc                  作者：sxfshdf
-https://blog.csdn.net/m0_37058714/article/details/80765562     作者 wxk_前端开发
-http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html  作者: 阮一峰
-
-一些概念首先使用Flex布局一定要知道的一点是,这种布局总是以父子的形式存在,父级元素被称为 容器(container),有些地方也会称为弹性盒,而所有的子级元素会自动地成为这个容器的成员,成为 Flex项目(item)
-在下文会用 container 表示容器, item表示Flex项目
-display:flex
-//当一个</div>
-        </div>
-      </a>
-
-      <div>
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2021-08-11&nbsp;&nbsp;
-        
-        
-        
-          <i class="iconfont icon-tag"></i>
-          
-            <a href="/tags/css">css</a>&nbsp;
-          
-            <a href="/tags/%E5%89%8D%E7%AB%AF">前端</a>&nbsp;
-          
-            <a href="/tags/flex">flex</a>&nbsp;
-          
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mb-4 mx-auto">
-    
-    
-    <div class="col-12 col-md-8 m-auto">
-      <a href="/2021/08/02/2021-08-02/">
-        <p class="h4 index-header">2021-08-02</p>
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">Todo
- 简易vue源码阅读
- 手写深拷贝
-
-手写深拷贝js 如何深拷贝一个函数？
-
-20L
-TL;DR:考虑这种情况：‘’’const inc = v =&gt; v+1;inc.vector = [1,2,3]; //或者用 Object.assign/Object.definePropertyinc.vector_add = function(num) { return this.vector.map(v =&gt; v + num) };inc.t = 1;inc.t.a = 3;‘’’要求拷贝 inc 函数或者拷贝 inc.vector_add 函数。
-正文：个人理解首先应该问清楚是否同样拷贝 property。因为函数式编程语言中，函数是一等公民，本质上是个 function 对象，又因为 js 里对象的特殊性（兼具其他语言 map/dict 的特性），所以问题实际上分化成两个问题，是否需要拷贝 property。如果不需要拷贝 property，这个函数内部有可能引用自身的某个 property，需要考虑 js 里的 this 绑定问题。考虑 ES6 以后箭头函数和普通</div>
-        </div>
-      </a>
-
-      <div>
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2021-08-02&nbsp;&nbsp;
-        
-        
-        
-          <i class="iconfont icon-tag"></i>
-          
-            <a href="/tags/diary">diary</a>&nbsp;
-          
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mb-4 mx-auto">
-    
-    
-    <div class="col-12 col-md-8 m-auto">
-      <a href="/2021/07/30/what-did-I-learn-today-21-07-30/">
-        <p class="h4 index-header">21-07-30</p>
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">简易双向数据绑定参考深入浅出Object.defineProperty()
-
-&lt;body&gt;
-    &lt;input type=&quot;text&quot; id=&quot;input&quot; /&gt;
-    &lt;p id=&quot;data&quot;&gt;&lt;/p&gt;
-    &lt;script&gt;
-        const obj = {};
-        const input = document.getElementById(&#39;input&#39;);
-        Object.defineProperty(obj, &#39;name&#39;, {
-            get() {
-                return input.value;
-            },
-            set(newVal) {
-                input.value = newVal;
-                console.log(newVal)
-          </div>
-        </div>
-      </a>
-
-      <div>
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2021-07-30&nbsp;&nbsp;
-        
-        
-        
-          <i class="iconfont icon-tag"></i>
-          
-            <a href="/tags/diary">diary</a>&nbsp;
-          
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mb-4 mx-auto">
-    
-    
-    <div class="col-12 col-md-8 m-auto">
-      <a href="/2021/07/29/what-did-I-learn-today-2021-07-29/">
-        <p class="h4 index-header">21-07-29</p>
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">Into the Sky Do you feel alone?
-Can you hear me now?
-Your mind is so far away still on the earth
-Many times you are hurting yourself
-You can’t be just a life on the shelf
-It’s only you that can fly this new unicorn
-Into the sky
-And It’s every time, you hurt yourself with knives
-And I’m calling calling out your name again
-If you’re holding holding onto fear I knew
-the blind can open,let light shine through
-And I say 
-Why we can’t stop all this sacrifice
-I know that all the lies became the stone i</div>
-        </div>
-      </a>
-
-      <div>
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2021-07-29&nbsp;&nbsp;
-        
-        
-        
-          <i class="iconfont icon-tag"></i>
-          
-            <a href="/tags/diary">diary</a>&nbsp;
-          
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mb-4 mx-auto">
-    
-    
-    <div class="col-12 col-md-8 m-auto">
-      <a href="/2021/07/28/2021-07-28/">
-        <p class="h4 index-header">Wed Jul 28 2021 00:00:00 GMT+0800 (China Standard Time)</p>
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">2021-07-28Song of ..How long must I wait?
-The hopes that I chase
-whether it’s too late
-If my bird has flown away?
-The dreamer you’ve been
-Your little girl has become
-What should I do?
-Your plan fell through for you
-But I must believe in myself
-But I must believe in myself
-Don’t say goodbye
-Two bird are flying hight
-And I must leave on a wind for a few
-Dangerous  and lonely times there may be
-She is forever asking will she leave
-Is this what a dreamer should feel?
-Say goodbye to my drab and passi</div>
-        </div>
-      </a>
-
-      <div>
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2021-07-28&nbsp;&nbsp;
-        
-        
-        
-          <i class="iconfont icon-tag"></i>
-          
-            <a href="/tags/diary">diary</a>&nbsp;
-          
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mb-4 mx-auto">
-    
-    
-    <div class="col-12 col-md-8 m-auto">
-      <a href="/2021/07/27/21-07-27/">
-        <p class="h4 index-header">what did I learn today? 2021-07-27</p>
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">EGO [SODv] (feat. mizuki &amp; SUGIZO)You can deeply hold your breath for loneliness
-For the perfect smile I mell your ego on the way
-It&#39;s long since I saw the snow
-You&#39;ve been told before
-All this things have gone
-You told me, so many mental heavy days
-Do the right thing bug always wrong eventually
-In his arm for dreaming on
-But we’re not the same
-Anymore…
-Give my your hand I really need your help
-It’s not a game
-What’re you saying?
-Tumbling in the dark
-It’s time to find the answer
-A li</div>
-        </div>
-      </a>
-
-      <div>
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2021-07-27&nbsp;&nbsp;
-        
-        
-        
-          <i class="iconfont icon-tag"></i>
-          
-            <a href="/tags/js">js</a>&nbsp;
-          
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mb-4 mx-auto">
-    
-    
-    <div class="col-12 col-md-8 m-auto">
-      <a href="/2020/04/28/4-28/">
-        <p class="h4 index-header">hexo多端同步</p>
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">test
-</div>
-        </div>
-      </a>
-
-      <div>
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2020-04-28&nbsp;&nbsp;
-        
-        
-        
-          <i class="iconfont icon-tag"></i>
-          
-            <a href="/tags/git">git</a>&nbsp;
-          
-            <a href="/tags/hexo">hexo</a>&nbsp;
-          
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mb-4 mx-auto">
-    
-    
-    <div class="col-12 col-md-8 m-auto">
-      <a href="/2020/04/16/2020-4-16/">
-        <p class="h4 index-header">page实例的生命周期</p>
+      <a href="/2019/12/08/photo-share/">
+        <p class="h4 index-header">weekly photos</p>
         
         
           
         
         <div class="index-excerpt" >
           <div class="index-text mb-1">
-整个实例分为两个线程–渲染层和逻辑层,两个线程同时执行
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div>
         </div>
       </a>
 
       <div>
         
-          <i class="iconfont icon-riqi2"></i>&nbsp;2020-04-16&nbsp;&nbsp;
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-12-08&nbsp;&nbsp;
         
         
         
           <i class="iconfont icon-tag"></i>
           
-            <a href="/tags/mini">mini</a>&nbsp;
+            <a href="/tags/photos">photos</a>&nbsp;
           
         
       </div>
@@ -492,43 +211,344 @@ A li</div>
   <div class="row mb-4 mx-auto">
     
     
+      <div class="col-12 col-md-4 m-auto">
+        <a href="/2019/12/08/nice-sunday/" target="_self">
+          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191208113233.jpg" srcset="undefined" alt="12-8" class="img-fluid rounded z-depth-3 index-thumbnails">
+        </a>
+      </div>
+    
     <div class="col-12 col-md-8 m-auto">
-      <a href="/2020/04/15/2020-4-15-2/">
-        <p class="h4 index-header">微信小程序的一些学习笔记</p>
+      <a href="/2019/12/08/nice-sunday/">
+        <p class="h4 index-header">12-8</p>
         
         
           
         
         <div class="index-excerpt" >
-          <div class="index-text mb-1">循环&lt;view wx:for=&quot;{{students}}&quot;&gt;{{item.id}}--{{item.name}}&lt;/view&gt;
-默认会生成item,index
-修改页面上的数据因为页面上的数据不是双向绑定的,要想实现页面数据的变化,需要调用setdata()
-setdata()的实现原理(数据驱动):
-使用diff算法得到差异,再把这个差异应用到原来的dom对象上
-handle(){
-    this.setData({
-    age:this.data.age+2
-})
-}
-sitemap.json用于设置该小程序是否会被搜索到
-project.config.json用于设置项目的一些配置项,一般建议直接在详情直接修改,而不是直接改这个JSON文件
-app.json:小程序的入口“pages”所有的页面都要在这里进行注册
-可以直接写入例如pages/home/home来快速生成page
-“window”主要用来设置窗口的的一些样式
-“tabbar”设置tabbar的样式
-*在单个页面的.json文件中的设置会覆盖掉全局的app.json样</div>
+          <div class="index-text mb-1">
+
+
+
+
+</div>
         </div>
       </a>
 
       <div>
         
-          <i class="iconfont icon-riqi2"></i>&nbsp;2020-04-15&nbsp;&nbsp;
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-12-08&nbsp;&nbsp;
         
         
         
           <i class="iconfont icon-tag"></i>
           
-            <a href="/tags/wx">wx</a>&nbsp;
+            <a href="/tags/nice">nice</a>&nbsp;
+          
+            <a href="/tags/sunday">sunday</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+      <div class="col-12 col-md-4 m-auto">
+        <a href="/2019/12/04/bootstrap%E5%81%9A%E7%9A%84%E7%BD%91%E9%A1%B5%E5%92%8C%E9%9A%8F%E6%84%8F%E7%94%BB%E7%9A%84%E4%B8%80%E4%BA%9Blogo/" target="_self">
+          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191204223042.png" srcset="undefined" alt="今天用bootstrap做的网页和随意画的一些logo" class="img-fluid rounded z-depth-3 index-thumbnails">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/2019/12/04/bootstrap%E5%81%9A%E7%9A%84%E7%BD%91%E9%A1%B5%E5%92%8C%E9%9A%8F%E6%84%8F%E7%94%BB%E7%9A%84%E4%B8%80%E4%BA%9Blogo/">
+        <p class="h4 index-header">今天用bootstrap做的网页和随意画的一些logo</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">今天用bootstrap做的网页和随意画的一些logo:太累了今天,眼睛都张不开了
+
+
+
+
+
+
+晚安世界</div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-12-04&nbsp;&nbsp;
+        
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/so%20tired">so tired</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+      <div class="col-12 col-md-4 m-auto">
+        <a href="/2019/12/03/noon/" target="_self">
+          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191203123400.png" srcset="undefined" alt="noon" class="img-fluid rounded z-depth-3 index-thumbnails">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/2019/12/03/noon/">
+        <p class="h4 index-header">noon</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">慢悠悠地从食堂听着radwimps的&lt;火花&gt;走回机房.
+穿着三件衣服略微有些冷的温度,
+一路上沿着学校的湖畔,
+阳光随着树荫没有规则地照射在脸上,
+带来了些许温暖,
+我甚至边走边闭上眼去享受这一切,
+第一次明白了午后的阳光的含义,
+赞美太阳!
+</div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-12-03&nbsp;&nbsp;
+        
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/subarashii">subarashii</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+      <div class="col-12 col-md-4 m-auto">
+        <a href="/2019/12/01/2019-12-01/" target="_self">
+          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191202082444.jpg" srcset="undefined" alt="12_01" class="img-fluid rounded z-depth-3 index-thumbnails">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/2019/12/01/2019-12-01/">
+        <p class="h4 index-header">12_01</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">banner_img&amp;index_img来自arkstation.com的neon-yang 
+hello,12月,时间过得太快辣!!!!!!!
+再过一个月就是2020年了,东京奥运会,以及和高中同学约好的2020年要一起去日本,感觉我要🕊了.为什么我一直认为去旅行好浪费钱,感觉从买机/车票开始,钱就会在钱包中开始逐渐消失,而不像购买实物–钱只是换了一种形式陪在自己的身边.
+2020年还有一种未来的感觉,对我来说时间仿佛还停留在2008年的北京奥运会我还在沙发上蹦跶着看着电视的那个晚上,那个时候肯定会想2020应该会有很多不可思议的科技会实现吧,结果到了2020,世界也没什么多大的变化就是了.
+今天了解到了一个很棒的网站,arkstation.com,对于我来说是新大陆!还看了一些自制的同人像素游戏的相关视频,不可否认的是,在像素游戏中音乐真的是游戏表现力中占比很高的一环.
+
+以及今日最佳!发现了在油管有一个日本人几年来一直陆陆续续地在用打工挣的钱,到亚洲的各地靠着自己为和平做出贡献.他叫桑原功一,是一个勇敢和伟大的人,他是个英雄.
+
+</div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-12-01&nbsp;&nbsp;
+        
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/diary">diary</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+      <div class="col-12 col-md-4 m-auto">
+        <a href="/2019/11/28/2019-11-28/" target="_self">
+          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191128191000.jpg" srcset="undefined" alt="11_28" class="img-fluid rounded z-depth-3 index-thumbnails">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/2019/11/28/2019-11-28/">
+        <p class="h4 index-header">11_28</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">今天想到这些:
+世界上有很多人不是因为游戏好玩才去玩游戏的,而是时间太多而不知道干什么才去玩,睡觉同理,不是因为困了才睡觉,而是想要快一点度过这段时光才去睡觉,就像在我的世界里一样,制作好床,然后右键就可以睡觉了,下一秒就是第二天,那我可以说像这样的人活着是没有意义的吗?在我高三时,我就是这样的,那段时间真是暗淡无比.
+现在在我身边也有很多这样的例子,不过这也和我没什么关系,每个人都有自己人生的过法.但是这种状态却会影响周围的人,其实也不单指这种状态吧,每个人的行为都会影响到他人,无论是积极正面的还是消极的,关于这点我最近也深有体会.
+写到这,我在思考一件事,人们在写东西的时候会极力追求事件的真实性或者是第一想法吗?起码我刚刚没有做到,比如上面那段的最后,原本我是想写成最近也有很多体会但是我觉得换成深有体会会好一点,只是因为为了确保文章的流畅性?还是说因为在很多地方体会一般都是会和深有搭配,所以我才会这样写?写东西没有固定的格式,这点我很喜欢,可以随心所欲地敲下当下脑海里出现的想法.我开始理解了为什么有些人会喜欢去写小说之类的文学作品了.
+说到这我突然想到以前在youtube看过一个视</div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-11-28&nbsp;&nbsp;
+        
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/summary">summary</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+      <div class="col-12 col-md-4 m-auto">
+        <a href="/2019/11/20/%E6%98%8E%E6%97%A5%E6%96%B9%E8%88%9F:%E5%A4%A7%E5%AE%B6,%E5%BF%AB%E5%9B%9E%E6%9D%A5%E5%90%A7!/" target="_self">
+          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos/img/mostima4.png" srcset="undefined" alt="明日方舟:大家,快回来吧!" class="img-fluid rounded z-depth-3 index-thumbnails">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/2019/11/20/%E6%98%8E%E6%97%A5%E6%96%B9%E8%88%9F:%E5%A4%A7%E5%AE%B6,%E5%BF%AB%E5%9B%9E%E6%9D%A5%E5%90%A7!/">
+        <p class="h4 index-header">明日方舟:大家,快回来吧!</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">​        花了一个中午的时间把明日方舟昨天刚刚更新的内容打完了,不得不说这次更新的内容的确很棒,我愿称这次update为我玩明日方舟以来最棒的一次更新.
+​        这次新关卡的那几首bgm我认为是这次更新的最大亮点,从打鼠王那段令人热血沸腾的摇滚到我现在写着这篇博文依旧还在循环着的企鹅物流背景板的那首轻松愉快且特别的音乐,我都要给个大大的👍,值得一提的是官方也在昨天公布了一首与其他两位创作音乐人的合作曲目,听着感觉还行8,现已上架网易云了,配合着live2D合成的MV应该能获得很多人的喜欢.
+​        另外,今天YJ了发布日服开服前的pv,在看pv时,大家都可以感受到一个事实,那就是明日方舟离动画化不会远了.
+​        沉浸在一切的同时,我感觉制作者的愿望,想法在一步步的实现,真的很羡慕那群人,可以构想出这样一个世界,通过剧情,作画,音乐去一步一步的描述,填充着那个世界,并且让更多的人去加入他们(各种同人制作),我都可以想到制作者在死之前可以无憾地说出”hey,你说的是那个泰拉世界吗?那个世界就交给你们了”.
+​        但是,如果每天为了完成游</div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-11-20&nbsp;&nbsp;
+        
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/arknights">arknights</a>&nbsp;
+          
+            <a href="/tags/game">game</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+      <div class="col-12 col-md-4 m-auto">
+        <a href="/2019/11/19/2019-11-19/" target="_self">
+          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos/img/suger.jpg" srcset="undefined" alt="今日份的美好" class="img-fluid rounded z-depth-3 index-thumbnails">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/2019/11/19/2019-11-19/">
+        <p class="h4 index-header">今日份的美好</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">
+今天得到了这三颗糖,当时真的是很开心,这三颗糖也真的很好吃
+记得在高中的时候就有接触过UHA,不过带给我回忆的都是我不怎么喜欢的人
+今天去查了下UHA才知道是一个日本的牌子
+U-unique H-human A-adventure
+
+UHA=YUU(pleasure)－HA(waves)
+UHA (pronounced YUU-HA) is originally a“coined” Japanese word, symbolizing our wish to provide pleasure through our confectioneries, quietly and gently like calm waves. We name our confectioneries YUU(=pleasure)‐SHOKU(=food) which means “food that is fun to eat.”
+
+原本想留下一颗留念的,但是因为贪心吃掉了,
+吃完糖后想起了往事,想到了自己,心情就开始变得十分难过了
+不过糖还是很好吃的
+</div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-11-19&nbsp;&nbsp;
+        
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/sad">sad</a>&nbsp;
+          
+            <a href="/tags/happy">happy</a>&nbsp;
+          
+            <a href="/tags/subarashii">subarashii</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+      <div class="col-12 col-md-4 m-auto">
+        <a href="/2019/11/17/henrietta/" target="_self">
+          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos/img/apex2.jfif" srcset="undefined" alt="hey,Are you henrietta? CLICK HERE PLS" class="img-fluid rounded z-depth-3 index-thumbnails">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/2019/11/17/henrietta/">
+        <p class="h4 index-header">hey,Are you henrietta? CLICK HERE PLS</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">hey henriettaV01!I’m tohru ,this article is written for you.welcome to my blog, it was created two days ago…I’ll never forget the happy time when we played Apex on pc &amp; ps4,and I’ll never forget your birthday XD
+9/10 
+
+have a nice day~ henrietta,or should I called you ‘胡琼琼’? 😄😄😄</div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-11-17&nbsp;&nbsp;
+        
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/friend">friend</a>&nbsp;
           
         
       </div>
@@ -539,7 +559,7 @@ app.json:小程序的入口“pages”所有的页面都要在这里进行注册
 
   <nav aria-label="index posts navigation">
     <span class="pagination pg-blue justify-content-center mt-5" id="pagination">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/"><i class="fas fa-angle-double-right"></i></a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fas fa-angle-double-right"></i></a>
     </span>
   </nav>
   
@@ -597,20 +617,6 @@ app.json:小程序的入口“pages”所有的页面都要在这里进行注册
     <br>
 
     
-  
-    <!-- 不蒜子统计PV -->
-    
-    &nbsp;<span id="busuanzi_container_site_pv">总访问量 
-          <span id="busuanzi_value_site_pv"></span> 次</span>&nbsp;
-  
-  
-    <!-- 不蒜子统计UV -->
-    
-    &nbsp;<span id="busuanzi_container_site_uv">总访客数 
-            <span id="busuanzi_value_site_uv"></span> 人</span>&nbsp;
-  
-  <br>
-
 
 
     
@@ -636,22 +642,8 @@ app.json:小程序的入口“pages”所有的页面都要在这里进行注册
 
 
 
-  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
-
 
 <!-- Plugins -->
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
 
 
 
