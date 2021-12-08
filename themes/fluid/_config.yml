@@ -42,7 +42,7 @@ color: # 主体颜色配置，可以从这里寻找启发： https://www.webdesi
   link_hover_color: "#1abc9c"
 
 web_analytics: # 网页访问统计
-  enable: true
+  enable: false
   baidu: # 百度统计的Key，参见 https://tongji.baidu.com/sc-web/10000033910/home/site/getjs?siteId=13751376 代码获取中 hm.js? 后边的字符串
   google: # Google统计的Tracking ID，参见 https://analytics.google.com/analytics/web/
   tencent: # 腾讯统计的H5 App id，参见 https://mta.qq.com/h5/manage/ctr_app_manage
@@ -61,7 +61,7 @@ smooth_scroll: # 平滑滚动效果
 # Header
 #---------------------------
 navbar:
-  blog_title: tohru's blog # 导航栏左侧的标题，为空则按 hexo config.title 显示
+  blog_title: JOJO # 导航栏左侧的标题，为空则按 hexo config.title 显示
   menu: # 可自行增减，若想减去某个入口，可以将值留空
     Home: /
     关于我: /about/
@@ -86,7 +86,7 @@ banner_scroll: true # 头图是否跟随页面滚动
 #---------------------------
 footer:
   statistics: # 统计网站 PV、UV，使用的是不蒜子，显示在页脚
-    enable: true
+    enable: false
     pv_format: "总访问量 {} 次" # 显示的文本，{}是数字的占位符（必须包含)，下同
     uv_format: "总访客数 {} 人"
 
@@ -135,7 +135,7 @@ post:
       enable: true
       format: "{} 分钟"
     views: # 阅读次数，统计基于不蒜子
-      enable: true
+      enable: false
       format: "{} 次"
   toc: # 右侧导航条
     enable: true
