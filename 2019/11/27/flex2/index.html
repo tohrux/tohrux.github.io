@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://cdn.jsdelivr.net/gh/tohrux/tohrux.github.io@1.0//img/apple-touch-icon.png# 用于苹果设备的 icon">
+  <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/tohrux/tohrux.github.io@1.0//img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="keywords" content="">
+  <title>flex布局中 align-items和align-content ~ Tohrux!</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/font-awesome/css/all.min.css"  >
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/bootstrap/css/bootstrap.min.css"  >
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/mdbootstrap/css/mdb.min.css"  >
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/github-markdown/github-markdown.min.css"  >
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1067060_qzomjdt8bmp.css">
+
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/prettify/tomorrow-night.min.css"  >
+
+<link rel="stylesheet" href="/css/main.css"  >
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/fancybox/jquery.fancybox.min.css/jquery.fancybox.min.css"  >
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>tohru&#39;s blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/about/">关于我</a>
+          </li>
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/archives/">回档 !</a>
+          </li>
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+</nav>
+
+    <div class="view intro-2" id="background"
+         style="background: url('https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191128191207.png')no-repeat center center;
+           background-size: cover;
+           background-attachment: scroll;">
+      <div class="full-bg-img">
+        <div class="mask rgba-black-light flex-center">
+          <div class="container text-center white-text fadeInUp">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              <br>
+              
+                <p class="mt-3">
+                  <i class="fas fa-calendar-alt" aria-hidden="true"></i>&nbsp;
+                  星期三, 十一月 27日 2019, 2:36 下午
+                </p>
+              
+
+              <p>
+                
+                  
+                  &nbsp;<i class="far fa-chart-bar"></i>
+                  <span class="post-count">
+                    729 字
+                  </span>&nbsp;
+                
+
+                
+                  
+                  &nbsp;<i class="far fa-clock"></i>
+                  <span class="post-count">
+                      3 分钟
+                  </span>&nbsp;
+                
+
+                
+                  <!-- 不蒜子统计文章PV -->
+                  
+                  &nbsp;<i class="far fa-eye" aria-hidden="true"></i>&nbsp;
+                  <span id="busuanzi_container_page_pv">
+                    <span id="busuanzi_value_page_pv"></span> 次
+                  </span>&nbsp;
+                
+              </p>
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="py-5 z-depth-3" id="board">
+        <div class="post-content mx-auto" id="post">
+          <div class="markdown-body">
+            <h3 id="首先先给出我当前的CSS和HTML"><a href="#首先先给出我当前的CSS和HTML" class="headerlink" title="首先先给出我当前的CSS和HTML"></a>首先先给出我当前的CSS和HTML</h3><pre><code class="html">    &lt;style&gt;
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+            align-content: space-between;
+            background-color: #0080ff;
+            height: 700px;
+
+        }
+
+        .container&gt;div {
+            width: 100px;
+            height: 100px;
+            /* border: 1px solid black; */
+        }
+
+        .item1 {
+            background-color: #a3daff;
+            line-height: 100px;
+            /* font-size: 120px; */
+        }
+
+        .item2 {
+            background-color: #1ec0ff;
+            width: 200px !important;
+            height: 130px !important;
+            font-size: 100px;
+            line-height: 130px;
+        }
+
+        .item3 {
+            background-color: #FBFFB9;
+
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div&gt;&lt;/div&gt;
+    &lt;div class=&quot;container&quot;&gt;
+        &lt;div class=&quot;item1&quot;&gt;1&lt;/div&gt;
+        &lt;div class=&quot;item2&quot;&gt;2&lt;/div&gt;
+        &lt;div class=&quot;item1&quot;&gt;3&lt;/div&gt;
+        &lt;div class=&quot;item1&quot;&gt;4&lt;/div&gt;
+        &lt;div class=&quot;item1&quot;&gt;5&lt;/div&gt;
+        &lt;div class=&quot;item2&quot;&gt;6&lt;/div&gt;
+        &lt;div class=&quot;item1&quot;&gt;7&lt;/div&gt;
+        &lt;div class=&quot;item1&quot;&gt;8&lt;/div&gt;
+        &lt;div class=&quot;item1&quot;&gt;9&lt;/div&gt;
+        &lt;div class=&quot;item2&quot;&gt;10&lt;/div&gt;
+        &lt;div class=&quot;item1&quot;&gt;11&lt;/div&gt;
+        &lt;div class=&quot;item1&quot;&gt;12&lt;/div&gt;
+        &lt;div class=&quot;item1&quot;&gt;13&lt;/div&gt;
+        &lt;div class=&quot;item2&quot;&gt;14&lt;/div&gt;
+        &lt;div class=&quot;item1&quot;&gt;15&lt;/div&gt;
+        &lt;div class=&quot;item1&quot;&gt;16&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;</code></pre>
+<h3 id="👩这里我同时给了align-item和align-content的值"><a href="#👩这里我同时给了align-item和align-content的值" class="headerlink" title="👩这里我同时给了align-item和align-content的值"></a>👩这里我同时给了<code>align-item</code>和<code>align-content</code>的值</h3><pre><code class="css">align-items: flex-start;
+align-content: space-between;</code></pre>
+<p>呈现如下:</p>
+<img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127150714.png" srcset="undefined" style="zoom:67%;" />
+
+<p>可以看到,<code>align-item</code>只在每一行中起效果,即在每行中所有的<code>item</code>都会顶到当前行的最上方</p>
+<h3 id="👩再给他们换别的值"><a href="#👩再给他们换别的值" class="headerlink" title="👩再给他们换别的值"></a>👩再给他们换别的值</h3><p>现在我把他们修改为,并调整了窗口的大小:</p>
+<pre><code class="css">align-items: flex-end;
+align-content: flex-start;</code></pre>
+<p>呈现如下:</p>
+<p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127151648.png" srcset="undefined" alt=""></p>
+<p>可以看到<code>align-content</code>作用于整个<code>container</code>,而<code>align-item</code>则作用于他自己那行,和之前的结论一样,<s>好像这段没有必要的样子</s></p>
+<h3 id="👨注释掉align-content"><a href="#👨注释掉align-content" class="headerlink" title="👨注释掉align-content"></a>👨注释掉align-content</h3><pre><code class="css">align-items: flex-end;
+/* align-content: flex-start; */</code></pre>
+<p>这次我把<code>align-content</code>给注释掉了,并且修改了窗口大小,呈现如下:</p>
+<img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127161505.png" srcset="undefined" style="zoom:67%;" />
+
+<h3 id="👴给align-content-flex-end"><a href="#👴给align-content-flex-end" class="headerlink" title="👴给align-content: flex-end;"></a>👴给align-content: flex-end;</h3><pre><code class="css">align-items: flex-end;
+align-content: flex-end;</code></pre>
+<p>这次给了<code>align-content</code>值,同样为<code>flex-end</code></p>
+<img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127162559.png" srcset="undefined" style="zoom:67%;" />
+
+<p>我们可以看到在全局下(指<code>container</code>) ,每一行的间距已经变成了0.</p>
+<h3 id="👵将align-item注释掉"><a href="#👵将align-item注释掉" class="headerlink" title="👵将align-item注释掉"></a>👵将align-item注释掉</h3><pre><code class="css">/* align-items: flex-end; */
+align-content: flex-end;</code></pre>
+<img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127163124.png" srcset="undefined" style="zoom: 67%;" />
+
+<p>这里的<code>align-item</code>的value已经成为了默认值<code>flex-start</code>了</p>
+<h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p><code>align-item</code>只作用于每一行的行本身,而<code>align-content</code>则作用于全<code>container</code>;如果只给<code>align-item</code>值,则在全局的每一行间都会有一段默认的不为0的距离,👈这是她的兼职工作,同时<code>align-item</code>也会完成她的本分工作:在每一行设置<code>item</code>水平排列方式;如果在这时加入个专门做调整全局(<code>container</code>)布局的<code>align-content</code>的话,<code>align-item</code>的兼职工作就会被接过.此时,<code>align-content</code>仿佛在对<code>align-item</code>说,”你就是<code>align-item</code>吗?感谢你之前做的一切,从现在开始请不要担♥任何事,因为我来了!”.然后留下<code>align-item</code>在原地露出迷妹般的星星眼.</p>
+<img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127165804.gif" srcset="undefined" style="zoom: 150%;" />
+
+
+
+<h3 id="that’s-all"><a href="#that’s-all" class="headerlink" title="that’s all!"></a>that’s all!</h3>
+            <hr>
+          </div>
+          <br>
+          <div>
+            <p>
+            
+            
+              <span>
+                <i class="iconfont icon-tag"></i>
+                
+                  <a class="hover-with-bg" href="/tags/css">css</a>
+                
+                  <a class="hover-with-bg" href="/tags/%E5%89%8D%E7%AB%AF">前端</a>
+                
+                  <a class="hover-with-bg" href="/tags/flex">flex</a>
+                
+              </span>
+            
+            </p>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="d-none d-lg-block col-lg-2 toc-container">
+      
+  <div id="toc">
+    <p class="h4"><i class="far fa-list-alt"></i>&nbsp;目录</p>
+    <div id="tocbot"></div>
+  </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- custom -->
+
+
+<!-- Comments -->
+<div class="col-lg-7 mx-auto nopadding-md">
+  <div class="container comments mx-auto" id="comments">
+    
+      <br><br>
+      
+      
+  <script defer src="https://utteranc.es/client.js"
+          repo="tohrux/tohrux.github.io"
+          issue-term="pathname"
+  
+          label="utterances"
+    
+          theme="github-light"
+          crossorigin="anonymous"
+          async>
+  </script>
+
+
+    
+  </div>
+</div>
+
+    
+  </main>
+
+  
+    <a class="z-depth-1" id="scroll-top-button" href="#" role="button">
+      <i class="fa fa-chevron-up scroll-top-arrow" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><b>Hexo</b></a>
+    <i class="iconfont icon-love"></i>
+    <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"> <b>Fluid</b></a>
+    <br>
+
+    
+  
+    <!-- 不蒜子统计PV -->
+    
+    &nbsp;<span id="busuanzi_container_site_pv">总访问量 
+          <span id="busuanzi_value_site_pv"></span> 次</span>&nbsp;
+  
+  
+    <!-- 不蒜子统计UV -->
+    
+    &nbsp;<span id="busuanzi_container_site_uv">总访客数 
+            <span id="busuanzi_value_site_uv"></span> 人</span>&nbsp;
+  
+  <br>
+
+
+
+    
+
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/jquery/jquery.min.js" ></script>
+<script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/popper/popper.min.js" ></script>
+<script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/bootstrap/js/bootstrap.min.js" ></script>
+<script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/mdbootstrap/js/mdb.min.js" ></script>
+<script src="/js/main.js" ></script>
+
+
+  <script src="/js/lazyload.js" ></script>
+
+
+
+  
+    <script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/tocbot/tocbot.min.js" ></script>
+  
+  <script src="/js/post.js" ></script>
+
+
+
+  <script src="/lib/smooth-scroll/smooth-scroll.min.js" ></script>
+
+
+
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+<!-- Plugins -->
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/prettify/prettify.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      $('pre').addClass('prettyprint  linenums');
+      prettyPrint();
+    })
+  </script>
+
+
+
+  <script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/typed/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "flex布局中 align-items和align-content&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/anchor/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "false",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      getSearchFile(path);
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/fancybox/jquery.fancybox.min.css/jquery.fancybox.min.js" ></script>
+  <script>
+    $("#post img:not(.no-zoom img, img[no-zoom])").each(
+      function () {
+        var element = document.createElement("a");
+        $(element).attr("data-fancybox", "images");
+        $(element).attr("href", $(this).attr("src"));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+</body>
+</html>

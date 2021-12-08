@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://cdn.jsdelivr.net/gh/tohrux/tohrux.github.io@1.0//img/apple-touch-icon.png# 用于苹果设备的 icon">
+  <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/tohrux/tohrux.github.io@1.0//img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="keywords" content="">
+  <title>组件注册的注意事项 ~ Tohrux!</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/font-awesome/css/all.min.css"  >
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/bootstrap/css/bootstrap.min.css"  >
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/mdbootstrap/css/mdb.min.css"  >
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/github-markdown/github-markdown.min.css"  >
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1067060_qzomjdt8bmp.css">
+
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/prettify/tomorrow-night.min.css"  >
+
+<link rel="stylesheet" href="/css/main.css"  >
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/fancybox/jquery.fancybox.min.css/jquery.fancybox.min.css"  >
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>tohru&#39;s blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/about/">关于我</a>
+          </li>
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/archives/">回档 !</a>
+          </li>
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+</nav>
+
+    <div class="view intro-2" id="background"
+         style="background: url('https://cdn.jsdelivr.net/gh/tohrux/tohrux.github.io@1.0//img/fullVersionxx.jpg')no-repeat center center;
+           background-size: cover;
+           background-attachment: scroll;">
+      <div class="full-bg-img">
+        <div class="mask rgba-black-light flex-center">
+          <div class="container text-center white-text fadeInUp">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              <br>
+              
+                <p class="mt-3">
+                  <i class="fas fa-calendar-alt" aria-hidden="true"></i>&nbsp;
+                  星期四, 二月 27日 2020, 12:45 下午
+                </p>
+              
+
+              <p>
+                
+                  
+                  &nbsp;<i class="far fa-chart-bar"></i>
+                  <span class="post-count">
+                    549 字
+                  </span>&nbsp;
+                
+
+                
+                  
+                  &nbsp;<i class="far fa-clock"></i>
+                  <span class="post-count">
+                      3 分钟
+                  </span>&nbsp;
+                
+
+                
+                  <!-- 不蒜子统计文章PV -->
+                  
+                  &nbsp;<i class="far fa-eye" aria-hidden="true"></i>&nbsp;
+                  <span id="busuanzi_container_page_pv">
+                    <span id="busuanzi_value_page_pv"></span> 次
+                  </span>&nbsp;
+                
+              </p>
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="py-5 z-depth-3" id="board">
+        <div class="post-content mx-auto" id="post">
+          <div class="markdown-body">
+            <h1 id="模板例子"><a href="#模板例子" class="headerlink" title="模板例子"></a>模板例子</h1><pre><code class="html">Vue.component(&#39;button-counter&#39;, {
+            data: function () {
+                return {
+                    count: 0
+                }
+            },
+            template: &#39;&lt;button @click=&quot;handle&quot;&gt;点击了{{count}}次&lt;/button&gt;&#39;,
+            methods: {
+                handle: function () {
+                    this.count+=2;
+                }
+            }
+        })</code></pre>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><h3 id="1-data-必须是一个函数"><a href="#1-data-必须是一个函数" class="headerlink" title="1.data 必须是一个函数"></a>1.data 必须是一个函数</h3><h3 id="2-组件模板内容必须是单个根元素"><a href="#2-组件模板内容必须是单个根元素" class="headerlink" title="2.组件模板内容必须是单个根元素"></a>2.组件模板内容必须是单个根元素</h3><h3 id="3-可以使用模板字符串"><a href="#3-可以使用模板字符串" class="headerlink" title="3.可以使用模板字符串"></a>3.可以使用模板字符串</h3><h3 id="4-最好使用短横线的命名方式"><a href="#4-最好使用短横线的命名方式" class="headerlink" title="4.最好使用短横线的命名方式"></a>4.最好使用短横线的命名方式</h3><h3 id="5-局部组件只能在注册他的父组件下使用"><a href="#5-局部组件只能在注册他的父组件下使用" class="headerlink" title="5.局部组件只能在注册他的父组件下使用"></a>5.局部组件只能在注册他的父组件下使用</h3><h1 id="局部注册方式"><a href="#局部注册方式" class="headerlink" title="局部注册方式"></a>局部注册方式</h1><pre><code class="html"> var HelloWorld = {
+            data: function () {
+                return {
+                    msg: &quot;hello,I&#39;m message&quot;
+                }
+            },
+            template: `&lt;div&gt;msg&lt;/div&gt;`,
+            methods: {
+
+            }
+        }
+        var vm = new Vue({
+            el: &#39;#app&#39;,
+            data: {},
+            methods: {},
+            components: {
+                &#39;hello-world&#39;: HelloWorld
+
+            }
+        })</code></pre>
+<h1 id="父组件向子组件传递值"><a href="#父组件向子组件传递值" class="headerlink" title="父组件向子组件传递值"></a>父组件向子组件传递值</h1><h2 id="1-组件内部通过props接受传递过来的值"><a href="#1-组件内部通过props接受传递过来的值" class="headerlink" title="1,组件内部通过props接受传递过来的值"></a>1,组件内部通过props接受传递过来的值</h2><pre><code class="js">&lt;body&gt;
+    &lt;div id=&quot;app&quot;&gt;
+        &lt;div&gt;{{pmsg}}&lt;/div&gt;
+        &lt;menu-item :title=&#39;ptitle&#39; content=&#39;hello&#39;&gt;&lt;/menu-item&gt;
+    &lt;/div&gt;
+
+    &lt;script&gt;
+        Vue.component(&#39;menu-item&#39;, {
+            props:[&#39;title&#39;,&#39;content&#39;],
+            data: function () {
+                return {
+                    msg: &#39;子组件本身的数据&#39;
+                }
+            },
+            template: `&lt;div&gt;{{msg+'----'+title+'---'+content}}&lt;/div&gt;`
+
+        })
+        var vm = new Vue({
+            el: &#39;#app&#39;,
+            data: {
+                pmsg: &#39;父组件的内容&#39;,
+                ptitle:&#39;动态属性绑定&#39;
+            },
+            methods: {}
+        });
+    &lt;/script&gt;
+&lt;/body&gt;</code></pre>
+<h2 id="2-父组件传递数据给子组件"><a href="#2-父组件传递数据给子组件" class="headerlink" title="2.父组件传递数据给子组件"></a>2.父组件传递数据给子组件</h2><pre><code class="html">&lt;body&gt;
+    &lt;div id=&quot;app&quot;&gt;
+        &lt;menu-list :arr=&#39;arr&#39; :obj=&#39;pobj&#39; :num=&#39;num&#39;&gt;
+            &lt;menu-list /&gt;
+    &lt;/div&gt;
+
+    &lt;script&gt;
+        Vue.component(&#39;menu-list&#39;, {
+            props: [&#39;arr&#39;, &#39;obj&#39;, &#39;num&#39;],
+            data: function () {
+                return {
+                    msg: &#39;hello&#39;
+                }
+            },
+            template: `&lt;div&gt;&lt;div v-for=&#39;item in arr&#39;&gt;{{item}}&lt;/div&gt;&lt;/div&gt;`
+        })
+        var vm = new Vue({
+            el: &#39;#app&#39;,
+            data: {
+                arr: [1, 2, 3, 4],
+                pobj: {
+                    id: &#39;angelina&#39;,
+                    name: 12,
+
+                },
+                num: &#39;hello&#39;
+            },
+            methods: {}
+        });
+    &lt;/script&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+<h1 id="3-子组件传递数据给父组件"><a href="#3-子组件传递数据给父组件" class="headerlink" title="3.子组件传递数据给父组件"></a>3.子组件传递数据给父组件</h1><pre><code class="html">&lt;body&gt;
+    &lt;div id=&quot;app&quot;&gt;
+        &lt;div :style=&#39;{fontSize:fontSize+&quot;px&quot;}&#39;&gt;{{pmsg}}&lt;/div&gt;
+        &lt;my-com1 @enlarge-text=&#39;handle($event)&#39;&gt;
+            &lt;/mycon1&gt;
+    &lt;/div&gt;
+
+    &lt;script&gt;
+        Vue.component(&#39;my-com1&#39;, {
+            props: [],
+            template: `
+            &lt;div&gt;
+                &lt;button @click=&#39;$emit(&quot;enlarge-text&quot;,5)&#39;&gt;click me&lt;/button&gt;
+                &lt;button @click=&#39;$emit(&quot;enlarge-text&quot;,20)&#39;&gt;click me&lt;/button&gt;
+            &lt;/div&gt;
+            `
+
+        })
+        var vm = new Vue({
+            el: &#39;#app&#39;,
+            data: {
+                pmsg: &#39;父组件中内容&#39;,
+                fontSize: 10
+            },
+            methods: {
+                handle(val) {
+                    this.fontSize += val;
+                }
+            }
+        });
+    &lt;/script&gt;
+&lt;/body&gt;</code></pre>
+
+            <hr>
+          </div>
+          <br>
+          <div>
+            <p>
+            
+            
+              <span>
+                <i class="iconfont icon-tag"></i>
+                
+                  <a class="hover-with-bg" href="/tags/vue">vue</a>
+                
+              </span>
+            
+            </p>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="d-none d-lg-block col-lg-2 toc-container">
+      
+  <div id="toc">
+    <p class="h4"><i class="far fa-list-alt"></i>&nbsp;目录</p>
+    <div id="tocbot"></div>
+  </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- custom -->
+
+
+<!-- Comments -->
+<div class="col-lg-7 mx-auto nopadding-md">
+  <div class="container comments mx-auto" id="comments">
+    
+      <br><br>
+      
+      
+  <script defer src="https://utteranc.es/client.js"
+          repo="tohrux/tohrux.github.io"
+          issue-term="pathname"
+  
+          label="utterances"
+    
+          theme="github-light"
+          crossorigin="anonymous"
+          async>
+  </script>
+
+
+    
+  </div>
+</div>
+
+    
+  </main>
+
+  
+    <a class="z-depth-1" id="scroll-top-button" href="#" role="button">
+      <i class="fa fa-chevron-up scroll-top-arrow" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><b>Hexo</b></a>
+    <i class="iconfont icon-love"></i>
+    <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"> <b>Fluid</b></a>
+    <br>
+
+    
+  
+    <!-- 不蒜子统计PV -->
+    
+    &nbsp;<span id="busuanzi_container_site_pv">总访问量 
+          <span id="busuanzi_value_site_pv"></span> 次</span>&nbsp;
+  
+  
+    <!-- 不蒜子统计UV -->
+    
+    &nbsp;<span id="busuanzi_container_site_uv">总访客数 
+            <span id="busuanzi_value_site_uv"></span> 人</span>&nbsp;
+  
+  <br>
+
+
+
+    
+
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/jquery/jquery.min.js" ></script>
+<script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/popper/popper.min.js" ></script>
+<script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/bootstrap/js/bootstrap.min.js" ></script>
+<script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/mdbootstrap/js/mdb.min.js" ></script>
+<script src="/js/main.js" ></script>
+
+
+  <script src="/js/lazyload.js" ></script>
+
+
+
+  
+    <script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/tocbot/tocbot.min.js" ></script>
+  
+  <script src="/js/post.js" ></script>
+
+
+
+  <script src="/lib/smooth-scroll/smooth-scroll.min.js" ></script>
+
+
+
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+<!-- Plugins -->
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/prettify/prettify.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      $('pre').addClass('prettyprint  linenums');
+      prettyPrint();
+    })
+  </script>
+
+
+
+  <script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/typed/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "组件注册的注意事项&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/anchor/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "false",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      getSearchFile(path);
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/fancybox/jquery.fancybox.min.css/jquery.fancybox.min.js" ></script>
+  <script>
+    $("#post img:not(.no-zoom img, img[no-zoom])").each(
+      function () {
+        var element = document.createElement("a");
+        $(element).attr("data-fancybox", "images");
+        $(element).attr("href", $(this).attr("src"));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+</body>
+</html>

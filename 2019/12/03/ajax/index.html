@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://cdn.jsdelivr.net/gh/tohrux/tohrux.github.io@1.0//img/apple-touch-icon.png# 用于苹果设备的 icon">
+  <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/tohrux/tohrux.github.io@1.0//img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="keywords" content="">
+  <title>AJAX JSON对象 XML -private ~ Tohrux!</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/font-awesome/css/all.min.css"  >
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/bootstrap/css/bootstrap.min.css"  >
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/mdbootstrap/css/mdb.min.css"  >
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/github-markdown/github-markdown.min.css"  >
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1067060_qzomjdt8bmp.css">
+
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/prettify/tomorrow-night.min.css"  >
+
+<link rel="stylesheet" href="/css/main.css"  >
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/fancybox/jquery.fancybox.min.css/jquery.fancybox.min.css"  >
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>tohru&#39;s blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/about/">关于我</a>
+          </li>
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/archives/">回档 !</a>
+          </li>
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+</nav>
+
+    <div class="view intro-2" id="background"
+         style="background: url('https://cdn.jsdelivr.net/gh/tohrux/tohrux.github.io@1.0//img/fullVersionxx.jpg')no-repeat center center;
+           background-size: cover;
+           background-attachment: scroll;">
+      <div class="full-bg-img">
+        <div class="mask rgba-black-light flex-center">
+          <div class="container text-center white-text fadeInUp">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              <br>
+              
+                <p class="mt-3">
+                  <i class="fas fa-calendar-alt" aria-hidden="true"></i>&nbsp;
+                  星期二, 十二月 3日 2019, 8:49 早上
+                </p>
+              
+
+              <p>
+                
+                  
+                  &nbsp;<i class="far fa-chart-bar"></i>
+                  <span class="post-count">
+                    925 字
+                  </span>&nbsp;
+                
+
+                
+                  
+                  &nbsp;<i class="far fa-clock"></i>
+                  <span class="post-count">
+                      4 分钟
+                  </span>&nbsp;
+                
+
+                
+                  <!-- 不蒜子统计文章PV -->
+                  
+                  &nbsp;<i class="far fa-eye" aria-hidden="true"></i>&nbsp;
+                  <span id="busuanzi_container_page_pv">
+                    <span id="busuanzi_value_page_pv"></span> 次
+                  </span>&nbsp;
+                
+              </p>
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="py-5 z-depth-3" id="board">
+        <div class="post-content mx-auto" id="post">
+          <div class="markdown-body">
+            <p><em>笔记来源于书</em></p>
+<h3 id="原生ajax写法"><a href="#原生ajax写法" class="headerlink" title="原生ajax写法"></a>原生ajax写法</h3><pre><code class="js">          var xhr = new XMLHttpRequest();
+        //
+        xhr.open(&quot;post&quot;, &quot;test.php&quot;);
+        //
+        xhr.setRequestHeader(&quot;Content-type&quot;, &quot;application/x-www-form-urlencoded&quot;);
+        //
+        xhr.send(&quot;a=1&amp;b=10&quot;);
+        //
+        xhr.onreadystatechange = function () {
+            if (xhr.status == 200 &amp;&amp; xhr.readyState == 4) {
+                var result = xhr.responseText;
+                alert(result);
+            }
+        }</code></pre>
+<p>👩: 在上面的代码中:</p>
+<p>​    1.<code>XMLHttpRequest()</code>是ajax的一个内置对象,能知道传值的地址,传地数据和传递数据的方式</p>
+<p>​    2.<code>open()</code>,初始化<code>XMLHttpRequest</code>对象,指定http请求的方法和要使用的服务器的URL;</p>
+<p>​            格式:<code>open(method: string, url: string):</code></p>
+<p>​    3.<code>send()</code>,发送该请求,指定发送的数据,如果http请求是<code>get</code>,可以不指定参数,或者用null..</p>
+<p>​    4. <code>status==200</code>:成功处理了请求，一般情况下都是返回此状态码</p>
+<pre><code> 5. `readyState==4` 请求完成加载
+ 6. `onreadystatechange`:XMLHttpRequest调用的时间处理器,他会检测readystate和http的状态,即上面的4和5.</code></pre><h3 id="jQuery中的ajax的写法"><a href="#jQuery中的ajax的写法" class="headerlink" title="jQuery中的ajax的写法"></a>jQuery中的ajax的写法</h3><pre><code class="js"> $.ajax({
+            url: &#39;&#39;,
+            type: &#39;post|get&#39;,
+            data: &#39;数据&#39;,
+            dataType: &#39;text|json|xml|script&#39;,
+            success: function (re) {
+                //服务器回传的数据处理
+            }
+        })</code></pre>
+<h3 id="JSON对象"><a href="#JSON对象" class="headerlink" title="JSON对象"></a>JSON对象</h3><p>可以理解为有格式的字符串,以键值的形式存放;他的作用是存放数据</p>
+<p>有两种格式:</p>
+<pre><code>{name:&#39;angelina&#39;,age:19};</code></pre><pre><code class="js">[{name:&#39;angelina&#39;,age:19},{name:&#39;angelina&#39;,age:19},{name:&#39;angelina&#39;,age:19}]</code></pre>
+<p>两种格式的结合:</p>
+<pre><code class="js">{list:[{name:&#39;angelina&#39;,age:17},{name:&#39;eyjfjalla&#39;,age:18}]}</code></pre>
+<h3 id="对象解析为JSON对象"><a href="#对象解析为JSON对象" class="headerlink" title="对象解析为JSON对象"></a>对象解析为JSON对象</h3><p><code>JSON.stringify(Object)</code></p>
+<h3 id="字符串解析为JSON对象"><a href="#字符串解析为JSON对象" class="headerlink" title="字符串解析为JSON对象"></a>字符串解析为JSON对象</h3><p>JSON.parse({…,..,…})</p>
+<h3 id="JSON传值"><a href="#JSON传值" class="headerlink" title="JSON传值"></a>JSON传值</h3><pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;script src=&quot;jquery-3.4.1.js&quot;&gt;&lt;/script&gt;
+    &lt;script type=&quot;text/JavaScript&quot;&gt;
+        var aStudent = {
+            name: &#39;angelina&#39;,
+            age: 18
+        };
+        var students = [{
+            name: &#39;a&#39;,
+            age: 12
+        }, {
+            name: &#39;b&#39;,
+            age: 13
+        }];
+
+        $(function () {
+            var n;
+            var a;
+            for (var k in students) {
+                n = students[k].name;
+                a = students[k].age;
+                $(&quot;#s&quot;).append(&quot;&lt;tr&gt;&lt;td&gt;&quot;+n+&quot;&lt;/td&gt;&lt;td&gt;&quot;+a+&quot;&lt;/td&gt;&lt;/tr&gt;&quot;);
+            }
+        })
+    &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;h1&gt;JSON:&lt;/h1&gt;
+    aStudent的名称:
+    &lt;script type=&quot;text/JavaScript&quot;&gt;document.write(aStudent.name)&lt;/script&gt;
+    &lt;br /&gt;
+    students的第一个名称:
+    &lt;script&gt;
+        document.write(students[0].name)
+    &lt;/script&gt;
+    &lt;table id=&quot;s&quot; border=&quot;1&quot;&gt;
+        &lt;tr&gt;
+            &lt;th&gt;name&lt;/th&gt;
+            &lt;th&gt;age&lt;/th&gt;
+        &lt;/tr&gt;
+
+    &lt;/table&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+<h3 id="XML的基本格式"><a href="#XML的基本格式" class="headerlink" title="XML的基本格式"></a>XML的基本格式</h3><pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
+&lt;list&gt;
+    &lt;province id=&quot;1&quot; name=&quot;河北&quot;&gt;
+        &lt;city id=&quot;11&quot; name=&quot;石家庄&quot;&gt;&lt;/city&gt;
+        &lt;city id=&quot;12&quot; name=&quot;承德&quot;&gt;&lt;/city&gt;
+    &lt;/province&gt;
+&lt;/list&gt;</code></pre>
+<h3 id="load"><a href="#load" class="headerlink" title="load()"></a>load()</h3><p>语法:</p>
+<pre><code class="js">$(selector).load(url,data,callback)</code></pre>
+<p>url:文件地址</p>
+<p>data: 规定与请求共同发送的查询字符串键值对的集合,是可选的</p>
+<p>fallback: 回调函数,可选的</p>
+<p>👇</p>
+<p>fallback里面可以有三个值:</p>
+<pre><code class="js">$(&#39;#who&#39;).load(&quot;book.html&quot;, function (responseText, statusText,xhr){}</code></pre>
+<p>responseText为返回的调用成功后的结果内容</p>
+<p>statusText为调用的状态,成功的话会 返回 “success”</p>
+<p>xhr 为整个XMLHtmlRequest对象</p>
+<p>👩:可以通过console log 来check it out</p>
+<pre><code class="js">$(function () {
+            $(&#39;.button2&#39;).click(function () {
+                $(&#39;#who&#39;).load(&quot;book.html&quot;, function (responseText, statusText, xhr) {
+                    console.log(xhr.status);
+                    console.log(xhr.responseText);
+                    console.log(xhr.statusText);
+                    console.log(responseText);
+                    console.log(statusText);
+                });
+            })
+        })</code></pre>
+<pre><code class="html">result:
+
+xdd.html:14 200
+xdd.html:15     &lt;ul&gt;
+        &lt;li&gt;nihao&lt;/li&gt;
+        &lt;li&gt;nihao&lt;/li&gt;
+        &lt;li&gt;nihao&lt;/li&gt;
+        &lt;li&gt;nihao&lt;/li&gt;
+    &lt;/ul&gt;
+xdd.html:16 OK
+xdd.html:17     &lt;ul&gt;
+        &lt;li&gt;nihao&lt;/li&gt;
+        &lt;li&gt;nihao&lt;/li&gt;
+        &lt;li&gt;nihao&lt;/li&gt;
+        &lt;li&gt;nihao&lt;/li&gt;
+    &lt;/ul&gt;
+xdd.html:18 success</code></pre>
+
+            <hr>
+          </div>
+          <br>
+          <div>
+            <p>
+            
+            
+              <span>
+                <i class="iconfont icon-tag"></i>
+                
+                  <a class="hover-with-bg" href="/tags/%E5%89%8D%E7%AB%AF">前端</a>
+                
+                  <a class="hover-with-bg" href="/tags/ajax">ajax</a>
+                
+                  <a class="hover-with-bg" href="/tags/javascript">javascript</a>
+                
+                  <a class="hover-with-bg" href="/tags/jQuery">jQuery</a>
+                
+              </span>
+            
+            </p>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="d-none d-lg-block col-lg-2 toc-container">
+      
+  <div id="toc">
+    <p class="h4"><i class="far fa-list-alt"></i>&nbsp;目录</p>
+    <div id="tocbot"></div>
+  </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- custom -->
+
+
+<!-- Comments -->
+<div class="col-lg-7 mx-auto nopadding-md">
+  <div class="container comments mx-auto" id="comments">
+    
+      <br><br>
+      
+      
+  <script defer src="https://utteranc.es/client.js"
+          repo="tohrux/tohrux.github.io"
+          issue-term="pathname"
+  
+          label="utterances"
+    
+          theme="github-light"
+          crossorigin="anonymous"
+          async>
+  </script>
+
+
+    
+  </div>
+</div>
+
+    
+  </main>
+
+  
+    <a class="z-depth-1" id="scroll-top-button" href="#" role="button">
+      <i class="fa fa-chevron-up scroll-top-arrow" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><b>Hexo</b></a>
+    <i class="iconfont icon-love"></i>
+    <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"> <b>Fluid</b></a>
+    <br>
+
+    
+  
+    <!-- 不蒜子统计PV -->
+    
+    &nbsp;<span id="busuanzi_container_site_pv">总访问量 
+          <span id="busuanzi_value_site_pv"></span> 次</span>&nbsp;
+  
+  
+    <!-- 不蒜子统计UV -->
+    
+    &nbsp;<span id="busuanzi_container_site_uv">总访客数 
+            <span id="busuanzi_value_site_uv"></span> 人</span>&nbsp;
+  
+  <br>
+
+
+
+    
+
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/jquery/jquery.min.js" ></script>
+<script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/popper/popper.min.js" ></script>
+<script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/bootstrap/js/bootstrap.min.js" ></script>
+<script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/mdbootstrap/js/mdb.min.js" ></script>
+<script src="/js/main.js" ></script>
+
+
+  <script src="/js/lazyload.js" ></script>
+
+
+
+  
+    <script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/tocbot/tocbot.min.js" ></script>
+  
+  <script src="/js/post.js" ></script>
+
+
+
+  <script src="/lib/smooth-scroll/smooth-scroll.min.js" ></script>
+
+
+
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+<!-- Plugins -->
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/prettify/prettify.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      $('pre').addClass('prettyprint  linenums');
+      prettyPrint();
+    })
+  </script>
+
+
+
+  <script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/typed/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "AJAX JSON对象 XML -private&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/anchor/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "false",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      getSearchFile(path);
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/fancybox/jquery.fancybox.min.css/jquery.fancybox.min.js" ></script>
+  <script>
+    $("#post img:not(.no-zoom img, img[no-zoom])").each(
+      function () {
+        var element = document.createElement("a");
+        $(element).attr("data-fancybox", "images");
+        $(element).attr("href", $(this).attr("src"));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://cdn.jsdelivr.net/gh/tohrux/tohrux.github.io@1.0//img/apple-touch-icon.png# 用于苹果设备的 icon">
+  <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/tohrux/tohrux.github.io@1.0//img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="keywords" content="">
+  <title>laravel控制器基础 ~ Tohrux!</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/font-awesome/css/all.min.css"  >
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/bootstrap/css/bootstrap.min.css"  >
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/mdbootstrap/css/mdb.min.css"  >
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/github-markdown/github-markdown.min.css"  >
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1067060_qzomjdt8bmp.css">
+
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/prettify/tomorrow-night.min.css"  >
+
+<link rel="stylesheet" href="/css/main.css"  >
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/fancybox/jquery.fancybox.min.css/jquery.fancybox.min.css"  >
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>tohru&#39;s blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/about/">关于我</a>
+          </li>
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/archives/">回档 !</a>
+          </li>
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+</nav>
+
+    <div class="view intro-2" id="background"
+         style="background: url('https://cdn.jsdelivr.net/gh/tohrux/tohrux.github.io@1.0//img/fullVersionxx.jpg')no-repeat center center;
+           background-size: cover;
+           background-attachment: scroll;">
+      <div class="full-bg-img">
+        <div class="mask rgba-black-light flex-center">
+          <div class="container text-center white-text fadeInUp">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              <br>
+              
+                <p class="mt-3">
+                  <i class="fas fa-calendar-alt" aria-hidden="true"></i>&nbsp;
+                  星期五, 十一月 22日 2019, 10:05 上午
+                </p>
+              
+
+              <p>
+                
+                  
+                  &nbsp;<i class="far fa-chart-bar"></i>
+                  <span class="post-count">
+                    596 字
+                  </span>&nbsp;
+                
+
+                
+                  
+                  &nbsp;<i class="far fa-clock"></i>
+                  <span class="post-count">
+                      2 分钟
+                  </span>&nbsp;
+                
+
+                
+                  <!-- 不蒜子统计文章PV -->
+                  
+                  &nbsp;<i class="far fa-eye" aria-hidden="true"></i>&nbsp;
+                  <span id="busuanzi_container_page_pv">
+                    <span id="busuanzi_value_page_pv"></span> 次
+                  </span>&nbsp;
+                
+              </p>
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="py-5 z-depth-3" id="board">
+        <div class="post-content mx-auto" id="post">
+          <div class="markdown-body">
+            <h1 id="控制器文件的位置"><a href="#控制器文件的位置" class="headerlink" title="控制器文件的位置"></a>控制器文件的位置</h1><p>控制器属于项目代码</p>
+<p>位于<strong>app/http/Controllers</strong></p>
+<h1 id="命名控制器文件"><a href="#命名控制器文件" class="headerlink" title="命名控制器文件"></a>命名控制器文件</h1><p>驼峰命名+Controller.php</p>
+<h1 id="控制器的结构代码"><a href="#控制器的结构代码" class="headerlink" title="控制器的结构代码"></a>控制器的结构代码</h1><p>🚫不需要我们自己去写,可以通过artisan来生成</p>
+<p>相应命令:</p>
+<pre><code class="cmd">php artisan make:controller TestController</code></pre>
+<p>创建资源控制器:(自动生成很多方法</p>
+<pre><code class="php">php artisan make:controller TestController --resource //简写 --r</code></pre>
+<p>分目录控制器(没有这个文件夹的话就会创建)</p>
+<pre><code class="cmd">php artisan make:controller Admin/TestController</code></pre>
+<p>创建成功的提示:</p>
+<pre><code class="cmd">Controller created successfully.</code></pre>
+<p>生成的结构代码:</p>
+<pre><code class="php">&lt;?php
+
+namespace App\Http\Controllers;//命名空间
+
+use Illuminate\Http\Request;//命名空间三元素: 常量,方法,类
+
+class TestController extends Controller
+{
+    //
+}
+</code></pre>
+<h1 id="控制器路由"><a href="#控制器路由" class="headerlink" title="控制器路由"></a>控制器路由</h1><p>#使用路由规则调用控制器下的方法,而不再走回调函数.</p>
+<p>格式</p>
+<pre><code class="php">控制器类名@方法名</code></pre>
+<h1 id="控制下的命名空间分组"><a href="#控制下的命名空间分组" class="headerlink" title="控制下的命名空间分组"></a>控制下的命名空间分组</h1><pre><code class="php">Route::group([&#39;namespace&#39;=&gt;&#39;Admin&#39;],function(){
+    Route:get(&#39;/shit/test1&#39;,&#39;TestController@test1&#39;)
+})</code></pre>
+<h1 id="接受用户输入"><a href="#接受用户输入" class="headerlink" title="接受用户输入"></a>接受用户输入</h1><p>接受用户输入的类:illuminate\support\facades\input</p>
+<p><strong>facades:介于一个类实例化与没有实例化之间的一个状态,是类的一个接口的实现,说白了就是静态方法.</strong></p>
+<blockquote>
+<p>在laravel中如果需要使用facades,但是又不想写那么长:Use Illuminate\Support\Facades\Input 则可以在config/app.php中定义别名</p>
+</blockquote>
+<pre><code class="php">//自己添加的别名
+        &#39;Input&#39; =&gt; Illuminate\Support\Facades\Input::class</code></pre>
+<p>👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆</p>
+<p>😤😤😤😤😤😤😤😤😤😤😤😤</p>
+<p>上面真的是血的教训,我用的laravel是最新的6.5的,但是在5.2版本之后就开始用Request替代Input了</p>
+<p>一开始疯狂检测自己的拼写,甚至重装laravel,花了大概一个半小时才解决了问题.</p>
+<p>不过这个过程还是挺有意义的;</p>
+<pre><code class="php">&lt;?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request; //声明 这是自动生成的
+
+class TextController extends Controller
+{
+    public function home(Request $request)//实例化对象
+
+    {    
+        //获取全部请求的数据
+        dump($request-&gt;all());
+        //只获取a,b字段的值
+        dump($request-&gt;only([&#39;a&#39;, &#39;b&#39;]));
+        //获取除了a,b以外的值
+        dump($request-&gt;except([&#39;a&#39;, &#39;b&#39;]));
+        //判断是否存在id的这个字段,exists完全等同于has
+        dump($request-&gt;has(&#39;id&#39;));
+
+        dump($request-&gt;exists(&#39;id&#39;));
+        //获取id的值,如果请求字段为空的话就用 &#39;xxx&#39; 代替
+        dump($request-&gt;input(&#39;id&#39;, &#39;xxx&#39;));
+        //&quot;.&quot;可以用来分别获取每个数组元素
+        dump($request-&gt;input(&#39;books.0&#39;));
+    }
+}
+</code></pre>
+
+            <hr>
+          </div>
+          <br>
+          <div>
+            <p>
+            
+            
+              <span>
+                <i class="iconfont icon-tag"></i>
+                
+                  <a class="hover-with-bg" href="/tags/laravel">laravel</a>
+                
+                  <a class="hover-with-bg" href="/tags/php">php</a>
+                
+              </span>
+            
+            </p>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="d-none d-lg-block col-lg-2 toc-container">
+      
+  <div id="toc">
+    <p class="h4"><i class="far fa-list-alt"></i>&nbsp;目录</p>
+    <div id="tocbot"></div>
+  </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- custom -->
+
+
+<!-- Comments -->
+<div class="col-lg-7 mx-auto nopadding-md">
+  <div class="container comments mx-auto" id="comments">
+    
+      <br><br>
+      
+      
+  <script defer src="https://utteranc.es/client.js"
+          repo="tohrux/tohrux.github.io"
+          issue-term="pathname"
+  
+          label="utterances"
+    
+          theme="github-light"
+          crossorigin="anonymous"
+          async>
+  </script>
+
+
+    
+  </div>
+</div>
+
+    
+  </main>
+
+  
+    <a class="z-depth-1" id="scroll-top-button" href="#" role="button">
+      <i class="fa fa-chevron-up scroll-top-arrow" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><b>Hexo</b></a>
+    <i class="iconfont icon-love"></i>
+    <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"> <b>Fluid</b></a>
+    <br>
+
+    
+  
+    <!-- 不蒜子统计PV -->
+    
+    &nbsp;<span id="busuanzi_container_site_pv">总访问量 
+          <span id="busuanzi_value_site_pv"></span> 次</span>&nbsp;
+  
+  
+    <!-- 不蒜子统计UV -->
+    
+    &nbsp;<span id="busuanzi_container_site_uv">总访客数 
+            <span id="busuanzi_value_site_uv"></span> 人</span>&nbsp;
+  
+  <br>
+
+
+
+    
+
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/jquery/jquery.min.js" ></script>
+<script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/popper/popper.min.js" ></script>
+<script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/bootstrap/js/bootstrap.min.js" ></script>
+<script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/mdbootstrap/js/mdb.min.js" ></script>
+<script src="/js/main.js" ></script>
+
+
+  <script src="/js/lazyload.js" ></script>
+
+
+
+  
+    <script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/tocbot/tocbot.min.js" ></script>
+  
+  <script src="/js/post.js" ></script>
+
+
+
+  <script src="/lib/smooth-scroll/smooth-scroll.min.js" ></script>
+
+
+
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+<!-- Plugins -->
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/prettify/prettify.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      $('pre').addClass('prettyprint  linenums');
+      prettyPrint();
+    })
+  </script>
+
+
+
+  <script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/typed/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "laravel控制器基础&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/anchor/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "false",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      getSearchFile(path);
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/fancybox/jquery.fancybox.min.css/jquery.fancybox.min.js" ></script>
+  <script>
+    $("#post img:not(.no-zoom img, img[no-zoom])").each(
+      function () {
+        var element = document.createElement("a");
+        $(element).attr("data-fancybox", "images");
+        $(element).attr("href", $(this).attr("src"));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+</body>
+</html>

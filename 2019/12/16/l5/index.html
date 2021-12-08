@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://cdn.jsdelivr.net/gh/tohrux/tohrux.github.io@1.0//img/apple-touch-icon.png# 用于苹果设备的 icon">
+  <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/tohrux/tohrux.github.io@1.0//img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="keywords" content="">
+  <title>jQ复习 -private ~ Tohrux!</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/font-awesome/css/all.min.css"  >
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/bootstrap/css/bootstrap.min.css"  >
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/mdbootstrap/css/mdb.min.css"  >
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/github-markdown/github-markdown.min.css"  >
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1067060_qzomjdt8bmp.css">
+
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/prettify/tomorrow-night.min.css"  >
+
+<link rel="stylesheet" href="/css/main.css"  >
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/fancybox/jquery.fancybox.min.css/jquery.fancybox.min.css"  >
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>tohru&#39;s blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/about/">关于我</a>
+          </li>
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/archives/">回档 !</a>
+          </li>
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+</nav>
+
+    <div class="view intro-2" id="background"
+         style="background: url('https://cdn.jsdelivr.net/gh/tohrux/tohrux.github.io@1.0//img/fullVersionxx.jpg')no-repeat center center;
+           background-size: cover;
+           background-attachment: scroll;">
+      <div class="full-bg-img">
+        <div class="mask rgba-black-light flex-center">
+          <div class="container text-center white-text fadeInUp">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              <br>
+              
+                <p class="mt-3">
+                  <i class="fas fa-calendar-alt" aria-hidden="true"></i>&nbsp;
+                  星期一, 十二月 16日 2019, 6:45 晚上
+                </p>
+              
+
+              <p>
+                
+                  
+                  &nbsp;<i class="far fa-chart-bar"></i>
+                  <span class="post-count">
+                    1.2k 字
+                  </span>&nbsp;
+                
+
+                
+                  
+                  &nbsp;<i class="far fa-clock"></i>
+                  <span class="post-count">
+                      7 分钟
+                  </span>&nbsp;
+                
+
+                
+                  <!-- 不蒜子统计文章PV -->
+                  
+                  &nbsp;<i class="far fa-eye" aria-hidden="true"></i>&nbsp;
+                  <span id="busuanzi_container_page_pv">
+                    <span id="busuanzi_value_page_pv"></span> 次
+                  </span>&nbsp;
+                
+              </p>
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="py-5 z-depth-3" id="board">
+        <div class="post-content mx-auto" id="post">
+          <div class="markdown-body">
+            <pre><code class="js">&lt;script&gt;
+        $(document).ready(function () {
+            $(&quot;body&quot;).click(function () {
+                var txt = $(&quot;#msg&quot;).html() + &quot;&lt;p&gt;body被点击&lt;/p&gt;&quot;;
+                $(&quot;#msg&quot;).html(txt);
+            })
+
+
+            $(&quot;#content&quot;).click(function () {
+                var txt = $(&quot;#msg&quot;).html() + &quot;&lt;p&gt;外部div被点击&lt;/p&gt;&quot;;
+                $(&quot;#msg&quot;).html(txt);
+
+            })
+            $(&quot;span&quot;).click(function (event) {
+                var txt = $(&quot;#msg&quot;).html() + &quot;&lt;p&gt;内部span被点击&lt;/p&gt;&quot;;
+                $(&quot;#msg&quot;).html(txt);
+                // event.stopPropagation();
+
+            })
+            // $(&quot;button&quot;).click(function (e) {
+            //     if ($(&quot;button&quot;).text() == &quot;&quot;) {
+            //         e.preventDefault();
+            //     }
+            // })
+
+        })
+&lt;/script&gt;
+
+&lt;body&gt;
+
+    &lt;button&gt;&lt;/button&gt;
+    &lt;div id=&quot;content&quot;&gt;
+        &lt;span&gt;span&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div id=&quot;msg&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;</code></pre>
+<h1 id="键盘事件-选择器"><a href="#键盘事件-选择器" class="headerlink" title="键盘事件,选择器"></a>键盘事件,选择器</h1><pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;script src=&quot;js/jquery-3.4.1.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        $(document).ready(function () {
+            $(&quot;span:nth-child(1)&quot;).css(&quot;background&quot;, &quot;yellow&quot;);
+            $(&quot;p:nth-of-type(2)&quot;).after(&quot;&lt;div id=&#39;hello&#39;&gt;nihao&lt;/div&gt;&quot;);
+            $(&quot;p:nth-of-type(1)&quot;).css(&quot;background&quot;, &quot;red&quot;);
+            $(&quot;p[class = jk]&quot;).hover(
+                function () {
+                    $(this).css(&quot;background&quot;, &quot;blue&quot;);
+                },
+                function () {
+                    $(this).css(&quot;background&quot;, &quot;pink&quot;);
+                }
+            )
+            $(&quot;input&quot;).keydown(function () {
+                $(this).css(&quot;background&quot;, &quot;yellow&quot;);
+            })
+            $(&#39;input&#39;).keyup(function () {
+                $(this).css(&quot;background&quot;, &quot;white&quot;);
+            })
+            $(&quot;form&quot;).submit(function () {
+                alert(&quot;submitting&quot;);
+            })
+            $(&quot;input&quot;).change(function () {
+                alert(&quot;had been change&quot;);
+            })
+            var x = 0;
+            $(&quot;#myScroll&quot;).scroll(function () {
+                $(this).next().html(x += 1);
+                // alert(123);
+            })
+            $(window).resize(function () {
+                // $(&quot;body&quot;).text(x += 1);
+            })
+        })
+    &lt;/script&gt;
+    &lt;style&gt;
+        #hello {
+            background-color: green;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;input type=&quot;text&quot;&gt;
+    &lt;/br&gt;
+    &lt;span&gt;h&lt;/span&gt;
+    &lt;p&gt;pnihao&lt;/p&gt;
+    &lt;p&gt;nihaop&lt;/p&gt;
+    &lt;p class=&quot;jk&quot;&gt;helo&lt;/p&gt;
+    &lt;form action=&quot;&quot;&gt;
+        &lt;input type=&quot;text&quot;&gt;
+        &lt;input id=&quot;mySubmit&quot; type=&quot;submit&quot;&gt;
+    &lt;/form&gt;
+    &lt;div id=&quot;myScroll&quot; style=&quot;width: 100px;height: 100px;background-color: yellow;overflow: scroll;&quot;&gt;
+        nihaodajiadsfsafasf
+        nihaodajiadsfsafasf
+        nihaodajiadsfsafasf
+        nihaodajiadsfsafasf
+    &lt;/div&gt;
+    &lt;span&gt;0&lt;/span&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+<h1 id="表单验证"><a href="#表单验证" class="headerlink" title="表单验证"></a>表单验证</h1><pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;script src=&quot;js/jquery-3.4.1.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        function checkName() {
+            var username = $(&quot;[name=&#39;username&#39;]&quot;).val();
+            var reg = /^[a-zA-Z]{3,7}$/.test(username);
+            if (reg) {
+                $(&#39;#m_username&#39;).html(&#39;available&#39;);
+                return true;
+
+            } else {
+                $(&#39;#m_username&#39;).html(&#39;unavailable&#39;);
+                return false;
+            }
+        }
+
+        function a() {
+            checkName();
+            console.log(checkName());
+        }
+    &lt;/script&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;form action=&quot;&quot;&gt;
+        &lt;input type=&quot;text&quot; name=&quot;username&quot; id=&quot;username&quot; value=&quot;&quot; onblur=&quot;a()&quot;&gt;
+        &lt;span id=&quot;m_username&quot;&gt;&lt;/span&gt;
+        &lt;input type=&quot;button&quot; id=&quot;button&quot; value=&quot;click&quot;&gt;
+
+    &lt;/form&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+<h1 id="图片定时切换-只使用setTimeout"><a href="#图片定时切换-只使用setTimeout" class="headerlink" title="图片定时切换(只使用setTimeout"></a>图片定时切换(只使用setTimeout</h1><pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;script src=&quot;js/jquery-3.4.1.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        var g;
+        var k = 0;
+        var t;
+        var arr = [&quot;ark/gushou.png&quot;, &quot;ark/pzw.png&quot;, &quot;ark/qsl.png&quot;];
+
+        function changeSrc() {
+            k++;
+            if (k &gt; 2) {
+                k = 0;
+            }
+            var path = arr[k];
+            $(&quot;img&quot;).attr(&quot;src&quot;, path);
+            t = setTimeout(changeSrc, 1000);
+        }
+        $(function () {
+            g = setTimeout(changeSrc, 1000)
+            $(&quot;#button&quot;).click(function () {
+                clearTimeout(t);
+            })
+            $(&quot;#button1&quot;).click(function () {
+                t = setTimeout(changeSrc, 1000);
+            })
+
+            // $(&quot;img&quot;).hover(
+            //     function () {
+            //         clearTimeout(t);
+            //     },
+            //     function () {
+            //         t = setTimeout(changeSrc, 1000);
+            //     }
+            // )
+
+        })
+    &lt;/script&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div&gt;
+        &lt;img id=&quot;img&quot; src=&quot;ark/gushou.png&quot; alt=&quot;&quot;&gt;
+    &lt;/div&gt;
+    &lt;button id=&quot;button&quot;&gt;stop&lt;/button&gt;
+    &lt;button id=&quot;button1&quot;&gt;start&lt;/button&gt;
+
+
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+<p>这里有点奇怪,</p>
+<pre><code class="html"> // $(&quot;img&quot;).hover(
+            //     function () {
+            //         clearTimeout(t);
+            //     },
+            //     function () {
+            //         t = setTimeout(changeSrc, 1000);
+            //     }
+            // )</code></pre>
+<p>使用这段的时候无法停止</p>
+<h1 id="动画属性"><a href="#动画属性" class="headerlink" title="动画属性"></a>动画属性</h1><pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;script src=&quot;js/jquery-3.4.1.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        $(function () {
+            $(&quot;#div1&quot;).bind(&quot;click&quot;, function () {
+                $(this).animate({
+                    left: &#39;+=200px&#39;,
+                    width: &#39;+=200px&#39;
+                }, 1300, function () {
+                    $(this).animate({
+                        left: &#39;0px&#39;,
+                        width: &#39;100px&#39;
+                    }, 1000)
+                })
+            })
+        })
+    &lt;/script&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+        #div1 {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: #abcdef;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div id=&quot;div1&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+<h1 id="鼠标位置获取"><a href="#鼠标位置获取" class="headerlink" title="鼠标位置获取"></a>鼠标位置获取</h1><pre><code class="html">$(&quot;#div1&quot;).bind(&quot;mousemove&quot;, function (e) {
+                var x = e.pageX;
+                var y = e.pageY;
+                $(this).text(&quot;x:&quot; + x + &quot;;y:&quot; + y);
+            })</code></pre>
+<p>👩:mousemove 比较适合这种时候用</p>
+
+            <hr>
+          </div>
+          <br>
+          <div>
+            <p>
+            
+            
+              <span>
+                <i class="iconfont icon-tag"></i>
+                
+                  <a class="hover-with-bg" href="/tags/js">js</a>
+                
+                  <a class="hover-with-bg" href="/tags/jquery">jquery</a>
+                
+              </span>
+            
+            </p>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="d-none d-lg-block col-lg-2 toc-container">
+      
+  <div id="toc">
+    <p class="h4"><i class="far fa-list-alt"></i>&nbsp;目录</p>
+    <div id="tocbot"></div>
+  </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- custom -->
+
+
+<!-- Comments -->
+<div class="col-lg-7 mx-auto nopadding-md">
+  <div class="container comments mx-auto" id="comments">
+    
+      <br><br>
+      
+      
+  <script defer src="https://utteranc.es/client.js"
+          repo="tohrux/tohrux.github.io"
+          issue-term="pathname"
+  
+          label="utterances"
+    
+          theme="github-light"
+          crossorigin="anonymous"
+          async>
+  </script>
+
+
+    
+  </div>
+</div>
+
+    
+  </main>
+
+  
+    <a class="z-depth-1" id="scroll-top-button" href="#" role="button">
+      <i class="fa fa-chevron-up scroll-top-arrow" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><b>Hexo</b></a>
+    <i class="iconfont icon-love"></i>
+    <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"> <b>Fluid</b></a>
+    <br>
+
+    
+  
+    <!-- 不蒜子统计PV -->
+    
+    &nbsp;<span id="busuanzi_container_site_pv">总访问量 
+          <span id="busuanzi_value_site_pv"></span> 次</span>&nbsp;
+  
+  
+    <!-- 不蒜子统计UV -->
+    
+    &nbsp;<span id="busuanzi_container_site_uv">总访客数 
+            <span id="busuanzi_value_site_uv"></span> 人</span>&nbsp;
+  
+  <br>
+
+
+
+    
+
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/jquery/jquery.min.js" ></script>
+<script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/popper/popper.min.js" ></script>
+<script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/bootstrap/js/bootstrap.min.js" ></script>
+<script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/mdbootstrap/js/mdb.min.js" ></script>
+<script src="/js/main.js" ></script>
+
+
+  <script src="/js/lazyload.js" ></script>
+
+
+
+  
+    <script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/tocbot/tocbot.min.js" ></script>
+  
+  <script src="/js/post.js" ></script>
+
+
+
+  <script src="/lib/smooth-scroll/smooth-scroll.min.js" ></script>
+
+
+
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+<!-- Plugins -->
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/prettify/prettify.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      $('pre').addClass('prettyprint  linenums');
+      prettyPrint();
+    })
+  </script>
+
+
+
+  <script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/typed/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "jQ复习 -private&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/anchor/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "false",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      getSearchFile(path);
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/fancybox/jquery.fancybox.min.css/jquery.fancybox.min.js" ></script>
+  <script>
+    $("#post img:not(.no-zoom img, img[no-zoom])").each(
+      function () {
+        var element = document.createElement("a");
+        $(element).attr("data-fancybox", "images");
+        $(element).attr("href", $(this).attr("src"));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+</body>
+</html>

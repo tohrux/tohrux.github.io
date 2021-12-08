@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://cdn.jsdelivr.net/gh/tohrux/tohrux.github.io@1.0//img/apple-touch-icon.png# 用于苹果设备的 icon">
+  <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/tohrux/tohrux.github.io@1.0//img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="keywords" content="">
+  <title>pdo ~ Tohrux!</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/font-awesome/css/all.min.css"  >
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/bootstrap/css/bootstrap.min.css"  >
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/mdbootstrap/css/mdb.min.css"  >
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/github-markdown/github-markdown.min.css"  >
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1067060_qzomjdt8bmp.css">
+
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/prettify/tomorrow-night.min.css"  >
+
+<link rel="stylesheet" href="/css/main.css"  >
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/fancybox/jquery.fancybox.min.css/jquery.fancybox.min.css"  >
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>tohru&#39;s blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/about/">关于我</a>
+          </li>
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/archives/">回档 !</a>
+          </li>
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+</nav>
+
+    <div class="view intro-2" id="background"
+         style="background: url('https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191211200234.png')no-repeat center center;
+           background-size: cover;
+           background-attachment: scroll;">
+      <div class="full-bg-img">
+        <div class="mask rgba-black-light flex-center">
+          <div class="container text-center white-text fadeInUp">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              <br>
+              
+                <p class="mt-3">
+                  <i class="fas fa-calendar-alt" aria-hidden="true"></i>&nbsp;
+                  星期三, 十二月 11日 2019, 8:00 晚上
+                </p>
+              
+
+              <p>
+                
+                  
+                  &nbsp;<i class="far fa-chart-bar"></i>
+                  <span class="post-count">
+                    685 字
+                  </span>&nbsp;
+                
+
+                
+                  
+                  &nbsp;<i class="far fa-clock"></i>
+                  <span class="post-count">
+                      3 分钟
+                  </span>&nbsp;
+                
+
+                
+                  <!-- 不蒜子统计文章PV -->
+                  
+                  &nbsp;<i class="far fa-eye" aria-hidden="true"></i>&nbsp;
+                  <span id="busuanzi_container_page_pv">
+                    <span id="busuanzi_value_page_pv"></span> 次
+                  </span>&nbsp;
+                
+              </p>
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="py-5 z-depth-3" id="board">
+        <div class="post-content mx-auto" id="post">
+          <div class="markdown-body">
+            <p>PDO,php data object <em>php数据对象</em></p>
+<h1 id="连接服务器"><a href="#连接服务器" class="headerlink" title="连接服务器"></a>连接服务器</h1><p>比php连接mysql多了一个参数,数据库类型</p>
+<p><strong>$dbms</strong> <em>Database Management System</em></p>
+<p><strong>$dsn</strong> <em>Data Source Name</em></p>
+<pre><code class="php">&lt;?php
+echo &quot;&lt;pre&gt;&quot;;
+$dbms = &#39;mysql&#39;;
+$host = &#39;localhost&#39;;
+$dbName = &#39;jk&#39;;
+$user = &#39;root&#39;;
+$pass = &#39;&#39;;
+$dsn = &quot;$dbms:host=$host;dbname=$dbName&quot;;
+// echo $dsn;
+
+try{
+    //去try,去执行,去创建,这个pdo对象
+    $pdo = new PDO($dsn,$user,$pass);
+    echo &quot;success&quot;;
+} catch(PDOException $e){
+   //如果try中内容有错误,则会在catch中捕获异常;即对象没有创建成功,则会执行catch里面的内容,捕获异常的时候要使用PDO自己的异常处理类 &quot;PDOException $e&quot;
+
+   die($e-&gt;getMessage());  //因为没有必要往下进行了,所以直接die打印出$e-&gt;getMessage()
+}</code></pre>
+<h1 id="执行sql语句"><a href="#执行sql语句" class="headerlink" title="执行sql语句"></a>执行sql语句</h1><h2 id="exec-需要结果集的sql语句"><a href="#exec-需要结果集的sql语句" class="headerlink" title="exec() 需要结果集的sql语句"></a>exec() 需要结果集的sql语句</h2><p>insert into ,delete ,update</p>
+<pre><code class="php">$sql = &quot;insert into jkjk2 (name) values (&#39;popo&#39;)&quot;;
+$ret = $pdo-&gt;exec($sql);
+print_r($ret); //受影响的行</code></pre>
+<h2 id="query-不需要结果集的sql语句"><a href="#query-不需要结果集的sql语句" class="headerlink" title="query() 不需要结果集的sql语句"></a>query() 不需要结果集的sql语句</h2><pre><code class="php">$sql = &quot;select * from jkjk2&quot;;
+$ret = $pdo-&gt;query($sql);
+print_r($ret);</code></pre>
+<p>👇</p>
+<pre><code class="php">PDOStatement Object//预处理对象
+(
+    [queryString] =&gt; select * from jkjk2
+)</code></pre>
+<p>再使用foreach循环出 PDOStatement Object中的数据</p>
+<pre><code class="php">foreach($ret as $row){
+    var_dump($row);
+}</code></pre>
+<p>👇</p>
+<pre><code class="php">array(4) {
+  [&quot;id&quot;]=&gt;
+  string(1) &quot;1&quot;
+  [0]=&gt;
+  string(1) &quot;1&quot;
+  [&quot;name&quot;]=&gt;
+  string(4) &quot;popo&quot;
+  [1]=&gt;
+  string(4) &quot;popo&quot;
+}
+array(4) {
+  [&quot;id&quot;]=&gt;
+  string(1) &quot;2&quot;
+  [0]=&gt;
+  string(1) &quot;2&quot;
+  [&quot;name&quot;]=&gt;
+  string(3) &quot;din&quot;
+  [1]=&gt;
+  string(3) &quot;din&quot;
+}
+array(4) {
+  [&quot;id&quot;]=&gt;
+  string(2) &quot;17&quot;
+  [0]=&gt;
+  string(2) &quot;17&quot;
+  [&quot;name&quot;]=&gt;
+  string(5) &quot;jiill&quot;
+  [1]=&gt;
+  string(5) &quot;jiill&quot;
+}</code></pre>
+<h1 id="预处理语句"><a href="#预处理语句" class="headerlink" title="预处理语句"></a>预处理语句</h1><p>PDO使用PDOStatemendeadaot来实现预处理语句,这个类的实例可以用query()方法得到,也可以用prepare(),区别是query()只能得到一条sql命令的数据集的结果,而prepare()得到的实例可以重复执行sql语句</p>
+<pre><code class="php">    //prepare() 预处理语句
+//数据占位符
+    $pre = $pdo-&gt;prepare(&quot;insert into jkjk2 (id,name)values(?,?)&quot;);
+    $id = 3;
+    $name = &quot;id3&quot;;
+    $pre -&gt; bindParam(1,$id);
+    $pre -&gt; bindParam(2,$name);
+    $pre -&gt; execute(); 
+//直接用数组写
+    $pre -&gt; execute(array(
+        4,&quot;id4&quot;
+    ));
+//命名参数
+    $pre = $pdo -&gt; prepare(&quot;insert into jkjk2 (id,name) values (:id,:name)&quot;);
+    $id = 7;
+    $name = &quot;id7&quot;;
+    $pre-&gt;bindValue(&quot;:id&quot;,$id);
+    $pre-&gt;bindValue(&quot;:name&quot;,$name);
+    $pre-&gt;execute();
+//关联数组
+    $pre -&gt; execute(array(
+        &quot;:id&quot; =&gt; 6,
+        &quot;:name&quot; =&gt; &quot;id6&quot;
+    ));
+</code></pre>
+<h1 id="解析结果集"><a href="#解析结果集" class="headerlink" title="解析结果集"></a>解析结果集</h1><h2 id="result-gt-fetch-PDO-FETCH"><a href="#result-gt-fetch-PDO-FETCH" class="headerlink" title="$result -&gt; fetch(PDO::FETCH())"></a>$result -&gt; fetch(PDO::FETCH())</h2><pre><code class="php">  var_dump($result -&gt; fetch());//仅仅输出一条
+  var_dump($result -&gt; fetchAll(PDO::FETCH_NUM));//剩下的所有的结果以索引数组的方式输出
+//$result -&gt; fetchAll(PDO::FETCH_OBJ/ASSOC/NUM)</code></pre>
+<h2 id="result-gt-fetchColumn"><a href="#result-gt-fetchColumn" class="headerlink" title="$result -&gt; fetchColumn(*)"></a>$result -&gt; fetchColumn(*)</h2><p>*为可选的数字 默认为0,从0开始,表示第一列</p>
+<p>整个函数返回的是下一行的结果的第*列</p>
+<h1 id="SQL注入"><a href="#SQL注入" class="headerlink" title="SQL注入"></a>SQL注入</h1><p>利用sql的查询语句恶意获取数据库信息</p>
+<h1 id="完结撒花"><a href="#完结撒花" class="headerlink" title="完结撒花~!"></a>完结撒花~!</h1><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191213091052.png" srcset="undefined" alt=""></p>
+
+            <hr>
+          </div>
+          <br>
+          <div>
+            <p>
+            
+            
+              <span>
+                <i class="iconfont icon-tag"></i>
+                
+                  <a class="hover-with-bg" href="/tags/php">php</a>
+                
+                  <a class="hover-with-bg" href="/tags/mysql">mysql</a>
+                
+                  <a class="hover-with-bg" href="/tags/database">database</a>
+                
+                  <a class="hover-with-bg" href="/tags/pdo">pdo</a>
+                
+                  <a class="hover-with-bg" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93">数据库</a>
+                
+              </span>
+            
+            </p>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="d-none d-lg-block col-lg-2 toc-container">
+      
+  <div id="toc">
+    <p class="h4"><i class="far fa-list-alt"></i>&nbsp;目录</p>
+    <div id="tocbot"></div>
+  </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- custom -->
+
+
+<!-- Comments -->
+<div class="col-lg-7 mx-auto nopadding-md">
+  <div class="container comments mx-auto" id="comments">
+    
+      <br><br>
+      
+      
+  <script defer src="https://utteranc.es/client.js"
+          repo="tohrux/tohrux.github.io"
+          issue-term="pathname"
+  
+          label="utterances"
+    
+          theme="github-light"
+          crossorigin="anonymous"
+          async>
+  </script>
+
+
+    
+  </div>
+</div>
+
+    
+  </main>
+
+  
+    <a class="z-depth-1" id="scroll-top-button" href="#" role="button">
+      <i class="fa fa-chevron-up scroll-top-arrow" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><b>Hexo</b></a>
+    <i class="iconfont icon-love"></i>
+    <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"> <b>Fluid</b></a>
+    <br>
+
+    
+  
+    <!-- 不蒜子统计PV -->
+    
+    &nbsp;<span id="busuanzi_container_site_pv">总访问量 
+          <span id="busuanzi_value_site_pv"></span> 次</span>&nbsp;
+  
+  
+    <!-- 不蒜子统计UV -->
+    
+    &nbsp;<span id="busuanzi_container_site_uv">总访客数 
+            <span id="busuanzi_value_site_uv"></span> 人</span>&nbsp;
+  
+  <br>
+
+
+
+    
+
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/jquery/jquery.min.js" ></script>
+<script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/popper/popper.min.js" ></script>
+<script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/bootstrap/js/bootstrap.min.js" ></script>
+<script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/mdbootstrap/js/mdb.min.js" ></script>
+<script src="/js/main.js" ></script>
+
+
+  <script src="/js/lazyload.js" ></script>
+
+
+
+  
+    <script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/tocbot/tocbot.min.js" ></script>
+  
+  <script src="/js/post.js" ></script>
+
+
+
+  <script src="/lib/smooth-scroll/smooth-scroll.min.js" ></script>
+
+
+
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+<!-- Plugins -->
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/prettify/prettify.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      $('pre').addClass('prettyprint  linenums');
+      prettyPrint();
+    })
+  </script>
+
+
+
+  <script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/typed/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "pdo&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/anchor/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "false",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      getSearchFile(path);
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/fancybox/jquery.fancybox.min.css/jquery.fancybox.min.js" ></script>
+  <script>
+    $("#post img:not(.no-zoom img, img[no-zoom])").each(
+      function () {
+        var element = document.createElement("a");
+        $(element).attr("data-fancybox", "images");
+        $(element).attr("href", $(this).attr("src"));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+</body>
+</html>

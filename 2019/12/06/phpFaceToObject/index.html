@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://cdn.jsdelivr.net/gh/tohrux/tohrux.github.io@1.0//img/apple-touch-icon.png# 用于苹果设备的 icon">
+  <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/tohrux/tohrux.github.io@1.0//img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="keywords" content="">
+  <title>phpFaceToObject1 ~ Tohrux!</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/font-awesome/css/all.min.css"  >
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/bootstrap/css/bootstrap.min.css"  >
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/mdbootstrap/css/mdb.min.css"  >
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/github-markdown/github-markdown.min.css"  >
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1067060_qzomjdt8bmp.css">
+
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/prettify/tomorrow-night.min.css"  >
+
+<link rel="stylesheet" href="/css/main.css"  >
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/fancybox/jquery.fancybox.min.css/jquery.fancybox.min.css"  >
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>tohru&#39;s blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/about/">关于我</a>
+          </li>
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/archives/">回档 !</a>
+          </li>
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+</nav>
+
+    <div class="view intro-2" id="background"
+         style="background: url('https://cdn.jsdelivr.net/gh/tohrux/tohrux.github.io@1.0//img/fullVersionxx.jpg')no-repeat center center;
+           background-size: cover;
+           background-attachment: scroll;">
+      <div class="full-bg-img">
+        <div class="mask rgba-black-light flex-center">
+          <div class="container text-center white-text fadeInUp">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              <br>
+              
+                <p class="mt-3">
+                  <i class="fas fa-calendar-alt" aria-hidden="true"></i>&nbsp;
+                  星期五, 十二月 6日 2019, 7:29 晚上
+                </p>
+              
+
+              <p>
+                
+                  
+                  &nbsp;<i class="far fa-chart-bar"></i>
+                  <span class="post-count">
+                    825 字
+                  </span>&nbsp;
+                
+
+                
+                  
+                  &nbsp;<i class="far fa-clock"></i>
+                  <span class="post-count">
+                      3 分钟
+                  </span>&nbsp;
+                
+
+                
+                  <!-- 不蒜子统计文章PV -->
+                  
+                  &nbsp;<i class="far fa-eye" aria-hidden="true"></i>&nbsp;
+                  <span id="busuanzi_container_page_pv">
+                    <span id="busuanzi_value_page_pv"></span> 次
+                  </span>&nbsp;
+                
+              </p>
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="py-5 z-depth-3" id="board">
+        <div class="post-content mx-auto" id="post">
+          <div class="markdown-body">
+            <h3 id="引入php文件"><a href="#引入php文件" class="headerlink" title="引入php文件"></a>引入php文件</h3><pre><code class="php">include &#39;angelina.php&#39;;</code></pre>
+<h2 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数:"></a>构造函数:</h2><p>两种方法:</p>
+<pre><code class="php">function __ construct($name,$sex,$age){}
+//
+function __ &quot;此类的类名&quot;(...){}</code></pre>
+<h2 id="析构函数"><a href="#析构函数" class="headerlink" title="析构函数"></a>析构函数</h2><p>当对象结束其生命周期时,系统会自动执行这个函数</p>
+<pre><code class="php">class Person{
+    function __destruct
+}</code></pre>
+<h1 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h1><h2 id="var"><a href="#var" class="headerlink" title="var"></a>var</h2><p>php中默认将var 关键字解释为public,var等同于public</p>
+<h2 id="public"><a href="#public" class="headerlink" title="public"></a>public</h2><p>用public修饰的属性和方法是公开的,在程序的任何位置都可以访问,子类可以继承父类所有的公共成员</p>
+<h2 id="private"><a href="#private" class="headerlink" title="private"></a>private</h2><p>private修饰的属性和方法只能在所属类的内部访问,子类也不能继承</p>
+<pre><code class="php">//例如现在先定义一个类
+      class Person{
+        public $name;
+        private $money;
+        function __construct(){
+            $this-&gt;name = &quot;jack&quot;;
+        }
+    }  
+//
+    $jack = new Person();
+</code></pre>
+<h2 id="protected"><a href="#protected" class="headerlink" title="protected"></a>protected</h2><p>protected 修饰的属性和方法只有除了子类可以调用外,其他类不能调用,包括在类的外面</p>
+<pre><code class="php">&lt;?php
+//protect
+class Person
+{
+    public $name;
+    public $hello;
+    protected $money;
+    function __construct()
+    {
+        $this-&gt;name = &quot;angelina&quot;;
+        $this-&gt;age = 12;
+        $this-&gt;money = 10000;
+    }
+}
+
+class girl extends Person
+{
+    public function numOfMoney()
+    {
+        return $this-&gt;money;
+    }
+}
+$ange = new girl();
+echo $ange-&gt;numOfMoney();//10000
+echo $ange-&gt;money;//Fatal error: Uncaught Error: Cannot access protected property girl::$money</code></pre>
+<h2 id="extend"><a href="#extend" class="headerlink" title="extend"></a>extend</h2><p>继承一个类,但不支持多继承</p>
+<p>eg如上</p>
+<h2 id="final"><a href="#final" class="headerlink" title="final"></a>final</h2><blockquote>
+<p><strong>被final修饰的属性和方法不能被更改,</strong></p>
+<p><strong>被final关键字修饰的类不能被继承,</strong></p>
+<p><strong>被final关键字修饰的方法在子类中不能被重写,</strong></p>
+<p><strong>final不能修饰变量</strong></p>
+</blockquote>
+<h2 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h2><blockquote>
+<p><strong>指在面向对象中能够对同一个接口做出不同的实现,主要存在两种形式:</strong></p>
+</blockquote>
+<h3 id="重写"><a href="#重写" class="headerlink" title="重写"></a>重写</h3><blockquote>
+<p><strong>在子类中重写父类的方法,具有相同的方法名字,相同的参数表和相同的返回类型,常用于子类构造方法的重写.</strong></p>
+</blockquote>
+<h3 id="重载"><a href="#重载" class="headerlink" title="重载"></a>重载</h3><blockquote>
+<p><strong>通常是指同一个类中多个方法具有相同的名字,但这些方法具有不同的参数列表</strong></p>
+</blockquote>
+<pre><code class="php">&lt;?php
+//
+class Person
+{
+    public $name;
+    public $birthday;
+    function __construct($name, $birthday)
+    {
+        $this-&gt;name = $name;
+        $this-&gt;birthday = $birthday;
+    }
+}
+$girl = new Person(&quot;eyjafjalla&quot;, 12);
+echo &quot;&lt;pre&gt;&quot;;
+var_dump($girl);
+
+//输出结果
+object(Person)#1 (2) {
+  [&quot;name&quot;]=&gt;
+  string(10) &quot;eyjafjalla&quot;
+  [&quot;birthday&quot;]=&gt;
+  int(12)
+}</code></pre>
+<h2 id="“-”操作符"><a href="#“-”操作符" class="headerlink" title="“::”操作符"></a>“::”操作符</h2><blockquote>
+<p><strong>通常用于没有声明任何实例的情况下使用类的属性和方法</strong></p>
+</blockquote>
+<p>和$this的区别</p>
+<p><code>parent::</code>可以调用父类中的<strong>属性</strong>和<strong>方法</strong>和常量 比如构造函数</p>
+<p><code>self::</code>可以调用本类中的<strong>静态属性</strong>和<strong>方法</strong>和常量</p>
+<p><code>类名::</code> 可以调用某类中的<strong>静态属性</strong>和<strong>方法</strong></p>
+<p>👩:可以是非静态的,但是系统不推荐这样做</p>
+<h2 id="static"><a href="#static" class="headerlink" title="static"></a>static</h2><p>静态,可以使用 “类名::” 的方式调用.</p>
+<p>不需要实例化对象就可以访问或调用,</p>
+<h2 id="abstract"><a href="#abstract" class="headerlink" title="abstract"></a>abstract</h2><blockquote>
+<p>抽象类,它是一种不能被实例化的类,必须至少要有一个抽象方法,且抽象方法没有方法体,要连接一个分号,通常需要定义一个子类</p>
+</blockquote>
+<pre><code class="php">abstract class Person(){
+    abstract function get_area();
+}</code></pre>
+<h2 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h2><blockquote>
+<p>用interface关键字来定义,它是一种特殊的抽象类,接口中未实现的方法,即使是空方法,也必须在子类中实现.一个类只能继承一个父类,但是却可以实现多个接口,通过implements 关键字可以实现接口</p>
+</blockquote>
+<pre><code class="js">//interface &amp; implements
+interface Work
+{
+    function getJobSkill();
+}
+class Programmer implements Work
+{
+    function getJobSkill()
+    {
+        return array(
+            &quot;java&quot;,
+            &quot;php&quot;,
+            &quot;C&quot;
+        );
+    }
+}
+$a = new Programmer();
+var_dump($a-&gt;getJobSkill());</code></pre>
+
+            <hr>
+          </div>
+          <br>
+          <div>
+            <p>
+            
+            
+              <span>
+                <i class="iconfont icon-tag"></i>
+                
+                  <a class="hover-with-bg" href="/tags/php">php</a>
+                
+              </span>
+            
+            </p>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="d-none d-lg-block col-lg-2 toc-container">
+      
+  <div id="toc">
+    <p class="h4"><i class="far fa-list-alt"></i>&nbsp;目录</p>
+    <div id="tocbot"></div>
+  </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- custom -->
+
+
+<!-- Comments -->
+<div class="col-lg-7 mx-auto nopadding-md">
+  <div class="container comments mx-auto" id="comments">
+    
+      <br><br>
+      
+      
+  <script defer src="https://utteranc.es/client.js"
+          repo="tohrux/tohrux.github.io"
+          issue-term="pathname"
+  
+          label="utterances"
+    
+          theme="github-light"
+          crossorigin="anonymous"
+          async>
+  </script>
+
+
+    
+  </div>
+</div>
+
+    
+  </main>
+
+  
+    <a class="z-depth-1" id="scroll-top-button" href="#" role="button">
+      <i class="fa fa-chevron-up scroll-top-arrow" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><b>Hexo</b></a>
+    <i class="iconfont icon-love"></i>
+    <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"> <b>Fluid</b></a>
+    <br>
+
+    
+  
+    <!-- 不蒜子统计PV -->
+    
+    &nbsp;<span id="busuanzi_container_site_pv">总访问量 
+          <span id="busuanzi_value_site_pv"></span> 次</span>&nbsp;
+  
+  
+    <!-- 不蒜子统计UV -->
+    
+    &nbsp;<span id="busuanzi_container_site_uv">总访客数 
+            <span id="busuanzi_value_site_uv"></span> 人</span>&nbsp;
+  
+  <br>
+
+
+
+    
+
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/jquery/jquery.min.js" ></script>
+<script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/popper/popper.min.js" ></script>
+<script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/bootstrap/js/bootstrap.min.js" ></script>
+<script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/mdbootstrap/js/mdb.min.js" ></script>
+<script src="/js/main.js" ></script>
+
+
+  <script src="/js/lazyload.js" ></script>
+
+
+
+  
+    <script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/tocbot/tocbot.min.js" ></script>
+  
+  <script src="/js/post.js" ></script>
+
+
+
+  <script src="/lib/smooth-scroll/smooth-scroll.min.js" ></script>
+
+
+
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+<!-- Plugins -->
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/prettify/prettify.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      $('pre').addClass('prettyprint  linenums');
+      prettyPrint();
+    })
+  </script>
+
+
+
+  <script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/typed/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "phpFaceToObject1&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/anchor/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "false",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      getSearchFile(path);
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/fancybox/jquery.fancybox.min.css/jquery.fancybox.min.js" ></script>
+  <script>
+    $("#post img:not(.no-zoom img, img[no-zoom])").each(
+      function () {
+        var element = document.createElement("a");
+        $(element).attr("data-fancybox", "images");
+        $(element).attr("href", $(this).attr("src"));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+</body>
+</html>

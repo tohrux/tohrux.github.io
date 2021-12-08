@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://cdn.jsdelivr.net/gh/tohrux/tohrux.github.io@1.0//img/apple-touch-icon.png# 用于苹果设备的 icon">
+  <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/tohrux/tohrux.github.io@1.0//img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="keywords" content="">
+  <title>Tohrux!</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/font-awesome/css/all.min.css"  >
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/bootstrap/css/bootstrap.min.css"  >
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/mdbootstrap/css/mdb.min.css"  >
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/github-markdown/github-markdown.min.css"  >
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1067060_qzomjdt8bmp.css">
+
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/prettify/tomorrow-night.min.css"  >
+
+<link rel="stylesheet" href="/css/main.css"  >
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/fancybox/jquery.fancybox.min.css/jquery.fancybox.min.css"  >
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+
+<body>
+  <header style="height: 100vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>tohru&#39;s blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/about/">关于我</a>
+          </li>
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/archives/">回档 !</a>
+          </li>
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+</nav>
+
+    <div class="view intro-2" id="background"
+         style="background: url('https://cdn.jsdelivr.net/gh/tohrux/tohrux.github.io@1.0//img/fullVersionxx.jpg')no-repeat center center;
+           background-size: cover;
+           background-attachment: scroll;">
+      <div class="full-bg-img">
+        <div class="mask rgba-black-light flex-center">
+          <div class="container text-center white-text fadeInUp">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+          </div>
+
+          
+            <div class="scroll-down-bar">
+              <i class="fas fa-angle-down scroll-down-arrow"></i>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      <div class="container nopadding-md">
+        <div class="py-5 z-depth-3" id="board">
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+
+  <div class="row mb-4 mx-auto">
+    
+    
+      <div class="col-12 col-md-4 m-auto">
+        <a href="/2019/12/11/pdo/" target="_self">
+          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191211200234.png" srcset="undefined" alt="pdo" class="img-fluid rounded z-depth-3 index-thumbnails">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/2019/12/11/pdo/">
+        <p class="h4 index-header">pdo</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">PDO,php data object php数据对象
+连接服务器比php连接mysql多了一个参数,数据库类型
+$dbms Database Management System
+$dsn Data Source Name
+&lt;?php
+echo &quot;&lt;pre&gt;&quot;;
+$dbms = &#39;mysql&#39;;
+$host = &#39;localhost&#39;;
+$dbName = &#39;jk&#39;;
+$user = &#39;root&#39;;
+$pass = &#39;&#39;;
+$dsn = &quot;$dbms:host=$host;dbname=$dbName&quot;;
+// echo $dsn;
+
+try{
+    //去try,去执行,去创建,这个pdo对象
+    $pdo = new PDO($dsn,$user,$pass);
+    echo &quot;success&quot;;
+} catch(PDOException $e){
+   //如果try中内容有错误,则会在catch中捕获异常;即对象</div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-12-11&nbsp;&nbsp;
+        
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/php">php</a>&nbsp;
+          
+            <a href="/tags/mysql">mysql</a>&nbsp;
+          
+            <a href="/tags/database">database</a>&nbsp;
+          
+            <a href="/tags/pdo">pdo</a>&nbsp;
+          
+            <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93">数据库</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+      <div class="col-12 col-md-4 m-auto">
+        <a href="/2019/12/09/mysql/" target="_self">
+          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191209190454.png" srcset="undefined" alt="mysql" class="img-fluid rounded z-depth-3 index-thumbnails">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/2019/12/09/mysql/">
+        <p class="h4 index-header">mysql</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1"> 
+创建数据库create database 数据库名;
+选择数据库use 数据库名;
+删除数据库drop database 数据库名;
+创建数据表CREATE TABLE 数据表名 (字段名 字段类型);
+
+CREATE TABLE `tbl`(
+   `id` INT UNSIGNED AUTO_INCREMENT,
+   `title` VARCHAR(100) NOT NULL,
+   `author` VARCHAR(40) NOT NULL,
+   `date` DATE,
+   PRIMARY KEY ( `id` )
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;//引擎和格式
+comment 关键字后面跟上字符串 表示注释
+default关键字后面跟不给值时的默认选项
+unique可以为空甚至一直为空
+primary keyprimary key = unique + not null
+insert intoinsert into tb1 (id,title,date) values (1,&#39;one&#39;,&#39;2010-1-</div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-12-09&nbsp;&nbsp;
+        
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/mysql">mysql</a>&nbsp;
+          
+            <a href="/tags/database">database</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+      <div class="col-12 col-md-4 m-auto">
+        <a href="/2019/12/09/phpFaceToObject2/" target="_self">
+          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191207110327.png" srcset="undefined" alt="phpFaceToObject2" class="img-fluid rounded z-depth-3 index-thumbnails">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/2019/12/09/phpFaceToObject2/">
+        <p class="h4 index-header">phpFaceToObject2</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">对象的使用引用对象$a = &quot;hello&quot;;
+$b = &amp;$a;
+echo $b . &quot;&lt;/br&gt;&quot;; //hello
+
+$a = &quot;aloha&quot;;
+echo $b; //aloha
+克隆对象class Person
+{
+    public $timeForCopy = 0;
+    function __clone()
+    {
+        $this-&gt;timeForCopy += 1;
+    }
+}
+$a = new Person();
+$b = clone $a;
+$c = clone $b;
+echo $b-&gt;timeForCopy; //1
+echo $c-&gt;timeForCopy;//2
+比较对象&quot;===&quot; 表示比较两个对象的内存地址 &quot;==&quot;比较的是两个对象的内容
+经过比较可以得出:
+clone的两个对象相比较的话: 值相等 ,但是内存地址不相等
+引用的两个对象: 值和内存地址都是相等的
+使用一样的构造函数生成的两个实例化对</div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-12-09&nbsp;&nbsp;
+        
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/php">php</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+      <div class="col-12 col-md-4 m-auto">
+        <a href="/2019/12/08/12-8-1/" target="_self">
+          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191208200607.jpg" srcset="undefined" alt="weekly photos" class="img-fluid rounded z-depth-3 index-thumbnails">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/2019/12/08/12-8-1/">
+        <p class="h4 index-header">weekly photos</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-12-08&nbsp;&nbsp;
+        
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/photos">photos</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+      <div class="col-12 col-md-4 m-auto">
+        <a href="/2019/12/08/12-8/" target="_self">
+          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191208113233.jpg" srcset="undefined" alt="12-8" class="img-fluid rounded z-depth-3 index-thumbnails">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/2019/12/08/12-8/">
+        <p class="h4 index-header">12-8</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">
+
+
+
+
+</div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-12-08&nbsp;&nbsp;
+        
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/nice">nice</a>&nbsp;
+          
+            <a href="/tags/sunday">sunday</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+      <div class="col-12 col-md-4 m-auto">
+        <a href="/2019/12/07/phpMysql/" target="_self">
+          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191209180726.png" srcset="undefined" alt="phpMysql -private" class="img-fluid rounded z-depth-3 index-thumbnails">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/2019/12/07/phpMysql/">
+        <p class="h4 index-header">phpMysql -private</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">
+访问数据库1.连接数据库
+//使用 mysqli_connect()
+2.选择服务器
+//使用 mysqli_select_db()来选择
+3.执行数据库操作
+//增删改查四部曲
+
+//
+    insert into
+//
+    delete
+//
+    update
+// 
+    select
+4.清除记录集,释放系统资源
+mysqli_free_result();
+5.关闭MySQL服务器
+mysqli_close();
+连接MySQL服务器$mysql = new mysqli($server,$username,$password,$dbname);
+//$server 服务器地址 一般本地的为localhost
+mysqli 对象的内容mysqli Object
+(
+    [affected_rows] =&gt; 0
+    [client_info] =&gt; mysqlnd 5.0.12-dev - 20150407 - $Id: 7cc7cc96e675f6d72e5cf0f267f48e167c2abb23 $
+    [client_version]</div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-12-07&nbsp;&nbsp;
+        
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/php">php</a>&nbsp;
+          
+            <a href="/tags/database">database</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+      <div class="col-12 col-md-4 m-auto">
+        <a href="/2019/12/06/phpFaceToObject/" target="_self">
+          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191207110327.png" srcset="undefined" alt="phpFaceToObject1" class="img-fluid rounded z-depth-3 index-thumbnails">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/2019/12/06/phpFaceToObject/">
+        <p class="h4 index-header">phpFaceToObject1</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">引入php文件include &#39;angelina.php&#39;;
+构造函数:两种方法:
+function __ construct($name,$sex,$age){}
+//
+function __ &quot;此类的类名&quot;(...){}
+析构函数当对象结束其生命周期时,系统会自动执行这个函数
+class Person{
+    function __destruct
+}
+封装varphp中默认将var 关键字解释为public,var等同于public
+public用public修饰的属性和方法是公开的,在程序的任何位置都可以访问,子类可以继承父类所有的公共成员
+privateprivate修饰的属性和方法只能在所属类的内部访问,子类也不能继承
+//例如现在先定义一个类
+      class Person{
+        public $name;
+        private $money;
+        function __construct(){
+            $this-&gt;name = &quot;jack&quot;;
+   </div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-12-06&nbsp;&nbsp;
+        
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/php">php</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+      <div class="col-12 col-md-4 m-auto">
+        <a href="/2019/12/06/phpAndWeb/" target="_self">
+          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191207110525.png" srcset="undefined" alt="php与Web的页面交互" class="img-fluid rounded z-depth-3 index-thumbnails">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/2019/12/06/phpAndWeb/">
+        <p class="h4 index-header">php与Web的页面交互</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">$_GET[] &amp; $_POST[]究极全局变量 返回的是数组的形式
+获取
+var_dump($_GET[&#39;username&#39;]);
+$_FILES[]返回的是数组形式的5个值
+需要在html文件中如下设置:
+enctype=&quot;multipart/form-data&quot;
+$_COOKIE[]设置一个cookiesetcookie(&#39;name&#39;,&#39;angelina&#39;,0,&#39;/&#39;);//分别为 名称,内容,存在时间(为0的话意味着在页面关闭时就会删除该cookie),目录(不设置目录的话,只对当前目录有效)
+判断cookie是否存在:isset(cookie[&#39;name&#39;]); //返回的是true or false
+创建cookie数组setcookie(&quot;location[1]&quot;,&quot;beijing&quot;);
+setcookie(&quot;location[2]&quot;,&quot;beijing&quot;);
+setcookie(&quo</div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-12-06&nbsp;&nbsp;
+        
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/%E5%89%8D%E7%AB%AF">前端</a>&nbsp;
+          
+            <a href="/tags/php">php</a>&nbsp;
+          
+            <a href="/tags/web">web</a>&nbsp;
+          
+            <a href="/tags/%E9%A1%B5%E9%9D%A2%E4%BA%A4%E4%BA%92">页面交互</a>&nbsp;
+          
+            <a href="/tags/%E5%90%8E%E7%AB%AF">后端</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+      <div class="col-12 col-md-4 m-auto">
+        <a href="/2019/12/05/12-5-1/" target="_self">
+          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191205142652.png" srcset="undefined" alt="CSS选择器" class="img-fluid rounded z-depth-3 index-thumbnails">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/2019/12/05/12-5-1/">
+        <p class="h4 index-header">CSS选择器</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">属性选择器语法:
+E[attribute]
+eg:
+td[lang]{} // 有lang属性的td都会被选择
+td[title=&quot;a&quot;]{} //title属性为&quot;a&quot;的都会被选择
+~=&quot;a&quot; //属性值包含&quot;a&quot; 且&quot;a&quot;前后只能有空格
+|=&quot;a&quot; //以&quot;a&quot;开头,&quot;a&quot;必须为独立单词,后面可以跟上连字符&quot;-&quot;
+兄弟选择器    &lt;style&gt;
+        div+span {
+            color: brown !important;
+        }
+    &lt;/style&gt;
+
+    &lt;span&gt;span0&lt;/span&gt;ad
+    &lt;div class=&quot;hi&quot;&gt;div0&lt;/div&gt;
+    &lt;span&gt;span2&lt;/span&gt;k
+    &lt;span&gt</div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-12-05&nbsp;&nbsp;
+        
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/css">css</a>&nbsp;
+          
+            <a href="/tags/selector">selector</a>&nbsp;
+          
+            <a href="/tags/%E5%89%8D%E7%AB%AF">前端</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+      <div class="col-12 col-md-4 m-auto">
+        <a href="/2019/12/04/nmewd/" target="_self">
+          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191204223042.png" srcset="undefined" alt="今天用bootstrap做的网页和随意画的一些logo" class="img-fluid rounded z-depth-3 index-thumbnails">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/2019/12/04/nmewd/">
+        <p class="h4 index-header">今天用bootstrap做的网页和随意画的一些logo</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">今天用bootstrap做的网页和随意画的一些logo:太累了今天,眼睛都张不开了
+
+
+
+
+
+
+晚安世界</div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-12-04&nbsp;&nbsp;
+        
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/so%20tired">so tired</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+
+
+  <nav aria-label="index posts navigation">
+    <span class="pagination pg-blue justify-content-center mt-5" id="pagination">
+      <a class="extend prev" rel="prev" href="/page/2/"><i class="fas fa-angle-double-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/4/"><i class="fas fa-angle-double-right"></i></a>
+    </span>
+  </nav>
+  
+  <script>
+    for (ele of document.getElementById("pagination").getElementsByClassName("page-number")) {
+      ele.href += '#board';
+    }
+  </script>
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+  </main>
+
+  
+    <a class="z-depth-1" id="scroll-top-button" href="#" role="button">
+      <i class="fa fa-chevron-up scroll-top-arrow" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><b>Hexo</b></a>
+    <i class="iconfont icon-love"></i>
+    <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"> <b>Fluid</b></a>
+    <br>
+
+    
+  
+    <!-- 不蒜子统计PV -->
+    
+    &nbsp;<span id="busuanzi_container_site_pv">总访问量 
+          <span id="busuanzi_value_site_pv"></span> 次</span>&nbsp;
+  
+  
+    <!-- 不蒜子统计UV -->
+    
+    &nbsp;<span id="busuanzi_container_site_uv">总访客数 
+            <span id="busuanzi_value_site_uv"></span> 人</span>&nbsp;
+  
+  <br>
+
+
+
+    
+
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/jquery/jquery.min.js" ></script>
+<script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/popper/popper.min.js" ></script>
+<script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/bootstrap/js/bootstrap.min.js" ></script>
+<script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/mdbootstrap/js/mdb.min.js" ></script>
+<script src="/js/main.js" ></script>
+
+
+  <script src="/js/lazyload.js" ></script>
+
+
+
+
+
+  <script src="/lib/smooth-scroll/smooth-scroll.min.js" ></script>
+
+
+
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+<!-- Plugins -->
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/prettify/prettify.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      $('pre').addClass('prettyprint  linenums');
+      prettyPrint();
+    })
+  </script>
+
+
+
+  <script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/typed/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "aloha!&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/anchor/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "false",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      getSearchFile(path);
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/fancybox/jquery.fancybox.min.css/jquery.fancybox.min.js" ></script>
+  <script>
+    $("#post img:not(.no-zoom img, img[no-zoom])").each(
+      function () {
+        var element = document.createElement("a");
+        $(element).attr("data-fancybox", "images");
+        $(element).attr("href", $(this).attr("src"));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+</body>
+</html>

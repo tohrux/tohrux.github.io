@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://cdn.jsdelivr.net/gh/tohrux/tohrux.github.io@1.0//img/apple-touch-icon.png# 用于苹果设备的 icon">
+  <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/tohrux/tohrux.github.io@1.0//img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="keywords" content="">
+  <title>Tohrux!</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/font-awesome/css/all.min.css"  >
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/bootstrap/css/bootstrap.min.css"  >
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/mdbootstrap/css/mdb.min.css"  >
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/github-markdown/github-markdown.min.css"  >
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1067060_qzomjdt8bmp.css">
+
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/prettify/tomorrow-night.min.css"  >
+
+<link rel="stylesheet" href="/css/main.css"  >
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/fancybox/jquery.fancybox.min.css/jquery.fancybox.min.css"  >
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+
+<body>
+  <header style="height: 100vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>tohru&#39;s blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/about/">关于我</a>
+          </li>
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/archives/">回档 !</a>
+          </li>
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+</nav>
+
+    <div class="view intro-2" id="background"
+         style="background: url('https://cdn.jsdelivr.net/gh/tohrux/tohrux.github.io@1.0//img/fullVersionxx.jpg')no-repeat center center;
+           background-size: cover;
+           background-attachment: scroll;">
+      <div class="full-bg-img">
+        <div class="mask rgba-black-light flex-center">
+          <div class="container text-center white-text fadeInUp">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+          </div>
+
+          
+            <div class="scroll-down-bar">
+              <i class="fas fa-angle-down scroll-down-arrow"></i>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      <div class="container nopadding-md">
+        <div class="py-5 z-depth-3" id="board">
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+
+  <div class="row mb-4 mx-auto">
+    
+    
+      <div class="col-12 col-md-4 m-auto">
+        <a href="/2019/11/27/flex2/" target="_self">
+          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191128191207.png" srcset="undefined" alt="flex布局中 align-items和align-content" class="img-fluid rounded z-depth-3 index-thumbnails">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/2019/11/27/flex2/">
+        <p class="h4 index-header">flex布局中 align-items和align-content</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">首先先给出我当前的CSS和HTML    &lt;style&gt;
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+            align-content: space-between;
+            background-color: #0080ff;
+            height: 700px;
+
+        }
+
+        .container&gt;div {
+            width: 100px;
+            height: 100px;
+   </div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-11-27&nbsp;&nbsp;
+        
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/css">css</a>&nbsp;
+          
+            <a href="/tags/%E5%89%8D%E7%AB%AF">前端</a>&nbsp;
+          
+            <a href="/tags/flex">flex</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+      <div class="col-12 col-md-4 m-auto">
+        <a href="/2019/11/25/laravel-extends/" target="_self">
+          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos/img/laravel1.png" srcset="undefined" alt="laravel的继承与包含(extend&amp;include" class="img-fluid rounded z-depth-3 index-thumbnails">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/2019/11/25/laravel-extends/">
+        <p class="h4 index-header">laravel的继承与包含(extend&amp;include</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">@include可以用来引进别的页面
+@include(&#39;文件名&#39;)
+@extends父级页面 语法:@yield(&#39;名字&#39;) 
+子级页面:@extends(&#39;view下的路径&#39;)
+@section(&#39;名字&#39;)
+内容
+@endsection
+实例:
+父级页面:
+&lt;h1&gt;我是头部&lt;/h1&gt;
+{{-- 可变区 --}}
+@yield(&#39;myBody&#39;)
+{{-- 可变区 --}}
+&lt;h1&gt;我是尾部&lt;/h1&gt;
+子级页面:
+@extends(&#39;test/test2&#39;)
+@section(&#39;myBody&#39;)
+&lt;h1&gt;
+    Lorem ipsum dolor sit amet consectetur a
+    dipisicing elit. Ea quibusdam quas nobis minima, aspernatur laborum nihil, natus omnis quia solu
+    ta beat</div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-11-25&nbsp;&nbsp;
+        
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/css">css</a>&nbsp;
+          
+            <a href="/tags/php">php</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+      <div class="col-12 col-md-4 m-auto">
+        <a href="/2019/11/25/laravel1-25/" target="_self">
+          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos/img/laravel1.png" srcset="undefined" alt="larave表单验证" class="img-fluid rounded z-depth-3 index-thumbnails">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/2019/11/25/laravel1-25/">
+        <p class="h4 index-header">larave表单验证</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">表单验证:多个验证规则可以通过”|”隔开:
+语法:
+$this-&gt;validate(数据对象,[数组形式的验证规则])
+
+
+
+规则名
+说明
+
+
+
+require
+不能为空
+
+
+max:value
+字段值必须小于或等于value,如果是字符串 value则为字符串的个数
+
+
+email
+验证邮箱是否合法
+
+
+confirmed
+验证两个字段是否相同,如果是password则必须输入与之匹配的paasword_confirmation字段
+
+
+url
+字段必须为有效URL
+
+
+integer
+必须为整数
+
+
+numeric
+必须为数值
+
+
+max
+最多255字符
+
+
+min
+最少1字符
+
+
+实现用户验证功能
+创建一个用户控制器
+
+新建一个index.blade.php页面
+
+引入静态资源 CSS,Js等 
+
+配置路由
+
+csrf验证:
+{{csrf_token()}}//会在页面显示 纯文本显示 用在异步提交 ajax
+
+{{csrf_field()}}//一般已html元素的形式生成 自动hidden
+👇也可以直接写成这个
+    @csrf
+csrf_field自动生成的htm</div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-11-25&nbsp;&nbsp;
+        
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/laravel">laravel</a>&nbsp;
+          
+            <a href="/tags/php">php</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+      <div class="col-12 col-md-4 m-auto">
+        <a href="/2019/11/24/jkjk/" target="_self">
+          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos/img/laravel1.png" srcset="undefined" alt="lavavel视图" class="img-fluid rounded z-depth-3 index-thumbnails">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/2019/11/24/jkjk/">
+        <p class="h4 index-header">lavavel视图</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">视图文件的命名和渲染
+文件名习惯小写
+后缀为 blade.php 
+不使用 balde.php结尾的话就不能使用laravel提供的标签语法显示数据,只能使用原生语法显示数据
+
+实例在开发中可以使用compact(php内置函数)来进行数组的打包
+TextController:    public function test3()
+    {
+        //现在时间
+        $date = date(&#39;Y-m-d H:i:s&#39;, time());
+        //获取今天的星期
+        $day = &#39;sunday&#39;;
+        //show 视图
+        //return view(&#39;home/index/test3&#39;, [&#39;date&#39; =&gt; $date, &#39;day&#39; =&gt; $day]);
+        👆
+      效果一样   
+         👇
+        return view(&#39;home/index/test3&#39;</div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-11-24&nbsp;&nbsp;
+        
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/laravel">laravel</a>&nbsp;
+          
+            <a href="/tags/php">php</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+      <div class="col-12 col-md-4 m-auto">
+        <a href="/2019/11/22/laravel4/" target="_self">
+          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos/img/laravel1.png" srcset="undefined" alt="laravel中关于数据库的操作" class="img-fluid rounded z-depth-3 index-thumbnails">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/2019/11/22/laravel4/">
+        <p class="h4 index-header">laravel中关于数据库的操作</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">所有项目都由这六个部分组成
+增删改查
+循环
+判断
+
+DB类操作数据库按照MVC架构,对数据的操作都应该放在Model中完成.但如果不使用Model,也可以在laravel框架提供的DB类数据库操作数据.laravel中DB类的基本用法:DB::table(‘tableName’)
+在对数据库进行操作使用的是navicat
+
+new 一个新的数据库 qz04
+
+在 qz04下 new 一个新的table member
+
+新建查询,代码如下:
+
+
+create table member(
+    id int primary key auto_increment,
+    name varchar(32) not null,
+    age tinyint unsigned not null,
+    email varchar(32) not null
+)engine myisam charset utf8;
+
+在laravel中对 .env文件进行修改,链接到数据库
+DB_CONNECTION=mysql
+DB_HOST=localhost
+DB_PORT=3306
+DB_DATABA</div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-11-22&nbsp;&nbsp;
+        
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/laravel">laravel</a>&nbsp;
+          
+            <a href="/tags/php">php</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+      <div class="col-12 col-md-4 m-auto">
+        <a href="/2019/11/22/laravel2/" target="_self">
+          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos/img/laravel1.png" srcset="undefined" alt="laravel控制器基础" class="img-fluid rounded z-depth-3 index-thumbnails">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/2019/11/22/laravel2/">
+        <p class="h4 index-header">laravel控制器基础</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">控制器文件的位置控制器属于项目代码
+位于app/http/Controllers
+命名控制器文件驼峰命名+Controller.php
+控制器的结构代码🚫不需要我们自己去写,可以通过artisan来生成
+相应命令:
+php artisan make:controller TestController
+创建资源控制器:(自动生成很多方法
+php artisan make:controller TestController --resource //简写 --r
+分目录控制器(没有这个文件夹的话就会创建)
+php artisan make:controller Admin/TestController
+创建成功的提示:
+Controller created successfully.
+生成的结构代码:
+&lt;?php
+
+namespace App\Http\Controllers;//命名空间
+
+use Illuminate\Http\Request;//命名空间三元素: 常量,方法,类
+
+class TestController extends Controller
+{
+    //</div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-11-22&nbsp;&nbsp;
+        
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/laravel">laravel</a>&nbsp;
+          
+            <a href="/tags/php">php</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+      <div class="col-12 col-md-4 m-auto">
+        <a href="/2019/11/21/lavaral/" target="_self">
+          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos/img/laravel1.png" srcset="undefined" alt="laravel路由规则的使用" class="img-fluid rounded z-depth-3 index-thumbnails">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/2019/11/21/lavaral/">
+        <p class="h4 index-header">laravel路由规则的使用</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">4种常用的路由方法post/get/any/match
+//get 语法
+//例如访问/hey的时候可以这样写
+Route::get (&#39;/hey&#39;, function() {
+    return &quot;hello&quot;;
+});
+
+
+//post
+//post方法可以用postman来获取值
+//👩post请求需要在VerifycsrfToken中修改把不想要csrf请求的路由写在这里:
+    protected $except = [
+        //把不想csrf验证得路由写在这里
+        &#39;/hello&#39;
+    ];
+Route::post (&#39;/hello&#39;, function() {
+    return &quot;hello from post&quot;;
+});
+
+
+
+//any
+//任意类型
+Route::any(&#39;/test2&#39;, function () {
+    echo &#39;当前是用any访问&#39;;
+});
+//match
+Route::match(</div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-11-21&nbsp;&nbsp;
+        
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/laravel">laravel</a>&nbsp;
+          
+            <a href="/tags/php">php</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+      <div class="col-12 col-md-4 m-auto">
+        <a href="/2019/11/20/arknight/" target="_self">
+          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos/img/mostima4.png" srcset="undefined" alt="明日方舟:大家,快回来吧!" class="img-fluid rounded z-depth-3 index-thumbnails">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/2019/11/20/arknight/">
+        <p class="h4 index-header">明日方舟:大家,快回来吧!</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">​        花了一个中午的时间把明日方舟昨天刚刚更新的内容打完了,不得不说这次更新的内容的确很棒,我愿称这次update为我玩明日方舟以来最棒的一次更新.
+​        这次新关卡的那几首bgm我认为是这次更新的最大亮点,从打鼠王那段令人热血沸腾的摇滚到我现在写着这篇博文依旧还在循环着的企鹅物流背景板的那首轻松愉快且特别的音乐,我都要给个大大的👍,值得一提的是官方也在昨天公布了一首与其他两位创作音乐人的合作曲目,听着感觉还行8,现已上架网易云了,配合着live2D合成的MV应该能获得很多人的喜欢.
+​        另外,今天YJ了发布日服开服前的pv,在看pv时,大家都可以感受到一个事实,那就是明日方舟离动画化不会远了.
+​        沉浸在一切的同时,我感觉制作者的愿望,想法在一步步的实现,真的很羡慕那群人,可以构想出这样一个世界,通过剧情,作画,音乐去一步一步的描述,填充着那个世界,并且让更多的人去加入他们(各种同人制作),我都可以想到制作者在死之前可以无憾地说出”hey,你说的是那个泰拉世界吗?那个世界就交给你们了”.
+​        但是,如果每天为了完成游</div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-11-20&nbsp;&nbsp;
+        
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/arknights">arknights</a>&nbsp;
+          
+            <a href="/tags/game">game</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+      <div class="col-12 col-md-4 m-auto">
+        <a href="/2019/11/19/11-19/" target="_self">
+          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos/img/suger.jpg" srcset="undefined" alt="今日份的美好" class="img-fluid rounded z-depth-3 index-thumbnails">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/2019/11/19/11-19/">
+        <p class="h4 index-header">今日份的美好</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">
+今天得到了这三颗糖,当时真的是很开心,这三颗糖也真的很好吃
+记得在高中的时候就有接触过UHA,不过带给我回忆的都是我不怎么喜欢的人
+今天去查了下UHA才知道是一个日本的牌子
+U-unique H-human A-adventure
+
+UHA=YUU(pleasure)－HA(waves)
+UHA (pronounced YUU-HA) is originally a“coined” Japanese word, symbolizing our wish to provide pleasure through our confectioneries, quietly and gently like calm waves. We name our confectioneries YUU(=pleasure)‐SHOKU(=food) which means “food that is fun to eat.”
+
+原本想留下一颗留念的,但是因为贪心吃掉了,
+吃完糖后想起了往事,想到了自己,心情就开始变得十分难过了
+不过糖还是很好吃的
+</div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-11-19&nbsp;&nbsp;
+        
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/sad">sad</a>&nbsp;
+          
+            <a href="/tags/happy">happy</a>&nbsp;
+          
+            <a href="/tags/subarashii">subarashii</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+      <div class="col-12 col-md-4 m-auto">
+        <a href="/2019/11/18/sass/" target="_self">
+          <img src="https://cdn.jsdelivr.net/gh/tohrux/photos/img/sass_logo.png" srcset="undefined" alt="sass基础语法" class="img-fluid rounded z-depth-3 index-thumbnails">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/2019/11/18/sass/">
+        <p class="h4 index-header">sass基础语法</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">搭建环境Sass是基于ruby开发的,但是用的人却不用懂得写Ruby.
+首先,在编写Sass前要先下载安装Ruby
+(在网上搜索Ruby的时候 看到的评价都在说这门语言很优雅,以后有空的话会去接触下的!)
+👇
+然后在命令行中 输入 
+gem install sass 
+等待执行完毕后 然后输入在命令行输入
+sass -v
+如果出现了相应的版本号 就意味着安装成功了👏
+开始基础语法注释/*注释*/ 👈这种注释会在编译后的CSS中显示
+//注释   👈这种则不会
+变量$变量名字:变量属性值
+使用! default 会让之前的样式覆盖掉当前的样式
+//你好 我是sass
+
+$defaultColor: red;
+
+$defaultColor: #0000ff !default;
+
+h1{color:$defaultColor;}
+编译后的css:
+h1 {
+  color: red;
+}
+关于变量的作用域💡需要注意的是如果上述变量的作用域在所有类的外面,那它就是全局变量,否则他的作用域只在当前的类
+嵌套CSS规则/* SASS嵌套 */
+$defaultColor: red;
+#c</div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-11-18&nbsp;&nbsp;
+        
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/css">css</a>&nbsp;
+          
+            <a href="/tags/%E5%89%8D%E7%AB%AF">前端</a>&nbsp;
+          
+            <a href="/tags/sass">sass</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+
+
+  <nav aria-label="index posts navigation">
+    <span class="pagination pg-blue justify-content-center mt-5" id="pagination">
+      <a class="extend prev" rel="prev" href="/page/4/"><i class="fas fa-angle-double-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/6/"><i class="fas fa-angle-double-right"></i></a>
+    </span>
+  </nav>
+  
+  <script>
+    for (ele of document.getElementById("pagination").getElementsByClassName("page-number")) {
+      ele.href += '#board';
+    }
+  </script>
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+  </main>
+
+  
+    <a class="z-depth-1" id="scroll-top-button" href="#" role="button">
+      <i class="fa fa-chevron-up scroll-top-arrow" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><b>Hexo</b></a>
+    <i class="iconfont icon-love"></i>
+    <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"> <b>Fluid</b></a>
+    <br>
+
+    
+  
+    <!-- 不蒜子统计PV -->
+    
+    &nbsp;<span id="busuanzi_container_site_pv">总访问量 
+          <span id="busuanzi_value_site_pv"></span> 次</span>&nbsp;
+  
+  
+    <!-- 不蒜子统计UV -->
+    
+    &nbsp;<span id="busuanzi_container_site_uv">总访客数 
+            <span id="busuanzi_value_site_uv"></span> 人</span>&nbsp;
+  
+  <br>
+
+
+
+    
+
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/jquery/jquery.min.js" ></script>
+<script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/popper/popper.min.js" ></script>
+<script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/bootstrap/js/bootstrap.min.js" ></script>
+<script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/mdbootstrap/js/mdb.min.js" ></script>
+<script src="/js/main.js" ></script>
+
+
+  <script src="/js/lazyload.js" ></script>
+
+
+
+
+
+  <script src="/lib/smooth-scroll/smooth-scroll.min.js" ></script>
+
+
+
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+<!-- Plugins -->
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/prettify/prettify.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      $('pre').addClass('prettyprint  linenums');
+      prettyPrint();
+    })
+  </script>
+
+
+
+  <script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/typed/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "aloha!&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/anchor/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "false",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      getSearchFile(path);
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/fancybox/jquery.fancybox.min.css/jquery.fancybox.min.js" ></script>
+  <script>
+    $("#post img:not(.no-zoom img, img[no-zoom])").each(
+      function () {
+        var element = document.createElement("a");
+        $(element).attr("data-fancybox", "images");
+        $(element).attr("href", $(this).attr("src"));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+</body>
+</html>

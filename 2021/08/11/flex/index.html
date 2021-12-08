@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://cdn.jsdelivr.net/gh/tohrux/tohrux.github.io@1.0//img/apple-touch-icon.png# 用于苹果设备的 icon">
+  <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/tohrux/tohrux.github.io@1.0//img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="keywords" content="">
+  <title>flex布局 ~ Tohrux!</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/font-awesome/css/all.min.css"  >
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/bootstrap/css/bootstrap.min.css"  >
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/mdbootstrap/css/mdb.min.css"  >
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/github-markdown/github-markdown.min.css"  >
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1067060_qzomjdt8bmp.css">
+
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/prettify/tomorrow-night.min.css"  >
+
+<link rel="stylesheet" href="/css/main.css"  >
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/fancybox/jquery.fancybox.min.css/jquery.fancybox.min.css"  >
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>tohru&#39;s blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/about/">关于我</a>
+          </li>
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/archives/">回档 !</a>
+          </li>
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+</nav>
+
+    <div class="view intro-2" id="background"
+         style="background: url('https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127121638.png')no-repeat center center;
+           background-size: cover;
+           background-attachment: scroll;">
+      <div class="full-bg-img">
+        <div class="mask rgba-black-light flex-center">
+          <div class="container text-center white-text fadeInUp">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              <br>
+              
+                <p class="mt-3">
+                  <i class="fas fa-calendar-alt" aria-hidden="true"></i>&nbsp;
+                  星期三, 八月 11日 2021, 11:32 晚上
+                </p>
+              
+
+              <p>
+                
+                  
+                  &nbsp;<i class="far fa-chart-bar"></i>
+                  <span class="post-count">
+                    2.1k 字
+                  </span>&nbsp;
+                
+
+                
+                  
+                  &nbsp;<i class="far fa-clock"></i>
+                  <span class="post-count">
+                      8 分钟
+                  </span>&nbsp;
+                
+
+                
+                  <!-- 不蒜子统计文章PV -->
+                  
+                  &nbsp;<i class="far fa-eye" aria-hidden="true"></i>&nbsp;
+                  <span id="busuanzi_container_page_pv">
+                    <span id="busuanzi_value_page_pv"></span> 次
+                  </span>&nbsp;
+                
+              </p>
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="py-5 z-depth-3" id="board">
+        <div class="post-content mx-auto" id="post">
+          <div class="markdown-body">
+            <p>发现很多地方都会用上Flex布局,所以就决定今晚把Flex给整活了,冲冲冲🐛</p>
+<p>在看了一些博客后决定结合自己的理解写下一些笔记</p>
+<p>参照：</p>
+<blockquote>
+<p><a href="https://juejin.im/post/5ddc78f851882573520fb199" target="_blank" rel="noopener">https://juejin.im/post/5ddc78f851882573520fb199</a>  作者：<strong>锐玩道</strong></p>
+</blockquote>
+<blockquote>
+<p><a href="https://www.jianshu.com/p/4b14a7a1c6cc" target="_blank" rel="noopener">https://www.jianshu.com/p/4b14a7a1c6cc</a>                  作者：<strong>sxfshdf</strong></p>
+<p><a href="https://blog.csdn.net/m0_37058714/article/details/80765562" target="_blank" rel="noopener">https://blog.csdn.net/m0_37058714/article/details/80765562</a>     作者 <strong>wxk_前端开发</strong></p>
+<p><a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html</a>  作者: <strong>阮一峰</strong></p>
+</blockquote>
+<h1 id="一些概念"><a href="#一些概念" class="headerlink" title="一些概念"></a>一些概念</h1><p>首先使用Flex布局一定要知道的一点是,这种布局总是以父子的形式存在,父级元素被称为 <strong>容器</strong>(container),有些地方也会称为<strong>弹性盒</strong>,而所有的子级元素会自动地成为这个<strong>容器</strong>的成员,成为 Flex项目(item)</p>
+<p>在下文会用 <strong>container</strong> 表示容器, <strong>item</strong>表示Flex项目</p>
+<pre><code class="html">display:flex
+//当一个元素的display被设置为flex后，它就会成为一个 *container</code></pre>
+<blockquote>
+<p>:hand:这里需要注意的是一旦一个元素被设置为display：flex，子元素的 float,clear,vertical-align将会失效</p>
+</blockquote>
+<h1 id="主轴（main-axis-amp-副轴-侧轴-cross-axis"><a href="#主轴（main-axis-amp-副轴-侧轴-cross-axis" class="headerlink" title="主轴（main axis )&amp; 副轴/侧轴(cross axis)"></a><strong>主轴</strong>（main axis )&amp; <strong>副轴</strong>/侧轴(cross axis)</h1><p><strong>container</strong>中默认会存在这两条轴，</p>
+<p>一般来说，主轴是指水平方向的轴，而副轴是指垂直方向的轴,但是却不是绝对的,比如说下面的这个<code>flex-direction</code>属性就可以决定主轴的方向👇</p>
+<h1 id="flex-direction"><a href="#flex-direction" class="headerlink" title="flex-direction"></a>flex-direction</h1><p>这个属性决定的是主轴的方向 ,即item们的排列方式</p>
+<p>一共有 4个值 分别为 <strong>row</strong> | <strong>row-reverse</strong> | <strong>column</strong> | <strong>column-reverse</strong>; </p>
+<pre><code class="html">.container{
+    display: flex;
+    flex-direction:  row | row-reverse | column | column-reverse;
+}</code></pre>
+<p>在demo中，我的初始代码如下：</p>
+<pre><code class="html">//css部分
+&lt;style&gt;
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .container&gt;div {
+            width: 100px;
+            height: 100px;
+        }
+
+        .item1 {
+            background-color: red;
+        }
+
+        .item2 {
+            background-color: yellow;
+        }
+
+        .item3 {
+            background-color: blue;
+        }
+    &lt;/style&gt;
+----------------------------------------------------------------------------------
+
+//body部分
+    &lt;body&gt;
+    &lt;div class=&quot;container&quot;&gt;
+        &lt;div class=&quot;item1&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;item2&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;item3&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;</code></pre>
+<p>现在分别展示4种 <strong>flex-direction</strong>的效果 :</p>
+<p>👩要注意的是，在我的代码中<strong>container</strong>默认宽度是整个<strong>body</strong>的宽度,而高度则内容物(分别是红,黄,蓝三个盒子)而确定.</p>
+<h3 id="row-从左向右排列"><a href="#row-从左向右排列" class="headerlink" title="row :从左向右排列"></a>row :从左向右排列</h3><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/flex_a1.png" srcset="undefined" alt=""></p>
+<h3 id="row-reverse-从右向左排列"><a href="#row-reverse-从右向左排列" class="headerlink" title="row-reverse:从右向左排列"></a>row-reverse:从右向左排列</h3><p>👩这种布局中,并不是单纯地将三个盒子调转了顺序,而是还加了一步:把<strong>item</strong>全都在<strong>container</strong>中从右向左排列.</p>
+<p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/flex_a2.png" srcset="undefined" alt=""></p>
+<h3 id="column-从上到下排列"><a href="#column-从上到下排列" class="headerlink" title="column:从上到下排列"></a>column:从上到下排列</h3><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/flex_a3.png" srcset="undefined" alt=""></p>
+<h3 id="column-reverse-从下到上排列"><a href="#column-reverse-从下到上排列" class="headerlink" title="column-reverse:从下到上排列"></a>column-reverse:从下到上排列</h3><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/flex_a4.png" srcset="undefined" alt=""></p>
+<h1 id="flex-wrap"><a href="#flex-wrap" class="headerlink" title="flex-wrap"></a>flex-wrap</h1><p>这个属性定义的是,如果在一条水平线上已经存在了过多的<strong>item</strong>(意思就是挤不下了),这些<strong>item</strong>将如何换行.</p>
+<p>这个属性有3个值:</p>
+<pre><code class="html">.container{
+    display: flex;
+    flex-wrap: nowrap | wrap | wrap-reverse;
+}</code></pre>
+<p>在demo中我的初始代码如下:</p>
+<pre><code class="html">css部分
+-----------------------------------------------------------------------------------------
+&lt;style&gt;
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+        }
+
+        .container&gt;div {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+        }
+body部分
+-----------------------------------------------------------------------------------------
+    &lt;body&gt;
+    &lt;div class=&quot;container&quot;&gt;
+        &lt;div&gt;1&lt;/div&gt;
+        &lt;div&gt;2&lt;/div&gt;
+        &lt;div&gt;3&lt;/div&gt;
+        &lt;div&gt;4&lt;/div&gt;
+        &lt;div&gt;5&lt;/div&gt;
+        &lt;div&gt;6&lt;/div&gt;
+        &lt;div&gt;7&lt;/div&gt;
+        &lt;div&gt;8&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;</code></pre>
+<p>下面来看看效果吧:</p>
+<h3 id="默认效果"><a href="#默认效果" class="headerlink" title="默认效果:"></a>默认效果:</h3><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/flex_b1.png" srcset="undefined" alt=""></p>
+<h3 id="nowrap-不换行"><a href="#nowrap-不换行" class="headerlink" title="nowrap:不换行"></a><strong>nowrap</strong>:不换行</h3><p>现在我减小了浏览器窗口的宽度👇</p>
+<p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/flex_b2.png" srcset="undefined" alt=""></p>
+<p>再缩小:</p>
+<p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/flex_b3.png" srcset="undefined" alt=""></p>
+<p>👨hey!!我似乎发现了华点!这就是 <strong>弹性布局</strong>这个名字的由来吗?👆</p>
+<h3 id="wrap-换行"><a href="#wrap-换行" class="headerlink" title="wrap:换行"></a>wrap:换行</h3><p>减小浏览器的宽度:</p>
+<p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/flex_b4.png" srcset="undefined" alt=""></p>
+<p>再减小:</p>
+<p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/flex_b5.png" srcset="undefined" alt=""></p>
+<h3 id="wrap-reverse-颠倒顺序的换行方式"><a href="#wrap-reverse-颠倒顺序的换行方式" class="headerlink" title="wrap-reverse:颠倒顺序的换行方式"></a>wrap-reverse:颠倒顺序的换行方式</h3><p>减小浏览器的宽度:</p>
+<p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/flex_b6.png" srcset="undefined" alt=""></p>
+<p>再减小:</p>
+<p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/flex_b7.png" srcset="undefined" alt=""></p>
+<p>👩可以看到wrap-reverse和wrap中的item顺序是完全反过来的</p>
+<h1 id="flex-flow"><a href="#flex-flow" class="headerlink" title="flex-flow"></a>flex-flow</h1><p>这个属性就不多说辣,他的作用是将上面两个属性 <strong>flex-direction</strong> ,<strong>flex-wrap</strong> 写在一行,属于一种简写形式</p>
+<pre><code class="html">.container{
+    flex-flow:&lt;flex-direction&gt; &lt;flex-wrap&gt; ;
+}</code></pre>
+<p>比如说:</p>
+<pre><code class="html">.container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap-reverse;
+        }</code></pre>
+<p>👇👆效果完全一样</p>
+<pre><code class="html">.container {
+            display: flex;
+            flex-flow: nowrap row;
+        }</code></pre>
+<p>👩tips:这里 <strong>flex-direction</strong> <strong>flex-wrap</strong> 这两个值的顺序是可以调换的</p>
+<h1 id="justify-content"><a href="#justify-content" class="headerlink" title="justify-content"></a>justify-content</h1><p>这个属性可以设置item们在主轴上的排列方式</p>
+<pre><code class="html">.container{
+    justify-content: flex-start | flex-end | center | space-between | space-around
+    //常用的有这5个值
+}</code></pre>
+<p>这是我的初始代码:</p>
+<pre><code class="html">    &lt;style&gt;
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-flow: nowrap row;
+            justify-content: flex-start;
+            background-color: #0080ff;
+            height: 150px;
+
+        }
+
+        .container&gt;div {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+        }
+
+        .item1 {
+            background-color: #a3daff;
+        }
+
+        .item2 {
+            background-color: #1ec0ff;
+            width: 200px !important;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div&gt;flex-start&lt;/div&gt;
+    &lt;div class=&quot;container&quot;&gt;
+        &lt;div class=&quot;item1&quot;&gt;1&lt;/div&gt;
+        &lt;div class=&quot;item2&quot;&gt;2&lt;/div&gt;
+        &lt;div class=&quot;item1&quot;&gt;3&lt;/div&gt;
+        &lt;div class=&quot;item1&quot;&gt;4&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;</code></pre>
+<p>👩这里设置了一个<code>item2</code>,它的样子与众不同,已此来形成对比</p>
+<h3 id="flex-start"><a href="#flex-start" class="headerlink" title="flex-start"></a>flex-start</h3><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127105724.png" srcset="undefined" alt=""></p>
+<h3 id="flex-end"><a href="#flex-end" class="headerlink" title="flex-end"></a>flex-end</h3><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/flex_justify_content_end.png" srcset="undefined" alt=""></p>
+<h3 id="center"><a href="#center" class="headerlink" title="center"></a>center</h3><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127114926.png" srcset="undefined" alt=""></p>
+<h3 id="space-between"><a href="#space-between" class="headerlink" title="space-between"></a>space-between</h3><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127114600.png" srcset="undefined" alt=""></p>
+<h3 id="space-around"><a href="#space-around" class="headerlink" title="space-around"></a>space-around</h3><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127114814.png" srcset="undefined" alt=""></p>
+<p>👩注意:<code>space-around</code>和<code>space-between</code>的区别是:<code>space-around</code>会在浏览器窗口内的左右两边生成空隙,空隙的<code>width</code>=1/2相邻<code>item</code>的间距</p>
+<h1 id="align-items"><a href="#align-items" class="headerlink" title="align-items"></a>align-items</h1><p>这个属性可以设置<code>item</code>们在副轴上的排列方式,一共有5个可选值</p>
+<pre><code class="html">align-item: flex-start | flex-end | center | baseline | stretch;</code></pre>
+<p>效果如下:</p>
+<h3 id="flex-start-1"><a href="#flex-start-1" class="headerlink" title="flex-start:"></a>flex-start:</h3><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127124701.png" srcset="undefined" alt=""></p>
+<h3 id="flex-end-1"><a href="#flex-end-1" class="headerlink" title="flex-end:"></a>flex-end:</h3><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127124750.png" srcset="undefined" alt=""></p>
+<h3 id="center-1"><a href="#center-1" class="headerlink" title="center:"></a>center:</h3><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127124852.png" srcset="undefined" alt=""></p>
+<h3 id="baseline"><a href="#baseline" class="headerlink" title="baseline:"></a>baseline:</h3><p>​    <img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127130434.png" srcset="undefined" alt=""></p>
+<p>👩此处我为每个<code>item</code>都设置了 <code>line-height</code>=<code>height</code>,可以看到 <strong>baseline</strong>的对齐方式很特别,是以文字的基线作为标准的,我觉得可以用来做一些视觉设计.</p>
+<h3 id="stretch"><a href="#stretch" class="headerlink" title="stretch"></a>stretch</h3><p>待续</p>
+<h1 id="align-content"><a href="#align-content" class="headerlink" title="align-content"></a>align-content</h1><p>设置<code>container</code>的中<code>item</code>们垂直方向上的对齐方式</p>
+<pre><code class="html">align-content: flex-start | flex-end | center | stretch | spave-between | space-around</code></pre>
+<h3 id="center-2"><a href="#center-2" class="headerlink" title="center"></a>center</h3><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127140350.png" srcset="undefined" alt=""></p>
+<h3 id="flex-start-2"><a href="#flex-start-2" class="headerlink" title="flex-start"></a>flex-start</h3><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127140505.png" srcset="undefined" alt=""></p>
+<h3 id="flex-end-2"><a href="#flex-end-2" class="headerlink" title="flex-end"></a>flex-end</h3><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127140728.png" srcset="undefined" alt=""></p>
+<h3 id="stretch-1"><a href="#stretch-1" class="headerlink" title="stretch"></a>stretch</h3><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127140909.png" srcset="undefined" alt=""></p>
+<p>👩这里的话<code>stretch</code>的效果是把整个<code>container</code>除去内容后剩余的高度平均分配成行间距,有一点需要说明一下:第一行是会顶到顶部的,而最后一行下面会留下行间距. 大家可以和 <code>align-content: flex-start</code>进行对比哦</p>
+<h3 id="space-between-1"><a href="#space-between-1" class="headerlink" title="space-between"></a>space-between</h3><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127142848.png" srcset="undefined" alt=""></p>
+<h3 id="space-around-1"><a href="#space-around-1" class="headerlink" title="space-around"></a>space-around</h3><p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191127142802.png" srcset="undefined" alt=""></p>
+<p>👩看到这里大家在心里会有个疑惑吧,<code>align-item</code>和<code>align-content</code>的区别是什么呢,其实这是我现在内心中的问号,于是我写下了这篇👇</p>
+<blockquote>
+<p><a href="https://tohrux.github.io/2019/11/27/flex2/" target="_blank" rel="noopener">https://tohrux.github.io/2019/11/27/flex2/</a></p>
+</blockquote>
+<h1 id="item上的属性"><a href="#item上的属性" class="headerlink" title="item上的属性"></a><code>item</code>上的属性</h1><h3 id="order"><a href="#order" class="headerlink" title="order"></a>order</h3><p>可以为<code>item</code>加上order属性,来改变<code>item</code>们的顺序,order值越大的会排在越前面.</p>
+<pre><code class="css">//语法
+.item1{order = 2};
+.item2{order = 1};</code></pre>
+<p>原本默认的顺序(未加上order属性时):</p>
+<p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191128192154.png" srcset="undefined" alt=""></p>
+<p>加上上面代码块的默认属性后:</p>
+<p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191128103407.png" srcset="undefined" alt=""></p>
+<h3 id="flex-grow"><a href="#flex-grow" class="headerlink" title="flex-grow"></a>flex-grow</h3><p>可以设置<code>item</code>的扩展比率,根据所给予的数字大小来分配剩余空间(<code>width</code>).</p>
+<p><strong>分配空间的计算方式</strong>:</p>
+<blockquote>
+<p>例如整个container的宽度为1000px,现在有三个item在其中,item1的宽度为100px,item2的宽度为200px,item3的宽度为300px,现在container内剩余的宽度为1000px-600px = 400px,现在给三个item分别给与flex-grow属性,item1:0; item2:3; item3:1;现在container将不会有剩余空间,item1的宽度依旧为100,item2则为3/(3+1)*400+200=500px,item3的宽度为1/(3+1)*400+300=400px;</p>
+</blockquote>
+<p>👩小tips:如果在container存在一堆item,只要为其中一个赋予flex-grow的值(可以是任何数字)它就会把剩余的空间都占用;</p>
+<p>👨tips2:flex-grow的值可以为小数;</p>
+<h3 id="flex-basis"><a href="#flex-basis" class="headerlink" title="flex-basis"></a>flex-basis</h3><p>这个元素可以定义<code>item</code>的宽度,同时我们知道<code>width</code>也可以定义元素的宽度,但<code>flex-basis</code>会覆盖<code>width</code>的值.</p>
+<h3 id="flex-shrink-amp-flex-basis-amp-flex-grow"><a href="#flex-shrink-amp-flex-basis-amp-flex-grow" class="headerlink" title="flex-shrink&amp;flex-basis&amp;flex-grow"></a>flex-shrink&amp;flex-basis&amp;flex-grow</h3><p>关于这三剑客,我推荐大家到这个blog看一下,讲得真的很通俗易懂,很棒,原本是抱着学习的心态去看,看完后发现自己写完全没有意义了</p>
+<p><a href="https://blog.csdn.net/m0_37058714/article/details/80765562" target="_blank" rel="noopener">https://blog.csdn.net/m0_37058714/article/details/80765562</a></p>
+<p>作者 <strong>wxk_前端开发</strong></p>
+<h3 id="align-self"><a href="#align-self" class="headerlink" title="align-self"></a>align-self</h3><p>这个属性可以单独定义<code>item</code>在 <strong>cross axis</strong> 上的属性,并且可以覆盖<code>align-item</code>的属性,前五个值和之前的<code>align-item</code>用法一样,如果不给值,则默认给<code>auto</code>,表示继承 <code>align-item</code>,如果<code>align-item</code>也没有给值,则默认值为<code>flex-start</code>.</p>
+<pre><code class="css">.item {
+  align-self: flex-start | flex-end | center | baseline | stretch | auto ;
+}</code></pre>
+<p>未来可能会回来更新,因为到目前为止都只是把案例打了一遍,实际运用中遇到的问题,会记录下来,感谢在互联网上分享知识的人们,i了i了.</p>
+<p>关于一些实际运用可以参考阮一峰老师的这篇博文:</p>
+<p><a href="http://www.ruanyifeng.com/blog/2015/07/flex-examples.html" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2015/07/flex-examples.html</a></p>
+
+            <hr>
+          </div>
+          <br>
+          <div>
+            <p>
+            
+            
+              <span>
+                <i class="iconfont icon-tag"></i>
+                
+                  <a class="hover-with-bg" href="/tags/css">css</a>
+                
+                  <a class="hover-with-bg" href="/tags/%E5%89%8D%E7%AB%AF">前端</a>
+                
+                  <a class="hover-with-bg" href="/tags/flex">flex</a>
+                
+              </span>
+            
+            </p>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="d-none d-lg-block col-lg-2 toc-container">
+      
+  <div id="toc">
+    <p class="h4"><i class="far fa-list-alt"></i>&nbsp;目录</p>
+    <div id="tocbot"></div>
+  </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- custom -->
+
+
+<!-- Comments -->
+<div class="col-lg-7 mx-auto nopadding-md">
+  <div class="container comments mx-auto" id="comments">
+    
+      <br><br>
+      
+      
+  <script defer src="https://utteranc.es/client.js"
+          repo="tohrux/tohrux.github.io"
+          issue-term="pathname"
+  
+          label="utterances"
+    
+          theme="github-light"
+          crossorigin="anonymous"
+          async>
+  </script>
+
+
+    
+  </div>
+</div>
+
+    
+  </main>
+
+  
+    <a class="z-depth-1" id="scroll-top-button" href="#" role="button">
+      <i class="fa fa-chevron-up scroll-top-arrow" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><b>Hexo</b></a>
+    <i class="iconfont icon-love"></i>
+    <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"> <b>Fluid</b></a>
+    <br>
+
+    
+  
+    <!-- 不蒜子统计PV -->
+    
+    &nbsp;<span id="busuanzi_container_site_pv">总访问量 
+          <span id="busuanzi_value_site_pv"></span> 次</span>&nbsp;
+  
+  
+    <!-- 不蒜子统计UV -->
+    
+    &nbsp;<span id="busuanzi_container_site_uv">总访客数 
+            <span id="busuanzi_value_site_uv"></span> 人</span>&nbsp;
+  
+  <br>
+
+
+
+    
+
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/jquery/jquery.min.js" ></script>
+<script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/popper/popper.min.js" ></script>
+<script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/bootstrap/js/bootstrap.min.js" ></script>
+<script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/mdbootstrap/js/mdb.min.js" ></script>
+<script src="/js/main.js" ></script>
+
+
+  <script src="/js/lazyload.js" ></script>
+
+
+
+  
+    <script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/tocbot/tocbot.min.js" ></script>
+  
+  <script src="/js/post.js" ></script>
+
+
+
+  <script src="/lib/smooth-scroll/smooth-scroll.min.js" ></script>
+
+
+
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+<!-- Plugins -->
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/prettify/prettify.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      $('pre').addClass('prettyprint  linenums');
+      prettyPrint();
+    })
+  </script>
+
+
+
+  <script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/typed/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "flex布局&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/anchor/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "false",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      getSearchFile(path);
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/fancybox/jquery.fancybox.min.css/jquery.fancybox.min.js" ></script>
+  <script>
+    $("#post img:not(.no-zoom img, img[no-zoom])").each(
+      function () {
+        var element = document.createElement("a");
+        $(element).attr("data-fancybox", "images");
+        $(element).attr("href", $(this).attr("src"));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+</body>
+</html>

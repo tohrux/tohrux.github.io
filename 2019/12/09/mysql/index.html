@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://cdn.jsdelivr.net/gh/tohrux/tohrux.github.io@1.0//img/apple-touch-icon.png# 用于苹果设备的 icon">
+  <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/tohrux/tohrux.github.io@1.0//img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="keywords" content="">
+  <title>mysql ~ Tohrux!</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/font-awesome/css/all.min.css"  >
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/bootstrap/css/bootstrap.min.css"  >
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/mdbootstrap/css/mdb.min.css"  >
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/github-markdown/github-markdown.min.css"  >
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1067060_qzomjdt8bmp.css">
+
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/prettify/tomorrow-night.min.css"  >
+
+<link rel="stylesheet" href="/css/main.css"  >
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/fancybox/jquery.fancybox.min.css/jquery.fancybox.min.css"  >
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>tohru&#39;s blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/about/">关于我</a>
+          </li>
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/archives/">回档 !</a>
+          </li>
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+</nav>
+
+    <div class="view intro-2" id="background"
+         style="background: url('https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191209190454.png')no-repeat center center;
+           background-size: cover;
+           background-attachment: scroll;">
+      <div class="full-bg-img">
+        <div class="mask rgba-black-light flex-center">
+          <div class="container text-center white-text fadeInUp">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              <br>
+              
+                <p class="mt-3">
+                  <i class="fas fa-calendar-alt" aria-hidden="true"></i>&nbsp;
+                  星期一, 十二月 9日 2019, 6:45 晚上
+                </p>
+              
+
+              <p>
+                
+                  
+                  &nbsp;<i class="far fa-chart-bar"></i>
+                  <span class="post-count">
+                    805 字
+                  </span>&nbsp;
+                
+
+                
+                  
+                  &nbsp;<i class="far fa-clock"></i>
+                  <span class="post-count">
+                      3 分钟
+                  </span>&nbsp;
+                
+
+                
+                  <!-- 不蒜子统计文章PV -->
+                  
+                  &nbsp;<i class="far fa-eye" aria-hidden="true"></i>&nbsp;
+                  <span id="busuanzi_container_page_pv">
+                    <span id="busuanzi_value_page_pv"></span> 次
+                  </span>&nbsp;
+                
+              </p>
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="py-5 z-depth-3" id="board">
+        <div class="post-content mx-auto" id="post">
+          <div class="markdown-body">
+            <p> <img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191209190454.png" srcset="undefined" alt=""></p>
+<h3 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h3><pre><code class="mysql">create database 数据库名;</code></pre>
+<h3 id="选择数据库"><a href="#选择数据库" class="headerlink" title="选择数据库"></a>选择数据库</h3><pre><code class="mysql">use 数据库名;</code></pre>
+<h3 id="删除数据库"><a href="#删除数据库" class="headerlink" title="删除数据库"></a>删除数据库</h3><pre><code class="mysql">drop database 数据库名;</code></pre>
+<h1 id="创建数据表"><a href="#创建数据表" class="headerlink" title="创建数据表"></a>创建数据表</h1><pre><code class="mysql">CREATE TABLE 数据表名 (字段名 字段类型);
+
+CREATE TABLE `tbl`(
+   `id` INT UNSIGNED AUTO_INCREMENT,
+   `title` VARCHAR(100) NOT NULL,
+   `author` VARCHAR(40) NOT NULL,
+   `date` DATE,
+   PRIMARY KEY ( `id` )
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;//引擎和格式</code></pre>
+<h4 id="comment-关键字"><a href="#comment-关键字" class="headerlink" title="comment 关键字"></a>comment 关键字</h4><p>后面跟上字符串 表示注释</p>
+<h4 id="default关键字"><a href="#default关键字" class="headerlink" title="default关键字"></a>default关键字</h4><p>后面跟不给值时的默认选项</p>
+<h4 id="unique"><a href="#unique" class="headerlink" title="unique"></a>unique</h4><p>可以为空甚至一直为空</p>
+<h4 id="primary-key"><a href="#primary-key" class="headerlink" title="primary key"></a>primary key</h4><p>primary key = unique + not null</p>
+<h3 id="insert-into"><a href="#insert-into" class="headerlink" title="insert into"></a>insert into</h3><pre><code class="mysql">insert into tb1 (id,title,date) values (1,&#39;one&#39;,&#39;2010-1-1&#39;);
+or
+insert into tb1 values(2,&#39;two&#39;,&#39;2019-9-9&#39;);</code></pre>
+<h3 id="delete"><a href="#delete" class="headerlink" title="delete"></a>delete</h3><pre><code class="mysql">delete from tb1 where id=1;</code></pre>
+<h3 id="update"><a href="#update" class="headerlink" title="update"></a>update</h3><pre><code class="mysql">update tb1 set title = &quot;love&quot; where id=1;</code></pre>
+<h3 id="select"><a href="#select" class="headerlink" title="select"></a>select</h3><pre><code class="mysql">select * from tb1;</code></pre>
+<h1 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h1><p>不等于: <code>&lt;&gt;</code> <code>!=</code></p>
+<h2 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h2><h3 id="between-amp-and"><a href="#between-amp-and" class="headerlink" title="between&amp;and"></a>between&amp;and</h3><pre><code class="mysql">select * from tb1 where id between 1 and 3;</code></pre>
+<p>👩:包括1和3</p>
+<pre><code class="mysql">select * from tb1 where id&lt;3 and id&gt;1;</code></pre>
+<h3 id="in"><a href="#in" class="headerlink" title="in"></a>in</h3><p>!@!!@!@!@!@!!@!@!@!@!@</p>
+<pre><code class="mysql">select * from tb1 where id in(1,2,3);</code></pre>
+<h3 id="union-amp-unionall"><a href="#union-amp-unionall" class="headerlink" title="union &amp; unionall"></a>union &amp; unionall</h3><p>可以从不同的表中返回查询结果并结合在一起,</p>
+<p>区别是union会在unionall的基础上进行一次 <code>distinct</code> 查询</p>
+<h3 id="DISTINCT"><a href="#DISTINCT" class="headerlink" title="DISTINCT"></a>DISTINCT</h3><p> <em>adj. 明显的；独特的；清楚的；有区别的</em></p>
+<p><code>select DISTINCT 字段 from 表名</code></p>
+<p>排除重复的查询结果</p>
+<h3 id="group-by"><a href="#group-by" class="headerlink" title="group by"></a>group by</h3><p>默认时ascend;</p>
+<p>在 group by 后面可以跟上多个字段或者加上order by也行</p>
+<h2 id="模糊查询"><a href="#模糊查询" class="headerlink" title="模糊查询"></a>模糊查询</h2><h3 id="like关键字"><a href="#like关键字" class="headerlink" title="like关键字"></a>like关键字</h3><p><code>select 字段 from 表名 where 字段 like 值</code></p>
+<p><code>%u%</code></p>
+<p> <code>%</code> 用来匹配0个或多个字符,任意类型,任意长度,没有限制</p>
+<p><code>_u_</code></p>
+<p><code>_</code>匹配任意单个字符</p>
+<h2 id="排序查询"><a href="#排序查询" class="headerlink" title="排序查询"></a>排序查询</h2><h3 id="order-by"><a href="#order-by" class="headerlink" title="order by"></a>order by</h3><p>默认ascend</p>
+<pre><code class="mysql">select * from tb1 order by id desc/asc;</code></pre>
+<p>👩:descend / ascend</p>
+<h2 id="限制查询"><a href="#限制查询" class="headerlink" title="限制查询"></a>限制查询</h2><p><code>select 字段 limit 起始偏移量,行数</code></p>
+<h2 id="聚合"><a href="#聚合" class="headerlink" title="聚合"></a>聚合</h2><p><code>count(*)</code> <code>sum(字段名)</code> <code>max(字段名)</code>  <code>min(字段名)</code> </p>
+<p> <code>with rollup</code>表示对聚合分类后的对象再进行汇总</p>
+<p><code>having</code>分类聚合后的限制条件要用having而不是<code>where</code>;</p>
+<p><img src="https://cdn.jsdelivr.net/gh/tohrux/photos//img/20191210150306.png" srcset="undefined" alt=""></p>
+<p>👩:可以直接进行计算</p>
+<pre><code class="mysql">mysqli</code></pre>
+<h2 id="连接"><a href="#连接" class="headerlink" title="连接"></a>连接</h2><h4 id="inner-join"><a href="#inner-join" class="headerlink" title="inner join"></a>inner join</h4><p>内连接,获取两个表中字段匹配关系的记录 (两个表中的重叠部分)</p>
+<h3 id="left-join"><a href="#left-join" class="headerlink" title="left join"></a>left join</h3><p>左连接,获取表中的所有记录,即使右边没有对应的匹配记录</p>
+<h3 id="right-join"><a href="#right-join" class="headerlink" title="right join"></a>right join</h3><p>同上</p>
+<h1 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h1><p>回滚 rollback</p>
+<p>提交 commit</p>
+<p>四大特性: 原子性, 一致性 ,隔离性, 持久性</p>
+<h1 id="子段操作"><a href="#子段操作" class="headerlink" title="子段操作"></a>子段操作</h1><p>增</p>
+<pre><code class="mysql">alter table 数据表名 add 新增字段 字段类型;</code></pre>
+<p>删</p>
+<pre><code class="mysql">alter table 数据表名 drop 字段名;</code></pre>
+<p>修改字段类型:</p>
+<pre><code class="mysql">alter table modify 字段名 数据类型;</code></pre>
+<p>修改表名:</p>
+<pre><code class="mysql">alter table 数据表名 rename 新表名</code></pre>
+<p>修改字段名</p>
+<pre><code class="mysql">alter table change 字段名 新字段名 新数据类型</code></pre>
+<h1 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h1><h3 id="创建索引"><a href="#创建索引" class="headerlink" title="创建索引"></a>创建索引</h3><p>1,创建普通索引,在创建表的时候创建索引</p>
+<pre><code class="mysql">create table index1(
+    id INT,
+    name VARCHAR(32),
+    INDEX(id)
+)
+</code></pre>
+<p>or</p>
+<pre><code class="mysqli"> mysql&gt; CREATE TABLE `jkjk` (  
+
+    -&gt;   `id` smallint(8) unsigned NOT NULL,  
+    -&gt;   `catid` smallint(5) unsigned NOT NULL DEFAULT &#39;0&#39;,  
+
+    -&gt;   `title` varchar(80) NOT NULL DEFAULT &#39;&#39;,  
+     -&gt;   `content` text NOT NULL,  
+
+   -&gt;   PRIMARY KEY (`id`),  
+
+    -&gt;   UNIQUE KEY `catename` (`catid`)  
+
+    -&gt; ) ;  </code></pre>
+<p>UNIQUE /FULLTEXT</p>
+<pre><code class="mysql">create table index1(
+    id INT,
+    name VARCHAR(32),
+    UNIQUE INDEX index_1(id ASC)
+)</code></pre>
+<p>2,用alter table创建索引</p>
+<pre><code class="mysql">alter TABLE 表名 ADD primary key (字段名); </code></pre>
+<p>3,用create index 创建索引</p>
+<pre><code class="mysql">create 索引类型 INDEX 索引名 ON 表名(字段名);</code></pre>
+<p>eg:</p>
+<pre><code class="mysql">create UNIQUE INDEX index_1 ON tb1(id);
+mysql&gt; CREATE UNIQUE INDEX catename ON wb_blog(catid); </code></pre>
+<h3 id="删除索引"><a href="#删除索引" class="headerlink" title="删除索引"></a>删除索引</h3><pre><code class="mysql">DROP INDEX index_1 on tb1;</code></pre>
+<h3 id="查看索引"><a href="#查看索引" class="headerlink" title="查看索引"></a>查看索引</h3><pre><code class="mysql">SHOW INDEX from tb1;</code></pre>
+
+            <hr>
+          </div>
+          <br>
+          <div>
+            <p>
+            
+            
+              <span>
+                <i class="iconfont icon-tag"></i>
+                
+                  <a class="hover-with-bg" href="/tags/mysql">mysql</a>
+                
+                  <a class="hover-with-bg" href="/tags/database">database</a>
+                
+              </span>
+            
+            </p>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="d-none d-lg-block col-lg-2 toc-container">
+      
+  <div id="toc">
+    <p class="h4"><i class="far fa-list-alt"></i>&nbsp;目录</p>
+    <div id="tocbot"></div>
+  </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- custom -->
+
+
+<!-- Comments -->
+<div class="col-lg-7 mx-auto nopadding-md">
+  <div class="container comments mx-auto" id="comments">
+    
+      <br><br>
+      
+      
+  <script defer src="https://utteranc.es/client.js"
+          repo="tohrux/tohrux.github.io"
+          issue-term="pathname"
+  
+          label="utterances"
+    
+          theme="github-light"
+          crossorigin="anonymous"
+          async>
+  </script>
+
+
+    
+  </div>
+</div>
+
+    
+  </main>
+
+  
+    <a class="z-depth-1" id="scroll-top-button" href="#" role="button">
+      <i class="fa fa-chevron-up scroll-top-arrow" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><b>Hexo</b></a>
+    <i class="iconfont icon-love"></i>
+    <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"> <b>Fluid</b></a>
+    <br>
+
+    
+  
+    <!-- 不蒜子统计PV -->
+    
+    &nbsp;<span id="busuanzi_container_site_pv">总访问量 
+          <span id="busuanzi_value_site_pv"></span> 次</span>&nbsp;
+  
+  
+    <!-- 不蒜子统计UV -->
+    
+    &nbsp;<span id="busuanzi_container_site_uv">总访客数 
+            <span id="busuanzi_value_site_uv"></span> 人</span>&nbsp;
+  
+  <br>
+
+
+
+    
+
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/jquery/jquery.min.js" ></script>
+<script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/popper/popper.min.js" ></script>
+<script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/bootstrap/js/bootstrap.min.js" ></script>
+<script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/mdbootstrap/js/mdb.min.js" ></script>
+<script src="/js/main.js" ></script>
+
+
+  <script src="/js/lazyload.js" ></script>
+
+
+
+  
+    <script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/tocbot/tocbot.min.js" ></script>
+  
+  <script src="/js/post.js" ></script>
+
+
+
+  <script src="/lib/smooth-scroll/smooth-scroll.min.js" ></script>
+
+
+
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+<!-- Plugins -->
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/prettify/prettify.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      $('pre').addClass('prettyprint  linenums');
+      prettyPrint();
+    })
+  </script>
+
+
+
+  <script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/typed/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "mysql&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/anchor/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "false",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      getSearchFile(path);
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script src="https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@1.6.1/source/lib/fancybox/jquery.fancybox.min.css/jquery.fancybox.min.js" ></script>
+  <script>
+    $("#post img:not(.no-zoom img, img[no-zoom])").each(
+      function () {
+        var element = document.createElement("a");
+        $(element).attr("data-fancybox", "images");
+        $(element).attr("href", $(this).attr("src"));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+</body>
+</html>
